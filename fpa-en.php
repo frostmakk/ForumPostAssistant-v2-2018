@@ -181,7 +181,7 @@
 
 
       <?php
-        /* NOTE (RussW): full page & content wrapper
+        /* NOTE (RussW): WRAPPER - Page & Content
          * ALL: full-width
          * display = flex, align-items = stretch
          */
@@ -189,7 +189,7 @@
       <div class="wrapper">
 
         <?php
-          /* NOTE (RussW): sidebar navigation
+          /* NOTE (RussW): SIDEBAR - Navigation
            * LG: 250px wide (fixed)
            * MD: 80px wide (collapsed, scrolling)
            * shortcut links to sections
@@ -245,39 +245,33 @@
                 -->
               </li>
               <li>
-                <a href="#snapshot-section">
+                <a href="#basic-discovery-section">
                   <i class="glyphicon glyphicon-briefcase"></i>
-                  Snapshot Dashboard
+                  Basic Discovery
                 </a>
               </li>
               <li>
-                <a href="#instance-discovery-section">
+                <a href="#application-discovery-section">
                   <i class="glyphicon glyphicon-briefcase"></i>
-                  Instance Discovery
-                </a>
-<!--
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
-                  <i class="glyphicon glyphicon-duplicate"></i>
-                  Pages
-                </a>
-
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                  <li><a href="#">Page 1</a></li>
-                  <li><a href="#">Page 2</a></li>
-                  <li><a href="#">Page 3</a></li>
-                </ul>
--->
-              </li>
-              <li>
-                <a href="#">
-                  <i class="glyphicon glyphicon-link"></i>
-                  Portfolio
+                  Application Discovery
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <i class="glyphicon glyphicon-paperclip"></i>
-                  FAQ
+                <a href="#host-discovery-section">
+                  <i class="glyphicon glyphicon-briefcase"></i>
+                  Hosting Discovery
+                </a>
+              </li>
+              <li>
+                <a href="#perms-discovery-section">
+                  <i class="glyphicon glyphicon-briefcase"></i>
+                  Permissions Discovery
+                </a>
+              </li>
+              <li>
+                <a href="#extension-discovery-section">
+                  <i class="glyphicon glyphicon-briefcase"></i>
+                  Extension Discovery
                 </a>
               </li>
               <li class="visible-sm visible-md visible-lg">
@@ -313,7 +307,7 @@
 
 
         <?php
-          /* NOTE (RussW): main page container
+          /* NOTE (RussW): PAGE - Container
            *       LG: dymanic-width
            * XS/SM/MD: full-width
            */
@@ -322,9 +316,9 @@
 
 
           <?php
-            /* NOTE (RussW): main page navigation & notification
+            /* NOTE (RussW): TOOLBAR - Navigation & Notification
              * XS/SM/MD/LG: fixed top
-             *       XS/SM: joomla! & forum links hidden
+             *       XS/SM: joomla!, forum & download links hidden
              *          XS: navbar-right hidden
              * collapse/in sidebar button, privacy & security notices, delete button, offsite links
              */
@@ -369,7 +363,7 @@
                   <li><a href="https://www.joomla.org/" target="_blank" class="btn btn-default btn-xs navbar-btn hidden-sm" role="button"><span class="text-primary"><i class="glyphicon glyphicon-home"></i> Joomla!</span></a></li>
                   <li><a href="https://forum.joomla.org/" target="_blank" class="btn btn-default btn-xs navbar-btn hidden-sm" role="button"><span class="text-primary"><i class="glyphicon glyphicon-comment"></i> Forum</span></a></li>
                   <li><a href="https://github.com/ForumPostAssistant/FPA/tree/en-GB/Documentation" target="_blank" class="btn btn-default btn-xs navbar-btn" role="button"><span class="text-primary"><i class="glyphicon glyphicon-book"></i> FPA Docs</span></a></li>
-                  <li><a href="https://github.com/ForumPostAssistant/FPA/releases" target="_blank" class="btn btn-default btn-xs navbar-btn" role="button"><span class="text-primary"><i class="glyphicon glyphicon-download-alt"></i> Download</span></a></li>
+                  <li><a href="https://github.com/ForumPostAssistant/FPA/releases" target="_blank" class="btn btn-default btn-xs navbar-btn hidden-sm" role="button"><span class="text-primary"><i class="glyphicon glyphicon-download-alt"></i> Download</span></a></li>
                 </ul><!--/.navbar-right-->
               </div><!--/.navbar-collapse-->
 
@@ -380,7 +374,7 @@
 
 
             <?php
-              /* NOTE (RussW): start fpa settings & post output section
+              /* NOTE (RussW): START -  FPA Settings & Post Output
                * XS/SM/MD/LG: page full-width
                * accordion - settings & output panels
                */
@@ -675,26 +669,27 @@
 
 
 
+
           <?php
-            /* NOTE (RussW): start fpa content visual output
+            /* NOTE (RussW): START - Content Container
              * XS/SM/MD/LG: page full-width
-             * diagnostic & troubleshooting visual information sections container
+             * FPA web & print content
              */
           ?>
           <div id="content">
 
 
             <?php
-              /* NOTE (RussW): snapshot section
+              /* NOTE (RussW): SECTION - Basic Discovery
                * XS/SM/MD/LG: page full-width
                * generic top-level environment information
                */
             ?>
+            <section id="basic-discovery-section" class="container-fluid">
 
 
-<!--TESTING-->
-            <section id="basic-discovery" class="container-fluid">
               <div class="page-header">
+
                 <h2>
                   <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainBasic" aria-expanded="false" aria-controls="collapseExplainBasic">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
@@ -702,7 +697,9 @@
                   Basic Discovery
                 </h2>
 
-                <p class="lead">The FPA Discovery Section presents any basic information that FPA has managed to discover about your hosting server, database & php environments, installed functions and any discovered Joomla! instance.</p>
+                <p class="lead">
+                  The FPA Discovery Section presents any basic information that FPA has managed to discover about your hosting server, database & php environments, installed functions and any discovered Joomla! instance.
+                </p>
 
                 <div class="collapse clearfix" id="collapseExplainBasic">
                   <div class="alert alert-info" role="alert">
@@ -710,276 +707,136 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                   </div>
                 </div><!--/#collapseExplainBasic-->
+
               </div><!--/.page-header-->
 
 
+              <div id="basic-discovery-container" class="row">
 
-<div id="basic-discovery-environment" class="row">
+                <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
-  <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
-    <h3 class="margin-remove text-muted">Environment Discovery</h3>
-    <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+                  <h3 class="margin-remove text-muted">Environment Snapshot</h3>
+                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
 
-  </div><!--/.subsection-heading-->
-
-  <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
-
-
-    <div class="row content-container">
-
-      <div class="col-xs-12 col-md-4 content-item">
-
-        <div class="panel panel-default item">
-          <div class="panel-heading">PHP</div>
-          <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
-            <tbody>
-              <tr>
-                <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
-                <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
-              </tr>
-              <tr>
-                <td class="small text-truncate">PHP API</td>
-                <td class="text-center small bg-info">CGI-FCGI</td>
-              </tr>
-              <tr>
-                <td class="small text-truncate text-success">MySQL Support</td>
-                <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
-              </tr>
-              <tr>
-                <td class="small text-truncate text-danger">MySQLi Support</td>
-                <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
-              </tr>
-            </tbody>
-          </table>
-        </div><!--/.panel, item-->
-
-      </div><!--/.content-item-->
-
-      <div class="col-xs-12 col-md-4 content-item">
-
-        <div class="panel panel-default item">
-          <div class="panel-heading">DataBase</div>
-          <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
-            <tbody>
-              <tr>
-                <td class="small text-truncate"><span class="text-truncate">MySQL Version</span></td>
-                <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
-              </tr>
-              <tr>
-                <td class="small text-truncate">PHP API</td>
-                <td class="text-center small bg-info">CGI-FCGI</td>
-              </tr>
-              <tr>
-                <td class="small text-truncate text-success">MySQL Support</td>
-                <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
-              </tr>
-              <tr>
-                <td class="small text-truncate text-danger">MySQLi Support</td>
-                <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
-              </tr>
-            </tbody>
-          </table>
-        </div><!--/.panel, item-->
-
-      </div><!--/.content-item-->
-
-      <div class="col-xs-12 col-md-4 content-item">
-
-        <div class="panel panel-default item">
-          <div class="panel-heading">PHP</div>
-          <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
-            <tbody>
-              <tr>
-                <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
-                <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
-              </tr>
-              <tr>
-                <td class="small text-truncate">PHP API</td>
-                <td class="text-center small bg-info">CGI-FCGI</td>
-              </tr>
-              <tr>
-                <td class="small text-truncate text-success">MySQL Support</td>
-                <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
-              </tr>
-              <tr>
-                <td class="small text-truncate text-danger">MySQLi Support</td>
-                <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
-              </tr>
-            </tbody>
-          </table>
-        </div><!--/.panel, item-->
-
-      </div><!--/.content-item-->
-
-    </div><!--/.content-container-->
+                </div><!--/.subsection-heading-->
+                <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
 
 
-  </div><!--/.subsection-content-->
+                  <div class="row content-container">
+                    <div class="col-xs-12 col-md-4 content-item">
 
-</div><!--/#basic-discovery-container-->
+                      <div class="panel panel-default item">
+                        <div class="panel-heading">PHP</div>
+
+                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <tbody>
+                            <tr>
+                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
+                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">PHP API</td>
+                              <td class="text-center small bg-info">CGI-FCGI</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-success">MySQL Support</td>
+                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-danger">MySQLi Support</td>
+                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+                    <div class="col-xs-12 col-md-4 content-item">
+
+                      <div class="panel panel-default item">
+                        <div class="panel-heading">DataBase</div>
+
+                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <tbody>
+                            <tr>
+                              <td class="small text-truncate"><span class="text-truncate">MySQL Version</span></td>
+                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">PHP API</td>
+                              <td class="text-center small bg-info">CGI-FCGI</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-success">MySQL Support</td>
+                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-danger">MySQLi Support</td>
+                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+                    <div class="col-xs-12 col-md-4 content-item">
+
+                      <div class="panel panel-default item">
+                        <div class="panel-heading">Functions</div>
+
+                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <tbody>
+                            <tr>
+                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
+                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">PHP API</td>
+                              <td class="text-center small bg-info">CGI-FCGI</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-success">MySQL Support</td>
+                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-danger">MySQLi Support</td>
+                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+                  </div><!--/.content-container-->
+
+
+                </div><!--/.subsection-content-->
+
+              </div><!--/#basic-discovery-container-->
+              <div class="line"></div>
+
 
             </section><!--/#basic-discovery-->
-<!--/TESTING-->
 
 
 
 
-
-
-            <section id="snapshot-section" class="container-fluid">
-              <div class="page-header">
-                <h2>
-                  <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainSnapshot" aria-expanded="false" aria-controls="collapseExplainSnapshot">
-                    <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
-                  </button>
-                  Snapshot Dashboard
-                </h2>
-              </div>
-
-              <div class="collapse clearfix" id="collapseExplainSnapshot">
-                <div class="alert alert-info" role="alert">
-                  <h4><i class="glyphicon glyphicon-info-sign"></i> Snapshot Dashboard</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-              </div>
-
-              <div class="row tourStep16">
-
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="panel panel-default text-center">
-                    <div class="panel-heading line-height-normal">PHP Supports J!3.5.0</div>
-                    <div class="panel-body">
-                      <span class="label label-success label-large"><?php echo _FPA_Y; ?></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="panel panel-default text-center">
-                    <div class="panel-heading line-height-normal">MySQL Supports J!3.5.0</div>
-                    <div class="panel-body">
-                      <span class="label label-success label-large"><?php echo _FPA_Y; ?></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="clearfix visible-xs-block"></div><!--/responsive-column-reset-->
-
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="panel panel-danger text-center">
-                    <div class="panel-heading line-height-normal">PHP Supports MySQL</div>
-                    <div class="panel-body">
-                      <span class="label label-danger label-large"><?php echo _FPA_N; ?></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="clearfix visible-sm-block"></div><!--/responsive-column-reset-->
-
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="panel panel-warning text-center">
-                    <div class="panel-heading line-height-normal">PHP Supports MySQLi</div>
-                    <div class="panel-body">
-                      <span class="label label-warning label-large"><?php echo _FPA_N; ?></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="clearfix visible-xs-block visible-md-block visible-lg-block"></div><!--/responsive-column-reset-->
-
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="panel panel-default text-center">
-                    <div class="panel-heading">MySQL Version</div>
-                    <div class="panel-body">
-                      <span class="label label-info label-large">5.6.38</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="panel panel-default text-center">
-                    <div class="panel-heading">Panel heading</div>
-                    <div class="panel-body">
-                      6
-                    </div>
-                  </div>
-                </div>
-
-                <div class="clearfix visible-xs-block visible-sm-block"></div><!--/responsive-column-reset-->
-
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="panel panel-default text-center">
-                    <div class="panel-heading">OS</div>
-                    <div class="panel-body">
-                      Linux
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="panel panel-default text-center">
-                    <div class="panel-heading">Panel heading</div>
-                    <div class="panel-body">
-                      6
-                    </div>
-                  </div>
-                </div>
-
-                <div class="clearfix visible-xs-block visible-md-block visible-lg-block"></div><!--/responsive-column-reset-->
-
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="panel panel-default text-center">
-                    <div class="panel-heading">OS</div>
-                    <div class="panel-body">
-                      Linux
-                    </div>
-                  </div>
-                </div>
-
-                <div class="clearfix visible-sm-block"></div><!--/responsive-column-reset-->
-
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="panel panel-default text-center">
-                    <div class="panel-heading">Panel heading</div>
-                    <div class="panel-body">
-                      6
-                    </div>
-                  </div>
-                </div>
-
-                <div class="clearfix visible-xs-block"></div><!--/responsive-column-reset-->
-
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="panel panel-default text-center">
-                    <div class="panel-heading">OS</div>
-                    <div class="panel-body">
-                      Linux
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="panel panel-default text-center">
-                    <div class="panel-heading">Panel heading</div>
-                    <div class="panel-body">
-                      6
-                    </div>
-                  </div>
-                </div>
-
-              </div><!--/.row-->
-            </section><!--/#snapshot-section-->
 
 
             <?php
-              /* NOTE (RussW): instance discovery section
+              /* NOTE (RussW): SECTION - Application Discovery
                * XS/SM/MD/LG: page full-width
-               * basic instance discovery & configuration
+               * basic application discovery & configuration
                */
             ?>
-            <section id="instance-discovery-section" class="container-fluid">
+            <section id="application-discovery-section" class="container-fluid">
+
 
               <div class="page-header">
+
                 <h2>
                   <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainApplication" aria-expanded="false" aria-controls="collapseExplainApplication">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
@@ -987,287 +844,808 @@
                   Application Discovery
                 </h2>
 
-                <p class="lead">The FPA Application Section presents any basic information that FPA has managed to discover about your hosting server, database & php environments, installed functions and any discovered Joomla! instance.</p>
+                <p class="lead">
+                  The FPA Application Discovery Section presents any basic information that FPA has managed to discover about your hosting server, database & php environments, installed functions and any discovered Joomla! instance.
+                </p>
 
                 <div class="collapse clearfix" id="collapseExplainApplication">
                   <div class="alert alert-info" role="alert">
-                    <h4><i class="glyphicon glyphicon-info-sign"></i> Application Discovery</h4>
+                    <h4><i class="glyphicon glyphicon-info-sign"></i> Application Discovery Dashboard</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                   </div>
-                </div>
-              </div>
+                </div><!--/#collapseExplainApplication-->
 
-<!--
-              <div class="page-header">
-                <h2>
-                  <button class="btn btn-info btn-xs pull-right hidden-print clearfix" type="button" data-toggle="collapse" data-target="#collapseExplainOverview" aria-expanded="false" aria-controls="collapseExplainOverview">
-                    <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
-                  </button>
-                  Instance Discovery
-                </h2>
-              </div>
-
-              <div class="collapse clearfix" id="collapseExplainOverview">
-                <div class="alert alert-info" role="alert">
-                  <h4><i class="glyphicon glyphicon-info-sign"></i> Overview Section</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-              </div>
--->
-
-              <div class="row">
-
-                <div class="col-sm-12 col-md-6 outer-col">
-
-                  <div class="panel panel-info panel-outer">
-                    <div class="panel-heading"><h4 class="margin-remove">Application Instance :: Discovery</h4></div>
-                    <div class="panel-body padding-remove">
-
-                      <div class="row col-xs-12 padding-sm">
-
-                        <div class="col-xs-6 col-sm-6 col-md-6 padding-sm inner-col">
-                          <table class="table margin-top-sm">
-                            <tr>
-                              <td class="text-center bg-muted border-all"><h4 class="small margin-remove">CMS Found</h4></td>
-                            </tr>
-                            <tr>
-                              <td class="text-center">Joomla!</td>
-                            </tr>
-                            <tr>
-                              <td class="text-center">v3.5.0</td>
-                            </tr>
-                            <tr>
-                              <td class="text-center"><span class="label label-info label-large">Stable</span></td>
-                            </tr>
-                          </table>
-                        </div><!--/.inner-col-->
-
-                        <div class="col-xs-6 col-sm-6 col-md-6 padding-sm inner-col">
-                          <table class="table margin-top-sm">
-                            <tr>
-                              <td class="text-center bg-muted border-all"><h4 class="small margin-remove">J! Platform</h4></td>
-                            </tr>
-                            <tr>
-                              <td class="text-center">Joomla! Platform</td>
-                            </tr>
-                            <tr>
-                              <td class="text-center">v13.1.0</td>
-                            </tr>
-                            <tr>
-                              <td class="text-center"><span class="label label-info label-large">Stable</span></td>
-                            </tr>
-                          </table>
-                        </div><!--/.inner-col-->
-
-                        <div class="col-xs-6 col-sm-6 col-md-6 padding-sm inner-col">
-                          <table class="table margin-top-sm">
-                            <tr>
-                              <td class="text-center bg-muted border-all"><h4 class="small margin-remove">Config Found</h4></td>
-                            </tr>
-                            <tr>
-                              <td class="text-center"><?php echo _FPA_Y_ICON; ?> Valid</td>
-                            </tr>
-                            <tr>
-                              <td class="text-center">v3.5</td>
-                            </tr>
-                            <tr>
-                              <td class="text-center"><span class="label label-info label-large">Matches CMS</span></td>
-                            </tr>
-                          </table>
-                        </div><!--/.inner-col-->
-
-                        <div class="col-xs-6 col-sm-6 col-md-6 padding-sm inner-col">
-                          <table class="table margin-top-sm">
-                            <tr>
-                              <td class="text-center bg-muted border-all"><h4 class="small margin-remove">Config Mode</h4></td>
-                            </tr>
-                            <tr>
-                              <td class="text-center text-success">444</td>
-                            </tr>
-                            <tr>
-                              <td class="text-center">demohotm : demohotm</td>
-                            </tr>
-                            <tr>
-                              <td class="text-center"><span class="label label-info label-large">Read Only</span></td>
-                            </tr>
-                          </table>
-                        </div><!--/.inner-col-->
-
-                      </div><!--/.row-fluid, col-xs-12-->
-
-                    </div><!--/.panel-body-->
-                  </div><!--/.panel, outer-->
-
-                </div><!--/.oouter-col-->
-                <div class="col-sm-12 col-md-6 outer-col">
-
-                  <div class="panel panel-info panel-outer">
-                    <div class="panel-heading"><h4 class="margin-remove">Application Instance :: Discovery</h4></div>
-                    <div class="panel-body padding-remove">
-
-                      <div class="row col-xs-12 padding-sm">
-
-                        <div class="col-xs-6 col-sm-6 col-md-6 padding-sm inner-col">
-                          <table class="table margin-top-sm">
-                            <tr>
-                              <td class="text-center bg-muted border-all"><h4 class="small margin-remove">CMS Found</h4></td>
-                            </tr>
-                            <tr>
-                              <td class="text-center">Joomla!</td>
-                            </tr>
-                            <tr>
-                              <td class="text-center">v3.5.0</td>
-                            </tr>
-                            <tr>
-                              <td class="text-center"><span class="label label-info label-large">Stable</span></td>
-                            </tr>
-                          </table>
-                        </div><!--/.inner-col-->
-
-                        <div class="col-xs-6 col-sm-6 col-md-6 padding-sm inner-col">
-                          <table class="table margin-top-sm">
-                            <tr>
-                              <td class="text-center bg-muted border-all"><h4 class="small margin-remove">J! Platform</h4></td>
-                            </tr>
-                            <tr>
-                              <td class="text-center">Joomla! Platform</td>
-                            </tr>
-                            <tr>
-                              <td class="text-center">v13.1.0</td>
-                            </tr>
-                            <tr>
-                              <td class="text-center"><span class="label label-info label-large">Stable</span></td>
-                            </tr>
-                          </table>
-                        </div><!--/.inner-col-->
-
-                        <div class="col-xs-6 col-sm-6 col-md-6 padding-sm inner-col">
-                          <table class="table margin-top-sm">
-                            <tr>
-                              <td class="text-center bg-muted border-all"><h4 class="small margin-remove">Config Found</h4></td>
-                            </tr>
-                            <tr>
-                              <td class="text-center"><?php echo _FPA_Y_ICON; ?> Valid</td>
-                            </tr>
-                            <tr>
-                              <td class="text-center">v3.5</td>
-                            </tr>
-                            <tr>
-                              <td class="text-center"><span class="label label-info label-large">Matches CMS</span></td>
-                            </tr>
-                          </table>
-                        </div><!--/.inner-col-->
-
-                        <div class="col-xs-6 col-sm-6 col-md-6 padding-sm inner-col">
-                          <table class="table margin-top-sm">
-                            <tr>
-                              <td class="text-center bg-muted border-all"><h4 class="small margin-remove">Config Mode</h4></td>
-                            </tr>
-                            <tr>
-                              <td class="text-center text-success">444</td>
-                            </tr>
-                            <tr>
-                              <td class="text-center">demohotm : demohotm</td>
-                            </tr>
-                            <tr>
-                              <td class="text-center"><span class="label label-info label-large">Read Only</span></td>
-                            </tr>
-                          </table>
-                        </div><!--/.inner-col-->
-
-                      </div><!--/.row-fluid, col-xs-12-->
-
-                    </div><!--/.panel-body-->
-                  </div><!--/.panel, outer-->
-
-                </div><!--/.outer-col-->
+              </div><!--/.page-header-->
 
 
-              </div><!--/.row-->
-            </section><!--/#application-instance-section-->
+              <?php
+                /* NOTE (RussW): SUB-SECTION - Instance Discovery
+                 * discovered instance information
+                 */
+              ?>
+              <div id="instance-discovery-container" class="row">
+
+                <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
+
+                  <h3 class="margin-remove text-muted">Installed Instance</h3>
+                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+
+                </div><!--/.subsection-heading-->
+                <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
+
+
+                  <div class="row content-container">
+                    <div class="col-xs-12 col-md-6 content-item">
+
+                      <div class="panel panel-default item">
+                        <div class="panel-heading">Joomla! :: (+version found)</div>
+
+                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <tbody>
+                            <tr>
+                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
+                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">PHP API</td>
+                              <td class="text-center small bg-info">CGI-FCGI</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-success">MySQL Support</td>
+                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-danger">MySQLi Support</td>
+                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+                    <div class="col-xs-12 col-md-6 content-item">
+
+                      <div class="panel panel-default item">
+                        <div class="panel-heading">Configuration</div>
+
+                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <tbody>
+                            <tr>
+                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
+                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">PHP API</td>
+                              <td class="text-center small bg-info">CGI-FCGI</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-success">MySQL Support</td>
+                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-danger">MySQLi Support</td>
+                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+                  </div><!--/.content-container-->
+
+
+                </div><!--/.subsection-content-->
+
+              </div><!--/#instance-discovery-container-->
+
+
+
+              <?php
+                /* NOTE (RussW): SUB-SECTION - DataBase Discovery
+                 * discovered database information
+                 */
+              ?>
+              <div id="database-discovery-container" class="row">
+
+                <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
+
+                  <h3 class="margin-remove text-muted">DataBase Configuration</h3>
+                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+
+                </div><!--/.subsection-heading-->
+                <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
+
+
+                  <div class="row content-container">
+                    <div class="col-xs-12 col-md-6 content-item">
+
+                      <div class="panel panel-default item">
+                        <div class="panel-heading">DataBase :: (+DB Type)</div>
+
+                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <tbody>
+                            <tr>
+                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
+                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">PHP API</td>
+                              <td class="text-center small bg-info">CGI-FCGI</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-success">MySQL Support</td>
+                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-danger">MySQLi Support</td>
+                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+                    <div class="col-xs-12 col-md-6 content-item">
+
+                      <div class="panel panel-default item">
+                        <div class="panel-heading">Performance</div>
+
+                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <tbody>
+                            <tr>
+                              <td class="small text-truncate"><span class="text-truncate">MySQL Version</span></td>
+                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">PHP API</td>
+                              <td class="text-center small bg-info">CGI-FCGI</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-success">MySQL Support</td>
+                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-danger">MySQLi Support</td>
+                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+                  </div><!--/.content-container-->
+
+
+                </div><!--/.subsection-content-->
+
+              </div><!--/#performance-discovery-container-->
+
+
+              <?php
+                /* NOTE (RussW): SUB-SECTION  - DataBase Table Structure (optional)
+                 * discovered database table structure
+                 */
+              ?>
+              <div id="dbtable-discovery-container" class="row">
+
+                <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
+
+                  <h3 class="margin-remove text-muted">DataBase Structure</h3>
+                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+
+                </div><!--/.subsection-heading-->
+                <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
+
+
+                  <div class="row content-container">
+                    <div class="col-xs-12 content-item">
+
+                      <div class="panel panel-default item">
+                        <div class="panel-heading">(+DB Type) :: Table Structure</div>
+
+                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <tbody>
+                            <tr>
+                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
+                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">PHP API</td>
+                              <td class="text-center small bg-info">CGI-FCGI</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-success">MySQL Support</td>
+                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-danger">MySQLi Support</td>
+                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+                  </div><!--/.content-container-->
+
+
+                </div><!--/.subsection-content-->
+
+              </div><!--/#dbtable-discovery-container-->
+              <div class="line"></div>
+
+
+            </section><!--/#application-discovery-->
+
+
+
+
 
 
             <?php
-              /* NOTE (RussW): database discovery section
+              /* NOTE (RussW): SECTION - Host Discovery
                * XS/SM/MD/LG: page full-width
-               * basic database discovery & configuration
+               * generic host environment information
                */
             ?>
-            <section id="database-discovery-section" class="container-fluid">
+            <section id="host-discovery-section" class="container-fluid">
+
 
               <div class="page-header">
-                <h2>Discovery Section</h2>
-              </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
+                <h2>
+                  <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainHost" aria-expanded="false" aria-controls="collapseExplainHost">
+                    <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
+                  </button>
+                  Hosting Discovery
+                </h2>
 
-              <div class="row">
+                <p class="lead">
+                  The FPA Discovery Section presents any basic information that FPA has managed to discover about your hosting server, database & php environments, installed functions and any discovered Joomla! instance.
+                </p>
 
-                <div class="col-sm-12 col-md-6">
-                  <div class="panel panel-default">
-                    <div class="panel-heading">Panel With Table</div>
-                    <div class="panel-body">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </div>
-                    <table class="table">
-                      <tr><th>heading</th><th>heading</th><th>heading</th></tr>
-                      <tr><td>data</td><td>data</td><td>data</td></tr>
-                      <tr><td>data</td><td>data</td><td>data</td></tr>
-                    </table>
+                <div class="collapse clearfix" id="collapseExplainHost">
+                  <div class="alert alert-info" role="alert">
+                    <h4><i class="glyphicon glyphicon-info-sign"></i> Host Discovery Dashboard</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                   </div>
-                </div>
+                </div><!--/#collapseExplainHost-->
 
-                <div class="col-sm-12 col-md-6">
-                  <div class="panel panel-default">
-                    <div class="panel-heading">Panel With List</div>
-                    <div class="panel-body">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </div>
-                    <ul class="list-group">
-                      <li class="list-group-item">Cras justo odio</li>
-                      <li class="list-group-item">Dapibus ac facilisis in</li>
-                      <li class="list-group-item">Morbi leo risus</li>
-                      <li class="list-group-item">Porta ac consectetur ac</li>
-                      <li class="list-group-item">Vestibulum at eros</li>
-                    </ul>
-                  </div>
-                </div>
+              </div><!--/.page-header-->
 
-                <div class="col-sm-12 col-md-6">
-                  <div class="panel panel-default">
-                    <div class="panel-heading">Panel With Table</div>
-                    <table class="table">
-                      <tr><th>heading</th><th>heading</th><th>heading</th></tr>
-                      <tr><td>data</td><td>data</td><td>data</td></tr>
-                      <tr><td>data</td><td>data</td><td>data</td></tr>
-                    </table>
-                  </div>
-                </div>
+              <?php
+                /* NOTE (RussW): SUB-SECTION - PHP discovery
+                 * php environement information
+                 */
+              ?>
+              <div id="host-discovery-container" class="row">
 
-                <div class="col-sm-12 col-md-6">
-                  <div class="panel panel-default">
-                    <div class="panel-heading">Panel heading</div>
-                    <ul class="list-group">
-                      <li class="list-group-item">Cras justo odio</li>
-                      <li class="list-group-item">Dapibus ac facilisis in</li>
-                      <li class="list-group-item">Morbi leo risus</li>
-                      <li class="list-group-item">Porta ac consectetur ac</li>
-                      <li class="list-group-item">Vestibulum at eros</li>
-                    </ul>
-                  </div>
-                </div>
+                <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
-              </div><!--/.row-->
-            </section><!--/#database-discovery-section-->
+                  <h3 class="margin-remove text-muted">Server Configuration</h3>
+                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+
+                </div><!--/.subsection-heading-->
+                <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
 
 
+                  <div class="row content-container">
+                    <div class="col-xs-12 col-md-6 content-item">
+
+                      <div class="panel panel-default item">
+                        <div class="panel-heading">PHP Environment</div>
+
+                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <tbody>
+                            <tr>
+                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
+                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">PHP API</td>
+                              <td class="text-center small bg-info">CGI-FCGI</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-success">MySQL Support</td>
+                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-danger">MySQLi Support</td>
+                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+                    <div class="col-xs-12 col-md-6 content-item">
+
+                      <div class="panel panel-default item">
+                        <div class="panel-heading">Host Environment</div>
+
+                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <tbody>
+                            <tr>
+                              <td class="small text-truncate"><span class="text-truncate">MySQL Version</span></td>
+                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">PHP API</td>
+                              <td class="text-center small bg-info">CGI-FCGI</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-success">MySQL Support</td>
+                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-danger">MySQLi Support</td>
+                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+
+                    <div class="clearfix"></div><!--/responsive-column-reset-->
+
+                    <div class="col-xs-12 content-item">
+
+                      <div class="panel panel-default item">
+                        <div class="panel-heading">PHP Extensions</div>
+
+                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <tbody>
+                            <tr>
+                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
+                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">PHP API</td>
+                              <td class="text-center small bg-info">CGI-FCGI</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-success">MySQL Support</td>
+                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-danger">MySQLi Support</td>
+                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+                  </div><!--/.content-container-->
 
 
-            <div class="line"></div>
+                </div><!--/.subsection-content-->
+
+              </div><!--/#host-discovery-container-->
+              <div class="line"></div>
+
+
+            </section><!--/#host-discovery-->
+
+
+
+
 
 
             <?php
-              /* NOTE (RussW): legends, contributors, copyright & license section
+              /* NOTE (RussW): SECTION - Permissions Discovery
+               * XS/SM/MD/LG: page full-width
+               * permissions checks
+               */
+            ?>
+            <section id="perms-discovery-section" class="container-fluid">
+
+
+              <div class="page-header">
+
+                <h2>
+                  <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainPerms" aria-expanded="false" aria-controls="collapseExplainPerms">
+                    <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
+                  </button>
+                  Permissions Discovery
+                </h2>
+
+                <p class="lead">
+                  The FPA Discovery Section presents any basic information that FPA has managed to discover about your hosting server, database & php environments, installed functions and any discovered Joomla! instance.
+                </p>
+
+                <div class="collapse clearfix" id="collapseExplainPerms">
+                  <div class="alert alert-info" role="alert">
+                    <h4><i class="glyphicon glyphicon-info-sign"></i> Folder & File Permissions</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  </div>
+                </div><!--/#collapseExplainPerms-->
+
+              </div><!--/.page-header-->
+
+              <?php
+                /* NOTE (RussW): SUB-SECTION - Core permisisons discovery
+                 * core folder/file permisisons information
+                 */
+              ?>
+              <div id="perms-discovery-container" class="row">
+
+                <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
+
+                  <h3 class="margin-remove text-muted">Core Folders</h3>
+                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+
+                </div><!--/.subsection-heading-->
+                <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
+
+
+                  <div class="row content-container">
+                    <div class="col-xs-12 content-item">
+
+                      <div class="panel panel-default item">
+                        <div class="panel-heading">Core Folder Permissions</div>
+
+                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <tbody>
+                            <tr>
+                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
+                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">PHP API</td>
+                              <td class="text-center small bg-info">CGI-FCGI</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-success">MySQL Support</td>
+                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-danger">MySQLi Support</td>
+                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+                  </div><!--/.content-container-->
+
+
+                </div><!--/.subsection-content-->
+
+              </div><!--/#perms-discovery-container-->
+
+
+              <?php
+                /* NOTE (RussW): SUB-SECTION - Elevated Permissions (optional)
+                 * elevated permisisons discovery
+                 */
+              ?>
+              <div id="eperms-discovery-container" class="row">
+
+                <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
+
+                  <h3 class="margin-remove text-muted">Elevated Permissions</h3>
+                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+
+                </div><!--/.subsection-heading-->
+                <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
+
+
+                  <div class="row content-container">
+                    <div class="col-xs-12 content-item">
+
+                      <div class="panel panel-default item">
+                        <div class="panel-heading">Elevated Permission Checks</div>
+
+                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <tbody>
+                            <tr>
+                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
+                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">PHP API</td>
+                              <td class="text-center small bg-info">CGI-FCGI</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-success">MySQL Support</td>
+                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-danger">MySQLi Support</td>
+                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+                  </div><!--/.content-container-->
+
+
+                </div><!--/.subsection-content-->
+
+              </div><!--/#eperms-discovery-container-->
+              <div class="line"></div>
+
+
+            </section><!--/#perms-discovery-->
+
+
+
+
+
+
+            <?php
+              /* NOTE (RussW): SECTION - Extension Discovery
+               * XS/SM/MD/LG: page full-width
+               * installed extension discovery
+               */
+            ?>
+            <section id="extension-discovery-section" class="container-fluid">
+
+
+              <div class="page-header">
+
+                <h2>
+                  <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainExt" aria-expanded="false" aria-controls="collapseExplainExt">
+                    <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
+                  </button>
+                  Extension Discovery
+                </h2>
+
+                <p class="lead">
+                  The FPA Discovery Section presents any basic information that FPA has managed to discover about your hosting server, database & php environments, installed functions and any discovered Joomla! instance.
+                </p>
+
+                <div class="collapse clearfix" id="collapseExplainExt">
+                  <div class="alert alert-info" role="alert">
+                    <h4><i class="glyphicon glyphicon-info-sign"></i> Installed Component Discovery</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  </div>
+                </div><!--/#collapseExplainExt-->
+
+              </div><!--/.page-header-->
+
+              <?php
+                /* NOTE (RussW): SUB-SECTION  - Component Discovery
+                 * installed component information
+                 */
+              ?>
+              <div id="component-discovery-container" class="row">
+
+                <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
+
+                  <h3 class="margin-remove text-muted">Components</h3>
+                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+
+                </div><!--/.subsection-heading-->
+                <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
+
+
+                  <div class="row content-container">
+                    <div class="col-xs-12 content-item">
+
+                      <div class="panel panel-default item">
+                        <div class="panel-heading">Installed Components</div>
+
+                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <tbody>
+                            <tr>
+                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
+                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">PHP API</td>
+                              <td class="text-center small bg-info">CGI-FCGI</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-success">MySQL Support</td>
+                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-danger">MySQLi Support</td>
+                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+                  </div><!--/.content-container-->
+
+
+                </div><!--/.subsection-content-->
+
+              </div><!--/#component-discovery-container-->
+
+
+              <?php
+                /* NOTE (RussW): SUB-SECTION  - Module Discovery
+                 * installed module discovery
+                 */
+              ?>
+              <div id="module-discovery-container" class="row">
+
+                <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
+
+                  <h3 class="margin-remove text-muted">Modules</h3>
+                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+
+                </div><!--/.subsection-heading-->
+                <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
+
+
+                  <div class="row content-container">
+                    <div class="col-xs-12 content-item">
+
+                      <div class="panel panel-default item">
+                        <div class="panel-heading">Installed Modules</div>
+
+                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <tbody>
+                            <tr>
+                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
+                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">PHP API</td>
+                              <td class="text-center small bg-info">CGI-FCGI</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-success">MySQL Support</td>
+                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-danger">MySQLi Support</td>
+                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+                  </div><!--/.content-container-->
+
+
+                </div><!--/.subsection-content-->
+
+              </div><!--/#eperms-discovery-container-->
+
+
+              <?php
+                /* NOTE (RussW): SUB-SECTION  - Plugin Discovery
+                 * installed plugin discovery
+                 */
+              ?>
+              <div id="plugin-discovery-container" class="row">
+
+                <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
+
+                  <h3 class="margin-remove text-muted">Plugins</h3>
+                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+
+                </div><!--/.subsection-heading-->
+                <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
+
+
+                  <div class="row content-container">
+                    <div class="col-xs-12 content-item">
+
+                      <div class="panel panel-default item">
+                        <div class="panel-heading">Installed Plugins</div>
+
+                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <tbody>
+                            <tr>
+                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
+                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">PHP API</td>
+                              <td class="text-center small bg-info">CGI-FCGI</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-success">MySQL Support</td>
+                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-danger">MySQLi Support</td>
+                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+                  </div><!--/.content-container-->
+
+
+                </div><!--/.subsection-content-->
+
+              </div><!--/#plugin-discovery-container-->
+
+
+
+              <?php
+                /* NOTE (RussW): SUB-SECTION  - Template Discovery
+                 * installed template discovery
+                 */
+              ?>
+              <div id="template-discovery-container" class="row">
+
+                <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
+
+                  <h3 class="margin-remove text-muted">Templates</h3>
+                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+
+                </div><!--/.subsection-heading-->
+                <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
+
+
+                  <div class="row content-container">
+                    <div class="col-xs-12 content-item">
+
+                      <div class="panel panel-default item">
+                        <div class="panel-heading">Installed Templates</div>
+
+                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <tbody>
+                            <tr>
+                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
+                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">PHP API</td>
+                              <td class="text-center small bg-info">CGI-FCGI</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-success">MySQL Support</td>
+                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate text-danger">MySQLi Support</td>
+                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+                  </div><!--/.content-container-->
+
+
+                </div><!--/.subsection-content-->
+
+              </div><!--/#template-discovery-container-->
+              <div class="line"></div>
+
+
+            </section><!--/#extension-discovery-->
+
+
+
+
+
+
+            <?php
+              /* NOTE (RussW): Legends, Contributors, Copyright & Licensing
                * XS/SM/MD/LG: page full-width
                * fpa legends, descriptions and copyright display
                * MD/LG: section half-width
@@ -1318,7 +1696,7 @@
 <div class="alert alert-danger margin-bottom-sm">
 
   <?php
-    /* NOTE (RussW): Security Warning - browser view only
+    /* NOTE (RussW): Security Warning (Browser View Only)
      */
   ?>
   <div class="row hidden-print">
@@ -1340,7 +1718,7 @@
   </div><!--/.hidden-print-->
 
   <?php
-    /* NOTE (RussW): Security Warning - print view only
+    /* NOTE (RussW): Security Warning (Print View Only)
      *
      */
   ?>
@@ -1389,10 +1767,10 @@
 
 
           <?php
-            /* NOTE (RussW): footer navigation section
+            /* NOTE (RussW): FOOTER - Navigation
              * XS/SM/MD/LG: page full-width (fixed-bottom)
              *       XS/SM: download links hidden
-             * license, contributors, download links, security notice, delete fpa & copyright
+             * download links, delete fpa & copyright
              */
           ?>
           <footer id="copyright" class="navbar-fixed-bottom bg-muted hidden-print tourStep10">
@@ -1440,7 +1818,7 @@
 
 
         <?php
-          /* NOTE (RussW): required bootstrap/jquery cdn inclusions
+          /* NOTE (RussW): CDN JS INCLUDES - Required BS/jQuery
            * initialisation & configuration of js/jquery objects used in fpa
            */
         ?>
@@ -1452,20 +1830,20 @@
         <?php endif; ?>
 
         <?php
-          /* NOTE (RussW): custom javascript & jquery scripts
+          /* NOTE (RussW): SCRIPTS - Custom JS & jQuery
            * initialisation & configuration of js/jquery objects used in fpa
            */
         ?>
         <script type="text/javascript">
           $(document).ready(function () {
 
-            // NOTE (RussW): inititialise the sidebar toggle button actions
+            // NOTE (RussW): SCRIPT - Sidebar Toggle Action
             $('#sidebarCollapse').on('click', function () {
               $('#sidebar').toggleClass('active');
               $('.page .navbar').toggleClass('expand');
             });
 
-            // NOTE (RussW): simulate 'smoothscroll' animation with BS sidebar/scrollspy links
+            // NOTE (RussW): SCRIPT - SmoothScroll Simulatation/Animation With BS Sidebar/Scrollspy
             $("#navbar-sidebar ul li a[href^='#']").on('click', function(e) {
               e.preventDefault();
               var hash = this.hash;
@@ -1476,7 +1854,7 @@
               });
             });
 
-            // NOTE (RussW): inititialise different BS popover objects
+            // NOTE (RussW): SCRIPT - BS Popover Objects
             $('.navbar-header [data-toggle="popover"]').popover({
               html: true,
               placement: "bottom",
@@ -1491,7 +1869,7 @@
               container: "footer"
             });
 
-            // NOTE (RussW): initialise back-to-top object
+            // NOTE (RussW): SCRIPT - Back-To-Top Object
             $(window).scroll(function () {
               if ($(this).scrollTop() > 600) {
                 $('#back-to-top').fadeIn();
@@ -1508,7 +1886,7 @@
 
           });
 
-          // NOTE (RussW): print the #content section only
+          // NOTE (RussW): SCRIPT - Print Button (#content only)
           function printFPA() {
               window.print();
           }
@@ -1516,7 +1894,7 @@
 
 
         <?php
-          /* NOTE (RussW): initialisation and configuration for FPA Tour
+          /* NOTE (RussW): SCRIPT - Configure & Initialise The FPA Tour
            * only set if $runFPATour=1 from sidebar link (using $_GET['tour'])
            */
         ?>
