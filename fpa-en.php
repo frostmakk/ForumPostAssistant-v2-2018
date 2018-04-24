@@ -195,7 +195,7 @@
            * shortcut links to sections
            */
         ?>
-        <nav id="sidebar" class="bg-primary">
+        <nav id="sidebar" class="bg-primary hidden-print">
           <div id="navbar-sidebar" class="sidebar-affix">
 
             <div class="sidebar-header">
@@ -329,7 +329,7 @@
              * collapse/in sidebar button, privacy & security notices, delete button, offsite links
              */
           ?>
-          <nav class="navbar navbar-default tourStep00">
+          <nav class="navbar navbar-default hidden-print tourStep00">
 
             <div class="container-fluid">
 
@@ -339,6 +339,11 @@
                   <div class="btn-group" role="group">
                     <button type="button" id="sidebarCollapse" class="btn btn-primary navbar-btn">
                       <i class="glyphicon glyphicon-transfer"></i>
+                    </button>
+                  </div>
+                  <div class="btn-group" role="group">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary navbar-btn" onclick="printFPA()">
+                      <i class="glyphicon glyphicon-print"></i>
                     </button>
                   </div>
                   <div class="btn-group hidden-xs" role="group">
@@ -380,7 +385,7 @@
                * accordion - settings & output panels
                */
             ?>
-            <div id="settings-section">
+            <div id="settings-section" class="hidden-print">
 
 
               <div class="container-fluid">
@@ -691,7 +696,7 @@
             <section id="basic-discovery" class="container-fluid">
               <div class="page-header">
                 <h2>
-                  <button class="btn btn-info btn-xs pull-right clearfix tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainBasic" aria-expanded="false" aria-controls="collapseExplainBasic">
+                  <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainBasic" aria-expanded="false" aria-controls="collapseExplainBasic">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
                   Basic Discovery
@@ -824,7 +829,7 @@
             <section id="snapshot-section" class="container-fluid">
               <div class="page-header">
                 <h2>
-                  <button class="btn btn-info btn-xs pull-right clearfix tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainSnapshot" aria-expanded="false" aria-controls="collapseExplainSnapshot">
+                  <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainSnapshot" aria-expanded="false" aria-controls="collapseExplainSnapshot">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
                   Snapshot Dashboard
@@ -976,7 +981,26 @@
 
               <div class="page-header">
                 <h2>
-                  <button class="btn btn-info btn-xs pull-right clearfix" type="button" data-toggle="collapse" data-target="#collapseExplainOverview" aria-expanded="false" aria-controls="collapseExplainOverview">
+                  <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainApplication" aria-expanded="false" aria-controls="collapseExplainApplication">
+                    <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
+                  </button>
+                  Application Discovery
+                </h2>
+
+                <p class="lead">The FPA Application Section presents any basic information that FPA has managed to discover about your hosting server, database & php environments, installed functions and any discovered Joomla! instance.</p>
+
+                <div class="collapse clearfix" id="collapseExplainApplication">
+                  <div class="alert alert-info" role="alert">
+                    <h4><i class="glyphicon glyphicon-info-sign"></i> Application Discovery</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  </div>
+                </div>
+              </div>
+
+<!--
+              <div class="page-header">
+                <h2>
+                  <button class="btn btn-info btn-xs pull-right hidden-print clearfix" type="button" data-toggle="collapse" data-target="#collapseExplainOverview" aria-expanded="false" aria-controls="collapseExplainOverview">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
                   Instance Discovery
@@ -989,6 +1013,7 @@
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
               </div>
+-->
 
               <div class="row">
 
@@ -1242,9 +1267,11 @@
 
 
             <?php
-              /* NOTE (RussW): legends & settings section
+              /* NOTE (RussW): legends, contributors, copyright & license section
                * XS/SM/MD/LG: page full-width
-               * fpa legends, descriptions and runtime settings display
+               * fpa legends, descriptions and copyright display
+               * MD/LG: section half-width
+               * XS/SM: section full-width
                */
             ?>
             <div id="legend-section" class="container-fluid">
@@ -1287,7 +1314,49 @@
                 </div><!--/left-column-->
                 <div class="col-xs-12 col-md-6">
 
-                  <div class="padding-lg text-justify small padding-sm">
+
+<div class="alert alert-danger margin-bottom-sm">
+
+  <?php
+    /* NOTE (RussW): Security Warning - browser view only
+     */
+  ?>
+  <div class="row hidden-print">
+    <div class="col-sm-12 col-md-8 text-center">
+      <h6 class="margin-remove">SECURITY NOTICE</h6>
+      <span class="small line-height-normal text-justify">
+        Due to the highly sensitive nature of the information displayed by the FPA script, it should be removed from the server immediately after use.
+        If the script is left on the site, it can be used to gather enough information to hack your site.
+      </span>
+    </div>
+    <div class="col-sm-12 col-md-4 text-center">
+
+      <a href="fpa-en.php?act=delete" class="btn btn-danger btn-block margin-top-sm" role="button">
+        <i class="glyphicon glyphicon-remove-circle lead margin-remove"></i>
+        <div class="small">Delete FPA</div>
+      </a>
+
+    </div>
+  </div><!--/.hidden-print-->
+
+  <?php
+    /* NOTE (RussW): Security Warning - print view only
+     *
+     */
+  ?>
+  <div class="row visible-print-block">
+    <div class="col-xs-12 text-center">
+      <h6 class="margin-remove">SECURITY NOTICE</h6>
+      <span class="small line-height-normal text-justify">
+        Due to the highly sensitive nature of the information displayed by the FPA script, hard-copy or electronic document copies should be securely destroyed immediately after use.
+      </span>
+    </div>
+  </div><!--/.visible-print-block-->
+
+</div>
+<div class="clearfix"></div>
+
+                  <div class="padding-lg text-justify small padding-lg bg-muted tourStepEnd">
                     <h6 class="margin-remove text-center">Developers & Contributors</h6>
                     <p class="text-muted small">
                       The FPA script has been developed by, and is copyright of the following contributors; Russell Winter, Phil DeGruy, Claire Mandville, Bernard Toplak & Sveinung Larsen. <a class="text-primary" href="https://github.com/ForumPostAssistant" target="_blank">Visit the FPA Github Project</a>.
@@ -1297,25 +1366,20 @@
                     <p class="text-muted small">
                       <?php echo _RES .' ('. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .'-'. _RES_RELEASE_BUILD .')'; ?> script comes with ABSOLUTELY NO WARRANTY.  This is free software; and covered under the <strong>GNU GPLv3 or later license</strong>. You are welcome to redistribute it under certain conditions. For details read the LICENSE.txt file included in the download package with this script. A copy of the license may also be obtained at <a class="text-primary" href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses/</a>.
                     </p>
-                    <p class="text-muted text-center small">
-                      <?php echo _RES .' ('. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .'-'. _RES_RELEASE_BUILD .')'; ?> <sup>&copy;</sup>2011-<?php echo date('Y'); ?>
-                    </p>
+
                   </div>
 
                 </div><!--/right-column-->
 
               </div><!--/.row-->
-            <div class="clearfix"></div>
+              <div class="clearfix"></div>
 
 
             </div><!--/#legends-section-->
 
-
-            <a id="back-to-top" href="#home-section" class="btn btn-primary btn-sm back-to-top" role="button">
-               <span class="glyphicon glyphicon-chevron-up"></span>
-            </a>
-            <div class="clearfix"></div>
-
+            <p class="text-muted text-center margin-top-lg small">
+              <?php echo _RES .' ('. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .'-'. _RES_RELEASE_BUILD .')'; ?> <sup>&copy;</sup>2011-<?php echo date('Y'); ?>
+            </p>
 
           </div><!--/#content-->
 
@@ -1331,7 +1395,7 @@
              * license, contributors, download links, security notice, delete fpa & copyright
              */
           ?>
-          <footer id="copyright" class="navbar-fixed-bottom bg-muted tourStep10">
+          <footer id="copyright" class="navbar-fixed-bottom bg-muted hidden-print tourStep10">
             <div class="container">
               <div class="btn-toolbar">
 
@@ -1366,6 +1430,13 @@
               </div>
             </div>
           </footer><!--/#copyright footer-->
+
+
+            <a id="back-to-top" href="#home-section" class="btn btn-primary btn-sm back-to-top" role="button">
+               <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>
+
+
 
 
         <?php
@@ -1436,7 +1507,12 @@
             });
 
           });
-         </script>
+
+          // NOTE (RussW): print the #content section only
+          function printFPA() {
+              window.print();
+          }
+        </script>
 
 
         <?php

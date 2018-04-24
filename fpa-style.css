@@ -646,3 +646,8 @@ div[class*="popover tour-"] .popover-navigation {
         padding: 0px 5px 5px;
     }
 }
+
+
+@media print {
+  section { page-break-before: always; }
+}
