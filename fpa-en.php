@@ -1251,7 +1251,7 @@
 
               <div class="row">
 
-                <div class="col-sm-12 col-md-6">
+                <div class="col-xs-12 col-md-6">
 
                   <div class="panel panel-default tourStep17">
                     <div class="panel-heading"><strong>Legends & Status</strong></div>
@@ -1262,18 +1262,18 @@
                         <td class="line-height-normal">Information & Help Message/Status</td>
                       </tr>
                       <tr class="bg-success text-success">
-                        <td><span class="label label-success"><i class="glyphicon glyphicon-ok-circle"></i></span></td>
+                        <td><span class="label label-success"><i class="glyphicon glyphicon-ok-sign"></i></span></td>
                         <td><span class="label label-success center-block"><i class="glyphicon glyphicon-ok-sign"></i> Success</span></td>
                         <td class="line-height-normal">Positive & Successful Message/Status</td>
                       </tr>
                       <tr class="bg-warning text-warning">
-                        <td><span class="label label-warning"><i class="glyphicon glyphicon-warning-sign"></i></span></td>
-                        <td><span class="label label-warning center-block"><i class="glyphicon glyphicon-warning-sign"></i> Warning</span></td>
+                        <td><span class="label label-warning"><i class="glyphicon glyphicon-alert"></i></span></td>
+                        <td><span class="label label-warning center-block"><i class="glyphicon glyphicon-alert"></i> Warning</span></td>
                         <td class="line-height-normal">Highlighted & Warning Message/Status</td>
                       </tr>
                       <tr class="bg-danger text-danger">
-                        <td><span class="label label-danger"><i class="glyphicon glyphicon-remove-circle"></i></span></td>
-                        <td><span class="label label-danger center-block"><i class="glyphicon glyphicon-remove-circle"></i> Alert</span></td>
+                        <td><span class="label label-danger"><i class="glyphicon glyphicon-remove-sign"></i></span></td>
+                        <td><span class="label label-danger center-block"><i class="glyphicon glyphicon-remove-sign"></i> Alert</span></td>
                         <td class="line-height-normal">Negative Or Error Message/Status</td>
                       </tr>
                       <tr class="bg-protected text-protected">
@@ -1285,65 +1285,36 @@
                   </div><!--/.panel-->
 
                 </div><!--/left-column-->
-                <div class="col-sm-12 col-md-6">
+                <div class="col-xs-12 col-md-6">
 
-                  <div class="panel panel-default">
-                    <div class="panel-heading"><strong>Display Settings</strong></div>
-                    <table class="table">
-                      <tr class="">
-                        <td class="line-height-normal">Elevated Permissions Checks</td>
-                        <td><span class="label label-success center-block"><i class="glyphicon glyphicon-ok-sign"></i> Show</span></td>
-                      </tr>
-                      <tr class="">
-                        <td class="line-height-normal">Installed Components</td>
-                        <td>
-                          <span class="label label-success center-block"><i class="glyphicon glyphicon-ok-sign"></i> Shown</span>
-                        </td>
-                      </tr>
-                      <tr class="">
-                        <td class="line-height-normal">Installed Modules</td>
-                        <td><span class="label label-success center-block"><i class="glyphicon glyphicon-ok-sign"></i> Shown</span></td>
-                      </tr>
-                      <tr class="">
-                        <td class="line-height-normal">Installed Plugins</td>
-                        <td><span class="label label-success center-block"><i class="glyphicon glyphicon-ok-sign"></i> Shown</span></td>
-                      </tr>
-                      <tr class="">
-                        <td class="line-height-normal" style="padding-left:20px;"><i> - Include Core Extensions</i></td>
-                        <td>
-                          <span class="label label-success center-block"><i class="glyphicon glyphicon-ok-sign"></i> Yes</span>
-                        </td>
-                      </tr>
-                      <tr class="">
-                        <td class="line-height-normal">DataBase Structure</td>
-                        <td><span class="label label-info center-block"><i class="glyphicon glyphicon-remove-circle"></i> Hidden</span></td>
-                      </tr>
-                    </table>
-                  </div><!--/.panel-->
+                  <div class="padding-lg text-justify small padding-sm">
+                    <h6 class="margin-remove text-center">Developers & Contributors</h6>
+                    <p class="text-muted small">
+                      The FPA script has been developed by, and is copyright of the following contributors; Russell Winter, Phil DeGruy, Claire Mandville, Bernard Toplak & Sveinung Larsen. <a class="text-primary" href="https://github.com/ForumPostAssistant" target="_blank">Visit the FPA Github Project</a>.
+                    </p>
+
+                    <h6 class="margin-remove text-center">Licensing & Disclaimer</h6>
+                    <p class="text-muted small">
+                      <?php echo _RES .' ('. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .'-'. _RES_RELEASE_BUILD .')'; ?> script comes with ABSOLUTELY NO WARRANTY.  This is free software; and covered under the <strong>GNU GPLv3 or later license</strong>. You are welcome to redistribute it under certain conditions. For details read the LICENSE.txt file included in the download package with this script. A copy of the license may also be obtained at <a class="text-primary" href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses/</a>.
+                    </p>
+                    <p class="text-muted text-center small">
+                      <?php echo _RES .' ('. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .'-'. _RES_RELEASE_BUILD .')'; ?> <sup>&copy;</sup>2011-<?php echo date('Y'); ?>
+                    </p>
+                  </div>
 
                 </div><!--/right-column-->
 
               </div><!--/.row-->
             <div class="clearfix"></div>
 
-<p>
-    	<!--
-    	 ('. _RES_BRANCH . _RES_LANG.')';
-    	-->
-    	<!--
-  	echo '<p>FPA last updated on: '. _last_updated . '</p>' ;
-  	-->
-fsdfasdf
-</p>
-
-
-            <a id="back-to-top" href="#home-section" class="btn btn-primary back-to-top" role="button">
-               <span class="glyphicon glyphicon-chevron-up"></span>
-            </a>
-            <div class="clearfix"></div>
 
             </div><!--/#legends-section-->
 
+
+            <a id="back-to-top" href="#home-section" class="btn btn-primary btn-sm back-to-top" role="button">
+               <span class="glyphicon glyphicon-chevron-up"></span>
+            </a>
+            <div class="clearfix"></div>
 
 
           </div><!--/#content-->
@@ -1363,18 +1334,6 @@ fsdfasdf
           <footer id="copyright" class="navbar-fixed-bottom bg-muted tourStep10">
             <div class="container">
               <div class="btn-toolbar">
-
-                <div class="btn-group btn-group-xs text-primary license-info">
-                  <a tabindex="0" class="" role="button" data-toggle="popover" title="FPA License Agreement" data-content="The FPA comes with ABSOLUTELY NO WARRANTY. This is free software, and covered under the GNU GPLv3 or later license. You are welcome to redistribute it under certain conditions. For details read the LICENSE.txt file included in the download package with this script. A copy of the license may also be obtained at <a class='text-success' href='http://www.gnu.org/licenses/' target='_blank'>http://www.gnu.org/licenses/</a>">
-                    <i class="glyphicon glyphicon-info-sign"></i> License Information
-                  </a>
-                </div>
-
-                <div class="btn-group btn-group-xs text-primary contributor-info">
-                  <a tabindex="1" class="" role="button" data-toggle="popover" title="Contributors & Copyright Owners" data-content="The Forum Post Assistant has been developed by, and is copyright of; Russell Winter, Phil DeGruy, Claire Mandville, Bernard Toplak, Sveinung Larsen">
-                    <i class="glyphicon glyphicon-info-sign"></i> Contributors
-                  </a>
-                </div>
 
                 <div class="btn-group btn-group-xs text-success download-info hidden-xs">
                   <a href="https://github.com/ForumPostAssistant/FPA/zipball/en-GB/%C2%A0%20Language%20en-GB" tabindex="3" class="" role="button">
