@@ -7,6 +7,8 @@
 
 body { position: relative; }
 
+.hidepage { display: none !important; }
+
 p {}
 
 /** bootstrap overrides & custom styling **/
@@ -217,9 +219,7 @@ display: block;
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    /*
-    background: #7386D5;
-    */
+    background: #286090;
     color: #fff;
     transition: all 0.3s;
 }
@@ -318,6 +318,7 @@ min-height: 100vh;
     color: #337ab7;
     */
     color: #286090;
+
     background: #fff;
 }
 
@@ -335,8 +336,9 @@ min-height: 100vh;
     /*
     background: #6d7fcc;
     background: #498dc9;
-    */
     background: #286090;
+*/
+    background: #337ab7;
 }
 
 

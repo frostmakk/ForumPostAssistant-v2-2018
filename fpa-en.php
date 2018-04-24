@@ -16,7 +16,6 @@
     $runFPATour = '';
   endif;
 
-
   /**
    **  @package Forum Post Assistant / Bug Report Assistant
    **  @version 2.0.0
@@ -43,26 +42,29 @@
    */
 
 
-  /* TODO (ALL): FPA Versioning & Revisioning
+  /* TODO (ALL): VERSION CONTROL : FPA Versioning & Revisioning
    * remember to update revision information
    */
-	define ( '_RES', 'Forum Post Assistant' );     // FPA resource long name
-	define ( '_RES_SHORT', 'FPA' );                // FPA resource short name
-	define ( '_RES_VERSION', '2.0' );              // major revision (x.y)
-	define ( '_RES_VERSION_MAINT', '0' );          // maintenance/patch revision (.z)
-	define ( '_RES_RELEASE_BUILD', 'Alpha' );       // dev status revision ( :A(lpha), :B(eta), :RC, :F(inal) )
-	define ( '_RES_LAST_UPDATED', '22/04/2018' );  // release date (dd/mm/yyyy)
-	define ( '_RES_BRANCH', 'en-GB' );             // Github branch location
-	define ( '_RES_LANG', 'en-GB' );               // Country/Language Code
+	define ( '_RES', 'Forum Post Assistant' );         // FPA resource long name
+	define ( '_RES_SHORT', 'FPA' );                    // FPA resource short name
+	define ( '_RES_VERSION', '2.0' );                  // major revision (x.y)
+	define ( '_RES_VERSION_MAINT', '0' );              // maintenance/patch revision (.z)
+	define ( '_RES_RELEASE_TYPE', 'BS' );              // framework type ( BS(Bootstrap), SA(Standalone) )
+	define ( '_RES_RELEASE_BUILD', 'Alpha' );          // dev status revision ( A(lpha), B(eta), RC, F(inal) )
+	define ( '_RES_LAST_UPDATED', '22/04/2018' );      // release date (dd/mm/yyyy)
+	define ( '_RES_BRANCH', 'en-GB' );                 // Github branch location
+	define ( '_RES_LANG', 'en-GB' );                   // Country/Language Code
 
 
-	/* NOTE (ALL): Set Joomla! parent flags
+	/* NOTE (FPA): PARENT FLAGS - Joomla!
 	 *
 	 */
-	define ( '_VALID_MOS', 1 );                    // for J!1.0
-	define ( '_JEXEC', 1 );                        // for J!1.5, J!1.6, J!1.7, J!2.5, J!3.0
+	define ( '_VALID_MOS', 1 );                        // for J!1.0
+	define ( '_JEXEC', 1 );                            // for J!1.5, J!1.6, J!1.7, J!2.5, J!3.0
 
-	/* NOTE (ALL): FPA specific definitions & constants
+
+
+	/* NOTE (FPA): LANGUAGE - FPA Specific Definitions & Constants
 	 *
 	 */
 	define ( '_RES_FPALINK', 'https://github.com/ForumPostAssistant/FPA/tarball/en-GB/' ); // where to get the latest 'Final Releases'
@@ -85,12 +87,26 @@
 	define ( '_FPA_DELNOTE_LN3', '<p /><font color="Red" size="3" ;">After use, <a href="fpa-en.php?act=delete">Click Here</a>  to delete this script.</font>' );
 
 
-	/* NOTE (ALL): Output definitions & constants
+
+	/* NOTE (FPA): LANGUAGE - Offline Definitions & Constants
+   * assume user is offline/no-internet if jQuery cannot be loaded from the CDN
+   * the page #wrapper element is hidden and only display the following message
+	 */
+	define ( '_FPA_OFFLINE', '<h4>Unable To Load Bootstrap or jQuery</h4>' );
+	define ( '_FPA_OFFLINE_MESSAGE', '<p><strong>Are you working offline or have no internet connection?</strong><br />\
+	                                  <p style="padding:0 5%;">From FPA v2.0, internet access is required for the FPA to function correctly due to the use of Bootstrap and jQuery. \
+	                                  If you think this may be an intermittent problem, try reloading FPA again, confirm that your web browser is not in offline-mode and that you have an active internet connection.</p>'
+	       );
+
+
+
+	/* NOTE (FPA): LANGUAGE - Output Definitions & Constants
    * fpa output language strings
 	 */
-
   if ($runFPATour == '1'):
-    /* FPA Tour language constants */
+	/* NOTE (FPA): LANGUAGE - FPA Tour Definitions & Constants
+	 *
+	 */
   	define ( '_TOUR_STEP00_TITLE', 'User Toolbar' );
   	define ( '_TOUR_STEP00_DESC', '<p>The FPA User Toolbar provides instant access to the <b>Sidebar Menu</b> toggle button <button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-transfer"></i></button> to improve data visibility on smaller screens.</p>\
   	                               <p>You are also reminded of the currently selected <span class="text-warning">Information Privacy</span> setting and the <span class="text-danger">Security</span> implications of FPA, plus given the option to <span class="text-danger">Delete FPA</span> <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> after use.</p>\
@@ -140,7 +156,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title><?php echo _RES .' : '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .'-'. _RES_RELEASE_BUILD .' - '. _RES_LANG; ?></title>
+        <title><?php echo _RES .' : '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD .' '. _RES_LANG; ?></title>
 
 	      <?php
   	      // attempt to find and display a favicon
@@ -163,21 +179,14 @@
         <?php endif; ?>
 
         <!-- TODO (RussW): include CSS and remove external file -->
+        <link rel="stylesheet" href="fpa-style.css">
+        <!-- NOTE (FPA): CSS - Custom Styling -->
         <style>
 
         </style>
-        <link rel="stylesheet" href="fpa-style.css">
 
     </head>
     <body data-spy="scroll" data-target="#navbar-sidebar">
-
-
-<script>
-  // TODO (RussW): test if jQuery loaded (assumed offline/no-internet otherwise) , if not display a notice as jQ & BS are now required for FPA
-  //if (typeof jQuery == 'undefined') {
-    // jQuery IS NOT loaded, do stuff here.
-  //}
-</script>
 
 
       <?php
@@ -186,7 +195,7 @@
          * display = flex, align-items = stretch
          */
       ?>
-      <div class="wrapper">
+      <div id="wrapper" class="wrapper">
 
         <?php
           /* NOTE (RussW): SIDEBAR - Navigation
@@ -221,7 +230,7 @@
               </strong>
 
           	  <div class="text-center small">
-            	  <?php echo _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .'-'. _RES_RELEASE_BUILD; ?>
+            	  <?php echo _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD; ?>
               </div>
 
             </div><!--/.sidebar-header-->
@@ -246,31 +255,31 @@
               </li>
               <li>
                 <a href="#basic-discovery-section">
-                  <i class="glyphicon glyphicon-briefcase"></i>
+                  <i class="glyphicon glyphicon-dashboard"></i>
                   Basic Discovery
                 </a>
               </li>
               <li>
                 <a href="#application-discovery-section">
-                  <i class="glyphicon glyphicon-briefcase"></i>
+                  <i class="glyphicon glyphicon-cog"></i>
                   Application Discovery
                 </a>
               </li>
               <li>
                 <a href="#host-discovery-section">
-                  <i class="glyphicon glyphicon-briefcase"></i>
+                  <i class="glyphicon glyphicon-equalizer"></i>
                   Hosting Discovery
                 </a>
               </li>
               <li>
                 <a href="#perms-discovery-section">
-                  <i class="glyphicon glyphicon-briefcase"></i>
+                  <i class="glyphicon glyphicon-list-alt"></i>
                   Permissions Discovery
                 </a>
               </li>
               <li>
                 <a href="#extension-discovery-section">
-                  <i class="glyphicon glyphicon-briefcase"></i>
+                  <i class="glyphicon glyphicon-th"></i>
                   Extension Discovery
                 </a>
               </li>
@@ -349,6 +358,8 @@
                     <a tabindex="2" class="btn btn-danger navbar-btn" role="button" data-toggle="popover" title="<span class='text-danger'><i class='glyphicon glyphicon-warning-sign'></i> Important Security Notice</span>" data-content="<span class='text-danger'>Due to the highly sensitive nature of the information displayed by the FPA script, <b>it should be removed from the server immediately after use</b>. If the script is left on the site, it can be used to gather enough information to illegally access, deface or hack your site.</span>">
                       <i class="glyphicon glyphicon-info-sign"></i>
                     </a>
+                  </div>
+                  <div class="btn-group" role="group">
                     <a href="fpa-en.php?act=delete" class="btn btn-danger navbar-btn" role="button">
                       <i class="glyphicon glyphicon-remove-circle"></i> Delete FPA
                     </a>
@@ -694,7 +705,7 @@
                   <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainBasic" aria-expanded="false" aria-controls="collapseExplainBasic">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
-                  Basic Discovery
+                  <i class="glyphicon glyphicon-dashboard"></i> Basic Discovery
                 </h2>
 
                 <p class="lead">
@@ -841,7 +852,7 @@
                   <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainApplication" aria-expanded="false" aria-controls="collapseExplainApplication">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
-                  Application Discovery
+                  <i class="glyphicon glyphicon-cog"></i> Application Discovery
                 </h2>
 
                 <p class="lead">
@@ -1102,7 +1113,7 @@
                   <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainHost" aria-expanded="false" aria-controls="collapseExplainHost">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
-                  Hosting Discovery
+                  <i class="glyphicon glyphicon-equalizer"></i> Hosting Discovery
                 </h2>
 
                 <p class="lead">
@@ -1256,7 +1267,7 @@
                   <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainPerms" aria-expanded="false" aria-controls="collapseExplainPerms">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
-                  Permissions Discovery
+                  <i class="glyphicon glyphicon-list-alt"></i> Permissions Discovery
                 </h2>
 
                 <p class="lead">
@@ -1403,7 +1414,7 @@
                   <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainExt" aria-expanded="false" aria-controls="collapseExplainExt">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
-                  Extension Discovery
+                  <i class="glyphicon glyphicon-th"></i> Extension Discovery
                 </h2>
 
                 <p class="lead">
@@ -1742,7 +1753,7 @@
 
                     <h6 class="margin-remove text-center">Licensing & Disclaimer</h6>
                     <p class="text-muted small">
-                      <?php echo _RES .' ('. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .'-'. _RES_RELEASE_BUILD .')'; ?> script comes with ABSOLUTELY NO WARRANTY.  This is free software; and covered under the <strong>GNU GPLv3 or later license</strong>. You are welcome to redistribute it under certain conditions. For details read the LICENSE.txt file included in the download package with this script. A copy of the license may also be obtained at <a class="text-primary" href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses/</a>.
+                      <?php echo _RES .' '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD; ?> script comes with ABSOLUTELY NO WARRANTY.  This is free software; and covered under the <strong>GNU GPLv3 or later license</strong>. You are welcome to redistribute it under certain conditions. For details read the LICENSE.txt file included in the download package with this script. A copy of the license may also be obtained at <a class="text-primary" href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses/</a>.
                     </p>
 
                   </div>
@@ -1756,7 +1767,7 @@
             </div><!--/#legends-section-->
 
             <p class="text-muted text-center margin-top-lg small">
-              <?php echo _RES .' ('. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .'-'. _RES_RELEASE_BUILD .')'; ?> <sup>&copy;</sup>2011-<?php echo date('Y'); ?>
+              <?php echo _RES .' '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD; ?> <sup>&copy;</sup>2011-<?php echo date('Y'); ?>
             </p>
 
           </div><!--/#content-->
@@ -1802,7 +1813,7 @@
                 </div>
 
                 <div class="btn-group btn-group-xs text-primary copyright">
-                  <?php echo _RES .' ('. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .'-'. _RES_RELEASE_BUILD .')'; ?> <sup>&copy;</sup>2011-<?php echo date('Y'); ?>
+                  <?php echo _RES .' ('. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD; ?>) <sup>&copy;</sup>2011-<?php echo date('Y'); ?>
                 </div>
 
               </div>
@@ -1829,6 +1840,22 @@
           <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.11.0/js/bootstrap-tour.min.js" integrity="sha256-AFoIN2Z5u5QDw8n9X0FoP/p1ZhE1xDnsgHlCMWE0yYQ=" crossorigin="anonymous"></script>
         <?php endif; ?>
 
+
+        <?php
+          /* NOTE (RussW): SCRIPTS - Offline?
+           * if jQuery cannot be loaded, assume offline and show a message
+           */
+        ?>
+        <script type="text/javascript">
+          if (typeof jQuery == 'undefined') {
+            var d = document.getElementById('wrapper');
+              d.className += " hidepage";
+              document.write('<h2 style="text-align:center;margin-top:10%;"><?php echo _RES; ?><br /><?php echo _FPA_VER_SHORT .''. _RES_VERSION; ?></h2>');
+              document.write('<div class="border-all bg-muted padding-lg" style="text-align:center;margin:25px 10vw;"><?php echo _FPA_OFFLINE; ?><?php echo _FPA_OFFLINE_MESSAGE; ?></div>');
+          };
+        </script>
+
+
         <?php
           /* NOTE (RussW): SCRIPTS - Custom JS & jQuery
            * initialisation & configuration of js/jquery objects used in fpa
@@ -1837,13 +1864,22 @@
         <script type="text/javascript">
           $(document).ready(function () {
 
-            // NOTE (RussW): SCRIPT - Sidebar Toggle Action
+            <?php
+              /* NOTE (RussW): SCRIPT - Sidebar Toggle Action
+               *
+               */
+            ?>
             $('#sidebarCollapse').on('click', function () {
               $('#sidebar').toggleClass('active');
               $('.page .navbar').toggleClass('expand');
             });
 
-            // NOTE (RussW): SCRIPT - SmoothScroll Simulatation/Animation With BS Sidebar/Scrollspy
+
+            <?php
+              /* NOTE (RussW): SCRIPT - SmoothScroll Simulatation/Animation With BS Sidebar/Scrollspy
+               *
+               */
+            ?>
             $("#navbar-sidebar ul li a[href^='#']").on('click', function(e) {
               e.preventDefault();
               var hash = this.hash;
@@ -1854,7 +1890,12 @@
               });
             });
 
-            // NOTE (RussW): SCRIPT - BS Popover Objects
+
+            <?php
+              /* NOTE (RussW): SCRIPT - BS Popover Objects
+               *
+               */
+            ?>
             $('.navbar-header [data-toggle="popover"]').popover({
               html: true,
               placement: "bottom",
@@ -1869,7 +1910,12 @@
               container: "footer"
             });
 
-            // NOTE (RussW): SCRIPT - Back-To-Top Object
+
+            <?php
+              /* NOTE (RussW): SCRIPT - Back-To-Top Object
+               *
+               */
+            ?>
             $(window).scroll(function () {
               if ($(this).scrollTop() > 600) {
                 $('#back-to-top').fadeIn();
@@ -1886,9 +1932,14 @@
 
           });
 
-          // NOTE (RussW): SCRIPT - Print Button (#content only)
+
+          <?php
+            /* NOTE (RussW): SCRIPT - Print Button (#content only)
+             *
+             */
+          ?>
           function printFPA() {
-              window.print();
+            window.print();
           }
         </script>
 
