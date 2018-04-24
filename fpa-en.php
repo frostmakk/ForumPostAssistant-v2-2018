@@ -166,10 +166,18 @@
         <style>
 
         </style>
-        <link rel="stylesheet" href="style4.css">
+        <link rel="stylesheet" href="fpa-style.css">
 
     </head>
-    <body data-spy="scroll" data-target="#navbar-sidebar" style="position:relative;">
+    <body data-spy="scroll" data-target="#navbar-sidebar">
+
+
+<script>
+  // TODO (RussW): test if jQuery loaded (assumed offline/no-internet otherwise) , if not display a notice as jQ & BS are now required for FPA
+  //if (typeof jQuery == 'undefined') {
+    // jQuery IS NOT loaded, do stuff here.
+  //}
+</script>
 
 
       <?php
