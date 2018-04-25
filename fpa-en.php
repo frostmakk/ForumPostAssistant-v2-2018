@@ -145,9 +145,9 @@
 
 	define ( '_FPA_Y', 'Yes' );
 	define ( '_FPA_N', 'No' );
-	define ( '_FPA_Y_ICON', '<i class="glyphicon glyphicon-ok-sign text-success"></i>' ); /* Russw : new v2.0.0 */
-	define ( '_FPA_N_ICON', '<i class="glyphicon glyphicon-remove-sign text-danger"></i>' ); /* Russw : new v2.0.0 */
-	define ( '_FPA_U_ICON', '<i class="glyphicon glyphicon-question-sign text-warning"></i>' ); /* Russw : new v2.0.0 */
+	define ( '_FPA_Y_ICON', '<i class="glyphicon glyphicon-ok-sign"></i>' ); /* Russw : new v2.0.0 */
+	define ( '_FPA_N_ICON', '<i class="glyphicon glyphicon-remove-sign"></i>' ); /* Russw : new v2.0.0 */
+	define ( '_FPA_U_ICON', '<i class="glyphicon glyphicon-question-sign"></i>' ); /* Russw : new v2.0.0 */
 	/* end fpa language definitions & constants */
 ?>
     <head>
@@ -1240,7 +1240,7 @@
                  * php environement information
                  */
               ?>
-              <div id="host-discovery-container" class="row">
+              <div id="host-discovery-container" class="row margin-top-lg margin-bottom-lg">
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
@@ -1316,29 +1316,64 @@
                     <div class="col-xs-12 content-item">
 
                       <div class="panel panel-default item">
-                        <div class="panel-heading">PHP Extensions</div>
+                        <div class="panel-heading margin-bottom-sm">PHP Extensions</div>
 
-                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
-                          <tbody>
-                            <tr>
-                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
-                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">PHP API</td>
-                              <td class="text-center small bg-info">CGI-FCGI</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate text-success">MySQL Support</td>
-                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate text-danger">MySQLi Support</td>
-                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
-                            </tr>
-                          </tbody>
-                        </table>
+<div class="row-fluid small text-lowercase">
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+    <div class="border-all margin-bottom-sm text-center">date<br />7.2.1</div>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+    <div class="border-all margin-bottom-sm text-center bg-success text-success">libxml<br />7.2.1</div>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+    <div class="border-all margin-bottom-sm text-center bg-success text-success">openssl<br />7.2.1</div>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+    <div class="border-all margin-bottom-sm text-center">Zend_Engine<br />7.2.1</div>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+    <div class="border-all margin-bottom-sm text-center">Zend_Engine<br />7.2.1</div>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+    <div class="border-all margin-bottom-sm text-center">Zend_Engine<br />7.2.1</div>
+  </div>
+</div>
+<div class="clearfix"></div>
 
+
+<div class="row-fluid small">
+  <div class="col-xs-12">
+    <h5>Potential Missing Extensions</h5>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+    <div class="border-all margin-bottom-sm text-center bg-warning text-warning">mysqli</div>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+    <div class="border-all margin-bottom-sm text-center bg-warning text-warning">mcrypt</div>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+    <div class="border-all margin-bottom-sm text-center bg-warning text-warning">suhosin</div>
+  </div>
+</div>
+<div class="clearfix"></div>
                       </div><!--/.panel, item-->
 
                     </div><!--/.content-item-->
@@ -1394,7 +1429,7 @@
                  * core folder/file permisisons information
                  */
               ?>
-              <div id="perms-discovery-container" class="row">
+              <div id="perms-discovery-container" class="row margin-top-lg margin-bottom-lg">
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
@@ -1411,26 +1446,126 @@
                       <div class="panel panel-default item">
                         <div class="panel-heading">Core Folder Permissions</div>
 
-                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
-                          <tbody>
-                            <tr>
-                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
-                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">PHP API</td>
-                              <td class="text-center small bg-info">CGI-FCGI</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate text-success">MySQL Support</td>
-                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate text-danger">MySQLi Support</td>
-                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
-                            </tr>
-                          </tbody>
-                        </table>
+                          <div class="table-responsive">
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <thead>
+                                <tr>
+                                  <th class="small text-center">MODE</th>
+                                  <th class="small text-center">WITEABLE</th>
+                                  <th class="small col-md-8">FOLDER</th>
+                                  <th class="small text-center">OWNER</th>
+                                  <th class="small text-center">GROUP</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="bg-danger text-danger">
+                                  <td class="small border-right text-center">777</td>
+                                  <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">images/</td>
+                                  <td class="small border-right text-center">demohotm</td>
+                                  <td class="small text-center">demohotm</td>
+                                </tr>
+                                <tr>
+                                  <td class="small border-right text-center">755</td>
+                                  <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">components/</td>
+                                  <td class="small border-right text-center">WinterRG</td>
+                                  <td class="small text-center">WinterRG</td>
+                                </tr>
+                                <tr>
+                                  <td class="small border-right text-center">755</td>
+                                  <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right ttext-truncate">modules/</td>
+                                  <td class="small border-right text-center">WinterRG</td>
+                                  <td class="small text-center">WinterRG</td>
+                                </tr>
+                                <tr>
+                                  <td class="small border-right text-center">755</td>
+                                  <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">plugins/</td>
+                                  <td class="small border-right text-center">WinterRG</td>
+                                  <td class="small text-center">WinterRG</td>
+                                </tr>
+                                <tr>
+                                  <td class="small border-right text-center">755</td>
+                                  <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">language/</td>
+                                  <td class="small border-right text-center">WinterRG</td>
+                                  <td class="small text-center">WinterRG</td>
+                                </tr>
+                                <tr>
+                                  <td class="small border-right text-center">755</td>
+                                  <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">templates/</td>
+                                  <td class="small border-right text-center">WinterRG</td>
+                                  <td class="small text-center">WinterRG</td>
+                                </tr>
+                                <tr class="bg-warning text-warning">
+                                  <td class="small border-right text-center">400</td>
+                                  <td class="small border-right text-center"><?php echo _FPA_N_ICON; ?></td>
+                                  <td class="small border-right text-truncate">cache/</td>
+                                  <td class="small border-right text-center">WinterRG</td>
+                                  <td class="small text-center">WinterRG</td>
+                                </tr>
+                                <tr>
+                                  <td class="small border-right text-center">755</td>
+                                  <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">logs/</td>
+                                  <td class="small border-right text-center">WinterRG</td>
+                                  <td class="small text-center">WinterRG</td>
+                                </tr>
+                                <tr>
+                                  <td class="small border-right text-center">755</td>
+                                  <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">tmp/</td>
+                                  <td class="small border-right text-center">WinterRG</td>
+                                  <td class="small text-center">WinterRG</td>
+                                </tr>
+                                <tr>
+                                  <td class="small border-right text-center">755</td>
+                                  <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">administrator/components/</td>
+                                  <td class="small border-right text-center">WinterRG</td>
+                                  <td class="small text-center">WinterRG</td>
+                                </tr>
+                                <tr>
+                                  <td class="small border-right text-center">755</td>
+                                  <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">administrator/modules/</td>
+                                  <td class="small border-right text-center">WinterRG</td>
+                                  <td class="small text-center">WinterRG</td>
+                                </tr>
+                                <tr>
+                                  <td class="small border-right text-center">755</td>
+                                  <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">administrator/plugins/</td>
+                                  <td class="small border-right text-center">WinterRG</td>
+                                  <td class="small text-center">WinterRG</td>
+                                </tr>
+                                <tr>
+                                  <td class="small border-right text-center">755</td>
+                                  <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">administrator/language/</td>
+                                  <td class="small border-right text-center">WinterRG</td>
+                                  <td class="small text-center">WinterRG</td>
+                                </tr>
+                                <tr>
+                                  <td class="small border-right text-center">755</td>
+                                  <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">administrator/templates/</td>
+                                  <td class="small border-right text-center">WinterRG</td>
+                                  <td class="small text-center">WinterRG</td>
+                                </tr>
+                                <tr>
+                                  <td class="small border-right text-center">-</td>
+                                  <td class="small border-right text-center">-</td>
+                                  <td class="small border-right text-truncate text-warning">administrator/logs/</td>
+                                  <td class="small border-right text-center">-</td>
+                                  <td class="small text-center">-</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
 
                       </div><!--/.panel, item-->
 
@@ -1448,7 +1583,7 @@
                  * elevated permisisons discovery
                  */
               ?>
-              <div id="eperms-discovery-container" class="row">
+              <div id="eperms-discovery-container" class="row margin-top-lg margin-bottom-lg">
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
@@ -1465,26 +1600,28 @@
                       <div class="panel panel-default item">
                         <div class="panel-heading">Elevated Permission Checks</div>
 
-                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
-                          <tbody>
-                            <tr>
-                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
-                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">PHP API</td>
-                              <td class="text-center small bg-info">CGI-FCGI</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate text-success">MySQL Support</td>
-                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate text-danger">MySQLi Support</td>
-                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
-                            </tr>
-                          </tbody>
-                        </table>
+                          <div class="table-responsive">
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <thead>
+                                <tr>
+                                  <th class="small text-center">MODE</th>
+                                  <th class="small text-center">WITEABLE</th>
+                                  <th class="small col-md-8">FOLDER</th>
+                                  <th class="small text-center">OWNER</th>
+                                  <th class="small text-center">GROUP</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="bg-danger text-danger">
+                                  <td class="small border-right text-center">777</td>
+                                  <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">images/</td>
+                                  <td class="small border-right text-center">demohotm</td>
+                                  <td class="small text-center">demohotm</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
 
                       </div><!--/.panel, item-->
 
@@ -1552,32 +1689,85 @@
                 <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
 
 
-                  <div class="row content-container">
+                  <div class="row margin-top-lg margin-bottom-lg content-container">
                     <div class="col-xs-12 content-item">
 
                       <div class="panel panel-default item">
                         <div class="panel-heading">Installed Components</div>
 
-                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
-                          <tbody>
-                            <tr>
-                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
-                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">PHP API</td>
-                              <td class="text-center small bg-info">CGI-FCGI</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate text-success">MySQL Support</td>
-                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate text-danger">MySQLi Support</td>
-                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
-                            </tr>
-                          </tbody>
-                        </table>
+                          <div class="table-responsive">
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <caption class="text-center bg-dark border-bottom"><strong>SITE</strong></caption>
+                              <thead>
+                                <tr>
+                                  <th class="small text-center">ENABLED</th>
+                                  <th class="small">NAME</th>
+                                  <th class="small text-center">VERSION</th>
+                                  <th class="small text-center">AUTHOR</th>
+                                  <th class="small text-center">ADDRESS</th>
+                                  <th class="small text-center">CREATED</th>
+                                  <th class="small text-center">TYPE</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="bg-success">
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">yoo_sixthavenue</td>
+                                  <td class="small border-right text-center">1.0.3</td>
+                                  <td class="small border-right text-center text-truncate">YOOtheme</td>
+                                  <td class="small border-right text-center text-truncate">www.yootheme.com</td>
+                                  <td class="small border-right text-center">November 2016</td>
+                                  <td class="small text-center text-warning">3rd Party</td>
+                                </tr>
+                                <tr class="">
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">protostar</td>
+                                  <td class="small border-right text-center">1.0</td>
+                                  <td class="small border-right text-center">Kyle Ledbeter</td>
+                                  <td class="small border-right text-center text-truncate">-</td>
+                                  <td class="small border-right text-center">4/30/2012</td>
+                                  <td class="small text-center text-success">Core</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+
+                          <div class="table-responsive">
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <caption class="text-center bg-dark border-top border-bottom"><strong>ADMINISTRATOR</strong></caption>
+                              <thead>
+                                <tr>
+                                  <th class="small text-center">ENABLED</th>
+                                  <th class="small">NAME</th>
+                                  <th class="small text-center">VERSION</th>
+                                  <th class="small text-center">AUTHOR</th>
+                                  <th class="small text-center">ADDRESS</th>
+                                  <th class="small text-center">CREATED</th>
+                                  <th class="small text-center">TYPE</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="bg-success">
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">hathor</td>
+                                  <td class="small border-right text-center">3.0.0</td>
+                                  <td class="small border-right text-center text-truncate">Andrea Tarr</td>
+                                  <td class="small border-right text-center text-truncate">www.tarrconsulting.com</td>
+                                  <td class="small border-right text-center">May 2010</td>
+                                  <td class="small text-center text-success">Core</td>
+                                </tr>
+                                <tr class="">
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">isis</td>
+                                  <td class="small border-right text-center">1.0</td>
+                                  <td class="small border-right text-center">Kyle Ledbeter</td>
+                                  <td class="small border-right text-center text-truncate">-</td>
+                                  <td class="small border-right text-center">3/30/2012</td>
+                                  <td class="small text-center text-success">Core</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
 
                       </div><!--/.panel, item-->
 
@@ -1606,32 +1796,85 @@
                 <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
 
 
-                  <div class="row content-container">
+                  <div class="row margin-top-lg margin-bottom-lg content-container">
                     <div class="col-xs-12 content-item">
 
                       <div class="panel panel-default item">
                         <div class="panel-heading">Installed Modules</div>
 
-                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
-                          <tbody>
-                            <tr>
-                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
-                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">PHP API</td>
-                              <td class="text-center small bg-info">CGI-FCGI</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate text-success">MySQL Support</td>
-                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate text-danger">MySQLi Support</td>
-                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
-                            </tr>
-                          </tbody>
-                        </table>
+                          <div class="table-responsive">
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <caption class="text-center bg-dark border-bottom"><strong>SITE</strong></caption>
+                              <thead>
+                                <tr>
+                                  <th class="small text-center">ENABLED</th>
+                                  <th class="small">NAME</th>
+                                  <th class="small text-center">VERSION</th>
+                                  <th class="small text-center">AUTHOR</th>
+                                  <th class="small text-center">ADDRESS</th>
+                                  <th class="small text-center">CREATED</th>
+                                  <th class="small text-center">TYPE</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="bg-success">
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">yoo_sixthavenue</td>
+                                  <td class="small border-right text-center">1.0.3</td>
+                                  <td class="small border-right text-center text-truncate">YOOtheme</td>
+                                  <td class="small border-right text-center text-truncate">www.yootheme.com</td>
+                                  <td class="small border-right text-center">November 2016</td>
+                                  <td class="small text-center text-warning">3rd Party</td>
+                                </tr>
+                                <tr class="">
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">protostar</td>
+                                  <td class="small border-right text-center">1.0</td>
+                                  <td class="small border-right text-center">Kyle Ledbeter</td>
+                                  <td class="small border-right text-center text-truncate">-</td>
+                                  <td class="small border-right text-center">4/30/2012</td>
+                                  <td class="small text-center text-success">Core</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+
+                          <div class="table-responsive">
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <caption class="text-center bg-dark border-top border-bottom"><strong>ADMINISTRATOR</strong></caption>
+                              <thead>
+                                <tr>
+                                  <th class="small text-center">ENABLED</th>
+                                  <th class="small">NAME</th>
+                                  <th class="small text-center">VERSION</th>
+                                  <th class="small text-center">AUTHOR</th>
+                                  <th class="small text-center">ADDRESS</th>
+                                  <th class="small text-center">CREATED</th>
+                                  <th class="small text-center">TYPE</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="bg-success">
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">hathor</td>
+                                  <td class="small border-right text-center">3.0.0</td>
+                                  <td class="small border-right text-center text-truncate">Andrea Tarr</td>
+                                  <td class="small border-right text-center text-truncate">www.tarrconsulting.com</td>
+                                  <td class="small border-right text-center">May 2010</td>
+                                  <td class="small text-center text-success">Core</td>
+                                </tr>
+                                <tr class="">
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">isis</td>
+                                  <td class="small border-right text-center">1.0</td>
+                                  <td class="small border-right text-center">Kyle Ledbeter</td>
+                                  <td class="small border-right text-center text-truncate">-</td>
+                                  <td class="small border-right text-center">3/30/2012</td>
+                                  <td class="small text-center text-success">Core</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
 
                       </div><!--/.panel, item-->
 
@@ -1660,32 +1903,85 @@
                 <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
 
 
-                  <div class="row content-container">
+                  <div class="row margin-top-lg margin-bottom-lg content-container">
                     <div class="col-xs-12 content-item">
 
                       <div class="panel panel-default item">
                         <div class="panel-heading">Installed Plugins</div>
 
-                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
-                          <tbody>
-                            <tr>
-                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
-                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">PHP API</td>
-                              <td class="text-center small bg-info">CGI-FCGI</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate text-success">MySQL Support</td>
-                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate text-danger">MySQLi Support</td>
-                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
-                            </tr>
-                          </tbody>
-                        </table>
+                          <div class="table-responsive">
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <caption class="text-center bg-dark border-bottom"><strong>SITE</strong></caption>
+                              <thead>
+                                <tr>
+                                  <th class="small text-center">ENABLED</th>
+                                  <th class="small">NAME</th>
+                                  <th class="small text-center">VERSION</th>
+                                  <th class="small text-center">AUTHOR</th>
+                                  <th class="small text-center">ADDRESS</th>
+                                  <th class="small text-center">CREATED</th>
+                                  <th class="small text-center">TYPE</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="bg-success">
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">yoo_sixthavenue</td>
+                                  <td class="small border-right text-center">1.0.3</td>
+                                  <td class="small border-right text-center text-truncate">YOOtheme</td>
+                                  <td class="small border-right text-center text-truncate">www.yootheme.com</td>
+                                  <td class="small border-right text-center">November 2016</td>
+                                  <td class="small text-center text-warning">3rd Party</td>
+                                </tr>
+                                <tr class="">
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">protostar</td>
+                                  <td class="small border-right text-center">1.0</td>
+                                  <td class="small border-right text-center">Kyle Ledbeter</td>
+                                  <td class="small border-right text-center text-truncate">-</td>
+                                  <td class="small border-right text-center">4/30/2012</td>
+                                  <td class="small text-center text-success">Core</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+
+                          <div class="table-responsive">
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <caption class="text-center bg-dark border-top border-bottom"><strong>ADMINISTRATOR</strong></caption>
+                              <thead>
+                                <tr>
+                                  <th class="small text-center">ENABLED</th>
+                                  <th class="small">NAME</th>
+                                  <th class="small text-center">VERSION</th>
+                                  <th class="small text-center">AUTHOR</th>
+                                  <th class="small text-center">ADDRESS</th>
+                                  <th class="small text-center">CREATED</th>
+                                  <th class="small text-center">TYPE</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="bg-success">
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">hathor</td>
+                                  <td class="small border-right text-center">3.0.0</td>
+                                  <td class="small border-right text-center text-truncate">Andrea Tarr</td>
+                                  <td class="small border-right text-center text-truncate">www.tarrconsulting.com</td>
+                                  <td class="small border-right text-center">May 2010</td>
+                                  <td class="small text-center text-success">Core</td>
+                                </tr>
+                                <tr class="">
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">isis</td>
+                                  <td class="small border-right text-center">1.0</td>
+                                  <td class="small border-right text-center">Kyle Ledbeter</td>
+                                  <td class="small border-right text-center text-truncate">-</td>
+                                  <td class="small border-right text-center">3/30/2012</td>
+                                  <td class="small text-center text-success">Core</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
 
                       </div><!--/.panel, item-->
 
@@ -1704,7 +2000,7 @@
                  * installed template discovery
                  */
               ?>
-              <div id="template-discovery-container" class="row">
+              <div id="template-discovery-container" class="row margin-top-lg margin-bottom-lg">
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
@@ -1721,26 +2017,85 @@
                       <div class="panel panel-default item">
                         <div class="panel-heading">Installed Templates</div>
 
-                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
-                          <tbody>
-                            <tr>
-                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
-                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">PHP API</td>
-                              <td class="text-center small bg-info">CGI-FCGI</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate text-success">MySQL Support</td>
-                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate text-danger">MySQLi Support</td>
-                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
-                            </tr>
-                          </tbody>
-                        </table>
+                          <div class="table-responsive">
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <caption class="text-center bg-dark border-bottom"><strong>SITE</strong></caption>
+                              <thead>
+                                <tr>
+                                  <th class="small text-center">ENABLED</th>
+                                  <th class="small text-center">ACTIVE</th>
+                                  <th class="small">NAME</th>
+                                  <th class="small text-center">VERSION</th>
+                                  <th class="small text-center">AUTHOR</th>
+                                  <th class="small text-center">ADDRESS</th>
+                                  <th class="small text-center">CREATED</th>
+                                  <th class="small text-center">TYPE</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="bg-success">
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-truncate">yoo_sixthavenue</td>
+                                  <td class="small border-right text-center">1.0.3</td>
+                                  <td class="small border-right text-center text-truncate">YOOtheme</td>
+                                  <td class="small border-right text-center text-truncate">www.yootheme.com</td>
+                                  <td class="small border-right text-center">November 2016</td>
+                                  <td class="small text-center text-warning">3rd Party</td>
+                                </tr>
+                                <tr class="">
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-center text-danger"><?php echo _FPA_N_ICON; ?></td>
+                                  <td class="small border-right text-truncate">protostar</td>
+                                  <td class="small border-right text-center">1.0</td>
+                                  <td class="small border-right text-center">Kyle Ledbeter</td>
+                                  <td class="small border-right text-center text-truncate">-</td>
+                                  <td class="small border-right text-center">4/30/2012</td>
+                                  <td class="small text-center text-success">Core</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+
+                          <div class="table-responsive">
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <caption class="text-center bg-dark border-top border-bottom"><strong>ADMINISTRATOR</strong></caption>
+                              <thead>
+                                <tr>
+                                  <th class="small text-center">ENABLED</th>
+                                  <th class="small text-center">ACTIVE</th>
+                                  <th class="small">NAME</th>
+                                  <th class="small text-center">VERSION</th>
+                                  <th class="small text-center">AUTHOR</th>
+                                  <th class="small text-center">ADDRESS</th>
+                                  <th class="small text-center">CREATED</th>
+                                  <th class="small text-center">TYPE</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="bg-success">
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_N_ICON; ?></td>
+                                  <td class="small border-right text-truncate">hathor</td>
+                                  <td class="small border-right text-center">3.0.0</td>
+                                  <td class="small border-right text-center text-truncate">Andrea Tarr</td>
+                                  <td class="small border-right text-center text-truncate">www.tarrconsulting.com</td>
+                                  <td class="small border-right text-center">May 2010</td>
+                                  <td class="small text-center text-success">Core</td>
+                                </tr>
+                                <tr class="">
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-center text-danger"><?php echo _FPA_N_ICON; ?></td>
+                                  <td class="small border-right text-truncate">isis</td>
+                                  <td class="small border-right text-center">1.0</td>
+                                  <td class="small border-right text-center">Kyle Ledbeter</td>
+                                  <td class="small border-right text-center text-truncate">-</td>
+                                  <td class="small border-right text-center">3/30/2012</td>
+                                  <td class="small text-center text-success">Core</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
 
                       </div><!--/.panel, item-->
 

@@ -105,14 +105,17 @@ i, span {
 #accordion .panel-title a.fpa-output.collapsed:before { /* bs override */
           font-family: "Glyphicons Halflings";
           content: "\e163";
+          padding-right: 5px;
 }
 #accordion .panel-title a.fpa-settings:before { /* bs override */
           font-family: "Glyphicons Halflings";
           content: "\e137";
+          padding-right: 5px;
 }
 #accordion .panel-title a.fpa-output:before { /* bs override */
           font-family: "Glyphicons Halflings";
           content: "\e205";
+          padding-right: 5px;
 }
 
 section .panel-heading { /* bs override */
@@ -141,8 +144,11 @@ textarea#postOUTPUT {
 .bg-white { /* fpa custom */
   background-color: #ffffff !important;
 }
+.bg-dark {
+  background: #e5e5e5;
+  color: #333;
+}
 .text-truncate { /* fpa custom */
-display: block;
   white-space: nowrap;
   overflow: hidden;
   -ms-text-overflow: ellipsis;
