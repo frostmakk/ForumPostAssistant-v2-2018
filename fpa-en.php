@@ -1,6 +1,6 @@
 <?php
   /** TESTING ONLY - DELETE ME ****************************************/
-  //error_reporting(0);
+  error_reporting(0);
   //$disabled = 'disabled';
   /** TESTING ONLY - DELETE ME ****************************************/
 ?>
@@ -417,40 +417,164 @@
 
                           <div class="row-fluid">
 
-                            <div class="col-sm-12 col-lg-6">
-                              <div class="bg-muted" style="min-height:350px;">
+                           <div class="col-sm-12 col-lg-6">
+                              <div class="1bg-muted" style="1min-height:350px;">
 
-                                <fieldset id="optionalInformation" <?php echo $disabled; ?>>
-                                  <legend>Optional Information:</legend>
+                                <fieldset id="runtimeOptions" class="padding-remove" <?php echo $disabled; ?>>
 
-                                  <p class="small text-muted" style="min-height:35px;">
+                                  <legend class="1margin-remove">Runtime Options:</legend>
+
+                                  <div class="row">
+                                    <div class="col-sm-12 col-md-12">
+
+
+                                      <?php
+                                        /* NOTE (RussW): START -  Optional Settings
+                                         * custon checkbox material buttons
+                                         */
+                                      ?>
+                                  <p class="small text-muted" style="1min-height:35px;">
+                                    <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
                                   <?php if ( !empty($disabled) ): ?>
                                     Options Are Disabled. Check the <span class="label label-warning">Snapshot Dashboard</span> for more information.
                                   <?php else: ?>
-                                    You may add additional (optional) trouble-shooting information to your forum post if desired. Leave empty to ignore.
+                                    Determine what information is included in your forum post, modify the default selections to suit your problem and privacy requirements.
                                   <?php endif; ?>
                                   </p>
-                                  <br />
 
-                                  <div class="form-group">
+
+                                      <ul class="list-group runtime-options">
+
+                                        <li class="list-group-item">
+                                          <div class="row-fluid padding-bottom-sm clearfix">
+                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
+                                              Show Elevated Permissions
+                                            </div>
+                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
+                                              <input id="someSwitchOptionSuccess1" name="someSwitchOption001" type="checkbox" autocomplete="off" checked />
+                                              <label for="someSwitchOptionSuccess1" class="label-success text-left"></label>
+                                            </div>
+                                          </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                          <div class="row-fluid padding-bottom-sm padding-top-sm clearfix">
+                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
+                                              Show dataBase Statistics
+                                            </div>
+                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
+                                              <input id="someSwitchOptionSuccess2" name="someSwitchOption002" type="checkbox" autocomplete="off" />
+                                              <label for="someSwitchOptionSuccess2" class="label-success text-left"></label>
+                                            </div>
+                                          </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                          <div class="row-fluid padding-bottom-sm padding-top-sm clearfix">
+                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
+                                              Show Components
+                                            </div>
+                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
+                                              <input id="someSwitchOptionSuccess3" name="someSwitchOption003" type="checkbox" autocomplete="off" checked />
+                                              <label for="someSwitchOptionSuccess3" class="label-success text-left"></label>
+                                            </div>
+                                          </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                          <div class="row-fluid padding-bottom-sm padding-top-sm clearfix">
+                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
+                                              Show Modules
+                                            </div>
+                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
+                                              <input id="someSwitchOptionSuccess4" name="someSwitchOption004" type="checkbox" autocomplete="off" />
+                                              <label for="someSwitchOptionSuccess4" class="label-success text-left"></label>
+                                            </div>
+                                          </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                          <div class="row-fluid padding-bottom-sm padding-top-sm clearfix">
+                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
+                                              Show Plugins
+                                            </div>
+                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
+                                              <input id="someSwitchOptionSuccess5" name="someSwitchOption005" type="checkbox" autocomplete="off" />
+                                              <label for="someSwitchOptionSuccess5" class="label-success text-left"></label>
+                                            </div>
+                                          </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                          <div class="row-fluid padding-bottom-sm padding-top-sm clearfix">
+                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left text-muted">
+                                              <em> - Include Core Extensions?</em>
+                                            </div>
+                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
+                                              <input id="someSwitchOptionSuccess6" name="someSwitchOption006" type="checkbox" autocomplete="off" />
+                                              <label for="someSwitchOptionSuccess6" class="label-success text-left"></label>
+                                            </div>
+                                          </div>
+                                        </li>
+
+                                      </ul>
+
+                                    </div>
+
+                                  </div><!--/.row-->
+
+                                </fieldset>
+
+                              </div>
+
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                              <div class="1bg-muted" style="1min-height:350px;">
+
+                                <fieldset id="optionalInformation" class="padding-remove" <?php echo $disabled; ?>>
+                                  <legend class="1margin-remove">Optional Information:</legend>
+
+                                      <?php
+                                        /* NOTE (RussW): START -  Optional Information
+                                         *
+                                         */
+                                      ?>
+                                  <p class="small text-muted" style="1min-height:35px;">
+                                    <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
+                                  <?php if ( !empty($disabled) ): ?>
+                                    Options Are Disabled. Check the <span class="label label-warning">Snapshot Dashboard</span> for more information.
+                                  <?php else: ?>
+                                    To assist with troubleshooting, you may also add additional (optional) trouble-shooting information to your forum post if desired. <em>Leave empty to ignore</em>.
+                                  <?php endif; ?>
+                                  </p>
+
+<ul class="list-group">
+  <li class="list-group-item padding-sm">
+                                  <div class="form-group margin-remove">
                                     <label for="probDSC" class="col-sm-5 control-label">Problem Description</label>
                                     <div class="col-sm-7">
                                       <input type="text" class="form-control input-sm" id="probDSC" name="probDSC" placeholder="Problem Description">
                                     </div>
                                   </div>
 
-                                  <div class="form-group">
+  </li>
+  <li class="list-group-item padding-sm">
+
+                                  <div class="form-group margin-remove">
                                     <label for="probMSG1" class="col-sm-5 control-label">Log/Error Message</label>
                                     <div class="col-sm-7">
                                       <input type="text" class="form-control input-sm" id="probMSG1" name="probMSG1" placeholder="Log/Error Message" />
                                     </div>
                                   </div>
 
-                                  <div class="form-group">
+  </li>
+  <li class="list-group-item padding-sm">
+
+                                  <div class="form-group has-error margin-remove">
                                     <label for="probMSG2" class="col-sm-5 control-label">Last Reported Error</label>
                                     <div class="col-sm-7">
     									              <?php if ( isset($phpenv['phpLASTERR']) ): ?>
-                                      <input type="text" class="form-control input-sm" id="probMSG2" name="probMSG2" value="<?php echo $phpenv['phpLASTERR']; ?>" placeholder="Last Reported Error" aria-describedby="lastErrorHelp" />
+                                      <input type="text" class="form-control input-sm text-danger" id="probMSG2" name="probMSG2" value="<?php echo $phpenv['phpLASTERR']; ?>" placeholder="Last Reported Error" aria-describedby="lastErrorHelp" />
                                       <span id="lastErrorHelp" class="help-block line-height-normal small"><i class="glyphicon glyphicon-info-sign"></i> auto-completed from your php error log</span>
                                     <?php else: ?>
                                       <input type="text" class="form-control input-sm" id="probMSG2" name="probMSG2" placeholder="Last Reported Error" />
@@ -458,150 +582,110 @@
                                     </div>
                                   </div>
 
-                                  <div class="form-group">
+  </li>
+  <li class="list-group-item padding-sm">
+
+                                  <div class="form-group margin-remove">
                                     <label for="probACT" class="col-sm-5 control-label">Actions Taken To Resolve?</label>
                                     <div class="col-sm-7">
                                       <textarea class="form-control input-sm" id="probACT" name="probACT" rows="2" placeholder="Action Taken To Resolve?"></textarea>
                                     </div>
                                   </div>
+
+  </li>
+</ul>
+
                                 </fieldset>
 
                               </div>
-                            </div>
-                            <div class="col-sm-12 col-lg-6">
-                              <div class="bg-muted" style="min-height:350px;">
 
-                                <fieldset id="runtimeOptions" <?php echo $disabled; ?>>
-                                  <legend>Runtime Options:</legend>
 
-                                  <p class="small text-muted" style="min-height:35px;">
+                                      <?php
+                                        /* NOTE (RussW): START -  Information Privacy/Protection
+                                         * custon radio buttons
+                                         */
+                                      ?>
+                                    <div class="text-center">
+
+                                      <h5>Information Privacy Settings</h5>
+
+                                      <div class="btn-group btn-group-radio information-privacy-options">
+
+                                        <input type="radio" name="showProtected" id="showProtectedNone" class="radio-button" value="1" aria-describedby="privacyNoneHelp" />
+                                        <label class="btn btn-danger col-xs-12 col-sm-4" for="showProtectedNone">None</label>
+
+                                        <input type="radio" name="showProtected" id="showProtectedDefault" class="radio-button" value="2" aria-describedby="privacyPartialHelp" checked />
+                                        <label class="btn btn-warning col-xs-12 col-sm-4" for="showProtectedDefault">Partial</label>
+
+                                        <input type="radio" name="showProtected" id="showProtectedStrict" class="radio-button" value="3" aria-describedby="privacyPartialHelp" />
+                                        <label class="btn btn-success col-xs-12 col-sm-4" for="showProtectedStrict">Strict</label>
+
+                                      </div><!--/.information-privacy-options-->
+
+                                  <p class="small text-muted margin-top-sm margin-remove-bottom">
+                                    <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
                                   <?php if ( !empty($disabled) ): ?>
                                     Options Are Disabled. Check the <span class="label label-warning">Snapshot Dashboard</span> for more information.
                                   <?php else: ?>
-                                    Determine what information is included in your forum post, modify the default selections to suit your problem and privacy requirements.
+                                    Select how much site identifiable information FPA will collect and display (Partial = Default)
                                   <?php endif; ?>
                                   </p>
-                                  <br />
 
-                                  <div class="row-fluid">
-                                    <div class="col-sm-6 col-md-6">
-
-                                      <strong>Optional Display Settings</strong>
-                                      <div class="checkbox">
-                                        <label>
-                                          <input type="checkbox" value="">
-                                          Show Elevated Permissions
-                                        </label>
-                                      </div>
-
-                                      <div class="checkbox">
-                                        <label>
-                                          <input type="checkbox" value="">
-                                          Show Components
-                                        </label>
-                                      </div>
-
-                                      <div class="checkbox">
-                                        <label>
-                                          <input type="checkbox" value="">
-                                          Show Modules
-                                        </label>
-                                      </div>
-
-                                      <div class="checkbox">
-                                        <label>
-                                          <input type="checkbox" value="">
-                                          Show Plugins
-                                        </label>
-                                      </div>
-
-                                      <div class="checkbox" style="margin-left: 20px;">
-                                        <label>
-                                          <input type="checkbox" value="">
-                                           <i>Include Core Extensions</i>
-                                        </label>
-                                      </div>
-
-                                      <div class="checkbox">
-                                        <label>
-                                          <input type="checkbox" value="">
-                                          Show database table statistics
-                                        </label>
-                                      </div>
-                                      <br />
 
                                     </div>
-                                    <div class="col-sm-6 col-md-6">
-
-                                      <strong>Information Privacy Settings</strong>
-                                      <div class="radio">
-                                        <label>
-                                          <input type="radio" name="showProtected" id="showProtected" value="1" aria-describedby="privacyNoneHelp" />
-                                          None
-                                        <span id="privacyNoneHelp" class="help-block line-height-normal small"><i class="glyphicon glyphicon-info-sign"></i> no elements are masked</span>
-                                        </label>
-                                      </div>
-
-                                      <div class="radio">
-                                        <label>
-                                          <input type="radio" name="showProtected" id="showProtected" value="2" aria-describedby="privacyPartialHelp" checked />
-                                          Partial <i>(Default)</i>
-                                        <span id="privacyPartialHelp" class="help-block line-height-normal small"><i class="glyphicon glyphicon-info-sign"></i> some elements are masked</span>
-                                        </label>
-                                      </div>
-
-                                      <div class="radio">
-                                        <label>
-                                          <input type="radio" name="showProtected" id="showProtected" value="3" aria-describedby="privacyPartialHelp" />
-                                          Strict
-                                        <span id="privacyNoneHelp" class="help-block line-height-normal small"><i class="glyphicon glyphicon-info-sign"></i> all identifiable elements are masked</span>
-                                        </label>
-                                      </div>
-                                      <br />
-
-                                    </div>
-                                  </div><!--/.row-->
 
 
-
-
-
-                                </fieldset>
-
-                              </div>
                             </div>
+                             <div class="col-sm-12 col-md-12">
 
-                            <div class="col-sm-12 col-md-12">
                               <br />
                               <div class="">
 
-                                <fieldset>
-                                  <legend>dfsdfsdfds</legend>
+                                <fieldset class="padding-remove">
+                                  <legend>Generate Post Content</legend>
                   							  <input type="hidden" name="doIT" value="1" />
 
-                                  <div class="row-fluid">
+                                  <div class="row">
 
-                                    <div class="col-sm-12 col-md-6 text-center">
 
-                                      <p>Click the <span class="label label-success">Generate Post Content</span> button to build your post information</p>
+                                    <div class="col-sm-12 col-md-6">
+
+                                      <div class="bg-muted padding-lg">
+                                        <!--
+                                        <i class="glyphicon glyphicon-info-sign"></i>
+-->
+                                        <h4>To Continue:</h4>
+                                        After selecting your preferred runtime options and information privacy level, click the <strong>Generate Post Content!</strong> button to re-run FPA and build your post content.
+                                      </div>
 
                                     </div>
                                     <div class="col-sm-12 col-md-6 text-center">
 
-                                      <div class="border-all padding-top-lg padding-bottom-lg tourStep25">
-                                        <div class="btn-group" role="group">
-        								                  <input type="submit" class="btn btn-success btn-lg" name="submit" value="Generate Post Content" />
-                                          <input type="reset" class="btn btn-default btn-lg" name="reset" value="reset" />
-                                        </div>
-                                      </div>
+                                      <div class="row">
 
-                                      <div class="checkbox margin-top-lg border-all">
+
+                                        <div class="col-xs-12 col-md-9 btn-group" role="group">
+        								                  <input type="submit" class="btn btn-success btn-block btn-lg" name="submit" value="Generate Post Content!" />
+
+                                        <div class="clearfix"></div>
+                                      <div class="checkbox">
                                         <label>
                                           <input type="checkbox"name="increasePOPS" value="1" aria-describedby="increasePOPSHelp">
                                           PHP "Out of Memory" or "Execution Time-Outs" errors?
                                           <span id="increasePOPSHelp" class="help-block line-height-normal small"><i class="glyphicon glyphicon-info-sign"></i> temporarily increase PHP memory and execution time</span>
                                         </label>
                                       </div><!--/.checkbox-->
+
+
+                                        </div>
+                                        <div class="col-xs-12 col-md-3 btn-group" role="group">
+                                          <input type="reset" class="btn btn-default btn-block" name="reset" value="reset" />
+                                        </div>
+
+
+
+
+                                      </div>
 
                                     </div>
 
@@ -654,9 +738,24 @@
                         </a>
                       </h4>
                     </div>
-                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                       <div class="panel-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+
+                        <textarea class="form-control" rows="15" name="postOUTPUT" id="postOUTPUT" placeholder="Forum Post Content">dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only</textarea>
+                        <button id="btnCopyToClipboard" class="btn btn-warning btn-block"><i class="glyphicon glyphicon-copy"></i> Copy Post Content To Clipboard</button>
+
+                        <p class="small text-muted margin-top-sm margin-remove-bottom">
+                          <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
+                          In the event that the "Copy Post Content To Clipboard" button does not work, <strong>1. Click inside the yellow textarea</strong>, <strong>2. Press CTRL-a (or Command-a)</strong> to select all the textarea content, <strong>3. Press CTRL-c (Command-c)</strong> to copy the content, Use <strong>4. CRTL-v (Command-v)</strong> to paste the content in to your forum post.
+                        </p>
+
+                        <!-- TODO (RussW): determine how to split the content in to two textarea's if exceeds 20k characters-->
+                        <div class="text-center bg-warning padding-lg margin-lg">
+                        Post Length: <span id="counter" class="badge"></span>
+                        <br /><i class="text-warning">TODO: now we know the content length, we need to figure out a way of dynamically splitting large posts in to two textarea's</i>
+                        </div>
+
                       </div>
                     </div>
 
@@ -702,7 +801,7 @@
               <div class="page-header">
 
                 <h2>
-                  <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainBasic" aria-expanded="false" aria-controls="collapseExplainBasic">
+                  <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourExplainBasic" type="button" data-toggle="collapse" data-target="#collapseExplainBasic" aria-expanded="false" aria-controls="collapseExplainBasic">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
                   <i class="glyphicon glyphicon-dashboard"></i> Basic Discovery
@@ -849,7 +948,7 @@
               <div class="page-header">
 
                 <h2>
-                  <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainApplication" aria-expanded="false" aria-controls="collapseExplainApplication">
+                  <button class="btn btn-info btn-xs pull-right clearfix hidden-print" type="button" data-toggle="collapse" data-target="#collapseExplainApplication" aria-expanded="false" aria-controls="collapseExplainApplication">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
                   <i class="glyphicon glyphicon-cog"></i> Application Discovery
@@ -1110,7 +1209,7 @@
               <div class="page-header">
 
                 <h2>
-                  <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainHost" aria-expanded="false" aria-controls="collapseExplainHost">
+                  <button class="btn btn-info btn-xs pull-right clearfix hidden-print" type="button" data-toggle="collapse" data-target="#collapseExplainHost" aria-expanded="false" aria-controls="collapseExplainHost">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
                   <i class="glyphicon glyphicon-equalizer"></i> Hosting Discovery
@@ -1264,7 +1363,7 @@
               <div class="page-header">
 
                 <h2>
-                  <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainPerms" aria-expanded="false" aria-controls="collapseExplainPerms">
+                  <button class="btn btn-info btn-xs pull-right clearfix hidden-print" type="button" data-toggle="collapse" data-target="#collapseExplainPerms" aria-expanded="false" aria-controls="collapseExplainPerms">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
                   <i class="glyphicon glyphicon-list-alt"></i> Permissions Discovery
@@ -1411,7 +1510,7 @@
               <div class="page-header">
 
                 <h2>
-                  <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourStep15" type="button" data-toggle="collapse" data-target="#collapseExplainExt" aria-expanded="false" aria-controls="collapseExplainExt">
+                  <button class="btn btn-info btn-xs pull-right clearfix hidden-print" type="button" data-toggle="collapse" data-target="#collapseExplainExt" aria-expanded="false" aria-controls="collapseExplainExt">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
                   <i class="glyphicon glyphicon-th"></i> Extension Discovery
@@ -1704,46 +1803,47 @@
                 <div class="col-xs-12 col-md-6">
 
 
-<div class="alert alert-danger margin-bottom-sm">
+                  <div class="alert alert-danger margin-bottom-sm">
 
-  <?php
-    /* NOTE (RussW): Security Warning (Browser View Only)
-     */
-  ?>
-  <div class="row hidden-print">
-    <div class="col-sm-12 col-md-8 text-center">
-      <h6 class="margin-remove">SECURITY NOTICE</h6>
-      <span class="small line-height-normal text-justify">
-        Due to the highly sensitive nature of the information displayed by the FPA script, it should be removed from the server immediately after use.
-        If the script is left on the site, it can be used to gather enough information to hack your site.
-      </span>
-    </div>
-    <div class="col-sm-12 col-md-4 text-center">
+                    <?php
+                      /* NOTE (RussW): Security Warning (Browser View Only)
+                       */
+                    ?>
+                    <div class="row hidden-print">
+                      <div class="col-sm-12 col-md-8 text-center">
+                        <h6 class="margin-remove">SECURITY NOTICE</h6>
+                        <span class="small line-height-normal text-justify">
+                          Due to the highly sensitive nature of the information displayed by the FPA script, it should be removed from the server immediately after use.
+                          If the script is left on the site, it can be used to gather enough information to hack your site.
+                        </span>
+                      </div>
+                      <div class="col-sm-12 col-md-4 text-center">
 
-      <a href="fpa-en.php?act=delete" class="btn btn-danger btn-block margin-top-sm" role="button">
-        <i class="glyphicon glyphicon-remove-circle lead margin-remove"></i>
-        <div class="small">Delete FPA</div>
-      </a>
+                        <a href="fpa-en.php?act=delete" class="btn btn-danger btn-block margin-top-sm" role="button">
+                          <i class="glyphicon glyphicon-remove-circle lead margin-remove"></i>
+                          <div class="small">Delete FPA</div>
+                        </a>
 
-    </div>
-  </div><!--/.hidden-print-->
+                      </div>
+                    </div><!--/.hidden-print-->
 
-  <?php
-    /* NOTE (RussW): Security Warning (Print View Only)
-     *
-     */
-  ?>
-  <div class="row visible-print-block">
-    <div class="col-xs-12 text-center">
-      <h6 class="margin-remove">SECURITY NOTICE</h6>
-      <span class="small line-height-normal text-justify">
-        Due to the highly sensitive nature of the information displayed by the FPA script, hard-copy or electronic document copies should be securely destroyed immediately after use.
-      </span>
-    </div>
-  </div><!--/.visible-print-block-->
+                    <?php
+                      /* NOTE (RussW): Security Warning (Print View Only)
+                       *
+                       */
+                    ?>
+                    <div class="row visible-print-block">
+                      <div class="col-xs-12 text-center">
+                        <h6 class="margin-remove">SECURITY NOTICE</h6>
+                        <span class="small line-height-normal text-justify">
+                          Due to the highly sensitive nature of the information displayed by the FPA script, hard-copy or electronic document copies should be securely destroyed immediately after use.
+                        </span>
+                      </div>
+                    </div><!--/.visible-print-block-->
 
-</div>
-<div class="clearfix"></div>
+                  </div>
+                  <div class="clearfix"></div>
+
 
                   <div class="padding-lg text-justify small padding-lg bg-muted tourStepEnd">
                     <h6 class="margin-remove text-center">Developers & Contributors</h6>
@@ -1912,6 +2012,45 @@
 
 
             <?php
+              /* NOTE (RussW): SCRIPT - Count The #postOUTPUT textarea Contents (characters)
+               *
+               */
+            ?>
+            function count_it() {
+                document.getElementById('counter').innerHTML = document.getElementById('postOUTPUT').value.length;
+            }
+            count_it();
+
+
+            <?php
+              /* NOTE (RussW): SCRIPT - Copy Button, #postOUTPUT textarea to clipboard
+               *
+               */
+            ?>
+            function copyToClipboard(text) {
+              var textArea = document.createElement( "textarea" );
+              textArea.value = text;
+              document.body.appendChild( textArea );
+              textArea.select();
+              try {
+                var successful = document.execCommand( 'copy' );
+                var msg = successful ? 'successful' : 'unsuccessful';
+                console.log('Copying text command was ' + msg);
+              } catch (err) {
+                console.log('Oops, unable to copy');
+              }
+              document.body.removeChild( textArea );
+            }
+
+            $('#btnCopyToClipboard').click( function() {
+              var clipboardText = "";
+                clipboardText = $('#postOUTPUT').val();
+                  copyToClipboard( clipboardText );
+                  alert( "Forum Post Content Copied To Clipboard. You Can Now Paste This In To Your Post" );
+            });
+
+
+            <?php
               /* NOTE (RussW): SCRIPT - Back-To-Top Object
                *
                */
@@ -1957,7 +2096,7 @@
                                  <div class="arrow"></div>\
                                  <h3 class="popover-title"><i class="glyphicon glyphicon-blackboard"></i> </h3>\
                                  <div class="popover-content"></div>\
-                                 <div class="panel-footer">\
+                                 <div class="panel-footer padding-remove">\
                                    <div class="popover-navigation">\
                                      <button class="btn btn-default btn-sm" data-role="prev">« Prev</button>\
                                      <button class="btn btn-default btn-sm" data-role="next">Next »</button>\
@@ -1998,15 +2137,15 @@
               },
               {
                 // Explain (Help) Buttons
-                element:      '.tourStep15',
+                element:      '.tourExplainBasic',
                 title:        '<?php echo _TOUR_STEP15_TITLE; ?>',
                 content:      '<?php echo _TOUR_STEP15_DESC; ?>',
                 placement:    'auto left',
                 onShown:      function (tour) {
-                                $('#collapseExplainSnapshot').toggleClass('in');
+                                $('#collapseExplainBasic').toggleClass('in');
                               },
                 onHide:       function (tour) {
-                                $('#collapseExplainSnapshot').toggleClass('in');
+                                $('#collapseExplainBasic').toggleClass('in');
                               }
               },
               {
