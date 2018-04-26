@@ -1452,9 +1452,9 @@
                                 <tr>
                                   <th class="small text-center">MODE</th>
                                   <th class="small text-center">WITEABLE</th>
-                                  <th class="small col-md-8">FOLDER</th>
-                                  <th class="small text-center">OWNER</th>
-                                  <th class="small text-center">GROUP</th>
+                                  <th class="small col-sm-7">FOLDER</th>
+                                  <th class="small text-center hidden-xs">OWNER</th>
+                                  <th class="small text-center hidden-xs hidden-sm">GROUP</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -1462,106 +1462,106 @@
                                   <td class="small border-right text-center">777</td>
                                   <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">images/</td>
-                                  <td class="small border-right text-center">demohotm</td>
-                                  <td class="small text-center">demohotm</td>
+                                  <td class="small border-right text-center hidden-xs">demohotm</td>
+                                  <td class="small text-center hidden-xs hidden-sm">demohotm</td>
                                 </tr>
                                 <tr>
                                   <td class="small border-right text-center">755</td>
                                   <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">components/</td>
-                                  <td class="small border-right text-center">WinterRG</td>
-                                  <td class="small text-center">WinterRG</td>
+                                  <td class="small border-right text-center hidden-xs">WinterRG</td>
+                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
                                 </tr>
                                 <tr>
                                   <td class="small border-right text-center">755</td>
                                   <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right ttext-truncate">modules/</td>
-                                  <td class="small border-right text-center">WinterRG</td>
-                                  <td class="small text-center">WinterRG</td>
+                                  <td class="small border-right text-center hidden-xs">WinterRG</td>
+                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
                                 </tr>
                                 <tr>
                                   <td class="small border-right text-center">755</td>
                                   <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">plugins/</td>
-                                  <td class="small border-right text-center">WinterRG</td>
-                                  <td class="small text-center">WinterRG</td>
+                                  <td class="small border-right text-center hidden-xs">WinterRG</td>
+                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
                                 </tr>
                                 <tr>
                                   <td class="small border-right text-center">755</td>
                                   <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">language/</td>
-                                  <td class="small border-right text-center">WinterRG</td>
-                                  <td class="small text-center">WinterRG</td>
+                                  <td class="small border-right text-center hidden-xs">WinterRG</td>
+                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
                                 </tr>
                                 <tr>
                                   <td class="small border-right text-center">755</td>
                                   <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">templates/</td>
-                                  <td class="small border-right text-center">WinterRG</td>
-                                  <td class="small text-center">WinterRG</td>
+                                  <td class="small border-right text-center hidden-xs">WinterRG</td>
+                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
                                 </tr>
                                 <tr class="bg-warning text-warning">
                                   <td class="small border-right text-center">400</td>
                                   <td class="small border-right text-center"><?php echo _FPA_N_ICON; ?></td>
                                   <td class="small border-right text-truncate">cache/</td>
-                                  <td class="small border-right text-center">WinterRG</td>
-                                  <td class="small text-center">WinterRG</td>
+                                  <td class="small border-right text-center hidden-xs">WinterRG</td>
+                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
                                 </tr>
                                 <tr>
                                   <td class="small border-right text-center">755</td>
                                   <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">logs/</td>
-                                  <td class="small border-right text-center">WinterRG</td>
-                                  <td class="small text-center">WinterRG</td>
+                                  <td class="small border-right text-center hidden-xs">WinterRG</td>
+                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
                                 </tr>
                                 <tr>
                                   <td class="small border-right text-center">755</td>
                                   <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">tmp/</td>
-                                  <td class="small border-right text-center">WinterRG</td>
-                                  <td class="small text-center">WinterRG</td>
+                                  <td class="small border-right text-center hidden-xs">WinterRG</td>
+                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
                                 </tr>
                                 <tr>
                                   <td class="small border-right text-center">755</td>
                                   <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">administrator/components/</td>
-                                  <td class="small border-right text-center">WinterRG</td>
-                                  <td class="small text-center">WinterRG</td>
+                                  <td class="small border-right text-center hidden-xs">WinterRG</td>
+                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
                                 </tr>
                                 <tr>
                                   <td class="small border-right text-center">755</td>
                                   <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">administrator/modules/</td>
-                                  <td class="small border-right text-center">WinterRG</td>
-                                  <td class="small text-center">WinterRG</td>
+                                  <td class="small border-right text-center hidden-xs">WinterRG</td>
+                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
                                 </tr>
                                 <tr>
                                   <td class="small border-right text-center">755</td>
                                   <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">administrator/plugins/</td>
-                                  <td class="small border-right text-center">WinterRG</td>
-                                  <td class="small text-center">WinterRG</td>
+                                  <td class="small border-right text-center hidden-xs">WinterRG</td>
+                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
                                 </tr>
                                 <tr>
                                   <td class="small border-right text-center">755</td>
                                   <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">administrator/language/</td>
-                                  <td class="small border-right text-center">WinterRG</td>
-                                  <td class="small text-center">WinterRG</td>
+                                  <td class="small border-right text-center hidden-xs">WinterRG</td>
+                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
                                 </tr>
                                 <tr>
                                   <td class="small border-right text-center">755</td>
                                   <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">administrator/templates/</td>
-                                  <td class="small border-right text-center">WinterRG</td>
-                                  <td class="small text-center">WinterRG</td>
+                                  <td class="small border-right text-center hidden-xs">WinterRG</td>
+                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
                                 </tr>
                                 <tr>
                                   <td class="small border-right text-center">-</td>
                                   <td class="small border-right text-center">-</td>
                                   <td class="small border-right text-truncate text-warning">administrator/logs/</td>
-                                  <td class="small border-right text-center">-</td>
-                                  <td class="small text-center">-</td>
+                                  <td class="small border-right text-center hidden-xs">-</td>
+                                  <td class="small text-center hidden-xs hidden-sm">-</td>
                                 </tr>
                               </tbody>
                             </table>
@@ -1606,9 +1606,9 @@
                                 <tr>
                                   <th class="small text-center">MODE</th>
                                   <th class="small text-center">WITEABLE</th>
-                                  <th class="small col-md-8">FOLDER</th>
-                                  <th class="small text-center">OWNER</th>
-                                  <th class="small text-center">GROUP</th>
+                                  <th class="small col-sm-7">FOLDER</th>
+                                  <th class="small text-center hidden-xs">OWNER</th>
+                                  <th class="small text-center hidden-xs hidden-sm">GROUP</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -1616,8 +1616,8 @@
                                   <td class="small border-right text-center">777</td>
                                   <td class="small border-right text-center"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">images/</td>
-                                  <td class="small border-right text-center">demohotm</td>
-                                  <td class="small text-center">demohotm</td>
+                                  <td class="small border-right text-center hidden-xs">demohotm</td>
+                                  <td class="small text-center hidden-xs hidden-sm">demohotm</td>
                                 </tr>
                               </tbody>
                             </table>
@@ -1701,11 +1701,11 @@
                               <thead>
                                 <tr>
                                   <th class="small text-center">ENABLED</th>
-                                  <th class="small">NAME</th>
+                                  <th class="small col-sm-3">NAME</th>
                                   <th class="small text-center">VERSION</th>
-                                  <th class="small text-center">AUTHOR</th>
-                                  <th class="small text-center">ADDRESS</th>
-                                  <th class="small text-center">CREATED</th>
+                                  <th class="small text-center hidden-xs">AUTHOR</th>
+                                  <th class="small text-center hidden-xs hidden-sm">ADDRESS</th>
+                                  <th class="small text-center hidden-xs">CREATED</th>
                                   <th class="small text-center">TYPE</th>
                                 </tr>
                               </thead>
@@ -1714,18 +1714,18 @@
                                   <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">yoo_sixthavenue</td>
                                   <td class="small border-right text-center">1.0.3</td>
-                                  <td class="small border-right text-center text-truncate">YOOtheme</td>
-                                  <td class="small border-right text-center text-truncate">www.yootheme.com</td>
-                                  <td class="small border-right text-center">November 2016</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs">YOOtheme</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
+                                  <td class="small border-right text-center hidden-xs">November 2016</td>
                                   <td class="small text-center text-warning">3rd Party</td>
                                 </tr>
                                 <tr class="">
                                   <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">protostar</td>
                                   <td class="small border-right text-center">1.0</td>
-                                  <td class="small border-right text-center">Kyle Ledbeter</td>
-                                  <td class="small border-right text-center text-truncate">-</td>
-                                  <td class="small border-right text-center">4/30/2012</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs">Kyle Ledbeter</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs hidden-sm">-</td>
+                                  <td class="small border-right text-center hidden-xs">4/30/2012</td>
                                   <td class="small text-center text-success">Core</td>
                                 </tr>
                               </tbody>
@@ -1738,11 +1738,11 @@
                               <thead>
                                 <tr>
                                   <th class="small text-center">ENABLED</th>
-                                  <th class="small">NAME</th>
+                                  <th class="small col-sm-3">NAME</th>
                                   <th class="small text-center">VERSION</th>
-                                  <th class="small text-center">AUTHOR</th>
-                                  <th class="small text-center">ADDRESS</th>
-                                  <th class="small text-center">CREATED</th>
+                                  <th class="small text-center hidden-xs">AUTHOR</th>
+                                  <th class="small text-center hidden-xs hidden-sm">ADDRESS</th>
+                                  <th class="small text-center hidden-xs">CREATED</th>
                                   <th class="small text-center">TYPE</th>
                                 </tr>
                               </thead>
@@ -1751,18 +1751,18 @@
                                   <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">hathor</td>
                                   <td class="small border-right text-center">3.0.0</td>
-                                  <td class="small border-right text-center text-truncate">Andrea Tarr</td>
-                                  <td class="small border-right text-center text-truncate">www.tarrconsulting.com</td>
-                                  <td class="small border-right text-center">May 2010</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs">Andrea Tarr</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs hidden-sm">www.tarrconsulting.com</td>
+                                  <td class="small border-right text-center hidden-xs">May 2010</td>
                                   <td class="small text-center text-success">Core</td>
                                 </tr>
                                 <tr class="">
                                   <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">isis</td>
                                   <td class="small border-right text-center">1.0</td>
-                                  <td class="small border-right text-center">Kyle Ledbeter</td>
-                                  <td class="small border-right text-center text-truncate">-</td>
-                                  <td class="small border-right text-center">3/30/2012</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs">Kyle Ledbeter</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs hidden-sm">-</td>
+                                  <td class="small border-right text-center hidden-xs">3/30/2012</td>
                                   <td class="small text-center text-success">Core</td>
                                 </tr>
                               </tbody>
@@ -1808,11 +1808,11 @@
                               <thead>
                                 <tr>
                                   <th class="small text-center">ENABLED</th>
-                                  <th class="small">NAME</th>
+                                  <th class="small col-sm-3">NAME</th>
                                   <th class="small text-center">VERSION</th>
-                                  <th class="small text-center">AUTHOR</th>
-                                  <th class="small text-center">ADDRESS</th>
-                                  <th class="small text-center">CREATED</th>
+                                  <th class="small text-center hidden-xs">AUTHOR</th>
+                                  <th class="small text-center hidden-xs hidden-sm">ADDRESS</th>
+                                  <th class="small text-center hidden-xs">CREATED</th>
                                   <th class="small text-center">TYPE</th>
                                 </tr>
                               </thead>
@@ -1821,18 +1821,18 @@
                                   <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">yoo_sixthavenue</td>
                                   <td class="small border-right text-center">1.0.3</td>
-                                  <td class="small border-right text-center text-truncate">YOOtheme</td>
-                                  <td class="small border-right text-center text-truncate">www.yootheme.com</td>
-                                  <td class="small border-right text-center">November 2016</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs">YOOtheme</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
+                                  <td class="small border-right text-center hidden-xs">November 2016</td>
                                   <td class="small text-center text-warning">3rd Party</td>
                                 </tr>
                                 <tr class="">
                                   <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">protostar</td>
                                   <td class="small border-right text-center">1.0</td>
-                                  <td class="small border-right text-center">Kyle Ledbeter</td>
-                                  <td class="small border-right text-center text-truncate">-</td>
-                                  <td class="small border-right text-center">4/30/2012</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs">Kyle Ledbeter</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs hidden-sm">-</td>
+                                  <td class="small border-right text-center hidden-xs">4/30/2012</td>
                                   <td class="small text-center text-success">Core</td>
                                 </tr>
                               </tbody>
@@ -1845,11 +1845,11 @@
                               <thead>
                                 <tr>
                                   <th class="small text-center">ENABLED</th>
-                                  <th class="small">NAME</th>
+                                  <th class="small col-sm-3">NAME</th>
                                   <th class="small text-center">VERSION</th>
-                                  <th class="small text-center">AUTHOR</th>
-                                  <th class="small text-center">ADDRESS</th>
-                                  <th class="small text-center">CREATED</th>
+                                  <th class="small text-center hidden-xs">AUTHOR</th>
+                                  <th class="small text-center hidden-xs hidden-sm">ADDRESS</th>
+                                  <th class="small text-center hidden-xs">CREATED</th>
                                   <th class="small text-center">TYPE</th>
                                 </tr>
                               </thead>
@@ -1858,18 +1858,18 @@
                                   <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">hathor</td>
                                   <td class="small border-right text-center">3.0.0</td>
-                                  <td class="small border-right text-center text-truncate">Andrea Tarr</td>
-                                  <td class="small border-right text-center text-truncate">www.tarrconsulting.com</td>
-                                  <td class="small border-right text-center">May 2010</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs">Andrea Tarr</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs hidden-sm">www.tarrconsulting.com</td>
+                                  <td class="small border-right text-center hidden-xs">May 2010</td>
                                   <td class="small text-center text-success">Core</td>
                                 </tr>
                                 <tr class="">
                                   <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">isis</td>
                                   <td class="small border-right text-center">1.0</td>
-                                  <td class="small border-right text-center">Kyle Ledbeter</td>
-                                  <td class="small border-right text-center text-truncate">-</td>
-                                  <td class="small border-right text-center">3/30/2012</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs">Kyle Ledbeter</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs hidden-sm">-</td>
+                                  <td class="small border-right text-center hidden-xs">3/30/2012</td>
                                   <td class="small text-center text-success">Core</td>
                                 </tr>
                               </tbody>
@@ -1915,11 +1915,11 @@
                               <thead>
                                 <tr>
                                   <th class="small text-center">ENABLED</th>
-                                  <th class="small">NAME</th>
+                                  <th class="small col-sm-3">NAME</th>
                                   <th class="small text-center">VERSION</th>
-                                  <th class="small text-center">AUTHOR</th>
-                                  <th class="small text-center">ADDRESS</th>
-                                  <th class="small text-center">CREATED</th>
+                                  <th class="small text-center hidden-xs">AUTHOR</th>
+                                  <th class="small text-center hidden-xs hidden-sm">ADDRESS</th>
+                                  <th class="small text-center hidden-xs">CREATED</th>
                                   <th class="small text-center">TYPE</th>
                                 </tr>
                               </thead>
@@ -1928,18 +1928,18 @@
                                   <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">yoo_sixthavenue</td>
                                   <td class="small border-right text-center">1.0.3</td>
-                                  <td class="small border-right text-center text-truncate">YOOtheme</td>
-                                  <td class="small border-right text-center text-truncate">www.yootheme.com</td>
-                                  <td class="small border-right text-center">November 2016</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs">YOOtheme</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
+                                  <td class="small border-right text-center hidden-xs">November 2016</td>
                                   <td class="small text-center text-warning">3rd Party</td>
                                 </tr>
                                 <tr class="">
                                   <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">protostar</td>
                                   <td class="small border-right text-center">1.0</td>
-                                  <td class="small border-right text-center">Kyle Ledbeter</td>
-                                  <td class="small border-right text-center text-truncate">-</td>
-                                  <td class="small border-right text-center">4/30/2012</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs">Kyle Ledbeter</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs hidden-sm">-</td>
+                                  <td class="small border-right text-center hidden-xs">4/30/2012</td>
                                   <td class="small text-center text-success">Core</td>
                                 </tr>
                               </tbody>
@@ -1952,11 +1952,11 @@
                               <thead>
                                 <tr>
                                   <th class="small text-center">ENABLED</th>
-                                  <th class="small">NAME</th>
+                                  <th class="small col-sm-3">NAME</th>
                                   <th class="small text-center">VERSION</th>
-                                  <th class="small text-center">AUTHOR</th>
-                                  <th class="small text-center">ADDRESS</th>
-                                  <th class="small text-center">CREATED</th>
+                                  <th class="small text-center hidden-xs">AUTHOR</th>
+                                  <th class="small text-center hidden-xs hidden-sm">ADDRESS</th>
+                                  <th class="small text-center hidden-xs">CREATED</th>
                                   <th class="small text-center">TYPE</th>
                                 </tr>
                               </thead>
@@ -1965,18 +1965,18 @@
                                   <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">hathor</td>
                                   <td class="small border-right text-center">3.0.0</td>
-                                  <td class="small border-right text-center text-truncate">Andrea Tarr</td>
-                                  <td class="small border-right text-center text-truncate">www.tarrconsulting.com</td>
-                                  <td class="small border-right text-center">May 2010</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs">Andrea Tarr</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs hidden-sm">www.tarrconsulting.com</td>
+                                  <td class="small border-right text-center hidden-xs">May 2010</td>
                                   <td class="small text-center text-success">Core</td>
                                 </tr>
                                 <tr class="">
                                   <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">isis</td>
                                   <td class="small border-right text-center">1.0</td>
-                                  <td class="small border-right text-center">Kyle Ledbeter</td>
-                                  <td class="small border-right text-center text-truncate">-</td>
-                                  <td class="small border-right text-center">3/30/2012</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs">Kyle Ledbeter</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs hidden-sm">-</td>
+                                  <td class="small border-right text-center hidden-xs">3/30/2012</td>
                                   <td class="small text-center text-success">Core</td>
                                 </tr>
                               </tbody>
@@ -2024,11 +2024,11 @@
                                 <tr>
                                   <th class="small text-center">ENABLED</th>
                                   <th class="small text-center">ACTIVE</th>
-                                  <th class="small">NAME</th>
+                                  <th class="small col-sm-3">NAME</th>
                                   <th class="small text-center">VERSION</th>
-                                  <th class="small text-center">AUTHOR</th>
-                                  <th class="small text-center">ADDRESS</th>
-                                  <th class="small text-center">CREATED</th>
+                                  <th class="small text-center hidden-xs">AUTHOR</th>
+                                  <th class="small text-center hidden-xs hidden-sm">ADDRESS</th>
+                                  <th class="small text-center hidden-xs">CREATED</th>
                                   <th class="small text-center">TYPE</th>
                                 </tr>
                               </thead>
@@ -2038,19 +2038,19 @@
                                   <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">yoo_sixthavenue</td>
                                   <td class="small border-right text-center">1.0.3</td>
-                                  <td class="small border-right text-center text-truncate">YOOtheme</td>
-                                  <td class="small border-right text-center text-truncate">www.yootheme.com</td>
-                                  <td class="small border-right text-center">November 2016</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs">YOOtheme</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
+                                  <td class="small border-right text-center hidden-xs">November 2016</td>
                                   <td class="small text-center text-warning">3rd Party</td>
                                 </tr>
                                 <tr class="">
                                   <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small border-right text-center text-danger"><?php echo _FPA_N_ICON; ?></td>
+                                  <td class="small border-right text-center"><?php echo _FPA_N_ICON; ?></td>
                                   <td class="small border-right text-truncate">protostar</td>
                                   <td class="small border-right text-center">1.0</td>
-                                  <td class="small border-right text-center">Kyle Ledbeter</td>
-                                  <td class="small border-right text-center text-truncate">-</td>
-                                  <td class="small border-right text-center">4/30/2012</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs">Kyle Ledbeter</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs hidden-sm">-</td>
+                                  <td class="small border-right text-center hidden-xs">4/30/2012</td>
                                   <td class="small text-center text-success">Core</td>
                                 </tr>
                               </tbody>
@@ -2064,33 +2064,33 @@
                                 <tr>
                                   <th class="small text-center">ENABLED</th>
                                   <th class="small text-center">ACTIVE</th>
-                                  <th class="small">NAME</th>
+                                  <th class="small col-sm-3">NAME</th>
                                   <th class="small text-center">VERSION</th>
-                                  <th class="small text-center">AUTHOR</th>
-                                  <th class="small text-center">ADDRESS</th>
-                                  <th class="small text-center">CREATED</th>
+                                  <th class="small text-center hidden-xs">AUTHOR</th>
+                                  <th class="small text-center hidden-xs hidden-sm">ADDRESS</th>
+                                  <th class="small text-center hidden-xs">CREATED</th>
                                   <th class="small text-center">TYPE</th>
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr class="bg-success">
-                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small border-right text-center text-success"><?php echo _FPA_N_ICON; ?></td>
-                                  <td class="small border-right text-truncate">hathor</td>
-                                  <td class="small border-right text-center">3.0.0</td>
-                                  <td class="small border-right text-center text-truncate">Andrea Tarr</td>
-                                  <td class="small border-right text-center text-truncate">www.tarrconsulting.com</td>
-                                  <td class="small border-right text-center">May 2010</td>
-                                  <td class="small text-center text-success">Core</td>
-                                </tr>
                                 <tr class="">
                                   <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small border-right text-center text-danger"><?php echo _FPA_N_ICON; ?></td>
+                                  <td class="small border-right text-center"><?php echo _FPA_N_ICON; ?></td>
+                                  <td class="small border-right text-truncate">hathor</td>
+                                  <td class="small border-right text-center">3.0.0</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs">Andrea Tarr</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs hidden-sm">www.tarrconsulting.com</td>
+                                  <td class="small border-right text-center hidden-xs">May 2010</td>
+                                  <td class="small text-center text-success">Core</td>
+                                </tr>
+                                <tr class="bg-success">
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small border-right text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small border-right text-truncate">isis</td>
                                   <td class="small border-right text-center">1.0</td>
-                                  <td class="small border-right text-center">Kyle Ledbeter</td>
-                                  <td class="small border-right text-center text-truncate">-</td>
-                                  <td class="small border-right text-center">3/30/2012</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs">Kyle Ledbeter</td>
+                                  <td class="small border-right text-center text-truncate hidden-xs hidden-sm">-</td>
+                                  <td class="small border-right text-center hidden-xs">3/30/2012</td>
                                   <td class="small text-center text-success">Core</td>
                                 </tr>
                               </tbody>
