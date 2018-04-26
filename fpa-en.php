@@ -45,110 +45,110 @@
   /* TODO (ALL): VERSION CONTROL : FPA Versioning & Revisioning
    * remember to update revision information
    */
-	define ( '_RES', 'Forum Post Assistant' );         // FPA resource long name
-	define ( '_RES_SHORT', 'FPA' );                    // FPA resource short name
-	define ( '_RES_VERSION', '2.0' );                  // major revision (x.y)
-	define ( '_RES_VERSION_MAINT', '0' );              // maintenance/patch revision (.z)
-	define ( '_RES_RELEASE_TYPE', 'BS' );              // framework type ( BS(Bootstrap), SA(Standalone) )
-	define ( '_RES_RELEASE_BUILD', 'Alpha' );          // dev status revision ( A(lpha), B(eta), RC, F(inal) )
-	define ( '_RES_LAST_UPDATED', '22/04/2018' );      // release date (dd/mm/yyyy)
-	define ( '_RES_BRANCH', 'en-GB' );                 // Github branch location
-	define ( '_RES_LANG', 'en-GB' );                   // Country/Language Code
+  define ( '_RES', 'Forum Post Assistant' );         // FPA resource long name
+  define ( '_RES_SHORT', 'FPA' );                    // FPA resource short name
+  define ( '_RES_VERSION', '2.0' );                  // major revision (x.y)
+  define ( '_RES_VERSION_MAINT', '0' );              // maintenance/patch revision (.z)
+  define ( '_RES_RELEASE_TYPE', 'BS' );              // framework type ( BS(Bootstrap), SA(Standalone) )
+  define ( '_RES_RELEASE_BUILD', 'Alpha' );          // dev status revision ( A(lpha), B(eta), RC, F(inal) )
+  define ( '_RES_LAST_UPDATED', '22/04/2018' );      // release date (dd/mm/yyyy)
+  define ( '_RES_BRANCH', 'en-GB' );                 // Github branch location
+  define ( '_RES_LANG', 'en-GB' );                   // Country/Language Code
 
 
-	/* NOTE (FPA): PARENT FLAGS - Joomla!
-	 *
-	 */
-	define ( '_VALID_MOS', 1 );                        // for J!1.0
-	define ( '_JEXEC', 1 );                            // for J!1.5, J!1.6, J!1.7, J!2.5, J!3.0
-
-
-
-	/* NOTE (FPA): LANGUAGE - FPA Specific Definitions & Constants
-	 *
-	 */
-	define ( '_RES_FPALINK', 'https://github.com/ForumPostAssistant/FPA/tarball/en-GB/' ); // where to get the latest 'Final Releases'
-	define ( '_RES_FPALATEST', 'Get the latest tar.gz release of the ' );
-	define ( '_RES_FPALINK2', 'https://github.com/ForumPostAssistant/FPA/zipball/en-GB/' ); // where to get the latest 'Final Releases'
-	define ( '_RES_FPALATEST2', 'Get the latest zip release of the ' );
-
-	define ( '_COPYRIGHT_STMT', ' Copyright (C) 2011, 2012,2013,2014,2015,2016,2017,2018 Russell Winter, Phil DeGruy, Bernard Toplak, Claire Mandville,Sveinung Larsen &nbsp;' );
-
-	define ( '_LICENSE_LINK', '<a href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses/</a>' ); // link to GPL license
-
-	define ( '_LICENSE_FOOTER', ' The FPA comes with ABSOLUTELY NO WARRANTY. &nbsp; This is free software,
-	and covered under the GNU GPLv3 or later license. You are welcome to redistribute it under certain conditions.
-	For details read the LICENSE.txt file included in the download package with this script.
-	A copy of the license may also be obtained at ' );
-
-	// remove script notice content - Phil 4-17-12
-	define ( '_FPA_DELNOTE_LN1', '<h3><p /><font color="Red" size="2">** SECURITY NOTICE **</font color></size></h3><p /><font size="1">Due to the highly sensitive nature of the information displayed by the FPA script,<p /> it should be removed from the server immediately after use.</font>' );
-	define ( '_FPA_DELNOTE_LN2', '<p /><font size="1">  If the script is left on the site, it can be used to gather enough information to hack your site.</font>' );
-	define ( '_FPA_DELNOTE_LN3', '<p /><font color="Red" size="3" ;">After use, <a href="fpa-en.php?act=delete">Click Here</a>  to delete this script.</font>' );
+  /* NOTE (FPA): PARENT FLAGS - Joomla!
+   *
+   */
+  define ( '_VALID_MOS', 1 );                        // for J!1.0
+  define ( '_JEXEC', 1 );                            // for J!1.5, J!1.6, J!1.7, J!2.5, J!3.0
 
 
 
-	/* NOTE (FPA): LANGUAGE - Offline Definitions & Constants
+  /* NOTE (FPA): LANGUAGE - FPA Specific Definitions & Constants
+   *
+   */
+  define ( '_RES_FPALINK', 'https://github.com/ForumPostAssistant/FPA/tarball/en-GB/' ); // where to get the latest 'Final Releases'
+  define ( '_RES_FPALATEST', 'Get the latest tar.gz release of the ' );
+  define ( '_RES_FPALINK2', 'https://github.com/ForumPostAssistant/FPA/zipball/en-GB/' ); // where to get the latest 'Final Releases'
+  define ( '_RES_FPALATEST2', 'Get the latest zip release of the ' );
+
+  define ( '_COPYRIGHT_STMT', ' Copyright (C) 2011, 2012,2013,2014,2015,2016,2017,2018 Russell Winter, Phil DeGruy, Bernard Toplak, Claire Mandville,Sveinung Larsen &nbsp;' );
+
+  define ( '_LICENSE_LINK', '<a href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses/</a>' ); // link to GPL license
+
+  define ( '_LICENSE_FOOTER', ' The FPA comes with ABSOLUTELY NO WARRANTY. &nbsp; This is free software,
+  and covered under the GNU GPLv3 or later license. You are welcome to redistribute it under certain conditions.
+  For details read the LICENSE.txt file included in the download package with this script.
+  A copy of the license may also be obtained at ' );
+
+  // remove script notice content - Phil 4-17-12
+  define ( '_FPA_DELNOTE_LN1', '<h3><p /><font color="Red" size="2">** SECURITY NOTICE **</font color></size></h3><p /><font size="1">Due to the highly sensitive nature of the information displayed by the FPA script,<p /> it should be removed from the server immediately after use.</font>' );
+  define ( '_FPA_DELNOTE_LN2', '<p /><font size="1">  If the script is left on the site, it can be used to gather enough information to hack your site.</font>' );
+  define ( '_FPA_DELNOTE_LN3', '<p /><font color="Red" size="3" ;">After use, <a href="fpa-en.php?act=delete">Click Here</a>  to delete this script.</font>' );
+
+
+
+  /* NOTE (FPA): LANGUAGE - Offline Definitions & Constants
    * assume user is offline/no-internet if jQuery cannot be loaded from the CDN
    * the page #wrapper element is hidden and only display the following message
-	 */
-	define ( '_FPA_OFFLINE', '<h4>Unable To Load Bootstrap or jQuery</h4>' );
-	define ( '_FPA_OFFLINE_MESSAGE', '<p><strong>Are you working offline or have no internet connection?</strong><br />\
-	                                  <p style="padding:0 5%;">From FPA v2.0, internet access is required for the FPA to function correctly due to the use of Bootstrap and jQuery. \
-	                                  If you think this may be an intermittent problem, try reloading FPA again, confirm that your web browser is not in offline-mode and that you have an active internet connection.</p>'
-	       );
+   */
+  define ( '_FPA_OFFLINE', '<h4>Unable To Load Bootstrap or jQuery</h4>' );
+  define ( '_FPA_OFFLINE_MESSAGE', '<p><strong>Are you working offline or have no internet connection?</strong><br />\
+                                    <p style="padding:0 5%;">From FPA v2.0, internet access is required for the FPA to function correctly due to the use of Bootstrap and jQuery. \
+                                    If you think this may be an intermittent problem, try reloading FPA again, confirm that your web browser is not in offline-mode and that you have an active internet connection.</p>'
+         );
 
 
 
-	/* NOTE (FPA): LANGUAGE - Output Definitions & Constants
+  /* NOTE (FPA): LANGUAGE - Output Definitions & Constants
    * fpa output language strings
-	 */
+   */
   if ($runFPATour == '1'):
-	/* NOTE (FPA): LANGUAGE - FPA Tour Definitions & Constants
-	 *
-	 */
-  	define ( '_TOUR_STEP00_TITLE', 'User Toolbar' );
-  	define ( '_TOUR_STEP00_DESC', '<p>The FPA User Toolbar provides instant access to the <b>Sidebar Menu</b> toggle button <button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-transfer"></i></button> to improve data visibility on smaller screens.</p>\
-  	                               <p>You are also reminded of the currently selected <span class="text-warning">Information Privacy</span> setting and the <span class="text-danger">Security</span> implications of FPA, plus given the option to <span class="text-danger">Delete FPA</span> <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> after use.</p>\
-  	                               <p>On larger screens, FPA also offers direct links to useful Joomla! and FPA locations on the right-hand side.</p>'
-  	       );
-  	define ( '_TOUR_STEP05_TITLE', 'Sidebar Menu' );
-  	define ( '_TOUR_STEP05_DESC', '<p>The FPA <b>Sidebar Menu</b> provides scrolling access to each of the FPA Report Sections.</p>\
-  	                               <p>The Sidebar Menu may be reduced in width on larger screens and displayed on small smaller screens with the toggle button <button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-transfer"></i></button> found on the User Toolbar.</p>\
-  	                               <p>The final menu link provides the option to <span class="text-danger">Delete FPA</span> <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> after use.</p>'
-  	       );
-  	define ( '_TOUR_STEP10_TITLE', 'Information Footer' );
-  	define ( '_TOUR_STEP10_DESC', '<p>The FPA <b>Information Footer</b> provides access to the licensing and project contributors information, plus quick access to the latest download versions of FPA.</p>\
-  	                               <p>You are also reminded of the <span class="text-danger">Security</span> implications of the FPA and provided with a <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> <span class="text-danger">Delete FPA</span> link.</p>');
-  	define ( '_TOUR_STEP15_TITLE', 'Explain (Help) Buttons' );
-  	define ( '_TOUR_STEP15_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display context-sensitive information relating to the adjacent item.</p>');
-  	define ( '_TOUR_STEP16_TITLE', 'Dashboard Sections' );
-  	define ( '_TOUR_STEP16_DESC', '<p>The various FPA <b>Dashboard Sections</b> present relevant information about your installation & instance that may assist in understanding and troubleshooting a large numbers of issues & problems.</p>');
-  	define ( '_TOUR_STEP17_TITLE', 'Legend & Status Descriptions' );
-  	define ( '_TOUR_STEP17_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
-  	define ( '_TOUR_STEP20_TITLE', 'FPA Settings' );
-  	define ( '_TOUR_STEP20_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
-  	define ( '_TOUR_STEP25_TITLE', 'Generate Post Content' );
-  	define ( '_TOUR_STEP25_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
-  	define ( '_TOUR_STEP30_TITLE', 'Forum Post Content' );
-  	define ( '_TOUR_STEP30_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
-  	define ( '_TOUR_END_TITLE', 'Forum Post Assistant' );
-  	define ( '_TOUR_END_DESC', '<p>Thank you for using the FPA, hopefully it will assist you in solving your issue or successfully receive support from within the Joomla! forums.</p>\
-  	                            <p class="small">The Forum Post Assistant has been developed by, and is copyright of; Russell Winter, Phil DeGruy, Claire Mandville, Bernard Toplak, Sveinung Larsen</p>'
-  	       );
+  /* NOTE (FPA): LANGUAGE - FPA Tour Definitions & Constants
+   *
+   */
+    define ( '_TOUR_STEP00_TITLE', 'User Toolbar' );
+    define ( '_TOUR_STEP00_DESC', '<p>The FPA User Toolbar provides instant access to the <b>Sidebar Menu</b> toggle button <button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-transfer"></i></button> to improve data visibility on smaller screens.</p>\
+                                   <p>You are also reminded of the currently selected <span class="text-warning">Information Privacy</span> setting and the <span class="text-danger">Security</span> implications of FPA, plus given the option to <span class="text-danger">Delete FPA</span> <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> after use.</p>\
+                                   <p>On larger screens, FPA also offers direct links to useful Joomla! and FPA locations on the right-hand side.</p>'
+           );
+    define ( '_TOUR_STEP05_TITLE', 'Sidebar Menu' );
+    define ( '_TOUR_STEP05_DESC', '<p>The FPA <b>Sidebar Menu</b> provides scrolling access to each of the FPA Report Sections.</p>\
+                                   <p>The Sidebar Menu may be reduced in width on larger screens and displayed on small smaller screens with the toggle button <button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-transfer"></i></button> found on the User Toolbar.</p>\
+                                   <p>The final menu link provides the option to <span class="text-danger">Delete FPA</span> <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> after use.</p>'
+           );
+    define ( '_TOUR_STEP10_TITLE', 'Information Footer' );
+    define ( '_TOUR_STEP10_DESC', '<p>The FPA <b>Information Footer</b> provides access to the licensing and project contributors information, plus quick access to the latest download versions of FPA.</p>\
+                                   <p>You are also reminded of the <span class="text-danger">Security</span> implications of the FPA and provided with a <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> <span class="text-danger">Delete FPA</span> link.</p>');
+    define ( '_TOUR_STEP15_TITLE', 'Explain (Help) Buttons' );
+    define ( '_TOUR_STEP15_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display context-sensitive information relating to the adjacent item.</p>');
+    define ( '_TOUR_STEP16_TITLE', 'Dashboard Sections' );
+    define ( '_TOUR_STEP16_DESC', '<p>The various FPA <b>Dashboard Sections</b> present relevant information about your installation & instance that may assist in understanding and troubleshooting a large numbers of issues & problems.</p>');
+    define ( '_TOUR_STEP17_TITLE', 'Legend & Status Descriptions' );
+    define ( '_TOUR_STEP17_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
+    define ( '_TOUR_STEP20_TITLE', 'FPA Settings' );
+    define ( '_TOUR_STEP20_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
+    define ( '_TOUR_STEP25_TITLE', 'Generate Post Content' );
+    define ( '_TOUR_STEP25_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
+    define ( '_TOUR_STEP30_TITLE', 'Forum Post Content' );
+    define ( '_TOUR_STEP30_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
+    define ( '_TOUR_END_TITLE', 'Forum Post Assistant' );
+    define ( '_TOUR_END_DESC', '<p>Thank you for using the FPA, hopefully it will assist you in solving your issue or successfully receive support from within the Joomla! forums.</p>\
+                                <p class="small">The Forum Post Assistant has been developed by, and is copyright of; Russell Winter, Phil DeGruy, Claire Mandville, Bernard Toplak, Sveinung Larsen</p>'
+           );
   endif;
 
   /* generic language constants */
-	define ( '_FPA_VER', 'Version' );
-	define ( '_FPA_VER_SHORT', 'v' ); /* Russw : new v2.0.0 */
-	define ( '_FPA_EXPLAIN', 'Explain' ); /* Russw : new v2.0.0 */
+  define ( '_FPA_VER', 'Version' );
+  define ( '_FPA_VER_SHORT', 'v' ); /* Russw : new v2.0.0 */
+  define ( '_FPA_EXPLAIN', 'Explain' ); /* Russw : new v2.0.0 */
 
-	define ( '_FPA_Y', 'Yes' );
-	define ( '_FPA_N', 'No' );
-	define ( '_FPA_Y_ICON', '<i class="glyphicon glyphicon-ok-sign"></i>' ); /* Russw : new v2.0.0 */
-	define ( '_FPA_N_ICON', '<i class="glyphicon glyphicon-remove-sign"></i>' ); /* Russw : new v2.0.0 */
-	define ( '_FPA_U_ICON', '<i class="glyphicon glyphicon-question-sign"></i>' ); /* Russw : new v2.0.0 */
-	/* end fpa language definitions & constants */
+  define ( '_FPA_Y', 'Yes' );
+  define ( '_FPA_N', 'No' );
+  define ( '_FPA_Y_ICON', '<i class="glyphicon glyphicon-ok-sign"></i>' ); /* Russw : new v2.0.0 */
+  define ( '_FPA_N_ICON', '<i class="glyphicon glyphicon-remove-sign"></i>' ); /* Russw : new v2.0.0 */
+  define ( '_FPA_U_ICON', '<i class="glyphicon glyphicon-question-sign"></i>' ); /* Russw : new v2.0.0 */
+  /* end fpa language definitions & constants */
 ?>
     <head>
 
@@ -158,19 +158,19 @@
 
         <title><?php echo _RES .' : '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD .' '. _RES_LANG; ?></title>
 
-	      <?php
-  	      // attempt to find and display a favicon
-  	      if (file_exists('./administrator/templates/bluestork/favicon.ico')):
-  	        $faviconPath = './administrator/templates/bluestork/favicon.ico';
-  	      elseif (file_exists('./administrator/templates/isis/favicon.ico')):
-  	        $faviconPath = './administrator/templates/isis/favicon.ico';
-  	      elseif (file_exists('./administrator/templates/atum/favicon.ico')):
-  	        $faviconPath = './administrator/templates/atum/favicon.ico';
-  	      endif;
-  	    ?>
+        <?php
+          // attempt to find and display a favicon
+          if (file_exists('./administrator/templates/bluestork/favicon.ico')):
+            $faviconPath = './administrator/templates/bluestork/favicon.ico';
+          elseif (file_exists('./administrator/templates/isis/favicon.ico')):
+            $faviconPath = './administrator/templates/isis/favicon.ico';
+          elseif (file_exists('./administrator/templates/atum/favicon.ico')):
+            $faviconPath = './administrator/templates/atum/favicon.ico';
+          endif;
+        ?>
         <?php if ($faviconPath): ?>
-		      <link rel="shortcut icon" href="<?php echo $faviconPath; ?>" />
-  	    <?php endif; ?>
+          <link rel="shortcut icon" href="<?php echo $faviconPath; ?>" />
+        <?php endif; ?>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -229,96 +229,84 @@
                 <?php echo _RES_SHORT; ?>
               </strong>
 
-          	  <div class="text-center small">
-            	  <?php echo _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD; ?>
+              <div class="text-center small">
+                <?php echo _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD; ?>
               </div>
 
             </div><!--/.sidebar-header-->
 
             <ul class="nav nav-pills nav-stacked components tourStep05" >
+
               <li class="active">
                 <a href="#fpa-home">
                   <i class="glyphicon glyphicon-home"></i>
                   Home
                 </a>
-                <!--
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
-                  <i class="glyphicon glyphicon-home"></i>
-                  Home
-                </a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                  <li><a href="#">Home 1</a></li>
-                  <li><a href="#">Home 2</a></li>
-                  <li><a href="#">Home 3</a></li>
-                </ul>
-                -->
               </li>
+
               <li>
                 <a href="#basic-discovery-section">
                   <i class="glyphicon glyphicon-dashboard"></i>
                   Basic Discovery
                 </a>
               </li>
+
               <li>
                 <a href="#application-discovery-section">
                   <i class="glyphicon glyphicon-cog"></i>
                   Application Discovery
                 </a>
               </li>
+
               <li>
                 <a href="#host-discovery-section">
                   <i class="glyphicon glyphicon-equalizer"></i>
                   Hosting Discovery
                 </a>
               </li>
+
               <li>
                 <a href="#perms-discovery-section">
                   <i class="glyphicon glyphicon-list-alt"></i>
                   Permissions Discovery
                 </a>
               </li>
+
               <li>
                 <a href="#extension-discovery-section">
                   <i class="glyphicon glyphicon-th"></i>
                   Extension Discovery
                 </a>
               </li>
+
               <li class="visible-sm visible-md visible-lg">
                 <a href="<?php echo $_SERVER['PHP_SELF']; ?>?tour=1">
                   <i class="glyphicon glyphicon-blackboard"></i>
                   FPA Tour
                 </a>
               </li>
+
               <li>
                  <a href="fpa-en.php?act=delete" class="btn-danger">
                   <i class="glyphicon glyphicon-remove-circle"></i> Delete FPA
                 </a>
               </li>
+
             </ul>
 
           </div><!--/.sidebar-affix-->
 
-<!--
-          <div style="position: absolute;bottom: 0;left: 0; right:0;max-width:250px;">
-            <ul class="list-unstyled CTAs">
-              <li>
-                <a href="fpa-en.php?act=delete" class="btn btn-danger btn-lg text-center" role="button">
-                  <i class="glyphicon glyphicon-remove-circle"></i> Delete FPA
-                </a>
-              </li>
-              <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
-              <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
-            </ul>
-          </div>
--->
 
         </nav><!--/#sidebar-->
 
 
+
+
+
+
         <?php
           /* NOTE (RussW): PAGE - Container
-           *       LG: dymanic-width
-           * XS/SM/MD: full-width
+           *
            */
         ?>
         <div id="fpa-home" class="page">
@@ -326,10 +314,8 @@
 
           <?php
             /* NOTE (RussW): TOOLBAR - Navigation & Notification
-             * XS/SM/MD/LG: fixed top
-             *       XS/SM: joomla!, forum & download links hidden
-             *          XS: navbar-right hidden
              * collapse/in sidebar button, privacy & security notices, delete button, offsite links
+             *
              */
           ?>
           <nav class="navbar navbar-default hidden-print tourStep00">
@@ -339,86 +325,105 @@
               <div id="header-fixed" class="navbar-header">
 
                 <div class="btn-toolbar navbar-left">
+
                   <div class="btn-group" role="group">
                     <button type="button" id="sidebarCollapse" class="btn btn-primary navbar-btn">
                       <i class="glyphicon glyphicon-transfer"></i>
                     </button>
                   </div>
+
                   <div class="btn-group" role="group">
                     <button type="button" id="sidebarCollapse" class="btn btn-primary navbar-btn" onclick="printFPA()">
                       <i class="glyphicon glyphicon-print"></i>
                     </button>
                   </div>
+
                   <div class="btn-group hidden-xs" role="group">
                     <a tabindex="2" class="btn btn-warning navbar-btn" role="button" data-toggle="popover" title="<span class='text-privacy'><i class='glyphicon glyphicon-warning-sign'></i> Information Privacy Setting</span>" data-content="<span class='text-privacy'>Due to the highly sensitive nature of the information displayed by the FPA script, please ensure that you have configured your desired &quot;<b>Information Privacy</b>&quot; level before sharing this information publicly or submiting your post to the Joomla! Forum.</span>">
                       Privacy : Partial
                     </a>
                   </div>
+
                   <div class="btn-group" role="group">
                     <a tabindex="2" class="btn btn-danger navbar-btn" role="button" data-toggle="popover" title="<span class='text-danger'><i class='glyphicon glyphicon-warning-sign'></i> Important Security Notice</span>" data-content="<span class='text-danger'>Due to the highly sensitive nature of the information displayed by the FPA script, <b>it should be removed from the server immediately after use</b>. If the script is left on the site, it can be used to gather enough information to illegally access, deface or hack your site.</span>">
                       <i class="glyphicon glyphicon-info-sign"></i>
                     </a>
                   </div>
+
                   <div class="btn-group" role="group">
                     <a href="fpa-en.php?act=delete" class="btn btn-danger navbar-btn" role="button">
                       <i class="glyphicon glyphicon-remove-circle"></i> Delete FPA
                     </a>
                   </div>
+
                 </div><!--/.navbar-left-->
 
               </div><!--/.navbar-header-->
 
 
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
                 <ul class="nav navbar-nav navbar-right">
                   <li><a href="https://www.joomla.org/" target="_blank" class="btn btn-default btn-xs navbar-btn hidden-sm" role="button"><span class="text-primary"><i class="glyphicon glyphicon-home"></i> Joomla!</span></a></li>
                   <li><a href="https://forum.joomla.org/" target="_blank" class="btn btn-default btn-xs navbar-btn hidden-sm" role="button"><span class="text-primary"><i class="glyphicon glyphicon-comment"></i> Forum</span></a></li>
                   <li><a href="https://github.com/ForumPostAssistant/FPA/tree/en-GB/Documentation" target="_blank" class="btn btn-default btn-xs navbar-btn" role="button"><span class="text-primary"><i class="glyphicon glyphicon-book"></i> FPA Docs</span></a></li>
                   <li><a href="https://github.com/ForumPostAssistant/FPA/releases" target="_blank" class="btn btn-default btn-xs navbar-btn hidden-sm" role="button"><span class="text-primary"><i class="glyphicon glyphicon-download-alt"></i> Download</span></a></li>
                 </ul><!--/.navbar-right-->
+
               </div><!--/.navbar-collapse-->
 
             </div><!--/.container-fluid-->
+
 
           </nav><!--/.navbar-default-->
 
 
 
-            <?php
-              /* NOTE (RussW): START -  FPA Settings & Post Output
-               * XS/SM/MD/LG: page full-width
-               * accordion - settings & output panels
-               */
-            ?>
-            <div id="settings-section" class="hidden-print">
 
 
-              <div class="container-fluid">
 
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <?php
+            /* NOTE (RussW): START -  FPA Settings & Post Output
+             * accordion - settings & output panels
+             *
+             */
+          ?>
+          <div id="settings-section" class="hidden-print">
 
-                  <div class="panel panel-default">
 
-                    <div class="panel-heading" role="tab" id="headingOne">
-                      <h4 class="panel-title tourStep20">
-                        <button class="btn btn-info btn-xs pull-right clearfix" type="button" data-toggle="collapse" data-target="#collapseExplainSettings" aria-expanded="false" aria-controls="collapseExplainSettings">
-                          <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
-                        </button>
-                        <a class="collapsed fpa-settings" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                          FPA Settings
-                        </a>
-                      </h4>
-                    </div>
+            <div class="container-fluid">
 
-                    <div id="collapseOne" class="panel-collapse collapse /*in*/" role="tabpanel" aria-labelledby="headingOne">
-                      <div class="panel-body">
+              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-                        <form method="post" name="postDetails" id="postDetails" class="form-horizontal">
+                <div class="panel panel-default">
 
-                          <div class="row-fluid">
+                  <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title tourStep20">
+                      <button class="btn btn-info btn-xs pull-right clearfix" type="button" data-toggle="collapse" data-target="#collapseExplainSettings" aria-expanded="false" aria-controls="collapseExplainSettings">
+                        <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
+                      </button>
+                      <a class="collapsed fpa-settings" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        FPA Settings
+                      </a>
+                    </h4>
+                  </div>
 
-                           <div class="col-sm-12 col-lg-6">
-                              <div class="1bg-muted" style="1min-height:350px;">
+
+                  <?php
+                    /* NOTE (RussW): START -  FPA Settings Accordion
+                     * settings & options form
+                     *
+                     */
+                  ?>
+                  <div id="collapseOne" class="panel-collapse collapse /*in*/" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+
+                      <form method="post" name="postDetails" id="postDetails" class="form-horizontal">
+
+                        <div class="row-fluid">
+
+                          <div class="col-sm-12 col-lg-6">
+                            <div class="1bg-muted" style="1min-height:350px;">
 
                                 <fieldset id="runtimeOptions" class="padding-remove" <?php echo $disabled; ?>>
 
@@ -433,14 +438,14 @@
                                          * custon checkbox material buttons
                                          */
                                       ?>
-                                  <p class="small text-muted" style="1min-height:35px;">
-                                    <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
-                                  <?php if ( !empty($disabled) ): ?>
-                                    Options Are Disabled. Check the <span class="label label-warning">Snapshot Dashboard</span> for more information.
-                                  <?php else: ?>
-                                    Determine what information is included in your forum post, modify the default selections to suit your problem and privacy requirements.
-                                  <?php endif; ?>
-                                  </p>
+                                      <p class="small text-muted" style="1min-height:35px;">
+                                        <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
+                                      <?php if ( !empty($disabled) ): ?>
+                                        Options Are Disabled. Check the <span class="label label-warning">Snapshot Dashboard</span> for more information.
+                                      <?php else: ?>
+                                        Determine what information is included in your forum post, modify the default selections to suit your problem and privacy requirements.
+                                      <?php endif; ?>
+                                      </p>
 
 
                                       <ul class="list-group runtime-options">
@@ -529,131 +534,124 @@
 
                             </div>
                             <div class="col-sm-12 col-lg-6">
+
                               <div class="1bg-muted" style="1min-height:350px;">
 
                                 <fieldset id="optionalInformation" class="padding-remove" <?php echo $disabled; ?>>
                                   <legend class="1margin-remove">Optional Information:</legend>
 
-                                      <?php
-                                        /* NOTE (RussW): START -  Optional Information
-                                         *
-                                         */
-                                      ?>
-                                  <p class="small text-muted" style="1min-height:35px;">
-                                    <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
-                                  <?php if ( !empty($disabled) ): ?>
-                                    Options Are Disabled. Check the <span class="label label-warning">Snapshot Dashboard</span> for more information.
-                                  <?php else: ?>
-                                    To assist with troubleshooting, you may also add additional (optional) trouble-shooting information to your forum post if desired. <em>Leave empty to ignore</em>.
-                                  <?php endif; ?>
-                                  </p>
-
-<ul class="list-group">
-  <li class="list-group-item padding-sm">
-                                  <div class="form-group margin-remove">
-                                    <label for="probDSC" class="col-sm-5 control-label">Problem Description</label>
-                                    <div class="col-sm-7">
-                                      <input type="text" class="form-control input-sm" id="probDSC" name="probDSC" placeholder="Problem Description">
-                                    </div>
-                                  </div>
-
-  </li>
-  <li class="list-group-item padding-sm">
-
-                                  <div class="form-group margin-remove">
-                                    <label for="probMSG1" class="col-sm-5 control-label">Log/Error Message</label>
-                                    <div class="col-sm-7">
-                                      <input type="text" class="form-control input-sm" id="probMSG1" name="probMSG1" placeholder="Log/Error Message" />
-                                    </div>
-                                  </div>
-
-  </li>
-  <li class="list-group-item padding-sm">
-
-                                  <div class="form-group has-error margin-remove">
-                                    <label for="probMSG2" class="col-sm-5 control-label">Last Reported Error</label>
-                                    <div class="col-sm-7">
-    									              <?php if ( isset($phpenv['phpLASTERR']) ): ?>
-                                      <input type="text" class="form-control input-sm text-danger" id="probMSG2" name="probMSG2" value="<?php echo $phpenv['phpLASTERR']; ?>" placeholder="Last Reported Error" aria-describedby="lastErrorHelp" />
-                                      <span id="lastErrorHelp" class="help-block line-height-normal small"><i class="glyphicon glyphicon-info-sign"></i> auto-completed from your php error log</span>
+                                    <?php
+                                      /* NOTE (RussW): START -  Optional Information
+                                       *
+                                       */
+                                    ?>
+                                    <p class="small text-muted" style="1min-height:35px;">
+                                      <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
+                                    <?php if ( !empty($disabled) ): ?>
+                                      Options Are Disabled. Check the <span class="label label-warning">Snapshot Dashboard</span> for more information.
                                     <?php else: ?>
-                                      <input type="text" class="form-control input-sm" id="probMSG2" name="probMSG2" placeholder="Last Reported Error" />
+                                      To assist with troubleshooting, you may also add additional (optional) trouble-shooting information to your forum post if desired. <em>Leave empty to ignore</em>.
                                     <?php endif; ?>
-                                    </div>
-                                  </div>
+                                    </p>
 
-  </li>
-  <li class="list-group-item padding-sm">
+                                    <ul class="list-group">
 
-                                  <div class="form-group margin-remove">
-                                    <label for="probACT" class="col-sm-5 control-label">Actions Taken To Resolve?</label>
-                                    <div class="col-sm-7">
-                                      <textarea class="form-control input-sm" id="probACT" name="probACT" rows="2" placeholder="Action Taken To Resolve?"></textarea>
-                                    </div>
-                                  </div>
+                                      <li class="list-group-item padding-sm">
+                                        <div class="form-group margin-remove">
+                                          <label for="probDSC" class="col-sm-5 control-label">Problem Description</label>
+                                          <div class="col-sm-7">
+                                            <input type="text" class="form-control input-sm" id="probDSC" name="probDSC" placeholder="Problem Description">
+                                          </div>
+                                        </div>
+                                      </li>
 
-  </li>
-</ul>
+                                      <li class="list-group-item padding-sm">
+                                        <div class="form-group margin-remove">
+                                          <label for="probMSG1" class="col-sm-5 control-label">Log/Error Message</label>
+                                          <div class="col-sm-7">
+                                            <input type="text" class="form-control input-sm" id="probMSG1" name="probMSG1" placeholder="Log/Error Message" />
+                                          </div>
+                                        </div>
+                                      </li>
+
+                                      <li class="list-group-item padding-sm">
+                                        <div class="form-group has-error margin-remove">
+                                          <label for="probMSG2" class="col-sm-5 control-label">Last Reported Error</label>
+                                          <div class="col-sm-7">
+                                          <?php if ( isset($phpenv['phpLASTERR']) ): ?>
+                                            <input type="text" class="form-control input-sm text-danger" id="probMSG2" name="probMSG2" value="<?php echo $phpenv['phpLASTERR']; ?>" placeholder="Last Reported Error" aria-describedby="lastErrorHelp" />
+                                            <span id="lastErrorHelp" class="help-block line-height-normal small"><i class="glyphicon glyphicon-info-sign"></i> auto-completed from your php error log</span>
+                                          <?php else: ?>
+                                            <input type="text" class="form-control input-sm" id="probMSG2" name="probMSG2" placeholder="Last Reported Error" />
+                                          <?php endif; ?>
+                                          </div>
+                                        </div>
+                                      </li>
+
+                                      <li class="list-group-item padding-sm">
+                                        <div class="form-group margin-remove">
+                                          <label for="probACT" class="col-sm-5 control-label">Actions Taken To Resolve?</label>
+                                          <div class="col-sm-7">
+                                            <textarea class="form-control input-sm" id="probACT" name="probACT" rows="2" placeholder="Action Taken To Resolve?"></textarea>
+                                          </div>
+                                        </div>
+                                      </li>
+
+                                    </ul>
 
                                 </fieldset>
 
                               </div>
 
 
-                                      <?php
-                                        /* NOTE (RussW): START -  Information Privacy/Protection
-                                         * custon radio buttons
-                                         */
-                                      ?>
-                                    <div class="text-center">
+                              <?php
+                                /* NOTE (RussW): START -  Information Privacy/Protection
+                                 * custon radio buttons
+                                 */
+                              ?>
+                              <div class="text-center">
 
-                                      <h5>Information Privacy Settings</h5>
+                                <h5>Information Privacy Settings</h5>
 
-                                      <div class="btn-group btn-group-radio information-privacy-options">
+                                <div class="btn-group btn-group-radio information-privacy-options">
 
-                                        <input type="radio" name="showProtected" id="showProtectedNone" class="radio-button" value="1" aria-describedby="privacyNoneHelp" />
-                                        <label class="btn btn-danger col-xs-12 col-sm-4" for="showProtectedNone">None</label>
+                                  <input type="radio" name="showProtected" id="showProtectedNone" class="radio-button" value="1" aria-describedby="privacyNoneHelp" />
+                                  <label class="btn btn-danger col-xs-12 col-sm-4" for="showProtectedNone">None</label>
 
-                                        <input type="radio" name="showProtected" id="showProtectedDefault" class="radio-button" value="2" aria-describedby="privacyPartialHelp" checked />
-                                        <label class="btn btn-warning col-xs-12 col-sm-4" for="showProtectedDefault">Partial</label>
+                                  <input type="radio" name="showProtected" id="showProtectedDefault" class="radio-button" value="2" aria-describedby="privacyPartialHelp" checked />
+                                  <label class="btn btn-warning col-xs-12 col-sm-4" for="showProtectedDefault">Partial</label>
 
-                                        <input type="radio" name="showProtected" id="showProtectedStrict" class="radio-button" value="3" aria-describedby="privacyPartialHelp" />
-                                        <label class="btn btn-success col-xs-12 col-sm-4" for="showProtectedStrict">Strict</label>
+                                  <input type="radio" name="showProtected" id="showProtectedStrict" class="radio-button" value="3" aria-describedby="privacyPartialHelp" />
+                                  <label class="btn btn-success col-xs-12 col-sm-4" for="showProtectedStrict">Strict</label>
 
-                                      </div><!--/.information-privacy-options-->
+                                </div><!--/.information-privacy-options-->
 
-                                  <p class="small text-muted margin-top-sm margin-remove-bottom">
-                                    <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
-                                  <?php if ( !empty($disabled) ): ?>
-                                    Options Are Disabled. Check the <span class="label label-warning">Snapshot Dashboard</span> for more information.
-                                  <?php else: ?>
-                                    Select how much site identifiable information FPA will collect and display (Partial = Default)
-                                  <?php endif; ?>
-                                  </p>
+                                <p class="small text-muted margin-top-sm margin-remove-bottom">
+                                  <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
+                                <?php if ( !empty($disabled) ): ?>
+                                  Options Are Disabled. Check the <span class="label label-warning">Snapshot Dashboard</span> for more information.
+                                <?php else: ?>
+                                  Select how much site identifiable information FPA will collect and display (Partial = Default)
+                                <?php endif; ?>
+                                </p>
 
-
-                                    </div>
-
+                              </div>
 
                             </div>
-                             <div class="col-sm-12 col-md-12">
+                            <div class="col-sm-12 col-md-12">
 
                               <br />
                               <div class="">
 
                                 <fieldset class="padding-remove">
                                   <legend>Generate Post Content</legend>
-                  							  <input type="hidden" name="doIT" value="1" />
+                                  <input type="hidden" name="doIT" value="1" />
 
                                   <div class="row">
-
 
                                     <div class="col-sm-12 col-md-6">
 
                                       <div class="bg-muted padding-lg">
-                                        <!--
-                                        <i class="glyphicon glyphicon-info-sign"></i>
--->
                                         <h4>To Continue:</h4>
                                         After selecting your preferred runtime options and information privacy level, click the <strong>Generate Post Content!</strong> button to re-run FPA and build your post content.
                                       </div>
@@ -663,27 +661,24 @@
 
                                       <div class="row">
 
-
                                         <div class="col-xs-12 col-md-9 btn-group" role="group">
-        								                  <input type="submit" class="btn btn-success btn-block btn-lg" name="submit" value="Generate Post Content!" />
+                                          <input type="submit" class="btn btn-success btn-block btn-lg" name="submit" value="Generate Post Content!" />
+                                          <div class="clearfix"></div>
 
-                                        <div class="clearfix"></div>
-                                      <div class="checkbox">
-                                        <label>
-                                          <input type="checkbox"name="increasePOPS" value="1" aria-describedby="increasePOPSHelp">
-                                          PHP "Out of Memory" or "Execution Time-Outs" errors?
-                                          <span id="increasePOPSHelp" class="help-block line-height-normal small"><i class="glyphicon glyphicon-info-sign"></i> temporarily increase PHP memory and execution time</span>
-                                        </label>
-                                      </div><!--/.checkbox-->
-
+                                          <div class="checkbox">
+                                            <label>
+                                              <input type="checkbox"name="increasePOPS" value="1" aria-describedby="increasePOPSHelp">
+                                              PHP "Out of Memory" or "Execution Time-Outs" errors?
+                                              <span id="increasePOPSHelp" class="help-block line-height-normal small"><i class="glyphicon glyphicon-info-sign"></i> temporarily increase PHP memory and execution time</span>
+                                            </label>
+                                          </div><!--/.checkbox-->
 
                                         </div>
                                         <div class="col-xs-12 col-md-3 btn-group" role="group">
+
                                           <input type="reset" class="btn btn-default btn-block" name="reset" value="reset" />
+
                                         </div>
-
-
-
 
                                       </div>
 
@@ -702,7 +697,6 @@
 
                       </div><!--/.panel-body-->
                     </div><!--/#collapseOne-->
-
 
 
                     <div class="collapse container-fluid clearfix" id="collapseExplainSettings">
@@ -726,6 +720,13 @@
                   </div>
 
 
+
+                  <?php
+                    /* NOTE (RussW): START -  FPA Settings Accordion
+                     * settings & options form
+                     *
+                     */
+                  ?>
                   <div class="panel panel-default">
 
                     <div class="panel-heading" role="tab" id="headingTwo">
@@ -738,6 +739,8 @@
                         </a>
                       </h4>
                     </div>
+
+
                     <div id="collapseTwo" class="panel-collapse collapse /*in*/" role="tabpanel" aria-labelledby="headingTwo">
                       <div class="panel-body">
 
@@ -749,12 +752,15 @@
 
                         dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only<br />dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only
                         </textarea>
+
                         <button id="btnCopyToClipboard" class="btn btn-warning btn-block"><i class="glyphicon glyphicon-copy"></i> Copy Post Content To Clipboard</button>
+
 
                         <p class="small text-muted margin-top-sm margin-remove-bottom">
                           <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
                           In the event that the "Copy Post Content To Clipboard" button does not work, <strong>click inside the yellow textarea</strong>, then <strong>press CTRL-a (or Command-a)</strong> to select all the textarea content, <strong>press CTRL-c (Command-c)</strong> to copy the content and then use <strong>CRTL-v (Command-v)</strong> to paste the copied content in to your forum post.
                         </p>
+
 
                         <!-- TODO (RussW): determine how to split the content in to two textarea's if exceeds 20k characters-->
                         <br />
@@ -765,6 +771,7 @@
 
                       </div>
                     </div>
+
 
                     <div class="collapse container-fluid clearfix" id="collapseExplainPostContent">
                       <br />
@@ -796,10 +803,14 @@
           <div id="content">
 
 
+
+
+
+
             <?php
               /* NOTE (RussW): SECTION - Basic Discovery
-               * XS/SM/MD/LG: page full-width
                * generic top-level environment information
+               *
                */
             ?>
             <section id="basic-discovery-section" class="container-fluid">
@@ -828,6 +839,12 @@
               </div><!--/.page-header-->
 
 
+              <?php
+                /* NOTE (RussW): SUB-SECTION - Environment Discovery
+                 * basic environment information
+                 *
+                 */
+              ?>
               <div id="basic-discovery-container" class="row">
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
@@ -945,8 +962,8 @@
 
             <?php
               /* NOTE (RussW): SECTION - Application Discovery
-               * XS/SM/MD/LG: page full-width
                * basic application discovery & configuration
+               *
                */
             ?>
             <section id="application-discovery-section" class="container-fluid">
@@ -978,6 +995,7 @@
               <?php
                 /* NOTE (RussW): SUB-SECTION - Instance Discovery
                  * discovered instance information
+                 *
                  */
               ?>
               <div id="instance-discovery-container" class="row">
@@ -1059,9 +1077,13 @@
 
 
 
+
+
+
               <?php
                 /* NOTE (RussW): SUB-SECTION - DataBase Discovery
                  * discovered database information
+                 *
                  */
               ?>
               <div id="database-discovery-container" class="row">
@@ -1142,9 +1164,14 @@
               </div><!--/#performance-discovery-container-->
 
 
+
+
+
+
               <?php
                 /* NOTE (RussW): SUB-SECTION  - DataBase Table Structure (optional)
                  * discovered database table structure
+                 *
                  */
               ?>
               <div id="dbtable-discovery-container" class="row">
@@ -1206,8 +1233,8 @@
 
             <?php
               /* NOTE (RussW): SECTION - Host Discovery
-               * XS/SM/MD/LG: page full-width
                * generic host environment information
+               *
                */
             ?>
             <section id="host-discovery-section" class="container-fluid">
@@ -1235,9 +1262,15 @@
 
               </div><!--/.page-header-->
 
+
+
+
+
+
               <?php
                 /* NOTE (RussW): SUB-SECTION - PHP discovery
                  * php environement information
+                 *
                  */
               ?>
               <div id="host-discovery-container" class="row margin-top-lg margin-bottom-lg">
@@ -1318,62 +1351,64 @@
                       <div class="panel panel-default item">
                         <div class="panel-heading margin-bottom-sm">PHP Extensions</div>
 
-<div class="row-fluid small text-lowercase">
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
-  </div>
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-    <div class="border-all margin-bottom-sm text-center">date<br />7.2.1</div>
-  </div>
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-    <div class="border-all margin-bottom-sm text-center bg-success text-success">libxml<br />7.2.1</div>
-  </div>
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-    <div class="border-all margin-bottom-sm text-center bg-success text-success">openssl<br />7.2.1</div>
-  </div>
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-    <div class="border-all margin-bottom-sm text-center">Zend_Engine<br />7.2.1</div>
-  </div>
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
-  </div>
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
-  </div>
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
-  </div>
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-    <div class="border-all margin-bottom-sm text-center">Zend_Engine<br />7.2.1</div>
-  </div>
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
-  </div>
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
-  </div>
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-    <div class="border-all margin-bottom-sm text-center">Zend_Engine<br />7.2.1</div>
-  </div>
-</div>
-<div class="clearfix"></div>
+
+                        <div class="row-fluid small text-lowercase">
+                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                            <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+                          </div>
+                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                            <div class="border-all margin-bottom-sm text-center">date<br />7.2.1</div>
+                          </div>
+                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                            <div class="border-all margin-bottom-sm text-center bg-success text-success">libxml<br />7.2.1</div>
+                          </div>
+                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                            <div class="border-all margin-bottom-sm text-center bg-success text-success">openssl<br />7.2.1</div>
+                          </div>
+                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                            <div class="border-all margin-bottom-sm text-center">Zend_Engine<br />7.2.1</div>
+                          </div>
+                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                            <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+                          </div>
+                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                            <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+                          </div>
+                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                            <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+                          </div>
+                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                            <div class="border-all margin-bottom-sm text-center">Zend_Engine<br />7.2.1</div>
+                          </div>
+                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                            <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+                          </div>
+                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                            <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+                          </div>
+                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                            <div class="border-all margin-bottom-sm text-center">Zend_Engine<br />7.2.1</div>
+                          </div>
+                        </div>
+                        <div class="clearfix"></div>
 
 
-<div class="row-fluid small">
-  <div class="col-xs-12">
-    <h5>Potential Missing Extensions</h5>
-  </div>
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-    <div class="border-all margin-bottom-sm text-center bg-warning text-warning">mysqli</div>
-  </div>
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-    <div class="border-all margin-bottom-sm text-center bg-warning text-warning">mcrypt</div>
-  </div>
-  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-    <div class="border-all margin-bottom-sm text-center bg-warning text-warning">suhosin</div>
-  </div>
-</div>
-<div class="clearfix"></div>
+                        <div class="row-fluid small">
+                          <div class="col-xs-12">
+                            <h5>Potential Missing Extensions</h5>
+                          </div>
+                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                            <div class="border-all margin-bottom-sm text-center bg-warning text-warning">mysqli</div>
+                          </div>
+                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                            <div class="border-all margin-bottom-sm text-center bg-warning text-warning">mcrypt</div>
+                          </div>
+                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                            <div class="border-all margin-bottom-sm text-center bg-warning text-warning">suhosin</div>
+                          </div>
+                        </div>
+                        <div class="clearfix"></div>
+
                       </div><!--/.panel, item-->
 
                     </div><!--/.content-item-->
@@ -1395,8 +1430,9 @@
 
             <?php
               /* NOTE (RussW): SECTION - Permissions Discovery
-               * XS/SM/MD/LG: page full-width
                * permissions checks
+               * hidden columns added for mobile views (RussW 24/04/2018)
+               *
                */
             ?>
             <section id="perms-discovery-section" class="container-fluid">
@@ -1424,9 +1460,17 @@
 
               </div><!--/.page-header-->
 
+
+
+
+
+
+
               <?php
                 /* NOTE (RussW): SUB-SECTION - Core permisisons discovery
                  * core folder/file permisisons information
+                 * hidden columns added for mobile views (RussW 24/04/2018)
+                 *
                  */
               ?>
               <div id="perms-discovery-container" class="row margin-top-lg margin-bottom-lg">
@@ -1578,9 +1622,15 @@
               </div><!--/#perms-discovery-container-->
 
 
+
+
+
+
               <?php
                 /* NOTE (RussW): SUB-SECTION - Elevated Permissions (optional)
                  * elevated permisisons discovery
+                 * hidden columns added for mobile views (RussW 24/04/2018)
+                 *
                  */
               ?>
               <div id="eperms-discovery-container" class="row margin-top-lg margin-bottom-lg">
@@ -1644,8 +1694,8 @@
 
             <?php
               /* NOTE (RussW): SECTION - Extension Discovery
-               * XS/SM/MD/LG: page full-width
                * installed extension discovery
+               *
                */
             ?>
             <section id="extension-discovery-section" class="container-fluid">
@@ -1673,9 +1723,17 @@
 
               </div><!--/.page-header-->
 
+
+
+
+
+
               <?php
                 /* NOTE (RussW): SUB-SECTION  - Component Discovery
                  * installed component information
+                 * hidden columns added for mobile views (RussW 24/04/2018)
+                 * top margin added to administrator table (RussW 24/04/2018)
+                 *
                  */
               ?>
               <div id="component-discovery-container" class="row">
@@ -1710,7 +1768,7 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr class="bg-success">
+                                <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small text-truncate">yoo_sixthavenue</td>
                                   <td class="small text-center">1.0.3</td>
@@ -1747,7 +1805,7 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr class="bg-success">
+                                <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small text-truncate">hathor</td>
                                   <td class="small text-center">3.0.0</td>
@@ -1780,9 +1838,16 @@
               </div><!--/#component-discovery-container-->
 
 
+
+
+
+
               <?php
                 /* NOTE (RussW): SUB-SECTION  - Module Discovery
                  * installed module discovery
+                 * hidden columns added for mobile views (RussW 24/04/2018)
+                 * top margin added to administrator table (RussW 24/04/2018)
+                 *
                  */
               ?>
               <div id="module-discovery-container" class="row">
@@ -1817,7 +1882,7 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr class="bg-success">
+                                <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small text-truncate">yoo_sixthavenue</td>
                                   <td class="small text-center">1.0.3</td>
@@ -1854,7 +1919,7 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr class="bg-success">
+                                <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small text-truncate">hathor</td>
                                   <td class="small text-center">3.0.0</td>
@@ -1884,12 +1949,19 @@
 
                 </div><!--/.subsection-content-->
 
-              </div><!--/#eperms-discovery-container-->
+              </div><!--/#module-discovery-container-->
+
+
+
+
 
 
               <?php
                 /* NOTE (RussW): SUB-SECTION  - Plugin Discovery
                  * installed plugin discovery
+                 * hidden columns added for mobile views (RussW 24/04/2018)
+                 * top margin added to administrator table (RussW 24/04/2018)
+                 *
                  */
               ?>
               <div id="plugin-discovery-container" class="row">
@@ -1924,7 +1996,7 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr class="bg-success">
+                                <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small text-truncate">yoo_sixthavenue</td>
                                   <td class="small text-center">1.0.3</td>
@@ -1961,7 +2033,7 @@
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr class="bg-success">
+                                <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small text-truncate">hathor</td>
                                   <td class="small text-center">3.0.0</td>
@@ -1995,9 +2067,15 @@
 
 
 
+
+
+
               <?php
                 /* NOTE (RussW): SUB-SECTION  - Template Discovery
                  * installed template discovery
+                 * hidden columns added for mobile views (RussW 24/04/2018)
+                 * top margin added to administrator table (RussW 24/04/2018)
+                 *
                  */
               ?>
               <div id="template-discovery-container" class="row margin-top-lg margin-bottom-lg">
@@ -2118,10 +2196,8 @@
 
             <?php
               /* NOTE (RussW): Legends, Contributors, Copyright & Licensing
-               * XS/SM/MD/LG: page full-width
                * fpa legends, descriptions and copyright display
-               * MD/LG: section half-width
-               * XS/SM: section full-width
+               *
                */
             ?>
             <div id="legend-section" class="container-fluid">
@@ -2169,6 +2245,7 @@
 
                     <?php
                       /* NOTE (RussW): Security Warning (Browser View Only)
+                       *
                        */
                     ?>
                     <div class="row hidden-print">
@@ -2239,339 +2316,368 @@
       </div><!--/.wrapper-->
 
 
+
+
+
+
+      <?php
+        /* NOTE (RussW): FOOTER - Navigation
+         * download links, delete fpa & copyright
+         * copyright & contributor popovers removed, moved to legends text section (RussW 23/04/2018)
+         *
+         */
+      ?>
+      <footer id="copyright" class="navbar-fixed-bottom bg-muted hidden-print tourStep10">
+        <div class="container">
+          <div class="btn-toolbar">
+
+            <div class="btn-group btn-group-xs text-success download-info hidden-xs">
+              <a href="https://github.com/ForumPostAssistant/FPA/zipball/en-GB/%C2%A0%20Language%20en-GB" tabindex="3" class="" role="button">
+                <i class="glyphicon glyphicon-download-alt"></i> Latest (.zip) Download
+              </a>
+            </div>
+
+            <div class="btn-group btn-group-xs text-success download-info hidden-xs">
+              <a href="https://github.com/ForumPostAssistant/FPA/tarball/en-GB/%C2%A0%20Language%20en-GB" tabindex="3" class="" role="button">
+                <i class="glyphicon glyphicon-download-alt"></i> Latest (.tar.gz) Download
+              </a>
+            </div>
+
+            <div class="btn-group btn-group-xs text-danger security-info">
+              <a tabindex="2" class="" role="button" data-toggle="popover" title="<span class='text-danger'><i class='glyphicon glyphicon-warning-sign'></i> Important Security Notice</span>" data-content="<span class='text-danger'>Due to the highly sensitive nature of the information displayed by the FPA script, <b>it should be removed from the server immediately after use</b>. If the script is left on the site, it can be used to gather enough information to illegally access, deface or hack your site.</span>">
+                <i class="glyphicon glyphicon-warning-sign"></i> Security Notice
+              </a>
+            </div>
+
+            <div class="btn-group btn-group-xs text-danger delete-fpa">
+              <a href="fpa-en.php?act=delete" tabindex="3" class="" role="button">
+                <i class="glyphicon glyphicon-remove-circle"></i> Delete FPA
+              </a>
+            </div>
+
+            <div class="btn-group btn-group-xs text-primary copyright">
+              <?php echo _RES .' ('. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD; ?>) <sup>&copy;</sup>2011-<?php echo date('Y'); ?>
+            </div>
+
+          </div>
+        </div>
+      </footer><!--/#copyright footer-->
+
+
+
+
+
+
+      <?php
+        /* NOTE (RussW): Back-To-Top Link
+         *
+         */
+      ?>
+      <a id="back-to-top" href="#home-section" class="btn btn-primary btn-sm back-to-top" role="button">
+         <span class="glyphicon glyphicon-chevron-up"></span>
+      </a>
+
+
+
+
+
+
+      <?php
+        /* NOTE (RussW): CDN JS INCLUDES - Required BS/jQuery
+         * initialisation & configuration of js/jquery objects used in fpa
+         */
+      ?>
+      <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+      <?php
+        /* NOTE (RussW): Bootstrap CDN Link
+         * only load if FPATour is clicked
+         *
+         */
+      ?>
+      <?php if ($runFPATour == '1'): ?>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.11.0/js/bootstrap-tour.min.js" integrity="sha256-AFoIN2Z5u5QDw8n9X0FoP/p1ZhE1xDnsgHlCMWE0yYQ=" crossorigin="anonymous"></script>
+      <?php endif; ?>
+
+
+
+
+      <?php
+        /* NOTE (RussW): SCRIPTS - Offline?
+         * if jQuery cannot be loaded, assume offline and show a message
+         *
+         */
+      ?>
+      <script type="text/javascript">
+        if (typeof jQuery == 'undefined') {
+          var d = document.getElementById('wrapper');
+            d.className += " hidepage";
+            document.write('<h2 style="text-align:center;margin-top:10%;"><?php echo _RES; ?><br /><?php echo _FPA_VER_SHORT .''. _RES_VERSION; ?></h2>');
+            document.write('<div class="border-all bg-muted padding-lg" style="text-align:center;margin:25px 10vw;"><?php echo _FPA_OFFLINE; ?><?php echo _FPA_OFFLINE_MESSAGE; ?></div>');
+        };
+      </script>
+
+
+
+
+      <?php
+        /* NOTE (RussW): SCRIPTS - Custom JS & jQuery
+         * initialisation & configuration of js/jquery objects used in fpa
+         *
+         */
+      ?>
+      <script type="text/javascript">
+        $(document).ready(function () {
+
+
           <?php
-            /* NOTE (RussW): FOOTER - Navigation
-             * XS/SM/MD/LG: page full-width (fixed-bottom)
-             *       XS/SM: download links hidden
-             * download links, delete fpa & copyright
+            /* NOTE (RussW): SCRIPT - Sidebar Toggle Action
+             *
              */
           ?>
-          <footer id="copyright" class="navbar-fixed-bottom bg-muted hidden-print tourStep10">
-            <div class="container">
-              <div class="btn-toolbar">
-
-                <div class="btn-group btn-group-xs text-success download-info hidden-xs">
-                  <a href="https://github.com/ForumPostAssistant/FPA/zipball/en-GB/%C2%A0%20Language%20en-GB" tabindex="3" class="" role="button">
-                    <i class="glyphicon glyphicon-download-alt"></i> Latest (.zip) Download
-                  </a>
-                </div>
-
-                <div class="btn-group btn-group-xs text-success download-info hidden-xs">
-                  <a href="https://github.com/ForumPostAssistant/FPA/tarball/en-GB/%C2%A0%20Language%20en-GB" tabindex="3" class="" role="button">
-                    <i class="glyphicon glyphicon-download-alt"></i> Latest (.tar.gz) Download
-                  </a>
-                </div>
-
-                <div class="btn-group btn-group-xs text-danger security-info">
-                  <a tabindex="2" class="" role="button" data-toggle="popover" title="<span class='text-danger'><i class='glyphicon glyphicon-warning-sign'></i> Important Security Notice</span>" data-content="<span class='text-danger'>Due to the highly sensitive nature of the information displayed by the FPA script, <b>it should be removed from the server immediately after use</b>. If the script is left on the site, it can be used to gather enough information to illegally access, deface or hack your site.</span>">
-                    <i class="glyphicon glyphicon-warning-sign"></i> Security Notice
-                  </a>
-                </div>
-
-                <div class="btn-group btn-group-xs text-danger delete-fpa">
-                  <a href="fpa-en.php?act=delete" tabindex="3" class="" role="button">
-                    <i class="glyphicon glyphicon-remove-circle"></i> Delete FPA
-                  </a>
-                </div>
-
-                <div class="btn-group btn-group-xs text-primary copyright">
-                  <?php echo _RES .' ('. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD; ?>) <sup>&copy;</sup>2011-<?php echo date('Y'); ?>
-                </div>
-
-              </div>
-            </div>
-          </footer><!--/#copyright footer-->
-
-
-            <a id="back-to-top" href="#home-section" class="btn btn-primary btn-sm back-to-top" role="button">
-               <span class="glyphicon glyphicon-chevron-up"></span>
-            </a>
-
-
-
-
-        <?php
-          /* NOTE (RussW): CDN JS INCLUDES - Required BS/jQuery
-           * initialisation & configuration of js/jquery objects used in fpa
-           */
-        ?>
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-        <?php if ($runFPATour == '1'): ?>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.11.0/js/bootstrap-tour.min.js" integrity="sha256-AFoIN2Z5u5QDw8n9X0FoP/p1ZhE1xDnsgHlCMWE0yYQ=" crossorigin="anonymous"></script>
-        <?php endif; ?>
-
-
-        <?php
-          /* NOTE (RussW): SCRIPTS - Offline?
-           * if jQuery cannot be loaded, assume offline and show a message
-           */
-        ?>
-        <script type="text/javascript">
-          if (typeof jQuery == 'undefined') {
-            var d = document.getElementById('wrapper');
-              d.className += " hidepage";
-              document.write('<h2 style="text-align:center;margin-top:10%;"><?php echo _RES; ?><br /><?php echo _FPA_VER_SHORT .''. _RES_VERSION; ?></h2>');
-              document.write('<div class="border-all bg-muted padding-lg" style="text-align:center;margin:25px 10vw;"><?php echo _FPA_OFFLINE; ?><?php echo _FPA_OFFLINE_MESSAGE; ?></div>');
-          };
-        </script>
-
-
-        <?php
-          /* NOTE (RussW): SCRIPTS - Custom JS & jQuery
-           * initialisation & configuration of js/jquery objects used in fpa
-           */
-        ?>
-        <script type="text/javascript">
-          $(document).ready(function () {
-
-            <?php
-              /* NOTE (RussW): SCRIPT - Sidebar Toggle Action
-               *
-               */
-            ?>
-            $('#sidebarCollapse').on('click', function () {
-              $('#sidebar').toggleClass('active');
-              $('.page .navbar').toggleClass('expand');
-            });
-
-
-            <?php
-              /* NOTE (RussW): SCRIPT - SmoothScroll Simulatation/Animation With BS Sidebar/Scrollspy
-               *
-               */
-            ?>
-            $("#navbar-sidebar ul li a[href^='#']").on('click', function(e) {
-              e.preventDefault();
-              var hash = this.hash;
-              $('html, body').animate({
-                scrollTop: $(hash).offset().top
-                }, 500, function(){
-                // window.location.hash = hash;
-              });
-            });
-
-
-            <?php
-              /* NOTE (RussW): SCRIPT - BS Popover Objects
-               *
-               */
-            ?>
-            $('.navbar-header [data-toggle="popover"]').popover({
-              html: true,
-              placement: "bottom",
-              trigger: "hover focus",
-              container: ".navbar-header"
-            });
-
-            $('footer [data-toggle="popover"]').popover({
-              html: true,
-              placement: "top",
-              trigger: "hover focus",
-              container: "footer"
-            });
-
-
-            <?php
-              /* NOTE (RussW): SCRIPT - Count The #postOUTPUT textarea Contents (characters)
-               *
-               */
-            ?>
-            function count_it() {
-                document.getElementById('counter').innerHTML = document.getElementById('postOUTPUT').value.length;
-            }
-            count_it();
-
-
-            <?php
-              /* NOTE (RussW): SCRIPT - Copy Button, #postOUTPUT textarea to clipboard
-               *
-               */
-            ?>
-            function copyToClipboard(text) {
-              var textArea = document.createElement( "textarea" );
-              textArea.value = text;
-              document.body.appendChild( textArea );
-              textArea.select();
-              try {
-                var successful = document.execCommand( 'copy' );
-                var msg = successful ? 'successful' : 'unsuccessful';
-                console.log('Copying text command was ' + msg);
-              } catch (err) {
-                console.log('Oops, unable to copy');
-              }
-              document.body.removeChild( textArea );
-            }
-
-            $('#btnCopyToClipboard').click( function() {
-              var clipboardText = "";
-                clipboardText = $('#postOUTPUT').val();
-                  copyToClipboard( clipboardText );
-                  alert( "Forum Post Content Copied To Clipboard. You Can Now Paste This In To Your Post" );
-            });
-
-
-            <?php
-              /* NOTE (RussW): SCRIPT - Back-To-Top Object
-               *
-               */
-            ?>
-            $(window).scroll(function () {
-              if ($(this).scrollTop() > 600) {
-                $('#back-to-top').fadeIn();
-              } else {
-                $('#back-to-top').fadeOut();
-              }
-            });
-            $('#back-to-top').click(function () {
-              $('body,html').animate({
-                scrollTop: 0
-              }, 500);
-              return false;
-            });
-
+          $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+            $('.page .navbar').toggleClass('expand');
           });
 
 
           <?php
-            /* NOTE (RussW): SCRIPT - Print Button (#content only)
+            /* NOTE (RussW): SCRIPT - SmoothScroll Simulatation/Animation With BS Sidebar/Scrollspy
              *
              */
           ?>
-          function printFPA() {
-            window.print();
+          $("#navbar-sidebar ul li a[href^='#']").on('click', function(e) {
+            e.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+              }, 500, function(){
+              // window.location.hash = hash;
+            });
+          });
+
+
+          <?php
+            /* NOTE (RussW): SCRIPT - BS Popover Objects
+             *
+             */
+          ?>
+          $('.navbar-header [data-toggle="popover"]').popover({
+            html: true,
+            placement: "bottom",
+            trigger: "hover focus",
+            container: ".navbar-header"
+          });
+
+          $('footer [data-toggle="popover"]').popover({
+            html: true,
+            placement: "top",
+            trigger: "hover focus",
+            container: "footer"
+          });
+
+
+          <?php
+            /* NOTE (RussW): SCRIPT - Count The #postOUTPUT textarea Contents (characters)
+             *
+             */
+          ?>
+          function count_it() {
+              document.getElementById('counter').innerHTML = document.getElementById('postOUTPUT').value.length;
           }
-        </script>
+          count_it();
+
+
+          <?php
+            /* NOTE (RussW): SCRIPT - Copy Button, #postOUTPUT textarea to clipboard
+             *
+             */
+          ?>
+          function copyToClipboard(text) {
+            var textArea = document.createElement( "textarea" );
+            textArea.value = text;
+            document.body.appendChild( textArea );
+            textArea.select();
+            try {
+              var successful = document.execCommand( 'copy' );
+              var msg = successful ? 'successful' : 'unsuccessful';
+              console.log('Copying text command was ' + msg);
+            } catch (err) {
+              console.log('Oops, unable to copy');
+            }
+            document.body.removeChild( textArea );
+          }
+
+          $('#btnCopyToClipboard').click( function() {
+            var clipboardText = "";
+              clipboardText = $('#postOUTPUT').val();
+                copyToClipboard( clipboardText );
+                alert( "Forum Post Content Copied To Clipboard. You Can Now Paste This In To Your Post" );
+          });
+
+
+          <?php
+            /* NOTE (RussW): SCRIPT - Back-To-Top Object
+             *
+             */
+          ?>
+          $(window).scroll(function () {
+            if ($(this).scrollTop() > 600) {
+              $('#back-to-top').fadeIn();
+            } else {
+              $('#back-to-top').fadeOut();
+            }
+          });
+          $('#back-to-top').click(function () {
+            $('body,html').animate({
+              scrollTop: 0
+            }, 500);
+            return false;
+          });
+
+        });
 
 
         <?php
-          /* NOTE (RussW): SCRIPT - Configure & Initialise The FPA Tour
-           * only set if $runFPATour=1 from sidebar link (using $_GET['tour'])
+          /* NOTE (RussW): SCRIPT - Print Button (#content only)
+           *
            */
         ?>
-        <?php if ($runFPATour == '1'): ?>
-          <script type="text/javascript">
-            var tour = new Tour({
-              name:           'test3',
-              template:       '<div class="popover tour">\
-                                 <div class="arrow"></div>\
-                                 <h3 class="popover-title"><i class="glyphicon glyphicon-blackboard"></i> </h3>\
-                                 <div class="popover-content"></div>\
-                                 <div class="panel-footer padding-remove">\
-                                   <div class="popover-navigation">\
-                                     <button class="btn btn-default btn-sm" data-role="prev">« Prev</button>\
-                                     <button class="btn btn-default btn-sm" data-role="next">Next »</button>\
-                                     <button class="btn btn-default btn-sm" data-role="end">End tour</button>\
-                                   </div>\
+        function printFPA() {
+          window.print();
+        }
+      </script>
+
+
+      <?php
+        /* NOTE (RussW): SCRIPT - Configure & Initialise The FPA Tour
+         * only set if $runFPATour=1 from sidebar link (using $_GET['tour'])
+         */
+      ?>
+      <?php if ($runFPATour == '1'): ?>
+        <script type="text/javascript">
+          var tour = new Tour({
+            name:           'test3',
+            template:       '<div class="popover tour">\
+                               <div class="arrow"></div>\
+                               <h3 class="popover-title"><i class="glyphicon glyphicon-blackboard"></i> </h3>\
+                               <div class="popover-content"></div>\
+                               <div class="panel-footer padding-remove">\
+                                 <div class="popover-navigation">\
+                                   <button class="btn btn-default btn-sm" data-role="prev">« Prev</button>\
+                                   <button class="btn btn-default btn-sm" data-role="next">Next »</button>\
+                                   <button class="btn btn-default btn-sm" data-role="end">End tour</button>\
                                  </div>\
                                </div>\
-                              ',
-              smartPlacement: true,
-              storage:        false,
-              debug:          true,
-              animation:      true,
-              onEnd:          function (tour) {
-                                document.location.href = '<?php echo $_SERVER['PHP_SELF']; ?>';
-                              },
-              steps: [
-              {
-                // User Toolbar
-                element:      '.tourStep00',
-                title:        '<?php echo _TOUR_STEP00_TITLE; ?>',
-                content:      '<?php echo _TOUR_STEP00_DESC; ?>',
-                placement:    'auto bottom'
-              },
-              {
-                // Sidebar Menu
-                element:      '.tourStep05',
-                title:        '<?php echo _TOUR_STEP05_TITLE; ?>',
-                content:      '<?php echo _TOUR_STEP05_DESC; ?>',
-                placement:    'auto right',
-                autoscroll:   false
-              },
-              {
-                // Information Footer
-                element:      '.tourStep10',
-                title:        '<?php echo _TOUR_STEP10_TITLE; ?>',
-                content:      '<?php echo _TOUR_STEP10_DESC; ?>',
-                placement:    'auto top'
-              },
-              {
-                // Explain (Help) Buttons
-                element:      '.tourExplainBasic',
-                title:        '<?php echo _TOUR_STEP15_TITLE; ?>',
-                content:      '<?php echo _TOUR_STEP15_DESC; ?>',
-                placement:    'auto left',
-                onShown:      function (tour) {
-                                $('#collapseExplainBasic').toggleClass('in');
-                              },
-                onHide:       function (tour) {
-                                $('#collapseExplainBasic').toggleClass('in');
-                              }
-              },
-              {
-                // section information - snapshot section
-                element:      '.tourStep16',
-                title:        '<?php echo _TOUR_STEP16_TITLE; ?>',
-                content:      '<?php echo _TOUR_STEP16_DESC; ?>',
-                placement:    'auto top',
-              },
-              {
-                // legend & status information
-                element:      '.tourStep17',
-                title:        '<?php echo _TOUR_STEP17_TITLE; ?>',
-                content:      '<?php echo _TOUR_STEP17_DESC; ?>',
-                placement:    'auto top',
-              },
-              {
-                // accordion - settings
-                element:      '.tourStep20',
-                title:        '<?php echo _TOUR_STEP20_TITLE; ?>',
-                content:      '<?php echo _TOUR_STEP20_DESC; ?>',
-                onShown:      function (tour) {
-                                $('#collapseOne').toggleClass('in');
-                              }
-              },
-              {
-                // accordion - settings : generate post
-                element:      '.tourStep25',
-                title:        '<?php echo _TOUR_STEP25_TITLE; ?>',
-                content:      '<?php echo _TOUR_STEP25_DESC; ?>',
-                placement:    'left',
-                autoscroll:   true,
-                onHide:       function (tour) {
-                                $('#collapseOne').toggleClass('in');
-                              }
-              },
-              {
-                // accordion - post content
-                element:      '.tourStep30',
-                title:        '<?php echo _TOUR_STEP30_TITLE; ?>',
-                content:      '<?php echo _TOUR_STEP30_DESC; ?>',
-                onShown:      function (tour) {
-                                $('#collapseTwo').toggleClass('in');
-                              },
-                onHide:       function (tour) {
-                                $('#collapseTwo').toggleClass('in');
-                              },
+                             </div>\
+                            ',
+            smartPlacement: true,
+            storage:        false,
+            debug:          true,
+            animation:      true,
+            onEnd:          function (tour) {
+                              document.location.href = '<?php echo $_SERVER['PHP_SELF']; ?>';
+                            },
+            steps: [
+            {
+              // User Toolbar
+              element:      '.tourStep00',
+              title:        '<?php echo _TOUR_STEP00_TITLE; ?>',
+              content:      '<?php echo _TOUR_STEP00_DESC; ?>',
+              placement:    'auto bottom'
+            },
+            {
+              // Sidebar Menu
+              element:      '.tourStep05',
+              title:        '<?php echo _TOUR_STEP05_TITLE; ?>',
+              content:      '<?php echo _TOUR_STEP05_DESC; ?>',
+              placement:    'auto right',
+              autoscroll:   false
+            },
+            {
+              // Information Footer
+              element:      '.tourStep10',
+              title:        '<?php echo _TOUR_STEP10_TITLE; ?>',
+              content:      '<?php echo _TOUR_STEP10_DESC; ?>',
+              placement:    'auto top'
+            },
+            {
+              // Explain (Help) Buttons
+              element:      '.tourExplainBasic',
+              title:        '<?php echo _TOUR_STEP15_TITLE; ?>',
+              content:      '<?php echo _TOUR_STEP15_DESC; ?>',
+              placement:    'auto left',
+              onShown:      function (tour) {
+                              $('#collapseExplainBasic').toggleClass('in');
+                            },
+              onHide:       function (tour) {
+                              $('#collapseExplainBasic').toggleClass('in');
+                            }
+            },
+            {
+              // section information - snapshot section
+              element:      '.tourStep16',
+              title:        '<?php echo _TOUR_STEP16_TITLE; ?>',
+              content:      '<?php echo _TOUR_STEP16_DESC; ?>',
+              placement:    'auto top',
+            },
+            {
+              // legend & status information
+              element:      '.tourStep17',
+              title:        '<?php echo _TOUR_STEP17_TITLE; ?>',
+              content:      '<?php echo _TOUR_STEP17_DESC; ?>',
+              placement:    'auto top',
+            },
+            {
+              // accordion - settings
+              element:      '.tourStep20',
+              title:        '<?php echo _TOUR_STEP20_TITLE; ?>',
+              content:      '<?php echo _TOUR_STEP20_DESC; ?>',
+              onShown:      function (tour) {
+                              $('#collapseOne').toggleClass('in');
+                            }
+            },
+            {
+              // accordion - settings : generate post
+              element:      '.tourStep25',
+              title:        '<?php echo _TOUR_STEP25_TITLE; ?>',
+              content:      '<?php echo _TOUR_STEP25_DESC; ?>',
+              placement:    'left',
+              autoscroll:   true,
+              onHide:       function (tour) {
+                              $('#collapseOne').toggleClass('in');
+                            }
+            },
+            {
+              // accordion - post content
+              element:      '.tourStep30',
+              title:        '<?php echo _TOUR_STEP30_TITLE; ?>',
+              content:      '<?php echo _TOUR_STEP30_DESC; ?>',
+              onShown:      function (tour) {
+                              $('#collapseTwo').toggleClass('in');
+                            },
+              onHide:       function (tour) {
+                              $('#collapseTwo').toggleClass('in');
+                            },
 //              },
 //              {
-                // accordion - post content
+              // accordion - post content
 //                element:      '#endTour',
 //                title:        '<?php //echo _TOUR_END_TITLE; ?>',
 //                content:      '<?php //echo _TOUR_END_DESC .''. _RES .' ('. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .'-'. _RES_RELEASE_BUILD .')'; ?> <sup>&copy;</sup>2011-<?php echo date('Y'); ?>',
 //                backdrop:     true,
 //                orphan:       true
-              }
-            ]});
+            }
+          ]});
 
-            // Initialize the tour
-            tour.init();
-            // Start the tour
-            tour.start();
-          </script>
-        <?php endif; ?>
+          // Initialize the tour
+          tour.init();
+          // Start the tour
+          tour.start();
+        </script>
+      <?php endif; ?>
+
 
     </body>
 </html>
