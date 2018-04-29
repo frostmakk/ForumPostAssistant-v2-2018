@@ -694,7 +694,7 @@ div[class*="popover tour-"] .popover-navigation {
     text-align: center;
   }
   footer .btn-toolbar .btn-group.copyright {
-    text-align:center
+    text-align: center;
     float: none;
     display: block !important;
     width: 100% !important;

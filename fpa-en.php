@@ -220,7 +220,7 @@
                     endif;
                 ?>
                 <?php if ($logoPath): ?>
-                  <img src="<?php echo $logoPath; ?>" width="175" height="35" />
+                  <img src="<?php echo $logoPath; ?>" width="175" height="35" alt="<?php echo _RES; ?>" />
                 <?php endif; ?>
 
                 <?php echo _RES; ?>
@@ -327,7 +327,7 @@
                 <div class="btn-toolbar navbar-left">
 
                   <div class="btn-group" role="group">
-                    <button type="button" id="sidebarCollapse" class="btn btn-primary navbar-btn">
+                    <button type="button" id="sidebarCollapseButton" class="btn btn-primary navbar-btn">
                       <i class="glyphicon glyphicon-transfer"></i>
                     </button>
                   </div>
@@ -456,7 +456,7 @@
                                               Show Elevated Permissions
                                             </div>
                                             <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess1" name="someSwitchOption001" type="checkbox" autocomplete="off" checked />
+                                              <input id="someSwitchOptionSuccess1" name="someSwitchOption001" type="checkbox" checked />
                                               <label for="someSwitchOptionSuccess1" class="label-success text-left"></label>
                                             </div>
                                           </div>
@@ -468,7 +468,7 @@
                                               Show dataBase Statistics
                                             </div>
                                             <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess2" name="someSwitchOption002" type="checkbox" autocomplete="off" />
+                                              <input id="someSwitchOptionSuccess2" name="someSwitchOption002" type="checkbox" />
                                               <label for="someSwitchOptionSuccess2" class="label-success text-left"></label>
                                             </div>
                                           </div>
@@ -480,7 +480,7 @@
                                               Show Components
                                             </div>
                                             <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess3" name="someSwitchOption003" type="checkbox" autocomplete="off" checked />
+                                              <input id="someSwitchOptionSuccess3" name="someSwitchOption003" type="checkbox" checked />
                                               <label for="someSwitchOptionSuccess3" class="label-success text-left"></label>
                                             </div>
                                           </div>
@@ -492,7 +492,7 @@
                                               Show Modules
                                             </div>
                                             <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess4" name="someSwitchOption004" type="checkbox" autocomplete="off" />
+                                              <input id="someSwitchOptionSuccess4" name="someSwitchOption004" type="checkbox" />
                                               <label for="someSwitchOptionSuccess4" class="label-success text-left"></label>
                                             </div>
                                           </div>
@@ -504,7 +504,7 @@
                                               Show Plugins
                                             </div>
                                             <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess5" name="someSwitchOption005" type="checkbox" autocomplete="off" />
+                                              <input id="someSwitchOptionSuccess5" name="someSwitchOption005" type="checkbox" />
                                               <label for="someSwitchOptionSuccess5" class="label-success text-left"></label>
                                             </div>
                                           </div>
@@ -516,7 +516,7 @@
                                               <em> - Include Core Extensions?</em>
                                             </div>
                                             <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess6" name="someSwitchOption006" type="checkbox" autocomplete="off" />
+                                              <input id="someSwitchOptionSuccess6" name="someSwitchOption006" type="checkbox" />
                                               <label for="someSwitchOptionSuccess6" class="label-success text-left"></label>
                                             </div>
                                           </div>
@@ -615,13 +615,13 @@
 
                                 <div class="btn-group btn-group-radio information-privacy-options">
 
-                                  <input type="radio" name="showProtected" id="showProtectedNone" class="radio-button" value="1" aria-describedby="privacyNoneHelp" />
+                                  <input type="radio" name="showProtected" id="showProtectedNone" class="radio-button" value="1" />
                                   <label class="btn btn-danger col-xs-12 col-sm-4" for="showProtectedNone">None</label>
 
-                                  <input type="radio" name="showProtected" id="showProtectedDefault" class="radio-button" value="2" aria-describedby="privacyPartialHelp" checked />
+                                  <input type="radio" name="showProtected" id="showProtectedDefault" class="radio-button" value="2" checked />
                                   <label class="btn btn-warning col-xs-12 col-sm-4" for="showProtectedDefault">Partial</label>
 
-                                  <input type="radio" name="showProtected" id="showProtectedStrict" class="radio-button" value="3" aria-describedby="privacyPartialHelp" />
+                                  <input type="radio" name="showProtected" id="showProtectedStrict" class="radio-button" value="3" />
                                   <label class="btn btn-success col-xs-12 col-sm-4" for="showProtectedStrict">Strict</label>
 
                                 </div><!--/.information-privacy-options-->
@@ -667,7 +667,7 @@
 
                                           <div class="checkbox">
                                             <label>
-                                              <input type="checkbox"name="increasePOPS" value="1" aria-describedby="increasePOPSHelp">
+                                              <input type="checkbox" name="increasePOPS" value="1" aria-describedby="increasePOPSHelp">
                                               PHP "Out of Memory" or "Execution Time-Outs" errors?
                                               <span id="increasePOPSHelp" class="help-block line-height-normal small"><i class="glyphicon glyphicon-info-sign"></i> temporarily increase PHP memory and execution time</span>
                                             </label>
@@ -2409,7 +2409,7 @@
          *
          */
       ?>
-      <script type="text/javascript">
+      <script>
         if (typeof jQuery == 'undefined') {
           var d = document.getElementById('wrapper');
             d.className += " hidepage";
@@ -2427,7 +2427,7 @@
          *
          */
       ?>
-      <script type="text/javascript">
+      <script>
         $(document).ready(function () {
 
 
@@ -2436,7 +2436,7 @@
              *
              */
           ?>
-          $('#sidebarCollapse').on('click', function () {
+          $('#sidebarCollapseButton').on('click', function () {
             $('#sidebar').toggleClass('active');
             $('.page .navbar').toggleClass('expand');
           });
@@ -2553,10 +2553,11 @@
       <?php
         /* NOTE (RussW): SCRIPT - Configure & Initialise The FPA Tour
          * only set if $runFPATour=1 from sidebar link (using $_GET['tour'])
+         * configuration information at bootstraptour.com
          */
       ?>
       <?php if ($runFPATour == '1'): ?>
-        <script type="text/javascript">
+        <script>
           var tour = new Tour({
             name:           'test3',
             template:       '<div class="popover tour">\
