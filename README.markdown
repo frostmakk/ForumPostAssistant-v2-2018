@@ -1,6 +1,7 @@
-## Forum Post Assistant (FPA) v2.0
-
 > **This project is an Alpha Work-in-Progress and is _NOT_ a working or production script at this time.**  The current production release of the Forum Post Assistant can be found at the [FPA Production Github Project Page](https://github.com/ForumPostAssistant/FPA)
+ 
+ 
+## Forum Post Assistant (FPA) v2.0 [BS] Alpha
 
 The **_Forum Post Assistant_** has been designed to assist newcomers to the forum to be able to post relevant system, instance, php and troubleshooting information directly in to a pre-formatted forum post. This should save a few hours of too'ing and fro-ing asking for, and explaining, how to acquire useful information in order to help troubleshoot a problem.
 ___
