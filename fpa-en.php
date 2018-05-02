@@ -100,9 +100,65 @@
 
 
 
+  /* NOTE (FPA): LANGUAGE - Headings/Explain/Section Description Definitions & Constants
+   * fpa section headings, help/explain and sections (& sub-sections) descriptions
+   *
+   */
+  define ( '_SETTINGS_HEADING', 'FPA Settings' );
+  define ( '_SETTINGS_EXPLAIN', '<p>In order to collect relevant configuration & diagnostic information for you to generate a forum post, FPA needs to know what sort of problem you are observing and what information you wish to share in the forum. Please follow the instruction below to select the desired options and then click the <span class="label label-success">Generate Post Content</span> button.</p>
+                                 <br />
+                                 <ol>
+                                   <li>Enter your problem description <i>(optional)</i></li>
+                                   <li>Enter any error messages you see <i>(optional)</i></li>
+                                   <li>Enter any actions taken to resolve the issue <i>(optional)</i></li>
+                                   <li>Select detail & privacy level options of the output <i>(optional)</i></li>
+                                   <li>Click the <b>Generate Post Content</b> button to build the post content</li>
+                                   <li>Copy the contents of the <b>Forum Post Content</b> box (below) and paste it into a forum post</li>
+                                 </ol>'
+         );
+
+  define ( '_POST_HEADING', 'Forum Post Content' );
+  define ( '_POST_EXPLAIN', '<p>Once you have run the FPA script, with your chosen runtime options, your <b>Forum Post Content</b> will be displayed and you can then Copy and Paste this output in to a new post or reply in the forums to provide diagnostic and troubleshooting information when asking for assistance.</p>
+                             <p>The post content will not be easily readable as it is formatted to correctly display in the forum, but all the information you can see on the FPA webpage (below) will be included.'
+         );
+
+  define ( '_BASIC_HEADING', 'Basic Discovery' );
+  define ( '_BASIC_EXPLAIN', 'Basic hosting environment tests are run and compared to the documented installation requirements and known good configurations or known software versions that can sometimes cause problems. This information provides a quick and simple view of the generic environmental details.' );
+  define ( '_BASIC_DESCRIBE', 'The Basic Discovery section presents any initial diagnostic information that has been discovered about your hosting server, database, php environments and functions that may effect the smooth running of any installed Joomla! instance.' );
+  define ( '_BASIC_HEADING_SNAPSHOT', 'Environment Snapshot' );
+  define ( '_BASIC_DESCRIBE_SNAPSHOT', 'The snapshot provides an initial indication of how suitable your environment is for hosting Joomla!' );
+
+
+  define ( '_EXPLAIN_APP', 'Explain application' );
+  define ( '_DESCRIBE_APP', 'Describe application' );
+  define ( '_DESCRIBE_APP_INSTANCE', 'Describe app instance' );
+  define ( '_DESCRIBE_APP_DBCONFIG', 'Describe app database configuration' );
+  define ( '_DESCRIBE_APP_DBSTRUCTURE', 'Describe app database structure' );
+  define ( '_EXPLAIN_HOST', 'Explain hosting' );
+  define ( '_DESCRIBE_HOST', 'Describe hosting' );
+  define ( '_DESCRIBE_HOST_SERVER', 'Describe hosting server' );
+  define ( '_EXPLAIN_PERMS', 'Explain permissions' );
+  define ( '_DESCRIBE_PERMS', 'Describe permissions' );
+  define ( '_DESCRIBE_PERMS_CORE', 'Describe core permissions' );
+  define ( '_DESCRIBE_PERMS_ELEV', 'Describe elevated permissions' );
+  define ( '_DESCRIBE_EXT', 'Describe extensions' );
+  define ( '_DESCRIBE_EXT_COM', 'Describe components' );
+  define ( '_DESCRIBE_EXT_MOD', 'Describe modules' );
+  define ( '_DESCRIBE_EXT_PLU', 'Describe plugins' );
+  define ( '_DESCRIBE_EXT_TPL', 'Describe templates' );
+  define ( '_DESCRIBE_LEGEND_INFO', 'Information & Help Message/Status' );
+  define ( '_DESCRIBE_LEGEND_SUCCESS', 'Positive & Successful Message/Status' );
+  define ( '_DESCRIBE_LEGEND_WARNING', 'Highlighted & Warning Message/Status' );
+  define ( '_DESCRIBE_LEGEND_ALERT', 'Negative Or Error Message/Status' );
+  define ( '_DESCRIBE_LEGEND_PRIVACY', 'Privacy Settings Are Protecting Sensitive Data' );
+
+
   /* NOTE (FPA): LANGUAGE - Output Definitions & Constants
    * fpa output language strings
+   *
    */
+
+
   if ($runFPATour == '1'):
   /* NOTE (FPA): LANGUAGE - FPA Tour Definitions & Constants
    *
@@ -140,14 +196,16 @@
 
   /* generic language constants */
   define ( '_FPA_VER', 'Version' );
-  define ( '_FPA_VER_SHORT', 'v' ); /* Russw : new v2.0.0 */
-  define ( '_FPA_EXPLAIN', 'Explain' ); /* Russw : new v2.0.0 */
+  define ( '_FPA_VER_SHORT', 'v' ); // RussW : new v2.0.0
+  define ( '_FPA_EXPLAIN', 'Explain' ); // RussW : new v2.0.0
 
   define ( '_FPA_Y', 'Yes' );
   define ( '_FPA_N', 'No' );
-  define ( '_FPA_Y_ICON', '<i class="glyphicon glyphicon-ok-sign"></i>' ); /* Russw : new v2.0.0 */
-  define ( '_FPA_N_ICON', '<i class="glyphicon glyphicon-remove-sign"></i>' ); /* Russw : new v2.0.0 */
-  define ( '_FPA_U_ICON', '<i class="glyphicon glyphicon-question-sign"></i>' ); /* Russw : new v2.0.0 */
+  define ( '_FPA_U', 'Unknown' );
+  define ( '_FPA_Y_ICON', '<i class="glyphicon glyphicon-ok-sign"></i>' ); // RussW : new v2.0.0
+  define ( '_FPA_N_ICON', '<i class="glyphicon glyphicon-remove-sign"></i>' ); // RussW : new v2.0.0
+  define ( '_FPA_U_ICON', '<i class="glyphicon glyphicon-question-sign"></i>' ); // RussW : new v2.0.0
+
   /* end fpa language definitions & constants */
 ?>
     <head>
@@ -403,7 +461,7 @@
                         <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                       </button>
                       <a class="collapsed fpa-settings" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        FPA Settings
+                        <?php echo _SETTINGS_HEADING ;?>
                       </a>
                     </h4>
                   </div>
@@ -702,18 +760,10 @@
                     <div class="collapse container-fluid clearfix" id="collapseExplainSettings">
                       <br />
                       <div class="alert alert-info" role="alert">
-                        <h4><i class="glyphicon glyphicon-info-sign"></i> FPA Settings</h4>
+                        <h4><i class="glyphicon glyphicon-info-sign"></i> <?php echo _SETTINGS_HEADING ;?></h4>
 
-                        <p>In order to collect relevant configuration & diagnostic information for you to generate a forum post, FPA needs to know what sort of problem you are observing and what information you wish to share in the forum. Please follow the instruction below to select the desired options and then click the <span class="label label-success">Generate Post Content</span> button.</p>
-                        <br />
-                        <ol>
-                          <li>Enter your problem description <i>(optional)</i></li>
-                          <li>Enter any error messages you see <i>(optional)</i></li>
-                          <li>Enter any actions taken to resolve the issue <i>(optional)</i></li>
-                          <li>Select detail & privacy level options of the output <i>(optional)</i></li>
-                          <li>Click the <span class="label label-success">Generate Post Content</span> button to build the post content</li>
-                          <li>Copy the contents of the <span class="label label-info">Forum Post Content</span> box (below) and paste it into a forum post</li>
-                        </ol>
+                        <?php echo _SETTINGS_EXPLAIN ;?>
+
                       </div>
                     </div>
 
@@ -722,8 +772,8 @@
 
 
                   <?php
-                    /* NOTE (RussW): START -  FPA Settings Accordion
-                     * settings & options form
+                    /* NOTE (RussW): START -  FPA Post Content Accordion
+                     * post content output
                      *
                      */
                   ?>
@@ -735,7 +785,7 @@
                           <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                         </button>
                         <a class="collapsed fpa-output" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          Forum Post Content
+                          <?php echo _POST_HEADING; ?>
                         </a>
                       </h4>
                     </div>
@@ -776,8 +826,8 @@
                     <div class="collapse container-fluid clearfix" id="collapseExplainPostContent">
                       <br />
                       <div class="alert alert-info" role="alert">
-                        <h4><i class="glyphicon glyphicon-info-sign"></i> Forum Post Content</h4>
-                        <p>POST CONTENT Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <h4><i class="glyphicon glyphicon-info-sign"></i> <?php echo _POST_HEADING; ?></h4>
+                        <?php echo _POST_EXPLAIN; ?>
                       </div>
                     </div>
 
@@ -822,17 +872,17 @@
                   <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourExplainBasic" type="button" data-toggle="collapse" data-target="#collapseExplainBasic" aria-expanded="false" aria-controls="collapseExplainBasic">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
-                  <i class="glyphicon glyphicon-dashboard"></i> Basic Discovery
+                  <i class="glyphicon glyphicon-dashboard"></i> <?php echo _BASIC_HEADING; ?>
                 </h2>
 
                 <p class="lead">
-                  The FPA Discovery Section presents any basic information that FPA has managed to discover about your hosting server, database & php environments, installed functions and any discovered Joomla! instance.
+                  <?php echo _BASIC_DESCRIBE; ?>
                 </p>
 
                 <div class="collapse clearfix" id="collapseExplainBasic">
                   <div class="alert alert-info" role="alert">
-                    <h4><i class="glyphicon glyphicon-info-sign"></i> Basic Discovery Dashboard</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h4><i class="glyphicon glyphicon-info-sign"></i> <?php echo _BASIC_HEADING; ?></h4>
+                    <p><?php echo _BASIC_EXPLAIN; ?></p>
                   </div>
                 </div><!--/#collapseExplainBasic-->
 
@@ -848,9 +898,74 @@
               <div id="basic-discovery-container" class="row">
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
+                  <h3 class="margin-remove text-muted"><?php echo _BASIC_HEADING_SNAPSHOT; ?></h3>
+                  <p class="text-muted"><?php echo _BASIC_DESCRIBE_SNAPSHOT; ?></p>
 
-                  <h3 class="margin-remove text-muted">Environment Snapshot</h3>
-                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+
+                  <?php
+                    /* TODO (RussW): HEALTH PROGRESS-BAR - decide if a progress bar is useful here
+                     *
+                     */
+                  ?>
+                  <?php
+                     $snapshotIndicator = 100;
+                     if ($snapshotIndicator <= '20'):
+                       $snapshotDangerDisplay  = 'progress-bar-striped active show';
+                       $snapshotDangerDisplayIndicator  = 'show';
+                       $snapshotDangerWidth = $snapshotIndicator;
+                       $snapshotWarningDisplay = ' hidden';
+                       $snapshotDefaultDisplay = ' hidden';
+                       $snapshotSuccessDisplay = ' hidden';
+
+                     elseif ($snapshotIndicator <= '40'):
+                       $snapshotDangerDisplay  = 'show';
+                       $snapshotDangerDisplayIndicator  = 'hidden';
+                       $snapshotDangerWidth = '20';
+                       $snapshotWarningWidth = ($snapshotIndicator - $snapshotDangerWidth);
+                       $snapshotWarningDisplay = 'progress-bar-striped active show';
+                       $snapshotDefaultDisplay = 'hidden';
+                       $snapshotSuccessDisplay = 'hidden';
+
+                     elseif ($snapshotIndicator <= '75'):
+                       $snapshotDangerDisplay  = ' show';
+                       $snapshotDangerDisplayIndicator  = 'hidden';
+                       $snapshotDangerWidth = '20';
+                       $snapshotWarningDisplay = 'show';
+                       $snapshotWarningDisplayIndicator  = 'hidden';
+                       $snapshotWarningWidth = '25';
+                       $snapshotDefaultWidth = ($snapshotIndicator - ($snapshotDangerWidth + $snapshotWarningWidth));
+                       $snapshotDefaultDisplay = ' show';
+                       $snapshotSuccessDisplay = ' hidden';
+
+                     elseif ($snapshotIndicator > '75'):
+                       $snapshotDangerDisplay  = 'show';
+                       $snapshotDangerDisplayIndicator  = 'hidden';
+                       $snapshotDangerWidth = '20';
+                       $snapshotWarningDisplay = 'show';
+                       $snapshotWarningDisplayIndicator  = 'hidden';
+                       $snapshotWarningWidth = '25';
+                       $snapshotDefaultDisplay = 'show';
+                       $snapshotDefaultDisplayIndicator  = 'hidden';
+                       $snapshotDefaultWidth = '30';
+                       $snapshotSuccessWidth = ($snapshotIndicator - ($snapshotDangerWidth + $snapshotWarningWidth + $snapshotDefaultWidth));
+                       $snapshotSuccessDisplay = 'show';
+                     endif;
+                  ?>
+                  <div class="progress margin-top-lg margin-bottom-lg">
+                    <div class="progress-bar progress-bar-danger <?php echo $snapshotDangerDisplay; ?>" role="lprogressbar" style="width:<?php echo $snapshotDangerWidth; ?>%;min-width: 2em;">
+                      <span class="<?php echo $snapshotDangerDisplayIndicator; ?>"><?php echo _FPA_N_ICON; ?></span>
+                    </div>
+                    <div class="progress-bar progress-bar-warning <?php echo $snapshotWarningDisplay; ?>" role="lprogressbar" style="width:<?php echo $snapshotWarningWidth; ?>%;min-width: 2em;">
+                      <span class="<?php echo $snapshotWarningDisplayIndicator; ?>"><?php echo _FPA_U_ICON; ?></span>
+                    </div>
+                    <div class="progress-bar progress-bar-default <?php echo $snapshotDefaultDisplay; ?>" role="lprogressbar" style="width:<?php echo $snapshotDefaultWidth; ?>%;min-width: 2em;">
+                      <span class="<?php echo $snapshotDefaultDisplayIndicator; ?>"><?php echo _FPA_A_ICON; ?></span>
+                    </div>
+                    <div class="progress-bar progress-bar-success <?php echo $snapshotSuccessDisplay; ?>" role="lprogressbar" style="width:<?php echo $snapshotSuccessWidth; ?>%;min-width: 2em;">
+                      <span class="<?php echo $snapshotDisplaySuccess; ?>"><?php echo _FPA_Y_ICON; ?></span>
+                    </div>
+                  </div>
+
 
                 </div><!--/.subsection-heading-->
                 <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
@@ -859,26 +974,30 @@
                   <div class="row content-container">
                     <div class="col-xs-12 col-md-4 content-item">
 
-                      <div class="panel panel-default item">
-                        <div class="panel-heading">PHP</div>
+                      <div class="panel panel-default item" style="min-height:143px;">
 
-                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                        <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <thead>
+                            <tr class="text-muted">
+                              <th class="text-center text-uppercase" colspan="2">PHP</th>
+                            </tr>
+                          </thead>
                           <tbody>
                             <tr>
-                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
-                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                              <td class="small text-truncate">PHP Version</td>
+                              <td class="small text-center col-sm-5"><strong><?php echo _FPA_VER_SHORT; ?>5.6.30</strong></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">PHP API</td>
-                              <td class="text-center small bg-info">CGI-FCGI</td>
+                              <td class="small text-center">CGI-FCGI</td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate text-success">MySQL Support</td>
-                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">MySQL Support dfdsfds</td>
+                              <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate text-danger">MySQLi Support</td>
-                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                              <td class="small text-truncate">MySQLi Support</td>
+                              <td class="text-center text-warning"><?php echo _FPA_N_ICON; ?></td>
                             </tr>
                           </tbody>
                         </table>
@@ -888,26 +1007,30 @@
                     </div><!--/.content-item-->
                     <div class="col-xs-12 col-md-4 content-item">
 
-                      <div class="panel panel-default item">
-                        <div class="panel-heading">DataBase</div>
+                      <div class="panel panel-default item" style="min-height:143px;">
 
-                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                        <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <thead>
+                            <tr class="text-muted">
+                              <th class="text-center text-uppercase" colspan="2">DATABASE</th>
+                            </tr>
+                          </thead>
                           <tbody>
                             <tr>
-                              <td class="small text-truncate"><span class="text-truncate">MySQL Version</span></td>
-                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                              <td class="small text-truncate col-xs-7">PHP Version</td>
+                              <td class="small text-center"><strong><?php echo _FPA_VER_SHORT; ?>5.6.30</strong></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">PHP API</td>
-                              <td class="text-center small bg-info">CGI-FCGI</td>
+                              <td class="small text-center">CGI-FCGI</td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate text-success">MySQL Support</td>
-                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">MySQL Support</td>
+                              <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate text-danger">MySQLi Support</td>
-                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                              <td class="small text-truncate">MySQLi Support</td>
+                              <td class="text-center text-warning"><?php echo _FPA_N_ICON; ?></td>
                             </tr>
                           </tbody>
                         </table>
@@ -917,26 +1040,30 @@
                     </div><!--/.content-item-->
                     <div class="col-xs-12 col-md-4 content-item">
 
-                      <div class="panel panel-default item">
-                        <div class="panel-heading">Functions</div>
+                      <div class="panel panel-default item" style="min-height:143px;">
 
-                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                        <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <thead>
+                            <tr class="text-muted">
+                              <th class="text-center text-uppercase" colspan="2">FUNCTIONS</th>
+                            </tr>
+                          </thead>
                           <tbody>
                             <tr>
-                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
-                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                              <td class="small text-truncate col-xs-7">PHP Version</td>
+                              <td class="small text-center"><strong><?php echo _FPA_VER_SHORT; ?>5.6.30</strong></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">PHP API</td>
-                              <td class="text-center small bg-info">CGI-FCGI</td>
+                              <td class="small text-center">CGI-FCGI</td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate text-success">MySQL Support</td>
-                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">MySQL Support</td>
+                              <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate text-danger">MySQLi Support</td>
-                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                              <td class="small text-truncate">MySQLi Support</td>
+                              <td class="text-center text-warning"><?php echo _FPA_N_ICON; ?></td>
                             </tr>
                           </tbody>
                         </table>
@@ -1010,62 +1137,329 @@
 
 
                   <div class="row content-container">
-                    <div class="col-xs-12 col-md-6 content-item">
+                    <div class="col-xs-12 col-md-12 content-item">
 
-                      <div class="panel panel-default item">
-                        <div class="panel-heading">Joomla! :: (+version found)</div>
+                      <?php
+                        /* DONE (FPA): CHANGES - Installed Instance
+                         * removed - database version & characterset, available elsewhere (RussW 02/05/2018)
+                         *
+                         */
+                      ?>
 
-                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
-                          <tbody>
-                            <tr>
-                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
-                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">PHP API</td>
-                              <td class="text-center small bg-info">CGI-FCGI</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate text-success">MySQL Support</td>
-                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate text-danger">MySQLi Support</td>
-                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
-                            </tr>
-                          </tbody>
-                        </table>
+<div class="row clearfix">
+  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
 
-                      </div><!--/.panel, item-->
+    <div class="panel panel-default item" style="min-height:111px;">
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
+        <thead>
+          <tr class="text-muted">
+            <th class="text-center text-uppercase">CMS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="small text-center"><strong>v3.8.7</strong></td>
+          </tr>
+          <tr>
+            <td class="small text-center bg-success text-success">Stable</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!--/.panel, .item-->
 
-                    </div><!--/.content-item-->
-                    <div class="col-xs-12 col-md-6 content-item">
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
 
-                      <div class="panel panel-default item">
-                        <div class="panel-heading">Configuration</div>
+    <div class="panel panel-default item" style="min-height:111px;">
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
+        <thead>
+          <tr class="text-muted">
+            <th class="text-center text-uppercase">PLATFORM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="small text-center"><strong>v13.1.0</strong></td>
+          </tr>
+          <tr>
+            <td class="small text-center bg-success text-success col-xs-4">Stable</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!--/.panel, .item-->
 
-                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
-                          <tbody>
-                            <tr>
-                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
-                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">PHP API</td>
-                              <td class="text-center small bg-info">CGI-FCGI</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate text-success">MySQL Support</td>
-                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate text-danger">MySQLi Support</td>
-                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
-                            </tr>
-                          </tbody>
-                        </table>
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
 
-                      </div><!--/.panel, item-->
+    <div class="panel panel-default item" style="min-height:111px;">
+
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
+        <thead>
+          <tr class="text-muted">
+            <th class="text-center text-uppercase" colspan="2">CONFIG</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="small text-truncate col-xs-8">enabled</td>
+            <td class="small text-center">Y</td>
+          </tr>
+          <tr class="border-top">
+            <td class="small text-truncate">Suffix</td>
+            <td class="small text-center">N</td>
+          </tr>
+          <tr>
+            <td class="small text-truncate">ReWrite</td>
+            <td class="small text-center">Y</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!--/.panel, .item-->
+
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+
+    <div class="panel panel-default item" style="min-height:111px;">
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
+        <thead>
+          <tr class="text-muted">
+            <th class="text-center" colspan="2">MODE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-top">
+            <td class="small text-truncate col-xs-8">enabled</td>
+            <td class="small text-center">Y</td>
+          </tr>
+          <tr class="border-top">
+            <td class="small text-truncate">Suffix</td>
+            <td class="small text-center">N</td>
+          </tr>
+          <tr>
+            <td class="small text-truncate">ReWrite</td>
+            <td class="small text-center">Y</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!--/.panel, .item-->
+
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+
+    <div class="panel panel-default item" style="min-height:111px;">
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
+        <thead>
+          <tr class="text-muted">
+            <th class="text-center text-uppercase" colspan="2">OFFLINE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-top">
+            <td class="small text-truncate col-xs-8">enabled</td>
+            <td class="small text-center">Y</td>
+          </tr>
+          <tr class="border-top">
+            <td class="small text-truncate">Suffix</td>
+            <td class="small text-center">N</td>
+          </tr>
+          <tr>
+            <td class="small text-truncate">ReWrite</td>
+            <td class="small text-center">Y</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!--/.panel, .item-->
+
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+
+    <div class="panel panel-default item" style="min-height:111px;">
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
+        <thead>
+          <tr class="text-muted">
+            <th class="text-center text-uppercase" colspan="2">OFFLINE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-top">
+            <td class="small text-truncate col-xs-8">enabled</td>
+            <td class="small text-center">Y</td>
+          </tr>
+          <tr class="border-top">
+            <td class="small text-truncate">Suffix</td>
+            <td class="small text-center">N</td>
+          </tr>
+          <tr>
+            <td class="small text-truncate">ReWrite</td>
+            <td class="small text-center">Y</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!--/.panel, .item-->
+
+  </div>
+<!--
+</div>
+
+
+<div class="row-fluid clearfix">
+-->
+  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+
+    <div class="panel panel-default item" style="min-height:111px;">
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
+        <thead>
+          <tr class="text-muted">
+            <th class="text-center text-uppercase">OFFLINE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-top">
+            <td class="small text-center margin-lg padding-lg text-success">N</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!--/.panel, .item-->
+
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+
+    <div class="panel panel-default item" style="min-height:111px;">
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
+        <thead>
+          <tr class="text-muted">
+            <th class="text-center text-uppercase" colspan="2">OFFLINE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-top">
+            <td class="small text-truncate col-xs-8">enabled</td>
+            <td class="small text-center">Y</td>
+          </tr>
+          <tr class="border-top">
+            <td class="small text-truncate col-xs-8">Suffix</td>
+            <td class="small text-center">N</td>
+          </tr>
+          <tr>
+            <td class="small text-truncate col-xs-8">ReWrite</td>
+            <td class="small text-center">Y</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!--/.panel, .item-->
+
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+
+    <div class="panel panel-default item" style="min-height:111px;">
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
+        <thead>
+          <tr class="text-muted">
+            <th class="text-center text-uppercase" colspan="2">OFFLINE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-top">
+            <td class="small text-truncate col-xs-8">enabled</td>
+            <td class="small text-center">Y</td>
+          </tr>
+          <tr class="border-top">
+            <td class="small text-truncate col-xs-8">Suffix</td>
+            <td class="small text-center">N</td>
+          </tr>
+          <tr>
+            <td class="small text-truncate col-xs-8">ReWrite</td>
+            <td class="small text-center">Y</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!--/.panel, .item-->
+
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+
+    <div class="panel panel-default item" style="min-height:111px;">
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
+        <thead>
+          <tr class="text-muted">
+            <th class="text-center text-uppercase" colspan="2">OFFLINE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-top">
+            <td class="small text-truncate col-xs-8">enabled</td>
+            <td class="small text-center">Y</td>
+          </tr>
+          <tr class="border-top">
+            <td class="small text-truncate col-xs-8">Suffix</td>
+            <td class="small text-center">N</td>
+          </tr>
+          <tr>
+            <td class="small text-truncate col-xs-8">ReWrite</td>
+            <td class="small text-center">Y</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!--/.panel, .item-->
+
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+
+    <div class="panel panel-default item" style="min-height:111px;">
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
+        <thead>
+          <tr class="text-muted">
+            <th class="text-center text-uppercase" colspan="2">OFFLINE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-top">
+            <td class="small text-truncate col-xs-8">enabled</td>
+            <td class="small text-center">Y</td>
+          </tr>
+          <tr class="border-top">
+            <td class="small text-truncate col-xs-8">Suffix</td>
+            <td class="small text-center">N</td>
+          </tr>
+          <tr>
+            <td class="small text-truncate col-xs-8">ReWrite</td>
+            <td class="small text-center">Y</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!--/.panel, .item-->
+
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+
+    <div class="panel panel-default item" style="min-height:111px;">
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
+        <thead>
+          <tr class="text-muted">
+            <th class="text-center text-uppercase" colspan="2">OFFLINE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-top">
+            <td class="small text-truncate col-xs-8">enabled</td>
+            <td class="small text-center">Y</td>
+          </tr>
+          <tr class="border-top">
+            <td class="small text-truncate col-xs-8">Suffix</td>
+            <td class="small text-center">N</td>
+          </tr>
+          <tr>
+            <td class="small text-truncate col-xs-8">ReWrite</td>
+            <td class="small text-center">Y</td>
+          </tr>
+        </tbody>
+      </table>
+    </div><!--/.panel, .item-->
+
+  </div>
+</div>
+
+
 
                     </div><!--/.content-item-->
                   </div><!--/.content-container-->

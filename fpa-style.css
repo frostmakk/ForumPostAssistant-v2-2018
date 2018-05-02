@@ -87,7 +87,7 @@ table th {
   font-size: 80% !important;
   background: #fafafa;
 }
-.panel-group, .panel, .panel-heading, .btn, .label, .nav-pills>li>a, .alert, .list-group, .list-group-item, input, textarea, select { /* bs override */
+.panel-group, .panel, .panel-heading, .btn, .label, .nav-pills>li>a, .alert, .list-group, .list-group-item, input, textarea, select, .progress, .progress-bar { /* bs override */
   border-radius: 0px !important;
 }
 
