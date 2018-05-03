@@ -952,16 +952,16 @@
                      endif;
                   ?>
                   <div class="progress margin-top-lg margin-bottom-lg">
-                    <div class="progress-bar progress-bar-danger <?php echo $snapshotDangerDisplay; ?>" role="lprogressbar" style="width:<?php echo $snapshotDangerWidth; ?>%;min-width: 2em;">
+                    <div class="progress-bar progress-bar-danger <?php echo $snapshotDangerDisplay; ?>" role="progressbar" style="width:<?php echo $snapshotDangerWidth; ?>%;min-width: 2em;">
                       <span class="<?php echo $snapshotDangerDisplayIndicator; ?>"><?php echo _FPA_N_ICON; ?></span>
                     </div>
-                    <div class="progress-bar progress-bar-warning <?php echo $snapshotWarningDisplay; ?>" role="lprogressbar" style="width:<?php echo $snapshotWarningWidth; ?>%;min-width: 2em;">
+                    <div class="progress-bar progress-bar-warning <?php echo $snapshotWarningDisplay; ?>" role="progressbar" style="width:<?php echo $snapshotWarningWidth; ?>%;min-width: 2em;">
                       <span class="<?php echo $snapshotWarningDisplayIndicator; ?>"><?php echo _FPA_U_ICON; ?></span>
                     </div>
-                    <div class="progress-bar progress-bar-default <?php echo $snapshotDefaultDisplay; ?>" role="lprogressbar" style="width:<?php echo $snapshotDefaultWidth; ?>%;min-width: 2em;">
+                    <div class="progress-bar progress-bar-default <?php echo $snapshotDefaultDisplay; ?>" role="progressbar" style="width:<?php echo $snapshotDefaultWidth; ?>%;min-width: 2em;">
                       <span class="<?php echo $snapshotDefaultDisplayIndicator; ?>"><?php echo _FPA_A_ICON; ?></span>
                     </div>
-                    <div class="progress-bar progress-bar-success <?php echo $snapshotSuccessDisplay; ?>" role="lprogressbar" style="width:<?php echo $snapshotSuccessWidth; ?>%;min-width: 2em;">
+                    <div class="progress-bar progress-bar-success <?php echo $snapshotSuccessDisplay; ?>" role="progressbar" style="width:<?php echo $snapshotSuccessWidth; ?>%;min-width: 2em;">
                       <span class="<?php echo $snapshotDisplaySuccess; ?>"><?php echo _FPA_Y_ICON; ?></span>
                     </div>
                   </div>
@@ -974,50 +974,17 @@
                   <div class="row content-container">
                     <div class="col-xs-12 col-md-4 content-item">
 
-                      <div class="panel panel-default item" style="min-height:143px;">
+                      <div class="panel panel-default item" style="min-height:153px;">
 
-                        <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
-                          <thead>
-                            <tr class="text-muted">
-                              <th class="text-center text-uppercase" colspan="2">PHP</th>
-                            </tr>
-                          </thead>
+                        <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+                          <caption class="text-center text-uppercase">PHP</caption>
+                          <colgroup class="col-xs-12">
+                            <col class="col-xs-7">
+                            <col>
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
                               <td class="small text-truncate">PHP Version</td>
-                              <td class="small text-center col-sm-5"><strong><?php echo _FPA_VER_SHORT; ?>5.6.30</strong></td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">PHP API</td>
-                              <td class="small text-center">CGI-FCGI</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">MySQL Support dfdsfds</td>
-                              <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">MySQLi Support</td>
-                              <td class="text-center text-warning"><?php echo _FPA_N_ICON; ?></td>
-                            </tr>
-                          </tbody>
-                        </table>
-
-                      </div><!--/.panel, item-->
-
-                    </div><!--/.content-item-->
-                    <div class="col-xs-12 col-md-4 content-item">
-
-                      <div class="panel panel-default item" style="min-height:143px;">
-
-                        <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
-                          <thead>
-                            <tr class="text-muted">
-                              <th class="text-center text-uppercase" colspan="2">DATABASE</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td class="small text-truncate col-xs-7">PHP Version</td>
                               <td class="small text-center"><strong><?php echo _FPA_VER_SHORT; ?>5.6.30</strong></td>
                             </tr>
                             <tr>
@@ -1025,7 +992,7 @@
                               <td class="small text-center">CGI-FCGI</td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate">MySQL Support</td>
+                              <td class="small text-truncate">MySQL Support dfdsfds hfghgfhfd</td>
                               <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                             </tr>
                             <tr>
@@ -1040,17 +1007,50 @@
                     </div><!--/.content-item-->
                     <div class="col-xs-12 col-md-4 content-item">
 
-                      <div class="panel panel-default item" style="min-height:143px;">
+                      <div class="panel panel-default item" style="min-height:153px;">
 
-                        <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
-                          <thead>
-                            <tr class="text-muted">
-                              <th class="text-center text-uppercase" colspan="2">FUNCTIONS</th>
-                            </tr>
-                          </thead>
+                        <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+                          <caption class="text-center text-uppercase">DATABASE</caption>
+                          <colgroup class="col-xs-12">
+                            <col class="col-xs-7">
+                            <col>
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
-                              <td class="small text-truncate col-xs-7">PHP Version</td>
+                              <td class="small text-truncate">PHP Version</td>
+                              <td class="small text-center"><strong><?php echo _FPA_VER_SHORT; ?>5.6.30</strong></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">PHP API</td>
+                              <td class="small text-center">CGI-FCGI</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">MySQL Support dgdfg gdgdf gfdsgs</td>
+                              <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">MySQLi Support</td>
+                              <td class="text-center text-warning"><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+                    <div class="col-xs-12 col-md-4 content-item">
+
+                      <div class="panel panel-default item" style="min-height:153px;">
+
+                        <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+                          <caption class="text-center text-uppercase">DATABASE</caption>
+                          <colgroup class="col-xs-12">
+                            <col class="col-xs-7">
+                            <col>
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                          <tbody>
+                            <tr>
+                              <td class="small text-truncate">PHP Version</td>
                               <td class="small text-center"><strong><?php echo _FPA_VER_SHORT; ?>5.6.30</strong></td>
                             </tr>
                             <tr>
@@ -1150,12 +1150,12 @@
   <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
 
     <div class="panel panel-default item" style="min-height:111px;">
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
-        <thead>
-          <tr class="text-muted">
-            <th class="text-center text-uppercase">CMS</th>
-          </tr>
-        </thead>
+
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+        <caption class="text-center text-uppercase">CMS</caption>
+        <colgroup>
+          <col class="col-xs-12">
+        </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
           <tr>
             <td class="small text-center"><strong>v3.8.7</strong></td>
@@ -1165,18 +1165,19 @@
           </tr>
         </tbody>
       </table>
+
     </div><!--/.panel, .item-->
 
   </div>
   <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:111px;">
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
-        <thead>
-          <tr class="text-muted">
-            <th class="text-center text-uppercase">PLATFORM</th>
-          </tr>
-        </thead>
+    <div class="panel panel-default item" style="min-height:118px;">
+
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+        <caption class="text-center text-uppercase">PLATFORM</caption>
+        <colgroup>
+          <col class="col-xs-12">
+        </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
           <tr>
             <td class="small text-center"><strong>v13.1.0</strong></td>
@@ -1186,22 +1187,23 @@
           </tr>
         </tbody>
       </table>
+
     </div><!--/.panel, .item-->
 
   </div>
   <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:111px;">
+    <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
-        <thead>
-          <tr class="text-muted">
-            <th class="text-center text-uppercase" colspan="2">CONFIG</th>
-          </tr>
-        </thead>
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+        <caption class="text-center text-uppercase">CONFIG</caption>
+        <colgroup>
+          <col class="col-xs-7">
+          <col>
+        </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
           <tr>
-            <td class="small text-truncate col-xs-8">enabled</td>
+            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
             <td class="small text-center">Y</td>
           </tr>
           <tr class="border-top">
@@ -1214,21 +1216,23 @@
           </tr>
         </tbody>
       </table>
+
     </div><!--/.panel, .item-->
 
   </div>
   <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:111px;">
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
-        <thead>
-          <tr class="text-muted">
-            <th class="text-center" colspan="2">MODE</th>
-          </tr>
-        </thead>
+    <div class="panel panel-default item" style="min-height:118px;">
+
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+        <caption class="text-center text-uppercase">CONFIG</caption>
+        <colgroup>
+          <col class="col-xs-7">
+          <col>
+        </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
-          <tr class="border-top">
-            <td class="small text-truncate col-xs-8">enabled</td>
+          <tr>
+            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
             <td class="small text-center">Y</td>
           </tr>
           <tr class="border-top">
@@ -1241,21 +1245,23 @@
           </tr>
         </tbody>
       </table>
+
     </div><!--/.panel, .item-->
 
   </div>
   <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:111px;">
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
-        <thead>
-          <tr class="text-muted">
-            <th class="text-center text-uppercase" colspan="2">OFFLINE</th>
-          </tr>
-        </thead>
+    <div class="panel panel-default item" style="min-height:118px;">
+
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+        <caption class="text-center text-uppercase">CONFIG</caption>
+        <colgroup>
+          <col class="col-xs-7">
+          <col>
+        </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
-          <tr class="border-top">
-            <td class="small text-truncate col-xs-8">enabled</td>
+          <tr>
+            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
             <td class="small text-center">Y</td>
           </tr>
           <tr class="border-top">
@@ -1268,21 +1274,23 @@
           </tr>
         </tbody>
       </table>
+
     </div><!--/.panel, .item-->
 
   </div>
   <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:111px;">
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
-        <thead>
-          <tr class="text-muted">
-            <th class="text-center text-uppercase" colspan="2">OFFLINE</th>
-          </tr>
-        </thead>
+    <div class="panel panel-default item" style="min-height:118px;">
+
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+        <caption class="text-center text-uppercase">CONFIG</caption>
+        <colgroup>
+          <col class="col-xs-7">
+          <col>
+        </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
-          <tr class="border-top">
-            <td class="small text-truncate col-xs-8">enabled</td>
+          <tr>
+            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
             <td class="small text-center">Y</td>
           </tr>
           <tr class="border-top">
@@ -1295,165 +1303,181 @@
           </tr>
         </tbody>
       </table>
-    </div><!--/.panel, .item-->
 
-  </div>
-<!--
-</div>
-
-
-<div class="row-fluid clearfix">
--->
-  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
-
-    <div class="panel panel-default item" style="min-height:111px;">
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
-        <thead>
-          <tr class="text-muted">
-            <th class="text-center text-uppercase">OFFLINE</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="border-top">
-            <td class="small text-center margin-lg padding-lg text-success">N</td>
-          </tr>
-        </tbody>
-      </table>
     </div><!--/.panel, .item-->
 
   </div>
   <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:111px;">
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
-        <thead>
-          <tr class="text-muted">
-            <th class="text-center text-uppercase" colspan="2">OFFLINE</th>
-          </tr>
-        </thead>
+    <div class="panel panel-default item" style="min-height:118px;">
+
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+        <caption class="text-center text-uppercase">CONFIG</caption>
+        <colgroup>
+          <col class="col-xs-7">
+          <col>
+        </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
-          <tr class="border-top">
-            <td class="small text-truncate col-xs-8">enabled</td>
+          <tr>
+            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
             <td class="small text-center">Y</td>
           </tr>
           <tr class="border-top">
-            <td class="small text-truncate col-xs-8">Suffix</td>
+            <td class="small text-truncate">Suffix</td>
             <td class="small text-center">N</td>
           </tr>
           <tr>
-            <td class="small text-truncate col-xs-8">ReWrite</td>
+            <td class="small text-truncate">ReWrite</td>
             <td class="small text-center">Y</td>
           </tr>
         </tbody>
       </table>
+
     </div><!--/.panel, .item-->
 
   </div>
   <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:111px;">
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
-        <thead>
-          <tr class="text-muted">
-            <th class="text-center text-uppercase" colspan="2">OFFLINE</th>
-          </tr>
-        </thead>
+    <div class="panel panel-default item" style="min-height:118px;">
+
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+        <caption class="text-center text-uppercase">CONFIG</caption>
+        <colgroup>
+          <col class="col-xs-7">
+          <col>
+        </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
-          <tr class="border-top">
-            <td class="small text-truncate col-xs-8">enabled</td>
+          <tr>
+            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
             <td class="small text-center">Y</td>
           </tr>
           <tr class="border-top">
-            <td class="small text-truncate col-xs-8">Suffix</td>
+            <td class="small text-truncate">Suffix</td>
             <td class="small text-center">N</td>
           </tr>
           <tr>
-            <td class="small text-truncate col-xs-8">ReWrite</td>
+            <td class="small text-truncate">ReWrite</td>
             <td class="small text-center">Y</td>
           </tr>
         </tbody>
       </table>
+
     </div><!--/.panel, .item-->
 
   </div>
   <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:111px;">
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
-        <thead>
-          <tr class="text-muted">
-            <th class="text-center text-uppercase" colspan="2">OFFLINE</th>
-          </tr>
-        </thead>
+    <div class="panel panel-default item" style="min-height:118px;">
+
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+        <caption class="text-center text-uppercase">CONFIG</caption>
+        <colgroup>
+          <col class="col-xs-7">
+          <col>
+        </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
-          <tr class="border-top">
-            <td class="small text-truncate col-xs-8">enabled</td>
+          <tr>
+            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
             <td class="small text-center">Y</td>
           </tr>
           <tr class="border-top">
-            <td class="small text-truncate col-xs-8">Suffix</td>
+            <td class="small text-truncate">Suffix</td>
             <td class="small text-center">N</td>
           </tr>
           <tr>
-            <td class="small text-truncate col-xs-8">ReWrite</td>
+            <td class="small text-truncate">ReWrite</td>
             <td class="small text-center">Y</td>
           </tr>
         </tbody>
       </table>
+
     </div><!--/.panel, .item-->
 
   </div>
   <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:111px;">
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
-        <thead>
-          <tr class="text-muted">
-            <th class="text-center text-uppercase" colspan="2">OFFLINE</th>
-          </tr>
-        </thead>
+    <div class="panel panel-default item" style="min-height:118px;">
+
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+        <caption class="text-center text-uppercase">CONFIG</caption>
+        <colgroup>
+          <col class="col-xs-7">
+          <col>
+        </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
-          <tr class="border-top">
-            <td class="small text-truncate col-xs-8">enabled</td>
+          <tr>
+            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
             <td class="small text-center">Y</td>
           </tr>
           <tr class="border-top">
-            <td class="small text-truncate col-xs-8">Suffix</td>
+            <td class="small text-truncate">Suffix</td>
             <td class="small text-center">N</td>
           </tr>
           <tr>
-            <td class="small text-truncate col-xs-8">ReWrite</td>
+            <td class="small text-truncate">ReWrite</td>
             <td class="small text-center">Y</td>
           </tr>
         </tbody>
       </table>
+
     </div><!--/.panel, .item-->
 
   </div>
   <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:111px;">
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;min-width:100%;">
-        <thead>
-          <tr class="text-muted">
-            <th class="text-center text-uppercase" colspan="2">OFFLINE</th>
-          </tr>
-        </thead>
+    <div class="panel panel-default item" style="min-height:118px;">
+
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+        <caption class="text-center text-uppercase">CONFIG</caption>
+        <colgroup>
+          <col class="col-xs-7">
+          <col>
+        </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
-          <tr class="border-top">
-            <td class="small text-truncate col-xs-8">enabled</td>
+          <tr>
+            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
             <td class="small text-center">Y</td>
           </tr>
           <tr class="border-top">
-            <td class="small text-truncate col-xs-8">Suffix</td>
+            <td class="small text-truncate">Suffix</td>
             <td class="small text-center">N</td>
           </tr>
           <tr>
-            <td class="small text-truncate col-xs-8">ReWrite</td>
+            <td class="small text-truncate">ReWrite</td>
             <td class="small text-center">Y</td>
           </tr>
         </tbody>
       </table>
+
+    </div><!--/.panel, .item-->
+
+  </div>
+  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+
+    <div class="panel panel-default item" style="min-height:118px;">
+
+      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+        <caption class="text-center text-uppercase">CONFIG</caption>
+        <colgroup>
+          <col class="col-xs-7">
+          <col>
+        </colgroup><!--/required to fix column sizing & employ text-truncate-->
+        <tbody>
+          <tr>
+            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
+            <td class="small text-center">Y</td>
+          </tr>
+          <tr class="border-top">
+            <td class="small text-truncate">Suffix</td>
+            <td class="small text-center">N</td>
+          </tr>
+          <tr>
+            <td class="small text-truncate">ReWrite</td>
+            <td class="small text-center">Y</td>
+          </tr>
+        </tbody>
+      </table>
+
     </div><!--/.panel, .item-->
 
   </div>
@@ -1495,13 +1519,17 @@
                     <div class="col-xs-12 col-md-6 content-item">
 
                       <div class="panel panel-default item">
-                        <div class="panel-heading">DataBase :: (+DB Type)</div>
 
-                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                          <caption class="text-center text-uppercase">1DataBase (+DB Type)</caption>
+                          <colgroup>
+                            <col class="col-xs-7">
+                            <col>
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
                               <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
-                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                              <td class="text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">PHP API</td>
@@ -1524,9 +1552,13 @@
                     <div class="col-xs-12 col-md-6 content-item">
 
                       <div class="panel panel-default item">
-                        <div class="panel-heading">Performance</div>
 
-                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                          <caption class="text-center text-uppercase">DataBase Performance</caption>
+                          <colgroup>
+                            <col class="col-xs-7">
+                            <col>
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
                               <td class="small text-truncate"><span class="text-truncate">MySQL Version</span></td>
@@ -1583,25 +1615,71 @@
                     <div class="col-xs-12 content-item">
 
                       <div class="panel panel-default item">
-                        <div class="panel-heading">(+DB Type) :: Table Structure</div>
 
-                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                        <table class="table table-condensed table-bordered table-striped table-hover" style="table-layout:fixed;">
+                          <caption class="text-center text-uppercase">(+DB Type_ :: Table Structure</caption>
+                          <colgroup>
+                            <col class="col-xs-4">
+                            <col class="">
+                            <col class="">
+                            <col class="hidden-xs hidden-sm">
+                            <col class="hidden-xs hidden-sm">
+                            <col class="hidden-xs">
+                            <col class="">
+                            <col class="hidden-xs hidden-sm hidden-md">
+                            <col class="hidden-xs hidden-sm hidden-md">
+                            <col class="hidden-xs hidden-sm hidden-md">
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                          <thead>
+                            <tr class="">
+                              <th class="">TABLE</th>
+                              <th class="text-center">SIZE</th>
+                              <th class="text-center">RCDS</th>
+                              <th class="text-center hidden-xs hidden-sm">AVG.<br />LENGTH</th>
+                              <th class="text-center hidden-xs hidden-sm">FRAG'MT<br />SIZE</th>
+                              <th class="text-center hidden-xs">ENGINE</th>
+                              <th class="text-center text-truncate">COLLATION</th>
+                              <th class="text-center text-truncate hidden-xs hidden-sm hidden-md">CREATED</th>
+                              <th class="text-center text-truncate hidden-xs hidden-sm hidden-md">UPDATED</th>
+                              <th class="text-center text-truncate hidden-xs hidden-sm hidden-md">CHECKED</th>
+                            </tr>
+                          </thead>
                           <tbody>
-                            <tr>
-                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
-                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                            <tr class="">
+                              <td class="small text-truncate">ewxku_ticketmaster_transactions_temp</td>
+                              <td class="small text-center">16.00 KiB</td>
+                              <td class="small text-center text-truncate">319</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm">16.00 KiB</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm">61440.00 KiB</td>
+                              <td class="small text-center hidden-xs">InnoDB</td>
+                              <td class="small text-center text-truncate">*utf8mb4_unicode_ci</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">2018-04-27</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
                             </tr>
-                            <tr>
-                              <td class="small text-truncate">PHP API</td>
-                              <td class="text-center small bg-info">CGI-FCGI</td>
+                            <tr class="">
+                              <td class="small text-truncate">ewxku_ticketmaster_transactions_temp</td>
+                              <td class="small text-center">16.00 KiB</td>
+                              <td class="small text-center text-truncate">319</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm">16.00 KiB</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm">61440.00 KiB</td>
+                              <td class="small text-center hidden-xs">InnoDB</td>
+                              <td class="small text-center text-truncate">*utf8mb4_unicode_ci</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">2018-04-27</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
                             </tr>
-                            <tr>
-                              <td class="small text-truncate text-success">MySQL Support</td>
-                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate text-danger">MySQLi Support</td>
-                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                            <tr class="">
+                              <td class="small text-truncate">ewxku_ticketmaster_transactions_temp</td>
+                              <td class="small text-center">16.00 KiB</td>
+                              <td class="small text-center text-truncate">319</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm">16.00 KiB</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm">61440.00 KiB</td>
+                              <td class="small text-center hidden-xs">InnoDB</td>
+                              <td class="small text-center text-truncate">*utf8mb4_unicode_ci</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">2018-04-27</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
                             </tr>
                           </tbody>
                         </table>
@@ -1682,13 +1760,17 @@
                     <div class="col-xs-12 col-md-6 content-item">
 
                       <div class="panel panel-default item">
-                        <div class="panel-heading">PHP Environment</div>
 
                         <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                          <caption class="text-center text-uppercase">PHP Environment</caption>
+                          <colgroup>
+                            <col class="col-xs-7">
+                            <col class="">
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
                               <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
-                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                              <td class="text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">PHP API</td>
@@ -1711,12 +1793,16 @@
                     <div class="col-xs-12 col-md-6 content-item">
 
                       <div class="panel panel-default item">
-                        <div class="panel-heading">Host Environment</div>
 
-                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
+                          <caption class="text-center text-uppercase">Host Environment</caption>
+                          <colgroup>
+                            <col class="col-xs-7">
+                            <col class="">
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
-                              <td class="small text-truncate"><span class="text-truncate">MySQL Version</span></td>
+                              <td class="small text-truncate">MySQL Version</td>
                               <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
                             </tr>
                             <tr>
@@ -1743,65 +1829,79 @@
                     <div class="col-xs-12 content-item">
 
                       <div class="panel panel-default item">
-                        <div class="panel-heading margin-bottom-sm">PHP Extensions</div>
 
+                        <table class="table table-condensed" style="table-layout:fixed;">
+                          <caption class="text-center text-uppercase">Host Environment</caption>
+                          <colgroup>
+                            <col class="col-xs-12">
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                          <tbody>
+                            <tr>
+                              <td>
 
-                        <div class="row-fluid small text-lowercase">
-                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
-                          </div>
-                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <div class="border-all margin-bottom-sm text-center">date<br />7.2.1</div>
-                          </div>
-                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <div class="border-all margin-bottom-sm text-center bg-success text-success">libxml<br />7.2.1</div>
-                          </div>
-                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <div class="border-all margin-bottom-sm text-center bg-success text-success">openssl<br />7.2.1</div>
-                          </div>
-                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <div class="border-all margin-bottom-sm text-center">Zend_Engine<br />7.2.1</div>
-                          </div>
-                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
-                          </div>
-                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
-                          </div>
-                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
-                          </div>
-                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <div class="border-all margin-bottom-sm text-center">Zend_Engine<br />7.2.1</div>
-                          </div>
-                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
-                          </div>
-                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
-                          </div>
-                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <div class="border-all margin-bottom-sm text-center">Zend_Engine<br />7.2.1</div>
-                          </div>
-                        </div>
-                        <div class="clearfix"></div>
+                                <div class="row-fluid small text-lowercase">
+                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+                                  </div>
+                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                    <div class="border-all margin-bottom-sm text-center">date<br />7.2.1</div>
+                                  </div>
+                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                    <div class="border-all margin-bottom-sm text-center bg-success text-success">libxml<br />7.2.1</div>
+                                  </div>
+                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                    <div class="border-all margin-bottom-sm text-center bg-success text-success">openssl<br />7.2.1</div>
+                                  </div>
+                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                    <div class="border-all margin-bottom-sm text-center">Zend_Engine<br />7.2.1</div>
+                                  </div>
+                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+                                  </div>
+                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+                                  </div>
+                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+                                  </div>
+                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                    <div class="border-all margin-bottom-sm text-center">Zend_Engine<br />7.2.1</div>
+                                  </div>
+                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+                                  </div>
+                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+                                  </div>
+                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                    <div class="border-all margin-bottom-sm text-center">Zend_Engine<br />7.2.1</div>
+                                  </div>
+                                </div>
 
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
 
-                        <div class="row-fluid small">
-                          <div class="col-xs-12">
-                            <h5>Potential Missing Extensions</h5>
-                          </div>
-                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <div class="border-all margin-bottom-sm text-center bg-warning text-warning">mysqli</div>
-                          </div>
-                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <div class="border-all margin-bottom-sm text-center bg-warning text-warning">mcrypt</div>
-                          </div>
-                          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                            <div class="border-all margin-bottom-sm text-center bg-warning text-warning">suhosin</div>
-                          </div>
-                        </div>
-                        <div class="clearfix"></div>
+                                <div class="row-fluid small">
+                                  <div class="col-xs-12">
+                                    <h5>Potential Missing Extensions</h5>
+                                  </div>
+                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                    <div class="border-all margin-bottom-sm text-center bg-warning text-warning">mysqli</div>
+                                  </div>
+                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                    <div class="border-all margin-bottom-sm text-center bg-warning text-warning">mcrypt</div>
+                                  </div>
+                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+                                    <div class="border-all margin-bottom-sm text-center bg-warning text-warning">suhosin</div>
+                                  </div>
+                                </div>
+
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
 
                       </div><!--/.panel, item-->
 
@@ -1882,128 +1982,133 @@
                     <div class="col-xs-12 content-item">
 
                       <div class="panel panel-default item">
-                        <div class="panel-heading">Core Folder Permissions</div>
 
-                          <div class="table-responsive">
-                            <table class="table table-condensed table-bordered" style="table-layout:fixed;">
-                              <thead>
-                                <tr class="text-muted">
-                                  <th class="text-center">MODE</th>
-                                  <th class="text-center">WITEABLE</th>
-                                  <th class="col-sm-7">FOLDER</th>
-                                  <th class="text-center hidden-xs">OWNER</th>
-                                  <th class="text-center hidden-xs hidden-sm">GROUP</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr class="bg-danger text-danger">
-                                  <td class="small text-center">777</td>
-                                  <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">images/</td>
-                                  <td class="small text-center hidden-xs">demohotm</td>
-                                  <td class="small text-center hidden-xs hidden-sm">demohotm</td>
-                                </tr>
-                                <tr>
-                                  <td class="small text-center">755</td>
-                                  <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">components/</td>
-                                  <td class="small text-center hidden-xs">WinterRG</td>
-                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
-                                </tr>
-                                <tr>
-                                  <td class="small text-center">755</td>
-                                  <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">modules/</td>
-                                  <td class="small text-center hidden-xs">WinterRG</td>
-                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
-                                </tr>
-                                <tr>
-                                  <td class="small text-center">755</td>
-                                  <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">plugins/</td>
-                                  <td class="small text-center hidden-xs">WinterRG</td>
-                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
-                                </tr>
-                                <tr>
-                                  <td class="small text-center">755</td>
-                                  <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">language/</td>
-                                  <td class="small text-center hidden-xs">WinterRG</td>
-                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
-                                </tr>
-                                <tr>
-                                  <td class="small text-center">755</td>
-                                  <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">templates/</td>
-                                  <td class="small text-center hidden-xs">WinterRG</td>
-                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
-                                </tr>
-                                <tr class="bg-warning text-warning">
-                                  <td class="small text-center">400</td>
-                                  <td class="small text-center"><?php echo _FPA_N_ICON; ?></td>
-                                  <td class="small text-truncate">cache/</td>
-                                  <td class="small text-center hidden-xs">WinterRG</td>
-                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
-                                </tr>
-                                <tr>
-                                  <td class="small text-center">755</td>
-                                  <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">logs/</td>
-                                  <td class="small text-center hidden-xs">WinterRG</td>
-                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
-                                </tr>
-                                <tr>
-                                  <td class="small text-center">755</td>
-                                  <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">tmp/</td>
-                                  <td class="small text-center hidden-xs">WinterRG</td>
-                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
-                                </tr>
-                                <tr>
-                                  <td class="small text-center">755</td>
-                                  <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">administrator/components/</td>
-                                  <td class="small text-center hidden-xs">WinterRG</td>
-                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
-                                </tr>
-                                <tr>
-                                  <td class="small text-center">755</td>
-                                  <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">administrator/modules/</td>
-                                  <td class="small text-center hidden-xs">WinterRG</td>
-                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
-                                </tr>
-                                <tr>
-                                  <td class="small text-center">755</td>
-                                  <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">administrator/plugins/</td>
-                                  <td class="small text-center hidden-xs">WinterRG</td>
-                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
-                                </tr>
-                                <tr>
-                                  <td class="small text-center">755</td>
-                                  <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">administrator/language/</td>
-                                  <td class="small text-center hidden-xs">WinterRG</td>
-                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
-                                </tr>
-                                <tr>
-                                  <td class="small text-center">755</td>
-                                  <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">administrator/templates/</td>
-                                  <td class="small text-center hidden-xs">WinterRG</td>
-                                  <td class="small text-center hidden-xs hidden-sm">WinterRG</td>
-                                </tr>
-                                <tr>
-                                  <td class="small text-center">-</td>
-                                  <td class="small text-center">-</td>
-                                  <td class="small text-truncate text-warning">administrator/logs/</td>
-                                  <td class="small text-center hidden-xs">-</td>
-                                  <td class="small text-center hidden-xs hidden-sm">-</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
+                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                          <caption class="text-center text-uppercase">Core Folder Permissions</caption>
+                          <colgroup>
+                            <col>
+                            <col>
+                            <col class="col-xs-7">
+                            <col>
+                            <col>
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                          <thead>
+                            <tr class="">
+                              <th class="text-center">MODE</th>
+                              <th class="text-center">WITEABLE</th>
+                              <th class="">FOLDER</th>
+                              <th class="text-center hidden-xs">OWNER</th>
+                              <th class="text-center hidden-xs hidden-sm">GROUP</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="bg-danger text-danger">
+                              <td class="small text-center">777</td>
+                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">/home/accountname/public_html/this/is/very/long/folder/name/images/</td>
+                              <td class="small text-truncate text-center hidden-xs">demohotm</td>
+                              <td class="small text-truncate text-center hidden-xs hidden-sm">demohotm</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-center">755</td>
+                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">components/</td>
+                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
+                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-center">755</td>
+                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">modules/</td>
+                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
+                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-center">755</td>
+                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">plugins/</td>
+                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
+                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-center">755</td>
+                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">language/</td>
+                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
+                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-center">755</td>
+                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">templates/</td>
+                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
+                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
+                            </tr>
+                            <tr class="bg-warning text-warning">
+                              <td class="small text-center">400</td>
+                              <td class="small text-center"><?php echo _FPA_N_ICON; ?></td>
+                              <td class="small text-truncate">cache/</td>
+                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
+                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-center">755</td>
+                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">logs/</td>
+                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
+                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-center">755</td>
+                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">tmp/</td>
+                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
+                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-center">755</td>
+                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">administrator/components/</td>
+                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
+                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-center">755</td>
+                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">administrator/modules/</td>
+                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
+                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-center">755</td>
+                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">administrator/plugins/</td>
+                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
+                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-center">755</td>
+                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">administrator/language/</td>
+                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
+                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-center">755</td>
+                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">administrator/templates/</td>
+                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
+                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-center">-</td>
+                              <td class="small text-center">-</td>
+                              <td class="small text-truncate text-warning">administrator/logs/</td>
+                              <td class="small text-truncate text-center hidden-xs">-</td>
+                              <td class="small text-truncate text-center hidden-xs hidden-sm">-</td>
+                            </tr>
+                          </tbody>
+                        </table>
 
                       </div><!--/.panel, item-->
 
@@ -2042,30 +2147,42 @@
                     <div class="col-xs-12 content-item">
 
                       <div class="panel panel-default item">
-                        <div class="panel-heading">Elevated Permission Checks</div>
 
-                          <div class="table-responsive">
-                            <table class="table table-condensed table-bordered" style="table-layout:fixed;">
-                              <thead>
-                                <tr class="text-muted">
-                                  <th class="text-center">MODE</th>
-                                  <th class="text-center">WITEABLE</th>
-                                  <th class="col-sm-7">FOLDER</th>
-                                  <th class="text-center hidden-xs">OWNER</th>
-                                  <th class="text-center hidden-xs hidden-sm">GROUP</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr class="bg-danger text-danger">
-                                  <td class="small text-center">777</td>
-                                  <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">images/</td>
-                                  <td class="small text-center hidden-xs">demohotm</td>
-                                  <td class="small text-center hidden-xs hidden-sm">demohotm</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
+                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                          <caption class="text-center text-uppercase">Elevated Permission Checks</caption>
+                          <colgroup>
+                            <col>
+                            <col>
+                            <col class="col-xs-7">
+                            <col>
+                            <col>
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                          <thead>
+                            <tr class="">
+                              <th class="text-center">MODE</th>
+                              <th class="text-center">WITEABLE</th>
+                              <th class="">FOLDER</th>
+                              <th class="text-center hidden-xs">OWNER</th>
+                              <th class="text-center hidden-xs hidden-sm">GROUP</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="small text-center">777</td>
+                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">images/</td>
+                              <td class="small text-truncate text-center hidden-xs">demohotm</td>
+                              <td class="small text-truncate text-center hidden-xs hidden-sm">demohotm</td>
+                            </tr>
+                            <tr class="bg-danger text-danger">
+                              <td class="small text-center">777</td>
+                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">images/</td>
+                              <td class="small text-truncate text-center hidden-xs">demohotm</td>
+                              <td class="small text-truncate text-center hidden-xs hidden-sm">demohotm</td>
+                            </tr>
+                          </tbody>
+                        </table>
 
                       </div><!--/.panel, item-->
 
@@ -2145,81 +2262,98 @@
                     <div class="col-xs-12 content-item">
 
                       <div class="panel panel-default item">
-                        <div class="panel-heading">Installed Components</div>
 
-                          <div class="table-responsive">
-                            <table class="table table-condensed table-bordered" style="table-layout:fixed;">
-                              <caption class="text-center border-bottom">SITE</caption>
-                              <thead>
-                                <tr class="text-muted">
-                                  <th class="text-center">ENABLED</th>
-                                  <th class="col-sm-3">NAME</th>
-                                  <th class="text-center">VERSION</th>
-                                  <th class="text-center hidden-xs">AUTHOR</th>
-                                  <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
-                                  <th class="text-center hidden-xs">CREATED</th>
-                                  <th class="text-center">TYPE</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr class="">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">yoo_sixthavenue</td>
-                                  <td class="small text-center">1.0.3</td>
-                                  <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
-                                  <td class="small text-center hidden-xs">November 2016</td>
-                                  <td class="small text-center text-warning">3rd Party</td>
-                                </tr>
-                                <tr class="">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">protostar</td>
-                                  <td class="small text-center">1.0</td>
-                                  <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
-                                  <td class="small text-center hidden-xs">4/30/2012</td>
-                                  <td class="small text-center text-success">Core</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
+                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                          <caption class="text-center text-uppercase">COMPONENTS :: SITE</caption>
+                          <colgroup>
+                            <col>
+                            <col class="col-xs-3">
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                          <thead>
+                            <tr class="">
+                              <th class="text-center">ENABLED</th>
+                              <th class="">NAME</th>
+                              <th class="text-center">VERSION</th>
+                              <th class="text-center hidden-xs">AUTHOR</th>
+                              <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
+                              <th class="text-center hidden-xs">CREATED</th>
+                              <th class="text-center">TYPE</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="">
+                              <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">yoo_sixthavenue</td>
+                              <td class="small text-center">1.0.3</td>
+                              <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
+                              <td class="small text-center text-truncate hidden-xs">November 2016</td>
+                              <td class="small text-center text-warning">3rd Party</td>
+                            </tr>
+                            <tr class="">
+                              <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">protostar</td>
+                              <td class="small text-center">1.0</td>
+                              <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
+                              <td class="small text-center text-truncate hidden-xs">4/30/2012</td>
+                              <td class="small text-center text-success">Core</td>
+                            </tr>
+                          </tbody>
+                        </table>
 
-                          <div class="table-responsive">
-                            <table class="table table-condensed table-bordered margin-top-lg margin-bottom-sm" style="table-layout:fixed;">
-                              <caption class="text-center border-top border-bottom">ADMINISTRATOR</caption>
-                              <thead>
-                                <tr class="text-muted">
-                                  <th class="text-center">ENABLED</th>
-                                  <th class="col-sm-3">NAME</th>
-                                  <th class="text-center">VERSION</th>
-                                  <th class="text-center hidden-xs">AUTHOR</th>
-                                  <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
-                                  <th class="text-center hidden-xs">CREATED</th>
-                                  <th class="text-center">TYPE</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr class="">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">hathor</td>
-                                  <td class="small text-center">3.0.0</td>
-                                  <td class="small text-center text-truncate hidden-xs">Andrea Tarr</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">www.tarrconsulting.com</td>
-                                  <td class="small text-center hidden-xs">May 2010</td>
-                                  <td class="small text-center text-success">Core</td>
-                                </tr>
-                                <tr class="">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">isis</td>
-                                  <td class="small text-center">1.0</td>
-                                  <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
-                                  <td class="small text-center hidden-xs">3/30/2012</td>
-                                  <td class="small text-center text-success">Core</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
+                      </div><!--/.panel, item-->
+
+                      <div class="panel panel-default item">
+
+                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                          <caption class="text-center text-uppercase">COMPONENTS :: ADMINISTRATOR</caption>
+                          <colgroup>
+                            <col>
+                            <col class="col-xs-3">
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                          <thead>
+                            <tr class="">
+                              <th class="text-center">ENABLED</th>
+                              <th class="col-sm-3">NAME</th>
+                              <th class="text-center">VERSION</th>
+                              <th class="text-center hidden-xs">AUTHOR</th>
+                              <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
+                              <th class="text-center hidden-xs">CREATED</th>
+                              <th class="text-center">TYPE</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="">
+                              <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">hathor</td>
+                              <td class="small text-center">3.0.0</td>
+                              <td class="small text-center text-truncate hidden-xs">Andrea Tarr</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm">www.tarrconsulting.com</td>
+                              <td class="small text-center text-truncate hidden-xs">May 2010</td>
+                              <td class="small text-center text-success">Core</td>
+                            </tr>
+                            <tr class="">
+                              <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">isis</td>
+                              <td class="small text-center">1.0</td>
+                              <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
+                              <td class="small text-center text-truncate hidden-xs">3/30/2012</td>
+                              <td class="small text-center text-success">Core</td>
+                            </tr>
+                          </tbody>
+                        </table>
 
                       </div><!--/.panel, item-->
 
@@ -2259,13 +2393,20 @@
                     <div class="col-xs-12 content-item">
 
                       <div class="panel panel-default item">
-                        <div class="panel-heading">Installed Modules</div>
 
-                          <div class="table-responsive">
                             <table class="table table-condensed table-bordered" style="table-layout:fixed;">
-                              <caption class="text-center border-bottom">SITE</caption>
+                              <caption class="text-center text-uppercase">MODULES :: SITE</caption>
+                              <colgroup class="col-xs-12">
+                                <col>
+                                <col class="col-xs-3">
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                              </colgroup><!--/required to fix column sizing & employ text-truncate-->
                               <thead>
-                                <tr class="text-muted">
+                                <tr class="">
                                   <th class="text-center">ENABLED</th>
                                   <th class="col-sm-3">NAME</th>
                                   <th class="text-center">VERSION</th>
@@ -2282,7 +2423,7 @@
                                   <td class="small text-center">1.0.3</td>
                                   <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
-                                  <td class="small text-center hidden-xs">November 2016</td>
+                                  <td class="small text-center text-truncate hidden-xs">November 2016</td>
                                   <td class="small text-center text-warning">3rd Party</td>
                                 </tr>
                                 <tr class="">
@@ -2291,27 +2432,38 @@
                                   <td class="small text-center">1.0</td>
                                   <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
-                                  <td class="small text-center hidden-xs">4/30/2012</td>
+                                  <td class="small text-center text-truncate hidden-xs">4/30/2012</td>
                                   <td class="small text-center text-success">Core</td>
                                 </tr>
                               </tbody>
                             </table>
-                          </div>
 
-                          <div class="table-responsive">
-                            <table class="table table-condensed table-bordered margin-top-lg margin-bottom-sm" style="table-layout:fixed;">
-                              <caption class="text-center border-top border-bottom">ADMINISTRATOR</caption>
-                              <thead>
-                                <tr class="text-muted">
-                                  <th class="text-center">ENABLED</th>
-                                  <th class="col-sm-3">NAME</th>
-                                  <th class="text-center">VERSION</th>
-                                  <th class="text-center hidden-xs">AUTHOR</th>
-                                  <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
-                                  <th class="text-center hidden-xs">CREATED</th>
-                                  <th class="text-center">TYPE</th>
-                                </tr>
-                              </thead>
+                      </div><!--/.panel, item-->
+
+                      <div class="panel panel-default item">
+
+                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                          <caption class="text-center text-uppercase">COMPONENTS :: ADMINISTRATOR</caption>
+                          <colgroup class="col-xs-12">
+                            <col>
+                            <col class="col-xs-3">
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                          <thead>
+                            <tr class="">
+                              <th class="text-center">ENABLED</th>
+                              <th class="col-sm-3">NAME</th>
+                              <th class="text-center">VERSION</th>
+                              <th class="text-center hidden-xs">AUTHOR</th>
+                              <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
+                              <th class="text-center hidden-xs">CREATED</th>
+                              <th class="text-center">TYPE</th>
+                            </tr>
+                          </thead>
                               <tbody>
                                 <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
@@ -2319,7 +2471,7 @@
                                   <td class="small text-center">3.0.0</td>
                                   <td class="small text-center text-truncate hidden-xs">Andrea Tarr</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">www.tarrconsulting.com</td>
-                                  <td class="small text-center hidden-xs">May 2010</td>
+                                  <td class="small text-center text-truncate hidden-xs">May 2010</td>
                                   <td class="small text-center text-success">Core</td>
                                 </tr>
                                 <tr class="">
@@ -2328,12 +2480,11 @@
                                   <td class="small text-center">1.0</td>
                                   <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
-                                  <td class="small text-center hidden-xs">3/30/2012</td>
+                                  <td class="small text-center text-truncate hidden-xs">3/30/2012</td>
                                   <td class="small text-center text-success">Core</td>
                                 </tr>
                               </tbody>
                             </table>
-                          </div>
 
                       </div><!--/.panel, item-->
 
@@ -2373,22 +2524,29 @@
                     <div class="col-xs-12 content-item">
 
                       <div class="panel panel-default item">
-                        <div class="panel-heading">Installed Plugins</div>
 
-                          <div class="table-responsive">
-                            <table class="table table-condensed table-bordered" style="table-layout:fixed;">
-                              <caption class="text-center border-bottom">SITE</caption>
-                              <thead>
-                                <tr class="text-muted">
-                                  <th class="text-center">ENABLED</th>
-                                  <th class="col-sm-3">NAME</th>
-                                  <th class="text-center">VERSION</th>
-                                  <th class="text-center hidden-xs">AUTHOR</th>
-                                  <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
-                                  <th class="text-center hidden-xs">CREATED</th>
-                                  <th class="text-center">TYPE</th>
-                                </tr>
-                              </thead>
+                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                          <caption class="text-center text-uppercase">PLUGINS :: SITE</caption>
+                          <colgroup class="col-xs-12">
+                            <col>
+                            <col class="col-xs-3">
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                          <thead>
+                            <tr class="">
+                              <th class="text-center">ENABLED</th>
+                              <th class="col-sm-3">NAME</th>
+                              <th class="text-center">VERSION</th>
+                              <th class="text-center hidden-xs">AUTHOR</th>
+                              <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
+                              <th class="text-center hidden-xs">CREATED</th>
+                              <th class="text-center">TYPE</th>
+                            </tr>
+                          </thead>
                               <tbody>
                                 <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
@@ -2396,7 +2554,7 @@
                                   <td class="small text-center">1.0.3</td>
                                   <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
-                                  <td class="small text-center hidden-xs">November 2016</td>
+                                  <td class="small text-center text-truncate hidden-xs">November 2016</td>
                                   <td class="small text-center text-warning">3rd Party</td>
                                 </tr>
                                 <tr class="">
@@ -2405,27 +2563,38 @@
                                   <td class="small text-center">1.0</td>
                                   <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
-                                  <td class="small text-center hidden-xs">4/30/2012</td>
+                                  <td class="small text-center text-truncate hidden-xs">4/30/2012</td>
                                   <td class="small text-center text-success">Core</td>
                                 </tr>
                               </tbody>
                             </table>
-                          </div>
 
-                          <div class="table-responsive margin-top-lg margin-bottom-sm">
-                            <table class="table table-condensed table-bordered" style="table-layout:fixed;">
-                              <caption class="text-center border-top border-bottom">ADMINISTRATOR</caption>
-                              <thead>
-                                <tr class="text-muted">
-                                  <th class="text-center">ENABLED</th>
-                                  <th class="col-sm-3">NAME</th>
-                                  <th class="text-center">VERSION</th>
-                                  <th class="text-center hidden-xs">AUTHOR</th>
-                                  <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
-                                  <th class="text-center hidden-xs">CREATED</th>
-                                  <th class="text-center">TYPE</th>
-                                </tr>
-                              </thead>
+                      </div><!--/.panel, item-->
+
+                      <div class="panel panel-default item">
+
+                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                          <caption class="text-center text-uppercase">PLUGINS :: ADMINISTRATOR</caption>
+                          <colgroup class="col-xs-12">
+                            <col>
+                            <col class="col-xs-3">
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                          <thead>
+                            <tr class="">
+                              <th class="text-center">ENABLED</th>
+                              <th class="col-sm-3">NAME</th>
+                              <th class="text-center">VERSION</th>
+                              <th class="text-center hidden-xs">AUTHOR</th>
+                              <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
+                              <th class="text-center hidden-xs">CREATED</th>
+                              <th class="text-center">TYPE</th>
+                            </tr>
+                          </thead>
                               <tbody>
                                 <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
@@ -2433,7 +2602,7 @@
                                   <td class="small text-center">3.0.0</td>
                                   <td class="small text-center text-truncate hidden-xs">Andrea Tarr</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">www.tarrconsulting.com</td>
-                                  <td class="small text-center hidden-xs">May 2010</td>
+                                  <td class="small text-center text-truncate hidden-xs">May 2010</td>
                                   <td class="small text-success">Core</td>
                                 </tr>
                                 <tr class="">
@@ -2442,12 +2611,11 @@
                                   <td class="small text-center">1.0</td>
                                   <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
-                                  <td class="small text-center hidden-xs">3/30/2012</td>
+                                  <td class="small text-center text-truncate hidden-xs">3/30/2012</td>
                                   <td class="small text-center text-success">Core</td>
                                 </tr>
                               </tbody>
                             </table>
-                          </div>
 
                       </div><!--/.panel, item-->
 
@@ -2487,23 +2655,31 @@
                     <div class="col-xs-12 content-item">
 
                       <div class="panel panel-default item">
-                        <div class="panel-heading">Installed Templates</div>
 
-                          <div class="table-responsive">
-                            <table class="table table-condensed table-bordered" style="table-layout:fixed;">
-                              <caption class="text-center border-bottom">SITE</caption>
-                              <thead>
-                                <tr class="text-muted">
-                                  <th class="text-center">ENABLED</th>
-                                  <th class="text-center">ACTIVE</th>
-                                  <th class="col-sm-3">NAME</th>
-                                  <th class="text-center">VERSION</th>
-                                  <th class="text-center hidden-xs">AUTHOR</th>
-                                  <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
-                                  <th class="text-center hidden-xs">CREATED</th>
-                                  <th class="text-center">TYPE</th>
-                                </tr>
-                              </thead>
+                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                          <caption class="text-center text-uppercase">TEMPLATES :: SITE</caption>
+                          <colgroup>
+                            <col>
+                            <col>
+                            <col class="col-xs-3">
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                          <thead>
+                            <tr class="">
+                              <th class="text-center">ENABLED</th>
+                              <th class="text-center">ACTIVE</th>
+                              <th class="col-sm-3">NAME</th>
+                              <th class="text-center">VERSION</th>
+                              <th class="text-center hidden-xs">AUTHOR</th>
+                              <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
+                              <th class="text-center hidden-xs">CREATED</th>
+                              <th class="text-center">TYPE</th>
+                            </tr>
+                          </thead>
                               <tbody>
                                 <tr class="bg-success">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
@@ -2512,7 +2688,7 @@
                                   <td class="small text-center">1.0.3</td>
                                   <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
-                                  <td class="small text-center hidden-xs">November 2016</td>
+                                  <td class="small text-center text-truncate hidden-xs">November 2016</td>
                                   <td class="small text-center text-warning">3rd Party</td>
                                 </tr>
                                 <tr class="">
@@ -2522,28 +2698,40 @@
                                   <td class="small text-center">1.0</td>
                                   <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
-                                  <td class="small text-center hidden-xs">4/30/2012</td>
+                                  <td class="small text-center text-truncate hidden-xs">4/30/2012</td>
                                   <td class="small text-center text-success">Core</td>
                                 </tr>
                               </tbody>
                             </table>
-                          </div>
 
-                          <div class="table-responsive margin-top-lg margin-bottom-sm">
-                            <table class="table table-condensed table-bordered" style="table-layout:fixed;">
-                              <caption class="text-center border-top border-bottom">ADMINISTRATOR</caption>
-                              <thead>
-                                <tr class="text-muted">
-                                  <th class="text-center">ENABLED</th>
-                                  <th class="text-center">ACTIVE</th>
-                                  <th class="col-sm-3">NAME</th>
-                                  <th class="text-center">VERSION</th>
-                                  <th class="text-center hidden-xs">AUTHOR</th>
-                                  <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
-                                  <th class="text-center hidden-xs">CREATED</th>
-                                  <th class="text-center">TYPE</th>
-                                </tr>
-                              </thead>
+                      </div><!--/.panel, item-->
+
+                      <div class="panel panel-default item">
+
+                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                          <caption class="text-center text-uppercase">TEMPLATES :: ADMINISTRATOR</caption>
+                          <colgroup>
+                            <col>
+                            <col>
+                            <col class="col-xs-3">
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                          <thead>
+                            <tr class="">
+                              <th class="text-center">ENABLED</th>
+                              <th class="text-center">ACTIVE</th>
+                              <th class="col-sm-3">NAME</th>
+                              <th class="text-center">VERSION</th>
+                              <th class="text-center hidden-xs">AUTHOR</th>
+                              <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
+                              <th class="text-center hidden-xs">CREATED</th>
+                              <th class="text-center">TYPE</th>
+                            </tr>
+                          </thead>
                               <tbody>
                                 <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
@@ -2552,17 +2740,17 @@
                                   <td class="small text-center">3.0.0</td>
                                   <td class="small text-center text-truncate hidden-xs">Andrea Tarr</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">www.tarrconsulting.com</td>
-                                  <td class="small text-center hidden-xs">May 2010</td>
+                                  <td class="small text-center text-truncate hidden-xs">May 2010</td>
                                   <td class="small text-center text-success">Core</td>
                                 </tr>
                                 <tr class="bg-success">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small text-truncate">isis</td>
                                   <td class="small text-center">1.0</td>
                                   <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
-                                  <td class="small text-center hidden-xs">3/30/2012</td>
+                                  <td class="small text-center text-truncate hidden-xs">3/30/2012</td>
                                   <td class="small text-center text-success">Core</td>
                                 </tr>
                               </tbody>

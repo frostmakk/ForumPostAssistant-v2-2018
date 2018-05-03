@@ -80,13 +80,26 @@ i, span {
     display: inline-block;
 }
 
-table th {
+.panel>table th {
   font-weight: 500;
   letter-spacing: -0.5px;
   text-transform: uppercase;
   font-size: 80% !important;
-  background: #fafafa;
+  background: #eaeaea !important;
+/*
+  background: #286090 !important;
+  border: 1px solid #286090 !important;
+  color: #fff !important;
+*/
 }
+caption {
+  background: #286090 !important;
+  border: 1px solid #286090 !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+  font-size: 13px;
+}
+
 .panel-group, .panel, .panel-heading, .btn, .label, .nav-pills>li>a, .alert, .list-group, .list-group-item, input, textarea, select, .progress, .progress-bar { /* bs override */
   border-radius: 0px !important;
 }
@@ -152,11 +165,6 @@ textarea#postOUTPUT {
 .bg-white { /* fpa custom */
   background-color: #ffffff !important;
 }
-caption {
-  color: #333;
-  font-weight: 500 !important;
-  font-size: 13px;
-}
 .bg-dark {
   background: #e5e5e5;
 }
@@ -196,6 +204,10 @@ caption {
 
 .border-bottom { /* fpa custom */
     border-bottom: 1px solid #ddd !important;
+}
+
+.border-remove {
+  border: none !important;
 }
 
 .margin-sm { /* fpa custom */
