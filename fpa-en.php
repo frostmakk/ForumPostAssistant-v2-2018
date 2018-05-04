@@ -202,9 +202,10 @@
   define ( '_FPA_Y', 'Yes' );
   define ( '_FPA_N', 'No' );
   define ( '_FPA_U', 'Unknown' );
-  define ( '_FPA_Y_ICON', '<i class="glyphicon glyphicon-ok-sign"></i>' ); // RussW : new v2.0.0
-  define ( '_FPA_N_ICON', '<i class="glyphicon glyphicon-remove-sign"></i>' ); // RussW : new v2.0.0
-  define ( '_FPA_U_ICON', '<i class="glyphicon glyphicon-question-sign"></i>' ); // RussW : new v2.0.0
+  define ( '_FPA_Y_ICON', '<i class="glyphicon glyphicon-ok-sign"></i>' ); // RussW : (yes/good/positive) new v2.0.0
+  define ( '_FPA_N_ICON', '<i class="glyphicon glyphicon-remove-sign"></i>' ); // RussW : (no/error/negative) new v2.0.0
+  define ( '_FPA_U_ICON', '<i class="glyphicon glyphicon-question-sign"></i>' ); // RussW : (unknown) new v2.0.0
+  define ( '_FPA_A_ICON', '<i class="glyphicon glyphicon-star"></i>' ); // RussW : (active/current/selected) new v2.0.0
 
   /* end fpa language definitions & constants */
 ?>
@@ -976,9 +977,9 @@
 
                       <div class="panel panel-default item" style="min-height:153px;">
 
-                        <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">PHP</caption>
-                          <colgroup class="col-xs-12">
+                          <colgroup>
                             <col class="col-xs-7">
                             <col>
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
@@ -1009,9 +1010,9 @@
 
                       <div class="panel panel-default item" style="min-height:153px;">
 
-                        <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">DATABASE</caption>
-                          <colgroup class="col-xs-12">
+                          <colgroup>
                             <col class="col-xs-7">
                             <col>
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
@@ -1042,9 +1043,9 @@
 
                       <div class="panel panel-default item" style="min-height:153px;">
 
-                        <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">DATABASE</caption>
-                          <colgroup class="col-xs-12">
+                          <colgroup>
                             <col class="col-xs-7">
                             <col>
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
@@ -1125,7 +1126,7 @@
                  *
                  */
               ?>
-              <div id="instance-discovery-container" class="row">
+              <div id="instance-discovery-container" class="row margin-bottom-lg">
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
@@ -1151,7 +1152,7 @@
 
     <div class="panel panel-default item" style="min-height:111px;">
 
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CMS</caption>
         <colgroup>
           <col class="col-xs-12">
@@ -1173,7 +1174,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">PLATFORM</caption>
         <colgroup>
           <col class="col-xs-12">
@@ -1195,7 +1196,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1224,7 +1225,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1253,7 +1254,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1282,7 +1283,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1311,7 +1312,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1340,7 +1341,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1369,7 +1370,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1398,7 +1399,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1427,7 +1428,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1456,7 +1457,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-bordered table-condensed" style="table-layout:fixed;">
+      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1504,7 +1505,7 @@
                  *
                  */
               ?>
-              <div id="database-discovery-container" class="row">
+              <div id="database-discovery-container" class="row margin-bottom-lg">
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
@@ -1528,7 +1529,7 @@
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
-                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
+                              <td class="small text-truncate">PHP Version</td>
                               <td class="text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
                             </tr>
                             <tr>
@@ -1561,7 +1562,7 @@
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
-                              <td class="small text-truncate"><span class="text-truncate">MySQL Version</span></td>
+                              <td class="small text-truncate">MySQL Version</td>
                               <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
                             </tr>
                             <tr>
@@ -1600,7 +1601,7 @@
                  *
                  */
               ?>
-              <div id="dbtable-discovery-container" class="row">
+              <div id="dbtable-discovery-container" class="row margin-bottom-lg">
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
@@ -1761,7 +1762,7 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed" style="table-layout:fixed;min-width:100%;">
+                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">PHP Environment</caption>
                           <colgroup>
                             <col class="col-xs-7">
@@ -1794,7 +1795,7 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">Host Environment</caption>
                           <colgroup>
                             <col class="col-xs-7">
@@ -1803,11 +1804,11 @@
                           <tbody>
                             <tr>
                               <td class="small text-truncate">MySQL Version</td>
-                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                              <td class="small text-center bg-info"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">PHP API</td>
-                              <td class="text-center small bg-info">CGI-FCGI</td>
+                              <td class="small text-center bg-info">CGI-FCGI</td>
                             </tr>
                             <tr>
                               <td class="small text-truncate text-success">MySQL Support</td>
@@ -1830,14 +1831,14 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">Host Environment</caption>
                           <colgroup>
-                            <col class="col-xs-12">
+                            <col>
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
-                              <td>
+                              <td class="padding-top-lg">
 
                                 <div class="row-fluid small text-lowercase">
                                   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
@@ -1986,11 +1987,11 @@
                         <table class="table table-condensed table-bordered" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">Core Folder Permissions</caption>
                           <colgroup>
-                            <col>
-                            <col>
+                            <col class="">
+                            <col class="">
                             <col class="col-xs-7">
-                            <col>
-                            <col>
+                            <col class="hidden-xs">
+                            <col class="hidden-xs hidden-sm">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
@@ -2151,11 +2152,11 @@
                         <table class="table table-condensed table-bordered" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">Elevated Permission Checks</caption>
                           <colgroup>
-                            <col>
-                            <col>
+                            <col class="">
+                            <col class="">
                             <col class="col-xs-7">
-                            <col>
-                            <col>
+                            <col class="hidden-xs">
+                            <col class="hidden-xs hidden-sm">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
@@ -2247,7 +2248,7 @@
                  *
                  */
               ?>
-              <div id="component-discovery-container" class="row">
+              <div id="component-discovery-container" class="row margin-bottom-lg">
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
@@ -2258,7 +2259,7 @@
                 <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
 
 
-                  <div class="row margin-top-lg margin-bottom-lg content-container">
+                  <div class="row content-container">
                     <div class="col-xs-12 content-item">
 
                       <div class="panel panel-default item">
@@ -2266,23 +2267,23 @@
                         <table class="table table-condensed table-bordered" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">COMPONENTS :: SITE</caption>
                           <colgroup>
-                            <col>
-                            <col class="col-xs-3">
-                            <col>
-                            <col>
-                            <col>
-                            <col>
-                            <col>
+                            <col class="col-xs-1 col-sm-2">
+                            <col class="col-xs-8 col-sm-3">
+                            <col class="">
+                            <col class="hidden-xs">
+                            <col class="hidden-xs hidden-sm">
+                            <col class="hidden-xs">
+                            <col class="hidden-xs">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
-                              <th class="text-center">ENABLED</th>
+                              <th class="text-center text-truncate">ENABLED</th>
                               <th class="">NAME</th>
                               <th class="text-center">VERSION</th>
                               <th class="text-center hidden-xs">AUTHOR</th>
                               <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
                               <th class="text-center hidden-xs">CREATED</th>
-                              <th class="text-center">TYPE</th>
+                              <th class="text-center hidden-xs">TYPE</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -2293,7 +2294,7 @@
                               <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
                               <td class="small text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
                               <td class="small text-center text-truncate hidden-xs">November 2016</td>
-                              <td class="small text-center text-warning">3rd Party</td>
+                              <td class="small text-center hidden-xs">3rd Party</td>
                             </tr>
                             <tr class="">
                               <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
@@ -2302,7 +2303,7 @@
                               <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
                               <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
                               <td class="small text-center text-truncate hidden-xs">4/30/2012</td>
-                              <td class="small text-center text-success">Core</td>
+                              <td class="small text-center hidden-xs">Core</td>
                             </tr>
                           </tbody>
                         </table>
@@ -2314,23 +2315,23 @@
                         <table class="table table-condensed table-bordered" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">COMPONENTS :: ADMINISTRATOR</caption>
                           <colgroup>
-                            <col>
-                            <col class="col-xs-3">
-                            <col>
-                            <col>
-                            <col>
-                            <col>
-                            <col>
+                            <col class="col-xs-1 col-sm-2">
+                            <col class="col-xs-8 col-sm-3">
+                            <col class="">
+                            <col class="hidden-xs">
+                            <col class="hidden-xs hidden-sm">
+                            <col class="hidden-xs">
+                            <col class="hidden-xs">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
-                              <th class="text-center">ENABLED</th>
+                              <th class="text-center text-truncate">ENABLED</th>
                               <th class="col-sm-3">NAME</th>
                               <th class="text-center">VERSION</th>
                               <th class="text-center hidden-xs">AUTHOR</th>
                               <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
                               <th class="text-center hidden-xs">CREATED</th>
-                              <th class="text-center">TYPE</th>
+                              <th class="text-center hidden-xs">TYPE</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -2341,7 +2342,7 @@
                               <td class="small text-center text-truncate hidden-xs">Andrea Tarr</td>
                               <td class="small text-center text-truncate hidden-xs hidden-sm">www.tarrconsulting.com</td>
                               <td class="small text-center text-truncate hidden-xs">May 2010</td>
-                              <td class="small text-center text-success">Core</td>
+                              <td class="small text-center hidden-xs">Core</td>
                             </tr>
                             <tr class="">
                               <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
@@ -2350,7 +2351,7 @@
                               <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
                               <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
                               <td class="small text-center text-truncate hidden-xs">3/30/2012</td>
-                              <td class="small text-center text-success">Core</td>
+                              <td class="small text-center hidden-xs">Core</td>
                             </tr>
                           </tbody>
                         </table>
@@ -2378,7 +2379,7 @@
                  *
                  */
               ?>
-              <div id="module-discovery-container" class="row">
+              <div id="module-discovery-container" class="row margin-bottom-lg">
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
@@ -2389,51 +2390,51 @@
                 <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
 
 
-                  <div class="row margin-top-lg margin-bottom-lg content-container">
+                  <div class="row content-container">
                     <div class="col-xs-12 content-item">
 
                       <div class="panel panel-default item">
 
-                            <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
                               <caption class="text-center text-uppercase">MODULES :: SITE</caption>
-                              <colgroup class="col-xs-12">
-                                <col>
-                                <col class="col-xs-3">
-                                <col>
-                                <col>
-                                <col>
-                                <col>
-                                <col>
-                              </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                          <colgroup>
+                            <col class="col-xs-1 col-sm-2">
+                            <col class="col-xs-8 col-sm-3">
+                            <col class="">
+                            <col class="hidden-xs">
+                            <col class="hidden-xs hidden-sm">
+                            <col class="hidden-xs">
+                            <col class="hidden-xs">
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
                               <thead>
                                 <tr class="">
-                                  <th class="text-center">ENABLED</th>
+                                  <th class="text-center text-truncate">ENABLED</th>
                                   <th class="col-sm-3">NAME</th>
                                   <th class="text-center">VERSION</th>
                                   <th class="text-center hidden-xs">AUTHOR</th>
                                   <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
                                   <th class="text-center hidden-xs">CREATED</th>
-                                  <th class="text-center">TYPE</th>
+                                  <th class="text-center hidden-xs">TYPE</th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">yoo_sixthavenue</td>
+                                  <td class="small text-truncate bg-muted">yoo_sixthavenue</td>
                                   <td class="small text-center">1.0.3</td>
                                   <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
                                   <td class="small text-center text-truncate hidden-xs">November 2016</td>
-                                  <td class="small text-center text-warning">3rd Party</td>
+                                  <td class="small text-center hidden-xs">3rd Party</td>
                                 </tr>
                                 <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">protostar</td>
+                                  <td class="small text-truncate bg-muted">protostar</td>
                                   <td class="small text-center">1.0</td>
                                   <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
                                   <td class="small text-center text-truncate hidden-xs">4/30/2012</td>
-                                  <td class="small text-center text-success">Core</td>
+                                  <td class="small text-center hidden-xs">Core</td>
                                 </tr>
                               </tbody>
                             </table>
@@ -2443,45 +2444,45 @@
                       <div class="panel panel-default item">
 
                         <table class="table table-condensed table-bordered" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">COMPONENTS :: ADMINISTRATOR</caption>
-                          <colgroup class="col-xs-12">
-                            <col>
-                            <col class="col-xs-3">
-                            <col>
-                            <col>
-                            <col>
-                            <col>
-                            <col>
+                          <caption class="text-center text-uppercase">MODULES :: ADMINISTRATOR</caption>
+                          <colgroup>
+                            <col class="col-xs-1 col-sm-2">
+                            <col class="col-xs-8 col-sm-3">
+                            <col class="">
+                            <col class="hidden-xs">
+                            <col class="hidden-xs hidden-sm">
+                            <col class="hidden-xs">
+                            <col class="hidden-xs">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
-                              <th class="text-center">ENABLED</th>
+                              <th class="text-center text-truncate">ENABLED</th>
                               <th class="col-sm-3">NAME</th>
                               <th class="text-center">VERSION</th>
                               <th class="text-center hidden-xs">AUTHOR</th>
                               <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
                               <th class="text-center hidden-xs">CREATED</th>
-                              <th class="text-center">TYPE</th>
+                              <th class="text-center hidden-xs">TYPE</th>
                             </tr>
                           </thead>
                               <tbody>
                                 <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">hathor</td>
+                                  <td class="small text-truncate">modulename one</td>
                                   <td class="small text-center">3.0.0</td>
                                   <td class="small text-center text-truncate hidden-xs">Andrea Tarr</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">www.tarrconsulting.com</td>
                                   <td class="small text-center text-truncate hidden-xs">May 2010</td>
-                                  <td class="small text-center text-success">Core</td>
+                                  <td class="small text-center hidden-xs">Core</td>
                                 </tr>
                                 <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">isis</td>
+                                  <td class="small text-truncate">modulename two</td>
                                   <td class="small text-center">1.0</td>
                                   <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
                                   <td class="small text-center text-truncate hidden-xs">3/30/2012</td>
-                                  <td class="small text-center text-success">Core</td>
+                                  <td class="small text-center hidden-xs">Core</td>
                                 </tr>
                               </tbody>
                             </table>
@@ -2509,7 +2510,7 @@
                  *
                  */
               ?>
-              <div id="plugin-discovery-container" class="row">
+              <div id="plugin-discovery-container" class="row margin-bottom-lg">
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
@@ -2520,51 +2521,51 @@
                 <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
 
 
-                  <div class="row margin-top-lg margin-bottom-lg content-container">
+                  <div class="row content-container">
                     <div class="col-xs-12 content-item">
 
                       <div class="panel panel-default item">
 
                         <table class="table table-condensed table-bordered" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">PLUGINS :: SITE</caption>
-                          <colgroup class="col-xs-12">
-                            <col>
-                            <col class="col-xs-3">
-                            <col>
-                            <col>
-                            <col>
-                            <col>
-                            <col>
+                          <colgroup>
+                            <col class="col-xs-1 col-sm-2">
+                            <col class="col-xs-8 col-sm-3">
+                            <col class="">
+                            <col class="hidden-xs">
+                            <col class="hidden-xs hidden-sm">
+                            <col class="hidden-xs">
+                            <col class="hidden-xs">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
-                              <th class="text-center">ENABLED</th>
-                              <th class="col-sm-3">NAME</th>
+                              <th class="text-center text-truncate">ENABLED</th>
+                              <th class="">NAME</th>
                               <th class="text-center">VERSION</th>
                               <th class="text-center hidden-xs">AUTHOR</th>
                               <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
                               <th class="text-center hidden-xs">CREATED</th>
-                              <th class="text-center">TYPE</th>
+                              <th class="text-center hidden-xs">TYPE</th>
                             </tr>
                           </thead>
                               <tbody>
                                 <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">yoo_sixthavenue</td>
+                                  <td class="small text-truncate">plugin one</td>
                                   <td class="small text-center">1.0.3</td>
                                   <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
                                   <td class="small text-center text-truncate hidden-xs">November 2016</td>
-                                  <td class="small text-center text-warning">3rd Party</td>
+                                  <td class="small text-center hidden-xs">3rd Party</td>
                                 </tr>
                                 <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">protostar</td>
+                                  <td class="small text-truncate">plugin two</td>
                                   <td class="small text-center">1.0</td>
                                   <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
                                   <td class="small text-center text-truncate hidden-xs">4/30/2012</td>
-                                  <td class="small text-center text-success">Core</td>
+                                  <td class="small text-center hidden-xs">Core</td>
                                 </tr>
                               </tbody>
                             </table>
@@ -2575,44 +2576,44 @@
 
                         <table class="table table-condensed table-bordered" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">PLUGINS :: ADMINISTRATOR</caption>
-                          <colgroup class="col-xs-12">
-                            <col>
-                            <col class="col-xs-3">
-                            <col>
-                            <col>
-                            <col>
-                            <col>
-                            <col>
+                          <colgroup>
+                            <col class="col-xs-1 col-sm-2">
+                            <col class="col-xs-8 col-sm-3">
+                            <col class="">
+                            <col class="hidden-xs">
+                            <col class="hidden-xs hidden-sm">
+                            <col class="hidden-xs">
+                            <col class="hidden-xs">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
-                              <th class="text-center">ENABLED</th>
-                              <th class="col-sm-3">NAME</th>
+                              <th class="text-center text-truncate">ENABLED</th>
+                              <th class="">NAME</th>
                               <th class="text-center">VERSION</th>
                               <th class="text-center hidden-xs">AUTHOR</th>
                               <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
                               <th class="text-center hidden-xs">CREATED</th>
-                              <th class="text-center">TYPE</th>
+                              <th class="text-center hidden-xs">TYPE</th>
                             </tr>
                           </thead>
                               <tbody>
                                 <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">hathor</td>
+                                  <td class="small text-truncate">freds plugin</td>
                                   <td class="small text-center">3.0.0</td>
                                   <td class="small text-center text-truncate hidden-xs">Andrea Tarr</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">www.tarrconsulting.com</td>
                                   <td class="small text-center text-truncate hidden-xs">May 2010</td>
-                                  <td class="small text-success">Core</td>
+                                  <td class="small text-center hidden-xs">Core</td>
                                 </tr>
                                 <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">isis</td>
+                                  <td class="small text-truncate">search plugin</td>
                                   <td class="small text-center">1.0</td>
                                   <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
                                   <td class="small text-center text-truncate hidden-xs">3/30/2012</td>
-                                  <td class="small text-center text-success">Core</td>
+                                  <td class="small text-center hidden-xs">Core</td>
                                 </tr>
                               </tbody>
                             </table>
@@ -2640,7 +2641,7 @@
                  *
                  */
               ?>
-              <div id="template-discovery-container" class="row margin-top-lg margin-bottom-lg">
+              <div id="template-discovery-container" class="row margin-bottom-lg">
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
@@ -2659,47 +2660,43 @@
                         <table class="table table-condensed table-bordered" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">TEMPLATES :: SITE</caption>
                           <colgroup>
-                            <col>
-                            <col>
-                            <col class="col-xs-3">
-                            <col>
-                            <col>
-                            <col>
-                            <col>
-                            <col>
+                            <col class="col-xs-1 col-sm-2">
+                            <col class="col-xs-8 col-sm-3">
+                            <col class="">
+                            <col class="hidden-xs">
+                            <col class="hidden-xs hidden-sm">
+                            <col class="hidden-xs">
+                            <col class="hidden-xs">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
-                              <th class="text-center">ENABLED</th>
-                              <th class="text-center">ACTIVE</th>
-                              <th class="col-sm-3">NAME</th>
+                              <th class="text-center text-truncate">ENABLED</th>
+                              <th class="">NAME</th>
                               <th class="text-center">VERSION</th>
                               <th class="text-center hidden-xs">AUTHOR</th>
                               <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
                               <th class="text-center hidden-xs">CREATED</th>
-                              <th class="text-center">TYPE</th>
+                              <th class="text-center hidden-xs">TYPE</th>
                             </tr>
                           </thead>
                               <tbody>
                                 <tr class="bg-success">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small text-center text-success"><?php echo _FPA_A_ICON; ?></td>
                                   <td class="small text-truncate">yoo_sixthavenue</td>
                                   <td class="small text-center">1.0.3</td>
                                   <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
                                   <td class="small text-center text-truncate hidden-xs">November 2016</td>
-                                  <td class="small text-center text-warning">3rd Party</td>
+                                  <td class="small text-center hidden-xs">3rd Party</td>
                                 </tr>
                                 <tr class="">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-center"><?php echo _FPA_N_ICON; ?></td>
+                                  <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
                                   <td class="small text-truncate">protostar</td>
                                   <td class="small text-center">1.0</td>
                                   <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
                                   <td class="small text-center text-truncate hidden-xs">4/30/2012</td>
-                                  <td class="small text-center text-success">Core</td>
+                                  <td class="small text-center hidden-xs">Core</td>
                                 </tr>
                               </tbody>
                             </table>
@@ -2711,51 +2708,46 @@
                         <table class="table table-condensed table-bordered" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">TEMPLATES :: ADMINISTRATOR</caption>
                           <colgroup>
-                            <col>
-                            <col>
-                            <col class="col-xs-3">
-                            <col>
-                            <col>
-                            <col>
-                            <col>
-                            <col>
+                            <col class="col-xs-1 col-sm-2">
+                            <col class="col-xs-8 col-sm-3">
+                            <col class="">
+                            <col class="hidden-xs">
+                            <col class="hidden-xs hidden-sm">
+                            <col class="hidden-xs">
+                            <col class="hidden-xs">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
-                              <th class="text-center">ENABLED</th>
-                              <th class="text-center">ACTIVE</th>
-                              <th class="col-sm-3">NAME</th>
+                              <th class="text-center text-truncate">ENABLED</th>
+                              <th class="">NAME</th>
                               <th class="text-center">VERSION</th>
                               <th class="text-center hidden-xs">AUTHOR</th>
                               <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
                               <th class="text-center hidden-xs">CREATED</th>
-                              <th class="text-center">TYPE</th>
+                              <th class="text-center hidden-xs">TYPE</th>
                             </tr>
                           </thead>
                               <tbody>
                                 <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-center"><?php echo _FPA_N_ICON; ?></td>
                                   <td class="small text-truncate">hathor</td>
-                                  <td class="small text-center">3.0.0</td>
-                                  <td class="small text-center text-truncate hidden-xs">Andrea Tarr</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">www.tarrconsulting.com</td>
-                                  <td class="small text-center text-truncate hidden-xs">May 2010</td>
-                                  <td class="small text-center text-success">Core</td>
+                                  <td class="small text-center">1.0.3</td>
+                                  <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
+                                  <td class="small text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
+                                  <td class="small text-center text-truncate hidden-xs">November 2016</td>
+                                  <td class="small text-center hidden-xs">3rd Party</td>
                                 </tr>
                                 <tr class="bg-success">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small text-center"><?php echo _FPA_A_ICON; ?></td>
                                   <td class="small text-truncate">isis</td>
                                   <td class="small text-center">1.0</td>
                                   <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
-                                  <td class="small text-center text-truncate hidden-xs">3/30/2012</td>
-                                  <td class="small text-center text-success">Core</td>
+                                  <td class="small text-center text-truncate hidden-xs">4/30/2012</td>
+                                  <td class="small text-center hidden-xs">Core</td>
                                 </tr>
                               </tbody>
                             </table>
-                          </div>
 
                       </div><!--/.panel, item-->
 
