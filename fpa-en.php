@@ -911,61 +911,83 @@
                      */
                   ?>
                   <?php
-                     $snapshotIndicator = 100;
-                     if ($snapshotIndicator <= '20'):
-                       $snapshotDangerDisplay  = 'progress-bar-striped active show';
-                       $snapshotDangerDisplayIndicator  = 'show';
-                       $snapshotDangerWidth = $snapshotIndicator;
-                       $snapshotWarningDisplay = ' hidden';
-                       $snapshotDefaultDisplay = ' hidden';
-                       $snapshotSuccessDisplay = ' hidden';
+                     $snapshotIndicator                  = '82';  // testing health value
+                     // $snapshot[element]Width Totals must equal 100
+                     // modify these values to vary the width of each health progress category, a value of "0" (zero) is acceptable to ignore/hide a category
+                     $snapshotDangerLimitWidth           = '20';
+                     $snapshotWarningLimitWidth          = '25';
+                     $snapshotDefaultLimitWidth          = '30';
+                     $snapshotSuccessLimitWidth          = '25';
+                     // the following values calculate health variable boundaries for each category, based on the $snapshot[element]Width values above
+                     $snapshotDangerBoundary             = $snapshotDangerLimitWidth;                                                            // less than
+                     $snapshotWarningBoundary            = $snapshotDangerLimitWidth + $snapshotWarningLimitWidth;                               // less than
+                     $snapshotDefaultBoundary            = $snapshotDangerLimitWidth + $snapshotWarningLimitWidth + $snapshotDefaultLimitWidth;  // equal/less than
+                     $snapshotSuccessBoundary            = $snapshotDefaultBoundary;                                                             // greater than
 
-                     elseif ($snapshotIndicator <= '40'):
-                       $snapshotDangerDisplay  = 'show';
-                       $snapshotDangerDisplayIndicator  = 'hidden';
-                       $snapshotDangerWidth = '20';
-                       $snapshotWarningWidth = ($snapshotIndicator - $snapshotDangerWidth);
-                       $snapshotWarningDisplay = 'progress-bar-striped active show';
-                       $snapshotDefaultDisplay = 'hidden';
-                       $snapshotSuccessDisplay = 'hidden';
+                     if ($snapshotIndicator > '100'):
+                       $snapshotDangerDisplayIndicator   = 'show';
+                       $snapshotDangerLimitWidth         = '100';
+                       $snapshotDangerDisplay            = 'progress-bar-striped active show';
+                       $snapshotDangerWidth              = $snapshotIndicator;
+                       $snapshotIndicator                = 'Something Went Wrong<br />Calculated Over 100';
 
-                     elseif ($snapshotIndicator <= '75'):
-                       $snapshotDangerDisplay  = ' show';
-                       $snapshotDangerDisplayIndicator  = 'hidden';
-                       $snapshotDangerWidth = '20';
-                       $snapshotWarningDisplay = 'show';
+                     elseif ($snapshotIndicator <= $snapshotDangerBoundary):
+                       $snapshotDangerDisplayIndicator   = 'show';
+                       $snapshotDangerDisplay            = 'progress-bar-striped active show';
+                       $snapshotDangerWidth              = $snapshotIndicator;
+                       $snapshotWarningDisplay           = 'hidden';
+                       $snapshotDefaultDisplay           = 'hidden';
+                       $snapshotSuccessDisplay           = 'hidden';
+
+                     elseif ($snapshotIndicator <= $snapshotWarningBoundary):
+                       $snapshotDangerDisplayIndicator   = 'hidden';
+                       $snapshotDangerDisplay            = 'show';
+                       $snapshotDangerWidth              = $snapshotDangerLimitWidth;
+                       $snapshotWarningDisplayIndicator  = 'show';
+                       $snapshotWarningDisplay           = 'progress-bar-striped active show';
+                       $snapshotWarningWidth             = ($snapshotIndicator - $snapshotDangerLimitWidth);
+                       $snapshotDefaultDisplay           = 'hidden';
+                       $snapshotSuccessDisplay           = 'hidden';
+
+                     elseif ($snapshotIndicator <= $snapshotDefaultBoundary):
+                       $snapshotDangerDisplayIndicator   = 'hidden';
+                       $snapshotDangerDisplay            = 'show';
+                       $snapshotDangerWidth              = $snapshotDangerLimitWidth;
                        $snapshotWarningDisplayIndicator  = 'hidden';
-                       $snapshotWarningWidth = '25';
-                       $snapshotDefaultWidth = ($snapshotIndicator - ($snapshotDangerWidth + $snapshotWarningWidth));
-                       $snapshotDefaultDisplay = ' show';
-                       $snapshotSuccessDisplay = ' hidden';
+                       $snapshotWarningDisplay           = 'show';
+                       $snapshotWarningWidth             = $snapshotWarningLimitWidth;
+                       $snapshotDefaultDisplayIndicator  = 'show';
+                       $snapshotDefaultDisplay           = 'show';
+                       $snapshotDefaultWidth             = ($snapshotIndicator - ($snapshotDangerLimitWidth + $snapshotWarningLimitWidth));
+                       $snapshotSuccessDisplay           = 'hidden';
 
-                     elseif ($snapshotIndicator > '75'):
-                       $snapshotDangerDisplay  = 'show';
-                       $snapshotDangerDisplayIndicator  = 'hidden';
-                       $snapshotDangerWidth = '20';
-                       $snapshotWarningDisplay = 'show';
+                     elseif ($snapshotIndicator > $snapshotSuccessBoundary):
+                       $snapshotDangerDisplayIndicator   = 'hidden';
+                       $snapshotDangerDisplay            = 'show';
+                       $snapshotDangerWidth              = $snapshotDangerLimitWidth;
                        $snapshotWarningDisplayIndicator  = 'hidden';
-                       $snapshotWarningWidth = '25';
-                       $snapshotDefaultDisplay = 'show';
+                       $snapshotWarningDisplay           = 'show';
+                       $snapshotWarningWidth             = $snapshotWarningLimitWidth;
                        $snapshotDefaultDisplayIndicator  = 'hidden';
-                       $snapshotDefaultWidth = '30';
-                       $snapshotSuccessWidth = ($snapshotIndicator - ($snapshotDangerWidth + $snapshotWarningWidth + $snapshotDefaultWidth));
-                       $snapshotSuccessDisplay = 'show';
+                       $snapshotDefaultDisplay           = 'show';
+                       $snapshotDefaultWidth             = $snapshotDefaultLimitWidth;
+                       $snapshotSuccessDisplayIndicator  = 'show';
+                       $snapshotSuccessDisplay           = 'show';
+                       $snapshotSuccessWidth             = ($snapshotIndicator - ($snapshotDangerLimitWidth + $snapshotWarningLimitWidth + $snapshotDefaultLimitWidth));
                      endif;
                   ?>
-                  <div class="progress margin-top-lg margin-bottom-lg hidden-print">
-                    <div class="progress-bar progress-bar-danger <?php echo $snapshotDangerDisplay; ?>" role="progressbar" style="width:<?php echo $snapshotDangerWidth; ?>%;min-width: 2em;">
-                      <span class="<?php echo $snapshotDangerDisplayIndicator; ?>"><?php echo _FPA_N_ICON; ?></span>
+                  <div class="progress margin-top-lg margin-bottom-lg hidden-print" data-toggle="tooltip" title="<?php echo $snapshotIndicator; ?>%">
+                    <div class="progress-bar progress-bar-danger <?php echo $snapshotDangerDisplay; ?>" role="progressbar" style="width:<?php echo $snapshotDangerWidth; ?>%;min-width:1em;">
+                      <span class="small <?php echo $snapshotDangerDisplayIndicator; ?>"><?php echo _FPA_N_ICON; ?></span>
                     </div>
-                    <div class="progress-bar progress-bar-warning <?php echo $snapshotWarningDisplay; ?>" role="progressbar" style="width:<?php echo $snapshotWarningWidth; ?>%;min-width: 2em;">
-                      <span class="<?php echo $snapshotWarningDisplayIndicator; ?>"><?php echo _FPA_U_ICON; ?></span>
+                    <div class="progress-bar progress-bar-warning <?php echo $snapshotWarningDisplay; ?>" role="progressbar" style="width:<?php echo $snapshotWarningWidth; ?>%;min-width:1em;">
+                      <span class="small <?php echo $snapshotWarningDisplayIndicator; ?>"><?php echo _FPA_U_ICON; ?></span>
                     </div>
-                    <div class="progress-bar progress-bar-default <?php echo $snapshotDefaultDisplay; ?>" role="progressbar" style="width:<?php echo $snapshotDefaultWidth; ?>%;min-width: 2em;">
-                      <span class="<?php echo $snapshotDefaultDisplayIndicator; ?>"><?php echo _FPA_A_ICON; ?></span>
+                    <div class="progress-bar progress-bar-default <?php echo $snapshotDefaultDisplay; ?>" role="progressbar" style="width:<?php echo $snapshotDefaultWidth; ?>%;min-width:1em;">
+                      <span class="small <?php echo $snapshotDefaultDisplayIndicator; ?>"><?php echo _FPA_U_ICON; ?></span>
                     </div>
-                    <div class="progress-bar progress-bar-success <?php echo $snapshotSuccessDisplay; ?>" role="progressbar" style="width:<?php echo $snapshotSuccessWidth; ?>%;min-width: 2em;">
-                      <span class="<?php echo $snapshotDisplaySuccess; ?>"><?php echo _FPA_Y_ICON; ?></span>
+                    <div class="progress-bar progress-bar-success <?php echo $snapshotSuccessDisplay; ?>" role="progressbar" style="width:<?php echo $snapshotSuccessWidth; ?>%;min-width:1em;">
+                      <span class="small <?php echo $snapshotSuccessDisplayIndicator; ?>"><?php echo _FPA_Y_ICON; ?></span>
                     </div>
                   </div>
 
@@ -2932,7 +2954,7 @@
             </div>
 
             <div class="btn-group btn-group-xs text-primary copyright">
-              <?php echo _RES .' ('. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD; ?>) <sup>&copy;</sup>2011-<?php echo date('Y'); ?>
+              <?php echo _RES .' ('. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD; ?>) 2011-<?php echo date('Y'); ?><sup>&copy;</sup>
             </div>
 
           </div>
@@ -3051,6 +3073,18 @@
             placement: "top",
             trigger: "hover focus",
             container: "footer"
+          });
+
+
+          <?php
+            /* NOTE (RussW): SCRIPT - BS Tooltip Objects
+             *
+             */
+          ?>
+          $('[data-toggle="tooltip"]').tooltip({
+            html: true,
+            placement: "bottom",
+            trigger: "hover focus"
           });
 
 
