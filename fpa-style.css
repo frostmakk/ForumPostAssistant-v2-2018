@@ -119,6 +119,11 @@ caption {
   text-align: center;
 }
 
+#accordion .panel-title a.fpa-settings,
+#accordion .panel-title a.fpa-output { /* bs override */
+  min-width: 80% !important;
+  display: inline-block !important;
+}
 #accordion .panel-title a.fpa-settings.collapsed:before,
 #accordion .panel-title a.fpa-output.collapsed:before { /* bs override */
           font-family: "Glyphicons Halflings";

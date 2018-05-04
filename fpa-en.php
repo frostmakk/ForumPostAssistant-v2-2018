@@ -952,7 +952,7 @@
                        $snapshotSuccessDisplay = 'show';
                      endif;
                   ?>
-                  <div class="progress margin-top-lg margin-bottom-lg">
+                  <div class="progress margin-top-lg margin-bottom-lg hidden-print">
                     <div class="progress-bar progress-bar-danger <?php echo $snapshotDangerDisplay; ?>" role="progressbar" style="width:<?php echo $snapshotDangerWidth; ?>%;min-width: 2em;">
                       <span class="<?php echo $snapshotDangerDisplayIndicator; ?>"><?php echo _FPA_N_ICON; ?></span>
                     </div>
@@ -2602,7 +2602,7 @@
                                   <td class="small text-truncate">freds plugin</td>
                                   <td class="small text-center">3.0.0</td>
                                   <td class="small text-center text-truncate hidden-xs">Andrea Tarr</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">www.tarrconsulting.com</td>
+                                  <td class="small text-center text-truncate hidden-xs hidden-sm"><a href="http://www.tarrconsulting.com" target="_blank">www.tarrconsulting.com</a></td>
                                   <td class="small text-center text-truncate hidden-xs">May 2010</td>
                                   <td class="small text-center hidden-xs">Core</td>
                                 </tr>
@@ -2685,7 +2685,7 @@
                                   <td class="small text-truncate">yoo_sixthavenue</td>
                                   <td class="small text-center">1.0.3</td>
                                   <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
+                                  <td class="small text-center text-truncate hidden-xs hidden-sm"><a href="http://www.yootheme.com" target="_blank">www.yootheme.com</a></td>
                                   <td class="small text-center text-truncate hidden-xs">November 2016</td>
                                   <td class="small text-center hidden-xs">3rd Party</td>
                                 </tr>
@@ -2733,7 +2733,7 @@
                                   <td class="small text-truncate">hathor</td>
                                   <td class="small text-center">1.0.3</td>
                                   <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
+                                  <td class="small text-center text-truncate hidden-xs hidden-sm"><a href="http://www.yootheme.com" target="_blank">www.yootheme.com</a></td>
                                   <td class="small text-center text-truncate hidden-xs">November 2016</td>
                                   <td class="small text-center hidden-xs">3rd Party</td>
                                 </tr>
