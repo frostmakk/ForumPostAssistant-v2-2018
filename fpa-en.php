@@ -1,6 +1,6 @@
 <?php
   /** TESTING ONLY - DELETE ME ****************************************/
-  error_reporting(0);
+//  error_reporting(0);
   //$disabled = 'disabled';
   /** TESTING ONLY - DELETE ME ****************************************/
 ?>
@@ -219,6 +219,7 @@
 
         <?php
           // attempt to find and display a favicon
+          $faviconPath = '';
           if (file_exists('./administrator/templates/bluestork/favicon.ico')):
             $faviconPath = './administrator/templates/bluestork/favicon.ico';
           elseif (file_exists('./administrator/templates/isis/favicon.ico')):
@@ -270,6 +271,7 @@
               <h4 class="text-center margin-remove-bottom">
                 <?php
                   // attempt to find and display a joomla logo
+                  $logoPath = '';
                   if (file_exists('./administrator/templates/bluestork/images/logo.png')):
                     $logoPath = './administrator/templates/bluestork/images/logo.png';
                     elseif (file_exists('./administrator/templates/isis/images/logo.png')):
