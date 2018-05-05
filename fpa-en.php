@@ -152,6 +152,23 @@
   define ( '_DESCRIBE_LEGEND_ALERT', 'Negative Or Error Message/Status' );
   define ( '_DESCRIBE_LEGEND_PRIVACY', 'Privacy Settings Are Protecting Sensitive Data' );
 
+  define ( '_GDPR_HEADING', 'EU GDPR & e-Privacy Directives' );
+  define ( '_GDPR_MESSAGE', '<p>Whilst the FPA script does collect information about your website, it is not sent to, or stored in any other location by FPA.</p>
+                             <p>The information that is collected by this script is solely for the purpose of assisting you in problem determination and troubleshooting,
+                             it is completely your choice to post this data in any public or private online forum or community area, or to disclose this information to
+                             any third-party persons, communities or companies.</p>'
+         );
+  define ( '_GDPR_MESSAGE_MORE', '<p><b>FPA Privacy Settings:</b> FPA provides the option for you to choose how much identifiable information is made available to any
+                             reviewer of the script output, please make yourself familiar with the differences in output before disclosing the output publicly or
+                             to any other third-parties.</p>
+                             <p><b>Cookies & Local Storage:</b> The FPA script does not use cookies or local storage through your web-browser, however your web-browser
+                             may cache the web page out, if you are concerned you may choose to delete your web-browser cache after using this script.</p>
+                             <p><b>Analytics & Tracking:</b> The FPA script does not use any visitor analytics or tracking methods. However, some of the information collected
+                             by FPA may disclose host or server information that could make your website and location identifiable, revealing any subsequent personal information
+                             made available when viewed. If this is of concern, you may select a stricter FPA Privacy setting to minimise such information disclosures.</p>'
+         );
+
+
 
   /* NOTE (FPA): LANGUAGE - Output Definitions & Constants
    * fpa output language strings
@@ -198,14 +215,16 @@
   define ( '_FPA_VER', 'Version' );
   define ( '_FPA_VER_SHORT', 'v' ); // RussW : new v2.0.0
   define ( '_FPA_EXPLAIN', 'Explain' ); // RussW : new v2.0.0
-
   define ( '_FPA_Y', 'Yes' );
   define ( '_FPA_N', 'No' );
   define ( '_FPA_U', 'Unknown' );
+  define ( '_FPA_A', 'Active' ); // RussW : (active/current/selected) new v2.0.0
   define ( '_FPA_Y_ICON', '<i class="glyphicon glyphicon-ok-sign"></i>' ); // RussW : (yes/good/positive) new v2.0.0
   define ( '_FPA_N_ICON', '<i class="glyphicon glyphicon-remove-sign"></i>' ); // RussW : (no/error/negative) new v2.0.0
   define ( '_FPA_U_ICON', '<i class="glyphicon glyphicon-question-sign"></i>' ); // RussW : (unknown) new v2.0.0
   define ( '_FPA_A_ICON', '<i class="glyphicon glyphicon-star"></i>' ); // RussW : (active/current/selected) new v2.0.0
+  define ( '_FPA_E_ICON', '<i class="glyphicon glyphicon-info-sign"></i>' ); // RussW : (explain/info/help) new v2.0.0
+
 
   /* end fpa language definitions & constants */
 ?>
@@ -274,11 +293,11 @@
                   $logoPath = '';
                   if (file_exists('./administrator/templates/bluestork/images/logo.png')):
                     $logoPath = './administrator/templates/bluestork/images/logo.png';
-                    elseif (file_exists('./administrator/templates/isis/images/logo.png')):
+                  elseif (file_exists('./administrator/templates/isis/images/logo.png')):
                     $logoPath = './administrator/templates/isis/images/logo.png';
-                    elseif (file_exists('./administrator/templates/atum/images/logo.svg')):
+                  elseif (file_exists('./administrator/templates/atum/images/logo.svg')):
                     $logoPath = './administrator/templates/atum/images/logo.svg';
-                    endif;
+                  endif;
                 ?>
                 <?php if ($logoPath): ?>
                   <img src="<?php echo $logoPath; ?>" width="175" height="35" alt="<?php echo _RES; ?>" />
@@ -2806,33 +2825,47 @@
 
                   <div class="panel panel-default tourStep17">
                     <div class="panel-heading"><strong>Legends & Status</strong></div>
+
                     <table class="table">
-                      <tr class="bg-info text-info">
-                        <td><span class="label label-info"><i class="glyphicon glyphicon-info-sign"></i></span></td>
-                        <td><span class="label label-info center-block"><i class="glyphicon glyphicon-info-sign"></i> Explain</span></td>
-                        <td class="line-height-normal">Information & Help Message/Status</td>
-                      </tr>
-                      <tr class="bg-success text-success">
-                        <td><span class="label label-success"><i class="glyphicon glyphicon-ok-sign"></i></span></td>
-                        <td><span class="label label-success center-block"><i class="glyphicon glyphicon-ok-sign"></i> Success</span></td>
-                        <td class="line-height-normal">Positive & Successful Message/Status</td>
-                      </tr>
-                      <tr class="bg-warning text-warning">
-                        <td><span class="label label-warning"><i class="glyphicon glyphicon-alert"></i></span></td>
-                        <td><span class="label label-warning center-block"><i class="glyphicon glyphicon-alert"></i> Warning</span></td>
-                        <td class="line-height-normal">Highlighted & Warning Message/Status</td>
-                      </tr>
-                      <tr class="bg-danger text-danger">
-                        <td><span class="label label-danger"><i class="glyphicon glyphicon-remove-sign"></i></span></td>
-                        <td><span class="label label-danger center-block"><i class="glyphicon glyphicon-remove-sign"></i> Alert</span></td>
-                        <td class="line-height-normal">Negative Or Error Message/Status</td>
-                      </tr>
-                      <tr class="bg-protected text-protected">
-                        <td><span class="label label-protected"><i class="glyphicon glyphicon-ban-circle"></i></span></td>
-                        <td><span class="label label-protected center-block">protected</span></td>
-                        <td class="line-height-normal">Privacy Settings Are Protecting Sensitive Data</td>
-                      </tr>
+                      <tbody>
+                        <tr class="bg-info text-info">
+                          <td class="text-center"><span class="label label-info"><i class="glyphicon glyphicon-info-sign"></i></span></td>
+                          <td><span class="label label-info center-block"><i class="glyphicon glyphicon-info-sign"></i> Explain</span></td>
+                          <td class="1line-height-normal">Information & Help Message/Status</td>
+                        </tr>
+                        <tr class="bg-success text-success">
+                          <td class="text-center"><span class="label label-success"><i class="glyphicon glyphicon-ok-sign"></i></span></td>
+                          <td><span class="label label-success center-block"><i class="glyphicon glyphicon-ok-sign"></i> Success</span></td>
+                          <td class="line-height-normal">Positive & Successful Message/Status</td>
+                        </tr>
+                        <tr class="bg-warning text-warning">
+                          <td class="text-center"><span class="label label-warning"><i class="glyphicon glyphicon-alert"></i></span></td>
+                          <td><span class="label label-warning center-block"><i class="glyphicon glyphicon-alert"></i> Warning</span></td>
+                          <td class="line-height-normal">Highlighted & Warning Message/Status</td>
+                        </tr>
+                        <tr class="bg-danger text-danger">
+                          <td class="text-center"><span class="label label-danger"><i class="glyphicon glyphicon-remove-sign"></i></span></td>
+                          <td><span class="label label-danger center-block"><i class="glyphicon glyphicon-remove-sign"></i> Alert</span></td>
+                          <td class="line-height-normal">Negative Or Error Message/Status</td>
+                        </tr>
+                        <tr class="text-primary">
+                          <td class="text-center"><span class="label label-primary"><?php echo _FPA_U_ICON; ?></span></td>
+                          <td><span class="label label-primary center-block"><i class="glyphicon glyphicon-question-sign"></i> Unknown</span></td>
+                          <td class="line-height-normal">Status Is Unknown Or Was Unretrievable</td>
+                        </tr>
+                        <tr class="bg-protected text-protected">
+                          <td class="text-center"><span class="label label-protected"><i class="glyphicon glyphicon-ban-circle"></i></span></td>
+                          <td><span class="label label-protected center-block">protected</span></td>
+                          <td class="line-height-normal">Privacy Settings Are Protecting Sensitive Data</td>
+                        </tr>
+                        <tr class="text-success">
+                          <td class="text-center"><?php echo _FPA_A_ICON; ?></td>
+                          <td><span class="label label-default"><?php echo _FPA_A_ICON; ?></span></td>
+                          <td class="line-height-normal">Denotes An Active Or Currently Selected Item</td>
+                        </tr>
+                      </tbody>
                     </table>
+
                   </div><!--/.panel-->
 
                 </div><!--/left-column-->
@@ -2884,12 +2917,12 @@
 
                   <div class="padding-lg text-justify small padding-lg bg-muted tourStepEnd">
                     <h6 class="margin-remove text-center">Developers & Contributors</h6>
-                    <p class="text-muted small">
+                    <p class="text-muted">
                       The FPA script has been developed by, and is copyright of the following contributors; Russell Winter, Phil DeGruy, Claire Mandville, Bernard Toplak & Sveinung Larsen. <a class="text-primary" href="https://github.com/ForumPostAssistant" target="_blank">Visit the FPA Github Project</a>.
                     </p>
 
                     <h6 class="margin-remove text-center">Licensing & Disclaimer</h6>
-                    <p class="text-muted small">
+                    <p class="text-muted">
                       <?php echo _RES .' '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD; ?> script comes with ABSOLUTELY NO WARRANTY.  This is free software; and covered under the <strong>GNU GPLv3 or later license</strong>. You are welcome to redistribute it under certain conditions. For details read the LICENSE.txt file included in the download package with this script. A copy of the license may also be obtained at <a class="text-primary" href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses/</a>.
                     </p>
 
@@ -2897,8 +2930,37 @@
 
                 </div><!--/right-column-->
 
+                <div class="clearfix"></div>
+
+                <div class="col-xs-12 clearfix">
+
+                  <?php
+                    /* NOTE (RussW): GDPR & e-Privacy
+                     * added GDPR & e-Privacy statement (RussW 05/05/2018)
+                     *
+                     */
+                  ?>
+                  <div id="gdpr-information" class="alert alert-info small">
+
+                    <h5 class="margin-remove-top">
+                      <button class="btn btn-info btn-xs pull-right clearfix hidden-print" type="button" data-toggle="collapse" data-target="#collapseGDPRExtended" aria-expanded="false" aria-controls="collapseGDPRExtended">
+                        <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
+                      </button>
+                      <?php echo _FPA_E_ICON .' '. _GDPR_HEADING; ?>
+                    </h5>
+
+                    <?php echo _GDPR_MESSAGE; ?>
+
+                    <div class="collapse clearfix margin-top-sm" id="collapseGDPRExtended">
+                      <?php echo _GDPR_MESSAGE_MORE; ?>
+                    </div>
+
+                  </div>
+
+                </div><!--/GDPR full-width-column-->
+
               </div><!--/.row-->
-              <div class="clearfix"></div>
+
 
 
             </div><!--/#legends-section-->
