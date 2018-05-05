@@ -1020,7 +1020,7 @@
 
                       <div class="panel panel-default item" style="min-height:153px;">
 
-                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">PHP</caption>
                           <colgroup>
                             <col class="col-xs-7">
@@ -1053,7 +1053,7 @@
 
                       <div class="panel panel-default item" style="min-height:153px;">
 
-                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">DATABASE</caption>
                           <colgroup>
                             <col class="col-xs-7">
@@ -1086,7 +1086,7 @@
 
                       <div class="panel panel-default item" style="min-height:153px;">
 
-                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">DATABASE</caption>
                           <colgroup>
                             <col class="col-xs-7">
@@ -1195,7 +1195,7 @@
 
     <div class="panel panel-default item" style="min-height:111px;">
 
-      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+      <table class="table table-condensed" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CMS</caption>
         <colgroup>
           <col class="col-xs-12">
@@ -1217,7 +1217,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+      <table class="table table-condensed" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">PLATFORM</caption>
         <colgroup>
           <col class="col-xs-12">
@@ -1239,7 +1239,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+      <table class="table table-condensed" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1268,7 +1268,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+      <table class="table table-condensed" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1297,7 +1297,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+      <table class="table table-condensed" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1326,7 +1326,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+      <table class="table table-condensed" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1355,7 +1355,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+      <table class="table table-condensed" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1384,7 +1384,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+      <table class="table table-condensed" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1413,7 +1413,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+      <table class="table table-condensed" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1442,7 +1442,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+      <table class="table table-condensed" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1471,7 +1471,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+      <table class="table table-condensed" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1500,7 +1500,7 @@
 
     <div class="panel panel-default item" style="min-height:118px;">
 
-      <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+      <table class="table table-condensed" style="table-layout:fixed;">
         <caption class="text-center text-uppercase">CONFIG</caption>
         <colgroup>
           <col class="col-xs-7">
@@ -1564,7 +1564,7 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">1DataBase (+DB Type)</caption>
                           <colgroup>
                             <col class="col-xs-7">
@@ -1597,7 +1597,7 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">DataBase Performance</caption>
                           <colgroup>
                             <col class="col-xs-7">
@@ -1660,18 +1660,18 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed table-bordered table-striped table-hover" style="table-layout:fixed;">
+                        <table class="table table-condensed table-striped table-hover" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">(+DB Type_ :: Table Structure</caption>
                           <colgroup>
-                            <col class="col-xs-4">
-                            <col class="">
-                            <col class="">
-                            <col class="hidden-xs hidden-sm">
-                            <col class="hidden-xs hidden-sm">
-                            <col class="hidden-xs">
-                            <col class="">
-                            <col class="hidden-xs hidden-sm hidden-md">
-                            <col class="hidden-xs hidden-sm hidden-md">
+                            <col class="col-xs-4 border-right">
+                            <col class=" border-right">
+                            <col class=" border-right">
+                            <col class="hidden-xs hidden-sm border-right">
+                            <col class="hidden-xs hidden-sm border-right">
+                            <col class="hidden-xs border-right">
+                            <col class=" border-right">
+                            <col class="hidden-xs hidden-sm hidden-md border-right">
+                            <col class="hidden-xs hidden-sm hidden-md border-right">
                             <col class="hidden-xs hidden-sm hidden-md">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
@@ -1805,7 +1805,7 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">PHP Environment</caption>
                           <colgroup>
                             <col class="col-xs-7">
@@ -1838,7 +1838,7 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">Host Environment</caption>
                           <colgroup>
                             <col class="col-xs-7">
@@ -1874,7 +1874,7 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">Host Environment</caption>
                           <colgroup>
                             <col>
@@ -2027,13 +2027,13 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">Core Folder Permissions</caption>
                           <colgroup>
-                            <col class="">
-                            <col class="">
-                            <col class="col-xs-7">
-                            <col class="hidden-xs">
+                            <col class="border-right">
+                            <col class="border-right">
+                            <col class="col-xs-7 border-right">
+                            <col class="hidden-xs border-right">
                             <col class="hidden-xs hidden-sm">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
@@ -2192,13 +2192,13 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">Elevated Permission Checks</caption>
                           <colgroup>
-                            <col class="">
-                            <col class="">
-                            <col class="col-xs-7">
-                            <col class="hidden-xs">
+                            <col class="border-right">
+                            <col class="border-right">
+                            <col class="col-xs-7 border-right">
+                            <col class="hidden-xs border-right">
                             <col class="hidden-xs hidden-sm">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
@@ -2307,15 +2307,15 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">COMPONENTS :: SITE</caption>
                           <colgroup>
-                            <col class="col-xs-1 col-sm-2">
-                            <col class="col-xs-8 col-sm-3">
-                            <col class="">
-                            <col class="hidden-xs">
-                            <col class="hidden-xs hidden-sm">
-                            <col class="hidden-xs">
+                            <col class="col-xs-1 col-sm-2 border-right">
+                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="border-right">
+                            <col class="hidden-xs border-right">
+                            <col class="hidden-xs hidden-sm border-right">
+                            <col class="hidden-xs border-right">
                             <col class="hidden-xs">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
@@ -2355,15 +2355,15 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">COMPONENTS :: ADMINISTRATOR</caption>
                           <colgroup>
-                            <col class="col-xs-1 col-sm-2">
-                            <col class="col-xs-8 col-sm-3">
-                            <col class="">
-                            <col class="hidden-xs">
-                            <col class="hidden-xs hidden-sm">
-                            <col class="hidden-xs">
+                            <col class="col-xs-1 col-sm-2 border-right">
+                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="border-right">
+                            <col class="hidden-xs border-right">
+                            <col class="hidden-xs hidden-sm border-right">
+                            <col class="hidden-xs border-right">
                             <col class="hidden-xs">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
@@ -2438,15 +2438,15 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
                               <caption class="text-center text-uppercase">MODULES :: SITE</caption>
                           <colgroup>
-                            <col class="col-xs-1 col-sm-2">
-                            <col class="col-xs-8 col-sm-3">
-                            <col class="">
-                            <col class="hidden-xs">
-                            <col class="hidden-xs hidden-sm">
-                            <col class="hidden-xs">
+                            <col class="col-xs-1 col-sm-2 border-right">
+                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="border-right">
+                            <col class="hidden-xs border-right">
+                            <col class="hidden-xs hidden-sm border-right">
+                            <col class="hidden-xs border-right">
                             <col class="hidden-xs">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                               <thead>
@@ -2486,15 +2486,15 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">MODULES :: ADMINISTRATOR</caption>
                           <colgroup>
-                            <col class="col-xs-1 col-sm-2">
-                            <col class="col-xs-8 col-sm-3">
-                            <col class="">
-                            <col class="hidden-xs">
-                            <col class="hidden-xs hidden-sm">
-                            <col class="hidden-xs">
+                            <col class="col-xs-1 col-sm-2 border-right">
+                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="border-right">
+                            <col class="hidden-xs border-right">
+                            <col class="hidden-xs hidden-sm border-right">
+                            <col class="hidden-xs border-right">
                             <col class="hidden-xs">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
@@ -2569,15 +2569,15 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">PLUGINS :: SITE</caption>
                           <colgroup>
-                            <col class="col-xs-1 col-sm-2">
-                            <col class="col-xs-8 col-sm-3">
-                            <col class="">
-                            <col class="hidden-xs">
-                            <col class="hidden-xs hidden-sm">
-                            <col class="hidden-xs">
+                            <col class="col-xs-1 col-sm-2 border-right">
+                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="border-right">
+                            <col class="hidden-xs border-right">
+                            <col class="hidden-xs hidden-sm border-right">
+                            <col class="hidden-xs border-right">
                             <col class="hidden-xs">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
@@ -2617,15 +2617,15 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">PLUGINS :: ADMINISTRATOR</caption>
                           <colgroup>
-                            <col class="col-xs-1 col-sm-2">
-                            <col class="col-xs-8 col-sm-3">
-                            <col class="">
-                            <col class="hidden-xs">
-                            <col class="hidden-xs hidden-sm">
-                            <col class="hidden-xs">
+                            <col class="col-xs-1 col-sm-2 border-right">
+                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="border-right">
+                            <col class="hidden-xs border-right">
+                            <col class="hidden-xs hidden-sm border-right">
+                            <col class="hidden-xs border-right">
                             <col class="hidden-xs">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
@@ -2700,15 +2700,15 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">TEMPLATES :: SITE</caption>
                           <colgroup>
-                            <col class="col-xs-1 col-sm-2">
-                            <col class="col-xs-8 col-sm-3">
-                            <col class="">
-                            <col class="hidden-xs">
-                            <col class="hidden-xs hidden-sm">
-                            <col class="hidden-xs">
+                            <col class="col-xs-1 col-sm-2 border-right">
+                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="border-right">
+                            <col class="hidden-xs border-right">
+                            <col class="hidden-xs hidden-sm border-right">
+                            <col class="hidden-xs border-right">
                             <col class="hidden-xs">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
@@ -2748,15 +2748,15 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed table-bordered" style="table-layout:fixed;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase">TEMPLATES :: ADMINISTRATOR</caption>
                           <colgroup>
-                            <col class="col-xs-1 col-sm-2">
-                            <col class="col-xs-8 col-sm-3">
-                            <col class="">
-                            <col class="hidden-xs">
-                            <col class="hidden-xs hidden-sm">
-                            <col class="hidden-xs">
+                            <col class="col-xs-1 col-sm-2 border-right">
+                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="border-right">
+                            <col class="hidden-xs border-right">
+                            <col class="hidden-xs hidden-sm border-right">
+                            <col class="hidden-xs border-right">
                             <col class="hidden-xs">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
