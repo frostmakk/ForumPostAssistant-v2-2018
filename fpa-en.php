@@ -122,11 +122,15 @@
                              <p>The post content will not be easily readable as it is formatted to correctly display in the forum, but all the information you can see on the FPA webpage (below) will be included.'
          );
 
-  define ( '_BASIC_HEADING', 'Basic Discovery' );
-  define ( '_BASIC_EXPLAIN', 'Basic hosting environment tests are run and compared to the documented installation requirements and known good configurations or known software versions that can sometimes cause problems. This information provides a quick and simple view of the generic environmental details.' );
-  define ( '_BASIC_DESCRIBE', 'The Basic Discovery section presents any initial diagnostic information that has been discovered about your hosting server, database, php environments and functions that may effect the smooth running of any installed Joomla! instance.' );
-  define ( '_BASIC_HEADING_SNAPSHOT', 'Environment Snapshot' );
-  define ( '_BASIC_DESCRIBE_SNAPSHOT', 'The snapshot provides an initial indication of how suitable your environment is for hosting Joomla!' );
+  define ( '_SECTION_BASIC_HEADING', 'Basic Discovery' );
+  define ( '_SECTION_BASIC_EXPLAIN', 'Basic hosting environment tests are run and compared to the documented installation requirements and known good configurations or known software versions that can sometimes cause problems. This information provides a quick and simple view of the generic environmental details.' );
+  define ( '_SECTION_BASIC_DESCRIBE', 'The Basic Discovery section presents any initial diagnostic information that has been discovered about your hosting server, database, php environments and functions that may effect the smooth running of any installed Joomla! instance.' );
+  define ( '_SECTION_BASIC_HEADING_SNAPSHOT', 'Environment Snapshot' );
+  define ( '_SECTION_BASIC_DESCRIBE_SNAPSHOT', 'The snapshot provides an initial indication of how suitable your environment is for hosting Joomla!' );
+
+  define ( '_SECTION_APPLICATION_HEADING', 'Application Discovery' );
+  define ( '_SECTION_APPLICATION_EXPLAIN', 'During the Application Discovery routines, FPA attempts to detect a Joomla! installation, determine the version and collect information about how it is configured. Where possible, FPA will also try to access the Joomla! database and collect configuration, performance and schema information.' );
+  define ( '_SECTION_APPLICATION_DESCRIBE', 'The Application Discovery section attempts to detect any installed Joomla! instance and confirm any relevant or related configuration and database information.' );
 
 
   define ( '_EXPLAIN_APP', 'Explain application' );
@@ -224,6 +228,8 @@
   define ( '_FPA_U_ICON', '<i class="glyphicon glyphicon-question-sign"></i>' ); // RussW : (unknown) new v2.0.0
   define ( '_FPA_A_ICON', '<i class="glyphicon glyphicon-star"></i>' ); // RussW : (active/current/selected) new v2.0.0
   define ( '_FPA_E_ICON', '<i class="glyphicon glyphicon-info-sign"></i>' ); // RussW : (explain/info/help) new v2.0.0
+  define ( '_FPA_NOTE_ICON', '<i class="glyphicon glyphicon-asterisk text-warning"></i>' ); // RussW : (explain/info/help) new v2.0.0
+  define ( '_FPA_OPTIONAL_TOOLTIP', 'This section <b>is optional</b> by default in the post output' ); // RussW : (explain/info/help) new v2.0.0
 
 
   /* end fpa language definitions & constants */
@@ -894,17 +900,15 @@
                   <button class="btn btn-info btn-xs pull-right clearfix hidden-print tourExplainBasic" type="button" data-toggle="collapse" data-target="#collapseExplainBasic" aria-expanded="false" aria-controls="collapseExplainBasic">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
-                  <i class="glyphicon glyphicon-dashboard"></i> <?php echo _BASIC_HEADING; ?>
+                  <i class="glyphicon glyphicon-dashboard"></i> <?php echo _SECTION_BASIC_HEADING; ?>
                 </h2>
 
-                <p class="lead">
-                  <?php echo _BASIC_DESCRIBE; ?>
-                </p>
+                <p class="lead"><?php echo _SECTION_BASIC_DESCRIBE; ?></p>
 
                 <div class="collapse clearfix" id="collapseExplainBasic">
                   <div class="alert alert-info" role="alert">
-                    <h4><i class="glyphicon glyphicon-info-sign"></i> <?php echo _BASIC_HEADING; ?></h4>
-                    <p><?php echo _BASIC_EXPLAIN; ?></p>
+                    <h4><i class="glyphicon glyphicon-info-sign"></i> <?php echo _SECTION_BASIC_HEADING; ?></h4>
+                    <p><?php echo _SECTION_BASIC_EXPLAIN; ?></p>
                   </div>
                 </div><!--/#collapseExplainBasic-->
 
@@ -912,7 +916,7 @@
 
 
               <?php
-                /* NOTE (RussW): SUB-SECTION - Environment Discovery
+                /* NOTE (RussW): SUB-SECTION - Environment Snapshot
                  * basic environment information
                  *
                  */
@@ -920,8 +924,9 @@
               <div id="basic-discovery-container" class="row">
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
-                  <h3 class="margin-remove text-muted"><?php echo _BASIC_HEADING_SNAPSHOT; ?></h3>
-                  <p class="text-muted"><?php echo _BASIC_DESCRIBE_SNAPSHOT; ?></p>
+                  <h3 class="margin-remove text-muted"><?php echo _SECTION_BASIC_HEADING_SNAPSHOT; ?></h3>
+
+                  <p class="text-muted"><?php echo _SECTION_BASIC_DESCRIBE_SNAPSHOT; ?></p>
 
 
                   <?php
@@ -1146,17 +1151,15 @@
                   <button class="btn btn-info btn-xs pull-right clearfix hidden-print" type="button" data-toggle="collapse" data-target="#collapseExplainApplication" aria-expanded="false" aria-controls="collapseExplainApplication">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
-                  <i class="glyphicon glyphicon-cog"></i> Application Discovery
+                  <i class="glyphicon glyphicon-cog"></i> <?php echo _SECTION_APPLICATION_HEADING; ?>
                 </h2>
 
-                <p class="lead">
-                  The FPA Application Discovery Section presents any basic information that FPA has managed to discover about your hosting server, database & php environments, installed functions and any discovered Joomla! instance.
-                </p>
+                <p class="lead"><?php echo _SECTION_APPLICATION_DESCRIBE; ?></p>
 
                 <div class="collapse clearfix" id="collapseExplainApplication">
                   <div class="alert alert-info" role="alert">
-                    <h4><i class="glyphicon glyphicon-info-sign"></i> Application Discovery Dashboard</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h4><i class="glyphicon glyphicon-info-sign"></i> <?php echo _SECTION_APPLICATION_HEADING; ?></h4>
+                    <p><?php echo _SECTION_APPLICATION_EXPLAIN; ?></p>
                   </div>
                 </div><!--/#collapseExplainApplication-->
 
@@ -1173,7 +1176,7 @@
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
-                  <h3 class="margin-remove text-muted">Installed Instance</h3>
+                  <h3 class="margin-remove text-muted"> Installed Instance</h3>
                   <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
 
                 </div><!--/.subsection-heading-->
@@ -1191,7 +1194,7 @@
                       ?>
 
 <div class="row clearfix">
-  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 
     <div class="panel panel-default item" style="min-height:111px;">
 
@@ -1213,7 +1216,7 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 
     <div class="panel panel-default item" style="min-height:118px;">
 
@@ -1235,7 +1238,7 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 
     <div class="panel panel-default item" style="min-height:118px;">
 
@@ -1264,7 +1267,7 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 
     <div class="panel panel-default item" style="min-height:118px;">
 
@@ -1293,7 +1296,7 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 
     <div class="panel panel-default item" style="min-height:118px;">
 
@@ -1322,7 +1325,7 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 
     <div class="panel panel-default item" style="min-height:118px;">
 
@@ -1351,7 +1354,7 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 
     <div class="panel panel-default item" style="min-height:118px;">
 
@@ -1380,7 +1383,7 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 
     <div class="panel panel-default item" style="min-height:118px;">
 
@@ -1409,7 +1412,7 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 
     <div class="panel panel-default item" style="min-height:118px;">
 
@@ -1438,7 +1441,7 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 
     <div class="panel panel-default item" style="min-height:118px;">
 
@@ -1467,7 +1470,7 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 
     <div class="panel panel-default item" style="min-height:118px;">
 
@@ -1496,7 +1499,7 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-4 col-md-6 col-lg-4">
+  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 
     <div class="panel panel-default item" style="min-height:118px;">
 
@@ -1552,7 +1555,7 @@
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
-                  <h3 class="margin-remove text-muted">DataBase Configuration</h3>
+                  <h3 class="margin-remove text-muted"> DataBase Configuration</h3>
                   <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
 
                 </div><!--/.subsection-heading-->
@@ -1648,7 +1651,7 @@
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
-                  <h3 class="margin-remove text-muted">DataBase Structure</h3>
+                  <h3 class="margin-remove text-muted"><span class="small text-warning pull-right" data-toggle="tooltip" title="<?php echo _FPA_OPTIONAL_TOOLTIP; ?>"><?php echo _FPA_NOTE_ICON; ?></span> DataBase Structure</h3>
                   <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
 
                 </div><!--/.subsection-heading-->
@@ -1875,7 +1878,7 @@
                       <div class="panel panel-default item">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">Host Environment</caption>
+                          <caption class="text-center text-uppercase">2Host Environment</caption>
                           <colgroup>
                             <col>
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
@@ -1884,41 +1887,41 @@
                               <td class="padding-top-lg">
 
                                 <div class="row-fluid small text-lowercase">
-                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+                                    <div class="border-all margin-bottom-sm padding-sm text-center">Core<br />7.2.1</div>
                                   </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="border-all margin-bottom-sm text-center">date<br />7.2.1</div>
+                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+                                    <div class="border-all margin-bottom-sm padding-sm text-center">date<br />7.2.1</div>
                                   </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="border-all margin-bottom-sm text-center bg-success text-success">libxml<br />7.2.1</div>
+                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-success text-success">libxml<br />7.2.1</div>
                                   </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="border-all margin-bottom-sm text-center bg-success text-success">openssl<br />7.2.1</div>
+                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-success text-success">openssl<br />7.2.1</div>
                                   </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="border-all margin-bottom-sm text-center">Zend_Engine<br />7.2.1</div>
+                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+                                    <div class="border-all margin-bottom-sm padding-sm text-center">Zend_Engine<br />7.2.1</div>
                                   </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+                                    <div class="border-all margin-bottom-sm padding-sm text-center">Core<br />7.2.1</div>
                                   </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+                                    <div class="border-all margin-bottom-sm padding-sm text-center">Core<br />7.2.1</div>
                                   </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+                                    <div class="border-all margin-bottom-sm padding-sm text-center">Core<br />7.2.1</div>
                                   </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="border-all margin-bottom-sm text-center">Zend_Engine<br />7.2.1</div>
+                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+                                    <div class="border-all margin-bottom-sm padding-sm text-center">Zend_Engine<br />7.2.1</div>
                                   </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+                                    <div class="border-all margin-bottom-sm padding-sm text-center">Core<br />7.2.1</div>
                                   </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="border-all margin-bottom-sm text-center">Core<br />7.2.1</div>
+                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+                                    <div class="border-all margin-bottom-sm padding-sm text-center">Core<br />7.2.1</div>
                                   </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="border-all margin-bottom-sm text-center">Zend_Engine<br />7.2.1</div>
+                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+                                    <div class="border-all margin-bottom-sm padding-sm text-center">Zend_Engine<br />7.2.1</div>
                                   </div>
                                 </div>
 
@@ -1931,14 +1934,14 @@
                                   <div class="col-xs-12">
                                     <h5>Potential Missing Extensions</h5>
                                   </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="border-all margin-bottom-sm text-center bg-warning text-warning">mysqli</div>
+                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-warning text-warning">mysqli</div>
                                   </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="border-all margin-bottom-sm text-center bg-warning text-warning">mcrypt</div>
+                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-warning text-warning">mcrypt</div>
                                   </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div class="border-all margin-bottom-sm text-center bg-warning text-warning">suhosin</div>
+                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
+                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-warning text-warning">suhosin</div>
                                   </div>
                                 </div>
 
@@ -2180,7 +2183,7 @@
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
-                  <h3 class="margin-remove text-muted">Elevated Permissions</h3>
+                  <h3 class="margin-remove text-muted"><span class="small text-warning pull-right" data-toggle="tooltip" title="<?php echo _FPA_OPTIONAL_TOOLTIP; ?>"><?php echo _FPA_NOTE_ICON; ?></span> Elevated Permissions</h3>
                   <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
 
                 </div><!--/.subsection-heading-->
@@ -2295,7 +2298,7 @@
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
-                  <h3 class="margin-remove text-muted">Components</h3>
+                  <h3 class="margin-remove text-muted"><span class="small text-warning pull-right" data-toggle="tooltip" title="<?php echo _FPA_OPTIONAL_TOOLTIP; ?>"><?php echo _FPA_NOTE_ICON; ?></span> Components</h3>
                   <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
 
                 </div><!--/.subsection-heading-->
@@ -2426,7 +2429,7 @@
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
-                  <h3 class="margin-remove text-muted">Modules</h3>
+                  <h3 class="margin-remove text-muted"><span class="small text-warning pull-right" data-toggle="tooltip" title="<?php echo _FPA_OPTIONAL_TOOLTIP; ?>"><?php echo _FPA_NOTE_ICON; ?></span> Modules</h3>
                   <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
 
                 </div><!--/.subsection-heading-->
@@ -2557,7 +2560,7 @@
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
-                  <h3 class="margin-remove text-muted">Plugins</h3>
+                  <h3 class="margin-remove text-muted"><span class="small text-warning pull-right" data-toggle="tooltip" title="<?php echo _FPA_OPTIONAL_TOOLTIP; ?>"><?php echo _FPA_NOTE_ICON; ?></span> Plugins</h3>
                   <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
 
                 </div><!--/.subsection-heading-->
@@ -2881,7 +2884,7 @@
                     ?>
                     <div class="row hidden-print">
                       <div class="col-sm-12 col-md-8 text-center">
-                        <h6 class="margin-remove">SECURITY NOTICE</h6>
+                        <h6 class="margin-remove-top">SECURITY NOTICE</h6>
                         <span class="small line-height-normal text-justify">
                           Due to the highly sensitive nature of the information displayed by the FPA script, it should be removed from the server immediately after use.
                           If the script is left on the site, it can be used to gather enough information to hack your site.
