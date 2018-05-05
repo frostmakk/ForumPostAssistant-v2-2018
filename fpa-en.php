@@ -17,7 +17,7 @@
   endif;
 
   /**
-   **  @package Forum Post Assistant / Bug Report Assistant
+   **  @package Forum Post Assistant
    **  @version 2.0.0
    **  @last updated 22/04/2018
    **  @release Beta
@@ -39,6 +39,7 @@
    * example  - NOTE (RussW): this is an example comment
    *
    * for edit changelog see https://github.com/ForumPostAssistant/FPA/pulls?q=is%3Apr+is%3Aclosed
+   *
    */
 
 
@@ -131,7 +132,41 @@
   define ( '_SECTION_APPLICATION_HEADING', 'Application Discovery' );
   define ( '_SECTION_APPLICATION_EXPLAIN', 'During the Application Discovery routines, FPA attempts to detect a Joomla! installation, determine the version and collect information about how it is configured. Where possible, FPA will also try to access the Joomla! database and collect configuration, performance and schema information.' );
   define ( '_SECTION_APPLICATION_DESCRIBE', 'The Application Discovery section attempts to detect any installed Joomla! instance and confirm any relevant or related configuration and database information.' );
+  define ( '_SECTION_APPLICATION_HEADING_INSTANCE', 'Installed Instance' );
+  define ( '_SECTION_APPLICATION_DESCRIBE_INSTANCE', 'FPA is trying to detect a Joomla! installation and determine the basic configuration parameters.' );
+  define ( '_SECTION_APPLICATION_HEADING_DBCONFIG', 'DataBase Configuration' );
+  define ( '_SECTION_APPLICATION_DESCRIBE_DBCONFIG', 'The database setup & configuration effects site presentation and performance.' );
+  define ( '_SECTION_APPLICATION_HEADING_DBTABLES', 'DataBase Structure' );
+  define ( '_SECTION_APPLICATION_DESCRIBE_DBTABLES', 'The database schema and table structure are the foundation of the website component and conent storage.' );
 
+  define ( '_SECTION_HOSTING_HEADING', 'Hosting Discovery' );
+  define ( '_SECTION_HOSTING_EXPLAIN', 'Server, hosting and software environments vary greatly. FPA attempts to discover the version, type and installed extensions or addons expected to be found on a typical hosting system.' );
+  define ( '_SECTION_HOSTING_DESCRIBE', 'The hosting account or server is comprised of several different software and hardware elements. The FPA Hosting section checks for common configuration items that can effect your website.' );
+  define ( '_SECTION_HOSTING_HEADING_SERVER', 'Server Configuration' );
+  define ( '_SECTION_HOSTING_DESCRIBE_SERVER', 'The PHP and web-server configuration provide the foundations for a websites functionality, performance and security.' );
+
+  define ( '_SECTION_PERMS_HEADING', 'Permissions Discovery' );
+  define ( '_SECTION_PERMS_EXPLAIN', 'Permissions, sometimes also called modeset, determine who has access and how they can access any folder or file. FPA looks for acceptable or sane permissions and highlights any that may be elevated or incorrect and can potentially allow unauthorised access or cause operational problems.' );
+  define ( '_SECTION_PERMS_DESCRIBE', 'FPA checks for acceptable folder and file permissions of the Joomla! Core Folders. Any incorrect or elevated permissions can be problematic and even expose the installation to being defaced, compromised or be rendered completely unusable.' );
+  define ( '_SECTION_PERMS_HEADING_CORE', 'Core Folders' );
+  define ( '_SECTION_PERMS_DESCRIBE_CORE', 'Correct folder permissions are essential for functionality and security of any website.' );
+  define ( '_SECTION_PERMS_HEADING_ELEV', 'Elevated Permissions' );
+  define ( '_SECTION_PERMS_DESCRIBE_ELEV', 'Any elevated permission may expose a website to unauthorised access or compromise.' );
+
+  define ( '_SECTION_EXT_HEADING', 'Extension Discovery' );
+  define ( '_SECTION_EXT_EXPLAIN', 'Whilst it is common to install additional extensions, they can sometimes be incompatible or cause conflicts effecting the layout and functionality of a website. Excessive use of these extensions may also cause performance issues or if not updated can expose the site to potential security risks.' );
+  define ( '_SECTION_EXT_DESCRIBE', 'Components, modules, plugins and templates extend the functionality and add features to the website. FPA attempts to discover all installed extensions, even if they are disabled.' );
+  define ( '_SECTION_EXT_HEADING_COM', 'Components' );
+  define ( '_SECTION_EXT_DESCRIBE_COM', 'Components provide major application functionality to the website.' );
+  define ( '_SECTION_EXT_HEADING_MOD', 'Modules' );
+  define ( '_SECTION_EXT_DESCRIBE_MOD', 'Modules most commonly offer data presentation or manipulation functions.' );
+  define ( '_SECTION_EXT_HEADING_PLG', 'Plugins' );
+  define ( '_SECTION_EXT_DESCRIBE_PLG', 'Plugins deliver automated or optional functions to the site or other extensions.' );
+  define ( '_SECTION_EXT_HEADING_LIB', 'Libraries' );
+  define ( '_SECTION_EXT_DESCRIBE_LIB', 'Libraries add extra functionality to the site or extension.' );
+  define ( '_SECTION_EXT_HEADING_TPL', 'Templates' );
+  define ( '_SECTION_EXT_DESCRIBE_TPL', 'Templates are at the core of the site design and layout.' );
+  define ( '_SECTION_EXT_DESCRIBE_TPL_OVR', 'Overrides allow for output customisation of extensions and are normally stored in the /html/ folder of the active template.' );
 
   define ( '_EXPLAIN_APP', 'Explain application' );
   define ( '_DESCRIBE_APP', 'Describe application' );
@@ -522,6 +557,8 @@
                                       <?php
                                         /* NOTE (RussW): START -  Optional Settings
                                          * custon checkbox material buttons
+                                         * added libraries (RussW : 06/05/2018)
+                                         *
                                          */
                                       ?>
                                       <p class="small text-muted" style="1min-height:35px;">
@@ -598,12 +635,24 @@
 
                                         <li class="list-group-item">
                                           <div class="row-fluid padding-bottom-sm padding-top-sm clearfix">
-                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left text-muted">
-                                              <em> - Include Core Extensions?</em>
+                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
+                                              Show Libraries
                                             </div>
                                             <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
                                               <input id="someSwitchOptionSuccess6" name="someSwitchOption006" type="checkbox" />
                                               <label for="someSwitchOptionSuccess6" class="label-success text-left"></label>
+                                            </div>
+                                          </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                          <div class="row-fluid padding-bottom-sm padding-top-sm clearfix">
+                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left text-muted">
+                                              <em> - Include Core Extensions?</em>
+                                            </div>
+                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
+                                              <input id="someSwitchOptionSuccess7" name="someSwitchOption007" type="checkbox" />
+                                              <label for="someSwitchOptionSuccess7" class="label-success text-left"></label>
                                             </div>
                                           </div>
                                         </li>
@@ -642,7 +691,7 @@
 
                                     <ul class="list-group">
 
-                                      <li class="list-group-item padding-sm">
+                                      <li class="list-group-item">
                                         <div class="form-group margin-remove">
                                           <label for="probDSC" class="col-sm-5 control-label">Problem Description</label>
                                           <div class="col-sm-7">
@@ -651,7 +700,7 @@
                                         </div>
                                       </li>
 
-                                      <li class="list-group-item padding-sm">
+                                      <li class="list-group-item">
                                         <div class="form-group margin-remove">
                                           <label for="probMSG1" class="col-sm-5 control-label">Log/Error Message</label>
                                           <div class="col-sm-7">
@@ -660,7 +709,7 @@
                                         </div>
                                       </li>
 
-                                      <li class="list-group-item padding-sm">
+                                      <li class="list-group-item">
                                         <div class="form-group has-error margin-remove">
                                           <label for="probMSG2" class="col-sm-5 control-label">Last Reported Error</label>
                                           <div class="col-sm-7">
@@ -674,7 +723,7 @@
                                         </div>
                                       </li>
 
-                                      <li class="list-group-item padding-sm">
+                                      <li class="list-group-item">
                                         <div class="form-group margin-remove">
                                           <label for="probACT" class="col-sm-5 control-label">Actions Taken To Resolve?</label>
                                           <div class="col-sm-7">
@@ -1176,8 +1225,8 @@
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
-                  <h3 class="margin-remove text-muted"> Installed Instance</h3>
-                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+                  <h3 class="margin-remove text-muted"> <?php echo _SECTION_APPLICATION_HEADING_INSTANCE; ?></h3>
+                  <p class="text-muted"><?php echo _SECTION_APPLICATION_DESCRIBE_INSTANCE; ?></p>
 
                 </div><!--/.subsection-heading-->
                 <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
@@ -1555,8 +1604,8 @@
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
-                  <h3 class="margin-remove text-muted"> DataBase Configuration</h3>
-                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+                  <h3 class="margin-remove text-muted"> <?php echo _SECTION_APPLICATION_HEADING_DBCONFIG; ?></h3>
+                  <p class="text-muted"><?php echo _SECTION_APPLICATION_DESCRIBE_DBCONFIG; ?></p>
 
                 </div><!--/.subsection-heading-->
                 <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
@@ -1651,8 +1700,8 @@
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
-                  <h3 class="margin-remove text-muted"><span class="small text-warning pull-right" data-toggle="tooltip" title="<?php echo _FPA_OPTIONAL_TOOLTIP; ?>"><?php echo _FPA_NOTE_ICON; ?></span> DataBase Structure</h3>
-                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+                  <h3 class="margin-remove text-muted"><span class="small text-warning pull-right" data-toggle="tooltip" title="<?php echo _FPA_OPTIONAL_TOOLTIP; ?>"><?php echo _FPA_NOTE_ICON; ?></span> <?php echo _SECTION_APPLICATION_HEADING_DBTABLES; ?></h3>
+                  <p class="text-muted"><?php echo _SECTION_APPLICATION_DESCRIBE_DBTABLES; ?></p>
 
                 </div><!--/.subsection-heading-->
                 <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
@@ -1765,17 +1814,15 @@
                   <button class="btn btn-info btn-xs pull-right clearfix hidden-print" type="button" data-toggle="collapse" data-target="#collapseExplainHost" aria-expanded="false" aria-controls="collapseExplainHost">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
-                  <i class="glyphicon glyphicon-equalizer"></i> Hosting Discovery
+                  <i class="glyphicon glyphicon-equalizer"></i> <?php echo _SECTION_HOSTING_HEADING; ?>
                 </h2>
 
-                <p class="lead">
-                  The FPA Discovery Section presents any basic information that FPA has managed to discover about your hosting server, database & php environments, installed functions and any discovered Joomla! instance.
-                </p>
+                <p class="lead"><?php echo _SECTION_HOSTING_DESCRIBE; ?></p>
 
                 <div class="collapse clearfix" id="collapseExplainHost">
                   <div class="alert alert-info" role="alert">
-                    <h4><i class="glyphicon glyphicon-info-sign"></i> Host Discovery Dashboard</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h4><i class="glyphicon glyphicon-info-sign"></i> <?php echo _SECTION_HOSTING_HEADING; ?></h4>
+                    <p><?php echo _SECTION_HOSTING_EXPLAIN; ?></p>
                   </div>
                 </div><!--/#collapseExplainHost-->
 
@@ -1796,8 +1843,8 @@
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
-                  <h3 class="margin-remove text-muted">Server Configuration</h3>
-                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+                  <h3 class="margin-remove text-muted"><?php echo _SECTION_HOSTING_HEADING_SERVER; ?></h3>
+                  <p class="text-muted"><?php echo _SECTION_HOSTING_DESCRIBE_SERVER; ?></p>
 
                 </div><!--/.subsection-heading-->
                 <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
@@ -1985,17 +2032,15 @@
                   <button class="btn btn-info btn-xs pull-right clearfix hidden-print" type="button" data-toggle="collapse" data-target="#collapseExplainPerms" aria-expanded="false" aria-controls="collapseExplainPerms">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
-                  <i class="glyphicon glyphicon-list-alt"></i> Permissions Discovery
+                  <i class="glyphicon glyphicon-list-alt"></i> <?php echo _SECTION_PERMS_HEADING; ?>
                 </h2>
 
-                <p class="lead">
-                  The FPA Discovery Section presents any basic information that FPA has managed to discover about your hosting server, database & php environments, installed functions and any discovered Joomla! instance.
-                </p>
+                <p class="lead"><?php echo _SECTION_PERMS_DESCRIBE; ?></p>
 
                 <div class="collapse clearfix" id="collapseExplainPerms">
                   <div class="alert alert-info" role="alert">
-                    <h4><i class="glyphicon glyphicon-info-sign"></i> Folder & File Permissions</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h4><i class="glyphicon glyphicon-info-sign"></i> <?php echo _SECTION_PERMS_HEADING; ?></h4>
+                    <p><?php echo _SECTION_PERMS_EXPLAIN; ?></p>
                   </div>
                 </div><!--/#collapseExplainPerms-->
 
@@ -2018,8 +2063,8 @@
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
-                  <h3 class="margin-remove text-muted">Core Folders</h3>
-                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+                  <h3 class="margin-remove text-muted"><?php echo _SECTION_PERMS_HEADING_CORE; ?></h3>
+                  <p class="text-muted"><?php echo _SECTION_PERMS_DESCRIBE_CORE; ?></p>
 
                 </div><!--/.subsection-heading-->
                 <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
@@ -2183,8 +2228,8 @@
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
-                  <h3 class="margin-remove text-muted"><span class="small text-warning pull-right" data-toggle="tooltip" title="<?php echo _FPA_OPTIONAL_TOOLTIP; ?>"><?php echo _FPA_NOTE_ICON; ?></span> Elevated Permissions</h3>
-                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+                  <h3 class="margin-remove text-muted"><span class="small text-warning pull-right" data-toggle="tooltip" title="<?php echo _FPA_OPTIONAL_TOOLTIP; ?>"><?php echo _FPA_NOTE_ICON; ?></span> <?php echo _SECTION_PERMS_HEADING_ELEV; ?></h3>
+                  <p class="text-muted"><?php echo _SECTION_PERMS_DESCRIBE_ELEV; ?></p>
 
                 </div><!--/.subsection-heading-->
                 <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
@@ -2265,17 +2310,15 @@
                   <button class="btn btn-info btn-xs pull-right clearfix hidden-print" type="button" data-toggle="collapse" data-target="#collapseExplainExt" aria-expanded="false" aria-controls="collapseExplainExt">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
-                  <i class="glyphicon glyphicon-th"></i> Extension Discovery
+                  <i class="glyphicon glyphicon-th"></i> <?php echo _SECTION_EXT_HEADING; ?>
                 </h2>
 
-                <p class="lead">
-                  The FPA Discovery Section presents any basic information that FPA has managed to discover about your hosting server, database & php environments, installed functions and any discovered Joomla! instance.
-                </p>
+                <p class="lead"><?php echo _SECTION_EXT_DESCRIBE; ?></p>
 
                 <div class="collapse clearfix" id="collapseExplainExt">
                   <div class="alert alert-info" role="alert">
-                    <h4><i class="glyphicon glyphicon-info-sign"></i> Installed Component Discovery</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h4><i class="glyphicon glyphicon-info-sign"></i> <?php echo _SECTION_EXT_HEADING; ?></h4>
+                    <p><?php echo _SECTION_EXT_EXPLAIN; ?></p>
                   </div>
                 </div><!--/#collapseExplainExt-->
 
@@ -2298,8 +2341,8 @@
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
-                  <h3 class="margin-remove text-muted"><span class="small text-warning pull-right" data-toggle="tooltip" title="<?php echo _FPA_OPTIONAL_TOOLTIP; ?>"><?php echo _FPA_NOTE_ICON; ?></span> Components</h3>
-                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+                  <h3 class="margin-remove text-muted"><span class="small text-warning pull-right" data-toggle="tooltip" title="<?php echo _FPA_OPTIONAL_TOOLTIP; ?>"><?php echo _FPA_NOTE_ICON; ?></span> <?php echo _SECTION_EXT_HEADING_COM; ?></h3>
+                  <p class="text-muted"><?php echo _SECTION_EXT_DESCRIBE_COM; ?></p>
 
                 </div><!--/.subsection-heading-->
                 <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
@@ -2429,8 +2472,8 @@
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
-                  <h3 class="margin-remove text-muted"><span class="small text-warning pull-right" data-toggle="tooltip" title="<?php echo _FPA_OPTIONAL_TOOLTIP; ?>"><?php echo _FPA_NOTE_ICON; ?></span> Modules</h3>
-                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+                  <h3 class="margin-remove text-muted"><span class="small text-warning pull-right" data-toggle="tooltip" title="<?php echo _FPA_OPTIONAL_TOOLTIP; ?>"><?php echo _FPA_NOTE_ICON; ?></span> <?php echo _SECTION_EXT_HEADING_MOD; ?></h3>
+                  <p class="text-muted"><?php echo _SECTION_EXT_DESCRIBE_MOD; ?></p>
 
                 </div><!--/.subsection-heading-->
                 <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
@@ -2560,8 +2603,8 @@
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
-                  <h3 class="margin-remove text-muted"><span class="small text-warning pull-right" data-toggle="tooltip" title="<?php echo _FPA_OPTIONAL_TOOLTIP; ?>"><?php echo _FPA_NOTE_ICON; ?></span> Plugins</h3>
-                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+                  <h3 class="margin-remove text-muted"><span class="small text-warning pull-right" data-toggle="tooltip" title="<?php echo _FPA_OPTIONAL_TOOLTIP; ?>"><?php echo _FPA_NOTE_ICON; ?></span> <?php echo _SECTION_EXT_HEADING_PLG; ?></h3>
+                  <p class="text-muted"><?php echo _SECTION_EXT_DESCRIBE_PLG; ?></p>
 
                 </div><!--/.subsection-heading-->
                 <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
@@ -2679,6 +2722,134 @@
 
 
 
+             <?php
+                /* NOTE (RussW): SUB-SECTION  - Library Discovery
+                 * installed library discovery (RussW : 06/05/2018)
+                 *
+                 */
+              ?>
+              <div id="library-discovery-container" class="row margin-bottom-lg">
+
+                <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
+
+                  <h3 class="margin-remove text-muted"><span class="small text-warning pull-right" data-toggle="tooltip" title="<?php echo _FPA_OPTIONAL_TOOLTIP; ?>"><?php echo _FPA_NOTE_ICON; ?></span> <?php echo _SECTION_EXT_HEADING_LIB; ?></h3>
+                  <p class="text-muted"><?php echo _SECTION_EXT_DESCRIBE_LIB; ?></p>
+
+                </div><!--/.subsection-heading-->
+                <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
+
+
+                  <div class="row content-container">
+                    <div class="col-xs-12 content-item">
+
+                      <div class="panel panel-default item">
+
+                        <table class="table table-condensed" style="table-layout:fixed;">
+                          <caption class="text-center text-uppercase">LIBRARIES :: SITE</caption>
+                          <colgroup>
+                            <col class="col-xs-1 col-sm-2 border-right">
+                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="border-right">
+                            <col class="hidden-xs border-right">
+                            <col class="hidden-xs hidden-sm border-right">
+                            <col class="hidden-xs border-right">
+                            <col class="hidden-xs">
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                          <thead>
+                            <tr class="">
+                              <th class="text-center text-truncate">ENABLED</th>
+                              <th class="">NAME</th>
+                              <th class="text-center">VERSION</th>
+                              <th class="text-center hidden-xs">AUTHOR</th>
+                              <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
+                              <th class="text-center hidden-xs">CREATED</th>
+                              <th class="text-center hidden-xs">TYPE</th>
+                            </tr>
+                          </thead>
+                              <tbody>
+                                <tr class="">
+                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small text-truncate">plugin one</td>
+                                  <td class="small text-center">1.0.3</td>
+                                  <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
+                                  <td class="small text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
+                                  <td class="small text-center text-truncate hidden-xs">November 2016</td>
+                                  <td class="small text-center hidden-xs">3rd Party</td>
+                                </tr>
+                                <tr class="">
+                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small text-truncate">plugin two</td>
+                                  <td class="small text-center">1.0</td>
+                                  <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
+                                  <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
+                                  <td class="small text-center text-truncate hidden-xs">4/30/2012</td>
+                                  <td class="small text-center hidden-xs">Core</td>
+                                </tr>
+                              </tbody>
+                            </table>
+
+                      </div><!--/.panel, item-->
+
+                      <div class="panel panel-default item">
+
+                        <table class="table table-condensed" style="table-layout:fixed;">
+                          <caption class="text-center text-uppercase">LIBARIES :: ADMINISTRATOR</caption>
+                          <colgroup>
+                            <col class="col-xs-1 col-sm-2 border-right">
+                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="border-right">
+                            <col class="hidden-xs border-right">
+                            <col class="hidden-xs hidden-sm border-right">
+                            <col class="hidden-xs border-right">
+                            <col class="hidden-xs">
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                          <thead>
+                            <tr class="">
+                              <th class="text-center text-truncate">ENABLED</th>
+                              <th class="">NAME</th>
+                              <th class="text-center">VERSION</th>
+                              <th class="text-center hidden-xs">AUTHOR</th>
+                              <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
+                              <th class="text-center hidden-xs">CREATED</th>
+                              <th class="text-center hidden-xs">TYPE</th>
+                            </tr>
+                          </thead>
+                              <tbody>
+                                <tr class="">
+                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small text-truncate">freds plugin</td>
+                                  <td class="small text-center">3.0.0</td>
+                                  <td class="small text-center text-truncate hidden-xs">Andrea Tarr</td>
+                                  <td class="small text-center text-truncate hidden-xs hidden-sm"><a href="http://www.tarrconsulting.com" target="_blank">www.tarrconsulting.com</a></td>
+                                  <td class="small text-center text-truncate hidden-xs">May 2010</td>
+                                  <td class="small text-center hidden-xs">Core</td>
+                                </tr>
+                                <tr class="">
+                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="small text-truncate">search plugin</td>
+                                  <td class="small text-center">1.0</td>
+                                  <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
+                                  <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
+                                  <td class="small text-center text-truncate hidden-xs">3/30/2012</td>
+                                  <td class="small text-center hidden-xs">Core</td>
+                                </tr>
+                              </tbody>
+                            </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+                  </div><!--/.content-container-->
+
+
+                </div><!--/.subsection-content-->
+
+              </div><!--/#library-discovery-container-->
+
+
+
+
+
               <?php
                 /* NOTE (RussW): SUB-SECTION  - Template Discovery
                  * installed template discovery
@@ -2691,8 +2862,9 @@
 
                 <div class="col-xs-12 col-md-3 col-lg-3 subsection-heading">
 
-                  <h3 class="margin-remove text-muted">Templates</h3>
-                  <p class="text-muted">this is some basic information about whats happening. this is always included in the forum post output.</p>
+                  <h3 class="margin-remove text-muted"><?php echo _SECTION_EXT_HEADING_TPL; ?></h3>
+                  <p class="text-muted"><?php echo _SECTION_EXT_DESCRIBE_TPL; ?></p>
+                  <p class="text-muted"><?php echo _SECTION_EXT_DESCRIBE_TPL_OVR; ?></p>
 
                 </div><!--/.subsection-heading-->
                 <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
@@ -2734,6 +2906,16 @@
                                   <td class="small text-center text-truncate hidden-xs hidden-sm"><a href="http://www.yootheme.com" target="_blank">www.yootheme.com</a></td>
                                   <td class="small text-center text-truncate hidden-xs">November 2016</td>
                                   <td class="small text-center hidden-xs">3rd Party</td>
+                                </tr>
+                                <?php
+                                  /* NOTE (RussW): Overrides - Active Site Template
+                                   * overrides found in the active templates /html/ folder  (RussW 06/05/2018)
+                                   *
+                                   */
+                                ?>
+                                <tr class="hidden-xs">
+                                  <th class="small text-right">Overrides:</th>
+                                  <td class="small text-left" colspan="6">com_contact, com_j2store, mod_j2store_cart, plg_j2store_paypal</td>
                                 </tr>
                                 <tr class="">
                                   <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
