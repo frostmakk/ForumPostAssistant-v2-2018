@@ -68,24 +68,35 @@
   /* NOTE (FPA): LANGUAGE - FPA Specific Definitions & Constants
    *
    */
+  define ( '_RES_MENU_HOME', 'Home' );  // RussW : new 06/05/2018
+  define ( '_RES_MENU_BASIC', 'Basic Discovery' );  // RussW : new 06/05/2018
+  define ( '_RES_MENU_APP', 'Application Discovery' );  // RussW : new 06/05/2018
+  define ( '_RES_MENU_HOST', 'Hosting Discovery' );  // RussW : new 06/05/2018
+  define ( '_RES_MENU_PERM', 'Permissions Discovery' );  // RussW : new 06/05/2018
+  define ( '_RES_MENU_EXT', 'Extension Discovery' );  // RussW : new 06/05/2018
+  define ( '_RES_MENU_TOUR', 'FPA Tour' );  // RussW : new 06/05/2018
+
   define ( '_RES_FPALINK', 'https://github.com/ForumPostAssistant/FPA/tarball/en-GB/' ); // where to get the latest 'Final Releases'
-  define ( '_RES_FPALATEST', 'Get the latest tar.gz release of the ' );
+  define ( '_RES_FPALATEST', 'Latest (.tar.gz) Download' );
   define ( '_RES_FPALINK2', 'https://github.com/ForumPostAssistant/FPA/zipball/en-GB/' ); // where to get the latest 'Final Releases'
-  define ( '_RES_FPALATEST2', 'Get the latest zip release of the ' );
+  define ( '_RES_FPALATEST2', 'Latest (.zip) Download' );
+  define ( '_COPYRIGHT_HEADING', 'Developers & Contributors' );
+  define ( '_COPYRIGHT_STMT', 'The FPA script has been developed by, and is copyright of the following contributors; Russell Winter, Phil DeGruy, Claire Mandville, Bernard Toplak & Sveinung Larsen.
+                               <a class="text-primary" href="https://github.com/ForumPostAssistant" target="_blank">Visit the FPA Github Project</a>.'
+         );
+  define ( '_LICENSE_HEADING', 'Licensing & Disclaimer' );
+  define ( '_LICENSE_FOOTER', 'script comes with ABSOLUTELY NO WARRANTY. This is free software; and covered under the <strong>GNU GPLv3 or later license</strong>.
+                               You are welcome to redistribute it under certain conditions. For details read the LICENSE.txt file included in the download package with this script.
+                               A copy of the license may also be obtained at <a class="text-primary" href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses/</a>.'
+         );
 
-  define ( '_COPYRIGHT_STMT', ' Copyright (C) 2011, 2012,2013,2014,2015,2016,2017,2018 Russell Winter, Phil DeGruy, Bernard Toplak, Claire Mandville,Sveinung Larsen &nbsp;' );
 
-  define ( '_LICENSE_LINK', '<a href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses/</a>' ); // link to GPL license
-
-  define ( '_LICENSE_FOOTER', ' The FPA comes with ABSOLUTELY NO WARRANTY. &nbsp; This is free software,
-  and covered under the GNU GPLv3 or later license. You are welcome to redistribute it under certain conditions.
-  For details read the LICENSE.txt file included in the download package with this script.
-  A copy of the license may also be obtained at ' );
 
   // remove script notice content - Phil 4-17-12
-  define ( '_FPA_DELNOTE_LN1', '<h3><p /><font color="Red" size="2">** SECURITY NOTICE **</font color></size></h3><p /><font size="1">Due to the highly sensitive nature of the information displayed by the FPA script,<p /> it should be removed from the server immediately after use.</font>' );
-  define ( '_FPA_DELNOTE_LN2', '<p /><font size="1">  If the script is left on the site, it can be used to gather enough information to hack your site.</font>' );
-  define ( '_FPA_DELNOTE_LN3', '<p /><font color="Red" size="3" ;">After use, <a href="fpa-en.php?act=delete">Click Here</a>  to delete this script.</font>' );
+  define ( '_FPA_DELNOTE_LN1', 'Security Notice' );
+  define ( '_FPA_DELNOTE_LN2', 'Due to the highly sensitive nature of the information displayed by the FPA script, <b>it should be removed from the server immediately after use</b>.' );
+  define ( '_FPA_DELNOTE_LN3', 'If the script is left on the site, it can be used to gather enough information to illegally access, deface or hack your site.' );
+  define ( '_FPA_DELLINK', 'fpa-en.php?act=delete' );
 
 
 
@@ -167,29 +178,15 @@
   define ( '_SECTION_EXT_HEADING_TPL', 'Templates' );
   define ( '_SECTION_EXT_DESCRIBE_TPL', 'Templates are at the core of the site design and layout.' );
   define ( '_SECTION_EXT_DESCRIBE_TPL_OVR', 'Overrides allow for output customisation of extensions and are normally stored in the /html/ folder of the active template.' );
+  define ( '_SECTION_LEGEND_HEADING', 'Legends & Status' );
+  define ( '_SECTION_LEGEND_DESCRIBE_INFO', 'Information & Help Message/Status' );
+  define ( '_SECTION_LEGEND_DESCRIBE_SUCCESS', 'Positive & Successful Message/Status' );
+  define ( '_SECTION_LEGEND_DESCRIBE_WARNING', 'Highlighted & Warning Message/Status' );
+  define ( '_SECTION_LEGEND_DESCRIBE_ALERT', 'Negative Or Error Message/Status' );
+  define ( '_SECTION_LEGEND_DESCRIBE_UNKNOWN', 'Status Is Unknown Or Was Unretrievable' );
+  define ( '_SECTION_LEGEND_DESCRIBE_PRIVACY', 'Privacy Settings Are Protecting Sensitive Data' );
+  define ( '_SECTION_LEGEND_DESCRIBE_NOTE', 'Denotes An Active Or Currently Selected Item' );
 
-  define ( '_EXPLAIN_APP', 'Explain application' );
-  define ( '_DESCRIBE_APP', 'Describe application' );
-  define ( '_DESCRIBE_APP_INSTANCE', 'Describe app instance' );
-  define ( '_DESCRIBE_APP_DBCONFIG', 'Describe app database configuration' );
-  define ( '_DESCRIBE_APP_DBSTRUCTURE', 'Describe app database structure' );
-  define ( '_EXPLAIN_HOST', 'Explain hosting' );
-  define ( '_DESCRIBE_HOST', 'Describe hosting' );
-  define ( '_DESCRIBE_HOST_SERVER', 'Describe hosting server' );
-  define ( '_EXPLAIN_PERMS', 'Explain permissions' );
-  define ( '_DESCRIBE_PERMS', 'Describe permissions' );
-  define ( '_DESCRIBE_PERMS_CORE', 'Describe core permissions' );
-  define ( '_DESCRIBE_PERMS_ELEV', 'Describe elevated permissions' );
-  define ( '_DESCRIBE_EXT', 'Describe extensions' );
-  define ( '_DESCRIBE_EXT_COM', 'Describe components' );
-  define ( '_DESCRIBE_EXT_MOD', 'Describe modules' );
-  define ( '_DESCRIBE_EXT_PLU', 'Describe plugins' );
-  define ( '_DESCRIBE_EXT_TPL', 'Describe templates' );
-  define ( '_DESCRIBE_LEGEND_INFO', 'Information & Help Message/Status' );
-  define ( '_DESCRIBE_LEGEND_SUCCESS', 'Positive & Successful Message/Status' );
-  define ( '_DESCRIBE_LEGEND_WARNING', 'Highlighted & Warning Message/Status' );
-  define ( '_DESCRIBE_LEGEND_ALERT', 'Negative Or Error Message/Status' );
-  define ( '_DESCRIBE_LEGEND_PRIVACY', 'Privacy Settings Are Protecting Sensitive Data' );
 
   define ( '_GDPR_HEADING', 'EU GDPR & e-Privacy Directives' );
   define ( '_GDPR_MESSAGE', '<p>Whilst the FPA script does collect information about your website, it is not sent to, or stored in any other location by FPA.</p>
@@ -254,6 +251,10 @@
   define ( '_FPA_VER', 'Version' );
   define ( '_FPA_VER_SHORT', 'v' ); // RussW : new v2.0.0
   define ( '_FPA_EXPLAIN', 'Explain' ); // RussW : new v2.0.0
+  define ( '_FPA_SUCCESS', 'Success' );
+  define ( '_FPA_WARNING', 'Warning' );
+  define ( '_FPA_ALERT', 'Alert' );
+  define ( '_FPA_PROTECTED', 'protected' );
   define ( '_FPA_Y', 'Yes' );
   define ( '_FPA_N', 'No' );
   define ( '_FPA_U', 'Unknown' );
@@ -262,11 +263,22 @@
   define ( '_FPA_N_ICON', '<i class="glyphicon glyphicon-remove-sign"></i>' ); // RussW : (no/error/negative) new v2.0.0
   define ( '_FPA_U_ICON', '<i class="glyphicon glyphicon-question-sign"></i>' ); // RussW : (unknown) new v2.0.0
   define ( '_FPA_A_ICON', '<i class="glyphicon glyphicon-star"></i>' ); // RussW : (active/current/selected) new v2.0.0
-  define ( '_FPA_E_ICON', '<i class="glyphicon glyphicon-info-sign"></i>' ); // RussW : (explain/info/help) new v2.0.0
+  define ( '_FPA_EXPLAIN_ICON', '<i class="glyphicon glyphicon-info-sign"></i>' ); // RussW : (explain/info/help) new v2.0.0
+  define ( '_FPA_WARNING_ICON', '<i class="glyphicon glyphicon-alert"></i>' ); // RussW : (explain/info/help) new v2.0.0
+  define ( '_FPA_ALERT_ICON', '<i class="glyphicon glyphicon-remove-sign"></i>' ); // RussW : (explain/info/help) new v2.0.0
+  define ( '_FPA_PROTECTED_ICON', '<i class="glyphicon glyphicon-ban-circle"></i>' ); // RussW : (explain/info/help) new v2.0.0
   define ( '_FPA_NOTE_ICON', '<i class="glyphicon glyphicon-asterisk text-warning"></i>' ); // RussW : (explain/info/help) new v2.0.0
   define ( '_FPA_OPTIONAL_TOOLTIP', 'This section <b>is optional</b> by default in the post output' ); // RussW : (explain/info/help) new v2.0.0
-
-
+  define ( '_FPA_DELETE', 'Delete' );
+  define ( '_FPA_PRIVACY', 'Privacy' );
+  define ( '_FPA_PRIVACY_NONE', 'None' );
+  define ( '_FPA_PRIVACY_PARTIAL', 'Partial' );
+  define ( '_FPA_PRIVACY_STRICT', 'Strict' );
+  define ( '_FPA_TOOLBAR_FORUM', 'Forum' );
+  define ( '_FPA_TOOLBAR_DOCS', 'Docs' );
+  define ( '_FPA_TOOLBAR_DOCS_LINK', 'https://github.com/ForumPostAssistant/FPA/tree/en-GB/Documentation' );
+  define ( '_FPA_TOOLBAR_DOWNLOAD', 'Download' );
+  define ( '_FPA_TOOLBAR_DOWNLOAD_LINK', 'https://github.com/ForumPostAssistant/FPA/releases' );
   /* end fpa language definitions & constants */
 ?>
     <head>
@@ -361,55 +373,55 @@
               <li class="active">
                 <a href="#fpa-home">
                   <i class="glyphicon glyphicon-home"></i>
-                  Home
+                  <?php echo _RES_MENU_HOME; ?>
                 </a>
               </li>
 
               <li>
                 <a href="#basic-discovery-section">
                   <i class="glyphicon glyphicon-dashboard"></i>
-                  Basic Discovery
+                  <?php echo _RES_MENU_BASIC; ?>
                 </a>
               </li>
 
               <li>
                 <a href="#application-discovery-section">
                   <i class="glyphicon glyphicon-cog"></i>
-                  Application Discovery
+                  <?php echo _RES_MENU_APP; ?>
                 </a>
               </li>
 
               <li>
                 <a href="#host-discovery-section">
                   <i class="glyphicon glyphicon-equalizer"></i>
-                  Hosting Discovery
+                  <?php echo _RES_MENU_HOST; ?>
                 </a>
               </li>
 
               <li>
                 <a href="#perms-discovery-section">
                   <i class="glyphicon glyphicon-list-alt"></i>
-                  Permissions Discovery
+                  <?php echo _RES_MENU_PERM; ?>
                 </a>
               </li>
 
               <li>
                 <a href="#extension-discovery-section">
                   <i class="glyphicon glyphicon-th"></i>
-                  Extension Discovery
+                  <?php echo _RES_MENU_EXT; ?>
                 </a>
               </li>
 
               <li class="visible-sm visible-md visible-lg">
                 <a href="<?php echo $_SERVER['PHP_SELF']; ?>?tour=1">
                   <i class="glyphicon glyphicon-blackboard"></i>
-                  FPA Tour
+                  <?php echo _RES_MENU_TOUR; ?>
                 </a>
               </li>
 
               <li>
-                 <a href="fpa-en.php?act=delete" class="btn-danger">
-                  <i class="glyphicon glyphicon-remove-circle"></i> Delete FPA
+                 <a href="<?php echo _FPA_DELLINK; ?>" class="btn-danger">
+                  <i class="glyphicon glyphicon-remove-circle"></i> <?php echo _FPA_DELETE .' '. _RES_SHORT; ?>
                 </a>
               </li>
 
@@ -460,20 +472,20 @@
                   </div>
 
                   <div class="btn-group hidden-xs" role="group">
-                    <a tabindex="2" class="btn btn-warning navbar-btn" role="button" data-toggle="popover" title="<span class='text-privacy'><i class='glyphicon glyphicon-warning-sign'></i> Information Privacy Setting</span>" data-content="<span class='text-privacy'>Due to the highly sensitive nature of the information displayed by the FPA script, please ensure that you have configured your desired &quot;<b>Information Privacy</b>&quot; level before sharing this information publicly or submiting your post to the Joomla! Forum.</span>">
-                      Privacy : Partial
+                    <a tabindex="2" class="btn btn-warning navbar-btn" role="button">
+                      <?php echo _FPA_PRIVACY .' : '. _FPA_PRIVACY_PARTIAL; ?>
                     </a>
                   </div>
 
                   <div class="btn-group" role="group">
-                    <a tabindex="2" class="btn btn-danger navbar-btn" role="button" data-toggle="popover" title="<span class='text-danger'><i class='glyphicon glyphicon-warning-sign'></i> Important Security Notice</span>" data-content="<span class='text-danger'>Due to the highly sensitive nature of the information displayed by the FPA script, <b>it should be removed from the server immediately after use</b>. If the script is left on the site, it can be used to gather enough information to illegally access, deface or hack your site.</span>">
+                    <a tabindex="2" class="btn btn-danger navbar-btn" role="button" data-toggle="popover" title="<span class='text-danger'><i class='glyphicon glyphicon-warning-sign'></i> <?php echo _FPA_DELNOTE_LN1; ?></span>" data-content="<span class='text-danger'><p><?php echo _FPA_DELNOTE_LN2; ?></p><p><?php echo _FPA_DELNOTE_LN3; ?></p></span>">
                       <i class="glyphicon glyphicon-info-sign"></i>
                     </a>
                   </div>
 
                   <div class="btn-group" role="group">
-                    <a href="fpa-en.php?act=delete" class="btn btn-danger navbar-btn" role="button">
-                      <i class="glyphicon glyphicon-remove-circle"></i> Delete FPA
+                    <a href="<?php echo _FPA_DELLINK; ?>" class="btn btn-danger navbar-btn" role="button">
+                      <i class="glyphicon glyphicon-remove-circle"></i> <?php echo _FPA_DELETE .' '. _RES_SHORT; ?>
                     </a>
                   </div>
 
@@ -486,9 +498,9 @@
 
                 <ul class="nav navbar-nav navbar-right">
                   <li><a href="https://www.joomla.org/" target="_blank" class="btn btn-default btn-xs navbar-btn hidden-sm" role="button"><span class="text-primary"><i class="glyphicon glyphicon-home"></i> Joomla!</span></a></li>
-                  <li><a href="https://forum.joomla.org/" target="_blank" class="btn btn-default btn-xs navbar-btn hidden-sm" role="button"><span class="text-primary"><i class="glyphicon glyphicon-comment"></i> Forum</span></a></li>
-                  <li><a href="https://github.com/ForumPostAssistant/FPA/tree/en-GB/Documentation" target="_blank" class="btn btn-default btn-xs navbar-btn" role="button"><span class="text-primary"><i class="glyphicon glyphicon-book"></i> FPA Docs</span></a></li>
-                  <li><a href="https://github.com/ForumPostAssistant/FPA/releases" target="_blank" class="btn btn-default btn-xs navbar-btn hidden-sm" role="button"><span class="text-primary"><i class="glyphicon glyphicon-download-alt"></i> Download</span></a></li>
+                  <li><a href="https://forum.joomla.org/" target="_blank" class="btn btn-default btn-xs navbar-btn hidden-sm" role="button"><span class="text-primary"><i class="glyphicon glyphicon-comment"></i> <?php echo _FPA_TOOLBAR_FORUM; ?></span></a></li>
+                  <li><a href="<?php echo _FPA_TOOLBAR_DOCS_LINK; ?>" target="_blank" class="btn btn-default btn-xs navbar-btn" role="button"><span class="text-primary"><i class="glyphicon glyphicon-book"></i> <?php echo _FPA_TOOLBAR_DOCS; ?></span></a></li>
+                  <li><a href="<?php echo _FPA_TOOLBAR_DOWNLOAD_LINK; ?>" target="_blank" class="btn btn-default btn-xs navbar-btn hidden-sm" role="button"><span class="text-primary"><i class="glyphicon glyphicon-download-alt"></i> <?php echo _FPA_TOOLBAR_DOWNLOAD .' '. _RES_SHORT; ?></span></a></li>
                 </ul><!--/.navbar-right-->
 
               </div><!--/.navbar-collapse-->
@@ -3009,44 +3021,44 @@
                 <div class="col-xs-12 col-md-6">
 
                   <div class="panel panel-default tourStep17">
-                    <div class="panel-heading"><strong>Legends & Status</strong></div>
+                    <div class="panel-heading"><?php echo _SECTION_LEGEND_HEADING; ?></div>
 
                     <table class="table">
                       <tbody>
                         <tr class="bg-info text-info">
-                          <td class="text-center"><span class="label label-info"><i class="glyphicon glyphicon-info-sign"></i></span></td>
-                          <td><span class="label label-info center-block"><i class="glyphicon glyphicon-info-sign"></i> Explain</span></td>
-                          <td class="1line-height-normal">Information & Help Message/Status</td>
+                          <td class="text-center"><span class="label label-info"><?php echo _FPA_EXPLAIN_ICON; ?></span></td>
+                          <td><span class="label label-info center-block"><?php echo _FPA_EXPLAIN_ICON; ?> <?php echo _FPA_EXPLAIN; ?></span></td>
+                          <td class="1line-height-normal"><?php echo _SECTION_LEGEND_DESCRIBE_INFO; ?></td>
                         </tr>
                         <tr class="bg-success text-success">
-                          <td class="text-center"><span class="label label-success"><i class="glyphicon glyphicon-ok-sign"></i></span></td>
-                          <td><span class="label label-success center-block"><i class="glyphicon glyphicon-ok-sign"></i> Success</span></td>
-                          <td class="line-height-normal">Positive & Successful Message/Status</td>
+                          <td class="text-center"><span class="label label-success"><?php echo _FPA_Y_ICON; ?></span></td>
+                          <td><span class="label label-success center-block"><?php echo _FPA_Y_ICON; ?> <?php echo _FPA_SUCCESS; ?></span></td>
+                          <td class="line-height-normal"><?php echo _SECTION_LEGEND_DESCRIBE_SUCCESS; ?></td>
                         </tr>
                         <tr class="bg-warning text-warning">
-                          <td class="text-center"><span class="label label-warning"><i class="glyphicon glyphicon-alert"></i></span></td>
-                          <td><span class="label label-warning center-block"><i class="glyphicon glyphicon-alert"></i> Warning</span></td>
-                          <td class="line-height-normal">Highlighted & Warning Message/Status</td>
+                          <td class="text-center"><span class="label label-warning"><?php echo _FPA_WARNING_ICON; ?></span></td>
+                          <td><span class="label label-warning center-block"><?php echo _FPA_WARNING_ICON; ?> <?php echo _FPA_WARNING; ?></span></td>
+                          <td class="line-height-normal"><?php echo _SECTION_LEGEND_DESCRIBE_WARNING; ?></td>
                         </tr>
                         <tr class="bg-danger text-danger">
-                          <td class="text-center"><span class="label label-danger"><i class="glyphicon glyphicon-remove-sign"></i></span></td>
-                          <td><span class="label label-danger center-block"><i class="glyphicon glyphicon-remove-sign"></i> Alert</span></td>
-                          <td class="line-height-normal">Negative Or Error Message/Status</td>
+                          <td class="text-center"><span class="label label-danger"><?php echo _FPA_WARNING_ICON; ?></span></td>
+                          <td><span class="label label-danger center-block"><?php echo _FPA_WARNING_ICON; ?> <?php echo _FPA_ALERT; ?></span></td>
+                          <td class="line-height-normal"><?php echo _SECTION_LEGEND_DESCRIBE_ALERT; ?></td>
                         </tr>
                         <tr class="text-primary">
                           <td class="text-center"><span class="label label-primary"><?php echo _FPA_U_ICON; ?></span></td>
-                          <td><span class="label label-primary center-block"><i class="glyphicon glyphicon-question-sign"></i> Unknown</span></td>
-                          <td class="line-height-normal">Status Is Unknown Or Was Unretrievable</td>
+                          <td><span class="label label-primary center-block"><?php echo _FPA_U_ICON; ?> <?php echo _FPA_U; ?></span></td>
+                          <td class="line-height-normal"><?php echo _SECTION_LEGEND_DESCRIBE_UNKNOWN; ?></td>
                         </tr>
                         <tr class="bg-protected text-protected">
-                          <td class="text-center"><span class="label label-protected"><i class="glyphicon glyphicon-ban-circle"></i></span></td>
-                          <td><span class="label label-protected center-block">protected</span></td>
-                          <td class="line-height-normal">Privacy Settings Are Protecting Sensitive Data</td>
+                          <td class="text-center"><span class="label label-protected"><?php echo _FPA_PROTECTED_ICON; ?></span></td>
+                          <td><span class="label label-protected center-block"><?php echo _FPA_PROTECTED; ?></span></td>
+                          <td class="line-height-normal"><?php echo _SECTION_LEGEND_DESCRIBE_PRIVACY; ?></td>
                         </tr>
                         <tr class="text-success">
                           <td class="text-center"><?php echo _FPA_A_ICON; ?></td>
                           <td><span class="label label-default"><?php echo _FPA_A_ICON; ?></span></td>
-                          <td class="line-height-normal">Denotes An Active Or Currently Selected Item</td>
+                          <td class="line-height-normal"><?php echo _SECTION_LEGEND_DESCRIBE_NOTE; ?></td>
                         </tr>
                       </tbody>
                     </table>
@@ -3060,55 +3072,36 @@
                   <div class="alert alert-danger margin-bottom-sm">
 
                     <?php
-                      /* NOTE (RussW): Security Warning (Browser View Only)
+                      /* NOTE (RussW): Security Warning
                        *
                        */
                     ?>
-                    <div class="row hidden-print">
+                    <div class="row">
                       <div class="col-sm-12 col-md-8 text-center">
-                        <h6 class="margin-remove-top">SECURITY NOTICE</h6>
-                        <span class="small line-height-normal text-justify">
-                          Due to the highly sensitive nature of the information displayed by the FPA script, it should be removed from the server immediately after use.
-                          If the script is left on the site, it can be used to gather enough information to hack your site.
-                        </span>
+                        <h6 class="margin-remove-top text-uppercase"><?php echo _FPA_DELNOTE_LN1; ?></h6>
+                        <p class="small line-height-normal text-justify"><?php echo _FPA_DELNOTE_LN2; ?> <?php echo _FPA_DELNOTE_LN3; ?></p>
                       </div>
                       <div class="col-sm-12 col-md-4 text-center">
 
-                        <a href="fpa-en.php?act=delete" class="btn btn-danger btn-block margin-top-sm" role="button">
+                        <a href="<?php echo _FPA_DELLINK; ?>" class="btn btn-danger btn-block margin-top-sm" role="button">
                           <i class="glyphicon glyphicon-remove-circle lead margin-remove"></i>
-                          <div class="small">Delete FPA</div>
+                          <div class="small"><?php echo _FPA_DELETE .' '. _RES_SHORT; ?></div>
                         </a>
 
                       </div>
-                    </div><!--/.hidden-print-->
-
-                    <?php
-                      /* NOTE (RussW): Security Warning (Print View Only)
-                       *
-                       */
-                    ?>
-                    <div class="row visible-print-block">
-                      <div class="col-xs-12 text-center">
-                        <h6 class="margin-remove">SECURITY NOTICE</h6>
-                        <span class="small line-height-normal text-justify">
-                          Due to the highly sensitive nature of the information displayed by the FPA script, hard-copy or electronic document copies should be securely destroyed immediately after use.
-                        </span>
-                      </div>
-                    </div><!--/.visible-print-block-->
+                    </div><!--/security-notice-->
 
                   </div>
                   <div class="clearfix"></div>
 
 
-                  <div class="padding-lg text-justify small padding-lg bg-muted tourStepEnd">
-                    <h6 class="margin-remove text-center">Developers & Contributors</h6>
-                    <p class="text-muted">
-                      The FPA script has been developed by, and is copyright of the following contributors; Russell Winter, Phil DeGruy, Claire Mandville, Bernard Toplak & Sveinung Larsen. <a class="text-primary" href="https://github.com/ForumPostAssistant" target="_blank">Visit the FPA Github Project</a>.
-                    </p>
+                  <div class="padding-lg text-justify small bg-muted tourStepEnd">
+                    <h6 class="margin-remove text-center"><?php echo _COPYRIGHT_HEADING; ?></h6>
+                    <p class="text-muted"><?php echo _COPYRIGHT_STMT; ?></p>
 
-                    <h6 class="margin-remove text-center">Licensing & Disclaimer</h6>
+                    <h6 class="margin-remove text-center"><?php echo _LICENSE_HEADING; ?></h6>
                     <p class="text-muted">
-                      <?php echo _RES .' '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD; ?> script comes with ABSOLUTELY NO WARRANTY.  This is free software; and covered under the <strong>GNU GPLv3 or later license</strong>. You are welcome to redistribute it under certain conditions. For details read the LICENSE.txt file included in the download package with this script. A copy of the license may also be obtained at <a class="text-primary" href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses/</a>.
+                      <?php echo _RES .' '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD .' '. _LICENSE_FOOTER; ?>
                     </p>
 
                   </div>
@@ -3117,7 +3110,7 @@
 
                 <div class="clearfix"></div>
 
-                <div class="col-xs-12 clearfix">
+                <div class="col-xs-12 clearfix margin-top-lg">
 
                   <?php
                     /* NOTE (RussW): GDPR & e-Privacy
@@ -3131,7 +3124,7 @@
                       <button class="btn btn-info btn-xs pull-right clearfix hidden-print" type="button" data-toggle="collapse" data-target="#collapseGDPRExtended" aria-expanded="false" aria-controls="collapseGDPRExtended">
                         <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                       </button>
-                      <?php echo _FPA_E_ICON .' '. _GDPR_HEADING; ?>
+                      <?php echo _FPA_EXPLAIN_ICON .' '. _GDPR_HEADING; ?>
                     </h5>
 
                     <?php echo _GDPR_MESSAGE; ?>
@@ -3151,7 +3144,7 @@
             </div><!--/#legends-section-->
 
             <p class="text-muted text-center margin-top-lg small">
-              <?php echo _RES .' '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD; ?> <sup>&copy;</sup>2011-<?php echo date('Y'); ?>
+              <?php echo _RES .' '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD; ?> 2011-<?php echo date('Y'); ?><sup>&copy;</sup>
             </p>
 
           </div><!--/#content-->
@@ -3177,26 +3170,26 @@
           <div class="btn-toolbar">
 
             <div class="btn-group btn-group-xs text-success download-info hidden-xs">
-              <a href="https://github.com/ForumPostAssistant/FPA/zipball/en-GB/%C2%A0%20Language%20en-GB" tabindex="3" class="" role="button">
-                <i class="glyphicon glyphicon-download-alt"></i> Latest (.zip) Download
+              <a href="<?php echo _RES_FPALINK2; ?>" tabindex="3" class="" role="button">
+                <i class="glyphicon glyphicon-download-alt"></i> <?php echo _RES_FPALATEST2; ?>
               </a>
             </div>
 
             <div class="btn-group btn-group-xs text-success download-info hidden-xs">
-              <a href="https://github.com/ForumPostAssistant/FPA/tarball/en-GB/%C2%A0%20Language%20en-GB" tabindex="3" class="" role="button">
-                <i class="glyphicon glyphicon-download-alt"></i> Latest (.tar.gz) Download
+              <a href="<?php echo _RES_FPALINK; ?>" tabindex="3" class="" role="button">
+                <i class="glyphicon glyphicon-download-alt"></i> <?php echo _RES_FPALATEST; ?>
               </a>
             </div>
 
             <div class="btn-group btn-group-xs text-danger security-info">
-              <a tabindex="2" class="" role="button" data-toggle="popover" title="<span class='text-danger'><i class='glyphicon glyphicon-warning-sign'></i> Important Security Notice</span>" data-content="<span class='text-danger'>Due to the highly sensitive nature of the information displayed by the FPA script, <b>it should be removed from the server immediately after use</b>. If the script is left on the site, it can be used to gather enough information to illegally access, deface or hack your site.</span>">
-                <i class="glyphicon glyphicon-warning-sign"></i> Security Notice
+              <a tabindex="2" class="" role="button" data-toggle="popover" title="<span class='text-danger'><i class='glyphicon glyphicon-warning-sign'></i> <?php echo _FPA_DELNOTE_LN1; ?></span>" data-content="<span class='text-danger'><p><?php echo _FPA_DELNOTE_LN2; ?></p><p><?php echo _FPA_DELNOTE_LN3; ?></p></span>">
+                <i class="glyphicon glyphicon-warning-sign"></i> <?php echo _FPA_DELNOTE_LN1; ?>
               </a>
             </div>
 
             <div class="btn-group btn-group-xs text-danger delete-fpa">
               <a href="fpa-en.php?act=delete" tabindex="3" class="" role="button">
-                <i class="glyphicon glyphicon-remove-circle"></i> Delete FPA
+                <i class="glyphicon glyphicon-remove-circle"></i> <?php echo _FPA_DELETE .' '. _RES_SHORT; ?>
               </a>
             </div>
 
