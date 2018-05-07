@@ -43,300 +43,302 @@
    */
 
 
-  /* TODO (ALL): VERSION CONTROL : FPA Versioning & Revisioning
-   * remember to update revision information
-   */
-  define ( '_RES', 'Forum Post Assistant' );         // FPA resource long name
-  define ( '_RES_SHORT', 'FPA' );                    // FPA resource short name
-  define ( '_RES_VERSION', '2.0' );                  // major revision (x.y)
-  define ( '_RES_VERSION_MAINT', '0' );              // maintenance/patch revision (.z)
-  define ( '_RES_RELEASE_TYPE', 'BS' );              // framework type ( BS(Bootstrap), SA(Standalone) )
-  define ( '_RES_RELEASE_BUILD', 'Alpha' );          // dev status revision ( A(lpha), B(eta), RC, F(inal) )
-  define ( '_RES_LAST_UPDATED', '22/04/2018' );      // release date (dd/mm/yyyy)
-  define ( '_RES_BRANCH', 'en-GB' );                 // Github branch location
-  define ( '_RES_LANG', 'en-GB' );                   // Country/Language Code
 
 
-  /* NOTE (FPA): PARENT FLAGS - Joomla!
-   *
-   */
-  define ( '_VALID_MOS', 1 );                        // for J!1.0
-  define ( '_JEXEC', 1 );                            // for J!1.5, J!1.6, J!1.7, J!2.5, J!3.0
-
-
-
-  /* NOTE (FPA): LANGUAGE - FPA Specific Definitions & Constants
-   *
-   */
-  define ( '_RES_MENU_HOME', 'Home' );  // RussW : new 06/05/2018
-  define ( '_RES_MENU_BASIC', 'Basic Discovery' );  // RussW : new 06/05/2018
-  define ( '_RES_MENU_APP', 'Application Discovery' );  // RussW : new 06/05/2018
-  define ( '_RES_MENU_HOST', 'Hosting Discovery' );  // RussW : new 06/05/2018
-  define ( '_RES_MENU_PERM', 'Permissions Discovery' );  // RussW : new 06/05/2018
-  define ( '_RES_MENU_EXT', 'Extension Discovery' );  // RussW : new 06/05/2018
-  define ( '_RES_MENU_TOUR', 'FPA Tour' );  // RussW : new 06/05/2018
-
-  define ( '_RES_FPALINK', 'https://github.com/ForumPostAssistant/FPA/tarball/en-GB/' ); // where to get the latest 'Final Releases'
-  define ( '_RES_FPALATEST', 'Latest (.tar.gz) Download' );
-  define ( '_RES_FPALINK2', 'https://github.com/ForumPostAssistant/FPA/zipball/en-GB/' ); // where to get the latest 'Final Releases'
-  define ( '_RES_FPALATEST2', 'Latest (.zip) Download' );
-  define ( '_COPYRIGHT_HEADING', 'Developers & Contributors' );
-  define ( '_COPYRIGHT_STMT', 'The FPA script has been developed by, and is copyright of the following contributors; Russell Winter, Phil DeGruy, Claire Mandville, Bernard Toplak & Sveinung Larsen.
-                               <a class="text-primary" href="https://github.com/ForumPostAssistant" target="_blank">Visit the FPA Github Project</a>.'
-         );
-  define ( '_LICENSE_HEADING', 'Licensing & Disclaimer' );
-  define ( '_LICENSE_FOOTER', 'script comes with ABSOLUTELY NO WARRANTY. This is free software; and covered under the <strong>GNU GPLv3 or later license</strong>.
-                               You are welcome to redistribute it under certain conditions. For details read the LICENSE.txt file included in the download package with this script.
-                               A copy of the license may also be obtained at <a class="text-primary" href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses/</a>.'
-         );
-
-
-  /* NOTE (FPA): LANGUAGE - FPA specific messages. Errors, warning & notices
-   *
-   */
-  define ( '_RES_MESSAGE_WARNING', 'Notice' );  // RussW : new 07/05/2018
-  define ( '_RES_MESSAGE_NOTFOUND', 'Not Found.' );  // RussW : new 07/05/2018
-  define ( '_RES_MESSAGE_NOTCONN', 'Unable To Connect.' );  // RussW : new 07/05/2018
-  define ( '_RES_MESSAGE_NOTESTS', 'No FPA test routines were possible.' );  // RussW : new 07/05/2018
-
-
-  // remove script notice content - Phil 4-17-12
-  define ( '_FPA_DELNOTE_LN1', 'Security Notice' );
-  define ( '_FPA_DELNOTE_LN2', 'Due to the highly sensitive nature of the information displayed by the FPA script, <b>it should be removed from the server immediately after use</b>.' );
-  define ( '_FPA_DELNOTE_LN3', 'If the script is left on the site, it can be used to gather enough information to illegally access, deface or hack your site.' );
-  define ( '_FPA_DELLINK', 'fpa-en.php?act=delete' );
-
-
-
-  /* NOTE (FPA): LANGUAGE - Offline Definitions & Constants
-   * assume user is offline/no-internet if jQuery cannot be loaded from the CDN
-   * the page #wrapper element is hidden and only display the following message
-   */
-  define ( '_FPA_OFFLINE', '<h4>Unable To Load Bootstrap or jQuery</h4>' );
-  define ( '_FPA_OFFLINE_MESSAGE', '<p><strong>Are you working offline or have no internet connection?</strong><br />\
-                                    <p style="padding:0 5%;">From FPA v2.0, internet access is required for the FPA to function correctly due to the use of Bootstrap and jQuery. \
-                                    If you think this may be an intermittent problem, try reloading FPA again, confirm that your web browser is not in offline-mode and that you have an active internet connection.</p>'
-         );
-
-
-
-  /* NOTE (FPA): LANGUAGE - Headings/Explain/Section Description Definitions & Constants
-   * fpa section headings, help/explain and sections (& sub-sections) descriptions
-   *
-   */
-  define ( '_SETTINGS_HEADING', 'FPA Settings' );
-  define ( '_SETTINGS_EXPLAIN', '<p>In order to collect relevant configuration & diagnostic information for you to generate a forum post, FPA needs to know what sort of problem you are observing and what information you wish to share in the forum. Please follow the instruction below to select the desired options and then click the <span class="label label-success">Generate Post Content</span> button.</p>
-                                 <br />
-                                 <ol>
-                                   <li>Enter your problem description <i>(optional)</i></li>
-                                   <li>Enter any error messages you see <i>(optional)</i></li>
-                                   <li>Enter any actions taken to resolve the issue <i>(optional)</i></li>
-                                   <li>Select detail & privacy level options of the output <i>(optional)</i></li>
-                                   <li>Click the <b>Generate Post Content</b> button to build the post content</li>
-                                   <li>Copy the contents of the <b>Forum Post Content</b> box (below) and paste it into a forum post</li>
-                                 </ol>'
-         );
-
-  define ( '_POST_HEADING', 'Forum Post Content' );
-  define ( '_POST_EXPLAIN', '<p>Once you have run the FPA script, with your chosen runtime options, your <b>Forum Post Content</b> will be displayed and you can then Copy and Paste this output in to a new post or reply in the forums to provide diagnostic and troubleshooting information when asking for assistance.</p>
-                             <p>The post content will not be easily readable as it is formatted to correctly display in the forum, but all the information you can see on the FPA webpage (below) will be included.'
-         );
-
-  define ( '_SECTION_BASIC_HEADING', 'Basic Discovery' );
-  define ( '_SECTION_BASIC_EXPLAIN', 'Basic hosting environment tests are run and compared to the documented installation requirements and known good configurations or known software versions that can sometimes cause problems. This information provides a quick and simple view of the generic environmental details.' );
-  define ( '_SECTION_BASIC_DESCRIBE', 'The Basic Discovery section presents any initial diagnostic information that has been discovered about your hosting server, database, php environments and functions that may effect the smooth running of any installed Joomla! instance.' );
-  define ( '_SECTION_BASIC_HEADING_SNAPSHOT', 'Environment Snapshot' );
-  define ( '_SECTION_BASIC_DESCRIBE_SNAPSHOT', 'The snapshot provides an initial indication of how suitable your environment is for hosting Joomla!' );
-
-  define ( '_SECTION_APPLICATION_HEADING', 'Application Discovery' );
-  define ( '_SECTION_APPLICATION_EXPLAIN', 'During the Application Discovery routines, FPA attempts to detect a Joomla! installation, determine the version and collect information about how it is configured. Where possible, FPA will also try to access the Joomla! database and collect configuration, performance and schema information.' );
-  define ( '_SECTION_APPLICATION_DESCRIBE', 'The Application Discovery section attempts to detect any installed Joomla! instance and confirm any relevant or related configuration and database information.' );
-  define ( '_SECTION_APPLICATION_HEADING_INSTANCE', 'Installed Instance' );
-  define ( '_SECTION_APPLICATION_DESCRIBE_INSTANCE', 'FPA attempts to detect a Joomla! instance and, if it is installed, determine the basic configuration parameters.' );
-  define ( '_SECTION_APPLICATION_HEADING_DBCONFIG', 'Database Configuration' );
-  define ( '_SECTION_APPLICATION_DESCRIBE_DBCONFIG', 'The database setup & configuration effects site presentation and performance.' );
-  define ( '_SECTION_APPLICATION_HEADING_DBTABLES', 'Database Structure' );
-  define ( '_SECTION_APPLICATION_DESCRIBE_DBTABLES', 'The database schema and table structure are the foundation of the website component and conent storage.' );
-
-  define ( '_SECTION_HOSTING_HEADING', 'Hosting Discovery' );
-  define ( '_SECTION_HOSTING_EXPLAIN', 'Server, hosting and software environments vary greatly. FPA attempts to discover the version, type and installed extensions or addons expected to be found on a typical hosting system.' );
-  define ( '_SECTION_HOSTING_DESCRIBE', 'The hosting account or server is comprised of several different software and hardware elements. The FPA Hosting section checks for common configuration items that can effect your website.' );
-  define ( '_SECTION_HOSTING_HEADING_SERVER', 'Server Configuration' );
-  define ( '_SECTION_HOSTING_DESCRIBE_SERVER', 'The PHP and web-server configuration provide the foundations for a websites functionality, performance and security.' );
-
-  define ( '_SECTION_PERMS_HEADING', 'Permissions Discovery' );
-  define ( '_SECTION_PERMS_EXPLAIN', 'Permissions, sometimes also called modeset, determine who has access and how they can access any folder or file. FPA looks for acceptable or sane permissions and highlights any that may be elevated or incorrect and can potentially allow unauthorised access or cause operational problems.' );
-  define ( '_SECTION_PERMS_DESCRIBE', 'FPA checks for acceptable folder and file permissions of the Joomla! Core Folders. Any incorrect or elevated permissions can be problematic and even expose the installation to being defaced, compromised or be rendered completely unusable.' );
-  define ( '_SECTION_PERMS_HEADING_CORE', 'Core Folders' );
-  define ( '_SECTION_PERMS_DESCRIBE_CORE', 'Correct folder permissions are essential for functionality and security of any website.' );
-  define ( '_SECTION_PERMS_HEADING_ELEV', 'Elevated Permissions' );
-  define ( '_SECTION_PERMS_DESCRIBE_ELEV', 'Any elevated permission may expose a website to unauthorised access or compromise.' );
-
-  define ( '_SECTION_EXT_HEADING', 'Extension Discovery' );
-  define ( '_SECTION_EXT_EXPLAIN', 'Whilst it is common to install additional extensions, they can sometimes be incompatible or cause conflicts effecting the layout and functionality of a website. Excessive use of these extensions may also cause performance issues or if not updated can expose the site to potential security risks.' );
-  define ( '_SECTION_EXT_DESCRIBE', 'Components, modules, plugins and templates extend the functionality and add features to the website. FPA attempts to discover all installed extensions, even if they are disabled.' );
-  define ( '_SECTION_EXT_HEADING_COM', 'Components' );
-  define ( '_SECTION_EXT_DESCRIBE_COM', 'Components provide major application functionality to the website.' );
-  define ( '_SECTION_EXT_HEADING_MOD', 'Modules' );
-  define ( '_SECTION_EXT_DESCRIBE_MOD', 'Modules most commonly offer data presentation or manipulation functions.' );
-  define ( '_SECTION_EXT_HEADING_PLG', 'Plugins' );
-  define ( '_SECTION_EXT_DESCRIBE_PLG', 'Plugins deliver automated or optional functions to the site or other extensions.' );
-  define ( '_SECTION_EXT_HEADING_LIB', 'Libraries' );
-  define ( '_SECTION_EXT_DESCRIBE_LIB', 'Libraries add extra functionality to the site or extension.' );
-  define ( '_SECTION_EXT_HEADING_TPL', 'Templates' );
-  define ( '_SECTION_EXT_DESCRIBE_TPL', 'Templates are at the core of the site design and layout.' );
-  define ( '_SECTION_EXT_DESCRIBE_TPL_OVR', 'Overrides allow for output customisation of extensions and are normally stored in the /html/ folder of the active template.' );
-  define ( '_SECTION_LEGEND_HEADING', 'Legends & Status' );
-  define ( '_SECTION_LEGEND_DESCRIBE_INFO', 'Information & Help Message/Status' );
-  define ( '_SECTION_LEGEND_DESCRIBE_SUCCESS', 'Positive & Successful Message/Status' );
-  define ( '_SECTION_LEGEND_DESCRIBE_WARNING', 'Highlighted & Warning Message/Status' );
-  define ( '_SECTION_LEGEND_DESCRIBE_ALERT', 'Negative Or Error Message/Status' );
-  define ( '_SECTION_LEGEND_DESCRIBE_UNKNOWN', 'Status Is Unknown Or Was Unretrievable' );
-  define ( '_SECTION_LEGEND_DESCRIBE_PRIVACY', 'Privacy Settings Are Protecting Sensitive Data' );
-  define ( '_SECTION_LEGEND_DESCRIBE_NOTE', 'Denotes An Active Or Currently Selected Item' );
-
-  define ( '_CAPTION_PHP', 'PHP' );
-  define ( '_CAPTION_DB', 'Database' );
-  define ( '_CAPTION_MYSQL', 'MySQL' );
-  define ( '_CAPTION_MYSQLI', 'MySQLi' );
-  define ( '_CAPTION_MONGO', 'MongoDB' );
-  define ( '_CAPTION_FUNC', 'Functions' );
-  define ( '_CAPTION_CMS', 'CMS' );
-  define ( '_CAPTION_PLATFORM', 'Platform' );
-  define ( '_CAPTION_CONFIG', 'Config' );
-  define ( '_CAPTION_MODESET', 'Modeset' );
-  define ( '_CAPTION_OWNERSHIP', 'Ownership' );
-  define ( '_CAPTION_SEFURL', 'SEF URL\'s' );
-  define ( '_CAPTION_CACHE', 'Caching' );
-  define ( '_CAPTION_SESSION', 'Session' );
-  define ( '_CAPTION_DEBUG', 'Debugging' );
-  define ( '_CAPTION_FEAT', 'Features' );
-  define ( '_CAPTION_PERF', 'Performance' );
-  define ( '_CAPTION_TABLES', 'Tables' );
-  define ( '_CAPTION_ENV', 'Environment' );
-  define ( '_CAPTION_SERVER', 'Server' );
-  define ( '_CAPTION_PHP_MISSING', 'Potential Missing Extensions' );
-  define ( '_CAPTION_CHECKS', 'Checks' );
-  define ( '_CAPTION_SITE', 'Site' );
-  define ( '_CAPTION_ADMIN', 'Administrator' );
-
-  define ( '_TABLE_PERMS_MODE', 'Mode' );
-  define ( '_TABLE_PERMS_FOLDER', 'Folder' );
-  define ( '_TABLE_DB_TABLE', 'Table' );
-  define ( '_TABLE_DB_RCDS', 'Rcds' );
-  define ( '_TABLE_DB_AVGL', 'Avg.<br />Length' );
-  define ( '_TABLE_DB_FRAG', 'Frag\'mt' );
-  define ( '_TABLE_DB_ENGINE', 'Engine' );
-  define ( '_TABLE_DB_UPDATED', 'Updated' );
-  define ( '_TABLE_DB_CHECKED', 'Checked' );
-  define ( '_TABLE_COMMON_COLLATION', 'Collation' );
-  define ( '_TABLE_COMMON_SIZE', 'Size' );
-  define ( '_TABLE_COMMON_WRITABLE', 'Writable' );
-  define ( '_TABLE_COMMON_OWNER', 'Owner' );
-  define ( '_TABLE_COMMON_GROUP', 'Group' );
-  define ( '_TABLE_COMMON_ENABLED', 'Enabled' );
-  define ( '_TABLE_COMMON_NAME', 'Name' );
-  define ( '_TABLE_COMMON_AUTHOR', 'Author' );
-  define ( '_TABLE_COMMON_ADDRESS', 'Address' );
-  define ( '_TABLE_COMMON_CREATED', 'Created' );
-  define ( '_TABLE_COMMON_TYPE', 'Type' );
-  define ( '_TABLE_COMMON_OVERRIDES', 'Overrides' );
-
-  define ( '_GDPR_HEADING', 'EU GDPR & e-Privacy Directives' );
-  define ( '_GDPR_MESSAGE', '<p>Whilst the FPA script does collect information about your website, it is not sent to, or stored in any other location by FPA.</p>
-                             <p>The information that is collected by this script is solely for the purpose of assisting you in problem determination and troubleshooting,
-                             it is completely your choice to post this data in any public or private online forum or community area, or to disclose this information to
-                             any third-party persons, communities or companies.</p>'
-         );
-  define ( '_GDPR_MESSAGE_MORE', '<p><b>FPA Privacy Settings:</b> FPA provides the option for you to choose how much identifiable information is made available to any
-                             reviewer of the script output, please make yourself familiar with the differences in output before disclosing the output publicly or
-                             to any other third-parties.</p>
-                             <p><b>Cookies & Local Storage:</b> The FPA script does not use cookies or local storage through your web-browser, however your web-browser
-                             may cache the web page out, if you are concerned you may choose to delete your web-browser cache after using this script.</p>
-                             <p><b>Analytics & Tracking:</b> The FPA script does not use any visitor analytics or tracking methods. However, some of the information collected
-                             by FPA may disclose host or server information that could make your website and location identifiable, revealing any subsequent personal information
-                             made available when viewed. If this is of concern, you may select a stricter FPA Privacy setting to minimise such information disclosures.</p>'
-         );
+      /* TODO (ALL): VERSION CONTROL : FPA Versioning & Revisioning
+       * remember to update revision information
+       */
+      define ( '_RES', 'Forum Post Assistant' );         // FPA resource long name
+      define ( '_RES_SHORT', 'FPA' );                    // FPA resource short name
+      define ( '_RES_VERSION', '2.0' );                  // major revision (x.y)
+      define ( '_RES_VERSION_MAINT', '0' );              // maintenance/patch revision (.z)
+      define ( '_RES_RELEASE_TYPE', 'BS' );              // framework type ( BS(Bootstrap), SA(Standalone) )
+      define ( '_RES_RELEASE_BUILD', 'Alpha' );          // dev status revision ( A(lpha), B(eta), RC, F(inal) )
+      define ( '_RES_LAST_UPDATED', '22/04/2018' );      // release date (dd/mm/yyyy)
+      define ( '_RES_BRANCH', 'en-GB' );                 // Github branch location
+      define ( '_RES_LANG', 'en-GB' );                   // Country/Language Code
 
 
 
 
-  /* NOTE (FPA): LANGUAGE - Output Definitions & Constants
-   * fpa output language strings
-   *
-   */
+      /* NOTE (FPA): PARENT FLAGS - Joomla!
+       *
+       */
+      define ( '_VALID_MOS', 1 );                        // for J!1.0
+      define ( '_JEXEC', 1 );                            // for J!1.5, J!1.6, J!1.7, J!2.5, J!3.0
 
 
-  if ($runFPATour == '1'):
-  /* NOTE (FPA): LANGUAGE - FPA Tour Definitions & Constants
-   *
-   */
-    define ( '_TOUR_STEP00_TITLE', 'User Toolbar' );
-    define ( '_TOUR_STEP00_DESC', '<p>The FPA User Toolbar provides instant access to the <b>Sidebar Menu</b> toggle button <button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-transfer"></i></button> to improve data visibility on smaller screens.</p>\
-                                   <p>You are also reminded of the currently selected <span class="text-warning">Information Privacy</span> setting and the <span class="text-danger">Security</span> implications of FPA, plus given the option to <span class="text-danger">Delete FPA</span> <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> after use.</p>\
-                                   <p>On larger screens, FPA also offers direct links to useful Joomla! and FPA locations on the right-hand side.</p>'
-           );
-    define ( '_TOUR_STEP05_TITLE', 'Sidebar Menu' );
-    define ( '_TOUR_STEP05_DESC', '<p>The FPA <b>Sidebar Menu</b> provides scrolling access to each of the FPA Report Sections.</p>\
-                                   <p>The Sidebar Menu may be reduced in width on larger screens and displayed on small smaller screens with the toggle button <button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-transfer"></i></button> found on the User Toolbar.</p>\
-                                   <p>The final menu link provides the option to <span class="text-danger">Delete FPA</span> <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> after use.</p>'
-           );
-    define ( '_TOUR_STEP10_TITLE', 'Information Footer' );
-    define ( '_TOUR_STEP10_DESC', '<p>The FPA <b>Information Footer</b> provides access to the licensing and project contributors information, plus quick access to the latest download versions of FPA.</p>\
-                                   <p>You are also reminded of the <span class="text-danger">Security</span> implications of the FPA and provided with a <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> <span class="text-danger">Delete FPA</span> link.</p>');
-    define ( '_TOUR_STEP15_TITLE', 'Explain (Help) Buttons' );
-    define ( '_TOUR_STEP15_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display context-sensitive information relating to the adjacent item.</p>');
-    define ( '_TOUR_STEP16_TITLE', 'Dashboard Sections' );
-    define ( '_TOUR_STEP16_DESC', '<p>The various FPA <b>Dashboard Sections</b> present relevant information about your installation & instance that may assist in understanding and troubleshooting a large numbers of issues & problems.</p>');
-    define ( '_TOUR_STEP17_TITLE', 'Legend & Status Descriptions' );
-    define ( '_TOUR_STEP17_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
-    define ( '_TOUR_STEP20_TITLE', 'FPA Settings' );
-    define ( '_TOUR_STEP20_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
-    define ( '_TOUR_STEP25_TITLE', 'Generate Post Content' );
-    define ( '_TOUR_STEP25_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
-    define ( '_TOUR_STEP30_TITLE', 'Forum Post Content' );
-    define ( '_TOUR_STEP30_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
-    define ( '_TOUR_END_TITLE', 'Forum Post Assistant' );
-    define ( '_TOUR_END_DESC', '<p>Thank you for using the FPA, hopefully it will assist you in solving your issue or successfully receive support from within the Joomla! forums.</p>\
-                                <p class="small">The Forum Post Assistant has been developed by, and is copyright of; Russell Winter, Phil DeGruy, Claire Mandville, Bernard Toplak, Sveinung Larsen</p>'
-           );
-  endif;
 
-  /* generic language constants */
-  define ( '_FPA_VER', 'Version' );
-  define ( '_FPA_VER_SHORT', 'v' ); // RussW : new v2.0.0
-  define ( '_FPA_EXPLAIN', 'Explain' ); // RussW : new v2.0.0
-  define ( '_FPA_SUCCESS', 'Success' );
-  define ( '_FPA_WARNING', 'Warning' );
-  define ( '_FPA_ALERT', 'Alert' );
-  define ( '_FPA_PROTECTED', 'protected' );
-  define ( '_FPA_Y', 'Yes' );
-  define ( '_FPA_N', 'No' );
-  define ( '_FPA_U', 'Unknown' );
-  define ( '_FPA_NA', 'N/A' );
-  define ( '_FPA_A', 'Active' ); // RussW : (active/current/selected) new v2.0.0
-  define ( '_FPA_INSTANCE', 'Instance' );
-  define ( '_FPA_Y_ICON', '<i class="glyphicon glyphicon-ok-sign"></i>' ); // RussW : (yes/good/positive) new v2.0.0
-  define ( '_FPA_N_ICON', '<i class="glyphicon glyphicon-remove-sign"></i>' ); // RussW : (no/error/negative) new v2.0.0
-  define ( '_FPA_U_ICON', '<i class="glyphicon glyphicon-question-sign"></i>' ); // RussW : (unknown) new v2.0.0
-  define ( '_FPA_A_ICON', '<i class="glyphicon glyphicon-star"></i>' ); // RussW : (active/current/selected) new v2.0.0
-  define ( '_FPA_EXPLAIN_ICON', '<i class="glyphicon glyphicon-info-sign"></i>' ); // RussW : (explain/info/help) new v2.0.0
-  define ( '_FPA_WARNING_ICON', '<i class="glyphicon glyphicon-alert"></i>' ); // RussW : (explain/info/help) new v2.0.0
-  define ( '_FPA_ALERT_ICON', '<i class="glyphicon glyphicon-remove-sign"></i>' ); // RussW : (explain/info/help) new v2.0.0
-  define ( '_FPA_PROTECTED_ICON', '<i class="glyphicon glyphicon-ban-circle"></i>' ); // RussW : (explain/info/help) new v2.0.0
-  define ( '_FPA_NOTE_ICON', '<i class="glyphicon glyphicon-asterisk text-warning"></i>' ); // RussW : (explain/info/help) new v2.0.0
-  define ( '_FPA_OPTIONAL_TOOLTIP', 'This section <b>is optional</b> by default in the post output' ); // RussW : (explain/info/help) new v2.0.0
-  define ( '_FPA_DELETE', 'Delete' );
-  define ( '_FPA_PRIVACY', 'Privacy' );
-  define ( '_FPA_PRIVACY_NONE', 'None' );
-  define ( '_FPA_PRIVACY_PARTIAL', 'Partial' );
-  define ( '_FPA_PRIVACY_STRICT', 'Strict' );
-  define ( '_FPA_TOOLBAR_FORUM', 'Forum' );
-  define ( '_FPA_TOOLBAR_DOCS', 'Docs' );
-  define ( '_FPA_TOOLBAR_DOCS_LINK', 'https://github.com/ForumPostAssistant/FPA/tree/en-GB/Documentation' );
-  define ( '_FPA_TOOLBAR_DOWNLOAD', 'Download' );
-  define ( '_FPA_TOOLBAR_DOWNLOAD_LINK', 'https://github.com/ForumPostAssistant/FPA/releases' );
-  /* end fpa language definitions & constants */
+
+      /* NOTE (FPA): LANGUAGE - FPA Specific Definitions & Constants
+       *
+       */
+      define ( '_RES_MENU_HOME', 'Home' );  // RussW : new 06/05/2018
+      define ( '_RES_MENU_BASIC', 'Basic Discovery' );  // RussW : new 06/05/2018
+      define ( '_RES_MENU_APP', 'Application Discovery' );  // RussW : new 06/05/2018
+      define ( '_RES_MENU_HOST', 'Hosting Discovery' );  // RussW : new 06/05/2018
+      define ( '_RES_MENU_PERM', 'Permissions Discovery' );  // RussW : new 06/05/2018
+      define ( '_RES_MENU_EXT', 'Extension Discovery' );  // RussW : new 06/05/2018
+      define ( '_RES_MENU_TOUR', 'FPA Tour' );  // RussW : new 06/05/2018
+
+      define ( '_RES_FPALINK', 'https://github.com/ForumPostAssistant/FPA/tarball/en-GB/' ); // where to get the latest 'Final Releases'
+      define ( '_RES_FPALATEST', 'Latest (.tar.gz) Download' );
+      define ( '_RES_FPALINK2', 'https://github.com/ForumPostAssistant/FPA/zipball/en-GB/' ); // where to get the latest 'Final Releases'
+      define ( '_RES_FPALATEST2', 'Latest (.zip) Download' );
+      define ( '_COPYRIGHT_HEADING', 'Developers & Contributors' );
+      define ( '_COPYRIGHT_STMT', 'The FPA script has been developed by, and is copyright of the following contributors; Russell Winter, Phil DeGruy, Claire Mandville, Bernard Toplak & Sveinung Larsen.
+                                   <a class="text-primary" href="https://github.com/ForumPostAssistant" target="_blank">Visit the FPA Github Project</a>.'
+             );
+      define ( '_LICENSE_HEADING', 'Licensing & Disclaimer' );
+      define ( '_LICENSE_FOOTER', 'script comes with ABSOLUTELY NO WARRANTY. This is free software; and covered under the <strong>GNU GPLv3 or later license</strong>.
+                                   You are welcome to redistribute it under certain conditions. For details read the LICENSE.txt file included in the download package with this script.
+                                   A copy of the license may also be obtained at <a class="text-primary" href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses/</a>.'
+             );
+
+
+
+
+      /* NOTE (FPA): LANGUAGE - FPA specific messages. Errors, warning & notices
+       *
+       */
+      define ( '_RES_MESSAGE_WARNING', 'Notice' );  // RussW : new 07/05/2018
+      define ( '_RES_MESSAGE_NOTFOUND', 'Not Found.' );  // RussW : new 07/05/2018
+      define ( '_RES_MESSAGE_NOTCONN', 'Unable To Connect.' );  // RussW : new 07/05/2018
+      define ( '_RES_MESSAGE_NOTESTS', 'No FPA test routines were possible.' );  // RussW : new 07/05/2018
+
+
+      // remove script notice content - Phil 4-17-12
+      define ( '_FPA_DELNOTE_LN1', 'Security Notice' );
+      define ( '_FPA_DELNOTE_LN2', 'Due to the highly sensitive nature of the information displayed by the FPA script, <b>it should be removed from the server immediately after use</b>.' );
+      define ( '_FPA_DELNOTE_LN3', 'If the script is left on the site, it can be used to gather enough information to illegally access, deface or hack your site.' );
+      define ( '_FPA_DELLINK', 'fpa-en.php?act=delete' );
+
+
+
+
+      /* NOTE (FPA): LANGUAGE - Offline Definitions & Constants
+       * assume user is offline/no-internet if jQuery cannot be loaded from the CDN
+       * the page #wrapper element is hidden and only display the following message
+       */
+      define ( '_FPA_OFFLINE', '<h4>Unable To Load Bootstrap or jQuery</h4>' );
+      define ( '_FPA_OFFLINE_MESSAGE', '<p><strong>Are you working offline or have no internet connection?</strong><br />\
+                                        <p style="padding:0 5%;">From FPA v2.0, internet access is required for the FPA to function correctly due to the use of Bootstrap and jQuery. \
+                                        If you think this may be an intermittent problem, try reloading FPA again, confirm that your web browser is not in offline-mode and that you have an active internet connection.</p>'
+             );
+
+
+
+
+      /* NOTE (FPA): LANGUAGE - Headings/Explain/Section Description Definitions & Constants
+       * fpa section headings, help/explain and sections (& sub-sections) descriptions
+       *
+       */
+      define ( '_SETTINGS_HEADING', 'FPA Settings' );
+      define ( '_SETTINGS_EXPLAIN', '<p>In order to collect relevant configuration & diagnostic information for you to generate a forum post, FPA needs to know what sort of problem you are observing and what information you wish to share in the forum. Please follow the instruction below to select the desired options and then click the <span class="label label-success">Generate Post Content</span> button.</p>
+                                     <br />
+                                     <ol>
+                                       <li>Enter your problem description <i>(optional)</i></li>
+                                       <li>Enter any error messages you see <i>(optional)</i></li>
+                                       <li>Enter any actions taken to resolve the issue <i>(optional)</i></li>
+                                       <li>Select detail & privacy level options of the output <i>(optional)</i></li>
+                                       <li>Click the <b>Generate Post Content</b> button to build the post content</li>
+                                       <li>Copy the contents of the <b>Forum Post Content</b> box (below) and paste it into a forum post</li>
+                                     </ol>'
+             );
+
+      define ( '_POST_HEADING', 'Forum Post Content' );
+      define ( '_POST_EXPLAIN', '<p>Once you have run the FPA script, with your chosen runtime options, your <b>Forum Post Content</b> will be displayed and you can then Copy and Paste this output in to a new post or reply in the forums to provide diagnostic and troubleshooting information when asking for assistance.</p>
+                                 <p>The post content will not be easily readable as it is formatted to correctly display in the forum, but all the information you can see on the FPA webpage (below) will be included.'
+             );
+      define ( '_SECTION_BASIC_HEADING', 'Basic Discovery' );
+      define ( '_SECTION_BASIC_EXPLAIN', 'Basic hosting environment tests are run and compared to the documented installation requirements and known good configurations or known software versions that can sometimes cause problems. This information provides a quick and simple view of the generic environmental details.' );
+      define ( '_SECTION_BASIC_DESCRIBE', 'The Basic Discovery section presents any initial diagnostic information that has been discovered about your hosting server, database, php environments and functions that may effect the smooth running of any installed Joomla! instance.' );
+      define ( '_SECTION_BASIC_HEADING_SNAPSHOT', 'Environment Snapshot' );
+      define ( '_SECTION_BASIC_DESCRIBE_SNAPSHOT', 'The snapshot provides an initial indication of how suitable your environment is for hosting Joomla!' );
+
+      define ( '_SECTION_APPLICATION_HEADING', 'Application Discovery' );
+      define ( '_SECTION_APPLICATION_EXPLAIN', 'During the Application Discovery routines, FPA attempts to detect a Joomla! installation, determine the version and collect information about how it is configured. Where possible, FPA will also try to access the Joomla! database and collect configuration, performance and schema information.' );
+      define ( '_SECTION_APPLICATION_DESCRIBE', 'The Application Discovery section attempts to detect any installed Joomla! instance and confirm any relevant or related configuration and database information.' );
+      define ( '_SECTION_APPLICATION_HEADING_INSTANCE', 'Installed Instance' );
+      define ( '_SECTION_APPLICATION_DESCRIBE_INSTANCE', 'FPA attempts to detect a Joomla! instance and, if it is installed, determine the basic configuration parameters.' );
+      define ( '_SECTION_APPLICATION_HEADING_DBCONFIG', 'Database Configuration' );
+      define ( '_SECTION_APPLICATION_DESCRIBE_DBCONFIG', 'The database setup & configuration effects site presentation and performance.' );
+      define ( '_SECTION_APPLICATION_HEADING_DBTABLES', 'Database Structure' );
+      define ( '_SECTION_APPLICATION_DESCRIBE_DBTABLES', 'The database schema and table structure are the foundation of the website component and conent storage.' );
+      define ( '_SECTION_HOSTING_HEADING', 'Hosting Discovery' );
+      define ( '_SECTION_HOSTING_EXPLAIN', 'Server, hosting and software environments vary greatly. FPA attempts to discover the version, type and installed extensions or addons expected to be found on a typical hosting system.' );
+      define ( '_SECTION_HOSTING_DESCRIBE', 'The hosting account or server is comprised of several different software and hardware elements. The FPA Hosting section checks for common configuration items that can effect your website.' );
+      define ( '_SECTION_HOSTING_HEADING_SERVER', 'Server Configuration' );
+      define ( '_SECTION_HOSTING_DESCRIBE_SERVER', 'The PHP and web-server configuration provide the foundations for a websites functionality, performance and security.' );
+      define ( '_SECTION_PERMS_HEADING', 'Permissions Discovery' );
+      define ( '_SECTION_PERMS_EXPLAIN', 'Permissions, sometimes also called modeset, determine who has access and how they can access any folder or file. FPA looks for acceptable or sane permissions and highlights any that may be elevated or incorrect and can potentially allow unauthorised access or cause operational problems.' );
+      define ( '_SECTION_PERMS_DESCRIBE', 'FPA checks for acceptable folder and file permissions of the Joomla! Core Folders. Any incorrect or elevated permissions can be problematic and even expose the installation to being defaced, compromised or be rendered completely unusable.' );
+      define ( '_SECTION_PERMS_HEADING_CORE', 'Core Folders' );
+      define ( '_SECTION_PERMS_DESCRIBE_CORE', 'Correct folder permissions are essential for functionality and security of any website.' );
+      define ( '_SECTION_PERMS_HEADING_ELEV', 'Elevated Permissions' );
+      define ( '_SECTION_PERMS_DESCRIBE_ELEV', 'Any elevated permission may expose a website to unauthorised access or compromise.' );
+      define ( '_SECTION_EXT_HEADING', 'Extension Discovery' );
+      define ( '_SECTION_EXT_EXPLAIN', 'Whilst it is common to install additional extensions, they can sometimes be incompatible or cause conflicts effecting the layout and functionality of a website. Excessive use of these extensions may also cause performance issues or if not updated can expose the site to potential security risks.' );
+      define ( '_SECTION_EXT_DESCRIBE', 'Components, modules, plugins and templates extend the functionality and add features to the website. FPA attempts to discover all installed extensions, even if they are disabled.' );
+      define ( '_SECTION_EXT_HEADING_COM', 'Components' );
+      define ( '_SECTION_EXT_DESCRIBE_COM', 'Components provide major application functionality to the website.' );
+      define ( '_SECTION_EXT_HEADING_MOD', 'Modules' );
+      define ( '_SECTION_EXT_DESCRIBE_MOD', 'Modules most commonly offer data presentation or manipulation functions.' );
+      define ( '_SECTION_EXT_HEADING_PLG', 'Plugins' );
+      define ( '_SECTION_EXT_DESCRIBE_PLG', 'Plugins deliver automated or optional functions to the site or other extensions.' );
+      define ( '_SECTION_EXT_HEADING_LIB', 'Libraries' );
+      define ( '_SECTION_EXT_DESCRIBE_LIB', 'Libraries add extra functionality to the site or extension.' );
+      define ( '_SECTION_EXT_HEADING_TPL', 'Templates' );
+      define ( '_SECTION_EXT_DESCRIBE_TPL', 'Templates are at the core of the site design and layout.' );
+      define ( '_SECTION_EXT_DESCRIBE_TPL_OVR', 'Overrides allow for output customisation of extensions and are normally stored in the /html/ folder of the active template.' );
+      define ( '_SECTION_LEGEND_HEADING', 'Legends & Status' );
+      define ( '_SECTION_LEGEND_DESCRIBE_INFO', 'Information & Help Message/Status' );
+      define ( '_SECTION_LEGEND_DESCRIBE_SUCCESS', 'Positive & Successful Message/Status' );
+      define ( '_SECTION_LEGEND_DESCRIBE_WARNING', 'Highlighted & Warning Message/Status' );
+      define ( '_SECTION_LEGEND_DESCRIBE_ALERT', 'Negative Or Error Message/Status' );
+      define ( '_SECTION_LEGEND_DESCRIBE_UNKNOWN', 'Status Is Unknown Or Was Unretrievable' );
+      define ( '_SECTION_LEGEND_DESCRIBE_PRIVACY', 'Privacy Settings Are Protecting Sensitive Data' );
+      define ( '_SECTION_LEGEND_DESCRIBE_NOTE', 'Denotes An Active Or Currently Selected Item' );
+      define ( '_CAPTION_PHP', 'PHP' );
+      define ( '_CAPTION_DB', 'Database' );
+      define ( '_CAPTION_MYSQL', 'MySQL' );
+      define ( '_CAPTION_MYSQLI', 'MySQLi' );
+      define ( '_CAPTION_MONGO', 'MongoDB' );
+      define ( '_CAPTION_FUNC', 'Functions' );
+      define ( '_CAPTION_CMS', 'CMS' );
+      define ( '_CAPTION_PLATFORM', 'Platform' );
+      define ( '_CAPTION_CONFIG', 'Config' );
+      define ( '_CAPTION_MODESET', 'Modeset' );
+      define ( '_CAPTION_OWNERSHIP', 'Ownership' );
+      define ( '_CAPTION_SEFURL', 'SEF URL\'s' );
+      define ( '_CAPTION_CACHE', 'Caching' );
+      define ( '_CAPTION_SESSION', 'Session' );
+      define ( '_CAPTION_DEBUG', 'Debugging' );
+      define ( '_CAPTION_FEAT', 'Features' );
+      define ( '_CAPTION_PERF', 'Performance' );
+      define ( '_CAPTION_TABLES', 'Tables' );
+      define ( '_CAPTION_ENV', 'Environment' );
+      define ( '_CAPTION_SERVER', 'Server' );
+      define ( '_CAPTION_PHP_MISSING', 'Potential Missing Extensions' );
+      define ( '_CAPTION_CHECKS', 'Checks' );
+      define ( '_CAPTION_SITE', 'Site' );
+      define ( '_CAPTION_ADMIN', 'Administrator' );
+      define ( '_TABLE_PERMS_MODE', 'Mode' );
+      define ( '_TABLE_PERMS_FOLDER', 'Folder' );
+      define ( '_TABLE_DB_TABLE', 'Table' );
+      define ( '_TABLE_DB_RCDS', 'Rcds' );
+      define ( '_TABLE_DB_AVGL', 'Avg.<br />Length' );
+      define ( '_TABLE_DB_FRAG', 'Frag\'mt' );
+      define ( '_TABLE_DB_ENGINE', 'Engine' );
+      define ( '_TABLE_DB_UPDATED', 'Updated' );
+      define ( '_TABLE_DB_CHECKED', 'Checked' );
+      define ( '_TABLE_COMMON_COLLATION', 'Collation' );
+      define ( '_TABLE_COMMON_SIZE', 'Size' );
+      define ( '_TABLE_COMMON_WRITABLE', 'Writable' );
+      define ( '_TABLE_COMMON_OWNER', 'Owner' );
+      define ( '_TABLE_COMMON_GROUP', 'Group' );
+      define ( '_TABLE_COMMON_ENABLED', 'Enabled' );
+      define ( '_TABLE_COMMON_NAME', 'Name' );
+      define ( '_TABLE_COMMON_AUTHOR', 'Author' );
+      define ( '_TABLE_COMMON_ADDRESS', 'Address' );
+      define ( '_TABLE_COMMON_CREATED', 'Created' );
+      define ( '_TABLE_COMMON_TYPE', 'Type' );
+      define ( '_TABLE_COMMON_OVERRIDES', 'Overrides' );
+      define ( '_GDPR_HEADING', 'EU GDPR & e-Privacy Directives' );
+      define ( '_GDPR_MESSAGE', '<p>Whilst the FPA script does collect information about your website, it is not sent to, or stored in any other location by FPA.</p>
+                                 <p>The information that is collected by this script is solely for the purpose of assisting you in problem determination and troubleshooting,
+                                 it is completely your choice to post this data in any public or private online forum or community area, or to disclose this information to
+                                 any third-party persons, communities or companies.</p>'
+             );
+      define ( '_GDPR_MESSAGE_MORE', '<p><b>FPA Privacy Settings:</b> FPA provides the option for you to choose how much identifiable information is made available to any
+                                 reviewer of the script output, please make yourself familiar with the differences in output before disclosing the output publicly or
+                                 to any other third-parties.</p>
+                                 <p><b>Cookies & Local Storage:</b> The FPA script does not use cookies or local storage through your web-browser, however your web-browser
+                                 may cache the web page out, if you are concerned you may choose to delete your web-browser cache after using this script.</p>
+                                 <p><b>Analytics & Tracking:</b> The FPA script does not use any visitor analytics or tracking methods. However, some of the information collected
+                                 by FPA may disclose host or server information that could make your website and location identifiable, revealing any subsequent personal information
+                                 made available when viewed. If this is of concern, you may select a stricter FPA Privacy setting to minimise such information disclosures.</p>'
+             );
+
+
+
+
+      /* NOTE (FPA): LANGUAGE - Output Definitions & Constants
+       * fpa output language strings
+       *
+       */
+      /* generic language constants */
+      define ( '_FPA_VER', 'Version' );
+      define ( '_FPA_VER_SHORT', 'v' ); // RussW : new v2.0.0
+      define ( '_FPA_EXPLAIN', 'Explain' ); // RussW : new v2.0.0
+      define ( '_FPA_SUCCESS', 'Success' );
+      define ( '_FPA_WARNING', 'Warning' );
+      define ( '_FPA_ALERT', 'Alert' );
+      define ( '_FPA_PROTECTED', 'protected' );
+      define ( '_FPA_Y', 'Yes' );
+      define ( '_FPA_N', 'No' );
+      define ( '_FPA_U', 'Unknown' );
+      define ( '_FPA_NA', 'N/A' );
+      define ( '_FPA_A', 'Active' ); // RussW : (active/current/selected) new v2.0.0
+      define ( '_FPA_INSTANCE', 'Instance' );
+      define ( '_FPA_Y_ICON', '<i class="glyphicon glyphicon-ok-sign"></i>' ); // RussW : (yes/good/positive) new v2.0.0
+      define ( '_FPA_N_ICON', '<i class="glyphicon glyphicon-remove-sign"></i>' ); // RussW : (no/error/negative) new v2.0.0
+      define ( '_FPA_U_ICON', '<i class="glyphicon glyphicon-question-sign"></i>' ); // RussW : (unknown) new v2.0.0
+      define ( '_FPA_A_ICON', '<i class="glyphicon glyphicon-star"></i>' ); // RussW : (active/current/selected) new v2.0.0
+      define ( '_FPA_EXPLAIN_ICON', '<i class="glyphicon glyphicon-info-sign"></i>' ); // RussW : (explain/info/help) new v2.0.0
+      define ( '_FPA_WARNING_ICON', '<i class="glyphicon glyphicon-alert"></i>' ); // RussW : (explain/info/help) new v2.0.0
+      define ( '_FPA_ALERT_ICON', '<i class="glyphicon glyphicon-remove-sign"></i>' ); // RussW : (explain/info/help) new v2.0.0
+      define ( '_FPA_PROTECTED_ICON', '<i class="glyphicon glyphicon-ban-circle"></i>' ); // RussW : (explain/info/help) new v2.0.0
+      define ( '_FPA_NOTE_ICON', '<i class="glyphicon glyphicon-asterisk text-warning"></i>' ); // RussW : (explain/info/help) new v2.0.0
+      define ( '_FPA_OPTIONAL_TOOLTIP', 'This section <b>is optional</b> by default in the post output' ); // RussW : (explain/info/help) new v2.0.0
+      define ( '_FPA_DELETE', 'Delete' );
+      define ( '_FPA_PRIVACY', 'Privacy' );
+      define ( '_FPA_PRIVACY_NONE', 'None' );
+      define ( '_FPA_PRIVACY_PARTIAL', 'Partial' );
+      define ( '_FPA_PRIVACY_STRICT', 'Strict' );
+      define ( '_FPA_TOOLBAR_FORUM', 'Forum' );
+      define ( '_FPA_TOOLBAR_DOCS', 'Docs' );
+      define ( '_FPA_TOOLBAR_DOCS_LINK', 'https://github.com/ForumPostAssistant/FPA/tree/en-GB/Documentation' );
+      define ( '_FPA_TOOLBAR_DOWNLOAD', 'Download' );
+      define ( '_FPA_TOOLBAR_DOWNLOAD_LINK', 'https://github.com/ForumPostAssistant/FPA/releases' );
+
+
+
+
+      if ($runFPATour == '1'):
+      /* NOTE (FPA): LANGUAGE - FPA Tour Definitions & Constants
+       *
+       */
+        define ( '_TOUR_STEP00_TITLE', 'User Toolbar' );
+        define ( '_TOUR_STEP00_DESC', '<p>The FPA User Toolbar provides instant access to the <b>Sidebar Menu</b> toggle button <button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-transfer"></i></button> to improve data visibility on smaller screens.</p>\
+                                       <p>You are also reminded of the currently selected <span class="text-warning">Information Privacy</span> setting and the <span class="text-danger">Security</span> implications of FPA, plus given the option to <span class="text-danger">Delete FPA</span> <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> after use.</p>\
+                                       <p>On larger screens, FPA also offers direct links to useful Joomla! and FPA locations on the right-hand side.</p>'
+               );
+        define ( '_TOUR_STEP05_TITLE', 'Sidebar Menu' );
+        define ( '_TOUR_STEP05_DESC', '<p>The FPA <b>Sidebar Menu</b> provides scrolling access to each of the FPA Report Sections.</p>\
+                                       <p>The Sidebar Menu may be reduced in width on larger screens and displayed on small smaller screens with the toggle button <button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-transfer"></i></button> found on the User Toolbar.</p>\
+                                       <p>The final menu link provides the option to <span class="text-danger">Delete FPA</span> <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> after use.</p>'
+               );
+        define ( '_TOUR_STEP10_TITLE', 'Information Footer' );
+        define ( '_TOUR_STEP10_DESC', '<p>The FPA <b>Information Footer</b> provides access to the licensing and project contributors information, plus quick access to the latest download versions of FPA.</p>\
+                                       <p>You are also reminded of the <span class="text-danger">Security</span> implications of the FPA and provided with a <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> <span class="text-danger">Delete FPA</span> link.</p>');
+        define ( '_TOUR_STEP15_TITLE', 'Explain (Help) Buttons' );
+        define ( '_TOUR_STEP15_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display context-sensitive information relating to the adjacent item.</p>');
+        define ( '_TOUR_STEP16_TITLE', 'Dashboard Sections' );
+        define ( '_TOUR_STEP16_DESC', '<p>The various FPA <b>Dashboard Sections</b> present relevant information about your installation & instance that may assist in understanding and troubleshooting a large numbers of issues & problems.</p>');
+        define ( '_TOUR_STEP17_TITLE', 'Legend & Status Descriptions' );
+        define ( '_TOUR_STEP17_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
+        define ( '_TOUR_STEP20_TITLE', 'FPA Settings' );
+        define ( '_TOUR_STEP20_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
+        define ( '_TOUR_STEP25_TITLE', 'Generate Post Content' );
+        define ( '_TOUR_STEP25_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
+        define ( '_TOUR_STEP30_TITLE', 'Forum Post Content' );
+        define ( '_TOUR_STEP30_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
+        define ( '_TOUR_END_TITLE', 'Forum Post Assistant' );
+        define ( '_TOUR_END_DESC', '<p>Thank you for using the FPA, hopefully it will assist you in solving your issue or successfully receive support from within the Joomla! forums.</p>\
+                                    <p class="small">The Forum Post Assistant has been developed by, and is copyright of; Russell Winter, Phil DeGruy, Claire Mandville, Bernard Toplak, Sveinung Larsen</p>'
+               );
+      endif;
 ?>
 
 
@@ -385,9 +387,7 @@
         <!-- TODO (RussW): include CSS and remove external file -->
         <link rel="stylesheet" href="fpa-style.css">
         <!-- NOTE (FPA): CSS - Custom Styling -->
-        <style>
-
-        </style>
+        <style></style>
 
     </head>
     <body data-spy="scroll" data-target="#navbar-sidebar">
@@ -413,6 +413,7 @@
 
             <div class="sidebar-header">
               <h4 class="text-center margin-remove-bottom">
+
                 <?php
                   // attempt to find and display a joomla logo
                   $logoPath = '';
@@ -429,16 +430,15 @@
                 <?php endif; ?>
 
                 <?php echo _RES; ?>
-              </h4>
-              <strong style="border:2px solid #fff;padding:8px;border-radius:50%;width:58px;height:58px;line-height:1.8;">
-                <?php echo _RES_SHORT; ?>
-              </strong>
 
-              <div class="text-center small">
-                <?php echo _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD; ?>
-              </div>
+              </h4>
+
+              <strong class="sidebar-fpa-small"><?php echo _RES_SHORT; ?></strong>
+
+              <div class="text-center small"><?php echo _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD; ?></div>
 
             </div><!--/.sidebar-header-->
+
 
             <ul class="nav nav-pills nav-stacked components tourStep05" >
 
@@ -1014,10 +1014,6 @@
           <div id="content">
 
 
-
-
-
-
             <?php
               /* NOTE (RussW): SECTION - Basic Discovery
                * generic top-level environment information
@@ -1326,406 +1322,403 @@
                          */
                       ?>
 
-<div class="row clearfix">
+                      <div class="row clearfix">
 
-  <!-- TODO (RussW): config not found -->
-  <div class="col-xs-12">
-    <div class="alert alert-warning text-center text-capitalize">
-      <h4 class="margin-remove-top"><?php echo _FPA_WARNING_ICON .'<br />'. _RES .' '. _RES_MESSAGE_WARNING; ?></h4>
-      <?php echo _FPA_INSTANCE .' '. _RES_MESSAGE_NOTFOUND .' '. _RES_MESSAGE_NOTESTS; ?>
-    </div>
-  </div>
-  <!-- END: config not found -->
+                        <!-- TODO (RussW): config not found -->
+                        <div class="col-xs-12">
+                          <div class="alert alert-warning text-center text-capitalize">
+                            <h4 class="margin-remove-top"><?php echo _FPA_WARNING_ICON .'<br />'. _RES .' '. _RES_MESSAGE_WARNING; ?></h4>
+                            <?php echo _FPA_INSTANCE .' '. _RES_MESSAGE_NOTFOUND .' '. _RES_MESSAGE_NOTESTS; ?>
+                          </div>
+                        </div>
+                        <!-- END: config not found -->
 
-  <div class="col-xs-12 col-sm-6">
+                        <div class="col-xs-12 col-sm-6">
 
-    <div class="panel panel-default item" style="min-height:129px;">
+                          <div class="panel panel-default item" style="min-height:129px;">
 
-      <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase"><?php echo _CAPTION_CMS; ?></caption>
-        <colgroup>
-          <col class="col-xs-7 border-right">
-          <col class="">
-        </colgroup><!--/required to fix column sizing & employ text-truncate-->
-        <tbody>
-          <tr>
-            <td class="small">Found</td>
-            <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
-          </tr>
-          <tr>
-            <td class="small">Version</td>
-            <td class="text-center"><strong>v3.8.7</strong></td>
-          </tr>
-          <tr>
-            <td class="small">Build</td>
-            <td class="text-center bg-success text-success">Stable</td>
-          </tr>
-        </tbody>
-      </table>
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <caption class="text-center text-uppercase"><?php echo _CAPTION_CMS; ?></caption>
+                              <colgroup>
+                                <col class="col-xs-7 border-right">
+                                <col class="">
+                              </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                              <tbody>
+                                <tr>
+                                  <td class="small">Found</td>
+                                  <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                </tr>
+                                <tr>
+                                  <td class="small">Version</td>
+                                  <td class="text-center"><strong>v3.8.7</strong></td>
+                                </tr>
+                                <tr>
+                                  <td class="small">Build</td>
+                                  <td class="text-center bg-success text-success">Stable</td>
+                                </tr>
+                              </tbody>
+                            </table>
 
-    </div><!--/.panel, .item-->
+                          </div><!--/.panel, .item-->
 
-  </div>
-  <div class="col-xs-12 col-sm-6">
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
 
-    <div class="panel panel-default item" style="min-height:129px;">
+                          <div class="panel panel-default item" style="min-height:129px;">
 
-      <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase"><?php echo _CAPTION_PLATFORM; ?></caption>
-        <colgroup>
-          <col class="col-xs-7 border-right">
-          <col class="">
-        </colgroup><!--/required to fix column sizing & employ text-truncate-->
-        <tbody>
-          <tr>
-            <td class="small">Found</td>
-            <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
-          </tr>
-          <tr>
-            <td class="small">Version</td>
-            <td class="text-center"><strong>v13.1.0</strong></td>
-          </tr>
-          <tr>
-            <td class="small">Build</td>
-            <td class="text-center bg-success text-success col-xs-4">Stable</td>
-          </tr>
-        </tbody>
-      </table>
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <caption class="text-center text-uppercase"><?php echo _CAPTION_PLATFORM; ?></caption>
+                              <colgroup>
+                                <col class="col-xs-7 border-right">
+                                <col class="">
+                              </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                              <tbody>
+                                <tr>
+                                  <td class="small">Found</td>
+                                  <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                </tr>
+                                <tr>
+                                  <td class="small">Version</td>
+                                  <td class="text-center"><strong>v13.1.0</strong></td>
+                                </tr>
+                                <tr>
+                                  <td class="small">Build</td>
+                                  <td class="text-center bg-success text-success col-xs-4">Stable</td>
+                                </tr>
+                              </tbody>
+                            </table>
 
-    </div><!--/.panel, .item-->
+                          </div><!--/.panel, .item-->
 
-  </div>
-  <div class="col-xs-12 col-sm-6 col-lg-4">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:129px;">
+                          <div class="panel panel-default item" style="min-height:129px;">
 
-      <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase"><?php echo _CAPTION_CONFIG; ?></caption>
-        <colgroup>
-          <col class="col-xs-7 border-right">
-          <col>
-        </colgroup><!--/required to fix column sizing & employ text-truncate-->
-        <tbody>
-          <tr>
-            <td class="small text-truncate">Exists</td>
-            <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
-          </tr>
-          <tr>
-            <td class="small text-truncate">Valid</td>
-            <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
-          </tr>
-          <tr>
-            <td class="small text-truncate">Matches CMS</td>
-            <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
-          </tr>
-        </tbody>
-      </table>
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <caption class="text-center text-uppercase"><?php echo _CAPTION_CONFIG; ?></caption>
+                              <colgroup>
+                                <col class="col-xs-7 border-right">
+                                <col>
+                              </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                              <tbody>
+                                <tr>
+                                  <td class="small text-truncate">Exists</td>
+                                  <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                </tr>
+                                <tr>
+                                  <td class="small text-truncate">Valid</td>
+                                  <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                </tr>
+                                <tr>
+                                  <td class="small text-truncate">Matches CMS</td>
+                                  <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                </tr>
+                              </tbody>
+                            </table>
 
-    </div><!--/.panel, .item-->
+                          </div><!--/.panel, .item-->
 
-  </div>
-  <div class="col-xs-12 col-sm-6 col-lg-4">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:129px;">
+                          <div class="panel panel-default item" style="min-height:129px;">
 
-      <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase"><?php echo _CAPTION_CONFIG .' '. _CAPTION_MODESET; ?></caption>
-        <colgroup>
-          <col class="col-xs-7 border-right">
-          <col>
-        </colgroup><!--/required to fix column sizing & employ text-truncate-->
-        <tbody>
-          <tr>
-            <td class="small text-truncate">Permissions</td>
-            <td class="text-center">
-<?php
-  //$testCONFIG = fileperms('old-fpa-en.php');
-  //$testCONFIG = fileperms('administrator');
-  $testCONFIG = 'fpa-style.css';
-?>
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <caption class="text-center text-uppercase"><?php echo _CAPTION_CONFIG .' '. _CAPTION_MODESET; ?></caption>
+                              <colgroup>
+                                <col class="col-xs-7 border-right">
+                                <col>
+                              </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                              <tbody>
+                                <tr>
+                                  <td class="small text-truncate">Permissions</td>
+                                  <td class="text-center">
+                                    <?php
+                                      //$testCONFIG = fileperms('old-fpa-en.php');
+                                      //$testCONFIG = fileperms('administrator');
+                                      $testCONFIG = 'fpa-style.css';
+                                    ?>
+                                    <?php echo substr( sprintf('%o', fileperms( $testCONFIG ) ),-3, 3 ); ?>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="small text-truncate">Transposition</td>
+                                  <td class="text-center">
+                                    <?php
+                                      $testPERMS = fileperms( $testCONFIG );
+                                      switch ($testPERMS & 0xF000) {
+                                          case 0xC000: // socket
+                                              $info = 's ';
+                                              break;
+                                          case 0xA000: // symbolic link
+                                              $info = 'l ';
+                                              break;
+                                          case 0x8000: // regular
+                                              $info = 'r ';
+                                              break;
+                                          case 0x6000: // block special
+                                              $info = 'b ';
+                                              break;
+                                          case 0x4000: // directory
+                                              $info = 'd ';
+                                              break;
+                                          case 0x2000: // character special
+                                              $info = 'c ';
+                                              break;
+                                          case 0x1000: // FIFO pipe
+                                              $info = 'p ';
+                                              break;
+                                          default: // unknown
+                                              $info = 'u ';
+                                      }
 
-              <?php echo substr( sprintf('%o', fileperms( $testCONFIG ) ),-3, 3 ); ?>
-            </td>
-          </tr>
-          <tr>
-            <td class="small text-truncate">Transposition</td>
-            <td class="text-center">
-<?php
-$testPERMS = fileperms( $testCONFIG );
-switch ($testPERMS & 0xF000) {
-    case 0xC000: // socket
-        $info = 's ';
-        break;
-    case 0xA000: // symbolic link
-        $info = 'l ';
-        break;
-    case 0x8000: // regular
-        $info = 'r ';
-        break;
-    case 0x6000: // block special
-        $info = 'b ';
-        break;
-    case 0x4000: // directory
-        $info = 'd ';
-        break;
-    case 0x2000: // character special
-        $info = 'c ';
-        break;
-    case 0x1000: // FIFO pipe
-        $info = 'p ';
-        break;
-    default: // unknown
-        $info = 'u ';
-}
+                                      // Owner
+                                      $info .= (($testPERMS & 0x0100) ? 'r' : '-');
+                                      $info .= (($testPERMS & 0x0080) ? 'w' : '-');
+                                      $info .= (($testPERMS & 0x0040) ?
+                                                  (($testPERMS & 0x0800) ? 's' : 'x' ) :
+                                                  (($testPERMS & 0x0800) ? 'S' : '-'));
+                                      $info .= '&nbsp;';
 
-// Owner
-$info .= (($testPERMS & 0x0100) ? 'r' : '-');
-$info .= (($testPERMS & 0x0080) ? 'w' : '-');
-$info .= (($testPERMS & 0x0040) ?
-            (($testPERMS & 0x0800) ? 's' : 'x' ) :
-            (($testPERMS & 0x0800) ? 'S' : '-'));
-$info .= '&nbsp;';
+                                      // Group
+                                      $info .= (($testPERMS & 0x0020) ? 'r' : '-');
+                                      $info .= (($testPERMS & 0x0010) ? 'w' : '-');
+                                      $info .= (($testPERMS & 0x0008) ?
+                                                  (($testPERMS & 0x0400) ? 's' : 'x' ) :
+                                                  (($testPERMS & 0x0400) ? 'S' : '-'));
+                                      $info .= '&nbsp;';
 
-// Group
-$info .= (($testPERMS & 0x0020) ? 'r' : '-');
-$info .= (($testPERMS & 0x0010) ? 'w' : '-');
-$info .= (($testPERMS & 0x0008) ?
-            (($testPERMS & 0x0400) ? 's' : 'x' ) :
-            (($testPERMS & 0x0400) ? 'S' : '-'));
-$info .= '&nbsp;';
+                                      // World
+                                      $info .= (($testPERMS & 0x0004) ? 'r' : '-');
+                                      $info .= (($testPERMS & 0x0002) ? 'w' : '-');
+                                      $info .= (($testPERMS & 0x0001) ?
+                                                  (($testPERMS & 0x0200) ? 't' : 'x' ) :
+                                                  (($testPERMS & 0x0200) ? 'T' : '-'));
 
-// World
-$info .= (($testPERMS & 0x0004) ? 'r' : '-');
-$info .= (($testPERMS & 0x0002) ? 'w' : '-');
-$info .= (($testPERMS & 0x0001) ?
-            (($testPERMS & 0x0200) ? 't' : 'x' ) :
-            (($testPERMS & 0x0200) ? 'T' : '-'));
+                                      echo $info;
+                                    ?>
+                                  </td>
+                                </tr>
 
-echo $info;
-?>
+                                <tr>
+                                  <td class="small text-truncate">Effective Mode</td>
+                                  <td class="text-center">
+                                    <?php
+                                    if (is_writable($testCONFIG)) {
+                                        echo 'writable';
+                                    } else {
+                                        echo 'read only';
+                                    }
+                                    ?>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
 
+                          </div><!--/.panel, .item-->
 
-            </td>
-          </tr>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4">
 
-          <tr>
-            <td class="small text-truncate">Effective Mode</td>
-            <td class="text-center">
-              <?php
-              if (is_writable($testCONFIG)) {
-                  echo 'writable';
-              } else {
-                  echo 'read only';
-              }
-              ?>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                          <div class="panel panel-default item" style="min-height:129px;">
 
-    </div><!--/.panel, .item-->
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <caption class="text-center text-uppercase"><?php echo _CAPTION_CONFIG .' '. _CAPTION_OWNERSHIP; ?></caption>
+                              <colgroup>
+                                <col class="col-xs-7 border-right">
+                                <col>
+                              </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                              <tbody>
+                                <tr>
+                                  <td class="small text-truncate">Owner</td>
+                                  <td class="text-center">hotmangome</td>
+                                </tr>
+                                <tr class="border-bottom">
+                                  <td class="small text-truncate">Group</td>
+                                  <td class="text-center">hotmangome</td>
+                                </tr>
+                              </tbody>
+                            </table>
 
-  </div>
-  <div class="col-xs-12 col-sm-6 col-lg-4">
+                          </div><!--/.panel, .item-->
 
-    <div class="panel panel-default item" style="min-height:129px;">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4">
 
-      <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase"><?php echo _CAPTION_CONFIG .' '. _CAPTION_OWNERSHIP; ?></caption>
-        <colgroup>
-          <col class="col-xs-7 border-right">
-          <col>
-        </colgroup><!--/required to fix column sizing & employ text-truncate-->
-        <tbody>
-          <tr>
-            <td class="small text-truncate">Owner</td>
-            <td class="text-center">hotmangome</td>
-          </tr>
-          <tr class="border-bottom">
-            <td class="small text-truncate">Group</td>
-            <td class="text-center">hotmangome</td>
-          </tr>
-        </tbody>
-      </table>
+                          <div class="panel panel-default item" style="min-height:129px;">
 
-    </div><!--/.panel, .item-->
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <caption class="text-center text-uppercase"><?php echo _CAPTION_SITE .' '. _CAPTION_CONFIG; ?></caption>
+                              <colgroup>
+                                <col class="col-xs-7 border-right">
+                                <col>
+                              </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                              <tbody>
+                                <tr>
+                                  <td class="small text-truncate">Online</td>
+                                  <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                </tr>
+                                <tr>
+                                  <td class="small text-truncate">Force SSL</td>
+                                  <td class="text-center"><?php echo _FPA_N; ?></td>
+                                </tr>
+                                <tr>
+                                  <td class="small text-truncate">Root Override</td>
+                                  <td class="text-center"><?php echo _FPA_N; ?></td>
+                                </tr>
+                              </tbody>
+                            </table>
 
-  </div>
-  <div class="col-xs-12 col-sm-6 col-lg-4">
+                          </div><!--/.panel, .item-->
 
-    <div class="panel panel-default item" style="min-height:129px;">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4">
 
-      <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase"><?php echo _CAPTION_SITE .' '. _CAPTION_CONFIG; ?></caption>
-        <colgroup>
-          <col class="col-xs-7 border-right">
-          <col>
-        </colgroup><!--/required to fix column sizing & employ text-truncate-->
-        <tbody>
-          <tr>
-            <td class="small text-truncate">Online</td>
-            <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
-          </tr>
-          <tr>
-            <td class="small text-truncate">Force SSL</td>
-            <td class="text-center"><?php echo _FPA_N; ?></td>
-          </tr>
-          <tr>
-            <td class="small text-truncate">Root Override</td>
-            <td class="text-center"><?php echo _FPA_N; ?></td>
-          </tr>
-        </tbody>
-      </table>
+                          <div class="panel panel-default item" style="min-height:129px;">
 
-    </div><!--/.panel, .item-->
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <caption class="text-center text-uppercase"><?php echo _CAPTION_SEFURL; ?></caption>
+                              <colgroup>
+                                <col class="col-xs-7 border-right">
+                                <col>
+                              </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                              <tbody>
+                                <tr>
+                                  <td class="small text-truncate">Enabled</td>
+                                  <td class="text-center"><?php echo _FPA_Y; ?></td>
+                                </tr>
+                                <tr>
+                                  <td class="small text-truncate">Suffix</td>
+                                  <td class="text-center"><?php echo _FPA_N; ?></td>
+                                </tr>
+                                <tr>
+                                  <td class="small text-truncate">ReWrite</td>
+                                  <td class="text-center"><?php echo _FPA_Y; ?></td>
+                                </tr>
+                              </tbody>
+                            </table>
 
-  </div>
-  <div class="col-xs-12 col-sm-6 col-lg-4">
+                          </div><!--/.panel, .item-->
 
-    <div class="panel panel-default item" style="min-height:129px;">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4">
 
-      <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase"><?php echo _CAPTION_SEFURL; ?></caption>
-        <colgroup>
-          <col class="col-xs-7 border-right">
-          <col>
-        </colgroup><!--/required to fix column sizing & employ text-truncate-->
-        <tbody>
-          <tr>
-            <td class="small text-truncate">Enabled</td>
-            <td class="text-center"><?php echo _FPA_Y; ?></td>
-          </tr>
-          <tr>
-            <td class="small text-truncate">Suffix</td>
-            <td class="text-center"><?php echo _FPA_N; ?></td>
-          </tr>
-          <tr>
-            <td class="small text-truncate">ReWrite</td>
-            <td class="text-center"><?php echo _FPA_Y; ?></td>
-          </tr>
-        </tbody>
-      </table>
+                          <div class="panel panel-default item" style="min-height:129px;">
 
-    </div><!--/.panel, .item-->
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <caption class="text-center text-uppercase"><?php echo _CAPTION_CACHE; ?></caption>
+                              <colgroup>
+                                <col class="col-xs-7 border-right">
+                                <col>
+                              </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                              <tbody>
+                                <tr>
+                                  <td class="small text-truncate">System Cache</td>
+                                  <td class="text-center">Progresive</td>
+                                </tr>
+                                <tr>
+                                  <td class="small text-truncate">Cache Handler</td>
+                                  <td class="text-center">File</td>
+                                </tr>
+                                <tr>
+                                  <td class="small text-truncate">Platform Specific</td>
+                                  <td class="text-center"><?php echo _FPA_N; ?></td>
+                                </tr>
+                              </tbody>
+                            </table>
 
-  </div>
-  <div class="col-xs-12 col-sm-6 col-lg-4">
+                          </div><!--/.panel, .item-->
 
-    <div class="panel panel-default item" style="min-height:129px;">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4">
 
-      <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase"><?php echo _CAPTION_CACHE; ?></caption>
-        <colgroup>
-          <col class="col-xs-7 border-right">
-          <col>
-        </colgroup><!--/required to fix column sizing & employ text-truncate-->
-        <tbody>
-          <tr>
-            <td class="small text-truncate">System Cache</td>
-            <td class="text-center">Progresive</td>
-          </tr>
-          <tr>
-            <td class="small text-truncate">Cache Handler</td>
-            <td class="text-center">File</td>
-          </tr>
-          <tr>
-            <td class="small text-truncate">Platform Specific</td>
-            <td class="text-center"><?php echo _FPA_N; ?></td>
-          </tr>
-        </tbody>
-      </table>
+                          <div class="panel panel-default item" style="min-height:129px;">
 
-    </div><!--/.panel, .item-->
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <caption class="text-center text-uppercase"><?php echo _CAPTION_SESSION; ?></caption>
+                              <colgroup>
+                                <col class="col-xs-7 border-right">
+                                <col>
+                              </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                              <tbody>
+                                <tr>
+                                  <td class="small text-truncate">Handler</td>
+                                  <td class="text-center">Database</td>
+                                </tr>
+                                <tr>
+                                  <td class="small text-truncate">Lifetime</td>
+                                  <td class="text-center">30</td>
+                                </tr>
+                                <tr>
+                                  <td class="small text-truncate">Shared</td>
+                                  <td class="text-center"><?php echo _FPA_N; ?></td>
+                                </tr>
+                              </tbody>
+                            </table>
 
-  </div>
-  <div class="col-xs-12 col-sm-6 col-lg-4">
+                          </div><!--/.panel, .item-->
 
-    <div class="panel panel-default item" style="min-height:129px;">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4">
 
-      <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase"><?php echo _CAPTION_SESSION; ?></caption>
-        <colgroup>
-          <col class="col-xs-7 border-right">
-          <col>
-        </colgroup><!--/required to fix column sizing & employ text-truncate-->
-        <tbody>
-          <tr>
-            <td class="small text-truncate">Handler</td>
-            <td class="text-center">Database</td>
-          </tr>
-          <tr>
-            <td class="small text-truncate">Lifetime</td>
-            <td class="text-center">30</td>
-          </tr>
-          <tr>
-            <td class="small text-truncate">Shared</td>
-            <td class="text-center"><?php echo _FPA_N; ?></td>
-          </tr>
-        </tbody>
-      </table>
+                          <div class="panel panel-default item" style="min-height:129px;">
 
-    </div><!--/.panel, .item-->
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <caption class="text-center text-uppercase"><?php echo _CAPTION_DEBUG; ?></caption>
+                              <colgroup>
+                                <col class="col-xs-7 border-right">
+                                <col>
+                              </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                              <tbody>
+                                <tr>
+                                  <td class="small text-truncate">Error Reporting</td>
+                                  <td class="text-center">Maximum</td>
+                                </tr>
+                                <tr class="border-top">
+                                  <td class="small text-truncate">Site Debug</td>
+                                  <td class="text-center"><?php echo _FPA_N; ?></td>
+                                </tr>
+                                <tr>
+                                  <td class="small text-truncate">Lang Debug</td>
+                                  <td class="text-center"><?php echo _FPA_N; ?></td>
+                                </tr>
+                              </tbody>
+                            </table>
 
-  </div>
-  <div class="col-xs-12 col-sm-6 col-lg-4">
+                          </div><!--/.panel, .item-->
 
-    <div class="panel panel-default item" style="min-height:129px;">
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-lg-4">
 
-      <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase"><?php echo _CAPTION_DEBUG; ?></caption>
-        <colgroup>
-          <col class="col-xs-7 border-right">
-          <col>
-        </colgroup><!--/required to fix column sizing & employ text-truncate-->
-        <tbody>
-          <tr>
-            <td class="small text-truncate">Error Reporting</td>
-            <td class="text-center">Maximum</td>
-          </tr>
-          <tr class="border-top">
-            <td class="small text-truncate">Site Debug</td>
-            <td class="text-center"><?php echo _FPA_N; ?></td>
-          </tr>
-          <tr>
-            <td class="small text-truncate">Lang Debug</td>
-            <td class="text-center"><?php echo _FPA_N; ?></td>
-          </tr>
-        </tbody>
-      </table>
+                          <div class="panel panel-default item" style="min-height:129px;">
 
-    </div><!--/.panel, .item-->
+                            <table class="table table-condensed" style="table-layout:fixed;">
+                              <caption class="text-center text-uppercase"><?php echo _CAPTION_FEAT; ?></caption>
+                              <colgroup>
+                                <col class="col-xs-7 border-right">
+                                <col>
+                              </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                              <tbody>
+                                <tr>
+                                  <td class="small text-truncate">GZip Enabled</td>
+                                  <td class="text-center"><?php echo _FPA_Y; ?></td>
+                                </tr>
+                                <tr class="border-top">
+                                  <td class="small text-truncate">FTP Enabled</td>
+                                  <td class="text-center"><?php echo _FPA_N; ?></td>
+                                </tr>
+                                <tr>
+                                  <td class="small text-truncate">Unicode Aliases</td>
+                                  <td class="text-center"><?php echo _FPA_N; ?></td>
+                                </tr>
+                              </tbody>
+                            </table>
 
-  </div>
-  <div class="col-xs-12 col-sm-6 col-lg-4">
+                          </div><!--/.panel, .item-->
 
-    <div class="panel panel-default item" style="min-height:129px;">
-
-      <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase"><?php echo _CAPTION_FEAT; ?></caption>
-        <colgroup>
-          <col class="col-xs-7 border-right">
-          <col>
-        </colgroup><!--/required to fix column sizing & employ text-truncate-->
-        <tbody>
-          <tr>
-            <td class="small text-truncate">GZip Enabled</td>
-            <td class="text-center"><?php echo _FPA_Y; ?></td>
-          </tr>
-          <tr class="border-top">
-            <td class="small text-truncate">FTP Enabled</td>
-            <td class="text-center"><?php echo _FPA_N; ?></td>
-          </tr>
-          <tr>
-            <td class="small text-truncate">Unicode Aliases</td>
-            <td class="text-center"><?php echo _FPA_N; ?></td>
-          </tr>
-        </tbody>
-      </table>
-
-    </div><!--/.panel, .item-->
-
-  </div>
-</div>
+                        </div>
+                      </div>
 
 
 
@@ -1761,14 +1754,14 @@ echo $info;
 
                   <div class="row content-container">
 
-  <!-- TODO (RussW): config not found -->
-  <div class="col-xs-12">
-    <div class="alert alert-warning text-center text-capitalize">
-      <h4 class="margin-remove-top"><?php echo _FPA_WARNING_ICON .'<br />'. _RES .' '. _RES_MESSAGE_WARNING; ?></h4>
-      <?php echo _RES_MESSAGE_NOTCONN .' '. _RES_MESSAGE_NOTESTS; ?>
-    </div>
-  </div>
-  <!-- END: config not found -->
+                    <!-- TODO (RussW): config not found -->
+                    <div class="col-xs-12">
+                      <div class="alert alert-warning text-center text-capitalize">
+                        <h4 class="margin-remove-top"><?php echo _FPA_WARNING_ICON .'<br />'. _RES .' '. _RES_MESSAGE_WARNING; ?></h4>
+                        <?php echo _RES_MESSAGE_NOTCONN .' '. _RES_MESSAGE_NOTESTS; ?>
+                      </div>
+                    </div>
+                    <!-- END: config not found -->
 
                     <div class="col-xs-12 col-lg-6 content-item">
 
@@ -2431,14 +2424,14 @@ echo $info;
 
                   <div class="row content-container">
 
-  <!-- TODO (RussW): config not found -->
-  <div class="col-xs-12">
-    <div class="alert alert-warning text-center text-capitalize">
-      <h4 class="margin-remove-top"><?php echo _FPA_WARNING_ICON .'<br />'. _RES .' '. _RES_MESSAGE_WARNING; ?></h4>
-      <?php echo _FPA_INSTANCE .' '. _RES_MESSAGE_NOTFOUND .' '. _RES_MESSAGE_NOTESTS; ?>
-    </div>
-  </div>
-  <!-- END: config not found -->
+                    <!-- TODO (RussW): config not found -->
+                    <div class="col-xs-12">
+                      <div class="alert alert-warning text-center text-capitalize">
+                        <h4 class="margin-remove-top"><?php echo _FPA_WARNING_ICON .'<br />'. _RES .' '. _RES_MESSAGE_WARNING; ?></h4>
+                        <?php echo _FPA_INSTANCE .' '. _RES_MESSAGE_NOTFOUND .' '. _RES_MESSAGE_NOTESTS; ?>
+                      </div>
+                    </div>
+                    <!-- END: config not found -->
 
                     <div class="col-xs-12 content-item">
 
@@ -2719,14 +2712,14 @@ echo $info;
 
                   <div class="row content-container">
 
-  <!-- TODO (RussW): config not found -->
-  <div class="col-xs-12">
-    <div class="alert alert-warning text-center text-capitalize">
-      <h4 class="margin-remove-top"><?php echo _FPA_WARNING_ICON .'<br />'. _RES .' '. _RES_MESSAGE_WARNING; ?></h4>
-      <?php echo _FPA_INSTANCE .' '. _RES_MESSAGE_NOTFOUND .' '. _RES_MESSAGE_NOTESTS; ?>
-    </div>
-  </div>
-  <!-- END: config not found -->
+                    <!-- TODO (RussW): config not found -->
+                    <div class="col-xs-12">
+                      <div class="alert alert-warning text-center text-capitalize">
+                        <h4 class="margin-remove-top"><?php echo _FPA_WARNING_ICON .'<br />'. _RES .' '. _RES_MESSAGE_WARNING; ?></h4>
+                        <?php echo _FPA_INSTANCE .' '. _RES_MESSAGE_NOTFOUND .' '. _RES_MESSAGE_NOTESTS; ?>
+                      </div>
+                    </div>
+                    <!-- END: config not found -->
 
 
                     <div class="col-xs-12 content-item">

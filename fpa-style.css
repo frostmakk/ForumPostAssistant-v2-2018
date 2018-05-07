@@ -383,7 +383,14 @@ textarea#postOUTPUT {
     display: flex;
     align-items: stretch;
 }
-
+.sidebar-fpa-small {
+  border: 2px solid #fff;
+  padding: 8px;
+  border-radius: 50%;
+  width: 58px;
+  height: 58px;
+  line-height: 1.8;
+}
 #sidebar {
     min-width: 250px;
     max-width: 250px;
