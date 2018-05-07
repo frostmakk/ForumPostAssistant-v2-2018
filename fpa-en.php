@@ -91,6 +91,14 @@
          );
 
 
+  /* NOTE (FPA): LANGUAGE - FPA specific messages. Errors, warning & notices
+   *
+   */
+  define ( '_RES_MESSAGE_WARNING', 'Notice' );  // RussW : new 07/05/2018
+  define ( '_RES_MESSAGE_NOTFOUND', 'Not Found.' );  // RussW : new 07/05/2018
+  define ( '_RES_MESSAGE_NOTCONN', 'Unable To Connect.' );  // RussW : new 07/05/2018
+  define ( '_RES_MESSAGE_NOTESTS', 'No FPA test routines were possible.' );  // RussW : new 07/05/2018
+
 
   // remove script notice content - Phil 4-17-12
   define ( '_FPA_DELNOTE_LN1', 'Security Notice' );
@@ -144,10 +152,10 @@
   define ( '_SECTION_APPLICATION_EXPLAIN', 'During the Application Discovery routines, FPA attempts to detect a Joomla! installation, determine the version and collect information about how it is configured. Where possible, FPA will also try to access the Joomla! database and collect configuration, performance and schema information.' );
   define ( '_SECTION_APPLICATION_DESCRIBE', 'The Application Discovery section attempts to detect any installed Joomla! instance and confirm any relevant or related configuration and database information.' );
   define ( '_SECTION_APPLICATION_HEADING_INSTANCE', 'Installed Instance' );
-  define ( '_SECTION_APPLICATION_DESCRIBE_INSTANCE', 'FPA is trying to detect a Joomla! installation and determine the basic configuration parameters.' );
-  define ( '_SECTION_APPLICATION_HEADING_DBCONFIG', 'DataBase Configuration' );
+  define ( '_SECTION_APPLICATION_DESCRIBE_INSTANCE', 'FPA attempts to detect a Joomla! instance and, if it is installed, determine the basic configuration parameters.' );
+  define ( '_SECTION_APPLICATION_HEADING_DBCONFIG', 'Database Configuration' );
   define ( '_SECTION_APPLICATION_DESCRIBE_DBCONFIG', 'The database setup & configuration effects site presentation and performance.' );
-  define ( '_SECTION_APPLICATION_HEADING_DBTABLES', 'DataBase Structure' );
+  define ( '_SECTION_APPLICATION_HEADING_DBTABLES', 'Database Structure' );
   define ( '_SECTION_APPLICATION_DESCRIBE_DBTABLES', 'The database schema and table structure are the foundation of the website component and conent storage.' );
 
   define ( '_SECTION_HOSTING_HEADING', 'Hosting Discovery' );
@@ -187,6 +195,52 @@
   define ( '_SECTION_LEGEND_DESCRIBE_PRIVACY', 'Privacy Settings Are Protecting Sensitive Data' );
   define ( '_SECTION_LEGEND_DESCRIBE_NOTE', 'Denotes An Active Or Currently Selected Item' );
 
+  define ( '_CAPTION_PHP', 'PHP' );
+  define ( '_CAPTION_DB', 'Database' );
+  define ( '_CAPTION_MYSQL', 'MySQL' );
+  define ( '_CAPTION_MYSQLI', 'MySQLi' );
+  define ( '_CAPTION_MONGO', 'MongoDB' );
+  define ( '_CAPTION_FUNC', 'Functions' );
+  define ( '_CAPTION_CMS', 'CMS' );
+  define ( '_CAPTION_PLATFORM', 'Platform' );
+  define ( '_CAPTION_CONFIG', 'Config' );
+  define ( '_CAPTION_MODESET', 'Modeset' );
+  define ( '_CAPTION_OWNERSHIP', 'Ownership' );
+  define ( '_CAPTION_SEFURL', 'SEF URL\'s' );
+  define ( '_CAPTION_CACHE', 'Caching' );
+  define ( '_CAPTION_SESSION', 'Session' );
+  define ( '_CAPTION_DEBUG', 'Debugging' );
+  define ( '_CAPTION_FEAT', 'Features' );
+  define ( '_CAPTION_PERF', 'Performance' );
+  define ( '_CAPTION_TABLES', 'Tables' );
+  define ( '_CAPTION_ENV', 'Environment' );
+  define ( '_CAPTION_SERVER', 'Server' );
+  define ( '_CAPTION_PHP_MISSING', 'Potential Missing Extensions' );
+  define ( '_CAPTION_CHECKS', 'Checks' );
+  define ( '_CAPTION_SITE', 'Site' );
+  define ( '_CAPTION_ADMIN', 'Administrator' );
+
+  define ( '_TABLE_PERMS_MODE', 'Mode' );
+  define ( '_TABLE_PERMS_FOLDER', 'Folder' );
+  define ( '_TABLE_DB_TABLE', 'Table' );
+  define ( '_TABLE_DB_RCDS', 'Rcds' );
+  define ( '_TABLE_DB_AVGL', 'Avg.<br />Length' );
+  define ( '_TABLE_DB_FRAG', 'Frag\'mt' );
+  define ( '_TABLE_DB_ENGINE', 'Engine' );
+  define ( '_TABLE_DB_UPDATED', 'Updated' );
+  define ( '_TABLE_DB_CHECKED', 'Checked' );
+  define ( '_TABLE_COMMON_COLLATION', 'Collation' );
+  define ( '_TABLE_COMMON_SIZE', 'Size' );
+  define ( '_TABLE_COMMON_WRITABLE', 'Writable' );
+  define ( '_TABLE_COMMON_OWNER', 'Owner' );
+  define ( '_TABLE_COMMON_GROUP', 'Group' );
+  define ( '_TABLE_COMMON_ENABLED', 'Enabled' );
+  define ( '_TABLE_COMMON_NAME', 'Name' );
+  define ( '_TABLE_COMMON_AUTHOR', 'Author' );
+  define ( '_TABLE_COMMON_ADDRESS', 'Address' );
+  define ( '_TABLE_COMMON_CREATED', 'Created' );
+  define ( '_TABLE_COMMON_TYPE', 'Type' );
+  define ( '_TABLE_COMMON_OVERRIDES', 'Overrides' );
 
   define ( '_GDPR_HEADING', 'EU GDPR & e-Privacy Directives' );
   define ( '_GDPR_MESSAGE', '<p>Whilst the FPA script does collect information about your website, it is not sent to, or stored in any other location by FPA.</p>
@@ -203,6 +257,7 @@
                              by FPA may disclose host or server information that could make your website and location identifiable, revealing any subsequent personal information
                              made available when viewed. If this is of concern, you may select a stricter FPA Privacy setting to minimise such information disclosures.</p>'
          );
+
 
 
 
@@ -258,7 +313,9 @@
   define ( '_FPA_Y', 'Yes' );
   define ( '_FPA_N', 'No' );
   define ( '_FPA_U', 'Unknown' );
+  define ( '_FPA_NA', 'N/A' );
   define ( '_FPA_A', 'Active' ); // RussW : (active/current/selected) new v2.0.0
+  define ( '_FPA_INSTANCE', 'Instance' );
   define ( '_FPA_Y_ICON', '<i class="glyphicon glyphicon-ok-sign"></i>' ); // RussW : (yes/good/positive) new v2.0.0
   define ( '_FPA_N_ICON', '<i class="glyphicon glyphicon-remove-sign"></i>' ); // RussW : (no/error/negative) new v2.0.0
   define ( '_FPA_U_ICON', '<i class="glyphicon glyphicon-question-sign"></i>' ); // RussW : (unknown) new v2.0.0
@@ -1084,22 +1141,22 @@
                   <div class="row content-container">
                     <div class="col-xs-12 col-md-4 content-item">
 
-                      <div class="panel panel-default item" style="min-height:153px;">
+                      <div class="panel panel-default item" style="min-height:159px;">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">PHP</caption>
+                          <caption class="text-center text-uppercase"><?php echo _CAPTION_PHP; ?></caption>
                           <colgroup>
-                            <col class="col-xs-7">
+                            <col class="col-xs-7 border-right">
                             <col>
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
                               <td class="small text-truncate">PHP Version</td>
-                              <td class="small text-center"><strong><?php echo _FPA_VER_SHORT; ?>5.6.30</strong></td>
+                              <td class="text-center"><strong><?php echo _FPA_VER_SHORT; ?>5.6.30</strong></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">PHP API</td>
-                              <td class="small text-center">CGI-FCGI</td>
+                              <td class="text-center">CGI-FCGI</td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">MySQL Support dfdsfds hfghgfhfd</td>
@@ -1117,22 +1174,22 @@
                     </div><!--/.content-item-->
                     <div class="col-xs-12 col-md-4 content-item">
 
-                      <div class="panel panel-default item" style="min-height:153px;">
+                      <div class="panel panel-default item" style="min-height:159px;">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">DATABASE</caption>
+                          <caption class="text-center text-uppercase"><?php echo _CAPTION_DB; ?></caption>
                           <colgroup>
-                            <col class="col-xs-7">
+                            <col class="col-xs-7 border-right">
                             <col>
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
                               <td class="small text-truncate">PHP Version</td>
-                              <td class="small text-center"><strong><?php echo _FPA_VER_SHORT; ?>5.6.30</strong></td>
+                              <td class="text-center"><strong><?php echo _FPA_VER_SHORT; ?>5.6.30</strong></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">PHP API</td>
-                              <td class="small text-center">CGI-FCGI</td>
+                              <td class="text-center">CGI-FCGI</td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">MySQL Support dgdfg gdgdf gfdsgs</td>
@@ -1150,22 +1207,22 @@
                     </div><!--/.content-item-->
                     <div class="col-xs-12 col-md-4 content-item">
 
-                      <div class="panel panel-default item" style="min-height:153px;">
+                      <div class="panel panel-default item" style="min-height:159px;">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">DATABASE</caption>
+                          <caption class="text-center text-uppercase"><?php echo _CAPTION_FUNC; ?></caption>
                           <colgroup>
-                            <col class="col-xs-7">
+                            <col class="col-xs-7 border-right">
                             <col>
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
                               <td class="small text-truncate">PHP Version</td>
-                              <td class="small text-center"><strong><?php echo _FPA_VER_SHORT; ?>5.6.30</strong></td>
+                              <td class="text-center"><strong><?php echo _FPA_VER_SHORT; ?>5.6.30</strong></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">PHP API</td>
-                              <td class="small text-center">CGI-FCGI</td>
+                              <td class="text-center">CGI-FCGI</td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">MySQL Support</td>
@@ -1255,21 +1312,38 @@
                       ?>
 
 <div class="row clearfix">
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:111px;">
+  <!-- TODO (RussW): config not found -->
+  <div class="col-xs-12">
+    <div class="alert alert-warning text-center text-capitalize">
+      <h4 class="margin-remove-top"><?php echo _FPA_WARNING_ICON .'<br />'. _RES .' '. _RES_MESSAGE_WARNING; ?></h4>
+      <?php echo _FPA_INSTANCE .' '. _RES_MESSAGE_NOTFOUND .' '. _RES_MESSAGE_NOTESTS; ?>
+    </div>
+  </div>
+  <!-- END: config not found -->
+
+  <div class="col-xs-12 col-sm-6">
+
+    <div class="panel panel-default item" style="min-height:129px;">
 
       <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase">CMS</caption>
+        <caption class="text-center text-uppercase"><?php echo _CAPTION_CMS; ?></caption>
         <colgroup>
-          <col class="col-xs-12">
+          <col class="col-xs-7 border-right">
+          <col class="">
         </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
           <tr>
-            <td class="small text-center"><strong>v3.8.7</strong></td>
+            <td class="small">Found</td>
+            <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
           </tr>
           <tr>
-            <td class="small text-center bg-success text-success">Stable</td>
+            <td class="small">Version</td>
+            <td class="text-center"><strong>v3.8.7</strong></td>
+          </tr>
+          <tr>
+            <td class="small">Build</td>
+            <td class="text-center bg-success text-success">Stable</td>
           </tr>
         </tbody>
       </table>
@@ -1277,21 +1351,28 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+  <div class="col-xs-12 col-sm-6">
 
-    <div class="panel panel-default item" style="min-height:118px;">
+    <div class="panel panel-default item" style="min-height:129px;">
 
       <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase">PLATFORM</caption>
+        <caption class="text-center text-uppercase"><?php echo _CAPTION_PLATFORM; ?></caption>
         <colgroup>
-          <col class="col-xs-12">
+          <col class="col-xs-7 border-right">
+          <col class="">
         </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
           <tr>
-            <td class="small text-center"><strong>v13.1.0</strong></td>
+            <td class="small">Found</td>
+            <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
           </tr>
           <tr>
-            <td class="small text-center bg-success text-success col-xs-4">Stable</td>
+            <td class="small">Version</td>
+            <td class="text-center"><strong>v13.1.0</strong></td>
+          </tr>
+          <tr>
+            <td class="small">Build</td>
+            <td class="text-center bg-success text-success col-xs-4">Stable</td>
           </tr>
         </tbody>
       </table>
@@ -1299,28 +1380,28 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+  <div class="col-xs-12 col-sm-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:118px;">
+    <div class="panel panel-default item" style="min-height:129px;">
 
       <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase">CONFIG</caption>
+        <caption class="text-center text-uppercase"><?php echo _CAPTION_CONFIG; ?></caption>
         <colgroup>
-          <col class="col-xs-7">
+          <col class="col-xs-7 border-right">
           <col>
         </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
           <tr>
-            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
-            <td class="small text-center">Y</td>
-          </tr>
-          <tr class="border-top">
-            <td class="small text-truncate">Suffix</td>
-            <td class="small text-center">N</td>
+            <td class="small text-truncate">Exists</td>
+            <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
           </tr>
           <tr>
-            <td class="small text-truncate">ReWrite</td>
-            <td class="small text-center">Y</td>
+            <td class="small text-truncate">Valid</td>
+            <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
+          </tr>
+          <tr>
+            <td class="small text-truncate">Matches CMS</td>
+            <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
           </tr>
         </tbody>
       </table>
@@ -1328,28 +1409,29 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+  <div class="col-xs-12 col-sm-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:118px;">
+    <div class="panel panel-default item" style="min-height:129px;">
 
       <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase">CONFIG</caption>
+        <caption class="text-center text-uppercase"><?php echo _CAPTION_CONFIG .' '. _CAPTION_MODESET; ?></caption>
         <colgroup>
-          <col class="col-xs-7">
+          <col class="col-xs-7 border-right">
           <col>
         </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
           <tr>
-            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
-            <td class="small text-center">Y</td>
-          </tr>
-          <tr class="border-top">
-            <td class="small text-truncate">Suffix</td>
-            <td class="small text-center">N</td>
+            <td class="small text-truncate">Permissions</td>
+            <td class="text-center">444</td>
           </tr>
           <tr>
-            <td class="small text-truncate">ReWrite</td>
-            <td class="small text-center">Y</td>
+            <td class="small text-truncate">Transposition</td>
+            <td class="text-center">r-- r-- r--</td>
+          </tr>
+
+          <tr>
+            <td class="small text-truncate">Effective Mode</td>
+            <td class="text-center">Read-Only</td>
           </tr>
         </tbody>
       </table>
@@ -1357,28 +1439,24 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+  <div class="col-xs-12 col-sm-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:118px;">
+    <div class="panel panel-default item" style="min-height:129px;">
 
       <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase">CONFIG</caption>
+        <caption class="text-center text-uppercase"><?php echo _CAPTION_CONFIG .' '. _CAPTION_OWNERSHIP; ?></caption>
         <colgroup>
-          <col class="col-xs-7">
+          <col class="col-xs-7 border-right">
           <col>
         </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
           <tr>
-            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
-            <td class="small text-center">Y</td>
+            <td class="small text-truncate">Owner</td>
+            <td class="text-center">hotmangome</td>
           </tr>
-          <tr class="border-top">
-            <td class="small text-truncate">Suffix</td>
-            <td class="small text-center">N</td>
-          </tr>
-          <tr>
-            <td class="small text-truncate">ReWrite</td>
-            <td class="small text-center">Y</td>
+          <tr class="border-bottom">
+            <td class="small text-truncate">Group</td>
+            <td class="text-center">hotmangome</td>
           </tr>
         </tbody>
       </table>
@@ -1386,28 +1464,28 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+  <div class="col-xs-12 col-sm-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:118px;">
+    <div class="panel panel-default item" style="min-height:129px;">
 
       <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase">CONFIG</caption>
+        <caption class="text-center text-uppercase"><?php echo _CAPTION_SITE .' '. _CAPTION_CONFIG; ?></caption>
         <colgroup>
-          <col class="col-xs-7">
+          <col class="col-xs-7 border-right">
           <col>
         </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
           <tr>
-            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
-            <td class="small text-center">Y</td>
-          </tr>
-          <tr class="border-top">
-            <td class="small text-truncate">Suffix</td>
-            <td class="small text-center">N</td>
+            <td class="small text-truncate">Online</td>
+            <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
           </tr>
           <tr>
-            <td class="small text-truncate">ReWrite</td>
-            <td class="small text-center">Y</td>
+            <td class="small text-truncate">Force SSL</td>
+            <td class="text-center"><?php echo _FPA_N; ?></td>
+          </tr>
+          <tr>
+            <td class="small text-truncate">Root Override</td>
+            <td class="text-center"><?php echo _FPA_N; ?></td>
           </tr>
         </tbody>
       </table>
@@ -1415,28 +1493,28 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+  <div class="col-xs-12 col-sm-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:118px;">
+    <div class="panel panel-default item" style="min-height:129px;">
 
       <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase">CONFIG</caption>
+        <caption class="text-center text-uppercase"><?php echo _CAPTION_SEFURL; ?></caption>
         <colgroup>
-          <col class="col-xs-7">
+          <col class="col-xs-7 border-right">
           <col>
         </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
           <tr>
-            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
-            <td class="small text-center">Y</td>
+            <td class="small text-truncate">Enabled</td>
+            <td class="text-center"><?php echo _FPA_Y; ?></td>
           </tr>
-          <tr class="border-top">
+          <tr>
             <td class="small text-truncate">Suffix</td>
-            <td class="small text-center">N</td>
+            <td class="text-center"><?php echo _FPA_N; ?></td>
           </tr>
           <tr>
             <td class="small text-truncate">ReWrite</td>
-            <td class="small text-center">Y</td>
+            <td class="text-center"><?php echo _FPA_Y; ?></td>
           </tr>
         </tbody>
       </table>
@@ -1444,28 +1522,28 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+  <div class="col-xs-12 col-sm-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:118px;">
+    <div class="panel panel-default item" style="min-height:129px;">
 
       <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase">CONFIG</caption>
+        <caption class="text-center text-uppercase"><?php echo _CAPTION_CACHE; ?></caption>
         <colgroup>
-          <col class="col-xs-7">
+          <col class="col-xs-7 border-right">
           <col>
         </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
           <tr>
-            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
-            <td class="small text-center">Y</td>
-          </tr>
-          <tr class="border-top">
-            <td class="small text-truncate">Suffix</td>
-            <td class="small text-center">N</td>
+            <td class="small text-truncate">System Cache</td>
+            <td class="text-center">Progresive</td>
           </tr>
           <tr>
-            <td class="small text-truncate">ReWrite</td>
-            <td class="small text-center">Y</td>
+            <td class="small text-truncate">Cache Handler</td>
+            <td class="text-center">File</td>
+          </tr>
+          <tr>
+            <td class="small text-truncate">Platform Specific</td>
+            <td class="text-center"><?php echo _FPA_N; ?></td>
           </tr>
         </tbody>
       </table>
@@ -1473,28 +1551,28 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+  <div class="col-xs-12 col-sm-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:118px;">
+    <div class="panel panel-default item" style="min-height:129px;">
 
       <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase">CONFIG</caption>
+        <caption class="text-center text-uppercase"><?php echo _CAPTION_SESSION; ?></caption>
         <colgroup>
-          <col class="col-xs-7">
+          <col class="col-xs-7 border-right">
           <col>
         </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
           <tr>
-            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
-            <td class="small text-center">Y</td>
-          </tr>
-          <tr class="border-top">
-            <td class="small text-truncate">Suffix</td>
-            <td class="small text-center">N</td>
+            <td class="small text-truncate">Handler</td>
+            <td class="text-center">Database</td>
           </tr>
           <tr>
-            <td class="small text-truncate">ReWrite</td>
-            <td class="small text-center">Y</td>
+            <td class="small text-truncate">Lifetime</td>
+            <td class="text-center">30</td>
+          </tr>
+          <tr>
+            <td class="small text-truncate">Shared</td>
+            <td class="text-center"><?php echo _FPA_N; ?></td>
           </tr>
         </tbody>
       </table>
@@ -1502,28 +1580,28 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+  <div class="col-xs-12 col-sm-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:118px;">
+    <div class="panel panel-default item" style="min-height:129px;">
 
       <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase">CONFIG</caption>
+        <caption class="text-center text-uppercase"><?php echo _CAPTION_DEBUG; ?></caption>
         <colgroup>
-          <col class="col-xs-7">
+          <col class="col-xs-7 border-right">
           <col>
         </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
           <tr>
-            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
-            <td class="small text-center">Y</td>
+            <td class="small text-truncate">Error Reporting</td>
+            <td class="text-center">Maximum</td>
           </tr>
           <tr class="border-top">
-            <td class="small text-truncate">Suffix</td>
-            <td class="small text-center">N</td>
+            <td class="small text-truncate">Site Debug</td>
+            <td class="text-center"><?php echo _FPA_N; ?></td>
           </tr>
           <tr>
-            <td class="small text-truncate">ReWrite</td>
-            <td class="small text-center">Y</td>
+            <td class="small text-truncate">Lang Debug</td>
+            <td class="text-center"><?php echo _FPA_N; ?></td>
           </tr>
         </tbody>
       </table>
@@ -1531,57 +1609,28 @@
     </div><!--/.panel, .item-->
 
   </div>
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+  <div class="col-xs-12 col-sm-6 col-lg-4">
 
-    <div class="panel panel-default item" style="min-height:118px;">
+    <div class="panel panel-default item" style="min-height:129px;">
 
       <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase">CONFIG</caption>
+        <caption class="text-center text-uppercase"><?php echo _CAPTION_FEAT; ?></caption>
         <colgroup>
-          <col class="col-xs-7">
+          <col class="col-xs-7 border-right">
           <col>
         </colgroup><!--/required to fix column sizing & employ text-truncate-->
         <tbody>
           <tr>
-            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
-            <td class="small text-center">Y</td>
+            <td class="small text-truncate">GZip Enabled</td>
+            <td class="text-center"><?php echo _FPA_Y; ?></td>
           </tr>
           <tr class="border-top">
-            <td class="small text-truncate">Suffix</td>
-            <td class="small text-center">N</td>
+            <td class="small text-truncate">FTP Enabled</td>
+            <td class="text-center"><?php echo _FPA_N; ?></td>
           </tr>
           <tr>
-            <td class="small text-truncate">ReWrite</td>
-            <td class="small text-center">Y</td>
-          </tr>
-        </tbody>
-      </table>
-
-    </div><!--/.panel, .item-->
-
-  </div>
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-
-    <div class="panel panel-default item" style="min-height:118px;">
-
-      <table class="table table-condensed" style="table-layout:fixed;">
-        <caption class="text-center text-uppercase">CONFIG</caption>
-        <colgroup>
-          <col class="col-xs-7">
-          <col>
-        </colgroup><!--/required to fix column sizing & employ text-truncate-->
-        <tbody>
-          <tr>
-            <td class="small text-truncate">enabledfg gfdgdfg bghfgh</td>
-            <td class="small text-center">Y</td>
-          </tr>
-          <tr class="border-top">
-            <td class="small text-truncate">Suffix</td>
-            <td class="small text-center">N</td>
-          </tr>
-          <tr>
-            <td class="small text-truncate">ReWrite</td>
-            <td class="small text-center">Y</td>
+            <td class="small text-truncate">Unicode Aliases</td>
+            <td class="text-center"><?php echo _FPA_N; ?></td>
           </tr>
         </tbody>
       </table>
@@ -1624,32 +1673,69 @@
 
 
                   <div class="row content-container">
-                    <div class="col-xs-12 col-md-6 content-item">
 
-                      <div class="panel panel-default item">
+  <!-- TODO (RussW): config not found -->
+  <div class="col-xs-12">
+    <div class="alert alert-warning text-center text-capitalize">
+      <h4 class="margin-remove-top"><?php echo _FPA_WARNING_ICON .'<br />'. _RES .' '. _RES_MESSAGE_WARNING; ?></h4>
+      <?php echo _RES_MESSAGE_NOTCONN .' '. _RES_MESSAGE_NOTESTS; ?>
+    </div>
+  </div>
+  <!-- END: config not found -->
+
+                    <div class="col-xs-12 col-lg-6 content-item">
+
+                      <div class="panel panel-default item" style="min-height:347px;">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">1DataBase (+DB Type)</caption>
+                          <caption class="text-center text-uppercase"><strong>(+DBType)</strong> <?php echo _CAPTION_DB; ?></caption>
                           <colgroup>
-                            <col class="col-xs-7">
+                            <col class="col-xs-5 bg-muted border-right">
                             <col>
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
-                              <td class="small text-truncate">PHP Version</td>
-                              <td class="text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                              <td class="small text-truncate" rowspan="2">(+DBType) Version</td>
+                              <td class="">
+                                Server: <?php echo _FPA_VER_SHORT; ?>5.6.30<br />
+                              </td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate">PHP API</td>
-                              <td class="text-center small bg-info">CGI-FCGI</td>
+                              <td class="">
+                                Client: <?php echo _FPA_VER_SHORT; ?>5.6.30
+                              </td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate text-success">MySQL Support</td>
-                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">Database Hostname</td>
+                              <td class="">localhost</td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate text-danger">MySQLi Support</td>
-                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                              <td class="small text-truncate">Connection Type</td>
+                              <td class="">(Local) Localhost via UNIX socket</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">PHP Support</td>
+                              <td class=""><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Connected</td>
+                              <td class=""><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">(+DBType) Character Set</td>
+                              <td class="">UTF8</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Default Character Set</td>
+                              <td class="">UTF8</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Database Collation</td>
+                              <td class="">utf8_general_ci</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Database Size</td>
+                              <td class="">4.94 MiB</td>
                             </tr>
                           </tbody>
                         </table>
@@ -1657,32 +1743,52 @@
                       </div><!--/.panel, item-->
 
                     </div><!--/.content-item-->
-                    <div class="col-xs-12 col-md-6 content-item">
+                    <div class="col-xs-12 col-lg-6 content-item">
 
-                      <div class="panel panel-default item">
+                      <div class="panel panel-default item" style="min-height:347px;">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">DataBase Performance</caption>
+                          <caption class="text-center text-uppercase"><strong>(+DBType)</strong> <?php echo _CAPTION_PERF; ?></caption>
                           <colgroup>
-                            <col class="col-xs-7">
+                            <col class="col-xs-5 bg-muted border-right">
                             <col>
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
-                              <td class="small text-truncate">MySQL Version</td>
-                              <td class="col-xs-5 text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                              <td class="small text-truncate">Uptime</td>
+                              <td class="">115458 seconds</td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate">PHP API</td>
-                              <td class="text-center small bg-info">CGI-FCGI</td>
+                              <td class="small text-truncate">Threads</td>
+                              <td class="">3</td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate text-success">MySQL Support</td>
-                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">Questions</td>
+                              <td class="">1044710</td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate text-danger">MySQLi Support</td>
-                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                              <td class="small text-truncate">Slow Queries</td>
+                              <td class="">2</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Opens</td>
+                              <td class="">340397</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Flush Tables</td>
+                              <td class="">1</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Open Tables</td>
+                              <td class="">64</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Average Queries</td>
+                              <td class="">9.048 /Second</td>
+                            </tr>
+                            <tr class="border-bottom">
+                              <td class="small text-truncate">No. Of Tables</td>
+                              <td class="">87 Tables</td>
                             </tr>
                           </tbody>
                         </table>
@@ -1725,7 +1831,7 @@
                       <div class="panel panel-default item">
 
                         <table class="table table-condensed table-striped table-hover" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">(+DB Type_ :: Table Structure</caption>
+                          <caption class="text-center text-uppercase"><strong>(+DBType)</strong> <?php echo _CAPTION_TABLES; ?></caption>
                           <colgroup>
                             <col class="col-xs-4 border-right">
                             <col class=" border-right">
@@ -1740,16 +1846,16 @@
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
-                              <th class="">TABLE</th>
-                              <th class="text-center">SIZE</th>
-                              <th class="text-center">RCDS</th>
-                              <th class="text-center hidden-xs hidden-sm">AVG.<br />LENGTH</th>
-                              <th class="text-center hidden-xs hidden-sm">FRAG'MT<br />SIZE</th>
-                              <th class="text-center hidden-xs">ENGINE</th>
-                              <th class="text-center text-truncate">COLLATION</th>
-                              <th class="text-center text-truncate hidden-xs hidden-sm hidden-md">CREATED</th>
-                              <th class="text-center text-truncate hidden-xs hidden-sm hidden-md">UPDATED</th>
-                              <th class="text-center text-truncate hidden-xs hidden-sm hidden-md">CHECKED</th>
+                              <th class=""><?php echo _TABLE_DB_TABLE; ?></th>
+                              <th class="text-center"><?php echo _TABLE_COMMON_SIZE; ?></th>
+                              <th class="text-center"><?php echo _TABLE_DB_RCDS; ?></th>
+                              <th class="text-center hidden-xs hidden-sm"><?php echo _TABLE_DB_AVGL; ?></th>
+                              <th class="text-center hidden-xs hidden-sm"><?php echo _TABLE_DB_FRAG .'<br />'. _TABLE_COMMON_SIZE; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_DB_ENGINE; ?></th>
+                              <th class="text-center text-truncate"><?php echo _TABLE_COMMON_COLLATION; ?></th>
+                              <th class="text-center text-truncate hidden-xs hidden-sm hidden-md"><?php echo _TABLE_COMMON_CREATED; ?></th>
+                              <th class="text-center text-truncate hidden-xs hidden-sm hidden-md"><?php echo _TABLE_DB_UPDATED; ?></th>
+                              <th class="text-center text-truncate hidden-xs hidden-sm hidden-md"><?php echo _TABLE_DB_CHECKED; ?></th>
                             </tr>
                           </thead>
                           <tbody>
@@ -1846,7 +1952,7 @@
 
 
               <?php
-                /* NOTE (RussW): SUB-SECTION - PHP discovery
+                /* NOTE (RussW): SUB-SECTION - Server discovery
                  * php environement information
                  *
                  */
@@ -1863,32 +1969,76 @@
 
 
                   <div class="row content-container">
-                    <div class="col-xs-12 col-md-6 content-item">
+                    <div class="col-xs-12 col-lg-6 content-item">
 
-                      <div class="panel panel-default item">
+                      <div class="panel panel-default item" style="min-height:595px;">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">PHP Environment</caption>
+                          <caption class="text-center text-uppercase"><?php echo _CAPTION_SERVER .' '. _CAPTION_ENV; ?></caption>
                           <colgroup>
-                            <col class="col-xs-7">
+                            <col class="col-xs-5 bg-muted border-right">
                             <col class="">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
-                              <td class="small text-truncate"><span class="text-truncate">PHP Version</span></td>
-                              <td class="text-center bg-info small"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                              <td class="small text-truncate">Platform</td>
+                              <td class="">Linux</td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate">PHP API</td>
-                              <td class="text-center small bg-info">CGI-FCGI</td>
+                              <td class="small text-truncate">Kernel Version</td>
+                              <td class="">14.5.0</td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate text-success">MySQL Support</td>
-                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">Technology</td>
+                              <td class="">x86_64</td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate text-danger">MySQLi Support</td>
-                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                              <td class="small text-truncate">Hostname</td>
+                              <td class="">hmDev.lan</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Total Disk Space</td>
+                              <td class="">464.74 GiB</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Free Disk Space</td>
+                              <td class="">28.97 GiB (6%)</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Server Name</td>
+                              <td class="">dev.hotmango.me</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Server IP</td>
+                              <td class="">10.10.10.5</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Server Signature</td>
+                              <td class="">Apache</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Server Encoding</td>
+                              <td class="">gzip, deflate</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Executing User</td>
+                              <td class="">WinterRG</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Server User</td>
+                              <td class="">WinterRG</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Document Root</td>
+                              <td class="">/Users/WinterRG/WorkSpaces</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Server Temp Folder</td>
+                              <td class="">/var/tmp</td>
+                            </tr>
+                            <tr class="border-bottom">
+                              <td class="small text-truncate">Server Temp Writable</td>
+                              <td class=""><?php echo _FPA_Y_ICON; ?></td>
                             </tr>
                           </tbody>
                         </table>
@@ -1896,32 +2046,88 @@
                       </div><!--/.panel, item-->
 
                     </div><!--/.content-item-->
-                    <div class="col-xs-12 col-md-6 content-item">
+                    <div class="col-xs-12 col-lg-6 content-item">
 
-                      <div class="panel panel-default item">
+                      <div class="panel panel-default item" style="min-height:595px;">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">Host Environment</caption>
+                          <caption class="text-center text-uppercase"><?php echo _CAPTION_PHP .' '. _CAPTION_ENV; ?></caption>
                           <colgroup>
-                            <col class="col-xs-7">
+                            <col class="col-xs-5 bg-muted border-right">
                             <col class="">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
-                              <td class="small text-truncate">MySQL Version</td>
-                              <td class="small text-center bg-info"><?php echo _FPA_VER_SHORT; ?>5.6.30</td>
+                              <td class="small text-truncate">PHP Version</td>
+                              <td class=""><?php echo _FPA_VER_SHORT; ?>7.2.1</td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">PHP API</td>
-                              <td class="small text-center bg-info">CGI-FCGI</td>
+                              <td class="">CGI-FCGI</td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate text-success">MySQL Support</td>
-                              <td class="text-center bg-success"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">Display Errors</td>
+                              <td class=""><?php echo _FPA_Y_ICON; ?></td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate text-danger">MySQLi Support</td>
-                              <td class="text-center bg-danger"><?php echo _FPA_N_ICON; ?></td>
+                              <td class="small text-truncate">Error Reporting Level</td>
+                              <td class="">32767</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">MySQLi Support</td>
+                              <td class=""><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Magic Quotes</td>
+                              <td class=""><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Safe Mode</td>
+                              <td class=""><?php echo _FPA_N_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Memory Limit</td>
+                              <td class="">128 MiB</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Uploads Enabled</td>
+                              <td class=""><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Max. Upload Size</td>
+                              <td class="">32 MiB</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Max. Post Size</td>
+                              <td class="">32 MiB</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Max. Input Time</td>
+                              <td class="">60 seconds</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Max. Execution Time</td>
+                              <td class="">60 seconds</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Register Globals</td>
+                              <td class=""><?php echo _FPA_NA; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Open Base Path</td>
+                              <td class=""><?php echo _FPA_NA; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Session Path</td>
+                              <td class="">/var/tmp/php</td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Session Path Writable</td>
+                              <td class=""><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">INI File Path</td>
+                              <td class="">/opt/conf/php7.2.1.ini</td>
                             </tr>
                           </tbody>
                         </table>
@@ -1929,6 +2135,60 @@
                       </div><!--/.panel, item-->
 
                     </div><!--/.content-item-->
+                    <div class="col-xs-12 content-item">
+
+                      <div class="panel panel-default item">
+
+                        <table class="table table-condensed" style="table-layout:fixed;">
+                          <colgroup>
+                            <col class="col-xs-5 col-lg-4 bg-muted border-right">
+                            <col class="">
+                          </colgroup><!--/required to fix column sizing & employ text-truncate-->
+                          <tbody>
+                            <tr>
+                              <td class="small text-truncate">Switch User / Ownership Configuration</td>
+                              <td class="">
+                                <div class="row-fluid padding-top-sm">
+                                  <div class="col-xs-12 col-sm-6">
+                                    <div class="margin-bottom-sm padding-lg border-all text-center line-height-normal" style="min-height:77px;">
+                                      <span class=" center-block margin-bottom-sm">SUExec</span>
+                                      <span class="center-block lead margin-remove text-success"><?php echo _FPA_Y_ICON; ?></span>
+                                    </div>
+                                  </div>
+                                  <div class="col-xs-12 col-sm-6">
+                                    <div class="margin-bottom-sm padding-lg border-all text-center line-height-normal" style="min-height:77px;">
+                                      <span class=" center-block margin-bottom-sm">PHP SUExec</span>
+                                      <span class="center-block lead margin-remove text-success"><?php echo _FPA_Y_ICON; ?></span>
+                                    </div>
+                                  </div>
+                                  <div class="col-xs-12 col-sm-6">
+                                    <div class="margin-bottom-sm padding-lg border-all text-center line-height-normal" style="min-height:77px;">
+                                      <span class=" center-block margin-bottom-sm">Custom SU</span>
+                                      <span class="center-block"><?php echo _FPA_N; ?></span>
+                                    </div>
+                                  </div>
+                                  <div class="col-xs-12 col-sm-6">
+                                    <div class="margin-bottom-sm padding-lg border-all text-center line-height-normal" style="min-height:77px;">
+                                      <span class=" center-block margin-bottom-sm">Ownership Problems</span>
+                                      <span class="center-block"><?php echo _FPA_N; ?></span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Last Known PHP Error</td>
+                              <td class="small padding-lg bg-warning text-warning">
+                                [07-May-2018 11:12:22 Australia/Brisbane] PHP Notice: Undefined variable: disabled in /Users/WinterRG/WorkSpaces/Joomla! Project/FPA/ForumPostAssistant-v2-2018/fpa-en.php on line 717
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                      </div><!--/.panel, item-->
+
+                    </div><!--/.content-item-->
+
 
                     <div class="clearfix"></div><!--/responsive-column-reset-->
 
@@ -1937,7 +2197,7 @@
                       <div class="panel panel-default item">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">2Host Environment</caption>
+                          <caption class="text-center text-uppercase"><?php echo _CAPTION_PHP .' '. _SECTION_EXT_HEADING; ?> </caption>
                           <colgroup>
                             <col>
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
@@ -1991,7 +2251,7 @@
 
                                 <div class="row-fluid small">
                                   <div class="col-xs-12">
-                                    <h5>Potential Missing Extensions</h5>
+                                    <h5><?php echo _CAPTION_PHP_MISSING; ?></h5>
                                   </div>
                                   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
                                     <div class="border-all margin-bottom-sm padding-sm text-center bg-warning text-warning">mysqli</div>
@@ -2083,12 +2343,22 @@
 
 
                   <div class="row content-container">
+
+  <!-- TODO (RussW): config not found -->
+  <div class="col-xs-12">
+    <div class="alert alert-warning text-center text-capitalize">
+      <h4 class="margin-remove-top"><?php echo _FPA_WARNING_ICON .'<br />'. _RES .' '. _RES_MESSAGE_WARNING; ?></h4>
+      <?php echo _FPA_INSTANCE .' '. _RES_MESSAGE_NOTFOUND .' '. _RES_MESSAGE_NOTESTS; ?>
+    </div>
+  </div>
+  <!-- END: config not found -->
+
                     <div class="col-xs-12 content-item">
 
                       <div class="panel panel-default item">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">Core Folder Permissions</caption>
+                          <caption class="text-center text-uppercase"><?php echo _SECTION_PERMS_HEADING_CORE .' '. _SECTION_PERMS_HEADING; ?></caption>
                           <colgroup>
                             <col class="border-right">
                             <col class="border-right">
@@ -2098,11 +2368,11 @@
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
-                              <th class="text-center">MODE</th>
-                              <th class="text-center">WITEABLE</th>
-                              <th class="">FOLDER</th>
-                              <th class="text-center hidden-xs">OWNER</th>
-                              <th class="text-center hidden-xs hidden-sm">GROUP</th>
+                              <th class="text-center"><?php echo _TABLE_PERMS_MODE; ?></th>
+                              <th class="text-center"><?php echo _TABLE_COMMON_WRITABLE; ?></th>
+                              <th class=""><?php echo _TABLE_PERMS_FOLDER; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_OWNER; ?></th>
+                              <th class="text-center hidden-xs hidden-sm"><?php echo _TABLE_COMMON_GROUP; ?></th>
                             </tr>
                           </thead>
                           <tbody>
@@ -2253,7 +2523,7 @@
                       <div class="panel panel-default item">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">Elevated Permission Checks</caption>
+                          <caption class="text-center text-uppercase"><?php echo _SECTION_PERMS_HEADING_ELEV .' '. _CAPTION_CHECKS; ?></caption>
                           <colgroup>
                             <col class="border-right">
                             <col class="border-right">
@@ -2263,11 +2533,11 @@
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
-                              <th class="text-center">MODE</th>
-                              <th class="text-center">WITEABLE</th>
-                              <th class="">FOLDER</th>
-                              <th class="text-center hidden-xs">OWNER</th>
-                              <th class="text-center hidden-xs hidden-sm">GROUP</th>
+                              <th class="text-center"><?php echo _TABLE_PERMS_MODE; ?></th>
+                              <th class="text-center"><?php echo _TABLE_COMMON_WRITABLE; ?></th>
+                              <th class=""><?php echo _TABLE_PERMS_FOLDER; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_OWNER; ?></th>
+                              <th class="text-center hidden-xs hidden-sm"><?php echo _TABLE_COMMON_GROUP; ?></th>
                             </tr>
                           </thead>
                           <tbody>
@@ -2361,12 +2631,23 @@
 
 
                   <div class="row content-container">
+
+  <!-- TODO (RussW): config not found -->
+  <div class="col-xs-12">
+    <div class="alert alert-warning text-center text-capitalize">
+      <h4 class="margin-remove-top"><?php echo _FPA_WARNING_ICON .'<br />'. _RES .' '. _RES_MESSAGE_WARNING; ?></h4>
+      <?php echo _FPA_INSTANCE .' '. _RES_MESSAGE_NOTFOUND .' '. _RES_MESSAGE_NOTESTS; ?>
+    </div>
+  </div>
+  <!-- END: config not found -->
+
+
                     <div class="col-xs-12 content-item">
 
                       <div class="panel panel-default item">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">COMPONENTS :: SITE</caption>
+                          <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_COM .' :: '. _CAPTION_SITE; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
                             <col class="col-xs-8 col-sm-3 border-right">
@@ -2378,13 +2659,13 @@
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
-                              <th class="text-center text-truncate">ENABLED</th>
-                              <th class="">NAME</th>
-                              <th class="text-center">VERSION</th>
-                              <th class="text-center hidden-xs">AUTHOR</th>
-                              <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
-                              <th class="text-center hidden-xs">CREATED</th>
-                              <th class="text-center hidden-xs">TYPE</th>
+                              <th class="text-center text-truncate"><?php echo _TABLE_COMMON_ENABLED; ?></th>
+                              <th class=""><?php echo _TABLE_COMMON_NAME; ?></th>
+                              <th class="text-center"><?php echo _FPA_VER; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_AUTHOR; ?></th>
+                              <th class="text-center hidden-xs hidden-sm"><?php echo _TABLE_COMMON_ADDRESS; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_CREATED; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_TYPE; ?></th>
                             </tr>
                           </thead>
                           <tbody>
@@ -2414,7 +2695,7 @@
                       <div class="panel panel-default item">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">COMPONENTS :: ADMINISTRATOR</caption>
+                          <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_COM .' :: '. _CAPTION_ADMIN; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
                             <col class="col-xs-8 col-sm-3 border-right">
@@ -2426,13 +2707,13 @@
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
-                              <th class="text-center text-truncate">ENABLED</th>
-                              <th class="col-sm-3">NAME</th>
-                              <th class="text-center">VERSION</th>
-                              <th class="text-center hidden-xs">AUTHOR</th>
-                              <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
-                              <th class="text-center hidden-xs">CREATED</th>
-                              <th class="text-center hidden-xs">TYPE</th>
+                              <th class="text-center text-truncate"><?php echo _TABLE_COMMON_ENABLED; ?></th>
+                              <th class=""><?php echo _TABLE_COMMON_NAME; ?></th>
+                              <th class="text-center"><?php echo _FPA_VER; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_AUTHOR; ?></th>
+                              <th class="text-center hidden-xs hidden-sm"><?php echo _TABLE_COMMON_ADDRESS; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_CREATED; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_TYPE; ?></th>
                             </tr>
                           </thead>
                           <tbody>
@@ -2497,7 +2778,7 @@
                       <div class="panel panel-default item">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                              <caption class="text-center text-uppercase">MODULES :: SITE</caption>
+                              <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_MOD .' :: '. _CAPTION_SITE; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
                             <col class="col-xs-8 col-sm-3 border-right">
@@ -2509,13 +2790,13 @@
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                               <thead>
                                 <tr class="">
-                                  <th class="text-center text-truncate">ENABLED</th>
-                                  <th class="col-sm-3">NAME</th>
-                                  <th class="text-center">VERSION</th>
-                                  <th class="text-center hidden-xs">AUTHOR</th>
-                                  <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
-                                  <th class="text-center hidden-xs">CREATED</th>
-                                  <th class="text-center hidden-xs">TYPE</th>
+                              <th class="text-center text-truncate"><?php echo _TABLE_COMMON_ENABLED; ?></th>
+                              <th class=""><?php echo _TABLE_COMMON_NAME; ?></th>
+                              <th class="text-center"><?php echo _FPA_VER; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_AUTHOR; ?></th>
+                              <th class="text-center hidden-xs hidden-sm"><?php echo _TABLE_COMMON_ADDRESS; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_CREATED; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_TYPE; ?></th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -2545,7 +2826,7 @@
                       <div class="panel panel-default item">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">MODULES :: ADMINISTRATOR</caption>
+                          <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_MOD .' :: '. _CAPTION_ADMIN; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
                             <col class="col-xs-8 col-sm-3 border-right">
@@ -2557,13 +2838,13 @@
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
-                              <th class="text-center text-truncate">ENABLED</th>
-                              <th class="col-sm-3">NAME</th>
-                              <th class="text-center">VERSION</th>
-                              <th class="text-center hidden-xs">AUTHOR</th>
-                              <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
-                              <th class="text-center hidden-xs">CREATED</th>
-                              <th class="text-center hidden-xs">TYPE</th>
+                              <th class="text-center text-truncate"><?php echo _TABLE_COMMON_ENABLED; ?></th>
+                              <th class=""><?php echo _TABLE_COMMON_NAME; ?></th>
+                              <th class="text-center"><?php echo _FPA_VER; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_AUTHOR; ?></th>
+                              <th class="text-center hidden-xs hidden-sm"><?php echo _TABLE_COMMON_ADDRESS; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_CREATED; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_TYPE; ?></th>
                             </tr>
                           </thead>
                               <tbody>
@@ -2628,7 +2909,7 @@
                       <div class="panel panel-default item">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">PLUGINS :: SITE</caption>
+                          <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_PLG .' :: '. _CAPTION_SITE; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
                             <col class="col-xs-8 col-sm-3 border-right">
@@ -2640,13 +2921,13 @@
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
-                              <th class="text-center text-truncate">ENABLED</th>
-                              <th class="">NAME</th>
-                              <th class="text-center">VERSION</th>
-                              <th class="text-center hidden-xs">AUTHOR</th>
-                              <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
-                              <th class="text-center hidden-xs">CREATED</th>
-                              <th class="text-center hidden-xs">TYPE</th>
+                              <th class="text-center text-truncate"><?php echo _TABLE_COMMON_ENABLED; ?></th>
+                              <th class=""><?php echo _TABLE_COMMON_NAME; ?></th>
+                              <th class="text-center"><?php echo _FPA_VER; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_AUTHOR; ?></th>
+                              <th class="text-center hidden-xs hidden-sm"><?php echo _TABLE_COMMON_ADDRESS; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_CREATED; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_TYPE; ?></th>
                             </tr>
                           </thead>
                               <tbody>
@@ -2676,7 +2957,7 @@
                       <div class="panel panel-default item">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">PLUGINS :: ADMINISTRATOR</caption>
+                          <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_PLG .' :: '. _CAPTION_ADMIN; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
                             <col class="col-xs-8 col-sm-3 border-right">
@@ -2688,13 +2969,13 @@
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
-                              <th class="text-center text-truncate">ENABLED</th>
-                              <th class="">NAME</th>
-                              <th class="text-center">VERSION</th>
-                              <th class="text-center hidden-xs">AUTHOR</th>
-                              <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
-                              <th class="text-center hidden-xs">CREATED</th>
-                              <th class="text-center hidden-xs">TYPE</th>
+                              <th class="text-center text-truncate"><?php echo _TABLE_COMMON_ENABLED; ?></th>
+                              <th class=""><?php echo _TABLE_COMMON_NAME; ?></th>
+                              <th class="text-center"><?php echo _FPA_VER; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_AUTHOR; ?></th>
+                              <th class="text-center hidden-xs hidden-sm"><?php echo _TABLE_COMMON_ADDRESS; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_CREATED; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_TYPE; ?></th>
                             </tr>
                           </thead>
                               <tbody>
@@ -2757,7 +3038,7 @@
                       <div class="panel panel-default item">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">LIBRARIES :: SITE</caption>
+                          <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_LIB .' :: '. _CAPTION_SITE; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
                             <col class="col-xs-8 col-sm-3 border-right">
@@ -2769,13 +3050,13 @@
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
-                              <th class="text-center text-truncate">ENABLED</th>
-                              <th class="">NAME</th>
-                              <th class="text-center">VERSION</th>
-                              <th class="text-center hidden-xs">AUTHOR</th>
-                              <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
-                              <th class="text-center hidden-xs">CREATED</th>
-                              <th class="text-center hidden-xs">TYPE</th>
+                              <th class="text-center text-truncate"><?php echo _TABLE_COMMON_ENABLED; ?></th>
+                              <th class=""><?php echo _TABLE_COMMON_NAME; ?></th>
+                              <th class="text-center"><?php echo _FPA_VER; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_AUTHOR; ?></th>
+                              <th class="text-center hidden-xs hidden-sm"><?php echo _TABLE_COMMON_ADDRESS; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_CREATED; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_TYPE; ?></th>
                             </tr>
                           </thead>
                               <tbody>
@@ -2805,7 +3086,7 @@
                       <div class="panel panel-default item">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">LIBARIES :: ADMINISTRATOR</caption>
+                          <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_LIB .' :: '. _CAPTION_ADMIN; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
                             <col class="col-xs-8 col-sm-3 border-right">
@@ -2817,13 +3098,13 @@
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
-                              <th class="text-center text-truncate">ENABLED</th>
-                              <th class="">NAME</th>
-                              <th class="text-center">VERSION</th>
-                              <th class="text-center hidden-xs">AUTHOR</th>
-                              <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
-                              <th class="text-center hidden-xs">CREATED</th>
-                              <th class="text-center hidden-xs">TYPE</th>
+                              <th class="text-center text-truncate"><?php echo _TABLE_COMMON_ENABLED; ?></th>
+                              <th class=""><?php echo _TABLE_COMMON_NAME; ?></th>
+                              <th class="text-center"><?php echo _FPA_VER; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_AUTHOR; ?></th>
+                              <th class="text-center hidden-xs hidden-sm"><?php echo _TABLE_COMMON_ADDRESS; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_CREATED; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_TYPE; ?></th>
                             </tr>
                           </thead>
                               <tbody>
@@ -2888,7 +3169,7 @@
                       <div class="panel panel-default item">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">TEMPLATES :: SITE</caption>
+                          <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_TPL .' :: '. _CAPTION_SITE; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
                             <col class="col-xs-8 col-sm-3 border-right">
@@ -2900,13 +3181,13 @@
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
-                              <th class="text-center text-truncate">ENABLED</th>
-                              <th class="">NAME</th>
-                              <th class="text-center">VERSION</th>
-                              <th class="text-center hidden-xs">AUTHOR</th>
-                              <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
-                              <th class="text-center hidden-xs">CREATED</th>
-                              <th class="text-center hidden-xs">TYPE</th>
+                              <th class="text-center text-truncate"><?php echo _TABLE_COMMON_ENABLED; ?></th>
+                              <th class=""><?php echo _TABLE_COMMON_NAME; ?></th>
+                              <th class="text-center"><?php echo _FPA_VER; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_AUTHOR; ?></th>
+                              <th class="text-center hidden-xs hidden-sm"><?php echo _TABLE_COMMON_ADDRESS; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_CREATED; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_TYPE; ?></th>
                             </tr>
                           </thead>
                               <tbody>
@@ -2926,7 +3207,7 @@
                                    */
                                 ?>
                                 <tr class="hidden-xs">
-                                  <th class="small text-right">Overrides:</th>
+                                  <th class="small text-right"><?php echo _TABLE_COMMON_OVERRIDES; ?>:&nbsp;</th>
                                   <td class="small text-left" colspan="6">com_contact, com_j2store, mod_j2store_cart, plg_j2store_paypal</td>
                                 </tr>
                                 <tr class="">
@@ -2946,7 +3227,7 @@
                       <div class="panel panel-default item">
 
                         <table class="table table-condensed" style="table-layout:fixed;">
-                          <caption class="text-center text-uppercase">TEMPLATES :: ADMINISTRATOR</caption>
+                          <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_TPL .' :: '. _CAPTION_ADMIN; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
                             <col class="col-xs-8 col-sm-3 border-right">
@@ -2958,13 +3239,13 @@
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
-                              <th class="text-center text-truncate">ENABLED</th>
-                              <th class="">NAME</th>
-                              <th class="text-center">VERSION</th>
-                              <th class="text-center hidden-xs">AUTHOR</th>
-                              <th class="text-center hidden-xs hidden-sm">ADDRESS</th>
-                              <th class="text-center hidden-xs">CREATED</th>
-                              <th class="text-center hidden-xs">TYPE</th>
+                              <th class="text-center text-truncate"><?php echo _TABLE_COMMON_ENABLED; ?></th>
+                              <th class=""><?php echo _TABLE_COMMON_NAME; ?></th>
+                              <th class="text-center"><?php echo _FPA_VER; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_AUTHOR; ?></th>
+                              <th class="text-center hidden-xs hidden-sm"><?php echo _TABLE_COMMON_ADDRESS; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_CREATED; ?></th>
+                              <th class="text-center hidden-xs"><?php echo _TABLE_COMMON_TYPE; ?></th>
                             </tr>
                           </thead>
                               <tbody>

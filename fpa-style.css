@@ -80,6 +80,13 @@ i, span {
     display: inline-block;
 }
 
+form#postDetails .list-group,
+.panel.item {
+  -webkit-box-shadow: 0.5px 1px 5px 0px rgba(0,0,0,0.25);
+     -moz-box-shadow: 0.5px 1px 5px 0px rgba(0,0,0,0.25);
+          box-shadow: 0.5px 1px 5px 0px rgba(0,0,0,0.25);
+}
+
 .panel>table th {
   font-weight: 500;
   letter-spacing: -0.5px;
