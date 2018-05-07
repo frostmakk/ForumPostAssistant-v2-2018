@@ -8,6 +8,8 @@ ___
 
 **FPA v2.0 [BS] Alpha** is the latest generation of this popular and well used script, updated with a new _**User Interface**_ utilising the _**Twitter Bootstrap**_ and _**jQuery**_ frameworks.
 
+![alt text](screenshot/fpa2-screenshot.jpg "Forum Post Assistant v2.0.0")
+
 ##### New Features & Improvements in v2.0
 
 * updated fully responsive UI
