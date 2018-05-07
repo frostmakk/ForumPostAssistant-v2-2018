@@ -1422,16 +1422,88 @@
         <tbody>
           <tr>
             <td class="small text-truncate">Permissions</td>
-            <td class="text-center">444</td>
+            <td class="text-center">
+<?php
+  //$testCONFIG = fileperms('old-fpa-en.php');
+  //$testCONFIG = fileperms('administrator');
+  $testCONFIG = 'fpa-style.css';
+?>
+
+              <?php echo substr( sprintf('%o', fileperms( $testCONFIG ) ),-3, 3 ); ?>
+            </td>
           </tr>
           <tr>
             <td class="small text-truncate">Transposition</td>
-            <td class="text-center">r-- r-- r--</td>
+            <td class="text-center">
+<?php
+$testPERMS = fileperms( $testCONFIG );
+switch ($testPERMS & 0xF000) {
+    case 0xC000: // socket
+        $info = 's ';
+        break;
+    case 0xA000: // symbolic link
+        $info = 'l ';
+        break;
+    case 0x8000: // regular
+        $info = 'r ';
+        break;
+    case 0x6000: // block special
+        $info = 'b ';
+        break;
+    case 0x4000: // directory
+        $info = 'd ';
+        break;
+    case 0x2000: // character special
+        $info = 'c ';
+        break;
+    case 0x1000: // FIFO pipe
+        $info = 'p ';
+        break;
+    default: // unknown
+        $info = 'u ';
+}
+
+// Owner
+$info .= (($testPERMS & 0x0100) ? 'r' : '-');
+$info .= (($testPERMS & 0x0080) ? 'w' : '-');
+$info .= (($testPERMS & 0x0040) ?
+            (($testPERMS & 0x0800) ? 's' : 'x' ) :
+            (($testPERMS & 0x0800) ? 'S' : '-'));
+$info .= '&nbsp;';
+
+// Group
+$info .= (($testPERMS & 0x0020) ? 'r' : '-');
+$info .= (($testPERMS & 0x0010) ? 'w' : '-');
+$info .= (($testPERMS & 0x0008) ?
+            (($testPERMS & 0x0400) ? 's' : 'x' ) :
+            (($testPERMS & 0x0400) ? 'S' : '-'));
+$info .= '&nbsp;';
+
+// World
+$info .= (($testPERMS & 0x0004) ? 'r' : '-');
+$info .= (($testPERMS & 0x0002) ? 'w' : '-');
+$info .= (($testPERMS & 0x0001) ?
+            (($testPERMS & 0x0200) ? 't' : 'x' ) :
+            (($testPERMS & 0x0200) ? 'T' : '-'));
+
+echo $info;
+?>
+
+
+            </td>
           </tr>
 
           <tr>
             <td class="small text-truncate">Effective Mode</td>
-            <td class="text-center">Read-Only</td>
+            <td class="text-center">
+              <?php
+              if (is_writable($testCONFIG)) {
+                  echo 'writable';
+              } else {
+                  echo 'read only';
+              }
+              ?>
+            </td>
           </tr>
         </tbody>
       </table>
