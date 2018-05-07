@@ -338,6 +338,21 @@
   define ( '_FPA_TOOLBAR_DOWNLOAD_LINK', 'https://github.com/ForumPostAssistant/FPA/releases' );
   /* end fpa language definitions & constants */
 ?>
+
+
+      <?php include_once ( '01dev-initial-arrays.php' ); ?>
+      <?php include_once ( '02dev-initial-settings.php' ); ?>
+      <?php include_once ( '03dev-initial-versioning.php' ); ?>
+      <?php include_once ( '04dev-initial-configuration.php' ); ?>
+      <?php include_once ( '05dev-system-environment.php' ); ?>
+      <?php include_once ( '06dev-php-environment.php' ); ?>
+      <?php include_once ( '07dev-suexec-routines.php' ); ?>
+      <?php include_once ( '08dev-webserver-environment.php' ); ?>
+      <?php include_once ( '09dev-permissions-checks.php' ); ?>
+      <?php include_once ( '10dev-database-environment.php' ); ?>
+      <?php include_once ( '11dev-joomla-extensions.php' ); ?>
+      <?php include_once ( '12dev-supported-versions.php' ); ?>
+
     <head>
 
         <meta charset="utf-8">
