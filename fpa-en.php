@@ -19,8 +19,8 @@
   /**
    **  @package Forum Post Assistant
    **  @version 2.0.0
-   **  @last updated 22/04/2018
-   **  @release Beta
+   **  @last updated 09/05/2018
+   **  @release Alpha
    **  @date 24/06/2011
    **  @author RussW
    **  @author PhilD
@@ -28,25 +28,26 @@
    **/
 
 
-  /*
-   * comment notation & change syntax
-   * TYPE (Your-Preferred-Name): your comment content
-   *
-   * NOTE     - generic notation & information
-   * TODO     - a todo notice or addition item
-   * FIXME    - item requiring problem resolution
-   * HACK     - work-around requiring later resolution
-   * example  - NOTE (RussW): this is an example comment
-   *
-   * for edit changelog see https://github.com/ForumPostAssistant/FPA/pulls?q=is%3Apr+is%3Aclosed
-   *
-   */
+  /**
+   ** comment notation & change syntax
+   ** TYPE (Your-Preferred-Name): your comment content
+   **
+   ** NOTE     - generic notation & information
+   ** TODO     - a todo notice or addition item
+   ** FIXME    - item requiring problem resolution
+   ** HACK     - work-around requiring later resolution
+   ** example  - NOTE (RussW): this is an example comment
+   **
+   ** for edit changelog see https://github.com/ForumPostAssistant/FPA/pulls?q=is%3Apr+is%3Aclosed
+   **
+   **/
 
 
 
 
       /* TODO (ALL): VERSION CONTROL : FPA Versioning & Revisioning
        * remember to update revision information
+       *
        */
       define ( '_RES', 'Forum Post Assistant' );         // FPA resource long name
       define ( '_RES_SHORT', 'FPA' );                    // FPA resource short name
@@ -54,7 +55,7 @@
       define ( '_RES_VERSION_MAINT', '0' );              // maintenance/patch revision (.z)
       define ( '_RES_RELEASE_TYPE', 'BS' );              // framework type ( BS(Bootstrap), SA(Standalone) )
       define ( '_RES_RELEASE_BUILD', 'Alpha' );          // dev status revision ( A(lpha), B(eta), RC, F(inal) )
-      define ( '_RES_LAST_UPDATED', '22/04/2018' );      // release date (dd/mm/yyyy)
+      define ( '_RES_LAST_UPDATED', '09/05/2018' );      // release date (dd/mm/yyyy)
       define ( '_RES_BRANCH', 'en-GB' );                 // Github branch location
       define ( '_RES_LANG', 'en-GB' );                   // Country/Language Code
 
@@ -378,11 +379,17 @@
           <link rel="shortcut icon" href="<?php echo $faviconPath; ?>" />
         <?php endif; ?>
 
+        <!-- grab Bootstrap from CDN -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
         <?php if ($runFPATour == '1'): ?>
+          <!-- grab Bootstrap Tour from CDN -->
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.11.0/css/bootstrap-tour.min.css" integrity="sha256-r7R5NjcsiLK3ubv/Ee7yBl5n9zV+xoj1K6kzJ4E9jBU=" crossorigin="anonymous" />
         <?php endif; ?>
+
+        <!-- grab PACE, page load progress from CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/orange/pace-theme-flash.min.css" integrity="sha256-RGBBrgymw4elQrpU8GjEkOCxf5vE5ZvpAGnhNpDONPk=" crossorigin="anonymous" />
+
 
         <!-- TODO (RussW): include CSS and remove external file -->
         <link rel="stylesheet" href="fpa-style.css">
@@ -999,7 +1006,6 @@
 
               </div><!--/.container-fluid-->
             </div><!--/@settings-section-->
-
 
 
 
@@ -3527,7 +3533,7 @@
          */
       ?>
       <footer id="copyright" class="navbar-fixed-bottom bg-muted hidden-print tourStep10">
-        <div class="container">
+        <div class="container-fluid">
           <div class="btn-toolbar">
 
             <div class="btn-group btn-group-xs text-success download-info hidden-xs">
@@ -3586,9 +3592,12 @@
          * initialisation & configuration of js/jquery objects used in fpa
          */
       ?>
+      <!-- include jQuery from CDN -->
       <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+      <!-- include Bootstrap from CDN -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+      <!-- include Pace from CDN -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" integrity="sha256-EPrkNjGEmCWyazb3A/Epj+W7Qm2pB9vnfXw+X6LImPM=" crossorigin="anonymous"></script>
       <?php
         /* NOTE (RussW): Bootstrap CDN Link
          * only load if FPATour is clicked
@@ -3596,6 +3605,7 @@
          */
       ?>
       <?php if ($runFPATour == '1'): ?>
+        <!-- include Bootstrap Tour from CDN -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.11.0/js/bootstrap-tour.min.js" integrity="sha256-AFoIN2Z5u5QDw8n9X0FoP/p1ZhE1xDnsgHlCMWE0yYQ=" crossorigin="anonymous"></script>
       <?php endif; ?>
 
@@ -3628,7 +3638,6 @@
       ?>
       <script>
         $(document).ready(function () {
-
 
           <?php
             /* NOTE (RussW): SCRIPT - Sidebar Toggle Action
