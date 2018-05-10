@@ -1160,7 +1160,7 @@
 
                       <div class="panel panel-default item" style="min-height:159px;">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table class="table table-condensed table-striped" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><?php echo _CAPTION_PHP; ?></caption>
                           <colgroup>
                             <col class="col-xs-7 border-right">
@@ -1193,7 +1193,7 @@
 
                       <div class="panel panel-default item" style="min-height:159px;">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table class="table table-condensed table-striped" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><?php echo _CAPTION_DB; ?></caption>
                           <colgroup>
                             <col class="col-xs-7 border-right">
@@ -1226,7 +1226,7 @@
 
                       <div class="panel panel-default item" style="min-height:159px;">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table class="table table-condensed table-striped" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><?php echo _CAPTION_FUNC; ?></caption>
                           <colgroup>
                             <col class="col-xs-7 border-right">
@@ -1343,7 +1343,7 @@
 
                           <div class="panel panel-default item" style="min-height:129px;">
 
-                            <table class="table table-condensed" style="table-layout:fixed;">
+                            <table class="table table-condensed table-striped" style="table-layout:fixed;">
                               <caption class="text-center text-uppercase"><?php echo _CAPTION_CMS; ?></caption>
                               <colgroup>
                                 <col class="col-xs-7 border-right">
@@ -1352,7 +1352,7 @@
                               <tbody>
                                 <tr>
                                   <td class="small">Found</td>
-                                  <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                 </tr>
                                 <tr>
                                   <td class="small">Version</td>
@@ -1372,7 +1372,7 @@
 
                           <div class="panel panel-default item" style="min-height:129px;">
 
-                            <table class="table table-condensed" style="table-layout:fixed;">
+                            <table class="table table-condensed table-striped" style="table-layout:fixed;">
                               <caption class="text-center text-uppercase"><?php echo _CAPTION_PLATFORM; ?></caption>
                               <colgroup>
                                 <col class="col-xs-7 border-right">
@@ -1381,7 +1381,7 @@
                               <tbody>
                                 <tr>
                                   <td class="small">Found</td>
-                                  <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                                 </tr>
                                 <tr>
                                   <td class="small">Version</td>
@@ -1401,7 +1401,7 @@
 
                           <div class="panel panel-default item" style="min-height:129px;">
 
-                            <table class="table table-condensed" style="table-layout:fixed;">
+                            <table class="table table-condensed table-striped" style="table-layout:fixed;">
                               <caption class="text-center text-uppercase"><?php echo _CAPTION_CONFIG; ?></caption>
                               <colgroup>
                                 <col class="col-xs-7 border-right">
@@ -1430,7 +1430,7 @@
 
                           <div class="panel panel-default item" style="min-height:129px;">
 
-                            <table class="table table-condensed" style="table-layout:fixed;">
+                            <table class="table table-condensed table-striped" style="table-layout:fixed;">
                               <caption class="text-center text-uppercase"><?php echo _CAPTION_CONFIG .' '. _CAPTION_MODESET; ?></caption>
                               <colgroup>
                                 <col class="col-xs-7 border-right">
@@ -1529,7 +1529,7 @@
 
                           <div class="panel panel-default item" style="min-height:129px;">
 
-                            <table class="table table-condensed" style="table-layout:fixed;">
+                            <table class="table table-condensed table-striped" style="table-layout:fixed;">
                               <caption class="text-center text-uppercase"><?php echo _CAPTION_CONFIG .' '. _CAPTION_OWNERSHIP; ?></caption>
                               <colgroup>
                                 <col class="col-xs-7 border-right">
@@ -1554,7 +1554,7 @@
 
                           <div class="panel panel-default item" style="min-height:129px;">
 
-                            <table class="table table-condensed" style="table-layout:fixed;">
+                            <table class="table table-condensed table-striped" style="table-layout:fixed;">
                               <caption class="text-center text-uppercase"><?php echo _CAPTION_SITE .' '. _CAPTION_CONFIG; ?></caption>
                               <colgroup>
                                 <col class="col-xs-7 border-right">
@@ -1583,7 +1583,7 @@
 
                           <div class="panel panel-default item" style="min-height:129px;">
 
-                            <table class="table table-condensed" style="table-layout:fixed;">
+                            <table class="table table-condensed table-striped" style="table-layout:fixed;">
                               <caption class="text-center text-uppercase"><?php echo _CAPTION_SEFURL; ?></caption>
                               <colgroup>
                                 <col class="col-xs-7 border-right">
@@ -1612,7 +1612,7 @@
 
                           <div class="panel panel-default item" style="min-height:129px;">
 
-                            <table class="table table-condensed" style="table-layout:fixed;">
+                            <table class="table table-condensed table-striped" style="table-layout:fixed;">
                               <caption class="text-center text-uppercase"><?php echo _CAPTION_CACHE; ?></caption>
                               <colgroup>
                                 <col class="col-xs-7 border-right">
@@ -1641,7 +1641,7 @@
 
                           <div class="panel panel-default item" style="min-height:129px;">
 
-                            <table class="table table-condensed" style="table-layout:fixed;">
+                            <table class="table table-condensed table-striped" style="table-layout:fixed;">
                               <caption class="text-center text-uppercase"><?php echo _CAPTION_SESSION; ?></caption>
                               <colgroup>
                                 <col class="col-xs-7 border-right">
@@ -1670,7 +1670,7 @@
 
                           <div class="panel panel-default item" style="min-height:129px;">
 
-                            <table class="table table-condensed" style="table-layout:fixed;">
+                            <table class="table table-condensed table-striped" style="table-layout:fixed;">
                               <caption class="text-center text-uppercase"><?php echo _CAPTION_DEBUG; ?></caption>
                               <colgroup>
                                 <col class="col-xs-7 border-right">
@@ -1699,7 +1699,7 @@
 
                           <div class="panel panel-default item" style="min-height:129px;">
 
-                            <table class="table table-condensed" style="table-layout:fixed;">
+                            <table class="table table-condensed table-striped" style="table-layout:fixed;">
                               <caption class="text-center text-uppercase"><?php echo _CAPTION_FEAT; ?></caption>
                               <colgroup>
                                 <col class="col-xs-7 border-right">
@@ -1773,7 +1773,7 @@
 
                       <div class="panel panel-default item" style="min-height:347px;">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table class="table table-condensed table-striped" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><strong>(+DBType)</strong> <?php echo _CAPTION_DB; ?></caption>
                           <colgroup>
                             <col class="col-xs-5 bg-muted border-right">
@@ -1833,7 +1833,7 @@
 
                       <div class="panel panel-default item" style="min-height:347px;">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table class="table table-condensed table-striped" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><strong>(+DBType)</strong> <?php echo _CAPTION_PERF; ?></caption>
                           <colgroup>
                             <col class="col-xs-5 bg-muted border-right">
@@ -1916,10 +1916,10 @@
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed table-striped table-hover" style="table-layout:fixed;">
+                        <table class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><strong>(+DBType)</strong> <?php echo _CAPTION_TABLES; ?></caption>
                           <colgroup>
-                            <col class="col-xs-4 border-right">
+                            <col class="col-xs-4 bg-muted border-right">
                             <col class=" border-right">
                             <col class=" border-right">
                             <col class="hidden-xs hidden-sm border-right">
@@ -2059,7 +2059,7 @@
 
                       <div class="panel panel-default item" style="min-height:595px;">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table class="table table-condensed table-striped" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><?php echo _CAPTION_SERVER .' '. _CAPTION_ENV; ?></caption>
                           <colgroup>
                             <col class="col-xs-5 bg-muted border-right">
@@ -2136,7 +2136,7 @@
 
                       <div class="panel panel-default item" style="min-height:595px;">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table class="table table-condensed table-striped" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><?php echo _CAPTION_PHP .' '. _CAPTION_ENV; ?></caption>
                           <colgroup>
                             <col class="col-xs-5 bg-muted border-right">
@@ -2209,7 +2209,7 @@
                             </tr>
                             <tr>
                               <td class="small text-truncate">Session Path Writable</td>
-                              <td class=""><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="text-success"><?php echo _FPA_Y_ICON; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">INI File Path</td>
@@ -2293,10 +2293,10 @@
 
                                 <div class="row-fluid small text-lowercase">
                                   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center">Core<br />7.2.1</div>
+                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">Core<br />7.2.1</div>
                                   </div>
                                   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center">date<br />7.2.1</div>
+                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">date<br />7.2.1</div>
                                   </div>
                                   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
                                     <div class="border-all margin-bottom-sm padding-sm text-center bg-success text-success">libxml<br />7.2.1</div>
@@ -2305,28 +2305,28 @@
                                     <div class="border-all margin-bottom-sm padding-sm text-center bg-success text-success">openssl<br />7.2.1</div>
                                   </div>
                                   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center">Zend_Engine<br />7.2.1</div>
+                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">Zend_Engine<br />7.2.1</div>
                                   </div>
                                   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center">Core<br />7.2.1</div>
+                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">Core<br />7.2.1</div>
                                   </div>
                                   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center">Core<br />7.2.1</div>
+                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">Core<br />7.2.1</div>
                                   </div>
                                   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center">Core<br />7.2.1</div>
+                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">Core<br />7.2.1</div>
                                   </div>
                                   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center">Zend_Engine<br />7.2.1</div>
+                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">Zend_Engine<br />7.2.1</div>
                                   </div>
                                   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center">Core<br />7.2.1</div>
+                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">Core<br />7.2.1</div>
                                   </div>
                                   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center">Core<br />7.2.1</div>
+                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">Core<br />7.2.1</div>
                                   </div>
                                   <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center">Zend_Engine<br />7.2.1</div>
+                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">Zend_Engine<br />7.2.1</div>
                                   </div>
                                 </div>
 
@@ -2448,7 +2448,7 @@
                           <colgroup>
                             <col class="border-right">
                             <col class="border-right">
-                            <col class="col-xs-7 border-right">
+                            <col class="col-xs-7 bg-muted border-right">
                             <col class="hidden-xs border-right">
                             <col class="hidden-xs hidden-sm">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
@@ -2613,7 +2613,7 @@
                           <colgroup>
                             <col class="border-right">
                             <col class="border-right">
-                            <col class="col-xs-7 border-right">
+                            <col class="col-xs-7 bg-muted border-right">
                             <col class="hidden-xs border-right">
                             <col class="hidden-xs hidden-sm">
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
@@ -2736,7 +2736,7 @@
                           <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_COM .' :: '. _CAPTION_SITE; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
-                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="col-xs-8 col-sm-3 bg-muted border-right">
                             <col class="border-right">
                             <col class="hidden-xs border-right">
                             <col class="hidden-xs hidden-sm border-right">
@@ -2784,7 +2784,7 @@
                           <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_COM .' :: '. _CAPTION_ADMIN; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
-                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="col-xs-8 col-sm-3 bg-muted border-right">
                             <col class="border-right">
                             <col class="hidden-xs border-right">
                             <col class="hidden-xs hidden-sm border-right">
@@ -2867,7 +2867,7 @@
                               <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_MOD .' :: '. _CAPTION_SITE; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
-                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="col-xs-8 col-sm-3 bg-muted border-right">
                             <col class="border-right">
                             <col class="hidden-xs border-right">
                             <col class="hidden-xs hidden-sm border-right">
@@ -2888,7 +2888,7 @@
                               <tbody>
                                 <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate bg-muted">yoo_sixthavenue</td>
+                                  <td class="small text-truncate">yoo_sixthavenue</td>
                                   <td class="small text-center">1.0.3</td>
                                   <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
@@ -2897,7 +2897,7 @@
                                 </tr>
                                 <tr class="">
                                   <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate bg-muted">protostar</td>
+                                  <td class="small text-truncate">protostar</td>
                                   <td class="small text-center">1.0</td>
                                   <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
                                   <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
@@ -2915,7 +2915,7 @@
                           <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_MOD .' :: '. _CAPTION_ADMIN; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
-                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="col-xs-8 col-sm-3 bg-muted border-right">
                             <col class="border-right">
                             <col class="hidden-xs border-right">
                             <col class="hidden-xs hidden-sm border-right">
@@ -2998,7 +2998,7 @@
                           <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_PLG .' :: '. _CAPTION_SITE; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
-                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="col-xs-8 col-sm-3 bg-muted border-right">
                             <col class="border-right">
                             <col class="hidden-xs border-right">
                             <col class="hidden-xs hidden-sm border-right">
@@ -3046,7 +3046,7 @@
                           <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_PLG .' :: '. _CAPTION_ADMIN; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
-                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="col-xs-8 col-sm-3 bg-muted border-right">
                             <col class="border-right">
                             <col class="hidden-xs border-right">
                             <col class="hidden-xs hidden-sm border-right">
@@ -3127,7 +3127,7 @@
                           <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_LIB .' :: '. _CAPTION_SITE; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
-                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="col-xs-8 col-sm-3 bg-muted border-right">
                             <col class="border-right">
                             <col class="hidden-xs border-right">
                             <col class="hidden-xs hidden-sm border-right">
@@ -3175,7 +3175,7 @@
                           <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_LIB .' :: '. _CAPTION_ADMIN; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
-                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="col-xs-8 col-sm-3 bg-muted border-right">
                             <col class="border-right">
                             <col class="hidden-xs border-right">
                             <col class="hidden-xs hidden-sm border-right">
@@ -3258,7 +3258,7 @@
                           <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_TPL .' :: '. _CAPTION_SITE; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
-                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="col-xs-8 col-sm-3 bg-muted border-right">
                             <col class="border-right">
                             <col class="hidden-xs border-right">
                             <col class="hidden-xs hidden-sm border-right">
@@ -3316,7 +3316,7 @@
                           <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_TPL .' :: '. _CAPTION_ADMIN; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
-                            <col class="col-xs-8 col-sm-3 border-right">
+                            <col class="col-xs-8 col-sm-3 bg-muted border-right">
                             <col class="border-right">
                             <col class="hidden-xs border-right">
                             <col class="hidden-xs hidden-sm border-right">
