@@ -2,6 +2,14 @@
   /** TESTING ONLY - DELETE ME ****************************************/
 //  error_reporting(0);
   //$disabled = 'disabled';
+
+
+  // TEST PARAMS
+  $thisJVER = '4.0.0';
+  $latestFPAVER = strtolower('1.3.9-alpha');
+  $thisFPAVER = strtolower('1.3.9-beta');
+
+
   /** TESTING ONLY - DELETE ME ****************************************/
 ?>
 <!DOCTYPE html>
@@ -106,15 +114,20 @@
       define ( '_RES_MESSAGE_NOTFOUND', 'Not Found.' );  // RussW : new 07/05/2018
       define ( '_RES_MESSAGE_NOTCONN', 'Unable To Connect.' );  // RussW : new 07/05/2018
       define ( '_RES_MESSAGE_NOTESTS', 'No FPA test routines were possible.' );  // RussW : new 07/05/2018
-
-
       // remove script notice content - Phil 4-17-12
       define ( '_FPA_DELNOTE_LN1', 'Security Notice' );
       define ( '_FPA_DELNOTE_LN2', 'Due to the highly sensitive nature of the information displayed by the FPA script, <b>it should be removed from the server immediately after use</b>.' );
       define ( '_FPA_DELNOTE_LN3', 'If the script is left on the site, it can be used to gather enough information to illegally access, deface or hack your site.' );
       define ( '_FPA_DELLINK', 'fpa-en.php?act=delete' );
-
-
+      // J! & FPA version checking - RussW : new 12/05/2018
+      define ( '_FPA_VER_CHECK_HEADING', 'Forum Post Assistant Version Check' );
+      define ( '_FPA_VER_CHECK_ATLATEST', 'The active FPA version is at the latest stable release.' );
+      define ( '_FPA_VER_CHECK_OUTOFDATE', 'The active FPA version <strong>is below the latest stable release</strong>. You should consider updating your FPA script for the latest improvements.' );
+      define ( '_FPA_VER_CHECK_ATDEVREL', 'The active FPA version <strong>appears to be a development or pre-release version</strong>. The FPA results may not be complete and you may observe some inconsistencies or minor bugs.' );
+      define ( '_J_VER_CHECK_HEADING', 'Joomla! Version Check' );
+      define ( '_J_VER_CHECK_ATLATEST', 'The discovered Joomla! version is at the latest stable release.' );
+      define ( '_J_VER_CHECK_OUTOFDATE', 'The discovered Joomla! version <strong>is below the latest stable release</strong>. You should consider updating your Joomla! installation.' );
+      define ( '_J_VER_CHECK_ATDEVREL', 'The discovered Joomla! version <strong>appears to be a development or pre-release version</strong>. The FPA results may not be complete if there are new features or depreciated functions.' );
 
 
       /* NOTE (FPA): LANGUAGE - Offline Definitions & Constants
@@ -342,7 +355,6 @@
       endif;
 ?>
 
-
       <?php include_once ( '01dev-initial-arrays.php' ); ?>
       <?php include_once ( '02dev-initial-settings.php' ); ?>
       <?php include_once ( '03dev-initial-versioning.php' ); ?>
@@ -355,6 +367,7 @@
       <?php include_once ( '10dev-database-environment.php' ); ?>
       <?php include_once ( '11dev-joomla-extensions.php' ); ?>
       <?php include_once ( '12dev-supported-versions.php' ); ?>
+      <?php include_once ( '00dev-new-test-functions.php' ); ?>
 
     <head>
 
@@ -379,6 +392,11 @@
           <link rel="shortcut icon" href="<?php echo $faviconPath; ?>" />
         <?php endif; ?>
 
+        <!-- NOTE (RussW): include pace from CDN (JS included high in head to ensure most accurate progress bar timing) -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/orange/pace-theme-flash.min.css" integrity="sha256-RGBBrgymw4elQrpU8GjEkOCxf5vE5ZvpAGnhNpDONPk=" crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" integrity="sha256-EPrkNjGEmCWyazb3A/Epj+W7Qm2pB9vnfXw+X6LImPM=" crossorigin="anonymous"></script>
+
+
         <!-- grab Bootstrap from CDN -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -387,14 +405,14 @@
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.11.0/css/bootstrap-tour.min.css" integrity="sha256-r7R5NjcsiLK3ubv/Ee7yBl5n9zV+xoj1K6kzJ4E9jBU=" crossorigin="anonymous" />
         <?php endif; ?>
 
-        <!-- grab PACE, page load progress from CDN -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/orange/pace-theme-flash.min.css" integrity="sha256-RGBBrgymw4elQrpU8GjEkOCxf5vE5ZvpAGnhNpDONPk=" crossorigin="anonymous" />
 
 
         <!-- TODO (RussW): include CSS and remove external file -->
         <link rel="stylesheet" href="fpa-style.css">
         <!-- NOTE (FPA): CSS - Custom Styling -->
         <style></style>
+
+
 
     </head>
     <body data-spy="scroll" data-target="#navbar-sidebar">
@@ -410,9 +428,8 @@
 
         <?php
           /* NOTE (RussW): SIDEBAR - Navigation
-           * LG: 250px wide (fixed)
-           * MD: 80px wide (collapsed, scrolling)
            * shortcut links to sections
+           *
            */
         ?>
         <nav id="sidebar" class="bg-primary hidden-print">
@@ -602,8 +619,17 @@
           ?>
           <div id="settings-section" class="hidden-print">
 
-
             <div class="container-fluid">
+
+
+              <!-- NOTE (RussW): fpa version check -->
+              <!-- TODO (RussW): need to workout how to only show if not in runtime -->
+              <?php
+                if ($fpaVersionCheck):
+                  echo $fpaVersionCheck;
+                endif;
+              ?>
+
 
               <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
@@ -1154,7 +1180,6 @@
                 </div><!--/.subsection-heading-->
                 <div class="col-xs-12 col-md-9 col-lg-9 subsection-content">
 
-
                   <div class="row content-container">
                     <div class="col-xs-12 col-md-4 content-item">
 
@@ -1330,14 +1355,27 @@
 
                       <div class="row clearfix">
 
-                        <!-- TODO (RussW): config not found -->
+                        <!-- TODO (RussW): instance messages -->
                         <div class="col-xs-12">
+
+                          <!-- TODO (RussW): config not found -->
                           <div class="alert alert-warning text-center text-capitalize">
                             <h4 class="margin-remove-top"><?php echo _FPA_WARNING_ICON .'<br />'. _RES .' '. _RES_MESSAGE_WARNING; ?></h4>
                             <?php echo _FPA_INSTANCE .' '. _RES_MESSAGE_NOTFOUND .' '. _RES_MESSAGE_NOTESTS; ?>
                           </div>
-                        </div>
                         <!-- END: config not found -->
+
+                        <!-- TODO (RussW): version check if Joomla! found -->
+                        <?php
+                          if ($joomlaVersionCheck):
+                            echo $joomlaVersionCheck;
+                          endif;
+                        ?>
+                        <!-- END: version check -->
+
+                        </div>
+                        <!-- END: messages -->
+
 
                         <div class="col-xs-12 col-sm-6">
 
@@ -3596,8 +3634,6 @@
       <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
       <!-- include Bootstrap from CDN -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-      <!-- include Pace from CDN -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" integrity="sha256-EPrkNjGEmCWyazb3A/Epj+W7Qm2pB9vnfXw+X6LImPM=" crossorigin="anonymous"></script>
       <?php
         /* NOTE (RussW): Bootstrap CDN Link
          * only load if FPATour is clicked
