@@ -5,15 +5,16 @@
 
 
   // TEST PARAMS
-  $thisJVER = '4.0.0';
-  $latestFPAVER = strtolower('1.3.9-alpha');
-  $thisFPAVER = strtolower('1.3.9-beta');
+  $thisJVER = '3.6.5';
+//  $latestFPAVER = strtolower('1.3.9-alpha');
+  $thisFPAVER = strtolower('2.3.29-beta');
 
 
   /** TESTING ONLY - DELETE ME ****************************************/
 ?>
 <!DOCTYPE html>
 <html lang="en-gb" dir="ltr" vocab="http://schema.org/">
+
 <?php
   /* NOTE (RussW): enable FPATour
    * setup & initialise the BS Tour objects
@@ -27,8 +28,8 @@
   /**
    **  @package Forum Post Assistant
    **  @version 2.0.0
-   **  @last updated 09/05/2018
-   **  @release Alpha
+   **  @last updated 12/05/2018
+   **  @release alpha
    **  @date 24/06/2011
    **  @author RussW
    **  @author PhilD
@@ -62,8 +63,8 @@
       define ( '_RES_VERSION', '2.0' );                  // major revision (x.y)
       define ( '_RES_VERSION_MAINT', '0' );              // maintenance/patch revision (.z)
       define ( '_RES_RELEASE_TYPE', 'BS' );              // framework type ( BS(Bootstrap), SA(Standalone) )
-      define ( '_RES_RELEASE_BUILD', 'Alpha' );          // dev status revision ( A(lpha), B(eta), RC, F(inal) )
-      define ( '_RES_LAST_UPDATED', '09/05/2018' );      // release date (dd/mm/yyyy)
+      define ( '_RES_RELEASE_BUILD', 'alpha' );          // dev status revision - dev(elopment), alpha, beta, rc, final
+      define ( '_RES_LAST_UPDATED', '12/05/2018' );      // release date (dd/mm/yyyy)
       define ( '_RES_BRANCH', 'en-GB' );                 // Github branch location
       define ( '_RES_LANG', 'en-GB' );                   // Country/Language Code
 
@@ -90,10 +91,12 @@
       define ( '_RES_MENU_EXT', 'Extension Discovery' );  // RussW : new 06/05/2018
       define ( '_RES_MENU_TOUR', 'FPA Tour' );  // RussW : new 06/05/2018
 
-      define ( '_RES_FPALINK', 'https://github.com/ForumPostAssistant/FPA/tarball/en-GB/' ); // where to get the latest 'Final Releases'
       define ( '_RES_FPALATEST', 'Latest (.tar.gz) Download' );
-      define ( '_RES_FPALINK2', 'https://github.com/ForumPostAssistant/FPA/zipball/en-GB/' ); // where to get the latest 'Final Releases'
       define ( '_RES_FPALATEST2', 'Latest (.zip) Download' );
+      /* DONE (RussW): depreciated by github json array data
+      define ( '_RES_FPALINK', 'https://github.com/ForumPostAssistant/FPA/tarball/en-GB/' ); // where to get the latest 'Final Releases
+      define ( '_RES_FPALINK2', 'https://github.com/ForumPostAssistant/FPA/zipball/en-GB/' ); // where to get the latest 'Final Releases
+      */
       define ( '_COPYRIGHT_HEADING', 'Developers & Contributors' );
       define ( '_COPYRIGHT_STMT', 'The FPA script has been developed by, and is copyright of the following contributors; Russell Winter, Phil DeGruy, Claire Mandville, Bernard Toplak & Sveinung Larsen.
                                    <a class="text-primary" href="https://github.com/ForumPostAssistant" target="_blank">Visit the FPA Github Project</a>.'
@@ -121,13 +124,13 @@
       define ( '_FPA_DELLINK', 'fpa-en.php?act=delete' );
       // J! & FPA version checking - RussW : new 12/05/2018
       define ( '_FPA_VER_CHECK_HEADING', 'Forum Post Assistant Version Check' );
-      define ( '_FPA_VER_CHECK_ATLATEST', 'The active FPA version is at the latest stable release.' );
-      define ( '_FPA_VER_CHECK_OUTOFDATE', 'The active FPA version <strong>is below the latest stable release</strong>. You should consider updating your FPA script for the latest improvements.' );
-      define ( '_FPA_VER_CHECK_ATDEVREL', 'The active FPA version <strong>appears to be a development or pre-release version</strong>. The FPA results may not be complete and you may observe some inconsistencies or minor bugs.' );
+      define ( '_FPA_VER_CHECK_ATLATEST', 'This FPA version is at the latest stable release.' );
+      define ( '_FPA_VER_CHECK_OUTOFDATE', 'This FPA version <strong>is below the latest stable release</strong>.<br />You should consider updating your FPA script for the latest improvements.' );
+      define ( '_FPA_VER_CHECK_ATDEVREL', 'This FPA version <strong>appears to be a development or pre-release version</strong>.<br />The FPA results may not be complete and you may observe some inconsistencies or minor bugs.' );
       define ( '_J_VER_CHECK_HEADING', 'Joomla! Version Check' );
       define ( '_J_VER_CHECK_ATLATEST', 'The discovered Joomla! version is at the latest stable release.' );
-      define ( '_J_VER_CHECK_OUTOFDATE', 'The discovered Joomla! version <strong>is below the latest stable release</strong>. You should consider updating your Joomla! installation.' );
-      define ( '_J_VER_CHECK_ATDEVREL', 'The discovered Joomla! version <strong>appears to be a development or pre-release version</strong>. The FPA results may not be complete if there are new features or depreciated functions.' );
+      define ( '_J_VER_CHECK_OUTOFDATE', 'The discovered Joomla! version <strong>is below the latest stable release</strong>.<br />You should consider updating your Joomla! installation.' );
+      define ( '_J_VER_CHECK_ATDEVREL', 'The discovered Joomla! version <strong>appears to be a development or pre-release version</strong>.<br />The FPA results may not be complete if there are new features or depreciated functions.' );
 
 
       /* NOTE (FPA): LANGUAGE - Offline Definitions & Constants
@@ -284,6 +287,8 @@
       /* generic language constants */
       define ( '_FPA_VER', 'Version' );
       define ( '_FPA_VER_SHORT', 'v' ); // RussW : new v2.0.0
+      define ( '_FPA_THIS', 'This' ); // RussW : new v2.0.0
+      define ( '_FPA_LATEST', 'Latest' ); // RussW : new v2.0.0
       define ( '_FPA_EXPLAIN', 'Explain' ); // RussW : new v2.0.0
       define ( '_FPA_SUCCESS', 'Success' );
       define ( '_FPA_WARNING', 'Warning' );
@@ -382,10 +387,13 @@
           $faviconPath = '';
           if (file_exists('./administrator/templates/bluestork/favicon.ico')):
             $faviconPath = './administrator/templates/bluestork/favicon.ico';
+
           elseif (file_exists('./administrator/templates/isis/favicon.ico')):
             $faviconPath = './administrator/templates/isis/favicon.ico';
+
           elseif (file_exists('./administrator/templates/atum/favicon.ico')):
             $faviconPath = './administrator/templates/atum/favicon.ico';
+
           endif;
         ?>
         <?php if ($faviconPath): ?>
@@ -393,8 +401,8 @@
         <?php endif; ?>
 
         <!-- NOTE (RussW): include pace from CDN (JS included high in head to ensure most accurate progress bar timing) -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/orange/pace-theme-flash.min.css" integrity="sha256-RGBBrgymw4elQrpU8GjEkOCxf5vE5ZvpAGnhNpDONPk=" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" integrity="sha256-EPrkNjGEmCWyazb3A/Epj+W7Qm2pB9vnfXw+X6LImPM=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/orange/pace-theme-flash.min.css" integrity="sha256-RGBBrgymw4elQrpU8GjEkOCxf5vE5ZvpAGnhNpDONPk=" crossorigin="anonymous" />
 
 
         <!-- grab Bootstrap from CDN -->
@@ -443,10 +451,13 @@
                   $logoPath = '';
                   if (file_exists('./administrator/templates/bluestork/images/logo.png')):
                     $logoPath = './administrator/templates/bluestork/images/logo.png';
+
                   elseif (file_exists('./administrator/templates/isis/images/logo.png')):
                     $logoPath = './administrator/templates/isis/images/logo.png';
+
                   elseif (file_exists('./administrator/templates/atum/images/logo.svg')):
                     $logoPath = './administrator/templates/atum/images/logo.svg';
+
                   endif;
                 ?>
                 <?php if ($logoPath): ?>
@@ -3575,13 +3586,13 @@
           <div class="btn-toolbar">
 
             <div class="btn-group btn-group-xs text-success download-info hidden-xs">
-              <a href="<?php echo _RES_FPALINK2; ?>" tabindex="3" class="" role="button">
+              <a href="<?php echo $gitcURLARRAY->zipball_url; ?>" tabindex="3" class="" role="button">
                 <i class="glyphicon glyphicon-download-alt"></i> <?php echo _RES_FPALATEST2; ?>
               </a>
             </div>
 
             <div class="btn-group btn-group-xs text-success download-info hidden-xs">
-              <a href="<?php echo _RES_FPALINK; ?>" tabindex="3" class="" role="button">
+              <a href="<?php echo $gitcURLARRAY->tarball_url; ?>" tabindex="3" class="" role="button">
                 <i class="glyphicon glyphicon-download-alt"></i> <?php echo _RES_FPALATEST; ?>
               </a>
             </div>

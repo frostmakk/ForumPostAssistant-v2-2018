@@ -27,7 +27,7 @@
       $gitcURLARRAY   = json_decode($gitcURLJSON);  // decode json in to an array
       // TODO (RussW): uncomment in production
       //$thisFPAVER     = _RES_VERSION .'.'. _RES_VERSION_MAINT .'-'. _RES_RELEASE_BUILD;
-      //$latestFPAVER   = ltrim($gitcURLARRAY->tag_name, 'v');  // trim the "v" (version) from the latest release tag
+      $latestFPAVER   = ltrim($gitcURLARRAY->tag_name, 'v');  // trim the "v" (version) from the latest release tag
 
       if (version_compare($thisFPAVER, $latestFPAVER) == 0):
         $fpaVersionCheckStatus   = 'success' ;
@@ -48,8 +48,8 @@
       $fpaVersionCheck .= '<h4>'. _FPA_EXPLAIN_ICON .' '. _FPA_VER_CHECK_HEADING .'</h4>';
       $fpaVersionCheck .= $fpaVersionCheckMessage;
       $fpaVersionCheck .= '<ul class="list-inline text-center margin-top-sm clearfix">';
-      $fpaVersionCheck .= '<li class="col-xs-6 col-sm-2 col-sm-offset-4">This Version : <span class="label label-'. $fpaVersionCheckStatus .'">'. _FPA_VER_SHORT .''. $thisFPAVER .'</span></li>';
-      $fpaVersionCheck .= '<li class="col-xs-6 col-sm-2">Latest Version: <span class="label label-primary">'. _FPA_VER_SHORT .''. $latestFPAVER .'</span></li>';
+      $fpaVersionCheck .= '<li class="col-xs-6 col-sm-3 col-sm-offset-3">'. _FPA_THIS .' '. _FPA_VER .' <span class="label label-'. $fpaVersionCheckStatus .' center-block"><strong>'. _FPA_VER_SHORT .''. $thisFPAVER .'</strong></span></li>';
+      $fpaVersionCheck .= '<li class="col-xs-6 col-sm-3">'. _FPA_LATEST .' '. _FPA_VER .' <span class="label label-primary center-block"><strong>'. _FPA_VER_SHORT .''. $latestFPAVER .'</strong></span></li>';
       $fpaVersionCheck .= '</ul>';
       $fpaVersionCheck .= '</div>';
 
@@ -97,8 +97,8 @@
       $joomlaVersionCheck .= '<h4>'. _FPA_EXPLAIN_ICON .' '. _J_VER_CHECK_HEADING .'</h4>';
       $joomlaVersionCheck .= $joomlaVersionCheckMessage;
       $joomlaVersionCheck .= '<ul class="list-inline text-center margin-top-sm clearfix">';
-      $joomlaVersionCheck .= '<li class="col-xs-6 col-sm-2 col-sm-offset-4">This Version : <span class="label label-'. $joomlaVersionCheckStatus .'">'. _FPA_VER_SHORT .''. $thisJVER .'</span></li>';
-      $joomlaVersionCheck .= '<li class="col-xs-6 col-sm-2">Latest Version: <span class="label label-primary">'. _FPA_VER_SHORT .''. $latestJVER .'</span></li>';
+      $joomlaVersionCheck .= '<li class="col-xs-6 col-sm-3 col-sm-offset-3">'. _FPA_THIS .' '. _FPA_VER .' <span class="label label-'. $joomlaVersionCheckStatus .' center-block"><strong>'. _FPA_VER_SHORT .''. $thisJVER .'</strong></span></li>';
+      $joomlaVersionCheck .= '<li class="col-xs-6 col-sm-3">'. _FPA_LATEST .' '. _FPA_VER .' <span class="label label-primary center-block"><strong>'. _FPA_VER_SHORT .''. $latestJVER .'</strong></span></li>';
       $joomlaVersionCheck .= '</ul>';
       $joomlaVersionCheck .= '</div>';
 
