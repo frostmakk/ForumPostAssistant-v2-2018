@@ -7,7 +7,7 @@
   // TEST PARAMS
   $thisJVER = '3.6.5';
 //  $latestFPAVER = strtolower('1.3.9-alpha');
-  $thisFPAVER = strtolower('2.3.29-beta');
+//  $thisFPAVER = strtolower('2.3.29-beta');
 
 
   /** TESTING ONLY - DELETE ME ****************************************/
@@ -1107,7 +1107,7 @@
                      */
                   ?>
                   <?php
-                     $snapshotIndicator                  = '82';  // testing health value
+                     $snapshotIndicator                  = '95';  // testing health value
                      // $snapshot[element]Width Totals must equal 100
                      // modify these values to vary the width of each health progress category, a value of "0" (zero) is acceptable to ignore/hide a category
                      $snapshotDangerLimitWidth           = '20';
@@ -1205,19 +1205,19 @@
                           <tbody>
                             <tr>
                               <td class="small text-truncate">PHP Version</td>
-                              <td class="text-center"><strong><?php echo _FPA_VER_SHORT; ?>5.6.30</strong></td>
+                              <td class="text-center"><strong><?php echo _FPA_VER_SHORT; ?>7.2.1</strong></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">PHP API</td>
-                              <td class="text-center">CGI-FCGI</td>
+                              <td class="text-center">cgi-fcgi</td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate">MySQL Support dfdsfds hfghgfhfd</td>
+                              <td class="small text-truncate">MySQL Support</td>
                               <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">MySQLi Support</td>
-                              <td class="text-center text-warning"><?php echo _FPA_N_ICON; ?></td>
+                              <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                             </tr>
                           </tbody>
                         </table>
@@ -1237,20 +1237,20 @@
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
-                              <td class="small text-truncate">PHP Version</td>
-                              <td class="text-center"><strong><?php echo _FPA_VER_SHORT; ?>5.6.30</strong></td>
+                              <td class="small text-truncate">MySQL Version</td>
+                              <td class="text-center"><strong><?php echo _FPA_VER_SHORT; ?>5.6.38</strong></td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate">PHP API</td>
-                              <td class="text-center">CGI-FCGI</td>
+                              <td class="small text-truncate">Connection Type</td>
+                              <td class="text-center">MySQLi</td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate">MySQL Support dgdfg gdgdf gfdsgs</td>
-                              <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">Default Collation</td>
+                              <td class="text-center">UTF8</td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">MySQLi Support</td>
-                              <td class="text-center text-warning"><?php echo _FPA_N_ICON; ?></td>
+                              <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                             </tr>
                           </tbody>
                         </table>
@@ -1270,20 +1270,20 @@
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
-                              <td class="small text-truncate">PHP Version</td>
-                              <td class="text-center"><strong><?php echo _FPA_VER_SHORT; ?>5.6.30</strong></td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">PHP API</td>
-                              <td class="text-center">CGI-FCGI</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">MySQL Support</td>
+                              <td class="small text-truncate">PHP Supports J! 3.8.5</td>
                               <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate">MySQLi Support</td>
-                              <td class="text-center text-warning"><?php echo _FPA_N_ICON; ?></td>
+                              <td class="small text-truncate">MySQL Supports J! 3.5.8</td>
+                              <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Known Buggy PHP</td>
+                              <td class="text-center"><?php echo _FPA_N; ?></td>
+                            </tr>
+                            <tr>
+                              <td class="small text-truncate">Known Buggy Zend</td>
+                              <td class="text-center"><?php echo _FPA_N; ?></td>
                             </tr>
                           </tbody>
                         </table>
