@@ -27,7 +27,7 @@ _cleaner, more user friendly data entry and FPA option selection section_
 ##### Functionality Changes & Depreciations in v2.0
 * now requires an internet connection
 _with the use of Bootstrap and jQuery, FPA now requires internet access to retrieve these frameworks from CDN_
-*   
+* actively checks for newer versions of FPA & Joomla!  
 
 ___
 
