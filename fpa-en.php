@@ -7,16 +7,17 @@
   // TEST PARAMS
   $thisJVER = '3.6.5';
 //  $latestFPAVER = strtolower('1.3.9-alpha');
-//  $thisFPAVER = strtolower('2.3.29-beta');
+  $thisFPAVER = strtolower('1.3.9-beta');
 
 
+$disabled = '';
   /** TESTING ONLY - DELETE ME ****************************************/
 ?>
 <!DOCTYPE html>
 <html lang="en-gb" dir="ltr" vocab="http://schema.org/">
 
 <?php
-  /* NOTE (RussW): enable FPATour
+  /* HACK (RussW): enable FPATour
    * setup & initialise the BS Tour objects
    */
   if (@$_GET['tour'] == '1'):
@@ -24,6 +25,15 @@
   else:
     $runFPATour = '';
   endif;
+
+  /* HACK (RussW): TESTING get the privacy settings
+   *
+   */
+	if ( @$_POST['showProtected'] ) {
+		$showProtected  = @$_POST['showProtected'];
+	} else {
+		$showProtected = 2; // default (limited privacy masking)
+	}
 
   /**
    **  @package Forum Post Assistant
@@ -579,8 +589,8 @@
                   </div>
 
                   <div class="btn-group hidden-xs" role="group">
-                    <a tabindex="2" class="btn btn-warning navbar-btn" role="button">
-                      <?php echo _FPA_PRIVACY .' : '. _FPA_PRIVACY_PARTIAL; ?>
+                    <a id="toolbarShowPrivacy" tabindex="2" class="btn btn-default navbar-btn" role="button" style="min-width:125px;">
+                      <?php echo _FPA_PRIVACY .' : Checking...'; ?>
                     </a>
                   </div>
 
@@ -642,9 +652,492 @@
               ?>
 
 
+
+
+
+
+<?php
+  /* NOTE (RussW): START (TABS TESTING) -  FPA Settings & Post Output
+   * tabs - settings & output panels
+   *
+   */
+?>
+<form method="post" name="postDetails" id="postDetails" class="form-horizontal">
+
+
+<div class="margin-bottom-lg">
+
+
+  <!-- Nav tabs -->
+  <ul id="user-options-panel" class="nav nav-pills nav-justified" role="tablist">
+
+    <li role="presentation" class="active">
+      <a id="default-tab" class="lead" href="#default" aria-controls="default" role="tab" data-toggle="pill">
+        <span class="badge text-uppercase">Step 1</span><br />Start Here
+      </a>
+    </li>
+
+    <li role="presentation" class="">
+      <a id="settings-tab" class="lead" href="#settings" aria-controls="settings" role="tab" data-toggle="pill">
+        <span class="badge text-uppercase">Step 2</span><br />Runtime Options
+      </a>
+    </li>
+
+    <li role="presentation" class="">
+      <a id="output-tab" class="lead" href="#output" aria-controls="output" role="tab" data-toggle="pill">
+        <span class="badge text-uppercase">Step 3</span><br />Post Content
+      </a>
+    </li>
+
+  </ul><!--/#fpa-user-option-panel-->
+
+
+  <!-- Tab panes -->
+  <div class="tab-content border-bottom" style="min-height:430px;">
+
+
+    <div class="text-right margin-top-sm">
+      <button class="btn btn-info btn-xs /*pull-right*/ clearfix" type="button" data-toggle="collapse" data-target="#collapseExplainSettings" aria-expanded="false" aria-controls="collapseExplainSettings">
+        <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
+      </button>
+    </div>
+
+    <div class="collapse /*container-fluid*/ margin-top-sm clearfix" id="collapseExplainSettings">
+      <div class="alert alert-info" role="alert">
+        <h4><i class="glyphicon glyphicon-info-sign"></i> <?php echo _SETTINGS_HEADING ;?></h4>
+
+        <?php echo _SETTINGS_EXPLAIN ;?>
+
+      </div>
+    </div>
+
+
+    <div role="tabpanel" class="tab-pane active" id="default">
+
+      <div class="row">
+        <div class="col-sm-6 user-options-step1-description">
+
+
+                                <fieldset id="optionalInformation" class="padding-remove-top" <?php echo @$disabled; ?>>
+                                  <legend class="1margin-remove margin-bottom-sm">Optional Information:</legend>
+
+                                    <?php
+                                      /* NOTE (RussW): START -  Optional Information
+                                       *
+                                       */
+                                    ?>
+                                    <p class="help-block small line-height-normal margin-remove-top" style="1min-height:35px;">
+                                      <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
+                                    <?php if ( !empty(@$disabled) ): ?>
+                                      Options Are Disabled. Check the <span class="label label-warning">Snapshot Dashboard</span> for more information.
+                                    <?php else: ?>
+                                      To assist with troubleshooting, you may also add additional (optional) trouble-shooting information to your forum post if desired. <em>Leave empty to ignore</em>.
+                                    <?php endif; ?>
+                                    </p>
+
+                                    <ul class="list-group">
+
+                                      <li class="list-group-item">
+                                        <div class="form-group margin-remove">
+                                          <label for="probDSC" class="col-sm-12 col-lg-5 control-label padding-remove line-height-normal">Problem Description</label>
+                                          <div class="col-sm-12 col-lg-7 padding-remove-left padding-remove-right">
+                                            <input type="text" class="form-control input-sm" id="probDSC" name="probDSC" placeholder="Problem Description">
+                                          </div>
+                                        </div>
+                                      </li>
+
+                                      <li class="list-group-item">
+                                        <div class="form-group margin-remove">
+                                          <label for="probMSG1" class="col-sm-12 col-lg-5 control-label padding-remove line-height-normal">Log/Error Message</label>
+                                          <div class="col-sm-12 col-lg-7 padding-remove-left padding-remove-right">
+                                            <input type="text" class="form-control input-sm" id="probMSG1" name="probMSG1" placeholder="Log/Error Message" />
+                                          </div>
+                                        </div>
+                                      </li>
+
+                                      <li class="list-group-item">
+                                        <div class="form-group has-error margin-remove">
+                                          <label for="probMSG2" class="col-sm-12 col-lg-5 control-label padding-remove line-height-normal">Last Reported Error</label>
+                                          <div class="col-sm-12 col-lg-7 padding-remove-left padding-remove-right">
+                                          <?php if ( isset($phpenv['phpLASTERR']) ): ?>
+                                            <input type="text" class="form-control input-sm text-danger" id="probMSG2" name="probMSG2" value="<?php echo $phpenv['phpLASTERR']; ?>" placeholder="Last Reported Error" aria-describedby="lastErrorHelp" />
+                                            <span id="lastErrorHelp" class="help-block line-height-normal small"><i class="glyphicon glyphicon-info-sign"></i> auto-completed from your php error log</span>
+                                          <?php else: ?>
+                                            <input type="text" class="form-control input-sm" id="probMSG2" name="probMSG2" placeholder="Last Reported Error" />
+                                          <?php endif; ?>
+                                          </div>
+                                        </div>
+                                      </li>
+
+                                      <li class="list-group-item">
+                                        <div class="form-group margin-remove">
+                                          <label for="probACT" class="col-sm-12 col-lg-5 control-label padding-remove line-height-normal">Actions Taken To Resolve?</label>
+                                          <div class="col-sm-12 col-lg-7 padding-remove-left padding-remove-right">
+                                            <textarea class="form-control input-sm" id="probACT" name="probACT" rows="2" placeholder="Action Taken To Resolve?"></textarea>
+                                          </div>
+                                        </div>
+                                      </li>
+
+                                    </ul>
+
+                                </fieldset>
+
+
+        </div><!--/.user-options-step1-description-->
+
+
+
+        <div class="col-sm-6 user-options-step1-instructions">
+
+                                <fieldset id="optionalInformation" class="padding-remove-top" <?php echo @$disabled; ?>>
+                                  <legend class="1margin-remove margin-bottom-sm">Instructions:</legend>
+
+                                      <p class="bg-muted padding-lg">
+                                        There will be some instructions here. Short and to the point with an "Explain" for more help. There will be some instructions here.  Short and to the point with an "Explain" for more help.
+                                      </p>
+
+<!--
+                                      <p class="">
+                                        After selecting your preferred runtime options and information privacy level, click the <strong>Generate Post Content!</strong> button to re-run FPA and build your post content.
+                                      </p>
+-->
+
+                                      <div class="row user-options-inner">
+
+                                        <div class="col-sm-12 text-center">
+
+
+                                          <p class="help-block small line-height-normal margin-remove-top" style="1min-height:35px;">
+                                            <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
+                                            To assist with troubleshooting, you may also choose what information is included in the forum post content, or you may continue with the default selections.
+                                          </p>
+                                          <a class="btn btn-primary btn-sm btn-block" onclick="$('#settings-tab').tab('show');">Select Runtime Options <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                                          <p class="padding-remove margin-sm">AND</p>
+
+                                          <input type="hidden" name="doIT" value="1">
+                                          <input type="submit" class="btn btn-success btn-block btn-lg" name="submit" value="Generate Post Content!" />
+                                          <div class="clearfix"></div>
+
+                                          <div class="checkbox">
+                                            <label>
+                                              <input type="checkbox" name="increasePOPS" value="1" aria-describedby="increasePOPSHelp">
+                                              PHP "Out of Memory" or "Execution Time-Outs" errors?
+                                              <span id="increasePOPSHelp" class="help-block small line-height-normal margin-remove-top"><i class="glyphicon glyphicon-info-sign"></i> temporarily increase PHP memory and execution time</span>
+                                            </label>
+                                          </div><!--/.checkbox-->
+
+                                        </div>
+
+                                      </div><!--./row.user-options-inner-->
+
+                                </fieldset>
+
+        </div><!--/.user-options-step1-instructions-->
+
+
+      </div><!--/.row-->
+
+
+    </div><!--/#default .tab-pane-->
+
+
+
+
+    <div role="tabpanel" class="tab-pane" id="settings">
+
+
+      <div class="row">
+        <div class="col-sm-6 user-options-step2-runtime">
+
+
+                                <fieldset id="runtimeOptions" class="padding-remove-top" <?php echo $disabled; ?>>
+
+                                  <legend class="1margin-remove margin-bottom-sm">Runtime Options:</legend>
+
+                                  <div class="row">
+                                    <div class="col-sm-12 col-md-12">
+
+
+                                      <?php
+                                        /* NOTE (RussW): START -  Optional Settings
+                                         * custon checkbox material buttons
+                                         * added libraries (RussW : 06/05/2018)
+                                         *
+                                         */
+                                      ?>
+                                      <p class="help-block small line-height-normal margin-remove-top" style="1min-height:35px;">
+                                        <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
+                                      <?php if ( !empty($disabled) ): ?>
+                                        Options Are Disabled. Check the <span class="label label-warning">Snapshot Dashboard</span> for more information.
+                                      <?php else: ?>
+                                        Determine what information is included in your forum post, modify the default selections to suit your problem and privacy requirements.
+                                      <?php endif; ?>
+                                      </p>
+
+
+                                      <ul class="list-group runtime-options">
+
+                                        <li class="list-group-item">
+                                          <div class="row-fluid clearfix">
+                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
+                                              Show Elevated Permissions
+                                            </div>
+                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
+                                              <input id="someSwitchOptionSuccess1" name="someSwitchOption001" type="checkbox" checked />
+                                              <label for="someSwitchOptionSuccess1" class="label-success text-left"></label>
+                                            </div>
+                                          </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                          <div class="row-fluid clearfix">
+                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
+                                              Show dataBase Statistics
+                                            </div>
+                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
+                                              <input id="someSwitchOptionSuccess2" name="someSwitchOption002" type="checkbox" />
+                                              <label for="someSwitchOptionSuccess2" class="label-success text-left"></label>
+                                            </div>
+                                          </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                          <div class="row-fluid clearfix">
+                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
+                                              Show Components
+                                            </div>
+                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
+                                              <input id="someSwitchOptionSuccess3" name="someSwitchOption003" type="checkbox" checked />
+                                              <label for="someSwitchOptionSuccess3" class="label-success text-left"></label>
+                                            </div>
+                                          </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                          <div class="row-fluid clearfix">
+                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
+                                              Show Modules
+                                            </div>
+                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
+                                              <input id="someSwitchOptionSuccess4" name="someSwitchOption004" type="checkbox" />
+                                              <label for="someSwitchOptionSuccess4" class="label-success text-left"></label>
+                                            </div>
+                                          </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                          <div class="row-fluid clearfix">
+                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
+                                              Show Plugins
+                                            </div>
+                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
+                                              <input id="someSwitchOptionSuccess5" name="someSwitchOption005" type="checkbox" />
+                                              <label for="someSwitchOptionSuccess5" class="label-success text-left"></label>
+                                            </div>
+                                          </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                          <div class="row-fluid clearfix">
+                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
+                                              Show Libraries
+                                            </div>
+                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
+                                              <input id="someSwitchOptionSuccess6" name="someSwitchOption006" type="checkbox" />
+                                              <label for="someSwitchOptionSuccess6" class="label-success text-left"></label>
+                                            </div>
+                                          </div>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                          <div class="row-fluid clearfix">
+                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left text-muted">
+                                              <em> - Include Core Extensions?</em>
+                                            </div>
+                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
+                                              <input id="someSwitchOptionSuccess7" name="someSwitchOption007" type="checkbox" />
+                                              <label for="someSwitchOptionSuccess7" class="label-success text-left"></label>
+                                            </div>
+                                          </div>
+                                        </li>
+
+                                      </ul>
+
+                                    </div>
+
+                                  </div><!--/.row-->
+
+                                </fieldset>
+
+
+        </div><!--/.user-options-step2-runtime-->
+        <div class="col-sm-6 user-options-step2-instructions">
+
+
+
+                                <fieldset id="optionalInformation" class="padding-remove-top" <?php echo @$disabled; ?>>
+                                  <legend class="1margin-remove margin-bottom-sm">Instructions:</legend>
+
+                                      <p class="bg-muted padding-lg">
+                                        There will be some instructions here. Short and to the point with an "Explain" for more help. There will be some instructions here.  Short and to the point with an "Explain" for more help.
+                                      </p>
+
+<!--
+                                      <p class="">
+                                        After selecting your preferred runtime options and information privacy level, click the <strong>Generate Post Content!</strong> button to re-run FPA and build your post content.
+                                      </p>
+-->
+
+                                      <div class="row user-options-inner">
+
+                                        <div class="col-sm-12 text-center">
+
+
+                              <?php
+                                /* NOTE (RussW): START -  Information Privacy/Protection
+                                 * custon radio buttons
+                                 */
+                              ?>
+                              <div class="text-center">
+
+                                <h5>Information Privacy Settings</h5>
+
+							<?php
+								if ( $showProtected >= 3 OR  @$_POST['showProtected'] >= 3 ) {
+									$selectshowProtected_1 = '';
+									$selectshowProtected_2 = '';
+									$selectshowProtected_3 = 'CHECKED';
+								} elseif ( $showProtected == 2 OR @$_POST['showProtected'] == 2 ) {
+									$selectshowProtected_1 = '';
+									$selectshowProtected_2 = 'CHECKED';
+									$selectshowProtected_3 = '';
+								} elseif ( $showProtected == 1 OR @$_POST['showProtected'] == 1 ) {
+									$selectshowProtected_1 = 'CHECKED';
+									$selectshowProtected_2 = '';
+									$selectshowProtected_3 = '';
+								} elseif ( $showProtected == 2 ) {
+									$selectshowProtected_1 = '';
+									$selectshowProtected_2 = 'CHECKED';
+									$selectshowProtected_3 = '';
+								} else {
+									$selectshowProtected_1 = '';
+									$selectshowProtected_2 = 'CHECKED';
+									$selectshowProtected_3 = '';
+								}
+							?>
+
+                                <div class="btn-group btn-group-radio information-privacy-options">
+
+                                  <input type="radio" name="showProtected" id="showProtectedNone" class="radio-button" value="1" <?php echo $selectshowProtected_1; ?> />
+                                  <label class="btn btn-danger col-xs-12 col-sm-4" for="showProtectedNone">None</label>
+
+                                  <input type="radio" name="showProtected" id="showProtectedDefault" class="radio-button" value="2" <?php echo $selectshowProtected_2; ?> />
+                                  <label class="btn btn-warning col-xs-12 col-sm-4" for="showProtectedDefault">Partial</label>
+
+                                  <input type="radio" name="showProtected" id="showProtectedStrict" class="radio-button" value="3" <?php echo $selectshowProtected_3; ?> />
+                                  <label class="btn btn-success col-xs-12 col-sm-4" for="showProtectedStrict">Strict</label>
+
+                                </div><!--/.information-privacy-options-->
+
+                                <p class="help-block small line-height-normal margin-remove-bottom">
+                                  <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
+                                <?php if ( !empty($disabled) ): ?>
+                                  Options Are Disabled. Check the <span class="label label-warning">Snapshot Dashboard</span> for more information.
+                                <?php else: ?>
+                                  Select how much site identifiable information FPA will collect and display (Partial = Default)
+                                <?php endif; ?>
+                                </p>
+
+                              </div>
+
+
+                                          <p class="padding-remove margin-sm">OR</p>
+
+                                          <input type="hidden" name="doIT" value="1">
+                                          <input type="submit" class="btn btn-success btn-block btn-lg" name="submit" value="Generate Post Content!" />
+                                          <div class="clearfix"></div>
+
+                                          <div class="checkbox">
+                                            <label>
+                                              <input type="checkbox" name="increasePOPS" value="1" aria-describedby="increasePOPSHelp">
+                                              PHP "Out of Memory" or "Execution Time-Outs" errors?
+                                              <span id="increasePOPSHelp" class="help-block small line-height-normal margin-remove-top"><i class="glyphicon glyphicon-info-sign"></i> temporarily increase PHP memory and execution time</span>
+                                            </label>
+                                          </div><!--/.checkbox-->
+
+                                        </div>
+
+                                      </div><!--./row.user-options-inner-->
+
+                                </fieldset>
+
+
+
+
+        </div><!--/.user-options-step2-instructions-->
+      </div>
+
+
+    </div><!--/#settings .tab-pane-->
+
+
+
+
+    <div role="tabpanel" class="tab-pane" id="output">
+
+                                <fieldset id="optionalInformation" class="padding-remove-top" <?php echo @$disabled; ?>>
+                                  <legend class="1margin-remove margin-bottom-sm">Instructions:</legend>
+
+                                      <p class="bg-muted padding-lg">
+                                        There will be some instructions here. Short and to the point with an "Explain" for more help. There will be some instructions here.  Short and to the point with an "Explain" for more help.
+                                      </p>
+
+
+                         <textarea class="form-control" rows="15" name="postOUTPUT" id="postOUTPUT" placeholder="Forum Post Content">
+                        dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only<br />dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only
+
+                        dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only<br />dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only
+
+                        dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only<br />dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only
+                        </textarea>
+
+                        <button id="btnCopyToClipboard" class="btn btn-success btn-lg btn-block"><i class="glyphicon glyphicon-copy"></i> Copy Post Content To Clipboard</button>
+
+
+                        <p class="small text-muted margin-top-sm margin-remove-bottom">
+                          <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
+                          In the event that the "Copy Post Content To Clipboard" button does not work, <strong>click inside the yellow textarea</strong>, then <strong>press CTRL-a (or Command-a)</strong> to select all the textarea content, <strong>press CTRL-c (Command-c)</strong> to copy the content and then use <strong>CRTL-v (Command-v)</strong> to paste the copied content in to your forum post.
+                        </p>
+
+
+                        <!-- TODO (RussW): determine how to split the content in to two textarea's if exceeds 20k characters-->
+                        <br />
+                        <div class="alert alert-danger">
+                        Post Length: <span id="counter" class="badge"></span>
+                        <br /><i>TODO: now we know the content length, we need to figure out a way of dynamically splitting large posts(over 20k) in to two textarea's</i>
+                        </div>
+
+                                </fieldset>
+
+
+    </div><!--/#output .tab-pane-->
+
+  </div><!--/.tab-content-->
+
+</div>
+</form>
+
+
+
+<?php
+  /** hide accordian **/
+?>
+<div class="" style="display:none !important;">
+
               <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-                <div class="panel panel-default">
+                <div class="panel panel-success">
 
                   <div class="panel-heading" role="tab" id="headingOne">
                     <h4 class="panel-title tourStep20">
@@ -652,7 +1145,7 @@
                         <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                       </button>
                       <a class="collapsed fpa-settings" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <?php echo _SETTINGS_HEADING ;?>
+                        <button class="btn btn-danger btn-xs" role="button">Step 1 : START HERE</button> <?php echo _SETTINGS_HEADING ;?>
                       </a>
                     </h4>
                   </div>
@@ -664,7 +1157,9 @@
                      *
                      */
                   ?>
-                  <div id="collapseOne" class="panel-collapse collapse /*in*/" role="tabpanel" aria-labelledby="headingOne">
+
+
+                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
 
                       <form method="post" name="postDetails" id="postDetails" class="form-horizontal">
@@ -676,7 +1171,7 @@
 
                                 <fieldset id="runtimeOptions" class="padding-remove" <?php echo $disabled; ?>>
 
-                                  <legend class="1margin-remove">Runtime Options:</legend>
+                                  <legend class="1margin-remove margin-bottom-sm">Runtime Options:</legend>
 
                                   <div class="row">
                                     <div class="col-sm-12 col-md-12">
@@ -1043,9 +1538,10 @@
 
               </div><!--/.container-fluid-->
             </div><!--/@settings-section-->
-
-
-
+<?php
+  /** comment-out accordian **/
+?>
+</div><!--/hidden accordion-->
 
 
           <?php
@@ -3687,6 +4183,16 @@
         $(document).ready(function () {
 
           <?php
+            /* HACK (RussW): TESTSCRIPT - Temporary options on page load doIT/Generate button clicked
+             *
+             */
+            ?>
+          	<?php if ( @$_POST['doIT'] == '1' ): ?>
+              $('#output-tab').tab('show');
+            <?php endif; ?>
+
+
+          <?php
             /* NOTE (RussW): SCRIPT - Sidebar Toggle Action
              *
              */
@@ -3710,6 +4216,61 @@
               }, 500, function(){
               // window.location.hash = hash;
             });
+          });
+
+
+          <?php
+            /* NOTE (RussW): SCRIPT - change toolbar privacy button on page load or privacy radio change
+             *
+             */
+          ?>
+          var i = $('input[name=showProtected]:checked').val();
+            if (i == '1') {
+              $('#toolbarShowPrivacy').removeClass('btn-default');
+              $('#toolbarShowPrivacy').removeClass('btn-success');
+              $('#toolbarShowPrivacy').removeClass('btn-warning');
+              $('#toolbarShowPrivacy').addClass('btn-danger');
+              $("#toolbarShowPrivacy").text('Privacy : None');
+
+            } else if (i == '2') {
+              $('#toolbarShowPrivacy').removeClass('btn-default');
+              $('#toolbarShowPrivacy').removeClass('btn-success');
+              $('#toolbarShowPrivacy').removeClass('btn-danger');
+              $('#toolbarShowPrivacy').addClass('btn-warning');
+              $("#toolbarShowPrivacy").text('Privacy : Partial');
+
+            } else if (i == '3') {
+              $('#toolbarShowPrivacy').removeClass('btn-default');
+              $('#toolbarShowPrivacy').removeClass('btn-danger');
+              $('#toolbarShowPrivacy').removeClass('btn-warning');
+              $('#toolbarShowPrivacy').addClass('btn-success');
+              $("#toolbarShowPrivacy").text('Privacy : Strict');
+
+            }
+
+          $('input[name=showProtected]:radio').click(function(ev) {
+            if (ev.currentTarget.value == '1') {
+              $('#toolbarShowPrivacy').removeClass('btn-default');
+              $('#toolbarShowPrivacy').removeClass('btn-success');
+              $('#toolbarShowPrivacy').removeClass('btn-warning');
+              $('#toolbarShowPrivacy').addClass('btn-danger');
+              $("#toolbarShowPrivacy").text('Privacy : None');
+
+            } else if (ev.currentTarget.value == '2') {
+              $('#toolbarShowPrivacy').removeClass('btn-default');
+              $('#toolbarShowPrivacy').removeClass('btn-success');
+              $('#toolbarShowPrivacy').removeClass('btn-danger');
+              $('#toolbarShowPrivacy').addClass('btn-warning');
+              $("#toolbarShowPrivacy").text('Privacy : Partial');
+
+            } else if (ev.currentTarget.value == '3') {
+              $('#toolbarShowPrivacy').removeClass('btn-default');
+              $('#toolbarShowPrivacy').removeClass('btn-danger');
+              $('#toolbarShowPrivacy').removeClass('btn-warning');
+              $('#toolbarShowPrivacy').addClass('btn-success');
+              $("#toolbarShowPrivacy").text('Privacy : Strict');
+
+            }
           });
 
 

@@ -141,6 +141,39 @@ caption {
   text-align: center;
 }
 
+
+/* NOTE (RussW): TESTING SETTINGS NAV TABS */
+#settings-section ul.nav {}
+@media ( min-width: 768px) {
+  #settings-section ul.nav li:nth-child(1) { padding-right: 10px !important; }
+  #settings-section ul.nav li:nth-child(3) { padding-left: 10px !important;}
+}
+/*
+#settings-section ul.nav-pills>li.active>a,
+*/
+#settings-section ul.nav-pills>li.active>a:focus,
+#settings-section ul.nav-pills>li.active>a:hover {
+  background: #286090;
+}
+ #settings-section ul.nav li a {
+  border: 1px solid transparent;
+}
+#settings-section ul.nav li:not(.active) a {
+  background: #fafafa;
+  border: 1px solid #eee;
+  color: #bbb !important;
+/*
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+*/
+}
+#settings-section ul.nav li:not(.active) a:hover {
+  background: #f1f1f1;
+}
+
+
+
 #accordion .panel-title a.fpa-settings,
 #accordion .panel-title a.fpa-output { /* bs override */
   min-width: 80% !important;
@@ -220,7 +253,7 @@ textarea#postOUTPUT {
 }
 
 .border-left { /* fpa custom */
-    border-right: 1px solid #ddd !important;
+    border-left: 1px solid #ddd !important;
 }
 
 .border-top { /* fpa custom */
@@ -291,6 +324,12 @@ textarea#postOUTPUT {
 .padding-remove-bottom { /* fpa custom */
   padding-bottom: 0px !important;
 }
+.padding-remove-left { /* fpa custom */
+  padding-left: 0px !important;
+}
+.padding-remove-right { /* fpa custom */
+  padding-right: 0px !important;
+}
 
 
 
@@ -312,7 +351,9 @@ textarea#postOUTPUT {
 }
 .btn-group-radio input[type=radio].radio-button:checked + .btn {
   font-weight: 600 !important;
+  /*
   text-transform: uppercase;
+  */
 }
 .btn-group-radio input[type=radio].radio-button:checked + .btn:before {
   font-family: "Glyphicons Halflings";

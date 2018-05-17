@@ -26,25 +26,47 @@
     else:
       $gitcURLARRAY   = json_decode($gitcURLJSON);  // decode json in to an array
       // TODO (RussW): uncomment in production
-      $thisFPAVER     = _RES_VERSION .'.'. _RES_VERSION_MAINT .'-'. _RES_RELEASE_BUILD;
+      //$thisFPAVER     = _RES_VERSION .'.'. _RES_VERSION_MAINT .'-'. _RES_RELEASE_BUILD;
       $latestFPAVER   = ltrim($gitcURLARRAY->tag_name, 'v');  // trim the "v" (version) from the latest release tag
 
       if (version_compare($thisFPAVER, $latestFPAVER) == 0):
-        $fpaVersionCheckStatus   = 'success' ;
+        $fpaVersionCheckStatus   = 'success';
+        $fpaVersionCheckIcon     = _FPA_Y_ICON;
         $fpaVersionCheckMessage  = _FPA_VER_CHECK_ATLATEST;
+        $fpaVersionCheckNote     = 'Up To Date';
 
       elseif (version_compare($thisFPAVER, $latestFPAVER) > 0):
-        $fpaVersionCheckStatus   = 'info' ;
+        $fpaVersionCheckStatus   = 'info';
+        $fpaVersionCheckIcon     = _FPA_A_ICON;
         $fpaVersionCheckMessage  = _FPA_VER_CHECK_ATDEVREL;
+        $fpaVersionCheckNote     = 'Development';
 
       else:
-        $fpaVersionCheckStatus   = 'warning' ;
+        $fpaVersionCheckStatus   = 'warning';
+        $fpaVersionCheckIcon     = '';
         $fpaVersionCheckMessage  = _FPA_VER_CHECK_OUTOFDATE;
+        $fpaVersionCheckNote     = '';
 
       endif;
 
-      $fpaVersionCheck  = '<div class="text-center alert alert-'. $fpaVersionCheckStatus .' alert-dismissible" role="alert">';
-      $fpaVersionCheck .= '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+      if ($fpaVersionCheckStatus != 'warning'):
+        $fpaVersionCheck  = '<div class="text-right margin-bottom-sm clearfix">';
+        $fpaVersionCheck .= '<div class="btn-group" role="group" aria-label="FPA Version Check Information">';
+        $fpaVersionCheck .= '<button class="btn btn-default btn-xs margin-bottom-sm" type="button" data-toggle="collapse" data-target="#collapsefpaVersion" aria-expanded="false" aria-controls="collapsefpaVersion">';
+        $fpaVersionCheck .= '<span class="text-'. $fpaVersionCheckStatus .'">'. $fpaVersionCheckIcon .' '. _RES_SHORT .' '. _FPA_VER_SHORT .''. $thisFPAVER .' <small>('. $fpaVersionCheckNote .')</small></span>';
+        $fpaVersionCheck .= '</button>';
+        $fpaVersionCheck .= '<button class="btn btn-info btn-xs margin-bottom-sm text-'. $fpaVersionCheckStatus .'" type="button" data-toggle="collapse" data-target="#collapsefpaVersion" aria-expanded="false" aria-controls="collapsefpaVersion">';
+        $fpaVersionCheck .= _FPA_EXPLAIN_ICON .'<span class="hidden-xs">&nbsp;'. _FPA_EXPLAIN .'</span>';
+        $fpaVersionCheck .= '</button>';
+        $fpaVersionCheck .= '</div>';
+        $fpaVersionCheck .= '<div class="collapse" id="collapsefpaVersion">';
+
+        $fpaVersionCheck .= '<div class="text-center alert alert-'. $fpaVersionCheckStatus .'" role="alert">';
+      else:
+        $fpaVersionCheck .= '<div class="text-center alert alert-'. $fpaVersionCheckStatus .' alert-dismissible" role="alert">';
+        $fpaVersionCheck .= '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+      endif;
+
       $fpaVersionCheck .= '<h4>'. _FPA_EXPLAIN_ICON .' '. _FPA_VER_CHECK_HEADING .'</h4>';
       $fpaVersionCheck .= $fpaVersionCheckMessage;
       $fpaVersionCheck .= '<ul class="list-inline text-center margin-top-sm clearfix">';
@@ -52,6 +74,14 @@
       $fpaVersionCheck .= '<li class="col-xs-6 col-sm-3">'. _FPA_LATEST .' '. _FPA_VER .' <span class="label label-primary center-block"><strong>'. _FPA_VER_SHORT .''. $latestFPAVER .'</strong></span></li>';
       $fpaVersionCheck .= '</ul>';
       $fpaVersionCheck .= '</div>';
+
+      if ($fpaVersionCheckStatus != 'warning'):
+        $fpaVersionCheck .= '</div>';
+        $fpaVersionCheck .= '</div>';
+      endif;
+//      else:
+
+//      endif;
 
     endif;
 
