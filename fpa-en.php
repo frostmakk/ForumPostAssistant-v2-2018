@@ -813,7 +813,7 @@ $disabled = '';
                                           </p>
                                           <a class="btn btn-primary btn-sm btn-block" onclick="$('#settings-tab').tab('show');">Select Runtime Options <span class="glyphicon glyphicon-chevron-right"></span></a>
 
-                                          <p class="padding-remove margin-sm">AND</p>
+                                          <p class="padding-remove margin-sm">OR</p>
 
                                           <input type="hidden" name="doIT" value="1">
                                           <input type="submit" class="btn btn-success btn-block btn-lg" name="submit" value="Generate Post Content!" />
@@ -1052,7 +1052,7 @@ $disabled = '';
                               </div>
 
 
-                                          <p class="padding-remove margin-sm">OR</p>
+                                          <p class="padding-remove margin-sm">AND</p>
 
                                           <input type="hidden" name="doIT" value="1">
                                           <input type="submit" class="btn btn-success btn-block btn-lg" name="submit" value="Generate Post Content!" />
