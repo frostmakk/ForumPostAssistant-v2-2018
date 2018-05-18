@@ -662,7 +662,7 @@ $disabled = '';
    *
    */
 ?>
-<form method="post" name="postDetails" id="postDetails" class="form-horizontal">
+<form method="post" name="postDetails" id="postDetails" action="<?php echo $_SERVER["PHP_SELF"]; ?>" class="form-horizontal">
 
 
 <div class="margin-bottom-lg">
@@ -3151,7 +3151,7 @@ $disabled = '';
 
 <!-- TODO (RussW): TESTING export Table to CSV -->
 <div class="text-right">
-  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('core-permissions-<?php echo date('dmY'); ?>.csv', 'core-permissions-table')">
+  <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('core-permissions-<?php echo date('dmY'); ?>.csv', 'core-permissions-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
   </button>
 </div>
@@ -3235,7 +3235,7 @@ $disabled = '';
 
 <!-- TODO (RussW): TESTING export Table to CSV -->
 <div class="text-right">
-  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('elevated-permissions-<?php echo date('dmY'); ?>.csv', 'elevated-permissions-table')">
+  <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('elevated-permissions-<?php echo date('dmY'); ?>.csv', 'elevated-permissions-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
   </button>
 </div>
@@ -3270,14 +3270,26 @@ $disabled = '';
 
               <div class="page-header">
 
+<!-- HACK (RussW): TESTING Run VEL Check Option -->
+<form method="post" name="checkVEL" id="checkVEL" action="#extension-discovery-section" class="">
+
                 <h2>
-                  <button class="btn btn-info btn-xs pull-right clearfix hidden-print" type="button" data-toggle="collapse" data-target="#collapseExplainExt" aria-expanded="false" aria-controls="collapseExplainExt">
+  <div class="btn-group pull-right">
+  <button type="submit" class="btn btn-warning btn-xs /*pull-right*/ hidden-xs hidden-print" name="submitVEL"><span class="glyphicon glyphicon-screenshot"></span> VEL Check</button>
+
+                  <button class="btn btn-info btn-xs /*pull-right clearfix*/ hidden-print" type="button" data-toggle="collapse" data-target="#collapseExplainExt" aria-expanded="false" aria-controls="collapseExplainExt">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
+  </div>
                   <i class="glyphicon glyphicon-th"></i> <?php echo _SECTION_EXT_HEADING; ?>
                 </h2>
 
+  <input type="hidden" name="runVEL" value="1" />
+</form>
+
+
                 <p class="lead"><?php echo _SECTION_EXT_DESCRIBE; ?></p>
+
 
                 <div class="collapse clearfix" id="collapseExplainExt">
                   <div class="alert alert-info" role="alert">
@@ -3374,7 +3386,7 @@ $disabled = '';
 
 <!-- TODO (RussW): TESTING export Table to CSV -->
 <div class="text-right">
-  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('site-components-<?php echo date('dmY'); ?>.csv', 'site-components-table')">
+  <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('site-components-<?php echo date('dmY'); ?>.csv', 'site-components-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
   </button>
 </div>
@@ -3430,7 +3442,7 @@ $disabled = '';
 
 <!-- TODO (RussW): TESTING export Table to CSV -->
 <div class="text-right">
-  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('admin-components-<?php echo date('dmY'); ?>.csv', 'admin-components-table')">
+  <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('admin-components-<?php echo date('dmY'); ?>.csv', 'admin-components-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
   </button>
 </div>
@@ -3522,7 +3534,7 @@ $disabled = '';
 
 <!-- TODO (RussW): TESTING export Table to CSV -->
 <div class="text-right">
-  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('site-modules-<?php echo date('dmY'); ?>.csv', 'site-modules-table')">
+  <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('site-modules-<?php echo date('dmY'); ?>.csv', 'site-modules-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
   </button>
 </div>
@@ -3579,7 +3591,7 @@ $disabled = '';
 
 <!-- TODO (RussW): TESTING export Table to CSV -->
 <div class="text-right">
-  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('admin-modules-<?php echo date('dmY'); ?>.csv', 'admin-modules-table')">
+  <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('admin-modules-<?php echo date('dmY'); ?>.csv', 'admin-modules-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
   </button>
 </div>
@@ -3671,7 +3683,7 @@ $disabled = '';
 
 <!-- TODO (RussW): TESTING export Table to CSV -->
 <div class="text-right">
-  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('site-plugins-<?php echo date('dmY'); ?>.csv', 'site-plugins-table')">
+  <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('site-plugins-<?php echo date('dmY'); ?>.csv', 'site-plugins-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
   </button>
 </div>
@@ -3728,7 +3740,7 @@ $disabled = '';
 
 <!-- TODO (RussW): TESTING export Table to CSV -->
 <div class="text-right">
-  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('admin-plugins-<?php echo date('dmY'); ?>.csv', 'admin-plugins-table')">
+  <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('admin-plugins-<?php echo date('dmY'); ?>.csv', 'admin-plugins-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
   </button>
 </div>
@@ -3818,7 +3830,7 @@ $disabled = '';
 
 <!-- TODO (RussW): TESTING export Table to CSV -->
 <div class="text-right">
-  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('site-libraries-<?php echo date('dmY'); ?>.csv', 'site-libraries-table')">
+  <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('site-libraries-<?php echo date('dmY'); ?>.csv', 'site-libraries-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
   </button>
 </div>
@@ -3875,7 +3887,7 @@ $disabled = '';
 
 <!-- TODO (RussW): TESTING export Table to CSV -->
 <div class="text-right">
-  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('admin-libraries-<?php echo date('dmY'); ?>.csv', 'admin-libraries-table')">
+  <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('admin-libraries-<?php echo date('dmY'); ?>.csv', 'admin-libraries-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
   </button>
 </div>
@@ -3977,7 +3989,7 @@ $disabled = '';
 
 <!-- TODO (RussW): TESTING export Table to CSV -->
 <div class="text-right">
-  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('site-templates-<?php echo date('dmY'); ?>.csv', 'site-templates-table')">
+  <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('site-templates-<?php echo date('dmY'); ?>.csv', 'site-templates-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
   </button>
 </div>
@@ -4034,7 +4046,7 @@ $disabled = '';
 
 <!-- TODO (RussW): TESTING export Table to CSV -->
 <div class="text-right">
-  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('admin-templates-<?php echo date('dmY'); ?>.csv', 'admin-templates-table')">
+  <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('admin-templates-<?php echo date('dmY'); ?>.csv', 'admin-templates-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
   </button>
 </div>
