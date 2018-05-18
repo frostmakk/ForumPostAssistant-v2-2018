@@ -26,7 +26,7 @@
     else:
       $gitcURLARRAY   = json_decode($gitcURLJSON);  // decode json in to an array
       // TODO (RussW): uncomment in production
-      //$thisFPAVER     = _RES_VERSION .'.'. _RES_VERSION_MAINT .'-'. _RES_RELEASE_BUILD;
+      $thisFPAVER     = _RES_VERSION .'.'. _RES_VERSION_MAINT .'-'. _RES_RELEASE_BUILD;
       $latestFPAVER   = ltrim($gitcURLARRAY->tag_name, 'v');  // trim the "v" (version) from the latest release tag
 
       if (version_compare($thisFPAVER, $latestFPAVER) == 0):

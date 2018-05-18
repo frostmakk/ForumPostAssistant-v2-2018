@@ -7,7 +7,7 @@
   // TEST PARAMS
   $thisJVER = '3.6.5';
 //  $latestFPAVER = strtolower('1.3.9-alpha');
-  $thisFPAVER = strtolower('1.3.9-beta');
+//  $thisFPAVER = strtolower('1.3.9-beta');
 
 
 $disabled = '';
@@ -589,7 +589,7 @@ $disabled = '';
                   </div>
 
                   <div class="btn-group hidden-xs" role="group">
-                    <a id="toolbarShowPrivacy" tabindex="2" class="btn btn-default navbar-btn" role="button" style="min-width:125px;">
+                    <a id="toolbarShowPrivacy" tabindex="2" class="btn btn-primary navbar-btn" role="button" style="min-width:125px;">
                       <?php echo _FPA_PRIVACY .' : Checking...'; ?>
                     </a>
                   </div>
@@ -643,9 +643,10 @@ $disabled = '';
             <div class="container-fluid">
 
 
-              <!-- NOTE (RussW): fpa version check -->
-              <!-- TODO (RussW): need to workout how to only show if not in runtime -->
               <?php
+                /* HACK (RussW): FPA Version Check
+                 *
+                 */
                 if ($fpaVersionCheck):
                   echo $fpaVersionCheck;
                 endif;
@@ -1030,13 +1031,22 @@ $disabled = '';
                                 <div class="btn-group btn-group-radio information-privacy-options">
 
                                   <input type="radio" name="showProtected" id="showProtectedNone" class="radio-button" value="1" <?php echo $selectshowProtected_1; ?> />
+                                  <label id="labelProtectedNone" class="btn btn-default col-xs-12 col-sm-4" for="showProtectedNone">None</label>
+                                  <!--
                                   <label class="btn btn-danger col-xs-12 col-sm-4" for="showProtectedNone">None</label>
+                                  -->
 
                                   <input type="radio" name="showProtected" id="showProtectedDefault" class="radio-button" value="2" <?php echo $selectshowProtected_2; ?> />
+                                  <label id="labelProtectedDefault" class="btn btn-default col-xs-12 col-sm-4" for="showProtectedDefault">Partial</label>
+                                  <!--
                                   <label class="btn btn-warning col-xs-12 col-sm-4" for="showProtectedDefault">Partial</label>
+                                  -->
 
                                   <input type="radio" name="showProtected" id="showProtectedStrict" class="radio-button" value="3" <?php echo $selectshowProtected_3; ?> />
+                                  <label id="labelProtectedStrict" class="btn btn-default col-xs-12 col-sm-4" for="showProtectedStrict">Strict</label>
+                                  <!--
                                   <label class="btn btn-success col-xs-12 col-sm-4" for="showProtectedStrict">Strict</label>
+                                  -->
 
                                 </div><!--/.information-privacy-options-->
 
@@ -1853,13 +1863,6 @@ $disabled = '';
                   <div class="row content-container">
                     <div class="col-xs-12 col-md-12 content-item">
 
-                      <?php
-                        /* DONE (FPA): CHANGES - Installed Instance
-                         * removed - database version & characterset, available elsewhere (RussW 02/05/2018)
-                         *
-                         */
-                      ?>
-
                       <div class="row clearfix">
 
                         <!-- TODO (RussW): instance messages -->
@@ -1872,7 +1875,7 @@ $disabled = '';
                           </div>
                         <!-- END: config not found -->
 
-                        <!-- TODO (RussW): version check if Joomla! found -->
+                        <!-- HACK (RussW): version check if Joomla! found -->
                         <?php
                           if ($joomlaVersionCheck):
                             echo $joomlaVersionCheck;
@@ -3149,7 +3152,7 @@ $disabled = '';
                         </table>
 
 
-<!-- TODO (RussW): TESTING export Table to CSV -->
+<!-- HACK (RussW): TESTING export Table to CSV -->
 <div class="text-right">
   <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('core-permissions-<?php echo date('dmY'); ?>.csv', 'core-permissions-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
@@ -3233,7 +3236,7 @@ $disabled = '';
                         </table>
 
 
-<!-- TODO (RussW): TESTING export Table to CSV -->
+<!-- HACK (RussW): TESTING export Table to CSV -->
 <div class="text-right">
   <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('elevated-permissions-<?php echo date('dmY'); ?>.csv', 'elevated-permissions-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
@@ -3384,7 +3387,7 @@ $disabled = '';
                           </tbody>
                         </table>
 
-<!-- TODO (RussW): TESTING export Table to CSV -->
+<!-- HACK (RussW): TESTING export Table to CSV -->
 <div class="text-right">
   <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('site-components-<?php echo date('dmY'); ?>.csv', 'site-components-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
@@ -3440,7 +3443,7 @@ $disabled = '';
                         </table>
 
 
-<!-- TODO (RussW): TESTING export Table to CSV -->
+<!-- HACK (RussW): TESTING export Table to CSV -->
 <div class="text-right">
   <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('admin-components-<?php echo date('dmY'); ?>.csv', 'admin-components-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
@@ -3532,7 +3535,7 @@ $disabled = '';
                             </table>
 
 
-<!-- TODO (RussW): TESTING export Table to CSV -->
+<!-- HACK (RussW): TESTING export Table to CSV -->
 <div class="text-right">
   <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('site-modules-<?php echo date('dmY'); ?>.csv', 'site-modules-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
@@ -3589,7 +3592,7 @@ $disabled = '';
                             </table>
 
 
-<!-- TODO (RussW): TESTING export Table to CSV -->
+<!-- HACK (RussW): TESTING export Table to CSV -->
 <div class="text-right">
   <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('admin-modules-<?php echo date('dmY'); ?>.csv', 'admin-modules-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
@@ -3681,7 +3684,7 @@ $disabled = '';
                             </table>
 
 
-<!-- TODO (RussW): TESTING export Table to CSV -->
+<!-- HACK (RussW): TESTING export Table to CSV -->
 <div class="text-right">
   <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('site-plugins-<?php echo date('dmY'); ?>.csv', 'site-plugins-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
@@ -3738,7 +3741,7 @@ $disabled = '';
                             </table>
 
 
-<!-- TODO (RussW): TESTING export Table to CSV -->
+<!-- HACK (RussW): TESTING export Table to CSV -->
 <div class="text-right">
   <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('admin-plugins-<?php echo date('dmY'); ?>.csv', 'admin-plugins-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
@@ -3828,7 +3831,7 @@ $disabled = '';
                             </table>
 
 
-<!-- TODO (RussW): TESTING export Table to CSV -->
+<!-- HACK (RussW): TESTING export Table to CSV -->
 <div class="text-right">
   <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('site-libraries-<?php echo date('dmY'); ?>.csv', 'site-libraries-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
@@ -3885,7 +3888,7 @@ $disabled = '';
                             </table>
 
 
-<!-- TODO (RussW): TESTING export Table to CSV -->
+<!-- HACK (RussW): TESTING export Table to CSV -->
 <div class="text-right">
   <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('admin-libraries-<?php echo date('dmY'); ?>.csv', 'admin-libraries-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
@@ -3987,7 +3990,7 @@ $disabled = '';
                             </table>
 
 
-<!-- TODO (RussW): TESTING export Table to CSV -->
+<!-- HACK (RussW): TESTING export Table to CSV -->
 <div class="text-right">
   <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('site-templates-<?php echo date('dmY'); ?>.csv', 'site-templates-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
@@ -4044,7 +4047,7 @@ $disabled = '';
                             </table>
 
 
-<!-- TODO (RussW): TESTING export Table to CSV -->
+<!-- HACK (RussW): TESTING export Table to CSV -->
 <div class="text-right">
   <button class="hidden-print btn btn-warning btn-xs" onclick="exportTableToCSV('admin-templates-<?php echo date('dmY'); ?>.csv', 'admin-templates-table')">
     .csv Export <span class="glyphicon glyphicon-export"></span>
@@ -4377,48 +4380,74 @@ $disabled = '';
           ?>
           var i = $('input[name=showProtected]:checked').val();
             if (i == '1') {
-              $('#toolbarShowPrivacy').removeClass('btn-default');
-              $('#toolbarShowPrivacy').removeClass('btn-success');
-              $('#toolbarShowPrivacy').removeClass('btn-warning');
-              $('#toolbarShowPrivacy').addClass('btn-danger');
+//              $('#toolbarShowPrivacy').removeClass('btn-default');
+//              $('#toolbarShowPrivacy').removeClass('btn-success');
+//              $('#toolbarShowPrivacy').removeClass('btn-warning');
+//              $('#toolbarShowPrivacy').addClass('btn-danger');
+              $('#labelProtectedNone').removeClass('btn-default');
+              $('#labelProtectedNone').addClass('btn-primary');
               $("#toolbarShowPrivacy").text('Privacy : None');
 
             } else if (i == '2') {
-              $('#toolbarShowPrivacy').removeClass('btn-default');
-              $('#toolbarShowPrivacy').removeClass('btn-success');
-              $('#toolbarShowPrivacy').removeClass('btn-danger');
-              $('#toolbarShowPrivacy').addClass('btn-warning');
+//              $('#toolbarShowPrivacy').removeClass('btn-default');
+//              $('#toolbarShowPrivacy').removeClass('btn-success');
+//              $('#toolbarShowPrivacy').removeClass('btn-danger');
+//              $('#toolbarShowPrivacy').addClass('btn-warning');
+              $('#labelProtectedDefault').removeClass('btn-default');
+              $('#labelProtectedDefault').addClass('btn-primary');
               $("#toolbarShowPrivacy").text('Privacy : Partial');
 
             } else if (i == '3') {
-              $('#toolbarShowPrivacy').removeClass('btn-default');
-              $('#toolbarShowPrivacy').removeClass('btn-danger');
-              $('#toolbarShowPrivacy').removeClass('btn-warning');
-              $('#toolbarShowPrivacy').addClass('btn-success');
+//              $('#toolbarShowPrivacy').removeClass('btn-default');
+//              $('#toolbarShowPrivacy').removeClass('btn-danger');
+//              $('#toolbarShowPrivacy').removeClass('btn-warning');
+//              $('#toolbarShowPrivacy').addClass('btn-success');
+              $('#labelProtectedStrict').removeClass('btn-default');
+              $('#labelProtectedStrict').addClass('btn-primary');
               $("#toolbarShowPrivacy").text('Privacy : Strict');
 
             }
 
           $('input[name=showProtected]:radio').click(function(ev) {
             if (ev.currentTarget.value == '1') {
-              $('#toolbarShowPrivacy').removeClass('btn-default');
-              $('#toolbarShowPrivacy').removeClass('btn-success');
-              $('#toolbarShowPrivacy').removeClass('btn-warning');
-              $('#toolbarShowPrivacy').addClass('btn-danger');
+//              $('#toolbarShowPrivacy').removeClass('btn-default');
+//              $('#toolbarShowPrivacy').removeClass('btn-success');
+//              $('#toolbarShowPrivacy').removeClass('btn-warning');
+//              $('#toolbarShowPrivacy').addClass('btn-danger');
+              $('#labelProtectedNone').removeClass('btn-default');
+              $('#labelProtectedNone').addClass('btn-primary');
+              $('#labelProtectedDefault').removeClass('btn-primary');
+              $('#labelProtectedDefault').addClass('btn-default');
+              $('#labelProtectedStrict').removeClass('btn-primary');
+              $('#labelProtectedStrict').addClass('btn-default');
               $("#toolbarShowPrivacy").text('Privacy : None');
 
             } else if (ev.currentTarget.value == '2') {
-              $('#toolbarShowPrivacy').removeClass('btn-default');
-              $('#toolbarShowPrivacy').removeClass('btn-success');
-              $('#toolbarShowPrivacy').removeClass('btn-danger');
-              $('#toolbarShowPrivacy').addClass('btn-warning');
+//              $('#toolbarShowPrivacy').removeClass('btn-default');
+//              $('#toolbarShowPrivacy').removeClass('btn-success');
+//              $('#toolbarShowPrivacy').removeClass('btn-danger');
+//              $('#toolbarShowPrivacy').addClass('btn-warning');
+              $('#labelProtectedNone').removeClass('btn-primary');
+              $('#labelProtectedNone').addClass('btn-default');
+              $('#labelProtectedDefault').removeClass('btn-default');
+              $('#labelProtectedDefault').addClass('btn-primary');
+              $('#labelProtectedStrict').removeClass('btn-primary');
+              $('#labelProtectedStrict').addClass('btn-default');
+
               $("#toolbarShowPrivacy").text('Privacy : Partial');
 
             } else if (ev.currentTarget.value == '3') {
-              $('#toolbarShowPrivacy').removeClass('btn-default');
-              $('#toolbarShowPrivacy').removeClass('btn-danger');
-              $('#toolbarShowPrivacy').removeClass('btn-warning');
-              $('#toolbarShowPrivacy').addClass('btn-success');
+//              $('#toolbarShowPrivacy').removeClass('btn-default');
+//              $('#toolbarShowPrivacy').removeClass('btn-danger');
+//              $('#toolbarShowPrivacy').removeClass('btn-warning');
+//              $('#toolbarShowPrivacy').addClass('btn-success');
+              $('#labelProtectedNone').removeClass('btn-primary');
+              $('#labelProtectedNone').addClass('btn-default');
+              $('#labelProtectedDefault').removeClass('btn-primary');
+              $('#labelProtectedDefault').addClass('btn-default');
+              $('#labelProtectedStrict').removeClass('btn-default');
+              $('#labelProtectedStrict').addClass('btn-primary');
+
               $("#toolbarShowPrivacy").text('Privacy : Strict');
 
             }
@@ -4522,7 +4551,7 @@ $disabled = '';
 
 
           <?php
-            /* TODO (RussW): TESTSCRIPT - HTML Table Export to CSV
+            /* HACK (RussW): TESTSCRIPT - HTML Table Export to CSV
              *
              */
           ?>
