@@ -2988,7 +2988,7 @@ $disabled = '';
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table id="core-permissions-table" class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><?php echo _SECTION_PERMS_HEADING_CORE .' '. _SECTION_PERMS_HEADING; ?></caption>
                           <colgroup>
                             <col class="border-right">
@@ -3115,7 +3115,17 @@ $disabled = '';
                           </tbody>
                         </table>
 
+
+<!-- TODO (RussW): TESTING export Table to CSV -->
+<div class="text-right">
+  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('core-permissions-<?php echo date('dmY'); ?>.csv', 'core-permissions-table')">
+    .csv Export <span class="glyphicon glyphicon-export"></span>
+  </button>
+</div>
+
+
                       </div><!--/.panel, item-->
+
 
                     </div><!--/.content-item-->
                   </div><!--/.content-container-->
@@ -3153,7 +3163,7 @@ $disabled = '';
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table id="elevated-permissions-table" class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><?php echo _SECTION_PERMS_HEADING_ELEV .' '. _CAPTION_CHECKS; ?></caption>
                           <colgroup>
                             <col class="border-right">
@@ -3188,6 +3198,14 @@ $disabled = '';
                             </tr>
                           </tbody>
                         </table>
+
+
+<!-- TODO (RussW): TESTING export Table to CSV -->
+<div class="text-right">
+  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('elevated-permissions-<?php echo date('dmY'); ?>.csv', 'elevated-permissions-table')">
+    .csv Export <span class="glyphicon glyphicon-export"></span>
+  </button>
+</div>
 
                       </div><!--/.panel, item-->
 
@@ -3277,7 +3295,7 @@ $disabled = '';
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table id="site-components-table" class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_COM .' :: '. _CAPTION_SITE; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
@@ -3321,11 +3339,18 @@ $disabled = '';
                           </tbody>
                         </table>
 
+<!-- TODO (RussW): TESTING export Table to CSV -->
+<div class="text-right">
+  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('site-components-<?php echo date('dmY'); ?>.csv', 'site-components-table')">
+    .csv Export <span class="glyphicon glyphicon-export"></span>
+  </button>
+</div>
+
                       </div><!--/.panel, item-->
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table id="admin-components-table" class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_COM .' :: '. _CAPTION_ADMIN; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
@@ -3369,6 +3394,15 @@ $disabled = '';
                           </tbody>
                         </table>
 
+
+<!-- TODO (RussW): TESTING export Table to CSV -->
+<div class="text-right">
+  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('admin-components-<?php echo date('dmY'); ?>.csv', 'admin-components-table')">
+    .csv Export <span class="glyphicon glyphicon-export"></span>
+  </button>
+</div>
+
+
                       </div><!--/.panel, item-->
 
                     </div><!--/.content-item-->
@@ -3408,7 +3442,7 @@ $disabled = '';
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table id="site-modules-table" class="table table-condensed" style="table-layout:fixed;">
                               <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_MOD .' :: '. _CAPTION_SITE; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
@@ -3452,11 +3486,20 @@ $disabled = '';
                               </tbody>
                             </table>
 
+
+<!-- TODO (RussW): TESTING export Table to CSV -->
+<div class="text-right">
+  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('site-modules-<?php echo date('dmY'); ?>.csv', 'site-modules-table')">
+    .csv Export <span class="glyphicon glyphicon-export"></span>
+  </button>
+</div>
+
+
                       </div><!--/.panel, item-->
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table id="admin-modules-table" class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_MOD .' :: '. _CAPTION_ADMIN; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
@@ -3500,6 +3543,15 @@ $disabled = '';
                               </tbody>
                             </table>
 
+
+<!-- TODO (RussW): TESTING export Table to CSV -->
+<div class="text-right">
+  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('admin-modules-<?php echo date('dmY'); ?>.csv', 'admin-modules-table')">
+    .csv Export <span class="glyphicon glyphicon-export"></span>
+  </button>
+</div>
+
+
                       </div><!--/.panel, item-->
 
                     </div><!--/.content-item-->
@@ -3539,7 +3591,7 @@ $disabled = '';
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table id="site-plugins-table" class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_PLG .' :: '. _CAPTION_SITE; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
@@ -3583,11 +3635,20 @@ $disabled = '';
                               </tbody>
                             </table>
 
+
+<!-- TODO (RussW): TESTING export Table to CSV -->
+<div class="text-right">
+  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('site-plugins-<?php echo date('dmY'); ?>.csv', 'site-plugins-table')">
+    .csv Export <span class="glyphicon glyphicon-export"></span>
+  </button>
+</div>
+
+
                       </div><!--/.panel, item-->
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table id="admin-plugins-table" class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_PLG .' :: '. _CAPTION_ADMIN; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
@@ -3631,6 +3692,15 @@ $disabled = '';
                               </tbody>
                             </table>
 
+
+<!-- TODO (RussW): TESTING export Table to CSV -->
+<div class="text-right">
+  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('admin-plugins-<?php echo date('dmY'); ?>.csv', 'admin-plugins-table')">
+    .csv Export <span class="glyphicon glyphicon-export"></span>
+  </button>
+</div>
+
+
                       </div><!--/.panel, item-->
 
                     </div><!--/.content-item-->
@@ -3668,7 +3738,7 @@ $disabled = '';
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table id="site-libraries-table" class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_LIB .' :: '. _CAPTION_SITE; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
@@ -3712,11 +3782,20 @@ $disabled = '';
                               </tbody>
                             </table>
 
+
+<!-- TODO (RussW): TESTING export Table to CSV -->
+<div class="text-right">
+  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('site-libraries-<?php echo date('dmY'); ?>.csv', 'site-libraries-table')">
+    .csv Export <span class="glyphicon glyphicon-export"></span>
+  </button>
+</div>
+
+
                       </div><!--/.panel, item-->
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table id="admin-libraries-table" class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_LIB .' :: '. _CAPTION_ADMIN; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
@@ -3760,6 +3839,15 @@ $disabled = '';
                               </tbody>
                             </table>
 
+
+<!-- TODO (RussW): TESTING export Table to CSV -->
+<div class="text-right">
+  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('admin-libraries-<?php echo date('dmY'); ?>.csv', 'admin-libraries-table')">
+    .csv Export <span class="glyphicon glyphicon-export"></span>
+  </button>
+</div>
+
+
                       </div><!--/.panel, item-->
 
                     </div><!--/.content-item-->
@@ -3799,7 +3887,7 @@ $disabled = '';
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table id="site-templates-table" class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_TPL .' :: '. _CAPTION_SITE; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
@@ -3853,11 +3941,20 @@ $disabled = '';
                               </tbody>
                             </table>
 
+
+<!-- TODO (RussW): TESTING export Table to CSV -->
+<div class="text-right">
+  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('site-templates-<?php echo date('dmY'); ?>.csv', 'site-templates-table')">
+    .csv Export <span class="glyphicon glyphicon-export"></span>
+  </button>
+</div>
+
+
                       </div><!--/.panel, item-->
 
                       <div class="panel panel-default item">
 
-                        <table class="table table-condensed" style="table-layout:fixed;">
+                        <table id="admin-templates-table" class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><?php echo _SECTION_EXT_HEADING_TPL .' :: '. _CAPTION_ADMIN; ?></caption>
                           <colgroup>
                             <col class="col-xs-1 col-sm-2 border-right">
@@ -3900,6 +3997,15 @@ $disabled = '';
                                 </tr>
                               </tbody>
                             </table>
+
+
+<!-- TODO (RussW): TESTING export Table to CSV -->
+<div class="text-right">
+  <button class="hidden-print btn btn-warning btn-sm" onclick="exportTableToCSV('admin-templates-<?php echo date('dmY'); ?>.csv', 'admin-templates-table')">
+    .csv Export <span class="glyphicon glyphicon-export"></span>
+  </button>
+</div>
+
 
                       </div><!--/.panel, item-->
 
@@ -4345,6 +4451,8 @@ $disabled = '';
           });
 
 
+
+
           <?php
             /* NOTE (RussW): SCRIPT - Back-To-Top Object
              *
@@ -4367,6 +4475,58 @@ $disabled = '';
         });
 
 
+
+          <?php
+            /* TODO (RussW): TESTSCRIPT - HTML Table Export to CSV
+             *
+             */
+          ?>
+function downloadCSV(csv, filename, tablename) {
+    var csvFile;
+    var downloadLink;
+
+    // CSV file
+    csvFile = new Blob([csv], {type: "text/csv"});
+
+    // Download link
+    downloadLink = document.createElement("a");
+
+    // File name
+    downloadLink.download = filename;
+
+
+    // Create a link to the file
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+
+    // Hide download link
+    downloadLink.style.display = "none";
+
+    // Add the link to DOM
+    document.body.appendChild(downloadLink);
+
+    // Click download link
+    downloadLink.click();
+}
+
+
+function exportTableToCSV(filename, tablename) {
+    var csv = [];
+    var rows = document.querySelectorAll("table#"+tablename+" tr");
+
+    for (var i = 0; i < rows.length; i++) {
+        var row = [], cols = rows[i].querySelectorAll("td, th");
+
+        for (var j = 0; j < cols.length; j++)
+            row.push(cols[j].innerText);
+
+        csv.push(row.join(","));
+    }
+
+    // Download CSV file
+    downloadCSV(csv.join("\n"), filename);
+}
+
+
         <?php
           /* NOTE (RussW): SCRIPT - Print Button (#content only)
            *
@@ -4376,6 +4536,9 @@ $disabled = '';
           window.print();
         }
       </script>
+
+
+
 
 
       <?php
