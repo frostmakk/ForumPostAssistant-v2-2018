@@ -672,19 +672,19 @@ $disabled = '';
   <!-- Nav tabs -->
   <ul id="user-options-panel" class="nav nav-pills nav-justified" role="tablist">
 
-    <li role="presentation" class="active">
+    <li id="default-tab-panel" role="presentation" class="active">
       <a id="default-tab" class="lead" href="#default" aria-controls="default" role="tab" data-toggle="pill">
         <span class="badge text-uppercase">Step 1</span><br />Start Here
       </a>
     </li>
 
-    <li role="presentation" class="">
+    <li id="settings-tab-panel" role="presentation" class="">
       <a id="settings-tab" class="lead" href="#settings" aria-controls="settings" role="tab" data-toggle="pill">
         <span class="badge text-uppercase">Step 2</span><br />Runtime Options
       </a>
     </li>
 
-    <li role="presentation" class="">
+    <li id="output-tab-panel" role="presentation" class="disabled">
       <a id="output-tab" class="lead" href="#output" aria-controls="output" role="tab" data-toggle="pill">
         <span class="badge text-uppercase">Step 3</span><br />Post Content
       </a>
@@ -713,7 +713,7 @@ $disabled = '';
     </div>
 
 
-    <div role="tabpanel" class="tab-pane active" id="default">
+    <div role="tabpanel" class="tab-pane fade in active" id="default">
 
       <div class="row">
         <div class="col-sm-6 user-options-step1-description">
@@ -845,7 +845,7 @@ $disabled = '';
 
 
 
-    <div role="tabpanel" class="tab-pane" id="settings">
+    <div role="tabpanel" class="tab-pane fade" id="settings">
 
 
       <div class="row">
@@ -1094,7 +1094,7 @@ $disabled = '';
 
 
 
-    <div role="tabpanel" class="tab-pane" id="output">
+    <div role="tabpanel" class="tab-pane fade" id="output">
 
                                 <fieldset id="optionalInformation" class="padding-remove-top" <?php echo @$disabled; ?>>
                                   <legend class="1margin-remove margin-bottom-sm">Instructions:</legend>
@@ -4342,7 +4342,11 @@ $disabled = '';
              */
             ?>
           	<?php if ( @$_POST['doIT'] == '1' ): ?>
+              $('#output-tab-panel').removeClass('disabled');
               $('#output-tab').tab('show');
+            <?php else: ?>
+              $('#output-tab-panel').addClass('disabled');
+              $('#output-tab').click(function(event){return false;});
             <?php endif; ?>
 
 
