@@ -2472,8 +2472,10 @@ $disabled = '';
                             <col class="hidden-xs border-right">
                             <col class=" border-right">
                             <col class="hidden-xs hidden-sm hidden-md border-right">
+<!-- HACK (RussW): Proposed removal
                             <col class="hidden-xs hidden-sm hidden-md border-right">
                             <col class="hidden-xs hidden-sm hidden-md">
+-->
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <thead>
                             <tr class="">
@@ -2485,13 +2487,24 @@ $disabled = '';
                               <th class="text-center hidden-xs"><?php echo _TABLE_DB_ENGINE; ?></th>
                               <th class="text-center text-truncate"><?php echo _TABLE_COMMON_COLLATION; ?></th>
                               <th class="text-center text-truncate hidden-xs hidden-sm hidden-md"><?php echo _TABLE_COMMON_CREATED; ?></th>
+<!-- HACK (RussW): Proposed removal
                               <th class="text-center text-truncate hidden-xs hidden-sm hidden-md"><?php echo _TABLE_DB_UPDATED; ?></th>
                               <th class="text-center text-truncate hidden-xs hidden-sm hidden-md"><?php echo _TABLE_DB_CHECKED; ?></th>
+-->
                             </tr>
                           </thead>
+
+<!-- HACK (RussW): TESTING DB Privacy-->
+<?php
+  if ( $showProtected >= 3 OR  @$_POST['showProtected'] >= 3 ) {
+    $demoProtected = '1';
+  } else {
+    $demoProtected = '0';
+  }
+?>
                           <tbody>
                             <tr class="">
-                              <td class="small text-truncate">ewxku_ticketmaster_transactions_temp</td>
+                              <td class="small text-truncate"><?php if ($demoProtected == '1'): echo '<span class="label label-protected small">protected</span>'; else: echo 'ewxku'; endif; ?>_ticketmaster_transactions_temp</td>
                               <td class="small text-center">16.00 KiB</td>
                               <td class="small text-center text-truncate">319</td>
                               <td class="small text-center text-truncate hidden-xs hidden-sm">16.00 KiB</td>
@@ -2499,8 +2512,24 @@ $disabled = '';
                               <td class="small text-center hidden-xs">InnoDB</td>
                               <td class="small text-center text-truncate">*utf8mb4_unicode_ci</td>
                               <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">2018-04-27</td>
+<!-- HACK (RussW): Proposed removal
                               <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
                               <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
+-->
+                            </tr>
+                            <tr class="">
+                              <td class="small text-truncate"><?php if ($demoProtected == '1'): echo '<span class="label label-protected small">protected</span>'; else: echo 'ewxku'; endif; ?>_ticketmaster_transactions_temp</td>
+                              <td class="small text-center">16.00 KiB</td>
+                              <td class="small text-center text-truncate">319</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm">16.00 KiB</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm">61440.00 KiB</td>
+                              <td class="small text-center hidden-xs">InnoDB</td>
+                              <td class="small text-center text-truncate">*utf8mb4_unicode_ci</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">2018-04-27</td>
+<!-- HACK (RussW): Proposed removal
+                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
+                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
+-->
                             </tr>
                             <tr class="">
                               <td class="small text-truncate">ewxku_ticketmaster_transactions_temp</td>
@@ -2511,8 +2540,10 @@ $disabled = '';
                               <td class="small text-center hidden-xs">InnoDB</td>
                               <td class="small text-center text-truncate">*utf8mb4_unicode_ci</td>
                               <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">2018-04-27</td>
+<!-- HACK (RussW): Proposed removal
                               <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
                               <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
+-->
                             </tr>
                             <tr class="">
                               <td class="small text-truncate">ewxku_ticketmaster_transactions_temp</td>
@@ -2523,8 +2554,10 @@ $disabled = '';
                               <td class="small text-center hidden-xs">InnoDB</td>
                               <td class="small text-center text-truncate">*utf8mb4_unicode_ci</td>
                               <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">2018-04-27</td>
+<!-- HACK (RussW): Proposed removal
                               <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
                               <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
+-->
                             </tr>
                           </tbody>
                         </table>
