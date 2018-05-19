@@ -776,7 +776,7 @@ $disabled = '';
                                     <?php endif; ?>
                                     </p>
 
-                                    <ul class="list-group">
+                                    <ul class="list-group margin-bottom-sm">
 
                                       <li class="list-group-item">
                                         <div class="form-group margin-remove">
@@ -821,6 +821,11 @@ $disabled = '';
 
                                     </ul>
 
+
+  <div class="text-right">
+                                          <input type="reset" class="btn btn-default btn-block btn-sm" name="reset" />
+  </div>
+
                                 </fieldset>
 
 
@@ -848,16 +853,18 @@ $disabled = '';
                                         <div class="col-sm-12 text-center">
 
 
-                                          <p class="help-block small line-height-normal margin-remove-top" style="1min-height:35px;">
+                                          <p class="help-block small line-height-normal margin-top-lg" style="1min-height:35px;">
                                             <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
                                             To assist with troubleshooting, you may also choose what information is included in the forum post content, or you may continue with the default selections.
                                           </p>
+
                                           <a class="btn btn-primary btn-sm btn-block" onclick="$('#settings-tab').tab('show');">Select Runtime Options <span class="glyphicon glyphicon-chevron-right"></span></a>
 
-                                          <p class="padding-remove margin-sm">OR</p>
+                                          <p class="padding-remove margin-lg">OR</p>
 
                                           <input type="hidden" name="doIT" value="1">
                                           <input type="submit" class="btn btn-success btn-block btn-lg" name="submit" value="Generate Post Content!" />
+
                                           <div class="clearfix"></div>
 
                                           <div class="checkbox">
@@ -1040,7 +1047,7 @@ $disabled = '';
                                  * custon radio buttons
                                  */
                               ?>
-                              <div class="text-center">
+                              <div class="text-center margin-top-lg">
 
                                 <h5>Information Privacy Settings</h5>
 
@@ -1102,7 +1109,7 @@ $disabled = '';
                               </div>
 
 
-                                          <p class="padding-remove margin-sm">AND</p>
+                                          <p class="padding-remove margin-lg">AND</p>
 
                                           <input type="hidden" name="doIT" value="1">
                                           <input type="submit" class="btn btn-success btn-block btn-lg" name="submit" value="Generate Post Content!" />
