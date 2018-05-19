@@ -647,11 +647,51 @@ $disabled = '';
                 /* HACK (RussW): FPA Version Check
                  *
                  */
-                if ($fpaVersionCheck):
-                  echo $fpaVersionCheck;
-                endif;
               ?>
+<div class="row">
+  <div class="col-xs-4">
 
+      <?php if (@$_POST['noPOST'] == '1'): ?>
+        <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="btn btn-default btn-xs hidden-print"><span class="glyphicon glyphicon-circle-arrow-left"></span> Back To FPA</a>
+      <?php else: ?>
+        <form method="post">
+          <input type="hidden" name="noPOST" value="1" />
+          <button type="submit" name="showReportOnly" class="btn btn-default btn-xs hidden-print"><span class="glyphicon glyphicon-list-alt"></span> Show Report Only</button>
+        </form>
+      <?php endif; ?>
+
+  </div>
+  <div class="col-xs-8">
+
+      <?php
+        if ($fpaVersionCheck):
+          echo $fpaVersionCheck;
+        endif;
+      ?>
+  </div>
+  <div class="col-xs-12">
+
+
+      <?php if ($fpaVersionCheckStatus != 'warning'): ?>
+        <div class="collapse" id="collapsefpaVersion">
+          <div class="text-center alert alert-<?php echo $fpaVersionCheckStatus; ?>" role="alert">
+      <?php else: ?>
+        <div class="text-center alert alert-<?php echo $fpaVersionCheckStatus; ?> alert-dismissible margin-top-sm" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <?php endif; ?>
+
+        <h4><?php echo _FPA_EXPLAIN_ICON .' '. _FPA_VER_CHECK_HEADING; ?></h4>
+        <?php echo $fpaVersionCheckMessage; ?>
+        <ul class="list-inline text-center margin-top-sm clearfix">
+          <li class="col-xs-6 col-sm-3 col-sm-offset-3"><?php echo _FPA_THIS .' '. _FPA_VER; ?> <span class="label label-<?php echo $fpaVersionCheckStatus; ?> center-block"><strong><?php echo _FPA_VER_SHORT .''. $thisFPAVER; ?></strong></span></li>
+          <li class="col-xs-6 col-sm-3"><?php echo _FPA_LATEST .' '. _FPA_VER; ?> <span class="label label-primary center-block"><strong><?php echo _FPA_VER_SHORT .''. $latestFPAVER; ?></strong></span></li>
+        </ul>
+      </div><!--/.alert-->
+      <?php if ($fpaVersionCheckStatus != 'warning'): ?>
+    </div><!--/.collapse-->
+      <?php endif; ?>
+  </div>
+</div><!--/.row-->
 
 
 
@@ -4348,6 +4388,19 @@ $disabled = '';
               $('#output-tab-panel').addClass('disabled');
               $('#output-tab').click(function(event){return false;});
             <?php endif; ?>
+
+
+          <?php
+            /* HACK (RussW): TESTSCRIPT - new option to only show the FPA Report, not use the Post Generation options
+             *
+             */
+            ?>
+          	<?php if ( @$_POST['noPOST'] == '1' ): ?>
+              $('#postDetails').addClass('hidden');
+            <?php else: ?>
+              $('#postDetails').removeClass('hidden');
+            <?php endif; ?>
+
 
 
           <?php
