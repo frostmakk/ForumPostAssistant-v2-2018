@@ -652,7 +652,7 @@ $disabled = '';
   <div class="col-xs-4">
 
       <?php if (@$_POST['noPOST'] == '1'): ?>
-        <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="btn btn-default btn-xs hidden-print"><span class="glyphicon glyphicon-circle-arrow-left"></span> Back To FPA</a>
+        <a href="<?php echo $_SERVER['PHP_SELF']; ?>" class="btn btn-default btn-xs hidden-print"><span class="glyphicon glyphicon-circle-arrow-left"></span> Show Post Options</a>
       <?php else: ?>
         <form method="post">
           <input type="hidden" name="noPOST" value="1" />
@@ -734,7 +734,7 @@ $disabled = '';
 
 
   <!-- Tab panes -->
-  <div class="tab-content border-bottom" style="min-height:430px;">
+  <div class="tab-content border-bottom" style="min-height:440px;">
 
 
     <div class="text-right margin-top-sm">
@@ -4194,7 +4194,7 @@ $disabled = '';
                         <h6 class="margin-remove-top text-uppercase"><?php echo _FPA_DELNOTE_LN1; ?></h6>
                         <p class="small line-height-normal text-justify"><?php echo _FPA_DELNOTE_LN2; ?> <?php echo _FPA_DELNOTE_LN3; ?></p>
                       </div>
-                      <div class="col-sm-12 col-md-4 text-center">
+                      <div class="col-sm-12 col-md-4 text-center hidden-print">
 
                         <a href="<?php echo _FPA_DELLINK; ?>" class="btn btn-danger btn-block margin-top-sm" role="button">
                           <i class="glyphicon glyphicon-remove-circle lead margin-remove"></i>
