@@ -1,5 +1,8 @@
 <?php
   /**
+   *  The Forum Post Assistant has been designed to assist newcomers to the forum to be able to discover and post
+   *  relevant system, instance, php and troubleshooting information directly in to a pre-formatted forum post.
+   *
    *  @package       Forum_Post_Assistant
    *  @category      tools
    *  @version       2.0.0
@@ -11,13 +14,13 @@
    *  @license       GNU General Public License version 3 or later; see LICENSE
    *
    *  @internal      comment notation & change syntax
-   *                 TYPE (Your-Preferred-Name): your comment content
+   *                 TYPE (@your-preferred-name): your comment content
    *
    *                 NOTE    - generic notation & information
    *                 TODO    - a todo notice or addition item
    *                 FIXME   - item requiring problem resolution
    *                 HACK    - work-around requiring later resolution
-   *                 example - NOTE (RussW): this is an example comment
+   *                 example - NOTE (@RussW): this is an example comment
    */
 
 
