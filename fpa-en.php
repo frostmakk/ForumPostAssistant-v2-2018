@@ -36,61 +36,52 @@ $disabled = '';
 	}
 
   /**
-   **  @package Forum Post Assistant
-   **  @version 2.0.0
-   **  @last updated 12/05/2018
-   **  @release alpha
-   **  @date 24/06/2011
-   **  @author RussW
-   **  @author PhilD
-   **
-   **/
+   *  @package       Forum_Post_Assistant
+   *  @version       2.0.0
+   *  @release       alpha
+   *  @last_updated  12 May 2018
+   *  @date          24 June 2011
+   *  @author        RussW
+   *  @author        PhilD
+   *  @link          https://github.com/ForumPostAssistant Github Project Page
+   *  @link          https://github.com/ForumPostAssistant/FPA/issues Github Issue Tracker
+   *  @copyright     Copyright (C) 2011 - 2018 Forum Post Assistant Core & Development Team Members. All rights reserved.
+   *  @license       GNU General Public License version 3 or later; see LICENSE
+   *
+   *  @internal      comment notation & change syntax
+   *                 TYPE (Your-Preferred-Name): your comment content
+   *
+   *                 NOTE    - generic notation & information
+   *                 TODO    - a todo notice or addition item
+   *                 FIXME   - item requiring problem resolution
+   *                 HACK    - work-around requiring later resolution
+   *                 example - NOTE (RussW): this is an example comment
+   */
 
 
-  /**
-   ** comment notation & change syntax
-   ** TYPE (Your-Preferred-Name): your comment content
-   **
-   ** NOTE     - generic notation & information
-   ** TODO     - a todo notice or addition item
-   ** FIXME    - item requiring problem resolution
-   ** HACK     - work-around requiring later resolution
-   ** example  - NOTE (RussW): this is an example comment
-   **
-   ** for edit changelog see https://github.com/ForumPostAssistant/FPA/pulls?q=is%3Apr+is%3Aclosed
-   **
-   **/
+  /* TODO (@ALL): VERSION CONTROL : FPA Versioning & Revisioning
+   * remember to update revision information
+   */
+  define ( '_RES', 'Forum Post Assistant' );         // FPA resource long name
+  define ( '_RES_SHORT', 'FPA' );                    // FPA resource short name
+  define ( '_RES_VERSION', '2.0' );                  // major revision (x.y)
+  define ( '_RES_VERSION_MAINT', '0' );              // maintenance/patch revision (.z)
+  define ( '_RES_RELEASE_TYPE', 'BS' );              // framework type ( BS(Bootstrap), SA(Standalone) )
+  define ( '_RES_RELEASE_BUILD', 'alpha' );          // dev status revision - dev(elopment), alpha, beta, rc, final
+  define ( '_RES_LAST_UPDATED', '12/05/2018' );      // release date (dd/mm/yyyy)
+  define ( '_RES_BRANCH', 'en-GB' );                 // Github branch location
+  define ( '_RES_LANG', 'en-GB' );                   // Country/Language Code
 
 
-
-
-      /* TODO (ALL): VERSION CONTROL : FPA Versioning & Revisioning
-       * remember to update revision information
-       *
-       */
-      define ( '_RES', 'Forum Post Assistant' );         // FPA resource long name
-      define ( '_RES_SHORT', 'FPA' );                    // FPA resource short name
-      define ( '_RES_VERSION', '2.0' );                  // major revision (x.y)
-      define ( '_RES_VERSION_MAINT', '0' );              // maintenance/patch revision (.z)
-      define ( '_RES_RELEASE_TYPE', 'BS' );              // framework type ( BS(Bootstrap), SA(Standalone) )
-      define ( '_RES_RELEASE_BUILD', 'alpha' );          // dev status revision - dev(elopment), alpha, beta, rc, final
-      define ( '_RES_LAST_UPDATED', '12/05/2018' );      // release date (dd/mm/yyyy)
-      define ( '_RES_BRANCH', 'en-GB' );                 // Github branch location
-      define ( '_RES_LANG', 'en-GB' );                   // Country/Language Code
-
-
-
-
-      /* NOTE (FPA): PARENT FLAGS - Joomla!
-       *
-       */
-      define ( '_VALID_MOS', 1 );                        // for J!1.0
-      define ( '_JEXEC', 1 );                            // for J!1.5, J!1.6, J!1.7, J!2.5, J!3.0
+  /* NOTE (@FPA): PARENT FLAGS - Joomla!
+   */
+  define ( '_VALID_MOS', 1 );                        // for J!1.0
+  define ( '_JEXEC', 1 );                            // for J!1.5, J!1.6, J!1.7, J!2.5, J!3.0
 
 
 
 
-      /* NOTE (FPA): LANGUAGE - FPA Specific Definitions & Constants
+      /* NOTE (@FPA): LANGUAGE - FPA Specific Definitions & Constants
        *
        */
       define ( '_RES_MENU_HOME', 'Home' );  // RussW : new 06/05/2018
