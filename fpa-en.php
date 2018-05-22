@@ -1,4 +1,27 @@
 <?php
+  /**
+   *  @package       Forum_Post_Assistant
+   *  @category      tools
+   *  @version       2.0.0
+   *  @author        RussW
+   *  @author        PhilD
+   *  @link          https://github.com/ForumPostAssistant Github Project Page
+   *  @link          https://github.com/ForumPostAssistant/FPA/issues Github Issue Tracker
+   *  @copyright     Copyright (C) 2011 - 2018 Forum Post Assistant Core & Development Team Members. All rights reserved.
+   *  @license       GNU General Public License version 3 or later; see LICENSE
+   *
+   *  @internal      comment notation & change syntax
+   *                 TYPE (Your-Preferred-Name): your comment content
+   *
+   *                 NOTE    - generic notation & information
+   *                 TODO    - a todo notice or addition item
+   *                 FIXME   - item requiring problem resolution
+   *                 HACK    - work-around requiring later resolution
+   *                 example - NOTE (RussW): this is an example comment
+   */
+
+
+
   /** TESTING ONLY - DELETE ME ****************************************/
 //  error_reporting(0);
   //$disabled = 'disabled';
@@ -35,28 +58,6 @@ $disabled = '';
 		$showProtected = 2; // default (limited privacy masking)
 	}
 
-  /**
-   *  @package       Forum_Post_Assistant
-   *  @version       2.0.0
-   *  @release       alpha
-   *  @last_updated  12 May 2018
-   *  @date          24 June 2011
-   *  @author        RussW
-   *  @author        PhilD
-   *  @link          https://github.com/ForumPostAssistant Github Project Page
-   *  @link          https://github.com/ForumPostAssistant/FPA/issues Github Issue Tracker
-   *  @copyright     Copyright (C) 2011 - 2018 Forum Post Assistant Core & Development Team Members. All rights reserved.
-   *  @license       GNU General Public License version 3 or later; see LICENSE
-   *
-   *  @internal      comment notation & change syntax
-   *                 TYPE (Your-Preferred-Name): your comment content
-   *
-   *                 NOTE    - generic notation & information
-   *                 TODO    - a todo notice or addition item
-   *                 FIXME   - item requiring problem resolution
-   *                 HACK    - work-around requiring later resolution
-   *                 example - NOTE (RussW): this is an example comment
-   */
 
 
   /* TODO (@ALL): VERSION CONTROL : FPA Versioning & Revisioning
