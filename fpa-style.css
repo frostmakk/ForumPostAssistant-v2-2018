@@ -144,22 +144,22 @@ caption {
 
 
 /* NOTE (RussW): TESTING SETTINGS NAV TABS */
-#settings-section ul.nav {}
+#settings-section #ul#user-options-panel.nav {}
 @media ( min-width: 768px) {
-  #settings-section ul.nav li:nth-child(1) { padding-right: 10px !important; }
-  #settings-section ul.nav li:nth-child(3) { padding-left: 10px !important;}
+  #settings-section ul.nav#user-options-panel li:nth-child(1) { padding-right: 10px !important; }
+  #settings-section ul#user-options-panel.nav li:nth-child(3) { padding-left: 10px !important;}
 }
 /*
 #settings-section ul.nav-pills>li.active>a,
 */
-#settings-section ul.nav-pills>li.active>a:focus,
-#settings-section ul.nav-pills>li.active>a:hover {
+#settings-section ul#user-options-panel.nav-pills>li.active>a:focus,
+#settings-section ul#user-options-panel.nav-pills>li.active>a:hover {
   background: #286090;
 }
- #settings-section ul.nav li a {
+#settings-section ul#user-options-panel.nav li a {
   border: 1px solid transparent;
 }
-#settings-section ul.nav li:not(.active) a {
+#settings-section ul#user-options-panel.nav li:not(.active) a {
   background: #fafafa;
   border: 1px solid #eee;
   color: #bbb !important;
@@ -169,11 +169,17 @@ caption {
   border-right: 1px solid #ddd;
 */
 }
-#settings-section ul.nav li:not(.active) a:hover {
+#settings-section ul#user-options-panel.nav li:not(.active) a:hover {
   background: #f1f1f1;
 }
 
-
+/* NOTE (RussW): TESTING EXCESSIVE POST NAV TABS */
+ul#excessive-post-output.nav li:not(.active) a {
+  background: #fafafa;
+  border-right: 1px solid #eee;
+  border-top: 1px solid #eee;
+  color: #bbb !important;
+}
 
 #accordion .panel-title a.fpa-settings,
 #accordion .panel-title a.fpa-output { /* bs override */
