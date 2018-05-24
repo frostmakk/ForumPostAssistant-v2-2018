@@ -364,21 +364,6 @@ $disabled = '';
                );
       endif;
 ?>
-
-      <?php include_once ( '01dev-initial-arrays.php' ); ?>
-      <?php include_once ( '02dev-initial-settings.php' ); ?>
-      <?php include_once ( '03dev-initial-versioning.php' ); ?>
-      <?php include_once ( '04dev-initial-configuration.php' ); ?>
-      <?php include_once ( '05dev-system-environment.php' ); ?>
-      <?php include_once ( '06dev-php-environment.php' ); ?>
-      <?php include_once ( '07dev-suexec-routines.php' ); ?>
-      <?php include_once ( '08dev-webserver-environment.php' ); ?>
-      <?php include_once ( '09dev-permissions-checks.php' ); ?>
-      <?php include_once ( '10dev-database-environment.php' ); ?>
-      <?php include_once ( '11dev-joomla-extensions.php' ); ?>
-      <?php include_once ( '12dev-supported-versions.php' ); ?>
-      <?php include_once ( '00dev-new-test-functions.php' ); ?>
-
     <head>
 
         <meta charset="utf-8">
@@ -409,6 +394,8 @@ $disabled = '';
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" integrity="sha256-EPrkNjGEmCWyazb3A/Epj+W7Qm2pB9vnfXw+X6LImPM=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/orange/pace-theme-flash.min.css" integrity="sha256-RGBBrgymw4elQrpU8GjEkOCxf5vE5ZvpAGnhNpDONPk=" crossorigin="anonymous" />
 
+        <!-- grab normalise from CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
 
         <!-- grab Bootstrap from CDN -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -424,6 +411,22 @@ $disabled = '';
         <link rel="stylesheet" href="fpa-style.css">
         <!-- NOTE (FPA): CSS - Custom Styling -->
         <style></style>
+
+
+
+      <?php include_once ( '01dev-initial-arrays.php' ); ?>
+      <?php include_once ( '02dev-initial-settings.php' ); ?>
+      <?php include_once ( '03dev-initial-versioning.php' ); ?>
+      <?php include_once ( '04dev-initial-configuration.php' ); ?>
+      <?php include_once ( '05dev-system-environment.php' ); ?>
+      <?php include_once ( '06dev-php-environment.php' ); ?>
+      <?php include_once ( '07dev-suexec-routines.php' ); ?>
+      <?php include_once ( '08dev-webserver-environment.php' ); ?>
+      <?php include_once ( '09dev-permissions-checks.php' ); ?>
+      <?php include_once ( '10dev-database-environment.php' ); ?>
+      <?php include_once ( '11dev-joomla-extensions.php' ); ?>
+      <?php include_once ( '12dev-supported-versions.php' ); ?>
+      <?php include_once ( '00dev-new-test-functions.php' ); ?>
 
 
 
@@ -853,9 +856,42 @@ $disabled = '';
                                             To assist with troubleshooting, you may also choose what information is included in the forum post content, or you may continue with the default selections.
                                           </p>
 
-                                          <a class="btn btn-primary btn-sm btn-block" onclick="$('#settings-tab').tab('show');">Select Runtime Options <span class="glyphicon glyphicon-chevron-right"></span></a>
+<!-- HACK (@RussW): testing Fixed Report Runtime Options -->
+<div class="row">
+<div class="col-xs-12 col-lg-6 margin-bottom-sm">
 
-                                          <p class="padding-remove margin-lg">OR</p>
+   <div class="dropdown" style="width:100%;">
+    <button class="btn btn-primary btn-block dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Pre~Configured Reports
+      <span class="glyphicon glyphicon-chevron-down" style="top:3px;left:3px;"></span>
+    </button>
+
+    <ul class="dropdown-menu">
+      <li><a href="#" style="white-space:normal;">White Screen Or Fatal/500 Error<span class="small text-muted">My site only shows a white-screen or has an "Error 500" or PHP "Fatal Error" message.</span></a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#" style="white-space:normal;">Site Slow Or Showing Funny Characters<span class="small text-muted">My site is really slow to load, or shows funny characters in some places.</span></a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#" style="white-space:normal;">Can't Login, Upload Or Install Extensions<span class="small text-muted">Users or Admins can't login or I can't upload anything or install extensions.</span></a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="#" style="white-space:normal;">I've Been Hacked!<span class="small text-muted">My site has been hacked, defaced, sending spam, redirecting visitors or doing unexpected things.</span></a></li>
+      <li role="separator" class="divider"></li>
+    </ul>
+   </div>
+
+</div>
+<div class="col-xs-12 col-lg-6 margin-bottom-sm">
+
+    <a class="btn btn-primary btn-block" onclick="$('#settings-tab').tab('show');">Select Runtime Options <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+</div>
+
+</div>
+
+<!-- NOTE (@RussW): previous goto Runtime Options button
+                                          <a class="btn btn-primary btn-sm btn-block" onclick="$('#settings-tab').tab('show');">Select Runtime Options <span class="glyphicon glyphicon-chevron-right"></span></a>
+-->
+
+                                          <p class="padding-remove margin-sm">OR</p>
 
                                           <input type="hidden" name="doIT" value="1">
                                           <input type="submit" class="btn btn-success btn-block btn-lg" name="submit" value="Generate Post Content!" />
