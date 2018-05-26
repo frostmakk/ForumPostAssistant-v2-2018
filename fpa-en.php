@@ -23,6 +23,17 @@
    *                 example - NOTE (@RussW): this is an example comment
    */
 
+  /* NOTE (@RussW): Browser Caching Headers
+   * attempt to set some headers to avoid browser caching
+   *
+   */
+    header('Cache-Control: no-store, private, no-cache, must-revalidate');                // HTTP/1.1
+    header('Cache-Control: pre-check=0, post-check=0, max-age=0, max-stale = 0', false);  // HTTP/1.1
+    header('Pragma: public');
+    header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');                                     // Date in the past
+    header('Expires: 0', false);
+    header('Last-Modified: '.gmdate('D, d M Y H:i:s') . ' GMT');
+    header ('Pragma: no-cache');
 
 
   /** TESTING ONLY - DELETE ME ****************************************/
@@ -821,7 +832,7 @@ $disabled = '';
 
 
   <div class="text-right">
-                                          <input type="reset" class="btn btn-default btn-block btn-sm" name="reset" />
+                                          <input id="fpaReset" type="reset" class="btn btn-default btn-block btn-sm" name="reset" />
   </div>
 
                                 </fieldset>
@@ -867,9 +878,9 @@ $disabled = '';
     </button>
 
     <ul class="dropdown-menu">
-      <li><a href="#" style="white-space:normal;">White Screen Or Fatal/500 Error<span class="small text-muted">My site only shows a white-screen or has an "Error 500" or PHP "Fatal Error" message.</span></a></li>
+      <li><a id="selectBasicReport" href="#" style="white-space:normal;">White Screen Or Fatal/500 Error<span class="small text-muted">My site only shows a white-screen or has an "Error 500" or PHP "Fatal Error" message.</span></a></li>
       <li role="separator" class="divider"></li>
-      <li><a href="#" style="white-space:normal;">Site Slow Or Showing Funny Characters<span class="small text-muted">My site is really slow to load, or shows funny characters in some places.</span></a></li>
+      <li><a id="selectDBReport" href="#" style="white-space:normal;">Site Slow Or Showing Funny Characters<span class="small text-muted">My site is really slow to load, or shows funny characters in some places.</span></a></li>
       <li role="separator" class="divider"></li>
       <li><a href="#" style="white-space:normal;">Can't Login, Upload Or Install Extensions<span class="small text-muted">Users or Admins can't login or I can't upload anything or install extensions.</span></a></li>
       <li role="separator" class="divider"></li>
@@ -963,7 +974,7 @@ $disabled = '';
                                               Show Elevated Permissions
                                             </div>
                                             <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess1" name="someSwitchOption001" type="checkbox" checked />
+                                              <input id="someSwitchOptionSuccess1" name="someSwitchOption001" type="checkbox" />
                                               <label for="someSwitchOptionSuccess1" class="label-success text-left"></label>
                                             </div>
                                           </div>
@@ -987,7 +998,7 @@ $disabled = '';
                                               Show Components
                                             </div>
                                             <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess3" name="someSwitchOption003" type="checkbox" checked />
+                                              <input id="someSwitchOptionSuccess3" name="someSwitchOption003" type="checkbox" />
                                               <label for="someSwitchOptionSuccess3" class="label-success text-left"></label>
                                             </div>
                                           </div>
@@ -4417,6 +4428,7 @@ $disabled = '';
 
 
 
+
       <?php
         /* NOTE (RussW): SCRIPTS - Custom JS & jQuery
          * initialisation & configuration of js/jquery objects used in fpa
@@ -4425,6 +4437,66 @@ $disabled = '';
       ?>
       <script>
         $(document).ready(function () {
+
+
+<?php
+  /* HACK (RussW): TESTSCRIPT - change Runtime Options based on selected Pre-Defined Report
+   *
+   */
+?>
+//$(function() {
+//      $("#button").click( function()
+//           {
+//             alert('button clicked');
+//           }
+//      );
+//});
+
+/**
+$(function() {
+  $('#someSwitchOptionSuccess1').attr('checked', false),
+  $('#someSwitchOptionSuccess2').attr('checked', false),
+  $('#someSwitchOptionSuccess3').attr('checked', true),
+  $('#someSwitchOptionSuccess4').attr('checked', true),
+  $('#someSwitchOptionSuccess5').attr('checked', false),
+  $('#someSwitchOptionSuccess6').attr('checked', false),
+  $('#someSwitchOptionSuccess7').attr('checked', false);
+});
+**/
+  $('#selectBasicReport').click(function() {
+    $('#fpaReset').trigger('click');
+    $('#someSwitchOptionSuccess1').attr('checked', true),
+    $('#someSwitchOptionSuccess2').attr('checked', false),
+    $('#someSwitchOptionSuccess3').attr('checked', false),
+    $('#someSwitchOptionSuccess4').attr('checked', true),
+    $('#someSwitchOptionSuccess5').attr('checked', false),
+    $('#someSwitchOptionSuccess6').attr('checked', false),
+    $('#someSwitchOptionSuccess7').attr('checked', false);
+  });
+
+$('#selectDBReport').click(function() {
+  $('#fpaReset').trigger('click');
+  $('#someSwitchOptionSuccess1').attr('checked', false),
+  $('#someSwitchOptionSuccess2').attr('checked', true),
+  $('#someSwitchOptionSuccess3').attr('checked', false),
+  $('#someSwitchOptionSuccess4').attr('checked', false),
+  $('#someSwitchOptionSuccess5').attr('checked', false),
+  $('#someSwitchOptionSuccess6').attr('checked', true),
+  $('#someSwitchOptionSuccess7').attr('checked', true);
+});
+
+$('#fpaReset').click(function() {
+  $('#someSwitchOptionSuccess1').attr('checked', false),
+  $('#someSwitchOptionSuccess2').attr('checked', false),
+  $('#someSwitchOptionSuccess3').attr('checked', false),
+  $('#someSwitchOptionSuccess4').attr('checked', false),
+  $('#someSwitchOptionSuccess5').attr('checked', false),
+  $('#someSwitchOptionSuccess6').attr('checked', false),
+  $('#someSwitchOptionSuccess7').attr('checked', false);
+});
+
+
+
 
           <?php
             /* HACK (RussW): TESTSCRIPT - Temporary options on page load doIT/Generate button clicked
