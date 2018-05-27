@@ -84,7 +84,7 @@ $disabled = '';
   define ( '_RES_VERSION_MAINT', '0' );                                                                                 // maintenance/patch revision (.z)
   define ( '_RES_RELEASE_TYPE', 'BS' );                                                                                 // DEPRECIATING (@RussW): framework type (BS(Bootstrap), SA(Standalone))  Removed From Display Outputs : 27/05/2018
   define ( '_RES_RELEASE_BUILD', 'alpha' );                                                                             // dev status revision - dev(elopment), alpha, beta, rc, final
-  define ( '_RES_CODENAME', 'Emu Creek' );                                                                              // ADDED (@RussW): just a cute codename for major/minor revisions (x.y)  27/05/2018
+  define ( '_RES_NAME', 'Emu Creek' );                                                                                  // ADDED (@RussW): just a cute name for major/minor revisions (x.y)  27/05/2018
   define ( '_RES_LAST_UPDATED', '27 May 2018' );                                                                        // release date (dd MM yyyy)
   define ( '_RES_BRANCH', 'en-GB' );                                                                                    // Github branch location
   define ( '_RES_LANG', 'en-GB' );                                                                                      // Country/Language Code
@@ -4332,7 +4332,7 @@ $disabled = '';
             </div><!--/#legends-section-->
 
             <p class="text-muted text-center margin-top-lg small">
-              <?php echo _RES .' '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' [<span class="text-info">'. _RES_CODENAME .'</span>] '. _RES_RELEASE_BUILD; ?> 2011-<?php echo date('Y'); ?><sup>&copy;</sup>
+              <?php echo _RES .' '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' [<span class="text-info">'. _RES_NAME .'</span>] '. _RES_RELEASE_BUILD; ?> 2011-<?php echo date('Y'); ?><sup>&copy;</sup>
             </p>
 
           </div><!--/#content-->
