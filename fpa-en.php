@@ -23,17 +23,17 @@
    *                 example - NOTE (@RussW): this is an example comment
    */
 
-  /* NOTE (@RussW): Browser Caching Headers
-   * attempt to set some headers to avoid browser caching
+  /* NOTE (@RussW): Set Browser Caching Headers
+   * attempt to set some headers to avoid browser caching where possible
    *
    */
-    header('Cache-Control: no-store, private, no-cache, must-revalidate');                // HTTP/1.1
-    header('Cache-Control: pre-check=0, post-check=0, max-age=0, max-stale = 0', false);  // HTTP/1.1
-    header('Pragma: public');
-    header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');                                     // Date in the past
-    header('Expires: 0', false);
-    header('Last-Modified: '.gmdate('D, d M Y H:i:s') . ' GMT');
-    header ('Pragma: no-cache');
+  header('Cache-Control: no-store, private, no-cache, must-revalidate');                // HTTP/1.1
+  header('Cache-Control: pre-check=0, post-check=0, max-age=0, max-stale = 0', false);  // HTTP/1.1
+  header('Pragma: public');
+  header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');                                     // Date in the past
+  header('Expires: 0', false);
+  header('Last-Modified: '.gmdate('D, d M Y H:i:s') . ' GMT');
+  header ('Pragma: no-cache');
 
 
   /** TESTING ONLY - DELETE ME ****************************************/
@@ -341,9 +341,9 @@ $disabled = '';
 
 
       if ($runFPATour == '1'):
-      /* NOTE (FPA): LANGUAGE - FPA Tour Definitions & Constants
-       *
-       */
+        /* NOTE (FPA): LANGUAGE - FPA Tour Definitions & Constants
+         *
+         */
         define ( '_TOUR_STEP00_TITLE', 'User Toolbar' );
         define ( '_TOUR_STEP00_DESC', '<p>The FPA User Toolbar provides instant access to the <b>Sidebar Menu</b> toggle button <button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-transfer"></i></button> to improve data visibility on smaller screens.</p>\
                                        <p>You are also reminded of the currently selected <span class="text-warning">Information Privacy</span> setting and the <span class="text-danger">Security</span> implications of FPA, plus given the option to <span class="text-danger">Delete FPA</span> <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> after use.</p>\
@@ -381,12 +381,16 @@ $disabled = '';
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+        <!-- NOTE (@RussW): attempt to reduce the chance of indexing, archiving or caching through robots, if left on server -->
         <meta name="robots" content="noindex, nofollow, noodp, nocache, noarchive" />
 
         <title><?php echo _RES .' : '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD .' '. _RES_LANG; ?></title>
 
+
         <?php
-          // attempt to find and display a favicon
+          /* NOTE (@RussW): attempt to find and display a favicon
+           *
+           */
           $faviconPath = '';
           if (file_exists('./administrator/templates/bluestork/favicon.ico')):
             $faviconPath = './administrator/templates/bluestork/favicon.ico';
@@ -403,18 +407,19 @@ $disabled = '';
           <link rel="shortcut icon" href="<?php echo $faviconPath; ?>" />
         <?php endif; ?>
 
-        <!-- NOTE (RussW): include pace from CDN (JS included high in head to ensure most accurate progress bar timing) -->
+
+        <!-- NOTE (@RussW): include pace from CDN (include JS high in head to ensure as accurate as possible progress bar timing) -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" integrity="sha256-EPrkNjGEmCWyazb3A/Epj+W7Qm2pB9vnfXw+X6LImPM=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/orange/pace-theme-flash.min.css" integrity="sha256-RGBBrgymw4elQrpU8GjEkOCxf5vE5ZvpAGnhNpDONPk=" crossorigin="anonymous" />
 
-        <!-- grab normalise from CDN -->
+        <!-- NOTE (@RussW): grab normalise from CDN, set resets -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
 
-        <!-- grab Bootstrap from CDN -->
+        <!-- NOTE (@RussW): grab Bootstrap from CDN -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
         <?php if ($runFPATour == '1'): ?>
-          <!-- grab Bootstrap Tour from CDN -->
+          <!-- NOTE (@RussW): grab Bootstrap Tour from CDN, if selected -->
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.11.0/css/bootstrap-tour.min.css" integrity="sha256-r7R5NjcsiLK3ubv/Ee7yBl5n9zV+xoj1K6kzJ4E9jBU=" crossorigin="anonymous" />
         <?php endif; ?>
 
@@ -468,7 +473,9 @@ $disabled = '';
               <h4 class="text-center margin-remove-bottom">
 
                 <?php
-                  // attempt to find and display a joomla logo
+                  /* NOTE (@RussW): attempt to find and display a joomla logo
+                   *
+                   */
                   $logoPath = '';
                   if (file_exists('./administrator/templates/bluestork/images/logo.png')):
                     $logoPath = './administrator/templates/bluestork/images/logo.png';
@@ -556,8 +563,6 @@ $disabled = '';
             </ul>
 
           </div><!--/.sidebar-affix-->
-
-
         </nav><!--/#sidebar-->
 
 
