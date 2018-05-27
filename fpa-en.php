@@ -1,5 +1,5 @@
 <?php
-  /**
+  /*  NOTE (@RussW): DOCBLOCK - summary and default FPA elements
    *  The Forum Post Assistant has been designed to assist newcomers to the forum to be able to discover and post
    *  relevant system, instance, php and troubleshooting information directly in to a pre-formatted forum post.
    *
@@ -23,16 +23,16 @@
    *                 example - NOTE (@RussW): this is an example comment
    */
 
-  /* NOTE (@RussW): Set Browser Caching Headers
+  /* NOTE (@RussW): HEADERS - set browser caching headers
    * attempt to set some headers to avoid browser caching where possible
    *
    */
-  header('Cache-Control: no-store, private, no-cache, must-revalidate');                // HTTP/1.1
-  header('Cache-Control: pre-check=0, post-check=0, max-age=0, max-stale = 0', false);  // HTTP/1.1
+  header('Cache-Control: no-store, private, no-cache, must-revalidate');                                                // HTTP/1.1
+  header('Cache-Control: pre-check=0, post-check=0, max-age=0, max-stale = 0', false);                                  // HTTP/1.1
   header('Pragma: public');
-  header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');                                     // Date in the past
+  header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');                                                                     // some random (valid) date way in the past
   header('Expires: 0', false);
-  header('Last-Modified: '.gmdate('D, d M Y H:i:s') . ' GMT');
+  header('Last-Modified: '.gmdate('D, d M Y H:i:s') . ' GMT');                                                          // automates adding todays date
   header ('Pragma: no-cache');
 
 
@@ -74,54 +74,54 @@ $disabled = '';
 
 
 
-  /* TODO (@ALL): VERSION CONTROL : FPA Versioning & Revisioning
+  /* TODO (@ALL): VERSION CONTROL - versioning & revisioning
    * remember to update revision information
+   *
    */
-  define ( '_RES', 'Forum Post Assistant' );         // FPA resource long name
-  define ( '_RES_SHORT', 'FPA' );                    // FPA resource short name
-  define ( '_RES_VERSION', '2.0' );                  // major revision (x.y)
-  define ( '_RES_VERSION_MAINT', '0' );              // maintenance/patch revision (.z)
-  define ( '_RES_RELEASE_TYPE', 'BS' );              // framework type ( BS(Bootstrap), SA(Standalone) )
-  define ( '_RES_RELEASE_BUILD', 'alpha' );          // dev status revision - dev(elopment), alpha, beta, rc, final
-  define ( '_RES_LAST_UPDATED', '12/05/2018' );      // release date (dd/mm/yyyy)
-  define ( '_RES_BRANCH', 'en-GB' );                 // Github branch location
-  define ( '_RES_LANG', 'en-GB' );                   // Country/Language Code
+  define ( '_RES', 'Forum Post Assistant' );                                                                            // FPA resource long name
+  define ( '_RES_SHORT', 'FPA' );                                                                                       // FPA resource short name
+  define ( '_RES_VERSION', '2.0' );                                                                                     // major.minor revision (x.y)
+  define ( '_RES_VERSION_MAINT', '0' );                                                                                 // maintenance/patch revision (.z)
+  define ( '_RES_RELEASE_TYPE', 'BS' );                                                                                 // DEPRECIATING (@RussW): framework type (BS(Bootstrap), SA(Standalone))  Removed From Display Outputs : 27/05/2018
+  define ( '_RES_RELEASE_BUILD', 'alpha' );                                                                             // dev status revision - dev(elopment), alpha, beta, rc, final
+  define ( '_RES_CODENAME', 'Emu Creek' );                                                                              // ADDED (@RussW): just a cute codename for major/minor revisions (x.y)  27/05/2018
+  define ( '_RES_LAST_UPDATED', '27 May 2018' );                                                                        // release date (dd MM yyyy)
+  define ( '_RES_BRANCH', 'en-GB' );                                                                                    // Github branch location
+  define ( '_RES_LANG', 'en-GB' );                                                                                      // Country/Language Code
 
 
   /* NOTE (@FPA): PARENT FLAGS - Joomla!
+   *
    */
-  define ( '_VALID_MOS', 1 );                        // for J!1.0
-  define ( '_JEXEC', 1 );                            // for J!1.5, J!1.6, J!1.7, J!2.5, J!3.0
+  define ( '_VALID_MOS', 1 );                                                                                           // for J!1.0
+  define ( '_JEXEC', 1 );                                                                                               // for J!1.5, J!1.6, J!1.7, J!2.5, J!3.0
 
 
-
-
-      /* NOTE (@FPA): LANGUAGE - FPA Specific Definitions & Constants
-       *
-       */
-      define ( '_RES_MENU_HOME', 'Home' );  // RussW : new 06/05/2018
-      define ( '_RES_MENU_BASIC', 'Basic Discovery' );  // RussW : new 06/05/2018
-      define ( '_RES_MENU_APP', 'Application Discovery' );  // RussW : new 06/05/2018
-      define ( '_RES_MENU_HOST', 'Hosting Discovery' );  // RussW : new 06/05/2018
-      define ( '_RES_MENU_PERM', 'Permissions Discovery' );  // RussW : new 06/05/2018
-      define ( '_RES_MENU_EXT', 'Extension Discovery' );  // RussW : new 06/05/2018
-      define ( '_RES_MENU_TOUR', 'FPA Tour' );  // RussW : new 06/05/2018
-
-      define ( '_RES_FPALATEST', 'Latest (.tar.gz) Download' );
-      define ( '_RES_FPALATEST2', 'Latest (.zip) Download' );
-      /* DONE (RussW): depreciated by github json array data
-      define ( '_RES_FPALINK', 'https://github.com/ForumPostAssistant/FPA/tarball/en-GB/' ); // where to get the latest 'Final Releases
-      define ( '_RES_FPALINK2', 'https://github.com/ForumPostAssistant/FPA/zipball/en-GB/' ); // where to get the latest 'Final Releases
-      */
-      define ( '_COPYRIGHT_HEADING', 'Developers & Contributors' );
-      define ( '_COPYRIGHT_STMT', 'The FPA script has been developed by, and is copyright of the following contributors; Russell Winter, Phil DeGruy, Claire Mandville, Bernard Toplak & Sveinung Larsen.
-                                   <a class="text-primary" href="https://github.com/ForumPostAssistant" target="_blank">Visit the FPA Github Project</a>.'
-             );
-      define ( '_LICENSE_HEADING', 'Licensing & Disclaimer' );
-      define ( '_LICENSE_FOOTER', 'script comes with ABSOLUTELY NO WARRANTY. This is free software; and covered under the <strong>GNU GPLv3 or later license</strong>.
-                                   You are welcome to redistribute it under certain conditions. For details read the LICENSE.txt file included in the download package with this script.
-                                   A copy of the license may also be obtained at <a class="text-primary" href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses/</a>.'
-             );
+  /* NOTE (@FPA): LANGUAGE - specific FPA definitions & constants
+   *
+   */
+  define ( '_RES_MENU_HOME', 'Home' );                                                                                  // RussW : new 06/05/2018
+  define ( '_RES_MENU_BASIC', 'Basic Discovery' );                                                                      // RussW : new 06/05/2018
+  define ( '_RES_MENU_APP', 'Application Discovery' );                                                                  // RussW : new 06/05/2018
+  define ( '_RES_MENU_HOST', 'Hosting Discovery' );                                                                     // RussW : new 06/05/2018
+  define ( '_RES_MENU_PERM', 'Permissions Discovery' );                                                                 // RussW : new 06/05/2018
+  define ( '_RES_MENU_EXT', 'Extension Discovery' );                                                                    // RussW : new 06/05/2018
+  define ( '_RES_MENU_TOUR', 'FPA Tour' );                                                                              // RussW : new 06/05/2018
+  define ( '_RES_FPALATEST', 'Latest (.tar.gz) Download' );
+  define ( '_RES_FPALATEST2', 'Latest (.zip) Download' );
+  /* DONE (RussW): depreciated by github json array data
+  define ( '_RES_FPALINK', 'https://github.com/ForumPostAssistant/FPA/tarball/en-GB/' ); // where to get the latest 'Final Releases
+  define ( '_RES_FPALINK2', 'https://github.com/ForumPostAssistant/FPA/zipball/en-GB/' ); // where to get the latest 'Final Releases
+  */
+  define ( '_COPYRIGHT_HEADING', 'Developers & Contributors' );
+  define ( '_COPYRIGHT_STMT', 'The FPA script has been developed by, and is copyright of the following contributors; Russell Winter, Phil DeGruy, Claire Mandville, Bernard Toplak & Sveinung Larsen.
+                               <a class="text-primary" href="https://github.com/ForumPostAssistant" target="_blank">Visit the FPA Github Project</a>.'
+         );
+  define ( '_LICENSE_HEADING', 'Licensing & Disclaimer' );
+  define ( '_LICENSE_FOOTER', 'script comes with ABSOLUTELY NO WARRANTY. This is free software; and covered under the <strong>GNU GPLv3 or later license</strong>.
+                               You are welcome to redistribute it under certain conditions. For details read the LICENSE.txt file included in the download package with this script.
+                               A copy of the license may also be obtained at <a class="text-primary" href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses/</a>.'
+         );
 
 
 
@@ -384,7 +384,7 @@ $disabled = '';
         <!-- NOTE (@RussW): attempt to reduce the chance of indexing, archiving or caching through robots, if left on server -->
         <meta name="robots" content="noindex, nofollow, noodp, nocache, noarchive" />
 
-        <title><?php echo _RES .' : '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD .' '. _RES_LANG; ?></title>
+        <title><?php echo _RES .' : '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' '. _RES_RELEASE_BUILD .' '. _RES_LANG; ?></title>
 
 
         <?php
@@ -498,7 +498,7 @@ $disabled = '';
 
               <strong class="sidebar-fpa-small"><?php echo _RES_SHORT; ?></strong>
 
-              <div class="text-center small"><?php echo _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD; ?></div>
+              <div class="text-center small"><?php echo _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' '. _RES_RELEASE_BUILD; ?></div>
 
             </div><!--/.sidebar-header-->
 
@@ -4289,7 +4289,7 @@ $disabled = '';
 
                     <h6 class="margin-remove text-center"><?php echo _LICENSE_HEADING; ?></h6>
                     <p class="text-muted">
-                      <?php echo _RES .' '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD .' '. _LICENSE_FOOTER; ?>
+                      <?php echo _RES .' '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' '. _RES_RELEASE_BUILD .' '. _LICENSE_FOOTER; ?>
                     </p>
 
                   </div>
@@ -4332,7 +4332,7 @@ $disabled = '';
             </div><!--/#legends-section-->
 
             <p class="text-muted text-center margin-top-lg small">
-              <?php echo _RES .' '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD; ?> 2011-<?php echo date('Y'); ?><sup>&copy;</sup>
+              <?php echo _RES .' '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' [<span class="text-info">'. _RES_CODENAME .'</span>] '. _RES_RELEASE_BUILD; ?> 2011-<?php echo date('Y'); ?><sup>&copy;</sup>
             </p>
 
           </div><!--/#content-->
@@ -4382,7 +4382,7 @@ $disabled = '';
             </div>
 
             <div class="btn-group btn-group-xs text-primary copyright">
-              <?php echo _RES .' ('. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' ['. _RES_RELEASE_TYPE .'] '. _RES_RELEASE_BUILD; ?>) 2011-<?php echo date('Y'); ?><sup>&copy;</sup>
+              <?php echo _RES .' ('. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' '. _RES_RELEASE_BUILD; ?>) 2011-<?php echo date('Y'); ?><sup>&copy;</sup>
             </div>
 
           </div>
