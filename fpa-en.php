@@ -4479,6 +4479,7 @@ $('#selectDBReport').click(function() {
   $('#someSwitchOptionSuccess5').attr('checked', false),
   $('#someSwitchOptionSuccess6').attr('checked', false),
   $('#someSwitchOptionSuccess7').attr('checked', false);
+  $('#showProtectedDefault').trigger('click');
 });
 
 $('#selectFSReport').click(function() {
@@ -4490,6 +4491,7 @@ $('#selectFSReport').click(function() {
   $('#someSwitchOptionSuccess5').attr('checked', false),
   $('#someSwitchOptionSuccess6').attr('checked', false),
   $('#someSwitchOptionSuccess7').attr('checked', false);
+  $('#showProtectedDefault').trigger('click');
 });
 
 $('#selectEXReport').click(function() {
@@ -4501,6 +4503,7 @@ $('#selectEXReport').click(function() {
   $('#someSwitchOptionSuccess5').attr('checked', true),
   $('#someSwitchOptionSuccess6').attr('checked', true),
   $('#someSwitchOptionSuccess7').attr('checked', false);
+  $('#showProtectedDefault').trigger('click');
 });
 
 $('#selectVEReport').click(function() {
@@ -4512,6 +4515,7 @@ $('#selectVEReport').click(function() {
   $('#someSwitchOptionSuccess5').attr('checked', true),
   $('#someSwitchOptionSuccess6').attr('checked', true),
   $('#someSwitchOptionSuccess7').attr('checked', false);
+  $('#showProtectedDefault').trigger('click');
 });
 
 $('#fpaReset').click(function() {
@@ -4522,6 +4526,7 @@ $('#fpaReset').click(function() {
   $('#someSwitchOptionSuccess5').attr('checked', false),
   $('#someSwitchOptionSuccess6').attr('checked', false),
   $('#someSwitchOptionSuccess7').attr('checked', false);
+  $('#showProtectedDefault').trigger('click');
 });
 
 
