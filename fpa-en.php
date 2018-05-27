@@ -867,36 +867,50 @@ $disabled = '';
                                             To assist with troubleshooting, you may also choose what information is included in the forum post content, or you may continue with the default selections.
                                           </p>
 
-<!-- HACK (@RussW): testing Fixed Report Runtime Options -->
-<div class="row">
-<div class="col-xs-12 col-lg-6 margin-bottom-sm">
+                                          <?php
+                                            /* NOTE (@RussW): Fixed/Pre-Configured Reports
+                                             * provide pre-determined runtime option report selection
+                                             *
+                                             */
+                                          ?>
+                                          <div class="row fixed-reports">
+                                            <div class="col-xs-12 col-lg-6 margin-bottom-sm">
 
-   <div class="dropdown" style="width:100%;">
-    <button class="btn btn-primary btn-block dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      Pre~Configured Reports
-      <span class="glyphicon glyphicon-chevron-down" style="top:3px;left:3px;"></span>
-    </button>
+                                              <div class="dropdown" style="width:100%;">
+                                                <button class="btn btn-primary btn-block dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                  Pre~Configured Reports
+                                                  <span class="glyphicon glyphicon-chevron-down" style="top:3px;left:3px;"></span>
+                                                </button>
 
-    <ul class="dropdown-menu">
-      <li><a id="selectBasicReport" href="#" style="white-space:normal;">White Screen Or Fatal/500 Error<span class="small text-muted">My site only shows a white-screen or has an "Error 500" or PHP "Fatal Error" message.</span></a></li>
-      <li role="separator" class="divider"></li>
-      <li><a id="selectDBReport" href="#" style="white-space:normal;">Site Slow Or Showing Funny Characters<span class="small text-muted">My site is really slow to load, or shows funny characters in some places.</span></a></li>
-      <li role="separator" class="divider"></li>
-      <li><a href="#" style="white-space:normal;">Can't Login, Upload Or Install Extensions<span class="small text-muted">Users or Admins can't login or I can't upload anything or install extensions.</span></a></li>
-      <li role="separator" class="divider"></li>
-      <li><a href="#" style="white-space:normal;">I've Been Hacked!<span class="small text-muted">My site has been hacked, defaced, sending spam, redirecting visitors or doing unexpected things.</span></a></li>
-      <li role="separator" class="divider"></li>
-    </ul>
-   </div>
+                                                <ul class="dropdown-menu" style="min-width: 276px;">
+                                                  <!--
+                                                  <li><a id="selectBasicReport" class="line-height-normal" href="#" style="white-space:normal;">White Screen Or Fatal/500 Error<span class="small text-muted">My site only shows a white-screen or has an "Error 500" or PHP "Fatal Error" message.</span></a></li>
+                                                  <li role="separator" class="divider" style="margin:3px 0;"></li>
+                                                  -->
+                                                  <li><a id="selectDBReport" class="line-height-normal" href="#" style="white-space:normal;"><i class="glyphicon glyphicon-cog text-info"></i>&nbsp; Database Audit<span class="small text-muted">Sites that may be slow to load, timeout on load or show unexpected characters in some places.</span></a></li>
+                                                  <li role="separator" class="divider" style="margin:3px 0;"></li>
+                                                  <li><a id="selectFSReport" class="line-height-normal" href="#" style="white-space:normal;"><i class="glyphicon glyphicon-list-alt text-info"></i>&nbsp; File System Audit<span class="small text-muted">Sites that may be observing permissions issues, such as being unable to upload or install items.</span></a></li>
+                                                  <li role="separator" class="divider" style="margin:3px 0;"></li>
+                                                  <li><a id="selectEXReport" class="line-height-normal" href="#" style="white-space:normal;"><i class="glyphicon glyphicon-th text-info"></i>&nbsp; Extension Audit<span class="small text-muted">Sites that may be observing 3rd-Party extension functionality issues, such as white screens, 404 or 500 Errors or crashes when accessing extensions.</span></a></li>
+                                                  <li role="separator" class="divider" style="margin:3px 0;"></li>
+                                                  <li><a id="selectVEReport" class="line-height-normal" href="#" style="white-space:normal;"><i class="glyphicon glyphicon-screenshot text-danger"></i>&nbsp; Vulnerable Extension Audit<span class="small text-muted">Check installed 3rd-Party extensions against the Vulnerable Extension List.</span></a></li>
+                                                  <!--
+                                                  <li><a class="line-height-normal" href="#" style="white-space:normal;">Can't Login, Upload Or Install Extensions<span class="small text-muted">Users or Admins can't login or I can't upload anything or install extensions.</span></a></li>
+                                                  <li role="separator" class="divider" style="margin:3px 0;"></li>
+                                                  <li><a class="line-height-normal" href="#" style="white-space:normal;">I've Been Hacked!<span class="small text-muted">My site has been hacked, defaced, sending spam, redirecting visitors or doing unexpected things.</span></a></li>
+                                                  -->
+                                                </ul>
 
-</div>
-<div class="col-xs-12 col-lg-6 margin-bottom-sm">
+                                             </div><!-- /.dropdown -->
 
-    <a class="btn btn-primary btn-block" onclick="$('#settings-tab').tab('show');">Select Runtime Options <span class="glyphicon glyphicon-chevron-right"></span></a>
+                                            </div>
+                                            <div class="col-xs-12 col-lg-6 margin-bottom-sm">
 
-</div>
+                                              <a class="btn btn-primary btn-block" onclick="$('#settings-tab').tab('show');">Select Runtime Options <span class="glyphicon glyphicon-chevron-right"></span></a>
 
-</div>
+                                            </div>
+
+                                          </div><!-- /.row -->
 
 <!-- NOTE (@RussW): previous goto Runtime Options button
                                           <a class="btn btn-primary btn-sm btn-block" onclick="$('#settings-tab').tab('show');">Select Runtime Options <span class="glyphicon glyphicon-chevron-right"></span></a>
@@ -4444,25 +4458,7 @@ $disabled = '';
    *
    */
 ?>
-//$(function() {
-//      $("#button").click( function()
-//           {
-//             alert('button clicked');
-//           }
-//      );
-//});
-
 /**
-$(function() {
-  $('#someSwitchOptionSuccess1').attr('checked', false),
-  $('#someSwitchOptionSuccess2').attr('checked', false),
-  $('#someSwitchOptionSuccess3').attr('checked', true),
-  $('#someSwitchOptionSuccess4').attr('checked', true),
-  $('#someSwitchOptionSuccess5').attr('checked', false),
-  $('#someSwitchOptionSuccess6').attr('checked', false),
-  $('#someSwitchOptionSuccess7').attr('checked', false);
-});
-**/
   $('#selectBasicReport').click(function() {
     $('#fpaReset').trigger('click');
     $('#someSwitchOptionSuccess1').attr('checked', true),
@@ -4473,7 +4469,7 @@ $(function() {
     $('#someSwitchOptionSuccess6').attr('checked', false),
     $('#someSwitchOptionSuccess7').attr('checked', false);
   });
-
+**/
 $('#selectDBReport').click(function() {
   $('#fpaReset').trigger('click');
   $('#someSwitchOptionSuccess1').attr('checked', false),
@@ -4481,8 +4477,41 @@ $('#selectDBReport').click(function() {
   $('#someSwitchOptionSuccess3').attr('checked', false),
   $('#someSwitchOptionSuccess4').attr('checked', false),
   $('#someSwitchOptionSuccess5').attr('checked', false),
+  $('#someSwitchOptionSuccess6').attr('checked', false),
+  $('#someSwitchOptionSuccess7').attr('checked', false);
+});
+
+$('#selectFSReport').click(function() {
+  $('#fpaReset').trigger('click');
+  $('#someSwitchOptionSuccess1').attr('checked', true),
+  $('#someSwitchOptionSuccess2').attr('checked', false),
+  $('#someSwitchOptionSuccess3').attr('checked', false),
+  $('#someSwitchOptionSuccess4').attr('checked', false),
+  $('#someSwitchOptionSuccess5').attr('checked', false),
+  $('#someSwitchOptionSuccess6').attr('checked', false),
+  $('#someSwitchOptionSuccess7').attr('checked', false);
+});
+
+$('#selectEXReport').click(function() {
+  $('#fpaReset').trigger('click');
+  $('#someSwitchOptionSuccess1').attr('checked', false),
+  $('#someSwitchOptionSuccess2').attr('checked', false),
+  $('#someSwitchOptionSuccess3').attr('checked', true),
+  $('#someSwitchOptionSuccess4').attr('checked', true),
+  $('#someSwitchOptionSuccess5').attr('checked', true),
   $('#someSwitchOptionSuccess6').attr('checked', true),
-  $('#someSwitchOptionSuccess7').attr('checked', true);
+  $('#someSwitchOptionSuccess7').attr('checked', false);
+});
+
+$('#selectVEReport').click(function() {
+  $('#fpaReset').trigger('click');
+  $('#someSwitchOptionSuccess1').attr('checked', false),
+  $('#someSwitchOptionSuccess2').attr('checked', false),
+  $('#someSwitchOptionSuccess3').attr('checked', true),
+  $('#someSwitchOptionSuccess4').attr('checked', true),
+  $('#someSwitchOptionSuccess5').attr('checked', true),
+  $('#someSwitchOptionSuccess6').attr('checked', true),
+  $('#someSwitchOptionSuccess7').attr('checked', false);
 });
 
 $('#fpaReset').click(function() {
