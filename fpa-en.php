@@ -84,7 +84,7 @@ $disabled = '';
   define ( '_RES_VERSION_MAINT', '0' );                                                                                 // maintenance/patch revision (.z)
   define ( '_RES_RELEASE_TYPE', 'BS' );                                                                                 // DEPRECIATING (@RussW): framework type (BS(Bootstrap), SA(Standalone))  Removed From Display Outputs : 27/05/2018
   define ( '_RES_RELEASE_BUILD', 'alpha' );                                                                             // dev status revision - dev(elopment), alpha, beta, rc, final
-  define ( '_RES_NAME', 'Waikikamukau' );                                                                                  // ADDED (@RussW): just a cute name for major/minor revisions (x.y)  27/05/2018
+  define ( '_RES_NAME', 'Waikikamukau' );                                                                               // ADDED (@RussW): just a cute name for major/minor revisions (x.y)  27/05/2018
   define ( '_RES_LAST_UPDATED', '27 May 2018' );                                                                        // release date (dd MM yyyy)
   define ( '_RES_BRANCH', 'en-GB' );                                                                                    // Github branch location
   define ( '_RES_LANG', 'en-GB' );                                                                                      // Country/Language Code
