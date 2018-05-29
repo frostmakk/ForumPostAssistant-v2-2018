@@ -122,7 +122,7 @@ $disabled = '';
                                You are welcome to redistribute it under certain conditions. For details read the LICENSE.txt file included in the download package with this script.
                                A copy of the license may also be obtained at <a class="text-primary" href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses/</a>.'
          );
-
+  define ( '_FPA_JOOMLA_DISCLAIMER', 'is not affiliated with or endorsed by The Joomla! Project™. Use of the Joomla!® name, symbol, logo and related trademarks is permitted under a limited license granted by Open Source Matters, Inc.');
 
 
 
@@ -4333,6 +4333,9 @@ $disabled = '';
 
             <p class="text-muted text-center margin-top-lg small">
               <?php echo _RES .' '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' [<span class="text-info">'. _RES_NAME .'</span>] '. _RES_RELEASE_BUILD; ?> 2011-<?php echo date('Y'); ?><sup>&copy;</sup>
+            </p>
+            <p class="text-muted text-center small border-top padding-top-sm" style="margin:0px 12%;">
+              <em><?php echo _RES .' ('. _RES_SHORT .') '. _FPA_JOOMLA_DISCLAIMER; ?></em>
             </p>
 
           </div><!--/#content-->
