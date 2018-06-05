@@ -1,42 +1,60 @@
 <?php
-  /*  NOTE (@RussW): DOCBLOCK - summary and default FPA elements
-   *  The Forum Post Assistant has been designed to assist newcomers to the forum to be able to discover and post
-   *  relevant system, instance, php and troubleshooting information directly in to a pre-formatted forum post.
-   *
-   *  @package       Forum_Post_Assistant
-   *  @category      tools
-   *  @version       2.0.0
-   *  @author        RussW
-   *  @author        PhilD
-   *  @link          https://github.com/ForumPostAssistant Github Project Page
-   *  @link          https://github.com/ForumPostAssistant/FPA/issues Github Issue Tracker
-   *  @copyright     Copyright (C) 2011 - 2018 Forum Post Assistant Core & Development Team Members. All rights reserved.
-   *  @license       GNU General Public License version 3 or later; see LICENSE
-   *
-   *  @internal      comment notation & change syntax
-   *                 TYPE (@your-preferred-name): your comment content
-   *
-   *                 NOTE    - generic notation & information
-   *                 TODO    - a todo notice or addition item
-   *                 FIXME   - item requiring problem resolution
-   *                 HACK    - work-around requiring later resolution
-   *                 example - NOTE (@RussW): this is an example comment
-   */
+/** NOTE (@RussW): DocBlock - summary and default FPA elements
+ *  The Forum Post Assistant has been designed to assist newcomers to Joomla! and the forum to be able to discover and post relevant system, instance,
+ *  php and troubleshooting information directly in to a pre-formatted forum post.
+ *
+ *  @version       2.0.0                                                                                                                              // TODO (@FPA): @verison, update on new releases
+ *  @category      tools
+ *  @package       Forum_Post_Assistant
+ *  @author        RussW
+ *  @author        PhilD
+ *  @copyright     Copyright (C) 2011 - 2018 Forum Post Assistant Core & Development Team Members. All rights reserved.
+ *  @license       GNU General Public License version 3 or later; see LICENSE
+ *  @link          https://github.com/ForumPostAssistant Github Project Page
+ *  @link          https://github.com/ForumPostAssistant/FPA/issues Github Issue Tracker
+ *
+ * @internal       Coding Style - is based on https://developer.joomla.org/coding-standards/intro.html where possible
+ *                 and is practical. Use of traditional braces/curly-brackets ( if{, } else {, } // descriptive-comment )
+ *                 is recommended and preferred over the textual alternative-style ( if: else:, endif; ) to cater for
+ *                 multiple/cross IDE recognition.
+ *                 Where it makes sense, is feasible and does not effect readability or function, lines should not
+ *                 exceed a notiional 150 chararcters and inline single line comments being placed/started at the 150
+ *                 character column as well.
+ *                 Indentation tabs should equate to 4 spaces, with spaces being used to seperate inline for clarity.
+ *                 A minimum of 2 lines & maximum of 6 lines should be used to seperate minor and major sections or
+ *                 code blocks for readability and clarity.
+ *
+ *  @internal      comment notation & change syntax
+ *                 TYPE (@your-preferred-name): your comment content
+ *
+ *                 ( NOTE         - generic notation & information                     )
+ *                 ( TODO         - a todo notice or or future addition item           )
+ *                 ( BUG          - an error causing a fatal issue                     )
+ *                 ( FIXME        - non-fatal item requiring problem resolution        )
+ *                 ( HACK         - a work-around or hack requiring later resolution   )
+ *                 ( TEST         - item requires (further) testing or is being proven )
+ *                 ( DELETEME     - to be deleted prior to production                  )
+ *                 ( DEPRECIATED  - an item has been replaced or will be removed soon  )
+ *                 ( HIDDEN       - intentionally hidden                               )
+ *                 example        - NOTE (@RussW): this is an example comment
+ *
+ */
 
-  /* NOTE (@RussW): HEADERS - set browser caching headers
-   * attempt to set some headers to avoid browser caching where possible
-   *
-   */
-  header('Cache-Control: no-store, private, no-cache, must-revalidate');                                                // HTTP/1.1
-  header('Cache-Control: pre-check=0, post-check=0, max-age=0, max-stale = 0', false);                                  // HTTP/1.1
-  header('Pragma: public');
-  header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');                                                                     // some random (valid) date way in the past
-  header('Expires: 0', false);
-  header('Last-Modified: '.gmdate('D, d M Y H:i:s') . ' GMT');                                                          // automates adding todays date
-  header ('Pragma: no-cache');
+
+/** NOTE (@RussW): Headers - set browser caching headers
+ * attempt to set some headers to avoid browser caching where possible
+ *
+ */
+ header('Cache-Control: no-store, private, no-cache, must-revalidate');                                                                               // HTTP/1.1
+ header('Cache-Control: pre-check=0, post-check=0, max-age=0, max-stale = 0', false);                                                                 // HTTP/1.1
+ header('Pragma: public');
+ header('Expires: Sat, 26 Jul 1997 05:00:00 GMT');                                                                                                    // some random (valid) date way in the past
+ header('Expires: 0', false);
+ header('Last-Modified: '.gmdate('D, d M Y H:i:s') . ' GMT');                                                                                         // automates adding todays date
+ header ('Pragma: no-cache');
 
 
-  /** TESTING ONLY - DELETE ME ****************************************/
+  /** TEST - START DELETE ME ****************************************/
 //  error_reporting(0);
   //$disabled = 'disabled';
 
@@ -48,8 +66,9 @@
 
 
 $disabled = '';
-  /** TESTING ONLY - DELETE ME ****************************************/
+  /** TEST - END DELETE ME ****************************************/
 ?>
+
 <!DOCTYPE html>
 <html lang="en-gb" dir="ltr" vocab="http://schema.org/">
 
@@ -74,30 +93,30 @@ $disabled = '';
 
 
 
-  /* TODO (@ALL): VERSION CONTROL - versioning & revisioning
-   * remember to update revision information
-   *
-   */
-  define ( '_RES', 'Forum Post Assistant' );                                                                            // FPA resource long name
-  define ( '_RES_SHORT', 'FPA' );                                                                                       // FPA resource short name
-  define ( '_RES_VERSION', '2.0' );                                                                                     // major.minor revision (x.y)
-  define ( '_RES_VERSION_MAINT', '0' );                                                                                 // maintenance/patch revision (.z)
-  define ( '_RES_RELEASE_TYPE', 'BS' );                                                                                 // DEPRECIATING (@RussW): framework type (BS(Bootstrap), SA(Standalone))  Removed From Display Outputs : 27/05/2018
-  define ( '_RES_RELEASE_BUILD', 'alpha' );                                                                             // dev status revision - dev(elopment), alpha, beta, rc, final
-  define ( '_RES_NAME', 'Waikikamukau' );                                                                               // ADDED (@RussW): just a cute name for major/minor revisions (x.y)  27/05/2018
-  define ( '_RES_LAST_UPDATED', '27 May 2018' );                                                                        // release date (dd MM yyyy)
-  define ( '_RES_BRANCH', 'en-GB' );                                                                                    // Github branch location
-  define ( '_RES_LANG', 'en-GB' );                                                                                      // Country/Language Code
+    /** TODO (@ALL): VERSION CONTROL - versioning & revisioning
+     * remember to update revision information
+     *
+     */
+    define ( '_RES', 'Forum Post Assistant' );                                                                                                        // FPA resource long name
+    define ( '_RES_SHORT', 'FPA' );                                                                                                                   // FPA resource short name
+    define ( '_RES_VERSION', '2.0' );                                                                                                                 // major.minor revision (x.y)
+    define ( '_RES_VERSION_MAINT', '0' );                                                                                                             // maintenance/patch revision (.z)
+    define ( '_RES_RELEASE_TYPE', 'BS' );                                                                                                             // DEPRECIATING (@RussW): framework type (BS(Bootstrap), SA(Standalone))  Removed From Display Outputs : 27/05/2018
+    define ( '_RES_RELEASE_BUILD', 'alpha' );                                                                                                         // dev status revision - dev(elopment), alpha, beta, rc, final
+    define ( '_RES_NAME', 'Waikikamukau' );                                                                                                           // just a cute name for major/minor revisions (x.y) : RussW 27/05/2018
+    define ( '_RES_LAST_UPDATED', '27 May 2018' );                                                                                                    // release date (dd MM yyyy)
+    define ( '_RES_BRANCH', 'en-GB' );                                                                                                                // Github branch location
+    define ( '_RES_LANG', 'en-GB' );                                                                                                                  // Country/Language Code
 
 
-  /* NOTE (@FPA): PARENT FLAGS - Joomla!
-   *
-   */
-  define ( '_VALID_MOS', 1 );                                                                                           // for J!1.0
-  define ( '_JEXEC', 1 );                                                                                               // for J!1.5, J!1.6, J!1.7, J!2.5, J!3.0
+    /** NOTE (@FPA): PARENT FLAGS - Joomla!
+     *
+     */
+    define ( '_VALID_MOS', 1 );                                                                                                                       // for J!1.0
+    define ( '_JEXEC', 1 );                                                                                                                           // for J!1.5, J!1.6, J!1.7, J!2.5, J!3.0
 
 
-  /* NOTE (@FPA): LANGUAGE - specific FPA definitions & constants
+  /** NOTE (@FPA): LANGUAGE - specific FPA definitions & constants
    *
    */
   define ( '_RES_MENU_HOME', 'Home' );                                                                                  // RussW : new 06/05/2018
@@ -109,7 +128,7 @@ $disabled = '';
   define ( '_RES_MENU_TOUR', 'FPA Tour' );                                                                              // RussW : new 06/05/2018
   define ( '_RES_FPALATEST', 'Latest (.tar.gz) Download' );
   define ( '_RES_FPALATEST2', 'Latest (.zip) Download' );
-  /* DONE (RussW): depreciated by github json array data
+  /* DEPRECIATED (RussW): depreciated by github json array data
   define ( '_RES_FPALINK', 'https://github.com/ForumPostAssistant/FPA/tarball/en-GB/' ); // where to get the latest 'Final Releases
   define ( '_RES_FPALINK2', 'https://github.com/ForumPostAssistant/FPA/zipball/en-GB/' ); // where to get the latest 'Final Releases
   */
@@ -126,254 +145,246 @@ $disabled = '';
 
 
 
-      /* NOTE (FPA): LANGUAGE - FPA specific messages. Errors, warning & notices
-       *
-       */
-      define ( '_RES_MESSAGE_WARNING', 'Notice' );  // RussW : new 07/05/2018
-      define ( '_RES_MESSAGE_NOTFOUND', 'Not Found.' );  // RussW : new 07/05/2018
-      define ( '_RES_MESSAGE_NOTCONN', 'Unable To Connect.' );  // RussW : new 07/05/2018
-      define ( '_RES_MESSAGE_NOTESTS', 'No FPA test routines were possible.' );  // RussW : new 07/05/2018
-      // remove script notice content - Phil 4-17-12
-      define ( '_FPA_DELNOTE_LN1', 'Security Notice' );
-      define ( '_FPA_DELNOTE_LN2', 'Due to the highly sensitive nature of the information displayed by the FPA script, <b>it should be removed from the server immediately after use</b>.' );
-      define ( '_FPA_DELNOTE_LN3', 'If the script is left on the site, it can be used to gather enough information to illegally access, deface or hack your site.' );
-      define ( '_FPA_DELLINK', 'fpa-en.php?act=delete' );
-      // J! & FPA version checking - RussW : new 12/05/2018
-      define ( '_FPA_VER_CHECK_HEADING', 'Forum Post Assistant Version Check' );
-      define ( '_FPA_VER_CHECK_ATLATEST', 'This FPA version is at the latest stable release.' );
-      define ( '_FPA_VER_CHECK_OUTOFDATE', 'This FPA version <strong>is below the latest stable release</strong>.<br />You should consider updating your FPA script for the latest improvements.' );
-      define ( '_FPA_VER_CHECK_ATDEVREL', 'This FPA version <strong>appears to be a development or pre-release version</strong>.<br />The FPA results may not be complete and you may observe some inconsistencies or minor bugs.' );
-      define ( '_J_VER_CHECK_HEADING', 'Joomla! Version Check' );
-      define ( '_J_VER_CHECK_ATLATEST', 'The discovered Joomla! version is at the latest stable release.' );
-      define ( '_J_VER_CHECK_OUTOFDATE', 'The discovered Joomla! version <strong>is below the latest stable release</strong>.<br />You should consider updating your Joomla! installation.' );
-      define ( '_J_VER_CHECK_ATDEVREL', 'The discovered Joomla! version <strong>appears to be a development or pre-release version</strong>.<br />The FPA results may not be complete if there are new features or depreciated functions.' );
+  /** NOTE (@FPA): LANGUAGE - FPA specific messages. Errors, warning & notices
+   *
+   */
+  define ( '_RES_MESSAGE_WARNING', 'Notice' );                                                                          // RussW : new 07/05/2018
+  define ( '_RES_MESSAGE_NOTFOUND', 'Not Found.' );                                                                     // RussW : new 07/05/2018
+  define ( '_RES_MESSAGE_NOTCONN', 'Unable To Connect.' );                                                              // RussW : new 07/05/2018
+  define ( '_RES_MESSAGE_NOTESTS', 'No FPA test routines were possible.' );                                             // RussW : new 07/05/2018
+  // remove script notice content - Phil 4-17-12
+  define ( '_FPA_DELNOTE_LN1', 'Security Notice' );
+  define ( '_FPA_DELNOTE_LN2', 'Due to the highly sensitive nature of the information displayed by the FPA script, <b>it should be removed from the server immediately after use</b>.' );
+  define ( '_FPA_DELNOTE_LN3', 'If the script is left on the site, it can be used to gather enough information to illegally access, deface or hack your site.' );
+  define ( '_FPA_DELLINK', 'fpa-en.php?act=delete' );
+  // J! & FPA version checking - RussW : new 12/05/2018
+  define ( '_FPA_VER_CHECK_HEADING', 'Forum Post Assistant Version Check' );
+  define ( '_FPA_VER_CHECK_ATLATEST', 'This FPA version is at the latest stable release.' );
+  define ( '_FPA_VER_CHECK_OUTOFDATE', 'This FPA version <strong>is below the latest stable release</strong>.<br />You should consider updating your FPA script for the latest improvements.' );
+  define ( '_FPA_VER_CHECK_ATDEVREL', 'This FPA version <strong>appears to be a development or pre-release version</strong>.<br />The FPA results may not be complete and you may observe some inconsistencies or minor bugs.' );
+  define ( '_J_VER_CHECK_HEADING', 'Joomla! Version Check' );
+  define ( '_J_VER_CHECK_ATLATEST', 'The discovered Joomla! version is at the latest stable release.' );
+  define ( '_J_VER_CHECK_OUTOFDATE', 'The discovered Joomla! version <strong>is below the latest stable release</strong>.<br />You should consider updating your Joomla! installation.' );
+  define ( '_J_VER_CHECK_ATDEVREL', 'The discovered Joomla! version <strong>appears to be a development or pre-release version</strong>.<br />The FPA results may not be complete if there are new features or depreciated functions.' );
 
 
-      /* NOTE (FPA): LANGUAGE - Offline Definitions & Constants
-       * assume user is offline/no-internet if jQuery cannot be loaded from the CDN
-       * the page #wrapper element is hidden and only display the following message
-       */
-      define ( '_FPA_OFFLINE', '<h4>Unable To Load Bootstrap or jQuery</h4>' );
-      define ( '_FPA_OFFLINE_MESSAGE', '<p><strong>Are you working offline or have no internet connection?</strong><br />\
-                                        <p style="padding:0 5%;">From FPA v2.0, internet access is required for the FPA to function correctly due to the use of Bootstrap and jQuery. \
-                                        If you think this may be an intermittent problem, try reloading FPA again, confirm that your web browser is not in offline-mode and that you have an active internet connection.</p>'
-             );
+  /** NOTE (@FPA): LANGUAGE - Offline Definitions & Constants
+   * assume user is offline/no-internet if jQuery cannot be loaded from the CDN
+   * the page #wrapper element is hidden and only display the following message
+   */
+  define ( '_FPA_OFFLINE', '<h4>Unable To Load Bootstrap or jQuery</h4>' );
+  define ( '_FPA_OFFLINE_MESSAGE1', '<p><strong>Are you working offline or have no internet connection?</strong></p>' );
+  define ( '_FPA_OFFLINE_MESSAGE2', '<p style="padding:0 5%;">From FPA v2.0, internet access is required for the FPA to function correctly due to the use of Bootstrap and jQuery. If you think this may be an intermittent problem, try reloading FPA again, confirm that your web browser is not in offline-mode and that you have an active internet connection.</p>');
 
 
+  /** NOTE (@FPA): LANGUAGE - Headings/Explain/Section Description Definitions & Constants
+   * fpa section headings, help/explain and sections (& sub-sections) descriptions
+   *
+   */
+  define ( '_SETTINGS_HEADING', 'FPA Settings' );
+  define ( '_SETTINGS_EXPLAIN', '<p>In order to collect relevant configuration & diagnostic information for you to generate a forum post, FPA needs to know what sort of problem you are observing and what information you wish to share in the forum. Please follow the instruction below to select the desired options and then click the <span class="label label-success">Generate Post Content</span> button.</p>
+                                 <br />
+                                 <ol>
+                                   <li>Enter your problem description <i>(optional)</i></li>
+                                   <li>Enter any error messages you see <i>(optional)</i></li>
+                                   <li>Enter any actions taken to resolve the issue <i>(optional)</i></li>
+                                   <li>Select detail & privacy level options of the output <i>(optional)</i></li>
+                                   <li>Click the <b>Generate Post Content</b> button to build the post content</li>
+                                   <li>Copy the contents of the <b>Forum Post Content</b> box (below) and paste it into a forum post</li>
+                                 </ol>'
+         );
+  define ( '_POST_HEADING', 'Forum Post Content' );
+  define ( '_POST_EXPLAIN', '<p>Once you have run the FPA script, with your chosen runtime options, your <b>Forum Post Content</b> will be displayed and you can then Copy and Paste this output in to a new post or reply in the forums to provide diagnostic and troubleshooting information when asking for assistance.</p>
+                             <p>The post content will not be easily readable as it is formatted to correctly display in the forum, but all the information you can see on the FPA webpage (below) will be included.'
+         );
+  define ( '_SECTION_BASIC_HEADING', 'Basic Discovery' );
+  define ( '_SECTION_BASIC_EXPLAIN', 'Basic hosting environment tests are run and compared to the documented installation requirements and known good configurations or known software versions that can sometimes cause problems. This information provides a quick and simple view of the generic environmental details.' );
+  define ( '_SECTION_BASIC_DESCRIBE', 'The Basic Discovery section presents any initial diagnostic information that has been discovered about your hosting server, database, php environments and functions that may effect the smooth running of any installed Joomla! instance.' );
+  define ( '_SECTION_BASIC_HEADING_SNAPSHOT', 'Environment Snapshot' );
+  define ( '_SECTION_BASIC_DESCRIBE_SNAPSHOT', 'The snapshot provides an initial indication of how suitable your environment is for hosting Joomla!' );
+
+  define ( '_SECTION_APPLICATION_HEADING', 'Application Discovery' );
+  define ( '_SECTION_APPLICATION_EXPLAIN', 'During the Application Discovery routines, FPA attempts to detect a Joomla! installation, determine the version and collect information about how it is configured. Where possible, FPA will also try to access the Joomla! database and collect configuration, performance and schema information.' );
+  define ( '_SECTION_APPLICATION_DESCRIBE', 'The Application Discovery section attempts to detect any installed Joomla! instance and confirm any relevant or related configuration and database information.' );
+  define ( '_SECTION_APPLICATION_HEADING_INSTANCE', 'Installed Instance' );
+  define ( '_SECTION_APPLICATION_DESCRIBE_INSTANCE', 'FPA attempts to detect a Joomla! instance and, if it is installed, determine the basic configuration parameters.' );
+  define ( '_SECTION_APPLICATION_HEADING_DBCONFIG', 'Database Configuration' );
+  define ( '_SECTION_APPLICATION_DESCRIBE_DBCONFIG', 'The database setup & configuration effects site presentation and performance.' );
+  define ( '_SECTION_APPLICATION_HEADING_DBTABLES', 'Database Structure' );
+  define ( '_SECTION_APPLICATION_DESCRIBE_DBTABLES', 'The database schema and table structure are the foundation of the website component and conent storage.' );
+  define ( '_SECTION_HOSTING_HEADING', 'Hosting Discovery' );
+  define ( '_SECTION_HOSTING_EXPLAIN', 'Server, hosting and software environments vary greatly. FPA attempts to discover the version, type and installed extensions or addons expected to be found on a typical hosting system.' );
+  define ( '_SECTION_HOSTING_DESCRIBE', 'The hosting account or server is comprised of several different software and hardware elements. The FPA Hosting section checks for common configuration items that can effect your website.' );
+  define ( '_SECTION_HOSTING_HEADING_SERVER', 'Server Configuration' );
+  define ( '_SECTION_HOSTING_DESCRIBE_SERVER', 'The PHP and web-server configuration provide the foundations for a websites functionality, performance and security.' );
+  define ( '_SECTION_PERMS_HEADING', 'Permissions Discovery' );
+  define ( '_SECTION_PERMS_EXPLAIN', 'Permissions, sometimes also called modeset, determine who has access and how they can access any folder or file. FPA looks for acceptable or sane permissions and highlights any that may be elevated or incorrect and can potentially allow unauthorised access or cause operational problems.' );
+  define ( '_SECTION_PERMS_DESCRIBE', 'FPA checks for acceptable folder and file permissions of the Joomla! Core Folders. Any incorrect or elevated permissions can be problematic and even expose the installation to being defaced, compromised or be rendered completely unusable.' );
+  define ( '_SECTION_PERMS_HEADING_CORE', 'Core Folders' );
+  define ( '_SECTION_PERMS_DESCRIBE_CORE', 'Correct folder permissions are essential for functionality and security of any website.' );
+  define ( '_SECTION_PERMS_HEADING_ELEV', 'Elevated Permissions' );
+  define ( '_SECTION_PERMS_DESCRIBE_ELEV', 'Any elevated permission may expose a website to unauthorised access or compromise.' );
+  define ( '_SECTION_EXT_HEADING', 'Extension Discovery' );
+  define ( '_SECTION_EXT_EXPLAIN', 'Whilst it is common to install additional extensions, they can sometimes be incompatible or cause conflicts effecting the layout and functionality of a website. Excessive use of these extensions may also cause performance issues or if not updated can expose the site to potential security risks.' );
+  define ( '_SECTION_EXT_DESCRIBE', 'Components, modules, plugins and templates extend the functionality and add features to the website. FPA attempts to discover all installed extensions, even if they are disabled.' );
+  define ( '_SECTION_EXT_HEADING_COM', 'Components' );
+  define ( '_SECTION_EXT_DESCRIBE_COM', 'Components provide major application functionality to the website.' );
+  define ( '_SECTION_EXT_HEADING_MOD', 'Modules' );
+  define ( '_SECTION_EXT_DESCRIBE_MOD', 'Modules most commonly offer data presentation or manipulation functions.' );
+  define ( '_SECTION_EXT_HEADING_PLG', 'Plugins' );
+  define ( '_SECTION_EXT_DESCRIBE_PLG', 'Plugins deliver automated or optional functions to the site or other extensions.' );
+  define ( '_SECTION_EXT_HEADING_LIB', 'Libraries' );
+  define ( '_SECTION_EXT_DESCRIBE_LIB', 'Libraries add extra functionality to the site or extension.' );
+  define ( '_SECTION_EXT_HEADING_TPL', 'Templates' );
+  define ( '_SECTION_EXT_DESCRIBE_TPL', 'Templates are at the core of the site design and layout.' );
+  define ( '_SECTION_EXT_DESCRIBE_TPL_OVR', 'Overrides allow for output customisation of extensions and are normally stored in the /html/ folder of the active template.' );
+  define ( '_SECTION_LEGEND_HEADING', 'Legends & Status' );
+  define ( '_SECTION_LEGEND_DESCRIBE_INFO', 'Information & Help Message/Status' );
+  define ( '_SECTION_LEGEND_DESCRIBE_SUCCESS', 'Positive & Successful Message/Status' );
+  define ( '_SECTION_LEGEND_DESCRIBE_WARNING', 'Highlighted & Warning Message/Status' );
+  define ( '_SECTION_LEGEND_DESCRIBE_ALERT', 'Negative Or Error Message/Status' );
+  define ( '_SECTION_LEGEND_DESCRIBE_UNKNOWN', 'Status Is Unknown Or Was Unretrievable' );
+  define ( '_SECTION_LEGEND_DESCRIBE_PRIVACY', 'Privacy Settings Are Protecting Sensitive Data' );
+  define ( '_SECTION_LEGEND_DESCRIBE_NOTE', 'Denotes An Active Or Currently Selected Item' );
+  define ( '_CAPTION_PHP', 'PHP' );
+  define ( '_CAPTION_DB', 'Database' );
+  define ( '_CAPTION_MYSQL', 'MySQL' );
+  define ( '_CAPTION_MYSQLI', 'MySQLi' );
+  define ( '_CAPTION_MONGO', 'MongoDB' );
+  define ( '_CAPTION_FUNC', 'Functions' );
+  define ( '_CAPTION_CMS', 'CMS' );
+  define ( '_CAPTION_PLATFORM', 'Platform' );
+  define ( '_CAPTION_CONFIG', 'Config' );
+  define ( '_CAPTION_MODESET', 'Modeset' );
+  define ( '_CAPTION_OWNERSHIP', 'Ownership' );
+  define ( '_CAPTION_SEFURL', 'SEF URL\'s' );
+  define ( '_CAPTION_CACHE', 'Caching' );
+  define ( '_CAPTION_SESSION', 'Session' );
+  define ( '_CAPTION_DEBUG', 'Debugging' );
+  define ( '_CAPTION_FEAT', 'Features' );
+  define ( '_CAPTION_PERF', 'Performance' );
+  define ( '_CAPTION_TABLES', 'Tables' );
+  define ( '_CAPTION_ENV', 'Environment' );
+  define ( '_CAPTION_SERVER', 'Server' );
+  define ( '_CAPTION_PHP_MISSING', 'Potential Missing Extensions' );
+  define ( '_CAPTION_CHECKS', 'Checks' );
+  define ( '_CAPTION_SITE', 'Site' );
+  define ( '_CAPTION_ADMIN', 'Administrator' );
+  define ( '_TABLE_PERMS_MODE', 'Mode' );
+  define ( '_TABLE_PERMS_FOLDER', 'Folder' );
+  define ( '_TABLE_DB_TABLE', 'Table' );
+  define ( '_TABLE_DB_RCDS', 'Rcds' );
+  define ( '_TABLE_DB_AVGL', 'Avg.<br />Length' );
+  define ( '_TABLE_DB_FRAG', 'Frag\'mt' );
+  define ( '_TABLE_DB_ENGINE', 'Engine' );
+  define ( '_TABLE_DB_UPDATED', 'Updated' );
+  define ( '_TABLE_DB_CHECKED', 'Checked' );
+  define ( '_TABLE_COMMON_COLLATION', 'Collation' );
+  define ( '_TABLE_COMMON_SIZE', 'Size' );
+  define ( '_TABLE_COMMON_WRITABLE', 'Writable' );
+  define ( '_TABLE_COMMON_OWNER', 'Owner' );
+  define ( '_TABLE_COMMON_GROUP', 'Group' );
+  define ( '_TABLE_COMMON_ENABLED', 'Enabled' );
+  define ( '_TABLE_COMMON_NAME', 'Name' );
+  define ( '_TABLE_COMMON_AUTHOR', 'Author' );
+  define ( '_TABLE_COMMON_ADDRESS', 'Address' );
+  define ( '_TABLE_COMMON_CREATED', 'Created' );
+  define ( '_TABLE_COMMON_TYPE', 'Type' );
+  define ( '_TABLE_COMMON_OVERRIDES', 'Overrides' );
+  define ( '_GDPR_HEADING', 'EU GDPR & e-Privacy Directives' );
+  define ( '_GDPR_MESSAGE', '<p>Whilst the FPA script does collect information about your website, it is not sent to, or stored in any other location by FPA.</p>
+                             <p>The information that is collected by this script is solely for the purpose of assisting you in problem determination and troubleshooting,
+                             it is completely your choice to post this data in any public or private online forum or community area, or to disclose this information to
+                             any third-party persons, communities or companies.</p>'
+         );
+  define ( '_GDPR_MESSAGE_MORE', '<p><b>FPA Privacy Settings:</b> FPA provides the option for you to choose how much identifiable information is made available to any
+                             reviewer of the script output, please make yourself familiar with the differences in output before disclosing the output publicly or
+                             to any other third-parties.</p>
+                             <p><b>Cookies & Local Storage:</b> The FPA script does not use cookies or local storage through your web-browser, however your web-browser
+                             may cache the web page out, if you are concerned you may choose to delete your web-browser cache after using this script.</p>
+                             <p><b>Analytics & Tracking:</b> The FPA script does not use any visitor analytics or tracking methods. However, some of the information collected
+                             by FPA may disclose host or server information that could make your website and location identifiable, revealing any subsequent personal information
+                             made available when viewed. If this is of concern, you may select a stricter FPA Privacy setting to minimise such information disclosures.</p>'
+         );
 
 
-      /* NOTE (FPA): LANGUAGE - Headings/Explain/Section Description Definitions & Constants
-       * fpa section headings, help/explain and sections (& sub-sections) descriptions
-       *
-       */
-      define ( '_SETTINGS_HEADING', 'FPA Settings' );
-      define ( '_SETTINGS_EXPLAIN', '<p>In order to collect relevant configuration & diagnostic information for you to generate a forum post, FPA needs to know what sort of problem you are observing and what information you wish to share in the forum. Please follow the instruction below to select the desired options and then click the <span class="label label-success">Generate Post Content</span> button.</p>
-                                     <br />
-                                     <ol>
-                                       <li>Enter your problem description <i>(optional)</i></li>
-                                       <li>Enter any error messages you see <i>(optional)</i></li>
-                                       <li>Enter any actions taken to resolve the issue <i>(optional)</i></li>
-                                       <li>Select detail & privacy level options of the output <i>(optional)</i></li>
-                                       <li>Click the <b>Generate Post Content</b> button to build the post content</li>
-                                       <li>Copy the contents of the <b>Forum Post Content</b> box (below) and paste it into a forum post</li>
-                                     </ol>'
-             );
-
-      define ( '_POST_HEADING', 'Forum Post Content' );
-      define ( '_POST_EXPLAIN', '<p>Once you have run the FPA script, with your chosen runtime options, your <b>Forum Post Content</b> will be displayed and you can then Copy and Paste this output in to a new post or reply in the forums to provide diagnostic and troubleshooting information when asking for assistance.</p>
-                                 <p>The post content will not be easily readable as it is formatted to correctly display in the forum, but all the information you can see on the FPA webpage (below) will be included.'
-             );
-      define ( '_SECTION_BASIC_HEADING', 'Basic Discovery' );
-      define ( '_SECTION_BASIC_EXPLAIN', 'Basic hosting environment tests are run and compared to the documented installation requirements and known good configurations or known software versions that can sometimes cause problems. This information provides a quick and simple view of the generic environmental details.' );
-      define ( '_SECTION_BASIC_DESCRIBE', 'The Basic Discovery section presents any initial diagnostic information that has been discovered about your hosting server, database, php environments and functions that may effect the smooth running of any installed Joomla! instance.' );
-      define ( '_SECTION_BASIC_HEADING_SNAPSHOT', 'Environment Snapshot' );
-      define ( '_SECTION_BASIC_DESCRIBE_SNAPSHOT', 'The snapshot provides an initial indication of how suitable your environment is for hosting Joomla!' );
-
-      define ( '_SECTION_APPLICATION_HEADING', 'Application Discovery' );
-      define ( '_SECTION_APPLICATION_EXPLAIN', 'During the Application Discovery routines, FPA attempts to detect a Joomla! installation, determine the version and collect information about how it is configured. Where possible, FPA will also try to access the Joomla! database and collect configuration, performance and schema information.' );
-      define ( '_SECTION_APPLICATION_DESCRIBE', 'The Application Discovery section attempts to detect any installed Joomla! instance and confirm any relevant or related configuration and database information.' );
-      define ( '_SECTION_APPLICATION_HEADING_INSTANCE', 'Installed Instance' );
-      define ( '_SECTION_APPLICATION_DESCRIBE_INSTANCE', 'FPA attempts to detect a Joomla! instance and, if it is installed, determine the basic configuration parameters.' );
-      define ( '_SECTION_APPLICATION_HEADING_DBCONFIG', 'Database Configuration' );
-      define ( '_SECTION_APPLICATION_DESCRIBE_DBCONFIG', 'The database setup & configuration effects site presentation and performance.' );
-      define ( '_SECTION_APPLICATION_HEADING_DBTABLES', 'Database Structure' );
-      define ( '_SECTION_APPLICATION_DESCRIBE_DBTABLES', 'The database schema and table structure are the foundation of the website component and conent storage.' );
-      define ( '_SECTION_HOSTING_HEADING', 'Hosting Discovery' );
-      define ( '_SECTION_HOSTING_EXPLAIN', 'Server, hosting and software environments vary greatly. FPA attempts to discover the version, type and installed extensions or addons expected to be found on a typical hosting system.' );
-      define ( '_SECTION_HOSTING_DESCRIBE', 'The hosting account or server is comprised of several different software and hardware elements. The FPA Hosting section checks for common configuration items that can effect your website.' );
-      define ( '_SECTION_HOSTING_HEADING_SERVER', 'Server Configuration' );
-      define ( '_SECTION_HOSTING_DESCRIBE_SERVER', 'The PHP and web-server configuration provide the foundations for a websites functionality, performance and security.' );
-      define ( '_SECTION_PERMS_HEADING', 'Permissions Discovery' );
-      define ( '_SECTION_PERMS_EXPLAIN', 'Permissions, sometimes also called modeset, determine who has access and how they can access any folder or file. FPA looks for acceptable or sane permissions and highlights any that may be elevated or incorrect and can potentially allow unauthorised access or cause operational problems.' );
-      define ( '_SECTION_PERMS_DESCRIBE', 'FPA checks for acceptable folder and file permissions of the Joomla! Core Folders. Any incorrect or elevated permissions can be problematic and even expose the installation to being defaced, compromised or be rendered completely unusable.' );
-      define ( '_SECTION_PERMS_HEADING_CORE', 'Core Folders' );
-      define ( '_SECTION_PERMS_DESCRIBE_CORE', 'Correct folder permissions are essential for functionality and security of any website.' );
-      define ( '_SECTION_PERMS_HEADING_ELEV', 'Elevated Permissions' );
-      define ( '_SECTION_PERMS_DESCRIBE_ELEV', 'Any elevated permission may expose a website to unauthorised access or compromise.' );
-      define ( '_SECTION_EXT_HEADING', 'Extension Discovery' );
-      define ( '_SECTION_EXT_EXPLAIN', 'Whilst it is common to install additional extensions, they can sometimes be incompatible or cause conflicts effecting the layout and functionality of a website. Excessive use of these extensions may also cause performance issues or if not updated can expose the site to potential security risks.' );
-      define ( '_SECTION_EXT_DESCRIBE', 'Components, modules, plugins and templates extend the functionality and add features to the website. FPA attempts to discover all installed extensions, even if they are disabled.' );
-      define ( '_SECTION_EXT_HEADING_COM', 'Components' );
-      define ( '_SECTION_EXT_DESCRIBE_COM', 'Components provide major application functionality to the website.' );
-      define ( '_SECTION_EXT_HEADING_MOD', 'Modules' );
-      define ( '_SECTION_EXT_DESCRIBE_MOD', 'Modules most commonly offer data presentation or manipulation functions.' );
-      define ( '_SECTION_EXT_HEADING_PLG', 'Plugins' );
-      define ( '_SECTION_EXT_DESCRIBE_PLG', 'Plugins deliver automated or optional functions to the site or other extensions.' );
-      define ( '_SECTION_EXT_HEADING_LIB', 'Libraries' );
-      define ( '_SECTION_EXT_DESCRIBE_LIB', 'Libraries add extra functionality to the site or extension.' );
-      define ( '_SECTION_EXT_HEADING_TPL', 'Templates' );
-      define ( '_SECTION_EXT_DESCRIBE_TPL', 'Templates are at the core of the site design and layout.' );
-      define ( '_SECTION_EXT_DESCRIBE_TPL_OVR', 'Overrides allow for output customisation of extensions and are normally stored in the /html/ folder of the active template.' );
-      define ( '_SECTION_LEGEND_HEADING', 'Legends & Status' );
-      define ( '_SECTION_LEGEND_DESCRIBE_INFO', 'Information & Help Message/Status' );
-      define ( '_SECTION_LEGEND_DESCRIBE_SUCCESS', 'Positive & Successful Message/Status' );
-      define ( '_SECTION_LEGEND_DESCRIBE_WARNING', 'Highlighted & Warning Message/Status' );
-      define ( '_SECTION_LEGEND_DESCRIBE_ALERT', 'Negative Or Error Message/Status' );
-      define ( '_SECTION_LEGEND_DESCRIBE_UNKNOWN', 'Status Is Unknown Or Was Unretrievable' );
-      define ( '_SECTION_LEGEND_DESCRIBE_PRIVACY', 'Privacy Settings Are Protecting Sensitive Data' );
-      define ( '_SECTION_LEGEND_DESCRIBE_NOTE', 'Denotes An Active Or Currently Selected Item' );
-      define ( '_CAPTION_PHP', 'PHP' );
-      define ( '_CAPTION_DB', 'Database' );
-      define ( '_CAPTION_MYSQL', 'MySQL' );
-      define ( '_CAPTION_MYSQLI', 'MySQLi' );
-      define ( '_CAPTION_MONGO', 'MongoDB' );
-      define ( '_CAPTION_FUNC', 'Functions' );
-      define ( '_CAPTION_CMS', 'CMS' );
-      define ( '_CAPTION_PLATFORM', 'Platform' );
-      define ( '_CAPTION_CONFIG', 'Config' );
-      define ( '_CAPTION_MODESET', 'Modeset' );
-      define ( '_CAPTION_OWNERSHIP', 'Ownership' );
-      define ( '_CAPTION_SEFURL', 'SEF URL\'s' );
-      define ( '_CAPTION_CACHE', 'Caching' );
-      define ( '_CAPTION_SESSION', 'Session' );
-      define ( '_CAPTION_DEBUG', 'Debugging' );
-      define ( '_CAPTION_FEAT', 'Features' );
-      define ( '_CAPTION_PERF', 'Performance' );
-      define ( '_CAPTION_TABLES', 'Tables' );
-      define ( '_CAPTION_ENV', 'Environment' );
-      define ( '_CAPTION_SERVER', 'Server' );
-      define ( '_CAPTION_PHP_MISSING', 'Potential Missing Extensions' );
-      define ( '_CAPTION_CHECKS', 'Checks' );
-      define ( '_CAPTION_SITE', 'Site' );
-      define ( '_CAPTION_ADMIN', 'Administrator' );
-      define ( '_TABLE_PERMS_MODE', 'Mode' );
-      define ( '_TABLE_PERMS_FOLDER', 'Folder' );
-      define ( '_TABLE_DB_TABLE', 'Table' );
-      define ( '_TABLE_DB_RCDS', 'Rcds' );
-      define ( '_TABLE_DB_AVGL', 'Avg.<br />Length' );
-      define ( '_TABLE_DB_FRAG', 'Frag\'mt' );
-      define ( '_TABLE_DB_ENGINE', 'Engine' );
-      define ( '_TABLE_DB_UPDATED', 'Updated' );
-      define ( '_TABLE_DB_CHECKED', 'Checked' );
-      define ( '_TABLE_COMMON_COLLATION', 'Collation' );
-      define ( '_TABLE_COMMON_SIZE', 'Size' );
-      define ( '_TABLE_COMMON_WRITABLE', 'Writable' );
-      define ( '_TABLE_COMMON_OWNER', 'Owner' );
-      define ( '_TABLE_COMMON_GROUP', 'Group' );
-      define ( '_TABLE_COMMON_ENABLED', 'Enabled' );
-      define ( '_TABLE_COMMON_NAME', 'Name' );
-      define ( '_TABLE_COMMON_AUTHOR', 'Author' );
-      define ( '_TABLE_COMMON_ADDRESS', 'Address' );
-      define ( '_TABLE_COMMON_CREATED', 'Created' );
-      define ( '_TABLE_COMMON_TYPE', 'Type' );
-      define ( '_TABLE_COMMON_OVERRIDES', 'Overrides' );
-      define ( '_GDPR_HEADING', 'EU GDPR & e-Privacy Directives' );
-      define ( '_GDPR_MESSAGE', '<p>Whilst the FPA script does collect information about your website, it is not sent to, or stored in any other location by FPA.</p>
-                                 <p>The information that is collected by this script is solely for the purpose of assisting you in problem determination and troubleshooting,
-                                 it is completely your choice to post this data in any public or private online forum or community area, or to disclose this information to
-                                 any third-party persons, communities or companies.</p>'
-             );
-      define ( '_GDPR_MESSAGE_MORE', '<p><b>FPA Privacy Settings:</b> FPA provides the option for you to choose how much identifiable information is made available to any
-                                 reviewer of the script output, please make yourself familiar with the differences in output before disclosing the output publicly or
-                                 to any other third-parties.</p>
-                                 <p><b>Cookies & Local Storage:</b> The FPA script does not use cookies or local storage through your web-browser, however your web-browser
-                                 may cache the web page out, if you are concerned you may choose to delete your web-browser cache after using this script.</p>
-                                 <p><b>Analytics & Tracking:</b> The FPA script does not use any visitor analytics or tracking methods. However, some of the information collected
-                                 by FPA may disclose host or server information that could make your website and location identifiable, revealing any subsequent personal information
-                                 made available when viewed. If this is of concern, you may select a stricter FPA Privacy setting to minimise such information disclosures.</p>'
-             );
+  /** NOTE (@FPA): LANGUAGE - Output Definitions & Constants
+   * fpa output language strings
+   *
+   */
+  define ( '_FPA_VER', 'Version' );
+  define ( '_FPA_VER_SHORT', 'v' ); // RussW : new v2.0.0
+  define ( '_FPA_THIS', 'This' ); // RussW : new v2.0.0
+  define ( '_FPA_LATEST', 'Latest' ); // RussW : new v2.0.0
+  define ( '_FPA_EXPLAIN', 'Explain' ); // RussW : new v2.0.0
+  define ( '_FPA_SUCCESS', 'Success' );
+  define ( '_FPA_WARNING', 'Warning' );
+  define ( '_FPA_ALERT', 'Alert' );
+  define ( '_FPA_PROTECTED', 'protected' );
+  define ( '_FPA_Y', 'Yes' );
+  define ( '_FPA_N', 'No' );
+  define ( '_FPA_U', 'Unknown' );
+  define ( '_FPA_NA', 'N/A' );
+  define ( '_FPA_A', 'Active' ); // RussW : (active/current/selected) new v2.0.0
+  define ( '_FPA_INSTANCE', 'Instance' );
+  define ( '_FPA_Y_ICON', '<i class="glyphicon glyphicon-ok-sign"></i>' ); // RussW : (yes/good/positive) new v2.0.0
+  define ( '_FPA_N_ICON', '<i class="glyphicon glyphicon-remove-sign"></i>' ); // RussW : (no/error/negative) new v2.0.0
+  define ( '_FPA_U_ICON', '<i class="glyphicon glyphicon-question-sign"></i>' ); // RussW : (unknown) new v2.0.0
+  define ( '_FPA_A_ICON', '<i class="glyphicon glyphicon-star"></i>' ); // RussW : (active/current/selected) new v2.0.0
+  define ( '_FPA_EXPLAIN_ICON', '<i class="glyphicon glyphicon-info-sign"></i>' ); // RussW : (explain/info/help) new v2.0.0
+  define ( '_FPA_WARNING_ICON', '<i class="glyphicon glyphicon-alert"></i>' ); // RussW : (explain/info/help) new v2.0.0
+  define ( '_FPA_ALERT_ICON', '<i class="glyphicon glyphicon-remove-sign"></i>' ); // RussW : (explain/info/help) new v2.0.0
+  define ( '_FPA_PROTECTED_ICON', '<i class="glyphicon glyphicon-ban-circle"></i>' ); // RussW : (explain/info/help) new v2.0.0
+  define ( '_FPA_NOTE_ICON', '<i class="glyphicon glyphicon-asterisk text-warning"></i>' ); // RussW : (explain/info/help) new v2.0.0
+  define ( '_FPA_OPTIONAL_TOOLTIP', 'This section <b>is optional</b> by default in the post output' ); // RussW : (explain/info/help) new v2.0.0
+  define ( '_FPA_DELETE', 'Delete' );
+  define ( '_FPA_PRIVACY', 'Privacy' );
+  define ( '_FPA_PRIVACY_NONE', 'None' );
+  define ( '_FPA_PRIVACY_PARTIAL', 'Partial' );
+  define ( '_FPA_PRIVACY_STRICT', 'Strict' );
+  define ( '_FPA_TOOLBAR_FORUM', 'Forum' );
+  define ( '_FPA_TOOLBAR_DOCS', 'Docs' );
+  define ( '_FPA_TOOLBAR_DOCS_LINK', 'https://github.com/ForumPostAssistant/FPA/tree/en-GB/Documentation' );
+  define ( '_FPA_TOOLBAR_DOWNLOAD', 'Download' );
+  define ( '_FPA_TOOLBAR_DOWNLOAD_LINK', 'https://github.com/ForumPostAssistant/FPA/releases' );
 
 
-
-
-      /* NOTE (FPA): LANGUAGE - Output Definitions & Constants
-       * fpa output language strings
-       *
-       */
-      /* generic language constants */
-      define ( '_FPA_VER', 'Version' );
-      define ( '_FPA_VER_SHORT', 'v' ); // RussW : new v2.0.0
-      define ( '_FPA_THIS', 'This' ); // RussW : new v2.0.0
-      define ( '_FPA_LATEST', 'Latest' ); // RussW : new v2.0.0
-      define ( '_FPA_EXPLAIN', 'Explain' ); // RussW : new v2.0.0
-      define ( '_FPA_SUCCESS', 'Success' );
-      define ( '_FPA_WARNING', 'Warning' );
-      define ( '_FPA_ALERT', 'Alert' );
-      define ( '_FPA_PROTECTED', 'protected' );
-      define ( '_FPA_Y', 'Yes' );
-      define ( '_FPA_N', 'No' );
-      define ( '_FPA_U', 'Unknown' );
-      define ( '_FPA_NA', 'N/A' );
-      define ( '_FPA_A', 'Active' ); // RussW : (active/current/selected) new v2.0.0
-      define ( '_FPA_INSTANCE', 'Instance' );
-      define ( '_FPA_Y_ICON', '<i class="glyphicon glyphicon-ok-sign"></i>' ); // RussW : (yes/good/positive) new v2.0.0
-      define ( '_FPA_N_ICON', '<i class="glyphicon glyphicon-remove-sign"></i>' ); // RussW : (no/error/negative) new v2.0.0
-      define ( '_FPA_U_ICON', '<i class="glyphicon glyphicon-question-sign"></i>' ); // RussW : (unknown) new v2.0.0
-      define ( '_FPA_A_ICON', '<i class="glyphicon glyphicon-star"></i>' ); // RussW : (active/current/selected) new v2.0.0
-      define ( '_FPA_EXPLAIN_ICON', '<i class="glyphicon glyphicon-info-sign"></i>' ); // RussW : (explain/info/help) new v2.0.0
-      define ( '_FPA_WARNING_ICON', '<i class="glyphicon glyphicon-alert"></i>' ); // RussW : (explain/info/help) new v2.0.0
-      define ( '_FPA_ALERT_ICON', '<i class="glyphicon glyphicon-remove-sign"></i>' ); // RussW : (explain/info/help) new v2.0.0
-      define ( '_FPA_PROTECTED_ICON', '<i class="glyphicon glyphicon-ban-circle"></i>' ); // RussW : (explain/info/help) new v2.0.0
-      define ( '_FPA_NOTE_ICON', '<i class="glyphicon glyphicon-asterisk text-warning"></i>' ); // RussW : (explain/info/help) new v2.0.0
-      define ( '_FPA_OPTIONAL_TOOLTIP', 'This section <b>is optional</b> by default in the post output' ); // RussW : (explain/info/help) new v2.0.0
-      define ( '_FPA_DELETE', 'Delete' );
-      define ( '_FPA_PRIVACY', 'Privacy' );
-      define ( '_FPA_PRIVACY_NONE', 'None' );
-      define ( '_FPA_PRIVACY_PARTIAL', 'Partial' );
-      define ( '_FPA_PRIVACY_STRICT', 'Strict' );
-      define ( '_FPA_TOOLBAR_FORUM', 'Forum' );
-      define ( '_FPA_TOOLBAR_DOCS', 'Docs' );
-      define ( '_FPA_TOOLBAR_DOCS_LINK', 'https://github.com/ForumPostAssistant/FPA/tree/en-GB/Documentation' );
-      define ( '_FPA_TOOLBAR_DOWNLOAD', 'Download' );
-      define ( '_FPA_TOOLBAR_DOWNLOAD_LINK', 'https://github.com/ForumPostAssistant/FPA/releases' );
-
-
-
-
-      if ($runFPATour == '1'):
-        /* NOTE (FPA): LANGUAGE - FPA Tour Definitions & Constants
-         *
-         */
-        define ( '_TOUR_STEP00_TITLE', 'User Toolbar' );
-        define ( '_TOUR_STEP00_DESC', '<p>The FPA User Toolbar provides instant access to the <b>Sidebar Menu</b> toggle button <button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-transfer"></i></button> to improve data visibility on smaller screens.</p>\
-                                       <p>You are also reminded of the currently selected <span class="text-warning">Information Privacy</span> setting and the <span class="text-danger">Security</span> implications of FPA, plus given the option to <span class="text-danger">Delete FPA</span> <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> after use.</p>\
-                                       <p>On larger screens, FPA also offers direct links to useful Joomla! and FPA locations on the right-hand side.</p>'
-               );
-        define ( '_TOUR_STEP05_TITLE', 'Sidebar Menu' );
-        define ( '_TOUR_STEP05_DESC', '<p>The FPA <b>Sidebar Menu</b> provides scrolling access to each of the FPA Report Sections.</p>\
-                                       <p>The Sidebar Menu may be reduced in width on larger screens and displayed on small smaller screens with the toggle button <button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-transfer"></i></button> found on the User Toolbar.</p>\
-                                       <p>The final menu link provides the option to <span class="text-danger">Delete FPA</span> <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> after use.</p>'
-               );
-        define ( '_TOUR_STEP10_TITLE', 'Information Footer' );
-        define ( '_TOUR_STEP10_DESC', '<p>The FPA <b>Information Footer</b> provides access to the licensing and project contributors information, plus quick access to the latest download versions of FPA.</p>\
-                                       <p>You are also reminded of the <span class="text-danger">Security</span> implications of the FPA and provided with a <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> <span class="text-danger">Delete FPA</span> link.</p>');
-        define ( '_TOUR_STEP15_TITLE', 'Explain (Help) Buttons' );
-        define ( '_TOUR_STEP15_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display context-sensitive information relating to the adjacent item.</p>');
-        define ( '_TOUR_STEP16_TITLE', 'Dashboard Sections' );
-        define ( '_TOUR_STEP16_DESC', '<p>The various FPA <b>Dashboard Sections</b> present relevant information about your installation & instance that may assist in understanding and troubleshooting a large numbers of issues & problems.</p>');
-        define ( '_TOUR_STEP17_TITLE', 'Legend & Status Descriptions' );
-        define ( '_TOUR_STEP17_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
-        define ( '_TOUR_STEP20_TITLE', 'FPA Settings' );
-        define ( '_TOUR_STEP20_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
-        define ( '_TOUR_STEP25_TITLE', 'Generate Post Content' );
-        define ( '_TOUR_STEP25_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
-        define ( '_TOUR_STEP30_TITLE', 'Forum Post Content' );
-        define ( '_TOUR_STEP30_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
-        define ( '_TOUR_END_TITLE', 'Forum Post Assistant' );
-        define ( '_TOUR_END_DESC', '<p>Thank you for using the FPA, hopefully it will assist you in solving your issue or successfully receive support from within the Joomla! forums.</p>\
-                                    <p class="small">The Forum Post Assistant has been developed by, and is copyright of; Russell Winter, Phil DeGruy, Claire Mandville, Bernard Toplak, Sveinung Larsen</p>'
-               );
-      endif;
+  /* NOTE (@FPA): LANGUAGE - FPA Tour Definitions & Constants
+   * only load these if the tour is selected for minor memory and time savings
+   * IMPORTANT : if tour description is to be split over multiple lines, the use of "line continuation" ("\") is required
+   * or jQuery will error and the tour fails
+   */
+  if ($runFPATour == '1') {
+    define ( '_TOUR_STEP00_TITLE', 'User Toolbar' );
+    define ( '_TOUR_STEP00_DESC', '<p>The FPA User Toolbar provides instant access to the <b>Sidebar Menu</b> toggle button <button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-transfer"></i></button> to improve data visibility on smaller screens.</p>\
+                                   <p>You are also reminded of the currently selected <span class="text-warning">Information Privacy</span> setting and the <span class="text-danger">Security</span> implications of FPA, plus given the option to <span class="text-danger">Delete FPA</span> <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> after use.</p>\
+                                   <p>On larger screens, FPA also offers direct links to useful Joomla! and FPA locations on the right-hand side.</p>'
+           );
+    define ( '_TOUR_STEP05_TITLE', 'Sidebar Menu' );
+    define ( '_TOUR_STEP05_DESC', '<p>The FPA <b>Sidebar Menu</b> provides scrolling access to each of the FPA Report Sections.</p>\
+                                   <p>The Sidebar Menu may be reduced in width on larger screens and displayed on small smaller screens with the toggle button <button type="button" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-transfer"></i></button> found on the User Toolbar.</p>\
+                                   <p>The final menu link provides the option to <span class="text-danger">Delete FPA</span> <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> after use.</p>'
+           );
+    define ( '_TOUR_STEP10_TITLE', 'Information Footer' );
+    define ( '_TOUR_STEP10_DESC', '<p>The FPA <b>Information Footer</b> provides access to the licensing and project contributors information, plus quick access to the latest download versions of FPA.</p>\
+                                   <p>You are also reminded of the <span class="text-danger">Security</span> implications of the FPA and provided with a <button type="button" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove-circle"></i></button> <span class="text-danger">Delete FPA</span> link.</p>');
+    define ( '_TOUR_STEP15_TITLE', 'Explain (Help) Buttons' );
+    define ( '_TOUR_STEP15_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display context-sensitive information relating to the adjacent item.</p>');
+    define ( '_TOUR_STEP16_TITLE', 'Dashboard Sections' );
+    define ( '_TOUR_STEP16_DESC', '<p>The various FPA <b>Dashboard Sections</b> present relevant information about your installation & instance that may assist in understanding and troubleshooting a large numbers of issues & problems.</p>');
+    define ( '_TOUR_STEP17_TITLE', 'Legend & Status Descriptions' );
+    define ( '_TOUR_STEP17_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
+    define ( '_TOUR_STEP20_TITLE', 'FPA Settings' );
+    define ( '_TOUR_STEP20_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
+    define ( '_TOUR_STEP25_TITLE', 'Generate Post Content' );
+    define ( '_TOUR_STEP25_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
+    define ( '_TOUR_STEP30_TITLE', 'Forum Post Content' );
+    define ( '_TOUR_STEP30_DESC', '<p>The FPA offers inline <span class="text-info">help</span> where possible, clicking on any <button type="button" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-info-sign"></i> Explain</button> button will display contextual information relating to the adjacent item.</p>');
+    define ( '_TOUR_END_TITLE', 'Forum Post Assistant' );
+    define ( '_TOUR_END_DESC', '<p>Thank you for using the FPA, hopefully it will assist you in solving your issue or successfully receive support from within the Joomla! forums.</p>\
+                                <p class="small">The Forum Post Assistant has been developed by, and is copyright of; Russell Winter, Phil DeGruy, Claire Mandville, Bernard Toplak, Sveinung Larsen</p>'
+           );
+  } // endif $runFPATour
 ?>
     <head>
 
@@ -381,70 +392,70 @@ $disabled = '';
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <!-- NOTE (@RussW): attempt to reduce the chance of indexing, archiving or caching through robots, if left on server -->
+        <!-- NOTE (@RussW): attempt to reduce the chance of indexing, archiving or caching through robots meta, if left on server -->
         <meta name="robots" content="noindex, nofollow, noodp, nocache, noarchive" />
 
         <title><?php echo _RES .' : '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' '. _RES_RELEASE_BUILD .' '. _RES_LANG; ?></title>
 
 
         <?php
-          /* NOTE (@RussW): attempt to find and display a favicon
-           *
-           */
-          $faviconPath = '';
-          if (file_exists('./administrator/templates/bluestork/favicon.ico')):
+        /* NOTE (@RussW): attempt to find and display a favicon
+         *
+         */
+        $faviconPath = '';
+        if (file_exists('./administrator/templates/bluestork/favicon.ico')) {                                                                         // J!1.5 location
             $faviconPath = './administrator/templates/bluestork/favicon.ico';
 
-          elseif (file_exists('./administrator/templates/isis/favicon.ico')):
+        } elseif (file_exists('./administrator/templates/isis/favicon.ico')) {                                                                        // J!2.0 & J!3.0 location
             $faviconPath = './administrator/templates/isis/favicon.ico';
 
-          elseif (file_exists('./administrator/templates/atum/favicon.ico')):
+        } elseif (file_exists('./administrator/templates/atum/favicon.ico')) {                                                                        // J!4.0 location
             $faviconPath = './administrator/templates/atum/favicon.ico';
 
-          endif;
+        } // endif file_exists $faviconPath
         ?>
-        <?php if ($faviconPath): ?>
-          <link rel="shortcut icon" href="<?php echo $faviconPath; ?>" />
-        <?php endif; ?>
+        <?php if ($faviconPath) { ?>
+          <link rel="shortcut icon" href="<?php echo $faviconPath; ?>">
+        <?php } // endif $faviconPath ?>
 
 
-        <!-- NOTE (@RussW): include pace from CDN (include JS high in head to ensure as accurate as possible progress bar timing) -->
+        <!-- NOTE (@FPA): include pace from CDN (include JS high in head to ensure as accurate as possible progress bar timing) -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" integrity="sha256-EPrkNjGEmCWyazb3A/Epj+W7Qm2pB9vnfXw+X6LImPM=" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/orange/pace-theme-flash.min.css" integrity="sha256-RGBBrgymw4elQrpU8GjEkOCxf5vE5ZvpAGnhNpDONPk=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/orange/pace-theme-flash.min.css" integrity="sha256-RGBBrgymw4elQrpU8GjEkOCxf5vE5ZvpAGnhNpDONPk=" crossorigin="anonymous">
 
-        <!-- NOTE (@RussW): grab normalise from CDN, set resets -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+        <!-- NOTE (@FPA): grab normalise from CDN, set resets -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous">
 
-        <!-- NOTE (@RussW): grab Bootstrap from CDN -->
+        <!-- NOTE (@FPA): grab Bootstrap from CDN -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-        <?php if ($runFPATour == '1'): ?>
-          <!-- NOTE (@RussW): grab Bootstrap Tour from CDN, if selected -->
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.11.0/css/bootstrap-tour.min.css" integrity="sha256-r7R5NjcsiLK3ubv/Ee7yBl5n9zV+xoj1K6kzJ4E9jBU=" crossorigin="anonymous" />
-        <?php endif; ?>
+        <?php if ($runFPATour == '1') { ?>
+            <!-- NOTE (@FPA): grab Bootstrap Tour from CDN, if selected -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.11.0/css/bootstrap-tour.min.css" integrity="sha256-r7R5NjcsiLK3ubv/Ee7yBl5n9zV+xoj1K6kzJ4E9jBU=" crossorigin="anonymous">
+        <?php } // endif $runFPATour ?>
 
 
 
-        <!-- TODO (RussW): include CSS and remove external file -->
+        <!-- TODO (@FPA): include CSS and remove external file -->
         <link rel="stylesheet" href="fpa-style.css">
         <!-- NOTE (FPA): CSS - Custom Styling -->
         <style></style>
 
 
 
-      <?php include_once ( '01dev-initial-arrays.php' ); ?>
-      <?php include_once ( '02dev-initial-settings.php' ); ?>
-      <?php include_once ( '03dev-initial-versioning.php' ); ?>
-      <?php include_once ( '04dev-initial-configuration.php' ); ?>
-      <?php include_once ( '05dev-system-environment.php' ); ?>
-      <?php include_once ( '06dev-php-environment.php' ); ?>
-      <?php include_once ( '07dev-suexec-routines.php' ); ?>
-      <?php include_once ( '08dev-webserver-environment.php' ); ?>
-      <?php include_once ( '09dev-permissions-checks.php' ); ?>
-      <?php include_once ( '10dev-database-environment.php' ); ?>
-      <?php include_once ( '11dev-joomla-extensions.php' ); ?>
-      <?php include_once ( '12dev-supported-versions.php' ); ?>
-      <?php include_once ( '00dev-new-test-functions.php' ); ?>
+      <?php include_once '01dev-initial-arrays.php'; ?>
+      <?php include_once '02dev-initial-settings.php'; ?>
+      <?php include_once '03dev-initial-versioning.php'; ?>
+      <?php include_once '04dev-initial-configuration.php'; ?>
+      <?php include_once '05dev-system-environment.php'; ?>
+      <?php include_once '06dev-php-environment.php'; ?>
+      <?php include_once '07dev-suexec-routines.php'; ?>
+      <?php include_once '08dev-webserver-environment.php'; ?>
+      <?php include_once '09dev-permissions-checks.php'; ?>
+      <?php include_once '10dev-database-environment.php'; ?>
+      <?php include_once '11dev-joomla-extensions.php'; ?>
+      <?php include_once '12dev-supported-versions.php'; ?>
+      <?php include_once '00dev-new-test-functions.php'; ?>
 
 
 
@@ -452,19 +463,19 @@ $disabled = '';
     <body data-spy="scroll" data-target="#navbar-sidebar">
 
 
-      <?php
+        <?php
         /* NOTE (RussW): WRAPPER - Page & Content
          * ALL: full-width
          * display = flex, align-items = stretch
          */
-      ?>
-      <div id="wrapper" class="wrapper">
+        ?>
+        <div id="wrapper" class="wrapper">
 
         <?php
-          /* NOTE (RussW): SIDEBAR - Navigation
-           * shortcut links to sections
-           *
-           */
+        /* NOTE (@RussW): Sidebar - navigation
+         * shortcut links to sections
+         *
+         */
         ?>
         <nav id="sidebar" class="bg-primary hidden-print">
           <div id="navbar-sidebar" class="sidebar-affix">
@@ -477,20 +488,20 @@ $disabled = '';
                    *
                    */
                   $logoPath = '';
-                  if (file_exists('./administrator/templates/bluestork/images/logo.png')):
+                  if (file_exists( './administrator/templates/bluestork/images/logo.png' )) {                           // J!1.5
                     $logoPath = './administrator/templates/bluestork/images/logo.png';
 
-                  elseif (file_exists('./administrator/templates/isis/images/logo.png')):
+                  } elseif (file_exists( './administrator/templates/isis/images/logo.png' )) {                          // J!2.4 & J!3.0
                     $logoPath = './administrator/templates/isis/images/logo.png';
 
-                  elseif (file_exists('./administrator/templates/atum/images/logo.svg')):
+                  } elseif (file_exists( './administrator/templates/atum/images/logo.svg' )) {                          // J!4.0
                     $logoPath = './administrator/templates/atum/images/logo.svg';
 
-                  endif;
+                  }  // endif file_exists $logoPath;
                 ?>
-                <?php if ($logoPath): ?>
+                <?php if ($logoPath) { ?>
                   <img src="<?php echo $logoPath; ?>" width="175" height="35" alt="<?php echo _RES; ?>" />
-                <?php endif; ?>
+                <?php } // endif $logoPath ?>
 
                 <?php echo _RES; ?>
 
@@ -570,16 +581,16 @@ $disabled = '';
 
 
 
-        <?php
-          /* NOTE (RussW): PAGE - Container
-           *
-           */
-        ?>
-        <div id="fpa-home" class="page">
+            <?php
+            /* NOTE (RussW): PAGE - Container
+             *
+             */
+            ?>
+            <div id="fpa-home" class="page">
 
 
           <?php
-            /* NOTE (RussW): TOOLBAR - Navigation & Notification
+            /** NOTE (@RussW): TOOLBAR - Navigation & Notification
              * collapse/in sidebar button, privacy & security notices, delete button, offsite links
              *
              */
@@ -612,7 +623,7 @@ $disabled = '';
 
                   <div class="btn-group" role="group">
                     <a tabindex="2" class="btn btn-danger navbar-btn" role="button" data-toggle="popover" title="<span class='text-danger'><i class='glyphicon glyphicon-warning-sign'></i> <?php echo _FPA_DELNOTE_LN1; ?></span>" data-content="<span class='text-danger'><p><?php echo _FPA_DELNOTE_LN2; ?></p><p><?php echo _FPA_DELNOTE_LN3; ?></p></span>">
-                      <i class="glyphicon glyphicon-info-sign"></i>
+                      <i class="glyphicon glyphicon-warning-sign"></i>
                     </a>
                   </div>
 
@@ -894,13 +905,13 @@ $disabled = '';
                                                   <li><a id="selectBasicReport" class="line-height-normal" href="#" style="white-space:normal;">White Screen Or Fatal/500 Error<span class="small text-muted">My site only shows a white-screen or has an "Error 500" or PHP "Fatal Error" message.</span></a></li>
                                                   <li role="separator" class="divider" style="margin:3px 0;"></li>
                                                   -->
-                                                  <li><a id="selectDBReport" class="line-height-normal" href="#" style="white-space:normal;"><i class="glyphicon glyphicon-cog text-info"></i>&nbsp; Database Audit<span class="small text-muted">Sites that may be slow to load, timeout on load or show unexpected characters in some places.</span></a></li>
+                                                  <li><a id="selectDBReport" class="line-height-normal" href="javascript:void(0);" style="white-space:normal;"><i class="glyphicon glyphicon-cog text-info"></i>&nbsp; Database Audit<span class="small text-muted">Sites that may be slow to load, timeout on load or show unexpected characters in some places.</span></a></li>
                                                   <li role="separator" class="divider" style="margin:3px 0;"></li>
-                                                  <li><a id="selectFSReport" class="line-height-normal" href="#" style="white-space:normal;"><i class="glyphicon glyphicon-list-alt text-info"></i>&nbsp; File System Audit<span class="small text-muted">Sites that may be observing permissions issues, such as being unable to upload or install items.</span></a></li>
+                                                  <li><a id="selectFSReport" class="line-height-normal" href="javascript:void(0);" style="white-space:normal;"><i class="glyphicon glyphicon-list-alt text-info"></i>&nbsp; File System Audit<span class="small text-muted">Sites that may be observing permissions issues, such as being unable to upload or install items.</span></a></li>
                                                   <li role="separator" class="divider" style="margin:3px 0;"></li>
-                                                  <li><a id="selectEXReport" class="line-height-normal" href="#" style="white-space:normal;"><i class="glyphicon glyphicon-th text-info"></i>&nbsp; Extension Audit<span class="small text-muted">Sites that may be observing 3rd-Party extension functionality issues, such as white screens, 404 or 500 Errors or crashes when accessing extensions.</span></a></li>
+                                                  <li><a id="selectEXReport" class="line-height-normal" href="javascript:void(0);" style="white-space:normal;"><i class="glyphicon glyphicon-th text-info"></i>&nbsp; Extension Audit<span class="small text-muted">Sites that may be observing 3rd-Party extension functionality issues, such as white screens, 404 or 500 Errors or crashes when accessing extensions.</span></a></li>
                                                   <li role="separator" class="divider" style="margin:3px 0;"></li>
-                                                  <li><a id="selectVEReport" class="line-height-normal" href="#" style="white-space:normal;"><i class="glyphicon glyphicon-screenshot text-danger"></i>&nbsp; Vulnerable Extension Audit<span class="small text-muted">Check installed 3rd-Party extensions against the Vulnerable Extension List.</span></a></li>
+                                                  <li><a id="selectVEReport" class="line-height-normal" href="javascript:void(0);" style="white-space:normal;"><i class="glyphicon glyphicon-screenshot text-danger"></i>&nbsp; Vulnerable Extension Audit<span class="small text-muted">Check installed 3rd-Party extensions against the Vulnerable Extension List.</span></a></li>
                                                   <!--
                                                   <li><a class="line-height-normal" href="#" style="white-space:normal;">Can't Login, Upload Or Install Extensions<span class="small text-muted">Users or Admins can't login or I can't upload anything or install extensions.</span></a></li>
                                                   <li role="separator" class="divider" style="margin:3px 0;"></li>
@@ -1262,435 +1273,23 @@ $disabled = '';
 
 
 
-<?php
-  /** hide accordian **/
-?>
-<div class="" style="display:none !important;">
 
-              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-                <div class="panel panel-success">
-
-                  <div class="panel-heading" role="tab" id="headingOne">
-                    <h4 class="panel-title tourStep20">
-                      <button class="btn btn-info btn-xs pull-right clearfix" type="button" data-toggle="collapse" data-target="#collapseExplainSettings" aria-expanded="false" aria-controls="collapseExplainSettings">
-                        <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
-                      </button>
-                      <a class="collapsed fpa-settings" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <button class="btn btn-danger btn-xs" role="button">Step 1 : START HERE</button> <?php echo _SETTINGS_HEADING ;?>
-                      </a>
-                    </h4>
-                  </div>
-
-
-                  <?php
-                    /* NOTE (RussW): START -  FPA Settings Accordion
-                     * settings & options form
-                     *
-                     */
-                  ?>
-
-
-                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                    <div class="panel-body">
-
-                      <form method="post" name="postDetails" id="postDetails" class="form-horizontal">
-
-                        <div class="row-fluid">
-
-                          <div class="col-sm-12 col-lg-6">
-                            <div class="1bg-muted" style="1min-height:350px;">
-
-                                <fieldset id="runtimeOptions" class="padding-remove" <?php echo $disabled; ?>>
-
-                                  <legend class="1margin-remove margin-bottom-sm">Runtime Options:</legend>
-
-                                  <div class="row">
-                                    <div class="col-sm-12 col-md-12">
-
-
-                                      <?php
-                                        /* NOTE (RussW): START -  Optional Settings
-                                         * custon checkbox material buttons
-                                         * added libraries (RussW : 06/05/2018)
-                                         *
-                                         */
-                                      ?>
-                                      <p class="small text-muted" style="1min-height:35px;">
-                                        <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
-                                      <?php if ( !empty($disabled) ): ?>
-                                        Options Are Disabled. Check the <span class="label label-warning">Snapshot Dashboard</span> for more information.
-                                      <?php else: ?>
-                                        Determine what information is included in your forum post, modify the default selections to suit your problem and privacy requirements.
-                                      <?php endif; ?>
-                                      </p>
-
-
-                                      <ul class="list-group runtime-options">
-
-                                        <li class="list-group-item">
-                                          <div class="row-fluid padding-bottom-sm clearfix">
-                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
-                                              Show Elevated Permissions
-                                            </div>
-                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess1" name="someSwitchOption001" type="checkbox" checked />
-                                              <label for="someSwitchOptionSuccess1" class="label-success text-left"></label>
-                                            </div>
-                                          </div>
-                                        </li>
-
-                                        <li class="list-group-item">
-                                          <div class="row-fluid padding-bottom-sm padding-top-sm clearfix">
-                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
-                                              Show dataBase Statistics
-                                            </div>
-                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess2" name="someSwitchOption002" type="checkbox" />
-                                              <label for="someSwitchOptionSuccess2" class="label-success text-left"></label>
-                                            </div>
-                                          </div>
-                                        </li>
-
-                                        <li class="list-group-item">
-                                          <div class="row-fluid padding-bottom-sm padding-top-sm clearfix">
-                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
-                                              Show Components
-                                            </div>
-                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess3" name="someSwitchOption003" type="checkbox" checked />
-                                              <label for="someSwitchOptionSuccess3" class="label-success text-left"></label>
-                                            </div>
-                                          </div>
-                                        </li>
-
-                                        <li class="list-group-item">
-                                          <div class="row-fluid padding-bottom-sm padding-top-sm clearfix">
-                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
-                                              Show Modules
-                                            </div>
-                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess4" name="someSwitchOption004" type="checkbox" />
-                                              <label for="someSwitchOptionSuccess4" class="label-success text-left"></label>
-                                            </div>
-                                          </div>
-                                        </li>
-
-                                        <li class="list-group-item">
-                                          <div class="row-fluid padding-bottom-sm padding-top-sm clearfix">
-                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
-                                              Show Plugins
-                                            </div>
-                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess5" name="someSwitchOption005" type="checkbox" />
-                                              <label for="someSwitchOptionSuccess5" class="label-success text-left"></label>
-                                            </div>
-                                          </div>
-                                        </li>
-
-                                        <li class="list-group-item">
-                                          <div class="row-fluid padding-bottom-sm padding-top-sm clearfix">
-                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
-                                              Show Libraries
-                                            </div>
-                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess6" name="someSwitchOption006" type="checkbox" />
-                                              <label for="someSwitchOptionSuccess6" class="label-success text-left"></label>
-                                            </div>
-                                          </div>
-                                        </li>
-
-                                        <li class="list-group-item">
-                                          <div class="row-fluid padding-bottom-sm padding-top-sm clearfix">
-                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left text-muted">
-                                              <em> - Include Core Extensions?</em>
-                                            </div>
-                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess7" name="someSwitchOption007" type="checkbox" />
-                                              <label for="someSwitchOptionSuccess7" class="label-success text-left"></label>
-                                            </div>
-                                          </div>
-                                        </li>
-
-                                      </ul>
-
-                                    </div>
-
-                                  </div><!--/.row-->
-
-                                </fieldset>
-
-                              </div>
-
-                            </div>
-                            <div class="col-sm-12 col-lg-6">
-
-                              <div class="1bg-muted" style="1min-height:350px;">
-
-                                <fieldset id="optionalInformation" class="padding-remove" <?php echo $disabled; ?>>
-                                  <legend class="1margin-remove">Optional Information:</legend>
-
-                                    <?php
-                                      /* NOTE (RussW): START -  Optional Information
-                                       *
-                                       */
-                                    ?>
-                                    <p class="small text-muted" style="1min-height:35px;">
-                                      <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
-                                    <?php if ( !empty($disabled) ): ?>
-                                      Options Are Disabled. Check the <span class="label label-warning">Snapshot Dashboard</span> for more information.
-                                    <?php else: ?>
-                                      To assist with troubleshooting, you may also add additional (optional) trouble-shooting information to your forum post if desired. <em>Leave empty to ignore</em>.
-                                    <?php endif; ?>
-                                    </p>
-
-                                    <ul class="list-group">
-
-                                      <li class="list-group-item">
-                                        <div class="form-group margin-remove">
-                                          <label for="probDSC" class="col-sm-5 control-label">Problem Description</label>
-                                          <div class="col-sm-7">
-                                            <input type="text" class="form-control input-sm" id="probDSC" name="probDSC" placeholder="Problem Description">
-                                          </div>
-                                        </div>
-                                      </li>
-
-                                      <li class="list-group-item">
-                                        <div class="form-group margin-remove">
-                                          <label for="probMSG1" class="col-sm-5 control-label">Log/Error Message</label>
-                                          <div class="col-sm-7">
-                                            <input type="text" class="form-control input-sm" id="probMSG1" name="probMSG1" placeholder="Log/Error Message" />
-                                          </div>
-                                        </div>
-                                      </li>
-
-                                      <li class="list-group-item">
-                                        <div class="form-group has-error margin-remove">
-                                          <label for="probMSG2" class="col-sm-5 control-label">Last Reported Error</label>
-                                          <div class="col-sm-7">
-                                          <?php if ( isset($phpenv['phpLASTERR']) ): ?>
-                                            <input type="text" class="form-control input-sm text-danger" id="probMSG2" name="probMSG2" value="<?php echo $phpenv['phpLASTERR']; ?>" placeholder="Last Reported Error" aria-describedby="lastErrorHelp" />
-                                            <span id="lastErrorHelp" class="help-block line-height-normal small"><i class="glyphicon glyphicon-info-sign"></i> auto-completed from your php error log</span>
-                                          <?php else: ?>
-                                            <input type="text" class="form-control input-sm" id="probMSG2" name="probMSG2" placeholder="Last Reported Error" />
-                                          <?php endif; ?>
-                                          </div>
-                                        </div>
-                                      </li>
-
-                                      <li class="list-group-item">
-                                        <div class="form-group margin-remove">
-                                          <label for="probACT" class="col-sm-5 control-label">Actions Taken To Resolve?</label>
-                                          <div class="col-sm-7">
-                                            <textarea class="form-control input-sm" id="probACT" name="probACT" rows="2" placeholder="Action Taken To Resolve?"></textarea>
-                                          </div>
-                                        </div>
-                                      </li>
-
-                                    </ul>
-
-                                </fieldset>
-
-                              </div>
-
-
-                              <?php
-                                /* NOTE (RussW): START -  Information Privacy/Protection
-                                 * custon radio buttons
-                                 */
-                              ?>
-                              <div class="text-center">
-
-                                <h5>Information Privacy Settings</h5>
-
-                                <div class="btn-group btn-group-radio information-privacy-options">
-
-                                  <input type="radio" name="showProtected" id="showProtectedNone" class="radio-button" value="1" />
-                                  <label class="btn btn-danger col-xs-12 col-sm-4" for="showProtectedNone">None</label>
-
-                                  <input type="radio" name="showProtected" id="showProtectedDefault" class="radio-button" value="2" checked />
-                                  <label class="btn btn-warning col-xs-12 col-sm-4" for="showProtectedDefault">Partial</label>
-
-                                  <input type="radio" name="showProtected" id="showProtectedStrict" class="radio-button" value="3" />
-                                  <label class="btn btn-success col-xs-12 col-sm-4" for="showProtectedStrict">Strict</label>
-
-                                </div><!--/.information-privacy-options-->
-
-                                <p class="small text-muted margin-top-sm margin-remove-bottom">
-                                  <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
-                                <?php if ( !empty($disabled) ): ?>
-                                  Options Are Disabled. Check the <span class="label label-warning">Snapshot Dashboard</span> for more information.
-                                <?php else: ?>
-                                  Select how much site identifiable information FPA will collect and display (Partial = Default)
-                                <?php endif; ?>
-                                </p>
-
-                              </div>
-
-                            </div>
-                            <div class="col-sm-12 col-md-12">
-
-                              <br />
-                              <div class="">
-
-                                <fieldset class="padding-remove">
-                                  <legend>Generate Post Content</legend>
-                                  <input type="hidden" name="doIT" value="1" />
-
-                                  <div class="row">
-
-                                    <div class="col-sm-12 col-md-6">
-
-                                      <div class="bg-muted padding-lg">
-                                        <h4>To Continue:</h4>
-                                        After selecting your preferred runtime options and information privacy level, click the <strong>Generate Post Content!</strong> button to re-run FPA and build your post content.
-                                      </div>
-
-                                    </div>
-                                    <div class="col-sm-12 col-md-6 text-center">
-
-                                      <div class="row">
-
-                                        <div class="col-xs-12 col-md-9 btn-group" role="group">
-                                          <input type="submit" class="btn btn-success btn-block btn-lg" name="submit" value="Generate Post Content!" />
-                                          <div class="clearfix"></div>
-
-                                          <div class="checkbox">
-                                            <label>
-                                              <input type="checkbox" name="increasePOPS" value="1" aria-describedby="increasePOPSHelp">
-                                              PHP "Out of Memory" or "Execution Time-Outs" errors?
-                                              <span id="increasePOPSHelp" class="help-block line-height-normal small"><i class="glyphicon glyphicon-info-sign"></i> temporarily increase PHP memory and execution time</span>
-                                            </label>
-                                          </div><!--/.checkbox-->
-
-                                        </div>
-                                        <div class="col-xs-12 col-md-3 btn-group" role="group">
-
-                                          <input type="reset" class="btn btn-default btn-block" name="reset" value="reset" />
-
-                                        </div>
-
-                                      </div>
-
-                                    </div>
-
-                                  </div><!--/.row-fluid-->
-
-                                </fieldset>
-
-                              </div>
-                            </div>
-
-                          </div><!--/.row-->
-
-                        </form>
-
-                      </div><!--/.panel-body-->
-                    </div><!--/#collapseOne-->
-
-
-                    <div class="collapse container-fluid clearfix" id="collapseExplainSettings">
-                      <br />
-                      <div class="alert alert-info" role="alert">
-                        <h4><i class="glyphicon glyphicon-info-sign"></i> <?php echo _SETTINGS_HEADING ;?></h4>
-
-                        <?php echo _SETTINGS_EXPLAIN ;?>
-
-                      </div>
-                    </div>
-
-                  </div>
-
-
-
-                  <?php
-                    /* NOTE (RussW): START -  FPA Post Content Accordion
-                     * post content output
-                     *
-                     */
-                  ?>
-                  <div class="panel panel-default">
-
-                    <div class="panel-heading" role="tab" id="headingTwo">
-                      <h4 class="panel-title tourStep30">
-                        <button class="btn btn-info btn-xs pull-right clearfix" type="button" data-toggle="collapse" data-target="#collapseExplainPostContent" aria-expanded="false" aria-controls="collapseExplainPostContent">
-                          <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
-                        </button>
-                        <a class="collapsed fpa-output" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          <?php echo _POST_HEADING; ?>
-                        </a>
-                      </h4>
-                    </div>
-
-
-                    <div id="collapseTwo" class="panel-collapse collapse /*in*/" role="tabpanel" aria-labelledby="headingTwo">
-                      <div class="panel-body">
-
-
-                        <textarea class="form-control" rows="15" name="postOUTPUT" id="postOUTPUT" placeholder="Forum Post Content">
-                        dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only<br />dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only
-
-                        dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only<br />dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only
-
-                        dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only<br />dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes onlydummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only,dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only, dummy content for testing purposes only dummy content for testing purposes only, dummy content for testing purposes only
-                        </textarea>
-
-                        <button id="btnCopyToClipboard" class="btn btn-warning btn-block"><i class="glyphicon glyphicon-copy"></i> Copy Post Content To Clipboard</button>
-
-
-                        <p class="small text-muted margin-top-sm margin-remove-bottom">
-                          <i class="glyphicon glyphicon-info-sign"></i>&nbsp;
-                          In the event that the "Copy Post Content To Clipboard" button does not work, <strong>click inside the yellow textarea</strong>, then <strong>press CTRL-a (or Command-a)</strong> to select all the textarea content, <strong>press CTRL-c (Command-c)</strong> to copy the content and then use <strong>CRTL-v (Command-v)</strong> to paste the copied content in to your forum post.
-                        </p>
-
-
-                        <!-- TODO (RussW): determine how to split the content in to two textarea's if exceeds 20k characters-->
-                        <br />
-                        <div class="alert alert-danger">
-                        Post Length: <span id="counter" class="badge"></span>
-                        <br /><i>TODO: now we know the content length, we need to figure out a way of dynamically splitting large posts(over 20k) in to two textarea's</i>
-                        </div>
-
-                      </div>
-                    </div>
-
-
-                    <div class="collapse container-fluid clearfix" id="collapseExplainPostContent">
-                      <br />
-                      <div class="alert alert-info" role="alert">
-                        <h4><i class="glyphicon glyphicon-info-sign"></i> <?php echo _POST_HEADING; ?></h4>
-                        <?php echo _POST_EXPLAIN; ?>
-                      </div>
-                    </div>
-
-
-                  </div>
-
-                </div><!--/#accordion-->
-
-              </div><!--/.container-fluid-->
-            </div><!--/@settings-section-->
-<?php
-  /** comment-out accordian **/
-?>
-</div><!--/hidden accordion-->
-
-
-          <?php
-            /* NOTE (RussW): START - Content Container
-             * XS/SM/MD/LG: page full-width
-             * FPA web & print content
-             */
-          ?>
-          <div id="content">
 
 
             <?php
-              /* NOTE (RussW): SECTION - Basic Discovery
-               * generic top-level environment information
-               *
-               */
+            /* NOTE (RussW): START - Content Container
+             * FPA web & print content
+             */
             ?>
+            <div id="content">
+
+
+                <?php
+                /* NOTE (RussW): SECTION - Basic Discovery
+                 * generic top-level environment information
+                 *
+                 */
+                ?>
             <section id="basic-discovery-section" class="container-fluid">
 
 
@@ -4338,116 +3937,118 @@ $disabled = '';
               <em><?php echo _RES .' ('. _RES_SHORT .') '. _FPA_JOOMLA_DISCLAIMER; ?></em>
             </p>
 
-          </div><!--/#content-->
+                </div><!--/#content-->
 
-        </div><!--/.page-->
+            </div><!--/.page-->
 
-      </div><!--/.wrapper-->
-
-
+        </div><!--/.wrapper-->
 
 
 
 
-      <?php
-        /* NOTE (RussW): FOOTER - Navigation
+
+
+        <?php
+        /* NOTE (@RussW): Footer - external links & notices
          * download links, delete fpa & copyright
-         * copyright & contributor popovers removed, moved to legends text section (RussW 23/04/2018)
          *
          */
-      ?>
-      <footer id="copyright" class="navbar-fixed-bottom bg-muted hidden-print tourStep10">
-        <div class="container-fluid">
-          <div class="btn-toolbar">
+        ?>
+        <footer id="copyright" class="navbar-fixed-bottom bg-muted hidden-print tourStep10">
+            <div class="container-fluid">
+                <div class="btn-toolbar">
 
-            <div class="btn-group btn-group-xs text-success download-info hidden-xs">
-              <a href="<?php echo $gitcURLARRAY->zipball_url; ?>" tabindex="3" class="" role="button">
-                <i class="glyphicon glyphicon-download-alt"></i> <?php echo _RES_FPALATEST2; ?>
-              </a>
+                    <div class="btn-group btn-group-xs text-success download-info hidden-xs">
+                        <a href="<?php echo $gitcURLARRAY->zipball_url; ?>" tabindex="3" class="" role="button">
+                            <i class="glyphicon glyphicon-download-alt"></i> <?php echo _RES_FPALATEST2; ?>
+                        </a>
+                    </div>
+
+                    <div class="btn-group btn-group-xs text-success download-info hidden-xs">
+                        <a href="<?php echo $gitcURLARRAY->tarball_url; ?>" tabindex="3" class="" role="button">
+                            <i class="glyphicon glyphicon-download-alt"></i> <?php echo _RES_FPALATEST; ?>
+                        </a>
+                    </div>
+
+                    <div class="btn-group btn-group-xs text-danger security-info">
+                        <a tabindex="2" class="" role="button" data-toggle="popover" title="<span class='text-danger'><i class='glyphicon glyphicon-warning-sign'></i> <?php echo _FPA_DELNOTE_LN1; ?></span>" data-content="<span class='text-danger'><p><?php echo _FPA_DELNOTE_LN2; ?></p><p><?php echo _FPA_DELNOTE_LN3; ?></p></span>">
+                            <i class="glyphicon glyphicon-warning-sign"></i> <?php echo _FPA_DELNOTE_LN1; ?>
+                        </a>
+                    </div>
+
+                    <div class="btn-group btn-group-xs text-danger delete-fpa">
+                        <a href="fpa-en.php?act=delete" tabindex="3" class="" role="button">
+                            <i class="glyphicon glyphicon-remove-circle"></i> <?php echo _FPA_DELETE .' '. _RES_SHORT; ?>
+                        </a>
+                    </div>
+
+                    <div class="btn-group btn-group-xs text-primary copyright">
+                        <?php echo _RES .' ('. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' '. _RES_RELEASE_BUILD; ?>) 2011-<?php echo date('Y'); ?><sup>&copy;</sup>
+                    </div>
+
+                </div>
             </div>
-
-            <div class="btn-group btn-group-xs text-success download-info hidden-xs">
-              <a href="<?php echo $gitcURLARRAY->tarball_url; ?>" tabindex="3" class="" role="button">
-                <i class="glyphicon glyphicon-download-alt"></i> <?php echo _RES_FPALATEST; ?>
-              </a>
-            </div>
-
-            <div class="btn-group btn-group-xs text-danger security-info">
-              <a tabindex="2" class="" role="button" data-toggle="popover" title="<span class='text-danger'><i class='glyphicon glyphicon-warning-sign'></i> <?php echo _FPA_DELNOTE_LN1; ?></span>" data-content="<span class='text-danger'><p><?php echo _FPA_DELNOTE_LN2; ?></p><p><?php echo _FPA_DELNOTE_LN3; ?></p></span>">
-                <i class="glyphicon glyphicon-warning-sign"></i> <?php echo _FPA_DELNOTE_LN1; ?>
-              </a>
-            </div>
-
-            <div class="btn-group btn-group-xs text-danger delete-fpa">
-              <a href="fpa-en.php?act=delete" tabindex="3" class="" role="button">
-                <i class="glyphicon glyphicon-remove-circle"></i> <?php echo _FPA_DELETE .' '. _RES_SHORT; ?>
-              </a>
-            </div>
-
-            <div class="btn-group btn-group-xs text-primary copyright">
-              <?php echo _RES .' ('. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' '. _RES_RELEASE_BUILD; ?>) 2011-<?php echo date('Y'); ?><sup>&copy;</sup>
-            </div>
-
-          </div>
-        </div>
-      </footer><!--/#copyright footer-->
+        </footer><!-- /#copyright footer -->
 
 
-
-
-
-
-      <?php
-        /* NOTE (RussW): Back-To-Top Link
+        <?php
+        /* NOTE (@RussW): back-to-top link
          *
          */
-      ?>
-      <a id="back-to-top" href="#home-section" class="btn btn-primary btn-sm back-to-top" role="button">
-         <span class="glyphicon glyphicon-chevron-up"></span>
-      </a>
+        ?>
+        <a id="back-to-top" class="btn btn-primary btn-sm back-to-top" role="button" href="#home-section">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
 
 
-
-
-
-
-      <?php
-        /* NOTE (RussW): CDN JS INCLUDES - Required BS/jQuery
+        <?php
+        /* NOTE (@RussW): CDN JS Includes - required BS/jQuery
          * initialisation & configuration of js/jquery objects used in fpa
+         *
          */
-      ?>
-      <!-- include jQuery from CDN -->
-      <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-      <!-- include Bootstrap from CDN -->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-      <?php
+        ?>
+        <!-- include jQuery from CDN -->
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+        <!-- include Bootstrap from CDN -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+        <?php
         /* NOTE (RussW): Bootstrap CDN Link
          * only load if FPATour is clicked
          *
          */
-      ?>
-      <?php if ($runFPATour == '1'): ?>
-        <!-- include Bootstrap Tour from CDN -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.11.0/js/bootstrap-tour.min.js" integrity="sha256-AFoIN2Z5u5QDw8n9X0FoP/p1ZhE1xDnsgHlCMWE0yYQ=" crossorigin="anonymous"></script>
-      <?php endif; ?>
+        ?>
+        <?php if ($runFPATour == '1'): ?>
+          <!-- include Bootstrap Tour from CDN -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.11.0/js/bootstrap-tour.min.js" integrity="sha256-AFoIN2Z5u5QDw8n9X0FoP/p1ZhE1xDnsgHlCMWE0yYQ=" crossorigin="anonymous"></script>
+        <?php endif; ?>
 
 
 
 
-      <?php
-        /* NOTE (RussW): SCRIPTS - Offline?
-         * if jQuery cannot be loaded, assume offline and show a message
+        <?php
+        /* NOTE (@RussW): Scripts - using offline?
+         * if jQuery or Bootstrap is not loaded, assume we're offline and show a message
          *
          */
-      ?>
-      <script>
-        if (typeof jQuery == 'undefined') {
-          var d = document.getElementById('wrapper');
-            d.className += " hidepage";
-            document.write('<h2 style="text-align:center;margin-top:10%;"><?php echo _RES; ?><br /><?php echo _FPA_VER_SHORT .''. _RES_VERSION; ?></h2>');
-            document.write('<div class="border-all bg-muted padding-lg" style="text-align:center;margin:25px 10vw;"><?php echo _FPA_OFFLINE; ?><?php echo _FPA_OFFLINE_MESSAGE; ?></div>');
-        };
-      </script>
+        ?>
+        <script>
+          if ( (typeof jQuery == 'undefined') || (typeof($.fn.popover) == 'undefined') ) {
+            var d = document.getElementById('wrapper');
+            var f = document.getElementById('copyright');
+              d.className += " hidepage";
+              f.className += " hidepage";
+
+              document.write ('<h2 style="text-align:center;margin-top:10%;font-family:sans-serif,arial;"><?php echo _RES; ?><br /><?php echo _FPA_VER_SHORT .''. _RES_VERSION; ?></h2>');
+              document.write ('<div class="border-all bg-muted padding-lg" style="font-family:sans-serif,arial;text-align:center;margin:25px 10vw;">');
+              document.write ('<?php echo _FPA_OFFLINE; ?>');
+              document.write ('<?php echo _FPA_OFFLINE_MESSAGE1; ?>');
+              document.write ('<?php echo _FPA_OFFLINE_MESSAGE2; ?>');
+              document.write ('</div>');
+          };
+        </script>
 
 
 
@@ -4840,14 +4441,14 @@ function exportTableToCSV(filename, tablename) {
 
       <?php
         /* NOTE (RussW): SCRIPT - Configure & Initialise The FPA Tour
-         * only set if $runFPATour=1 from sidebar link (using $_GET['tour'])
+         * only set if "tour = 1", to save a little memory and standard load time
          * configuration information at bootstraptour.com
          */
       ?>
       <?php if ($runFPATour == '1'): ?>
         <script>
-          var tour = new Tour({
-            name:           'test3',
+          var tour = new Tour({                                                                                         // configure tour
+            name:           'fpaTour',                                                                                  // generic name, if multiple tours, not really required, but keep changing if caching becomes an issue on edits, but with no local storage shouldn't happen
             template:       '<div class="popover tour">\
                                <div class="arrow"></div>\
                                <h3 class="popover-title"><i class="glyphicon glyphicon-blackboard"></i> </h3>\
@@ -4860,11 +4461,11 @@ function exportTableToCSV(filename, tablename) {
                                  </div>\
                                </div>\
                              </div>\
-                            ',
-            smartPlacement: true,
-            storage:        false,
-            debug:          true,
-            animation:      true,
+                            ',                                                                                          // customise the template to better suit FPA
+            smartPlacement: true,                                                                                       // trys to guess best popup placement, unless explicity stated in step
+            storage:        false,                                                                                      // no state-save, forces the tour to run from start everytime and avoids EU/EC GDPR/Cookie/local data storage issues
+            debug:          true,                                                                                       // shows status output in console
+            animation:      true,                                                                                       // fade-in/out and smoothscroll
             onEnd:          function (tour) {
                               document.location.href = '<?php echo $_SERVER['PHP_SELF']; ?>';
                             },
@@ -4920,7 +4521,7 @@ function exportTableToCSV(filename, tablename) {
             },
             {
               // accordion - settings
-              element:      '.tourStep20',
+              element:      '#default-tab',
               title:        '<?php echo _TOUR_STEP20_TITLE; ?>',
               content:      '<?php echo _TOUR_STEP20_DESC; ?>',
               onShown:      function (tour) {
@@ -4929,7 +4530,7 @@ function exportTableToCSV(filename, tablename) {
             },
             {
               // accordion - settings : generate post
-              element:      '.tourStep25',
+              element:      '#settings-tab',
               title:        '<?php echo _TOUR_STEP25_TITLE; ?>',
               content:      '<?php echo _TOUR_STEP25_DESC; ?>',
               placement:    'left',
@@ -4940,9 +4541,10 @@ function exportTableToCSV(filename, tablename) {
             },
             {
               // accordion - post content
-              element:      '.tourStep30',
+              element:      '#output-tab',
               title:        '<?php echo _TOUR_STEP30_TITLE; ?>',
               content:      '<?php echo _TOUR_STEP30_DESC; ?>',
+              placement:    'left',
               onShown:      function (tour) {
                               $('#collapseTwo').toggleClass('in');
                             },
@@ -4960,10 +4562,8 @@ function exportTableToCSV(filename, tablename) {
             }
           ]});
 
-          // Initialize the tour
-          tour.init();
-          // Start the tour
-          tour.start();
+          tour.init();                                                                                                  // initialize the tour
+          tour.start();                                                                                                 // actually start the tour
         </script>
       <?php endif; ?>
 
