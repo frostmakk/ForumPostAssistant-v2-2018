@@ -133,7 +133,7 @@ $disabled = '';
   define ( '_RES_FPALINK2', 'https://github.com/ForumPostAssistant/FPA/zipball/en-GB/' ); // where to get the latest 'Final Releases
   */
   define ( '_COPYRIGHT_HEADING', 'Developers & Contributors' );
-  define ( '_COPYRIGHT_STMT', 'The FPA script has been developed by, and is copyright of the following contributors; Russell Winter, Phil DeGruy, Claire Mandville, Bernard Toplak & Sveinung Larsen.
+  define ( '_COPYRIGHT_STMT', 'The FPA script has been developed by, and is copyright of the following contributors; Russell Winter, Phil DeGruy, Claire Mandville, Sveinung Larsen & Bernard Toplak.
                                <a class="text-primary" href="https://github.com/ForumPostAssistant" target="_blank">Visit the FPA Github Project</a>.'
          );
   define ( '_LICENSE_HEADING', 'Licensing & Disclaimer' );
@@ -141,7 +141,7 @@ $disabled = '';
                                You are welcome to redistribute it under certain conditions. For details read the LICENSE.txt file included in the download package with this script.
                                A copy of the license may also be obtained at <a class="text-primary" href="http://www.gnu.org/licenses/" target="_blank">http://www.gnu.org/licenses/</a>.'
          );
-  define ( '_FPA_JOOMLA_DISCLAIMER', 'is not affiliated with or endorsed by The Joomla! Project™. Use of the Joomla!® name, symbol, logo and related trademarks is permitted under a limited license granted by Open Source Matters, Inc.');
+  define ( '_FPA_JOOMLA_DISCLAIMER', 'is not affiliated with or endorsed by The Joomla! Project™.<br />Use of the Joomla!® name, symbol, logo, and related trademarks is licensed by Open Source Matters, Inc.');
 
 
 
