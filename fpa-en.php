@@ -13,16 +13,13 @@
  *  @link          https://github.com/ForumPostAssistant Github Project Page
  *  @link          https://github.com/ForumPostAssistant/FPA/issues Github Issue Tracker
  *
- * @internal       Coding Style - is based on https://developer.joomla.org/coding-standards/intro.html where possible
- *                 and is practical. Use of traditional braces/curly-brackets ( if{, } else {, } // descriptive-comment )
- *                 is recommended and preferred over the textual alternative-style ( if: else:, endif; ) to cater for
- *                 multiple/cross IDE recognition.
- *                 Where it makes sense, is feasible and does not effect readability or function, lines should not
- *                 exceed a notiional 150 chararcters and inline single line comments being placed/started at the 150
- *                 character column as well.
+ * @internal       Coding Style - is based on https://developer.joomla.org/coding-standards/intro.html where possible and is practical. Use of
+ *                 traditional braces/curly-brackets ( if{, } else {, } // descriptive-comment ) is recommended and preferred over the textual
+ *                 alternative-style ( if: else:, endif; ) to cater for multiple/cross IDE recognition.
+ *                 Where it makes sense, is feasible and does not effect readability or function, lines should not exceed a notiional 150 chararcters
+ *                 and inline single line comments being placed/started at the 150 character column as well.
  *                 Indentation tabs should equate to 4 spaces, with spaces being used to seperate inline for clarity.
- *                 A minimum of 2 lines & maximum of 6 lines should be used to seperate minor and major sections or
- *                 code blocks for readability and clarity.
+ *                 A minimum of 2 lines & maximum of 6 lines should be used to seperate minor/major sections or code blocks for readability & clarity.
  *
  *  @internal      comment notation & change syntax
  *                 TYPE (@your-preferred-name): your comment content
@@ -68,7 +65,6 @@
 $disabled = '';
   /** TEST - END DELETE ME ****************************************/
 ?>
-
 <!DOCTYPE html>
 <html lang="en-gb" dir="ltr" vocab="http://schema.org/">
 
@@ -398,8 +394,19 @@ $disabled = '';
         <title><?php echo _RES .' : '. _FPA_VER_SHORT .''. _RES_VERSION .'.'. _RES_VERSION_MAINT .' '. _RES_RELEASE_BUILD .' '. _RES_LANG; ?></title>
 
 
+        <!-- NOTE (@RussW): attempt to pre-fetch DNS for CDNs & APIs -->
+        <link rel="dns-prefetch" href="//code.jquery.com">
+        <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+        <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
+        <link rel="dns-prefetch" href="//api.github.com">
+        <link rel="dns-prefetch" href="//update.joomla.org">
+        <!-- only when needed
+        <link rel="dns-prefetch" href="//vel.joomla.org">
+        -->
+
+
         <?php
-        /* NOTE (@RussW): attempt to find and display a favicon
+        /** NOTE (@RussW): attempt to find and display a favicon
          *
          */
         $faviconPath = '';
@@ -415,7 +422,9 @@ $disabled = '';
         } // endif file_exists $faviconPath
         ?>
         <?php if ($faviconPath) { ?>
-          <link rel="shortcut icon" href="<?php echo $faviconPath; ?>">
+
+        <link rel="shortcut icon" href="<?php echo $faviconPath; ?>">
+
         <?php } // endif $faviconPath ?>
 
 
@@ -2999,9 +3008,9 @@ $disabled = '';
 
                 <h2>
   <div class="btn-group pull-right">
-  <button type="submit" class="btn btn-warning btn-xs /*pull-right*/ hidden-xs hidden-print" name="submitVEL"><span class="glyphicon glyphicon-screenshot"></span> VEL Check</button>
+  <button type="submit" class="btn btn-warning btn-xs hidden-xs hidden-print" name="submitVEL"><span class="glyphicon glyphicon-screenshot"></span> VEL Check</button>
 
-                  <button class="btn btn-info btn-xs /*pull-right clearfix*/ hidden-print" type="button" data-toggle="collapse" data-target="#collapseExplainExt" aria-expanded="false" aria-controls="collapseExplainExt">
+                  <button class="btn btn-info btn-xs hidden-print" type="button" data-toggle="collapse" data-target="#collapseExplainExt" aria-expanded="false" aria-controls="collapseExplainExt">
                     <i class="glyphicon glyphicon-info-sign"></i><span class="hidden-xs">&nbsp;<?php echo _FPA_EXPLAIN; ?></span>
                   </button>
   </div>
