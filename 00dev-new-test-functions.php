@@ -26,7 +26,7 @@
     else:
       $gitcURLARRAY   = json_decode($gitcURLJSON);  // decode json in to an array
       // TODO (RussW): uncomment in production
-      $thisFPAVER     = _RES_VERSION .'.'. _RES_VERSION_MAINT .'-'. _RES_RELEASE_BUILD;
+//      $thisFPAVER     = _RES_VERSION .'.'. _RES_VERSION_MAINT .'-'. _RES_RELEASE_BUILD;
       $latestFPAVER   = ltrim($gitcURLARRAY->tag_name, 'v');  // trim the "v" (version) from the latest release tag
 
       if (version_compare($thisFPAVER, $latestFPAVER) == 0):
@@ -53,7 +53,7 @@
         $fpaVersionCheck  = '<div class="text-right margin-bottom-sm clearfix">';
         $fpaVersionCheck .= '<div class="btn-group" role="group" aria-label="FPA Version Check Information">';
         $fpaVersionCheck .= '<button class="btn btn-default btn-xs margin-bottom-sm" type="button" data-toggle="collapse" data-target="#collapsefpaVersion" aria-expanded="false" aria-controls="collapsefpaVersion">';
-        $fpaVersionCheck .= '<span class="text-'. $fpaVersionCheckStatus .'">'. _RES_SHORT .' '. _FPA_VER_SHORT .''. $thisFPAVER .'</span>';
+        $fpaVersionCheck .= '<span class="text-'. $fpaVersionCheckStatus .'">'. _FPA_EXPLAIN_ICON .' '. _RES_SHORT .' '. _FPA_VER_SHORT .''. $thisFPAVER .'</span>';
         $fpaVersionCheck .= '</button>';
         $fpaVersionCheck .= '<button class="btn btn-info btn-xs margin-bottom-sm text-'. $fpaVersionCheckStatus .'" type="button" data-toggle="collapse" data-target="#collapsefpaVersion" aria-expanded="false" aria-controls="collapsefpaVersion">';
         $fpaVersionCheck .= _FPA_EXPLAIN_ICON .'<span class="hidden-xs">&nbsp;'. _FPA_EXPLAIN .'</span>';

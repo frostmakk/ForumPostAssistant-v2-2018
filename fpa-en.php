@@ -59,7 +59,7 @@
   // TEST PARAMS
   $thisJVER = '3.6.5';
 //  $latestFPAVER = strtolower('1.3.9-alpha');
-//  $thisFPAVER = strtolower('1.3.9-beta');
+  $thisFPAVER = strtolower('1.3.9-beta');
 
 
 $disabled = '';
@@ -432,6 +432,9 @@ $disabled = '';
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js" integrity="sha256-EPrkNjGEmCWyazb3A/Epj+W7Qm2pB9vnfXw+X6LImPM=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/orange/pace-theme-flash.min.css" integrity="sha256-RGBBrgymw4elQrpU8GjEkOCxf5vE5ZvpAGnhNpDONPk=" crossorigin="anonymous">
 
+        <!-- NOTE (@FPA): include "notify" from CDN, for pop-up alerts -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/bootstrap-notify.min.css" integrity="sha256-xs2k744k81ISIOyl14txiKpaRncakLx29JiAve4063w=" crossorigin="anonymous">
+
         <!-- NOTE (@FPA): grab normalise from CDN, set resets -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous">
 
@@ -596,6 +599,9 @@ $disabled = '';
              */
             ?>
             <div id="fpa-home" class="page">
+
+
+<div class="notifications top-right"></div>
 
 
           <?php
@@ -3954,9 +3960,6 @@ $disabled = '';
 
 
 
-
-
-
         <?php
         /* NOTE (@RussW): Footer - external links & notices
          * download links, delete fpa & copyright
@@ -4022,6 +4025,8 @@ $disabled = '';
         <!-- include Bootstrap from CDN -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+        <!-- NOTE (@FPA): include "notify" from CDN, for pop-up alerts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/js/bootstrap-notify.min.js" integrity="sha256-x9MuLegVJYbuND9ufn0Ji5PAoT0FKFt8S5PBPWyuROM=" crossorigin="anonymous"></script>
 
         <?php
         /* NOTE (RussW): Bootstrap CDN Link
@@ -4071,6 +4076,24 @@ $disabled = '';
       ?>
       <script>
         $(document).ready(function () {
+
+
+            <?php
+            /** NOTE (RussW): SCRIPT - growl style messaging for version checks and instance not found error
+             *
+             */
+            ?>
+            <?php if ($fpaVersionCheckStatus): ?>
+            $('.top-right').notify({
+                type: '<?php echo $fpaVersionCheckStatus; ?>',
+                message: { html: '<span class=""><?php echo _FPA_EXPLAIN_ICON .' '. $fpaVersionCheckMessage; ?></span>' },
+                <?php if ($fpaVersionCheckStatus == 'warning'): ?>
+                    fadeOut: { enabled: false }
+                <?php else: ?>
+                    fadeOut: { enabled: true, delay: 10000 }
+                <?php endif; ?>
+              }).show();
+            <?php endif; ?>
 
 
 <?php
