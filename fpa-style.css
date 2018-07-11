@@ -775,6 +775,20 @@ div[class*="popover tour-"] .popover-navigation {
 */
 
 /* ---------------------------------------------------
+    notifications
+----------------------------------------------------- */
+.notifications.top-right {
+    min-width: 290px;
+    max-width: 475px;
+    margin-left:10px;
+    line-height: 1.1;
+}
+@media(min-width: 568px) {
+    .notifications.top-right {
+        width: 475px;
+    }
+}
+/* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
 @media (max-width: 1200px) {

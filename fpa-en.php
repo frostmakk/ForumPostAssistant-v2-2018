@@ -57,9 +57,9 @@
 
 
   // TEST PARAMS
-  $thisJVER = '3.6.5';
+  $thisJVER = '3.8.7';
 //  $latestFPAVER = strtolower('1.3.9-alpha');
-  $thisFPAVER = strtolower('1.3.9-beta');
+  $thisFPAVER = strtolower('1.4.0-beta');
 
 
 $disabled = '';
@@ -601,7 +601,7 @@ $disabled = '';
             <div id="fpa-home" class="page">
 
 
-<div class="notifications top-right"></div>
+<div class="notifications top-right" style="position:fixed;right:10px;top:10px;"></div>
 
 
           <?php
@@ -714,13 +714,15 @@ $disabled = '';
   <div class="col-xs-12">
 
 
-      <?php if ($fpaVersionCheckStatus != 'warning'): ?>
+      <?php //if ($fpaVersionCheckStatus != 'warning'): ?>
         <div class="collapse" id="collapsefpaVersion">
           <div class="text-center alert alert-<?php echo $fpaVersionCheckStatus; ?>" role="alert">
-      <?php else: ?>
+      <?php //else: ?>
+      <!--
         <div class="text-center alert alert-<?php echo $fpaVersionCheckStatus; ?> alert-dismissible margin-top-sm" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <?php endif; ?>
+      -->
+      <?php //endif; ?>
 
         <h4><?php echo _FPA_EXPLAIN_ICON .' '. _FPA_VER_CHECK_HEADING; ?></h4>
         <?php echo $fpaVersionCheckMessage; ?>
@@ -729,9 +731,9 @@ $disabled = '';
           <li class="col-xs-6 col-sm-3"><?php echo _FPA_LATEST .' '. _FPA_VER; ?> <span class="label label-primary center-block"><strong><?php echo _FPA_VER_SHORT .''. $latestFPAVER; ?></strong></span></li>
         </ul>
       </div><!--/.alert-->
-      <?php if ($fpaVersionCheckStatus != 'warning'): ?>
+      <?php //if ($fpaVersionCheckStatus != 'warning'): ?>
     </div><!--/.collapse-->
-      <?php endif; ?>
+      <?php //endif; ?>
   </div>
 </div><!--/.row-->
 
@@ -4083,14 +4085,26 @@ $disabled = '';
              *
              */
             ?>
-            <?php if ($fpaVersionCheckStatus): ?>
+            <?php if ($fpaVersionCheckStatus != 'success'): ?>
             $('.top-right').notify({
                 type: '<?php echo $fpaVersionCheckStatus; ?>',
-                message: { html: '<span class=""><?php echo _FPA_EXPLAIN_ICON .' '. $fpaVersionCheckMessage; ?></span>' },
+                message: { html: '<h4 class="margin-remove"><?php echo _FPA_EXPLAIN_ICON .' '. _FPA_VER_CHECK_HEADING; ?></h4><?php echo $fpaVersionCheckMessage; ?>' },
                 <?php if ($fpaVersionCheckStatus == 'warning'): ?>
                     fadeOut: { enabled: false }
                 <?php else: ?>
-                    fadeOut: { enabled: true, delay: 10000 }
+                    fadeOut: { enabled: true, delay: 6000 }
+                <?php endif; ?>
+              }).show();
+            <?php endif; ?>
+
+            <?php if ($joomlaVersionCheckStatus != 'success'): ?>
+            $('.top-right').notify({
+                type: '<?php echo $joomlaVersionCheckStatus; ?>',
+                message: { html: '<h4 class="margin-remove"><?php echo _FPA_EXPLAIN_ICON .' '. _J_VER_CHECK_HEADING; ?></h4><?php echo $joomlaVersionCheckMessage; ?>' },
+                <?php if ($joomlaVersionCheckStatus == 'warning'): ?>
+                    fadeOut: { enabled: false }
+                <?php else: ?>
+                    fadeOut: { enabled: true, delay: 6000 }
                 <?php endif; ?>
               }).show();
             <?php endif; ?>
