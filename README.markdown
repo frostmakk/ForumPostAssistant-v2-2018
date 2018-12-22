@@ -1,4 +1,4 @@
->## This fork contains a "working" version of the new GUI merged with FPA 1.4.6 coding.
+>## This fork contain a "working" version of the new GUI merged with FPA 1.4.6 coding.
 
 
 
