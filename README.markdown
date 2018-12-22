@@ -1,5 +1,7 @@
-> **This project is an Alpha Work-in-Progress and is _NOT_ a working or production script at this time.**  The current production release of the Forum Post Assistant can be found at the [FPA Production Github Project Page](https://github.com/ForumPostAssistant/FPA)
- 
+>## This fork contains a "working" version of the new GUI merged with FPA 1.4.6 coding.
+
+
+
  
 ## Forum Post Assistant (FPA) v2.0 [BS] Alpha
 
