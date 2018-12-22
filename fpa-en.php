@@ -52,16 +52,15 @@
 
 
   /** TEST - START DELETE ME ****************************************/
-//  error_reporting(0);
+
   //$disabled = 'disabled';
 
 
   // TEST PARAMS
-  $thisJVER = '3.8.7';
+
 //  $latestFPAVER = strtolower('1.3.9-alpha');
-  $thisFPAVER = strtolower('1.4.0-beta');
-
-
+//  $thisFPAVER = strtolower('1.4.0-beta');
+//   $thisJVER = '3.9.1';
 $disabled = '';
   /** TEST - END DELETE ME ****************************************/
 ?>
@@ -468,7 +467,7 @@ $disabled = '';
       <?php include_once '11dev-joomla-extensions.php'; ?>
       <?php include_once '12dev-supported-versions.php'; ?>
       <?php include_once '00dev-new-test-functions.php'; ?>
-
+      <?php include_once '14dev-form-routines.php'; ?>
 
 
     </head>
@@ -705,7 +704,7 @@ $disabled = '';
   </div>
   <div class="col-xs-8">
 
-      <?php
+      <?php        
         if ($fpaVersionCheck):
           echo $fpaVersionCheck;
         endif;
@@ -1023,7 +1022,7 @@ $disabled = '';
                                               Show Elevated Permissions
                                             </div>
                                             <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess1" name="someSwitchOption001" type="checkbox" />
+                                              <input id="someSwitchOptionSuccess1" name="showElevated" type="checkbox" checked />
                                               <label for="someSwitchOptionSuccess1" class="label-success text-left"></label>
                                             </div>
                                           </div>
@@ -1035,7 +1034,7 @@ $disabled = '';
                                               Show dataBase Statistics
                                             </div>
                                             <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess2" name="someSwitchOption002" type="checkbox" />
+                                              <input id="someSwitchOptionSuccess2" name="showTables" type="checkbox" checked />
                                               <label for="someSwitchOptionSuccess2" class="label-success text-left"></label>
                                             </div>
                                           </div>
@@ -1047,7 +1046,7 @@ $disabled = '';
                                               Show Components
                                             </div>
                                             <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess3" name="someSwitchOption003" type="checkbox" />
+                                              <input id="someSwitchOptionSuccess3" name="showComponents" type="checkbox" checked />
                                               <label for="someSwitchOptionSuccess3" class="label-success text-left"></label>
                                             </div>
                                           </div>
@@ -1059,7 +1058,7 @@ $disabled = '';
                                               Show Modules
                                             </div>
                                             <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess4" name="someSwitchOption004" type="checkbox" />
+                                              <input id="someSwitchOptionSuccess4" name="showModules" type="checkbox" checked />
                                               <label for="someSwitchOptionSuccess4" class="label-success text-left"></label>
                                             </div>
                                           </div>
@@ -1071,7 +1070,7 @@ $disabled = '';
                                               Show Plugins
                                             </div>
                                             <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess5" name="someSwitchOption005" type="checkbox" />
+                                              <input id="someSwitchOptionSuccess5" name="showPlugins" type="checkbox" checked />
                                               <label for="someSwitchOptionSuccess5" class="label-success text-left"></label>
                                             </div>
                                           </div>
@@ -1082,8 +1081,8 @@ $disabled = '';
                                             <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
                                               Show Libraries
                                             </div>
-                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess6" name="someSwitchOption006" type="checkbox" />
+                                            <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right text-mute">
+                                              <input id="someSwitchOptionSuccess6" name="showLibraries" type="checkbox" checked />
                                               <label for="someSwitchOptionSuccess6" class="label-success text-left"></label>
                                             </div>
                                           </div>
@@ -1091,11 +1090,11 @@ $disabled = '';
 
                                         <li class="list-group-item">
                                           <div class="row-fluid clearfix">
-                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left text-muted">
+                                            <div class="col-xs-9 col-sm-9 text-truncate padding-remove text-left">
                                               <em> - Include Core Extensions?</em>
                                             </div>
                                             <div class="col-xs-3 col-sm-3 material-switch padding-remove text-right">
-                                              <input id="someSwitchOptionSuccess7" name="someSwitchOption007" type="checkbox" />
+                                              <input id="someSwitchOptionSuccess7" name="showCoreEx" type="checkbox" checked />
                                               <label for="someSwitchOptionSuccess7" class="label-success text-left"></label>
                                             </div>
                                           </div>
@@ -1449,19 +1448,19 @@ $disabled = '';
                           <tbody>
                             <tr>
                               <td class="small text-truncate">PHP Version</td>
-                              <td class="text-center"><strong><?php echo _FPA_VER_SHORT; ?>7.2.1</strong></td>
+                              <td class="text-center"><strong><?php echo _FPA_VER_SHORT; ?><?php echo PHP_VERSION; ?></strong></td>         
                             </tr>
                             <tr>
                               <td class="small text-truncate">PHP API</td>
-                              <td class="text-center">cgi-fcgi</td>
+                              <td class="text-center"><?php echo  $phpenv['phpAPI']; ?></td>             
                             </tr>
                             <tr>
                               <td class="small text-truncate">MySQL Support</td>
-                              <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="text-center text-<?php echo $stylesuppmysql;?>"><?php echo $suppmysql; ?></td>            
                             </tr>
                             <tr>
                               <td class="small text-truncate">MySQLi Support</td>
-                              <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="text-center text-<?php echo $stylesuppmysqli;?>"><?php echo $suppmysqli; ?></td>
                             </tr>
                           </tbody>
                         </table>
@@ -1481,16 +1480,16 @@ $disabled = '';
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
-                              <td class="small text-truncate">MySQL Version</td>
-                              <td class="text-center"><strong><?php echo _FPA_VER_SHORT; ?>5.6.38</strong></td>
+                              <td class="small text-truncate">Database Version</td>
+                              <td class="text-center"><strong><?php echo _FPA_VER_SHORT; ?><?php echo $database['dbHOSTSERV']; ?></strong></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Connection Type</td>
-                              <td class="text-center">MySQLi</td>
+                              <td class="text-center"><?php echo $instance['configDBTYPE']; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Default Collation</td>
-                              <td class="text-center">UTF8</td>
+                              <td class="text-center"><?php echo $database['dbCOLLATION']; ?></td>                               
                             </tr>
                             <tr>
                               <td class="small text-truncate">MySQLi Support</td>
@@ -1514,20 +1513,20 @@ $disabled = '';
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
-                              <td class="small text-truncate">PHP Supports J! 3.8.5</td>
-                              <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">PHP Supports J! <?php echo $instance['cmsRELEASE'] . '.' . $instance['cmsDEVLEVEL']; ?></td>                      
+                              <td class="text-center text-success"><?php echo $frmphpSUP4J; ?></td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate">MySQL Supports J! 3.5.8</td>
-                              <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="small text-truncate">Database Supports J! <?php echo $instance['cmsRELEASE'] . '.' . $instance['cmsDEVLEVEL']; ?></td>
+                              <td class="text-center text-success"><?php echo $frmDbSUP4J; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Known Buggy PHP</td>
-                              <td class="text-center"><?php echo _FPA_N; ?></td>
+                              <td class="text-center"><?php echo $snapshot['buggyPHP']; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Known Buggy Zend</td>
-                              <td class="text-center"><?php echo _FPA_N; ?></td>
+                              <td class="text-center"><?php echo $snapshot['buggyZEND']; ?></td>
                             </tr>
                           </tbody>
                         </table>
@@ -1606,12 +1605,20 @@ $disabled = '';
                         <!-- TODO (RussW): instance messages -->
                         <div class="col-xs-12">
 
-                          <!-- TODO (RussW): config not found -->
-                          <div class="alert alert-warning text-center text-capitalize">
-                            <h4 class="margin-remove-top"><?php echo _FPA_WARNING_ICON .'<br />'. _RES .' '. _RES_MESSAGE_WARNING; ?></h4>
-                            <?php echo _FPA_INSTANCE .' '. _RES_MESSAGE_NOTFOUND .' '. _RES_MESSAGE_NOTESTS; ?>
-                          </div>
+
+                        
+                           <!-- TODO (RussW): config not found -->
+                          <?php
+                          if ($instance['instanceCONFIGURED'] == _FPA_N){
+                            echo '<div class="alert alert-warning text-center text-capitalize">';
+                            echo '<h4 class="margin-remove-top">' . _FPA_WARNING_ICON . '<br />'. _RES .' '. _RES_MESSAGE_WARNING . '</h4>';
+                            echo  _FPA_INSTANCE .' '. _RES_MESSAGE_NOTFOUND .' '. _RES_MESSAGE_NOTESTS;
+                            echo '</div>';
+                          }
+                           ?>
                         <!-- END: config not found -->
+                        
+
 
                         <!-- HACK (RussW): version check if Joomla! found -->
                         <?php
@@ -1638,15 +1645,15 @@ $disabled = '';
                               <tbody>
                                 <tr>
                                   <td class="small">Found</td>
-                                  <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="text-center text-<?php echo $styleinstancefound;?>"><?php echo $fieldinstancefound; ?></td>
                                 </tr>
                                 <tr>
                                   <td class="small">Version</td>
-                                  <td class="text-center"><strong>v3.8.7</strong></td>
+                                  <td class="text-center"><strong><?php echo $instance['cmsRELEASE'].'.'.$instance['cmsDEVLEVEL']; ?></strong></td>
                                 </tr>
                                 <tr>
                                   <td class="small">Build</td>
-                                  <td class="text-center bg-success text-success">Stable</td>
+                                  <td class="text-center bg-<?php echo $styledevstatus;?> text-<?php echo $styledevstatus;?>"><?php echo $instance['cmsDEVSTATUS']; ?></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -1667,15 +1674,15 @@ $disabled = '';
                               <tbody>
                                 <tr>
                                   <td class="small">Found</td>
-                                  <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="text-center text-<?php echo $stylepltffound;?>"><?php echo $fieldpltffound; ?></td>
                                 </tr>
                                 <tr>
                                   <td class="small">Version</td>
-                                  <td class="text-center"><strong>v13.1.0</strong></td>
+                                  <td class="text-center"><strong><?php echo $instance['platformRELEASE'].'.'.$instance['platformDEVLEVEL']; ?></strong></td>
                                 </tr>
                                 <tr>
                                   <td class="small">Build</td>
-                                  <td class="text-center bg-success text-success col-xs-4">Stable</td>
+                                  <td class="text-center bg-<?php echo $stylepltfdevstatus;?> text-<?php echo $stylepltfdevstatus;?> col-xs-4"><?php echo $instance['platformDEVSTATUS']; ?></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -1696,15 +1703,15 @@ $disabled = '';
                               <tbody>
                                 <tr>
                                   <td class="small text-truncate">Exists</td>
-                                  <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="text-center"><?php echo $isconfig; ?></td>
                                 </tr>
                                 <tr>
                                   <td class="small text-truncate">Valid</td>
-                                  <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="text-center"><?php echo $isconfigvalid; ?></td>
                                 </tr>
                                 <tr>
                                   <td class="small text-truncate">Matches CMS</td>
-                                  <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="text-center"><?php echo $configmatches; ?></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -1726,19 +1733,15 @@ $disabled = '';
                                 <tr>
                                   <td class="small text-truncate">Permissions</td>
                                   <td class="text-center">
-                                    <?php
-                                      //$testCONFIG = fileperms('old-fpa-en.php');
-                                      //$testCONFIG = fileperms('administrator');
-                                      $testCONFIG = 'fpa-style.css';
-                                    ?>
-                                    <?php echo substr( sprintf('%o', fileperms( $testCONFIG ) ),-3, 3 ); ?>
+                                  
+                                    <?php echo substr( sprintf('%o', fileperms( $instance['configPATH'] ) ),-3, 3 ); ?>
                                   </td>
                                 </tr>
                                 <tr>
                                   <td class="small text-truncate">Transposition</td>
                                   <td class="text-center">
                                     <?php
-                                      $testPERMS = fileperms( $testCONFIG );
+                                      $testPERMS = fileperms( $instance['configPATH'] );
                                       switch ($testPERMS & 0xF000) {
                                           case 0xC000: // socket
                                               $info = 's ';
@@ -1797,7 +1800,7 @@ $disabled = '';
                                   <td class="small text-truncate">Effective Mode</td>
                                   <td class="text-center">
                                     <?php
-                                    if (is_writable($testCONFIG)) {
+                                    if (is_writable($instance['configPATH'])) {
                                         echo 'writable';
                                     } else {
                                         echo 'read only';
@@ -1824,12 +1827,15 @@ $disabled = '';
                               <tbody>
                                 <tr>
                                   <td class="small text-truncate">Owner</td>
-                                  <td class="text-center">hotmangome</td>
+                                  <td class="text-center"><?php echo $instance['configOWNER']['name']; ?></td>           
+                                </tr>                                
+                                  <td class="small text-truncate">Group</td>        
+                                  <td class="text-center"><?php echo $instance['configGROUP']['name']; ?></td>
                                 </tr>
-                                <tr class="border-bottom">
-                                  <td class="small text-truncate">Group</td>
-                                  <td class="text-center">hotmangome</td>
-                                </tr>
+                                <tr>
+                                  <td class="small text-truncate">Some</td>
+                                  <td class="text-center">Text</td>
+                                </tr>                          
                               </tbody>
                             </table>
 
@@ -1849,15 +1855,15 @@ $disabled = '';
                               <tbody>
                                 <tr>
                                   <td class="small text-truncate">Online</td>
-                                  <td class="text-center"><?php echo _FPA_Y_ICON; ?></td>
+                                  <td class="text-center"><?php echo $siteonline; ?></td>
                                 </tr>
                                 <tr>
                                   <td class="small text-truncate">Force SSL</td>
-                                  <td class="text-center"><?php echo _FPA_N; ?></td>
+                                  <td class="text-center"><?php echo $instance['configSSL']; ?></td>
                                 </tr>
                                 <tr>
                                   <td class="small text-truncate">Root Override</td>
-                                  <td class="text-center"><?php echo _FPA_N; ?></td>
+                                  <td class="text-center"><?php echo $instance['definesEXIST']; ?></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -1878,15 +1884,15 @@ $disabled = '';
                               <tbody>
                                 <tr>
                                   <td class="small text-truncate">Enabled</td>
-                                  <td class="text-center"><?php echo _FPA_Y; ?></td>
+                                  <td class="text-center"><?php echo $instance['configSEF']; ?></td>
                                 </tr>
                                 <tr>
                                   <td class="small text-truncate">Suffix</td>
-                                  <td class="text-center"><?php echo _FPA_N; ?></td>
+                                  <td class="text-center"><?php echo $instance['configSEFSUFFIX']; ?></td>
                                 </tr>
                                 <tr>
                                   <td class="small text-truncate">ReWrite</td>
-                                  <td class="text-center"><?php echo _FPA_Y; ?></td>
+                                  <td class="text-center"><?php echo $instance['configSEFRWRITE']; ?></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -1906,16 +1912,16 @@ $disabled = '';
                               </colgroup><!--/required to fix column sizing & employ text-truncate-->
                               <tbody>
                                 <tr>
-                                  <td class="small text-truncate">System Cache</td>
-                                  <td class="text-center">Progresive</td>
+                                  <td class="small text-truncate">System Cache</td>        
+                                  <td class="text-center"><?php echo   $instance['configCACHING']; ?></td>
                                 </tr>
                                 <tr>
                                   <td class="small text-truncate">Cache Handler</td>
-                                  <td class="text-center">File</td>
+                                  <td class="text-center"><?php echo  $instance['configCACHEHANDLER']; ?></td>                          
                                 </tr>
                                 <tr>
-                                  <td class="small text-truncate">Platform Specific</td>
-                                  <td class="text-center"><?php echo _FPA_N; ?></td>
+                                  <td class="small text-truncate">Platform Specific</td>                       
+                                  <td class="text-center"><?php echo $instance['configCACHEPLFPFX']; ?></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -1936,15 +1942,15 @@ $disabled = '';
                               <tbody>
                                 <tr>
                                   <td class="small text-truncate">Handler</td>
-                                  <td class="text-center">Database</td>
+                                  <td class="text-center"><?php echo $instance['configSESSHAND']; ?></td>
                                 </tr>
                                 <tr>
                                   <td class="small text-truncate">Lifetime</td>
-                                  <td class="text-center">30</td>
+                                  <td class="text-center"><?php echo $instance['configLIFETIME']; ?></td>
                                 </tr>
                                 <tr>
                                   <td class="small text-truncate">Shared</td>
-                                  <td class="text-center"><?php echo _FPA_N; ?></td>
+                                  <td class="text-center"><?php echo $instance['configSHASESS']; ?></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -1965,15 +1971,15 @@ $disabled = '';
                               <tbody>
                                 <tr>
                                   <td class="small text-truncate">Error Reporting</td>
-                                  <td class="text-center">Maximum</td>
+                                  <td class="text-center"><?php echo $instance['configERRORREP']; ?></td>
                                 </tr>
                                 <tr class="border-top">
                                   <td class="small text-truncate">Site Debug</td>
-                                  <td class="text-center"><?php echo _FPA_N; ?></td>
+                                  <td class="text-center"><?php echo $instance['configSITEDEBUG']; ?></td>
                                 </tr>
                                 <tr>
                                   <td class="small text-truncate">Lang Debug</td>
-                                  <td class="text-center"><?php echo _FPA_N; ?></td>
+                                  <td class="text-center"><?php echo $instance['configLANGDEBUG']; ?></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -1994,15 +2000,15 @@ $disabled = '';
                               <tbody>
                                 <tr>
                                   <td class="small text-truncate">GZip Enabled</td>
-                                  <td class="text-center"><?php echo _FPA_Y; ?></td>
+                                  <td class="text-center"><?php echo $instance['configGZIP']; ?></td>
                                 </tr>
                                 <tr class="border-top">
                                   <td class="small text-truncate">FTP Enabled</td>
-                                  <td class="text-center"><?php echo _FPA_N; ?></td>
+                                  <td class="text-center"><?php echo $instance['configFTP']; ?></td>
                                 </tr>
                                 <tr>
                                   <td class="small text-truncate">Unicode Aliases</td>
-                                  <td class="text-center"><?php echo _FPA_N; ?></td>
+                                  <td class="text-center"><?php echo $instance['configUNICODE']; ?></td>
                                 </tr>
                               </tbody>
                             </table>
@@ -2047,13 +2053,25 @@ $disabled = '';
                   <div class="row content-container">
 
                     <!-- TODO (RussW): config not found -->
-                    <div class="col-xs-12">
-                      <div class="alert alert-warning text-center text-capitalize">
-                        <h4 class="margin-remove-top"><?php echo _FPA_WARNING_ICON .'<br />'. _RES .' '. _RES_MESSAGE_WARNING; ?></h4>
-                        <?php echo _RES_MESSAGE_NOTCONN .' '. _RES_MESSAGE_NOTESTS; ?>
-                      </div>
-                    </div>
+
+
+                    <?php
+                    if ( @!$dBconn ) {
+                        echo '<div class="col-xs-12">';
+                        echo '<div class="alert alert-warning text-center text-capitalize">';
+                        echo '<h4 class="margin-remove-top">' . _FPA_WARNING_ICON .'<br />'. _RES .' '. _RES_MESSAGE_WARNING . '</h4>';
+                        echo _RES_MESSAGE_NOTCONN .' '. _RES_MESSAGE_NOTESTS;
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                    ?>
+
                     <!-- END: config not found -->
+
+
+                                                                                                                                           
+
+
 
                     <div class="col-xs-12 col-lg-6 content-item">
 
@@ -2069,45 +2087,45 @@ $disabled = '';
                             <tr>
                               <td class="small text-truncate" rowspan="2">(+DBType) Version</td>
                               <td class="">
-                                Server: <?php echo _FPA_VER_SHORT; ?>5.6.30<br />
+                                Server: <?php echo _FPA_VER_SHORT; ?><?php echo $database['dbHOSTSERV']; ?><br />
                               </td>
                             </tr>
                             <tr>
                               <td class="">
-                                Client: <?php echo _FPA_VER_SHORT; ?>5.6.30
+                                Client: <?php echo _FPA_VER_SHORT; ?><?php echo  $database['dbHOSTCLIENT']; ?>                                   
                               </td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Database Hostname</td>
-                              <td class="">localhost</td>
+                              <td class=""><?php echo  $instance['configDBHOST']; ?></td>                               
                             </tr>
                             <tr>
                               <td class="small text-truncate">Connection Type</td>
-                              <td class="">(Local) Localhost via UNIX socket</td>
+                              <td class=""><?php echo $database['dbHOSTINFO']; ?></td>       
                             </tr>
                             <tr>
                               <td class="small text-truncate">PHP Support</td>
-                              <td class=""><?php echo _FPA_Y_ICON; ?></td>
+                              <td class=""><?php echo _FPA_A_ICON; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Connected</td>
-                              <td class=""><?php echo _FPA_Y_ICON; ?></td>
+                              <td class=""><?php echo $fieldconnected; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">(+DBType) Character Set</td>
-                              <td class="">UTF8</td>
+                              <td class=""><?php echo $database['dbCHARSET']; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Default Character Set</td>
-                              <td class="">UTF8</td>
+                              <td class=""><?php echo $database['dbHOSTDEFCHSET']; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Database Collation</td>
-                              <td class="">utf8_general_ci</td>
+                              <td class=""><?php echo $database['dbCOLLATION']; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Database Size</td>
-                              <td class="">4.94 MiB</td>
+                              <td class=""><?php echo $database['dbSIZE']; ?></td>                               
                             </tr>
                           </tbody>
                         </table>
@@ -2126,42 +2144,81 @@ $disabled = '';
                             <col>
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
-                            <tr>
-                              <td class="small text-truncate">Uptime</td>
-                              <td class="">115458 seconds</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">Threads</td>
-                              <td class="">3</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">Questions</td>
-                              <td class="">1044710</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">Slow Queries</td>
-                              <td class="">2</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">Opens</td>
-                              <td class="">340397</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">Flush Tables</td>
-                              <td class="">1</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">Open Tables</td>
-                              <td class="">64</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-truncate">Average Queries</td>
-                              <td class="">9.048 /Second</td>
-                            </tr>
-                            <tr class="border-bottom">
-                              <td class="small text-truncate">No. Of Tables</td>
-                              <td class="">87 Tables</td>
-                            </tr>
+
+
+<?php
+			if ( $database['dbDOCHECKS'] == _FPA_Y AND @$database['dbERROR'] == _FPA_N AND $instance['configDBTYPE'] <> 'postgresql' AND $instance['configDBTYPE'] <> 'pgsql' ) {
+
+				$pieces = explode(": ", $database['dbHOSTSTATS'][0] );
+                            echo '<tr>';
+                              echo '<td class="small text-truncate">' . $pieces[0] . '</td>';
+                              echo '<td class="">' . $pieces[1] . ' seconds.</td>';
+                            echo '</tr>';
+
+				$pieces = explode(": ", $database['dbHOSTSTATS'][1] );
+                            echo '<tr>';
+                              echo '<td class="small text-truncate">' . $pieces[0] . '</td>';
+                              echo '<td class="">' . $pieces[1] . '</td>';
+                            echo '</tr>';
+
+				$pieces = explode(": ", $database['dbHOSTSTATS'][2] );
+                            echo '<tr>';
+                              echo '<td class="small text-truncate">' . $pieces[0] . '</td>';
+                              echo '<td class="">' . $pieces[1] . '</td>';
+                            echo '</tr>';
+
+				$pieces = explode(": ", $database['dbHOSTSTATS'][3] );
+                            echo '<tr>';
+                              echo '<td class="small text-truncate">' . $pieces[0] . '</td>';
+                              echo '<td class="">' . $pieces[1] . '</td>';
+                            echo '</tr>';
+
+				$pieces = explode(": ", $database['dbHOSTSTATS'][4] );
+                            echo '<tr>';
+                              echo '<td class="small text-truncate">' . $pieces[0] . '</td>';
+                              echo '<td class="">' . $pieces[1] . '</td>';
+                            echo '</tr>';
+
+				$pieces = explode(": ", $database['dbHOSTSTATS'][5] );
+                            echo '<tr>';
+                              echo '<td class="small text-truncate">' . $pieces[0] . '</td>';
+                              echo '<td class="">' . $pieces[1] . '</td>';
+                            echo '</tr>';
+
+				$pieces = explode(": ", $database['dbHOSTSTATS'][6] );
+                            echo '<tr>';
+                              echo '<td class="small text-truncate">' . $pieces[0] . '</td>';
+                              echo '<td class="">' . $pieces[1] . '</td>';
+                            echo '</tr>';
+
+				$pieces = explode(": ", $database['dbHOSTSTATS'][7] );
+                            echo '<tr>';
+                              echo '<td class="small text-truncate">' . $pieces[0] . '</td>';
+                              echo '<td class="">' . $pieces[1] . '</td>';
+                            echo '</tr>';
+
+                            echo '<tr class="border-bottom">';
+                              echo '<td class="small text-truncate"> No. Of Tables </td>';
+                              echo '<td class="">' . $database['dbTABLECOUNT'] . '</td>';
+                            echo '</tr>';  
+
+			} else { // an instance wasn't found in the initial checks
+				if ($instance['configDBTYPE'] == 'postgresql' or $instance['configDBTYPE'] == 'pgsql'){
+                            echo '<tr>';
+                              echo '<td class="small text-truncate">' . _FPA_N_ICON . '</td>';
+                              echo '<td class="">' . _FPA_NIMPLY . ' ' . _FPA_PGSQL . '</td>';
+                            echo '</tr>';
+				} else {
+                            echo '<tr>';
+                              echo '<td class="small text-truncate">' . _FPA_N_ICON . '</td>';
+                              echo '<td class="">' . _FPA_NO .' '. _FPA_PERF .' '. _FPA_TESTP . '</td>';
+                            echo '</tr>';
+			}
+			}
+
+?>
+
+
                           </tbody>
                         </table>
 
@@ -2205,7 +2262,7 @@ $disabled = '';
                         <table class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><strong>(+DBType)</strong> <?php echo _CAPTION_TABLES; ?></caption>
                           <colgroup>
-                            <col class="col-xs-4 bg-muted border-right">
+                            <col class="col-xs-3 bg-muted border-right">
                             <col class=" border-right">
                             <col class=" border-right">
                             <col class="hidden-xs hidden-sm border-right">
@@ -2244,62 +2301,25 @@ $disabled = '';
   }
 ?>
                           <tbody>
-                            <tr class="">
-                              <td class="small text-truncate"><?php if ($demoProtected == '1'): echo '<span class="label label-protected small">protected</span>'; else: echo 'ewxku'; endif; ?>_ticketmaster_transactions_temp</td>
-                              <td class="small text-center">16.00 KiB</td>
-                              <td class="small text-center text-truncate">319</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm">16.00 KiB</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm">61440.00 KiB</td>
-                              <td class="small text-center hidden-xs">InnoDB</td>
-                              <td class="small text-center text-truncate">*utf8mb4_unicode_ci</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">2018-04-27</td>
-<!-- HACK (RussW): Proposed removal
-                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
--->
-                            </tr>
-                            <tr class="">
-                              <td class="small text-truncate"><?php if ($demoProtected == '1'): echo '<span class="label label-protected small">protected</span>'; else: echo 'ewxku'; endif; ?>_ticketmaster_transactions_temp</td>
-                              <td class="small text-center">16.00 KiB</td>
-                              <td class="small text-center text-truncate">319</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm">16.00 KiB</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm">61440.00 KiB</td>
-                              <td class="small text-center hidden-xs">InnoDB</td>
-                              <td class="small text-center text-truncate">*utf8mb4_unicode_ci</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">2018-04-27</td>
-<!-- HACK (RussW): Proposed removal
-                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
--->
-                            </tr>
-                            <tr class="">
-                              <td class="small text-truncate">ewxku_ticketmaster_transactions_temp</td>
-                              <td class="small text-center">16.00 KiB</td>
-                              <td class="small text-center text-truncate">319</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm">16.00 KiB</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm">61440.00 KiB</td>
-                              <td class="small text-center hidden-xs">InnoDB</td>
-                              <td class="small text-center text-truncate">*utf8mb4_unicode_ci</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">2018-04-27</td>
-<!-- HACK (RussW): Proposed removal
-                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
--->
-                            </tr>
-                            <tr class="">
-                              <td class="small text-truncate">ewxku_ticketmaster_transactions_temp</td>
-                              <td class="small text-center">16.00 KiB</td>
-                              <td class="small text-center text-truncate">319</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm">16.00 KiB</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm">61440.00 KiB</td>
-                              <td class="small text-center hidden-xs">InnoDB</td>
-                              <td class="small text-center text-truncate">*utf8mb4_unicode_ci</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">2018-04-27</td>
-<!-- HACK (RussW): Proposed removal
-                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">-</td>
--->
-                            </tr>
+
+                          <?php
+                            foreach ( $tables as $i => $show ) {
+                              if ( $show != $tables['ARRNAME'] ) {
+                                echo '<tr class="">';
+                                echo '<td class="small text-truncate">' . $show['TABLE'] . '</td>';
+                                echo '<td class="small text-center">' . $show['SIZE'] . '</td>';
+                                echo '<td class="small text-center text-truncate">' . $show['RECORDS'] . '</td>';
+                                echo '<td class="small text-center text-truncate hidden-xs hidden-sm">' . $show['AVGLEN'] . '</td>';
+                                echo '<td class="small text-center text-truncate hidden-xs hidden-sm">' . $show['FRAGSIZE'] . '</td>';
+                                echo '<td class="small text-center hidden-xs">' . $show['ENGINE'] . '</td>';
+                                echo '<td class="small text-center text-truncate">' . $show['COLLATION'] . '</td>';
+                                $pieces = explode( " ", $show['CREATED'] );
+                                echo '<td class="small text-center text-truncate hidden-xs hidden-sm hidden-md">' . $pieces['0'] . '</td>';
+                                echo '</tr>';
+                              }
+                            }
+                           ?>
+
                           </tbody>
                         </table>
 
@@ -2387,63 +2407,63 @@ $disabled = '';
                           <tbody>
                             <tr>
                               <td class="small text-truncate">Platform</td>
-                              <td class="">Linux</td>
+                              <td class=""><?php echo $system['sysPLATOS'] ; ?></td>                              
                             </tr>
                             <tr>
-                              <td class="small text-truncate">Kernel Version</td>
-                              <td class="">14.5.0</td>
+                              <td class="small text-truncate">Kernel Version</td>                         
+                              <td class=""><?php echo $system['sysPLATREL']; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Technology</td>
-                              <td class="">x86_64</td>
+                              <td class=""><?php echo  $system['sysPLATTECH']; ?></td>                             
                             </tr>
                             <tr>
                               <td class="small text-truncate">Hostname</td>
-                              <td class="">hmDev.lan</td>
+                              <td class=""><?php echo  $instance['configDBHOST']; ?></td>                                      
                             </tr>
                             <tr>
                               <td class="small text-truncate">Total Disk Space</td>
-                              <td class="">464.74 GiB</td>
+                              <td class=""><?php echo  $total_space; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Free Disk Space</td>
-                              <td class="">28.97 GiB (6%)</td>
+                              <td class=""><?php echo  $system['sysFREESPACE']; ?></td>                                       
                             </tr>
                             <tr>
                               <td class="small text-truncate">Server Name</td>
-                              <td class="">dev.hotmango.me</td>
+                              <td class=""><?php echo  $system['sysSERVNAME']; ?></td>                                     
                             </tr>
                             <tr>
-                              <td class="small text-truncate">Server IP</td>
-                              <td class="">10.10.10.5</td>
+                              <td class="small text-truncate">Server IP</td>    
+                              <td class=""><?php echo  $system['sysSERVIP']; ?></td>                                                  
                             </tr>
                             <tr>
                               <td class="small text-truncate">Server Signature</td>
-                              <td class="">Apache</td>
+                              <td class=""><?php echo  $system['sysSERVSIG']; ?></td>                                         
                             </tr>
                             <tr>
                               <td class="small text-truncate">Server Encoding</td>
-                              <td class="">gzip, deflate</td>
+                              <td class=""><?php echo  $system['sysENCODING']; ?></td>                                                 
                             </tr>
                             <tr>
-                              <td class="small text-truncate">Executing User</td>
-                              <td class="">WinterRG</td>
+                              <td class="small text-truncate">Executing User</td>         
+                              <td class=""><?php echo  $system['sysEXECUSER']; ?></td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate">Server User</td>
-                              <td class="">WinterRG</td>
+                              <td class="small text-truncate">Server User</td>               
+                              <td class=""><?php echo  $system['sysCURRUSER']; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Document Root</td>
-                              <td class="">/Users/WinterRG/WorkSpaces</td>
+                              <td class=""><?php echo $system['sysDOCROOT']; ?></td>                          
                             </tr>
                             <tr>
-                              <td class="small text-truncate">Server Temp Folder</td>
-                              <td class="">/var/tmp</td>
+                              <td class="small text-truncate">Server Temp Folder</td>        
+                              <td class=""><?php echo $frmsysSYSTMPDIR; ?></td>
                             </tr>
                             <tr class="border-bottom">
                               <td class="small text-truncate">Server Temp Writable</td>
-                              <td class=""><?php echo _FPA_Y_ICON; ?></td>
+                              <td class=""><?php echo $frmsysTMPDIRWRITABLE; ?></td>
                             </tr>
                           </tbody>
                         </table>
@@ -2464,75 +2484,75 @@ $disabled = '';
                           <tbody>
                             <tr>
                               <td class="small text-truncate">PHP Version</td>
-                              <td class=""><?php echo _FPA_VER_SHORT; ?>7.2.1</td>
+                              <td class=""><?php echo _FPA_VER_SHORT; ?><?php echo  PHP_VERSION; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">PHP API</td>
-                              <td class="">CGI-FCGI</td>
+                              <td class=""><?php echo  $phpenv['phpAPI']; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Display Errors</td>
-                              <td class=""><?php echo _FPA_Y_ICON; ?></td>
+                              <td class=""><?php echo $frmerrorrep; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Error Reporting Level</td>
-                              <td class="">32767</td>
+                              <td class=""><?php echo $phpenv['phpERRORREPORT']; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">MySQLi Support</td>
-                              <td class=""><?php echo _FPA_Y_ICON; ?></td>
+                              <td class=""><?php echo $suppmysqli; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Magic Quotes</td>
-                              <td class=""><?php echo _FPA_N_ICON; ?></td>
+                              <td class=""><?php echo $frmmagic; ?></td>                      
                             </tr>
                             <tr>
                               <td class="small text-truncate">Safe Mode</td>
-                              <td class=""><?php echo _FPA_N_ICON; ?></td>
+                              <td class=""><?php echo $frmsafemod; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Memory Limit</td>
-                              <td class="">128 MiB</td>
+                              <td class=""><?php echo $phpenv['phpMEMLIMIT'] ; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Uploads Enabled</td>
-                              <td class=""><?php echo _FPA_Y_ICON; ?></td>
+                              <td class=""><?php echo $frmfupl ; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Max. Upload Size</td>
-                              <td class="">32 MiB</td>
+                              <td class=""><?php echo $phpenv['phpMAXUPSIZE']; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Max. Post Size</td>
-                              <td class="">32 MiB</td>
+                              <td class=""><?php echo $phpenv['phpMAXPOSTSIZE']; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Max. Input Time</td>
-                              <td class="">60 seconds</td>
+                              <td class=""><?php echo $phpenv['phpMAXINPUTTIME'] . ' seconds'; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Max. Execution Time</td>
-                              <td class="">60 seconds</td>
+                              <td class=""><?php echo $phpenv['phpMAXEXECTIME'] . ' seconds'; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Register Globals</td>
-                              <td class=""><?php echo _FPA_NA; ?></td>
+                              <td class=""><?php echo $phpenv['phpREGGLOBAL']; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Open Base Path</td>
-                              <td class=""><?php echo _FPA_NA; ?></td>
+                              <td class=""><?php echo $phpenv['phpOPENBASE']; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Session Path</td>
-                              <td class="">/var/tmp/php</td>
+                              <td class=""><?php echo $phpenv['phpSESSIONPATH']; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Session Path Writable</td>
-                              <td class="text-success"><?php echo _FPA_Y_ICON; ?></td>
+                              <td class="text-success"><?php echo $frmiswrtbl; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">INI File Path</td>
-                              <td class="">/opt/conf/php7.2.1.ini</td>
+                              <td class=""><?php echo $phpenv['phpINIFILE']; ?></td>                 
                             </tr>
                           </tbody>
                         </table>
@@ -2557,25 +2577,25 @@ $disabled = '';
                                   <div class="col-xs-12 col-sm-6">
                                     <div class="margin-bottom-sm padding-lg border-all text-center line-height-normal" style="min-height:77px;">
                                       <span class=" center-block margin-bottom-sm">SUExec</span>
-                                      <span class="center-block lead margin-remove text-success"><?php echo _FPA_Y_ICON; ?></span>
+                                      <span class="center-block lead margin-remove text-success"><?php echo $phpenv['phpAPACHESUEXEC']; ?></span>
                                     </div>
                                   </div>
                                   <div class="col-xs-12 col-sm-6">
                                     <div class="margin-bottom-sm padding-lg border-all text-center line-height-normal" style="min-height:77px;">
                                       <span class=" center-block margin-bottom-sm">PHP SUExec</span>
-                                      <span class="center-block lead margin-remove text-success"><?php echo _FPA_Y_ICON; ?></span>
+                                      <span class="center-block lead margin-remove text-success"><?php echo $phpenv['phpPHPSUEXEC']; ?></span>
                                     </div>
                                   </div>
                                   <div class="col-xs-12 col-sm-6">
                                     <div class="margin-bottom-sm padding-lg border-all text-center line-height-normal" style="min-height:77px;">
                                       <span class=" center-block margin-bottom-sm">Custom SU</span>
-                                      <span class="center-block"><?php echo _FPA_N; ?></span>
+                                      <span class="center-block"><?php echo $phpenv['phpCUSTOMSU']; ?></span>
                                     </div>
                                   </div>
                                   <div class="col-xs-12 col-sm-6">
                                     <div class="margin-bottom-sm padding-lg border-all text-center line-height-normal" style="min-height:77px;">
                                       <span class=" center-block margin-bottom-sm">Ownership Problems</span>
-                                      <span class="center-block"><?php echo _FPA_N; ?></span>
+                                      <span class="center-block"><?php echo $phpenv['phpOWNERPROB']; ?></span>
                                     </div>
                                   </div>
                                 </div>
@@ -2584,7 +2604,7 @@ $disabled = '';
                             <tr>
                               <td class="small text-truncate">Last Known PHP Error</td>
                               <td class="small padding-lg bg-warning text-warning">
-                                [07-May-2018 11:12:22 Australia/Brisbane] PHP Notice: Undefined variable: disabled in /Users/WinterRG/WorkSpaces/Joomla! Project/FPA/ForumPostAssistant-v2-2018/fpa-en.php on line 717
+                               <?php echo  $phpenv['phpLASTERR']; ?>                            
                               </td>
                             </tr>
                           </tbody>
@@ -2609,84 +2629,101 @@ $disabled = '';
                           <tbody>
                             <tr>
                               <td class="padding-top-lg">
-
                                 <div class="row-fluid small text-lowercase">
-                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">Core<br />7.2.1</div>
-                                  </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">date<br />7.2.1</div>
-                                  </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-success text-success">libxml<br />7.2.1</div>
-                                  </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-success text-success">openssl<br />7.2.1</div>
-                                  </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">Zend_Engine<br />7.2.1</div>
-                                  </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">Core<br />7.2.1</div>
-                                  </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">Core<br />7.2.1</div>
-                                  </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">Core<br />7.2.1</div>
-                                  </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">Zend_Engine<br />7.2.1</div>
-                                  </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">Core<br />7.2.1</div>
-                                  </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">Core<br />7.2.1</div>
-                                  </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-muted">Zend_Engine<br />7.2.1</div>
-                                  </div>
+                                  
+                                <?php
+                                foreach ( $phpextensions as $key => $show ) {
+                                    if ( $show != $phpextensions['ARRNAME'] ) {
+                                        if ( $key == 'exif' ) {
+                                            $pieces = explode( " $", $show );
+                                            $show = $pieces[0];
+                                        }
+                                        if ( $key == 'libxml' OR $key == 'xml' OR $key == 'zip' OR $key == 'openssl' OR $key == 'zlib' OR $key == 'curl' OR $key == 'iconv' OR $key == 'mbstring' OR $key == 'mysql' OR $key == 'mysqli' OR $key == 'pdo_mysql' OR $key == 'mcrypt' OR $key == 'suhosin' OR $key == 'cgi' OR $key == 'cgi-fcgi' ) {
+                                            $phpextstyle = 'bg-success text-success';
+                                        } else {
+                                            $phpextstyle = 'bg-muted';
+                                        }
+                                        echo '<div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">';
+                                        echo '<div class="border-all margin-bottom-sm padding-sm text-center ' .  $phpextstyle . '">' . $key . '<br />' . $show  . '</div>';
+                                        echo '</div>';
+                                    } // endif !arrname
+                                    // look for recommended extensions that aren't installed
+                                    if ( !in_array( $key, $phpreq ) ) {
+                                        unset ( $phpreq[$key] );
+                                    }
+                                } // end foreach
+
+                                ?>
+                                  </div>                                 
                                 </div>
-
                               </td>
-                            </tr>
-                            <tr>
-                              <td>
+                            </tr>                                                      
 
-                                <div class="row-fluid small">
-                                  <div class="col-xs-12">
-                                    <h5><?php echo _CAPTION_PHP_MISSING; ?></h5>
-                                  </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-warning text-warning">mysqli</div>
-                                  </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-warning text-warning">mcrypt</div>
-                                  </div>
-                                  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">
-                                    <div class="border-all margin-bottom-sm padding-sm text-center bg-warning text-warning">suhosin</div>
-                                  </div>
-                                </div>
+ 
+                            <?php 
+                                if ( version_compare( $instance['cmsRELEASE'], '3.8', '>=') OR version_compare( $phpenv['phpVERSION'], '7.2.0', '>=' ))   {
+                                    unset($phpreq['mcrypt']);   
+                                }
 
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
+                                if (version_compare( $phpenv['phpVERSION'], '7.0.0', '>=' ))   {
+                                    unset($phpreq['mysql']);   
+                                }    
+ 
+                                if ( $phpreq ) {
+                                    echo '<tr>';
+                                    echo '<td>';
+                                    echo '<div class="row-fluid small">';
+                                    echo '<div class="col-xs-12">';
+                                    echo '<h5>' . _CAPTION_PHP_MISSING . '</h5>';
+                                    echo '</div>';
+                                    foreach ( $phpreq as $missingkey => $missing ) {                                                            
+                                        echo '<div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">';
+                                        echo '<div class="border-all margin-bottom-sm padding-sm text-center bg-warning text-warning">' . $missingkey . '</div>';
+                                        echo '</div>';
+                                    }
+                                    echo '</div>';
+                                    echo '</td>';
+                                    echo '</tr>';
+                                }
+                            ?>
+ 
 
-                      </div><!--/.panel, item-->
+                            <?php
+                                if ( $phpenv['phpDISABLED'] ) {
+                                    echo '<tr>';
+                                    echo '<td>';
+                                    echo '<div class="row-fluid small">';
+                                    echo '<div class="col-xs-12">';
+                                    echo '<h5>' . _FPA_DI_PHP_FU . '</h5>';
+                                    $disabledfunctions = explode(",",$phpenv['phpDISABLED']);
+                                    $arrlength = count($disabledfunctions);
+                                    for($x = 0; $x < $arrlength; $x++) {
+                                        echo '<div class="col-xs-6 col-sm-4 col-md-4 col-lg-3">';
+                                        echo '<div class="border-all margin-bottom-sm padding-sm text-center bg-muted">' . $disabledfunctions[$x] . '</div>';
+                                        echo '</div>';
+                                    }
+                                }
+                            ?>
+                        </div>                                 
+                    </div>
+                </td>
+            </tr>     
+        </tbody>
+    </table>
 
-                    </div><!--/.content-item-->
-                  </div><!--/.content-container-->
+    </div><!--/.panel, item-->
+
+    </div><!--/.content-item-->
+    </div><!--/.content-container-->
 
 
-                </div><!--/.subsection-content-->
+    </div><!--/.subsection-content-->
 
-              </div><!--/#host-discovery-container-->
-              <div class="line"></div>
+    </div><!--/#host-discovery-container-->
+    <div class="line"></div>
 
 
-            </section><!--/#host-discovery-->
+    </section><!--/#host-discovery-->
 
 
 
@@ -2750,18 +2787,19 @@ $disabled = '';
                   <div class="row content-container">
 
                     <!-- TODO (RussW): config not found -->
-                    <div class="col-xs-12">
-                      <div class="alert alert-warning text-center text-capitalize">
-                        <h4 class="margin-remove-top"><?php echo _FPA_WARNING_ICON .'<br />'. _RES .' '. _RES_MESSAGE_WARNING; ?></h4>
-                        <?php echo _FPA_INSTANCE .' '. _RES_MESSAGE_NOTFOUND .' '. _RES_MESSAGE_NOTESTS; ?>
-                      </div>
-                    </div>
+                          <?php
+                          if ($instance['instanceCONFIGURED'] == _FPA_N){
+                            echo '<div class="alert alert-warning text-center text-capitalize">';
+                            echo '<h4 class="margin-remove-top">' . _FPA_WARNING_ICON . '<br />'. _RES .' '. _RES_MESSAGE_WARNING . '</h4>';
+                            echo  _FPA_INSTANCE .' '. _RES_MESSAGE_NOTFOUND .' '. _RES_MESSAGE_NOTESTS;
+                            echo '</div>';
+                          }
+                           ?>
                     <!-- END: config not found -->
 
                     <div class="col-xs-12 content-item">
 
-                      <div class="panel panel-default item">
-
+                      <div class="panel panel-default item">  
                         <table id="core-permissions-table" class="table table-condensed" style="table-layout:fixed;">
                           <caption class="text-center text-uppercase"><?php echo _SECTION_PERMS_HEADING_CORE .' '. _SECTION_PERMS_HEADING; ?></caption>
                           <colgroup>
@@ -2781,111 +2819,68 @@ $disabled = '';
                             </tr>
                           </thead>
                           <tbody>
-                            <tr class="bg-danger text-danger">
-                              <td class="small text-center">777</td>
-                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                              <td class="small text-truncate">/home/accountname/public_html/this/is/very/long/folder/name/images/</td>
-                              <td class="small text-truncate text-center hidden-xs">demohotm</td>
-                              <td class="small text-truncate text-center hidden-xs hidden-sm">demohotm</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-center">755</td>
-                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                              <td class="small text-truncate">components/</td>
-                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
-                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-center">755</td>
-                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                              <td class="small text-truncate">modules/</td>
-                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
-                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-center">755</td>
-                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                              <td class="small text-truncate">plugins/</td>
-                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
-                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-center">755</td>
-                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                              <td class="small text-truncate">language/</td>
-                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
-                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-center">755</td>
-                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                              <td class="small text-truncate">templates/</td>
-                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
-                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
-                            </tr>
-                            <tr class="bg-warning text-warning">
-                              <td class="small text-center">400</td>
-                              <td class="small text-center"><?php echo _FPA_N_ICON; ?></td>
-                              <td class="small text-truncate">cache/</td>
-                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
-                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-center">755</td>
-                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                              <td class="small text-truncate">logs/</td>
-                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
-                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-center">755</td>
-                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                              <td class="small text-truncate">tmp/</td>
-                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
-                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-center">755</td>
-                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                              <td class="small text-truncate">administrator/components/</td>
-                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
-                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-center">755</td>
-                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                              <td class="small text-truncate">administrator/modules/</td>
-                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
-                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-center">755</td>
-                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                              <td class="small text-truncate">administrator/plugins/</td>
-                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
-                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-center">755</td>
-                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                              <td class="small text-truncate">administrator/language/</td>
-                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
-                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-center">755</td>
-                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                              <td class="small text-truncate">administrator/templates/</td>
-                              <td class="small text-truncate text-center hidden-xs">WinterRG</td>
-                              <td class="small text-truncate text-center hidden-xs hidden-sm">WinterRG</td>
-                            </tr>
-                            <tr>
-                              <td class="small text-center">-</td>
-                              <td class="small text-center">-</td>
-                              <td class="small text-truncate text-warning">administrator/logs/</td>
-                              <td class="small text-truncate text-center hidden-xs">-</td>
-                              <td class="small text-truncate text-center hidden-xs hidden-sm">-</td>
-                            </tr>
+
+
+
+<?php                           
+	if ( $instance['instanceFOUND'] == _FPA_Y ) {
+
+		foreach ( $folders as $i => $show ) {
+
+			if ( $show != 'Core Folders' ) {
+
+				// looking for --7 or -7- or -77 (default folder permissions are usually 755)
+				if ( substr( $modecheck[$show]['mode'],1 ,1 ) == '7' OR substr( $modecheck[$show]['mode'],2 ,1 ) == '7' ) {
+					$frmPermStyle = 'bg-danger text-danger';
+				} elseif ( $modecheck[$show]['mode'] == '755' ) {
+					$frmPermStyle = '';
+				} else if ( substr( $modecheck[$show]['mode'],0 ,1 ) <= '5' AND $modecheck[$show]['mode'] != '---' ) {
+					$frmPermStyle = 'bg-warning text-warning';
+				} else if ( $modecheck[$show]['group']['name'] == _FPA_N ) {
+					$frmPermStyle = 'bg-warning text-warning';
+				} else {
+					$frmPermStyle = '';
+				}
+
+				// is the folder writable?
+				if ( ( $modecheck[$show]['writable'] != _FPA_Y ) ) {
+					$writeClass = _FPA_N_ICON;
+				} elseif ( ( $modecheck[$show]['writable'] == _FPA_Y ) AND ( substr( $modecheck[$show]['mode'],0 ,1 ) == '7' ) ) {
+					$writeClass = _FPA_Y_ICON;
+				} elseif ( $modecheck[$show]['writable'] == _FPA_N ) {
+					$writeClass = _FPA_N_ICON;
+				}
+
+				// is the 'executing' owner the same as the folder owner? and is the users groupID the same as the folders groupID?
+				if ( ( $modecheck[$show]['owner']['name'] != $system['sysEXECUSER'] ) AND ( $modecheck[$show]['group']['name'] != _FPA_DNE ) ) {
+					$userClass = 'warn-text';
+					$groupClass = 'normal';
+				} elseif ( isset( $modecheck[$show]['group']['gid'] ) AND isset( $modecheck[$show]['owner']['gid'] ) ) {
+
+					if ( $modecheck[$show]['group']['gid'] != $modecheck[$show]['owner']['gid'] ) {
+						$userClass = 'normal';
+						$groupClass = 'warn-text';
+					}
+
+				} elseif ( $modecheck[$show]['group']['name'] == _FPA_DNE ) {
+					$modeClass = 'warn-text';
+					$alertClass = 'warn-text';
+					//$writeClass = 'warn-text';
+					$userClass = 'warn-text';
+					$groupClass = 'warn-text';
+				}
+				    echo '<tr class="' . $frmPermStyle . '">';
+				    echo '<td class="small text-center">' . $modecheck[$show]['mode'] . '</td>';
+ 				    echo '<td class="small text-center">' . $writeClass . '</td>';
+				    echo '<td class="small text-truncate">' . $show . '</td>';
+				    echo '<td class="small text-truncate text-center hidden-xs">' . $modecheck[$show]['owner']['name'] . '</td>';
+				    echo '<td class="small text-truncate text-center hidden-xs hidden-sm">' . $modecheck[$show]['group']['name'] . '</td>';
+				    echo '</tr>';                  
+			}
+		}
+	}
+?>
+
                           </tbody>
                         </table>
 
@@ -2956,20 +2951,46 @@ $disabled = '';
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td class="small text-center">777</td>
-                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                              <td class="small text-truncate">images/</td>
-                              <td class="small text-truncate text-center hidden-xs">demohotm</td>
-                              <td class="small text-truncate text-center hidden-xs hidden-sm">demohotm</td>
-                            </tr>
-                            <tr class="bg-danger text-danger">
-                              <td class="small text-center">777</td>
-                              <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                              <td class="small text-truncate">images/</td>
-                              <td class="small text-truncate text-center hidden-xs">demohotm</td>
-                              <td class="small text-truncate text-center hidden-xs hidden-sm">demohotm</td>
-                            </tr>
+
+
+<?php
+	/** display the folders with elevated permissions ************************************/                                           
+
+		// only do mode/permissions checks if an instance was found in the intial checks
+		if ( $instance['instanceFOUND'] == _FPA_Y ) {
+
+			foreach ( $elevated as $key => $show ) {
+
+				if ( $show != $elevated['ARRNAME'] ) {
+
+					// looking for --7 or -7- or -77 (default folder permissions are usually 755)
+					if ( substr( $show['mode'],1 ,1 ) == '7' OR substr( $show['mode'],2 ,1 ) == '7' ) {
+						$frmPermStyle = 'bg-danger text-danger';
+					} else {
+						$frmPermStyle = '';
+					}
+
+					// is the folder writable?
+					if ( ( $show['writable'] == _FPA_Y ) ) {
+						$writeClass = _FPA_Y_ICON;
+					} else {
+						$writeClass = _FPA_N_ICON;
+					}
+					   echo '<tr class="' . $frmPermStyle . '">';
+					   echo '<td class="small text-center">' . $show['mode'] . '</td>';
+					   echo '<td class="small text-center">' . $writeClass . '</td>';
+					   echo '<td class="small text-truncate">' . $key . '/</td>';
+					   echo '<td class="small text-truncate text-center hidden-xs">'.'</td>';
+					   echo '<td class="small text-truncate text-center hidden-xs hidden-sm">'.'</td>';
+					   echo '</tr>';
+				} // endif ARRNAME                                                                                                                                    
+			} // end for each
+		}
+?>
+
+
+
+
                           </tbody>
                         </table>
 
@@ -3068,12 +3089,14 @@ $disabled = '';
                   <div class="row content-container">
 
                     <!-- TODO (RussW): config not found -->
-                    <div class="col-xs-12">
-                      <div class="alert alert-warning text-center text-capitalize">
-                        <h4 class="margin-remove-top"><?php echo _FPA_WARNING_ICON .'<br />'. _RES .' '. _RES_MESSAGE_WARNING; ?></h4>
-                        <?php echo _FPA_INSTANCE .' '. _RES_MESSAGE_NOTFOUND .' '. _RES_MESSAGE_NOTESTS; ?>
-                      </div>
-                    </div>
+                          <?php
+                          if ($instance['instanceCONFIGURED'] == _FPA_N){
+                            echo '<div class="alert alert-warning text-center text-capitalize">';
+                            echo '<h4 class="margin-remove-top">' . _FPA_WARNING_ICON . '<br />'. _RES .' '. _RES_MESSAGE_WARNING . '</h4>';
+                            echo  _FPA_INSTANCE .' '. _RES_MESSAGE_NOTFOUND .' '. _RES_MESSAGE_NOTESTS;
+                            echo '</div>';
+                          }
+                           ?>
                     <!-- END: config not found -->
 
 
@@ -3104,26 +3127,50 @@ $disabled = '';
                             </tr>
                           </thead>
                           <tbody>
-                            <tr class="">
-                              <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                              <td class="small text-truncate">yoo_sixthavenue</td>
-                              <td class="small text-center">1.0.3</td>
-                              <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
-                              <td class="small text-center text-truncate hidden-xs">November 2016</td>
-                              <td class="small text-center hidden-xs">3rd Party</td>
-                            </tr>
-                            <tr class="">
-                              <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                              <td class="small text-truncate">protostar</td>
-                              <td class="small text-center">1.0</td>
-                              <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
-                              <td class="small text-center text-truncate hidden-xs">4/30/2012</td>
-                              <td class="small text-center hidden-xs">Core</td>
-                            </tr>
+
+
+<?php
+	// Components
+		if ( $instance['instanceFOUND'] == _FPA_N ) { // an instance wasn't found in the initial checks, so no folders to check
+
+		} else {
+		// Site components 
+          if (isset ($component['SITE'])) {
+			foreach ( $component['SITE'] as $key => $show ) {
+				if (isset($exset[0]['name'])) { 
+					$extarrkey = recursive_array_search($show['name'], $exset);
+					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
+
+					switch ($extenabled) {
+					    case '1':
+        					$frmextenabled = _FPA_Y_ICON;
+					        break;
+					    case '0':
+        					$frmextenabled = _FPA_N_ICON;
+					        break;
+					    default:
+        					$frmextenabled = _FPA_U_ICON;
+					}
+					   echo '<tr class="">';
+					   echo '<td class="small text-center text-success">' . $frmextenabled . '</td>';
+					   echo '<td class="small text-truncate">' . $show['name'] . '</td>';
+					   echo '<td class="small text-center">' . $show['version'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs hidden-sm">' . $show['authorUrl'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['creationDate'] . '</td>';
+					   echo '<td class="small text-center hidden-xs">' . $show['type'] . '</td>';
+					   echo '</tr>';
+			}       
+          }
+        }
+?>
+
                           </tbody>
                         </table>
+
+
+
 
 <!-- HACK (RussW): TESTING export Table to CSV -->
 <div class="text-right">
@@ -3159,24 +3206,43 @@ $disabled = '';
                             </tr>
                           </thead>
                           <tbody>
-                            <tr class="">
-                              <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                              <td class="small text-truncate">hathor</td>
-                              <td class="small text-center">3.0.0</td>
-                              <td class="small text-center text-truncate hidden-xs">Andrea Tarr</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm">www.tarrconsulting.com</td>
-                              <td class="small text-center text-truncate hidden-xs">May 2010</td>
-                              <td class="small text-center hidden-xs">Core</td>
-                            </tr>
-                            <tr class="">
-                              <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                              <td class="small text-truncate">isis</td>
-                              <td class="small text-center">1.0</td>
-                              <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
-                              <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
-                              <td class="small text-center text-truncate hidden-xs">3/30/2012</td>
-                              <td class="small text-center hidden-xs">Core</td>
-                            </tr>
+ 
+<?php
+	if ( $instance['instanceFOUND'] == _FPA_N ) { // an instance wasn't found in the initial checks, so no folders to check
+		} else {
+		// Admin components
+        if (isset ($component['ADMIN'])){
+			foreach ( $component['ADMIN'] as $key => $show ) {
+				if (isset($exset[0]['name'])) { 
+					$extarrkey = recursive_array_search($show['name'], $exset);
+					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
+
+					switch ($extenabled) {
+					    case '1':
+        					$frmextenabled = _FPA_Y_ICON;
+					        break;
+					    case '0':
+        					$frmextenabled = _FPA_N_ICON;
+					        break;
+					    default:
+        					$frmextenabled = _FPA_U_ICON;
+					}
+					   echo '<tr class="">';
+					   echo '<td class="small text-center text-success">' . $frmextenabled . '</td>';
+					   echo '<td class="small text-truncate">' . $show['name'] . '</td>';
+					   echo '<td class="small text-center">' . $show['version'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs hidden-sm">' . $show['authorUrl'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['creationDate'] . '</td>';
+					   echo '<td class="small text-center hidden-xs">' . $show['type'] . '</td>';
+					   echo '</tr>';
+			}
+        }
+	}
+?>
+ 
+
                           </tbody>
                         </table>
 
@@ -3251,24 +3317,45 @@ $disabled = '';
                                 </tr>
                               </thead>
                               <tbody>
-                                <tr class="">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">yoo_sixthavenue</td>
-                                  <td class="small text-center">1.0.3</td>
-                                  <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
-                                  <td class="small text-center text-truncate hidden-xs">November 2016</td>
-                                  <td class="small text-center hidden-xs">3rd Party</td>
-                                </tr>
-                                <tr class="">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">protostar</td>
-                                  <td class="small text-center">1.0</td>
-                                  <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
-                                  <td class="small text-center text-truncate hidden-xs">4/30/2012</td>
-                                  <td class="small text-center hidden-xs">Core</td>
-                                </tr>
+
+
+<?php
+	// Modules
+	if ( $instance['instanceFOUND'] == _FPA_N ) { // an instance wasn't found in the initial checks, so no folders to check
+		} else {
+		// Site modules 
+        if (isset ($module['SITE'])) {
+			foreach ( $module['SITE'] as $key => $show ) {
+				if (isset($exset[0]['name'])) { 
+					$extarrkey = recursive_array_search($show['name'], $exset);
+					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
+
+					switch ($extenabled) {
+					    case '1':
+        					$frmextenabled = _FPA_Y_ICON;
+					        break;
+					    case '0':
+        					$frmextenabled = _FPA_N_ICON;
+					        break;
+					    default:
+        					$frmextenabled = _FPA_U_ICON;
+					}
+					   echo '<tr class="">';
+					   echo '<td class="small text-center text-success">' . $frmextenabled . '</td>';
+					   echo '<td class="small text-truncate">' . $show['name'] . '</td>';
+					   echo '<td class="small text-center">' . $show['version'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs hidden-sm">' . $show['authorUrl'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['creationDate'] . '</td>';
+					   echo '<td class="small text-center hidden-xs">' . $show['type'] . '</td>';
+					   echo '</tr>';
+			}       
+        }
+	}
+?>
+
+
                               </tbody>
                             </table>
 
@@ -3308,24 +3395,43 @@ $disabled = '';
                             </tr>
                           </thead>
                               <tbody>
-                                <tr class="">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">modulename one</td>
-                                  <td class="small text-center">3.0.0</td>
-                                  <td class="small text-center text-truncate hidden-xs">Andrea Tarr</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">www.tarrconsulting.com</td>
-                                  <td class="small text-center text-truncate hidden-xs">May 2010</td>
-                                  <td class="small text-center hidden-xs">Core</td>
-                                </tr>
-                                <tr class="">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">modulename two</td>
-                                  <td class="small text-center">1.0</td>
-                                  <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
-                                  <td class="small text-center text-truncate hidden-xs">3/30/2012</td>
-                                  <td class="small text-center hidden-xs">Core</td>
-                                </tr>
+
+<?php
+	if ( $instance['instanceFOUND'] == _FPA_N ) { // an instance wasn't found in the initial checks, so no folders to check
+		} else {
+		// Admin modules
+        if (isset ($module['ADMIN'])) {
+			foreach ( $module['ADMIN'] as $key => $show ) {
+				if (isset($exset[0]['name'])) { 
+					$extarrkey = recursive_array_search($show['name'], $exset);
+					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
+
+					switch ($extenabled) {
+					    case '1':
+        					$frmextenabled = _FPA_Y_ICON;
+					        break;
+					    case '0':
+        					$frmextenabled = _FPA_N_ICON;
+					        break;
+					    default:
+        					$frmextenabled = _FPA_U_ICON;
+					}
+					   echo '<tr class="">';
+					   echo '<td class="small text-center text-success">' . $frmextenabled . '</td>';
+					   echo '<td class="small text-truncate">' . $show['name'] . '</td>';
+					   echo '<td class="small text-center">' . $show['version'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs hidden-sm">' . $show['authorUrl'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['creationDate'] . '</td>';
+					   echo '<td class="small text-center hidden-xs">' . $show['type'] . '</td>';
+					   echo '</tr>';
+			}
+        }
+	}
+?>
+
+
                               </tbody>
                             </table>
 
@@ -3400,24 +3506,44 @@ $disabled = '';
                             </tr>
                           </thead>
                               <tbody>
-                                <tr class="">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">plugin one</td>
-                                  <td class="small text-center">1.0.3</td>
-                                  <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
-                                  <td class="small text-center text-truncate hidden-xs">November 2016</td>
-                                  <td class="small text-center hidden-xs">3rd Party</td>
-                                </tr>
-                                <tr class="">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">plugin two</td>
-                                  <td class="small text-center">1.0</td>
-                                  <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
-                                  <td class="small text-center text-truncate hidden-xs">4/30/2012</td>
-                                  <td class="small text-center hidden-xs">Core</td>
-                                </tr>
+<?php
+	// Plugins
+	if ( $instance['instanceFOUND'] == _FPA_N ) { // an instance wasn't found in the initial checks, so no folders to check
+
+		} else {
+		// Site plugins 
+        if (isset ($plugin['SITE'] )) {
+			foreach ( $plugin['SITE'] as $key => $show ) {
+				if (isset($exset[0]['name'])) { 
+					$extarrkey = recursive_array_search($show['name'], $exset);
+					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
+
+					switch ($extenabled) {
+					    case '1':
+        					$frmextenabled = _FPA_Y_ICON;
+					        break;
+					    case '0':
+        					$frmextenabled = _FPA_N_ICON;
+					        break;
+					    default:
+        					$frmextenabled = _FPA_U_ICON;
+					}
+					   echo '<tr class="">';
+					   echo '<td class="small text-center text-success">' . $frmextenabled . '</td>';
+					   echo '<td class="small text-truncate">' . $show['name'] . '</td>';
+					   echo '<td class="small text-center">' . $show['version'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs hidden-sm">' . $show['authorUrl'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['creationDate'] . '</td>';
+					   echo '<td class="small text-center hidden-xs">' . $show['type'] . '</td>';
+					   echo '</tr>';
+			}       
+        }
+	}
+?>
+
+
                               </tbody>
                             </table>
 
@@ -3457,24 +3583,43 @@ $disabled = '';
                             </tr>
                           </thead>
                               <tbody>
-                                <tr class="">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">freds plugin</td>
-                                  <td class="small text-center">3.0.0</td>
-                                  <td class="small text-center text-truncate hidden-xs">Andrea Tarr</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm"><a href="http://www.tarrconsulting.com" target="_blank">www.tarrconsulting.com</a></td>
-                                  <td class="small text-center text-truncate hidden-xs">May 2010</td>
-                                  <td class="small text-center hidden-xs">Core</td>
-                                </tr>
-                                <tr class="">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">search plugin</td>
-                                  <td class="small text-center">1.0</td>
-                                  <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
-                                  <td class="small text-center text-truncate hidden-xs">3/30/2012</td>
-                                  <td class="small text-center hidden-xs">Core</td>
-                                </tr>
+
+<?php
+	if ( $instance['instanceFOUND'] == _FPA_N ) { // an instance wasn't found in the initial checks, so no folders to check
+		} else {
+		// Admin plugin
+	   if ( isset ($plugin['ADMIN'])) {
+			foreach ( $plugin['ADMIN'] as $key => $show ) {
+				if (isset($exset[0]['name'])) { 
+					$extarrkey = recursive_array_search($show['name'], $exset);
+					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
+
+					switch ($extenabled) {
+					    case '1':
+        					$frmextenabled = _FPA_Y_ICON;
+					        break;
+					    case '0':
+        					$frmextenabled = _FPA_N_ICON;
+					        break;
+					    default:
+        					$frmextenabled = _FPA_U_ICON;
+					}
+					   echo '<tr class="">';
+					   echo '<td class="small text-center text-success">' . $frmextenabled . '</td>';
+					   echo '<td class="small text-truncate">' . $show['name'] . '</td>';
+					   echo '<td class="small text-center">' . $show['version'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs hidden-sm">' . $show['authorUrl'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['creationDate'] . '</td>';
+					   echo '<td class="small text-center hidden-xs">' . $show['type'] . '</td>';
+					   echo '</tr>';
+			}
+	   }
+	}
+?>
+
+
                               </tbody>
                             </table>
 
@@ -3547,24 +3692,45 @@ $disabled = '';
                             </tr>
                           </thead>
                               <tbody>
-                                <tr class="">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">plugin one</td>
-                                  <td class="small text-center">1.0.3</td>
-                                  <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">www.yootheme.com</td>
-                                  <td class="small text-center text-truncate hidden-xs">November 2016</td>
-                                  <td class="small text-center hidden-xs">3rd Party</td>
-                                </tr>
-                                <tr class="">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">plugin two</td>
-                                  <td class="small text-center">1.0</td>
-                                  <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
-                                  <td class="small text-center text-truncate hidden-xs">4/30/2012</td>
-                                  <td class="small text-center hidden-xs">Core</td>
-                                </tr>
+
+<?php
+	// Libraries
+	if ( $instance['instanceFOUND'] == _FPA_N ) { // an instance wasn't found in the initial checks, so no folders to check
+		} else {
+		// Site libraries 
+        if (isset ($library['SITE'] )) {
+			foreach ( $library['SITE'] as $key => $show ) {
+				if (isset($exset[0]['name'])) { 
+					$extarrkey = recursive_array_search($show['name'], $exset);
+					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
+
+					switch ($extenabled) {
+					    case '1':
+        					$frmextenabled = _FPA_Y_ICON;
+					        break;
+					    case '0':
+        					$frmextenabled = _FPA_N_ICON;
+					        break;
+					    default:
+        					$frmextenabled = _FPA_U_ICON;
+					}
+					   echo '<tr class="">';
+					   echo '<td class="small text-center text-success">' . $frmextenabled . '</td>';
+					   echo '<td class="small text-truncate">' . $show['name'] . '</td>';
+					   echo '<td class="small text-center">' . $show['version'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs hidden-sm">' . $show['authorUrl'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['creationDate'] . '</td>';
+					   echo '<td class="small text-center hidden-xs">' . $show['type'] . '</td>';
+					   echo '</tr>';
+			}       
+        }
+	}
+?>
+
+
+
                               </tbody>
                             </table>
 
@@ -3604,24 +3770,42 @@ $disabled = '';
                             </tr>
                           </thead>
                               <tbody>
-                                <tr class="">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">freds plugin</td>
-                                  <td class="small text-center">3.0.0</td>
-                                  <td class="small text-center text-truncate hidden-xs">Andrea Tarr</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm"><a href="http://www.tarrconsulting.com" target="_blank">www.tarrconsulting.com</a></td>
-                                  <td class="small text-center text-truncate hidden-xs">May 2010</td>
-                                  <td class="small text-center hidden-xs">Core</td>
-                                </tr>
-                                <tr class="">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">search plugin</td>
-                                  <td class="small text-center">1.0</td>
-                                  <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
-                                  <td class="small text-center text-truncate hidden-xs">3/30/2012</td>
-                                  <td class="small text-center hidden-xs">Core</td>
-                                </tr>
+<?php
+	if ( $instance['instanceFOUND'] == _FPA_N ) { // an instance wasn't found in the initial checks, so no folders to check
+		} else {
+		// Admin libraries
+	   if ( isset ($library['ADMIN'])) {
+			foreach ( $library['ADMIN'] as $key => $show ) {
+				if (isset($exset[0]['name'])) { 
+					$extarrkey = recursive_array_search($show['name'], $exset);
+					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
+
+					switch ($extenabled) {
+					    case '1':
+        					$frmextenabled = _FPA_Y_ICON;
+					        break;
+					    case '0':
+        					$frmextenabled = _FPA_N_ICON;
+					        break;
+					    default:
+        					$frmextenabled = _FPA_U_ICON;
+					}
+					   echo '<tr class="">';
+					   echo '<td class="small text-center text-success">' . $frmextenabled . '</td>';
+					   echo '<td class="small text-truncate">' . $show['name'] . '</td>';
+					   echo '<td class="small text-center">' . $show['version'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs hidden-sm">' . $show['authorUrl'] . '</td>';
+					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['creationDate'] . '</td>';
+					   echo '<td class="small text-center hidden-xs">' . $show['type'] . '</td>';
+					   echo '</tr>';
+			}
+	   }
+	}
+?>
+
+
                               </tbody>
                             </table>
 
@@ -3696,34 +3880,55 @@ $disabled = '';
                             </tr>
                           </thead>
                               <tbody>
-                                <tr class="bg-success">
-                                  <td class="small text-center text-success"><?php echo _FPA_A_ICON; ?></td>
-                                  <td class="small text-truncate">yoo_sixthavenue</td>
-                                  <td class="small text-center">1.0.3</td>
-                                  <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm"><a href="http://www.yootheme.com" target="_blank">www.yootheme.com</a></td>
-                                  <td class="small text-center text-truncate hidden-xs">November 2016</td>
-                                  <td class="small text-center hidden-xs">3rd Party</td>
-                                </tr>
-                                <?php
-                                  /* NOTE (RussW): Overrides - Active Site Template
-                                   * overrides found in the active templates /html/ folder  (RussW 06/05/2018)
-                                   *
-                                   */
-                                ?>
-                                <tr class="hidden-xs">
-                                  <th class="small text-right"><?php echo _TABLE_COMMON_OVERRIDES; ?>:&nbsp;</th>
-                                  <td class="small text-left" colspan="6">com_contact, com_j2store, mod_j2store_cart, plg_j2store_paypal</td>
-                                </tr>
-                                <tr class="">
-                                  <td class="small text-center"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">protostar</td>
-                                  <td class="small text-center">1.0</td>
-                                  <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
-                                  <td class="small text-center text-truncate hidden-xs">4/30/2012</td>
-                                  <td class="small text-center hidden-xs">Core</td>
-                                </tr>
+
+ <?php
+	// Templates	
+	if ( $instance['instanceFOUND'] == _FPA_N ) { // an instance wasn't found in the initial checks, so no folders to check
+		} else {
+		// Site templates 
+        if (isset ($template['SITE'] )) {
+			foreach ( $template['SITE'] as $key => $show ) {
+				if (isset($exset[0]['name'])) { 
+					$extarrkey = recursive_array_search($show['name'], $exset);
+					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
+				switch ($extenabled) {
+					case '1':
+        				$frmextenabled = _FPA_Y_ICON;
+					    break;
+					case '0':
+        				$frmextenabled = _FPA_N_ICON;
+					    break;
+					default:
+        				$frmextenabled = _FPA_U_ICON;
+				}
+
+				if (isset($tmpldef[0]['template'])) { 
+				    $extarrkey = recursive_array_search($show['name'], $tmpldef);
+				    $deftempl = $tmpldef[$extarrkey]['home'];    
+				} else { $deftempl = '' ;}
+
+				if ($deftempl == 1 ){                    
+                    $frmextenabled = _FPA_A_ICON;
+                    $frmclass = 'bg-success';
+				} else {
+				    $frmclass = '';
+				}           
+
+				echo '<tr class="' . $frmclass . '">';
+				echo '<td class="small text-center ">' . $frmextenabled . '</td>';
+				echo '<td class="small text-truncate">' . $show['name'] . '</td>';
+				echo '<td class="small text-center">' . $show['version'] . '</td>';
+				echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';
+				echo '<td class="small text-center text-truncate hidden-xs hidden-sm">' . $show['authorUrl'] . '</td>';
+				echo '<td class="small text-center text-truncate hidden-xs">' . $show['creationDate'] . '</td>';
+				echo '<td class="small text-center hidden-xs">' . $show['type'] . '</td>';
+				echo '</tr>';                                
+			}
+        }
+	}			
+?>
+ 
                               </tbody>
                             </table>
 
@@ -3763,24 +3968,54 @@ $disabled = '';
                             </tr>
                           </thead>
                               <tbody>
-                                <tr class="">
-                                  <td class="small text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
-                                  <td class="small text-truncate">hathor</td>
-                                  <td class="small text-center">1.0.3</td>
-                                  <td class="small text-center text-truncate hidden-xs">YOOtheme</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm"><a href="http://www.yootheme.com" target="_blank">www.yootheme.com</a></td>
-                                  <td class="small text-center text-truncate hidden-xs">November 2016</td>
-                                  <td class="small text-center hidden-xs">3rd Party</td>
-                                </tr>
-                                <tr class="bg-success">
-                                  <td class="small text-center"><?php echo _FPA_A_ICON; ?></td>
-                                  <td class="small text-truncate">isis</td>
-                                  <td class="small text-center">1.0</td>
-                                  <td class="small text-center text-truncate hidden-xs">Kyle Ledbeter</td>
-                                  <td class="small text-center text-truncate hidden-xs hidden-sm">-</td>
-                                  <td class="small text-center text-truncate hidden-xs">4/30/2012</td>
-                                  <td class="small text-center hidden-xs">Core</td>
-                                </tr>
+
+<?php
+	
+	if ( $instance['instanceFOUND'] == _FPA_N ) { // an instance wasn't found in the initial checks, so no folders to check
+		} else {
+		// Admin templates 
+        if (isset ($template['ADMIN'] )) {
+			foreach ( $template['ADMIN'] as $key => $show ) {
+				if (isset($exset[0]['name'])) { 
+					$extarrkey = recursive_array_search($show['name'], $exset);
+					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
+				switch ($extenabled) {
+					case '1':
+        				$frmextenabled = _FPA_Y_ICON;
+					    break;
+					case '0':
+        				$frmextenabled = _FPA_N_ICON;
+					    break;
+					default:
+        				$frmextenabled = _FPA_U_ICON;
+				}
+
+				if (isset($tmpldef[0]['template'])) { 
+				    $extarrkey = recursive_array_search($show['name'], $tmpldef);
+				    $deftempl = $tmpldef[$extarrkey]['home'];    
+				} else { $deftempl = '' ;}
+
+				if ($deftempl == 1 ){                    
+                    $frmextenabled = _FPA_A_ICON;
+                    $frmclass = 'bg-success';
+				} else {
+                     $frmclass = '';
+				}           
+				echo '<tr class="' . $frmclass . '">';
+				echo '<td class="small text-center ">' . $frmextenabled . '</td>';
+				echo '<td class="small text-truncate">' . $show['name'] . '</td>';
+				echo '<td class="small text-center">' . $show['version'] . '</td>';
+				echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';
+				echo '<td class="small text-center text-truncate hidden-xs hidden-sm">' . $show['authorUrl'] . '</td>';
+				echo '<td class="small text-center text-truncate hidden-xs">' . $show['creationDate'] . '</td>';
+				echo '<td class="small text-center hidden-xs">' . $show['type'] . '</td>';
+				echo '</tr>';                               
+			}
+        }
+	}
+?>
+ 
                               </tbody>
                             </table>
 
@@ -3973,13 +4208,13 @@ $disabled = '';
                 <div class="btn-toolbar">
 
                     <div class="btn-group btn-group-xs text-success download-info hidden-xs">
-                        <a href="<?php echo $gitcURLARRAY->zipball_url; ?>" tabindex="3" class="" role="button">
+                        <a href="<?php echo 'https://github.com/ForumPostAssistant/FPA/zipball/en-GB/'; ?>" tabindex="3" class="" role="button">
                             <i class="glyphicon glyphicon-download-alt"></i> <?php echo _RES_FPALATEST2; ?>
                         </a>
                     </div>
 
                     <div class="btn-group btn-group-xs text-success download-info hidden-xs">
-                        <a href="<?php echo $gitcURLARRAY->tarball_url; ?>" tabindex="3" class="" role="button">
+                        <a href="<?php echo 'https://github.com/ForumPostAssistant/FPA/tarball/en-GB/'; ?>" tabindex="3" class="" role="button">
                             <i class="glyphicon glyphicon-download-alt"></i> <?php echo _RES_FPALATEST; ?>
                         </a>
                     </div>
@@ -4480,9 +4715,6 @@ function exportTableToCSV(filename, tablename) {
           window.print();
         }
       </script>
-
-
-
 
 
       <?php

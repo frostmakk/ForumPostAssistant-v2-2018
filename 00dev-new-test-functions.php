@@ -5,26 +5,26 @@
    * test for cURL being loaded, if it is access the github latest release json page
    *
    */
+
   $fpaVersionCheck  = '';
   if (extension_loaded('curl')):
-
+   
     $gitcURL     = 'https://api.github.com/repos/ForumPostAssistant/FPA/releases/latest';  // fpa github json latest release URL
     $ch          = curl_init( $gitcURL );  // init cURL
     $gitcURLOPT  = array ( CURLOPT_USERAGENT => $_SERVER['HTTP_USER_AGENT'],
                            CURLOPT_TIMEOUT => 5,
                            CURLOPT_CONNECTTIMEOUT => 5,
                            CURLOPT_RETURNTRANSFER => true,
-                           CURLOPT_HTTPHEADER => array('Content-type: application/json'),
+                           CURLOPT_HTTPHEADER => array('Content-type: application/json'),                          
+                           CURLOPT_SSL_VERIFYPEER => false,   // NOTE (frostmakk): Without this option curl returned errorcode 60 (The remote server's SSL certificate or SSH md5 fingerprint was deemed not OK.) on WAMP localhost
                           );
     curl_setopt_array( $ch, $gitcURLOPT );
-
     $gitcURLJSON  = curl_exec($ch); // get json result string
-
     if($gitcURLJSON ===  FALSE):
       $fpaVersionCheck = '';
-
     else:
       $gitcURLARRAY   = json_decode($gitcURLJSON);  // decode json in to an array
+
       // TODO (RussW): uncomment in production
       $thisFPAVER     = _RES_VERSION .'.'. _RES_VERSION_MAINT .'-'. _RES_RELEASE_BUILD;
       if (substr($gitcURLARRAY->tag_name, 0, 1) == 'v') :
@@ -79,6 +79,7 @@
    * test for simplexml being loaded, if it is access the latest release xml file
    *
    */
+  $thisJVER = $instance['cmsRELEASE'] .'.'. $instance['cmsDEVLEVEL'];
   $joomlaVersionCheck  = '';
   if (extension_loaded('simplexml')):
     $jupdateURL  = 'https://update.joomla.org/core/list.xml';
@@ -119,9 +120,13 @@
 
   endif;
 
+    
 
 
 
+
+  
+                          
 
   /* NOTE (RussW): get the latest FPA release info from github
    * test for cURL being loaded, if it is access the github latest release json page
