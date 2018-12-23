@@ -67,7 +67,7 @@
  
 				/** BBCode for the Joomla! Forum
 				*****************************************************************************************/
-					echo '[quote="'. _RES .' (v'. _RES_VERSION .') : '. @date( 'jS F Y' ) .'"]';
+					echo '[quote="' . _RES .' : ' . _FPA_VER_SHORT .' '. _RES_VERSION .'.'. _RES_VERSION_MAINT .' '. _RES_RELEASE_BUILD . '  ,  ' . @date( 'jS F Y' ) .'"]';
 
 					if ( $_POST['probDSC'] ) { echo '[quote="'. _FPA_PROB_DSC .' :: "][size=85]'. $_POST['probDSC'] .' [/size][/quote]'; }
 
