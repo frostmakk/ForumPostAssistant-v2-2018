@@ -1678,11 +1678,11 @@ $disabled = '';
                                 </tr>
                                 <tr>
                                   <td class="small">Version</td>
-                                  <td class="text-center"><strong><?php echo $instance['platformRELEASE'].'.'.$instance['platformDEVLEVEL']; ?></strong></td>
+                                  <td class="text-center"><strong><?php echo $frmpltfrelease.'.'.$frmpltfdevlevel; ?></strong></td>
                                 </tr>
                                 <tr>
                                   <td class="small">Build</td>
-                                  <td class="text-center bg-<?php echo $stylepltfdevstatus;?> text-<?php echo $stylepltfdevstatus;?> col-xs-4"><?php echo $instance['platformDEVSTATUS']; ?></td>
+                                  <td class="text-center bg-<?php echo $stylepltfdevstatus;?> text-<?php echo $stylepltfdevstatus;?> col-xs-4"><?php echo $frmpltfdevstatus; ?></td>
                                 </tr>
                               </tbody>
                             </table>

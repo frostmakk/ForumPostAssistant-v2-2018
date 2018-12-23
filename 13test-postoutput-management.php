@@ -444,6 +444,7 @@
 							if ( @$_POST[showCoreEx] == 'on') {
 								echo "\r\n";
 								echo '[b] ' . _FPA_JCORE . ' :: [/b][color=Blue]';
+                                if ( isset ($component['SITE'])) {
 									foreach ( $component['SITE'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
@@ -457,11 +458,12 @@
 										echo  $show['name'] .' ('. $show['version'] .')  '.$extenabled.' | ';
 										}
 									}
+								}
                                echo '[/color]';
 							}
 								echo "\r\n";
 								echo '[b]' .  _FPA_3PD . ':: [/b][color=Brown]';
-
+                                if ( isset ($component['SITE'])) {
 									foreach ( $component['SITE'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
@@ -475,13 +477,15 @@
 										echo  $show['name'] .' ('. $show['version'] .')  '.$extenabled.' | ';
 										}
 										}
-                                          echo '[/color]';
+									}
+                                    echo '[/color]';
 								echo "\r\n\r\n";
 
 								echo '[b]'. _FPA_EXTCOM_TITLE .' :: '. _FPA_ADMIN .' :: [/b]';
 							if ( @$_POST[showCoreEx] == 'on') {
 								echo "\r\n";
 								echo '[b] ' . _FPA_JCORE . ' :: [/b][color=Blue]';
+                                if ( isset ($component['ADMIN'])) {
 									foreach ( $component['ADMIN'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
@@ -495,11 +499,12 @@
 										echo  $show['name'] .' ('. $show['version'] .')  '.$extenabled.' | ';
 										}
 									}
+								}
                                echo '[/color]';
 							}
 								echo "\r\n";
 								echo '[b]' .  _FPA_3PD . ':: [/b][color=Brown]';
-
+                                if ( isset ($component['ADMIN'])) {
 									foreach ( $component['ADMIN'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
@@ -513,6 +518,7 @@
 										echo  $show['name'] .' ('. $show['version'] .')  '.$extenabled.' | ';
 										}
 										}
+									}
                                           echo '[/color]';
 			  			}
 								echo "\r\n\r\n";
@@ -522,6 +528,7 @@
 							if ( @$_POST[showCoreEx] == 'on') {
 								echo "\r\n";
 								echo '[b] ' . _FPA_JCORE . ' :: [/b][color=Blue]';
+                                if ( isset ($module['SITE'])) {
 									foreach ( $module['SITE'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
@@ -535,11 +542,12 @@
 										echo  $show['name'] .' ('. $show['version'] .')  '.$extenabled.' | ';
 										}
 									}
-                               echo '[/color]';
+								}
 							}
+                               echo '[/color]';
 								echo "\r\n";
 								echo '[b]' .  _FPA_3PD . ':: [/b][color=Brown]';
-
+                                if ( isset ($module['SITE'])) {
 									foreach ( $module['SITE'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
@@ -553,13 +561,15 @@
 										echo  $show['name'] .' ('. $show['version'] .')  '.$extenabled.' | ';
 										}
 										}
-                                          echo '[/color]';
+									}
+                                    echo '[/color]';
 								echo "\r\n\r\n";
 
 								echo '[b]'. _FPA_EXTMOD_TITLE .' :: '. _FPA_ADMIN .' :: [/b]';
 							if ( @$_POST[showCoreEx] == 'on') {
 								echo "\r\n";
 								echo '[b] ' . _FPA_JCORE . ' :: [/b][color=Blue]';
+                                if ( isset ($module['ADMIN'])) {
 									foreach ( $module['ADMIN'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
@@ -573,11 +583,12 @@
 										echo  $show['name'] .' ('. $show['version'] .')  '.$extenabled.' | ';
 										}
 									}
+								}
                                echo '[/color]';
 							}
 								echo "\r\n";
 								echo '[b]' .  _FPA_3PD . ':: [/b][color=Brown]';
-
+                                if ( isset ($module['ADMIN'])) {
 									foreach ( $module['ADMIN'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
@@ -591,7 +602,8 @@
 										echo  $show['name'] .' ('. $show['version'] .')  '.$extenabled.' | ';
 										}
 										}
-                                          echo '[/color]';
+									}
+                                    echo '[/color]';
 			  			}
 								echo "\r\n\r\n";                              
 							if ( @$_POST['showLibraries'] == 'on' ) {
@@ -599,6 +611,7 @@
 							if ( @$_POST[showCoreEx] == 'on') {
 								echo "\r\n";
 								echo '[b] ' . _FPA_JCORE . ' :: [/b][color=Blue]';
+                                if ( isset ($library['SITE'])) {
 									foreach ( $library['SITE'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
@@ -612,10 +625,12 @@
 										echo  $show['name'] .' ('. $show['version'] .')  '.$extenabled.' | ';
 										}
 									}
+								}
                                echo '[/color]';
 							}
 								echo "\r\n";
 								echo '[b]' .  _FPA_3PD . ':: [/b][color=Brown]';
+                                if ( isset ($library['SITE'])) {
 									foreach ( $library['SITE'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
@@ -628,8 +643,9 @@
 										{                      
 										echo  $show['name'] .' ('. $show['version'] .')  '.$extenabled.' | ';
 										}
-										}
-                                          echo '[/color]';
+									}
+								}
+                                    echo '[/color]';
 						} 
 								echo "\r\n\r\n";
 							if ( @$_POST['showPlugins'] == 'on' ) {
@@ -637,6 +653,7 @@
 							if ( @$_POST[showCoreEx] == 'on') {
 								echo "\r\n";
 								echo '[b] ' . _FPA_JCORE . ' :: [/b][color=Blue]';
+                                if ( isset ($plugin['SITE'])) {
 									foreach ( $plugin['SITE'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
@@ -650,10 +667,12 @@
 										echo  $show['name'] .' ('. $show['version'] .')  '.$extenabled.' | ';
 										}
 									}
+								}
                                echo '[/color]';
 							}
 								echo "\r\n";
 								echo '[b]' .  _FPA_3PD . ':: [/b][color=Brown]';
+                                if ( isset ($plugin['SITE'])) {
 									foreach ( $plugin['SITE'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
@@ -666,7 +685,8 @@
 										{                      
 										echo  $show['name'] .' ('. $show['version'] .')  '.$extenabled.' | ';
 										}
-										}
+									}
+								}
                                           echo '[/color]';
 						} 
 
@@ -684,7 +704,7 @@
 								} else {
 
 									echo '[b]'. _FPA_TMPL_TITLE .' :: '. _FPA_SITE .' :: [/b]';
-
+                                    if ( isset ($template['SITE'])) {
 										foreach ( $template['SITE'] as $key => $show ) {                    
 										if (substr($instance['cmsRELEASE'],0,1) <> 1 AND @$database['dbHOSTINFO'] <> _FPA_U OR $postgresql = _FPA_Y) { 
 										if (isset($exset[0]['name'])) { 
@@ -718,12 +738,13 @@
 										} else {
 										echo '[color=Blue]'. $bldop . $show['name'] .' ('. $show['version'] .')' . $bldcl . '[/color]  '.$extenabled.' | ';
 										}
-								}
+								    }
+				 			    }
 				 			}
 									echo "\r\n";
 
 									echo '[b]'. _FPA_TMPL_TITLE .' :: '. _FPA_ADMIN .' :: [/b]';
-
+                                    if ( isset ($template['ADMIN'])) {
 										foreach ( $template['ADMIN'] as $key => $show ) {                    
 										if (substr($instance['cmsRELEASE'],0,1) <> 1 AND @$database['dbHOSTINFO'] <> _FPA_U OR $postgresql = _FPA_Y ) { 
 										  if (isset($exset[0]['name'])) { 
@@ -761,6 +782,7 @@
 										}
 									}
 							}
+						  }
 						}
 									echo '[/size][/quote]';
 					}

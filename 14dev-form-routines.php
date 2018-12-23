@@ -23,7 +23,12 @@
     }
 
 
+
+
+
+
     // Platform found
+if (isset($instance['platformVFILE']))  {
     if($instance['platformVFILE'] != _FPA_N) {
         $stylepltffound = 'success';
         $fieldpltffound =  _FPA_Y_ICON ;
@@ -32,13 +37,45 @@
         $stylepltffound = 'unknown';
         $fieldpltffound =  _FPA_N_ICON ; 
     }
+}else{
+        $stylepltffound = 'unknown';
+        $fieldpltffound =  _FPA_N_ICON ; 
+}
+
+
      // Platform devStatus
+if (isset($instance['platformDEVSTATUS']))  {
      if($instance['platformDEVSTATUS'] == 'Stable') {
         $stylepltfdevstatus = 'success';
+        $frmpltfdevstatus = $instance['platformDEVSTATUS'];
     }
     else{
         $stylepltfdevstatus = 'warning'; 
+        $frmpltfdevstatus = $instance['platformDEVSTATUS'];
     }
+}else{
+        $stylepltfdevstatus = 'normal'; 
+        $frmpltfdevstatus = _FPA_NA;
+
+}
+
+     // Platform devlevel
+if (isset($instance['platformDEVLEVEL']))  {
+        $frmpltfdevlevel =  $instance['platformDEVLEVEL'];           
+    }
+    else{
+        $frmpltfdevlevel =  '';
+    }
+
+
+     // Platform release
+if (isset($instance['platformRELEASE']))  {
+        $frmpltfrelease =  $instance['platformRELEASE'];           
+    }
+    else{
+        $frmpltfrelease =  _FPA_NA;
+    }
+
 
 
     // Config file found
