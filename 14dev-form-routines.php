@@ -100,6 +100,13 @@ if (isset($instance['platformRELEASE']))  {
         $configmatches =  _FPA_U_ICON ; 
     } 
 
+    // Defines exist
+    if ( isset($instance['definesEXIST'])) {
+       $frmdefinesEXIST = $instance['definesEXIST'];
+    }
+    else{ $frmdefinesEXIST = _FPA_N;     
+    }
+                                       
 
     // Site offline
     if($instance['configOFFLINE'] == 'true') {

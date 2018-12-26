@@ -1863,7 +1863,7 @@ $disabled = '';
                                 </tr>
                                 <tr>
                                   <td class="small text-truncate">Root Override</td>
-                                  <td class="text-center"><?php echo $instance['definesEXIST']; ?></td>
+                                  <td class="text-center"><?php echo $frmdefinesEXIST; ?></td>
                                 </tr>
                               </tbody>
                             </table>
