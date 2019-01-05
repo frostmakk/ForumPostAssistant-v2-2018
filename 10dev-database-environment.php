@@ -20,7 +20,7 @@
 			$database['dbERROR'] = mysql_errno() .':'. mysql_error();
 
     @mysql_select_db( $instance['configDBNAME'], $dBconn );
-    $sql = "select name,type,enabled from ".$instance['configDBPREF']."extensions where type='plugin' or type='component' or type='module' or type='template'";
+    $sql = "select name,type,enabled from ".$instance['configDBPREF']."extensions where type='plugin' or type='component' or type='module' or type='template' or type='library'";
     $result = @mysql_query($sql);
     if ($result <> false) {
     if (mysql_num_rows($result) > 0) {
@@ -125,7 +125,7 @@
 			if (function_exists('mysqli_connect')) {
 			$dBconn = @new mysqli( $instance['configDBHOST'], $instance['configDBUSER'], $instance['configDBPASS'], $instance['configDBNAME'] );
 			$database['dbERROR'] = mysqli_connect_errno( $dBconn ) .':'. mysqli_connect_error( $dBconn );
-			$sql = "select name,type,enabled from ". $instance['configDBPREF']."extensions where type='plugin' or type='component' or type='module' or type='template'";
+			$sql = "select name,type,enabled from ". $instance['configDBPREF']."extensions where type='plugin' or type='component' or type='module' or type='template' or type='library'";
 			$result = @$dBconn->query($sql);
 			if ($result <> false) {
     			if ($result->num_rows > 0) {
@@ -238,7 +238,7 @@
 		  $database['dbERROR'] = '0:';
 
 		  try {
-		  $sql = $dBconn->prepare("select name,type,enabled from ". $instance['configDBPREF']."extensions where type='plugin' or type='component' or type='module' or type='template'");
+		  $sql = $dBconn->prepare("select name,type,enabled from ". $instance['configDBPREF']."extensions where type='plugin' or type='component' or type='module' or type='template' or type='library'");
 		  $sql->execute();
 		  $exset = $sql->setFetchMode(PDO::FETCH_ASSOC);
 		  $exset = $sql->fetchAll();
@@ -331,7 +331,7 @@
             $database['dbERROR'] = '0:';
             $postgresql = _FPA_Y;
 
-            $sql = @pg_query($dBconn, "select name,type,enabled from ". $instance['configDBPREF']."extensions where type='plugin' or type='component' or type='module' or type='template'");                            
+            $sql = @pg_query($dBconn, "select name,type,enabled from ". $instance['configDBPREF']."extensions where type='plugin' or type='component' or type='module' or type='template' or type='library'");                            
             $exset = @pg_fetch_all($sql);  
 
             $sql = @pg_query($dBconn, "select template, max(home) as home from ".$instance['configDBPREF']."template_styles group by template");                            
@@ -427,7 +427,7 @@
 		  $database['dbERROR'] = '0:';
 		  $postgresql = _FPA_Y;
 		  try {
-		  $sql = $dBconn->prepare("select name,type,enabled from ". $instance['configDBPREF']."extensions where type='plugin' or type='component' or type='module' or type='template'");
+		  $sql = $dBconn->prepare("select name,type,enabled from ". $instance['configDBPREF']."extensions where type='plugin' or type='component' or type='module' or type='template' or type='library'");
 		  $sql->execute();
 		  $exset = $sql->setFetchMode(PDO::FETCH_ASSOC);
 		  $exset = $sql->fetchAll();

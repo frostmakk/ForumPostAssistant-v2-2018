@@ -370,6 +370,28 @@ if (isset($instance['platformRELEASE']))  {
         }
 
 
+
+
+
+        
+        if ( @$_POST['increasePOPS'] == 1 ) { // the user set the increasePOPS setting for memory or time out errors
+            $frmMEMLIMIT = 'class="text-warning">(' .  _FPA_UINC .' '. $fpa['ORIGphpMEMLIMIT'] .') <br>' . $phpenv['phpMEMLIMIT'];
+            $frmMAXEXECTIME = 'class="text-warning">(' . _FPA_UINC .' '. $fpa['ORIGphpMAXEXECTIME'] .') <br>' . $phpenv['phpMAXEXECTIME']; 
+        }
+        else
+        {
+            $frmMEMLIMIT = 'class="">' . $phpenv['phpMEMLIMIT'];
+            $frmMAXEXECTIME ='class="">' . $phpenv['phpMAXEXECTIME'];
+        }
+
+
+
+
+
+
+
+
+
  
  
  

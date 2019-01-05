@@ -265,6 +265,19 @@ $disabled = '';
   define ( '_CAPTION_CHECKS', 'Checks' );
   define ( '_CAPTION_SITE', 'Site' );
   define ( '_CAPTION_ADMIN', 'Administrator' );
+  define ( '_CAPTION_VER', 'Version' );
+  define ( '_CAPTION_API', 'API' );
+  define ( '_CAPTION_SUP', 'Support' );
+  define ( '_CAPTION_SUPS', 'Supports' );
+  define ( '_CAPTION_CON', 'Connection' );  
+  define ( '_CAPTION_TYP', 'Type' );  
+  define ( '_CAPTION_DEF', 'Default' ); 
+  define ( '_CAPTION_COL', 'Collation' );
+  define ( '_CAPTION_BADPHP', 'Known Buggy PHP');
+  define ( '_CAPTION_BADZND', 'Known Buggy Zend');
+
+
+
   define ( '_TABLE_PERMS_MODE', 'Mode' );
   define ( '_TABLE_PERMS_FOLDER', 'Folder' );
   define ( '_TABLE_DB_TABLE', 'Table' );
@@ -1447,19 +1460,19 @@ $disabled = '';
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
-                              <td class="small text-truncate">PHP Version</td>
+                              <td class="small text-truncate"><?php echo _CAPTION_PHP . ' ' . _CAPTION_VER; ?></td>
                               <td class="text-center"><strong><?php echo _FPA_VER_SHORT; ?><?php echo PHP_VERSION; ?></strong></td>         
                             </tr>
                             <tr>
-                              <td class="small text-truncate">PHP API</td>
+                              <td class="small text-truncate"><?php echo _CAPTION_PHP . ' ' . _CAPTION_API; ?></td>
                               <td class="text-center"><?php echo  $phpenv['phpAPI']; ?></td>             
                             </tr>
                             <tr>
-                              <td class="small text-truncate">MySQL Support</td>
+                              <td class="small text-truncate"><?php echo _CAPTION_MYSQL . ' ' . _CAPTION_SUP; ?></td>
                               <td class="text-center text-<?php echo $stylesuppmysql;?>"><?php echo $suppmysql; ?></td>            
                             </tr>
                             <tr>
-                              <td class="small text-truncate">MySQLi Support</td>
+                              <td class="small text-truncate"><?php echo _CAPTION_MYSQLI . ' ' . _CAPTION_SUP; ?></td>
                               <td class="text-center text-<?php echo $stylesuppmysqli;?>"><?php echo $suppmysqli; ?></td>
                             </tr>
                           </tbody>
@@ -1480,19 +1493,19 @@ $disabled = '';
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
-                              <td class="small text-truncate">Database Version</td>
+                              <td class="small text-truncate"><?php echo _CAPTION_DB . ' ' . _CAPTION_VER; ?></td>
                               <td class="text-center"><strong><?php echo _FPA_VER_SHORT; ?><?php echo $database['dbHOSTSERV']; ?></strong></td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate">Connection Type</td>
+                              <td class="small text-truncate"><?php echo _CAPTION_CON . ' ' . _CAPTION_TYP; ?></td>
                               <td class="text-center"><?php echo $instance['configDBTYPE']; ?></td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate">Default Collation</td>
+                              <td class="small text-truncate"><?php echo _CAPTION_DEF . ' ' . _CAPTION_COL; ?></td>
                               <td class="text-center"><?php echo $database['dbCOLLATION']; ?></td>                               
                             </tr>
                             <tr>
-                              <td class="small text-truncate">MySQLi Support</td>
+                              <td class="small text-truncate"><?php echo _CAPTION_MYSQLI . ' ' . _CAPTION_SUP; ?></td>
                               <td class="text-center text-success"><?php echo _FPA_Y_ICON; ?></td>
                             </tr>
                           </tbody>
@@ -1513,19 +1526,19 @@ $disabled = '';
                           </colgroup><!--/required to fix column sizing & employ text-truncate-->
                           <tbody>
                             <tr>
-                              <td class="small text-truncate">PHP Supports J! <?php echo $instance['cmsRELEASE'] . '.' . $instance['cmsDEVLEVEL']; ?></td>                      
+                              <td class="small text-truncate"><?php echo _CAPTION_PHP . ' ' . _CAPTION_SUPS . ' J! ' . $instance['cmsRELEASE'] . '.' . $instance['cmsDEVLEVEL']; ?></td>                      
                               <td class="text-center text-success"><?php echo $frmphpSUP4J; ?></td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate">Database Supports J! <?php echo $instance['cmsRELEASE'] . '.' . $instance['cmsDEVLEVEL']; ?></td>
+                              <td class="small text-truncate"><?php echo _CAPTION_DB . ' ' . _CAPTION_SUPS . ' J! ' . $instance['cmsRELEASE'] . '.' . $instance['cmsDEVLEVEL']; ?></td>
                               <td class="text-center text-success"><?php echo $frmDbSUP4J; ?></td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate">Known Buggy PHP</td>
+                              <td class="small text-truncate"><?php echo _CAPTION_BADPHP; ?></td>
                               <td class="text-center"><?php echo $snapshot['buggyPHP']; ?></td>
                             </tr>
                             <tr>
-                              <td class="small text-truncate">Known Buggy Zend</td>
+                              <td class="small text-truncate"><?php echo _CAPTION_BADZND; ?></td>
                               <td class="text-center"><?php echo $snapshot['buggyZEND']; ?></td>
                             </tr>
                           </tbody>
@@ -2512,7 +2525,7 @@ $disabled = '';
                             </tr>
                             <tr>
                               <td class="small text-truncate">Memory Limit</td>
-                              <td class=""><?php echo $phpenv['phpMEMLIMIT'] ; ?></td>
+                              <td <?php echo $frmMEMLIMIT; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Uploads Enabled</td>
@@ -2532,7 +2545,7 @@ $disabled = '';
                             </tr>
                             <tr>
                               <td class="small text-truncate">Max. Execution Time</td>
-                              <td class=""><?php echo $phpenv['phpMAXEXECTIME'] . ' seconds'; ?></td>
+                              <td <?php echo $frmMAXEXECTIME . ' seconds'; ?></td>
                             </tr>
                             <tr>
                               <td class="small text-truncate">Register Globals</td>
@@ -3153,7 +3166,7 @@ $disabled = '';
         					$frmextenabled = _FPA_U_ICON;
 					}
 					   echo '<tr class="">';
-					   echo '<td class="small text-center text-success">' . $frmextenabled . '</td>';
+					   echo '<td class=" lead text-center  text-unknown">' . $frmextenabled . '</td>';
 					   echo '<td class="small text-truncate">' . $show['name'] . '</td>';
 					   echo '<td class="small text-center">' . $show['version'] . '</td>';
 					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';
@@ -3229,7 +3242,7 @@ $disabled = '';
         					$frmextenabled = _FPA_U_ICON;
 					}
 					   echo '<tr class="">';
-					   echo '<td class="small text-center text-success">' . $frmextenabled . '</td>';
+					   echo '<td class="lead text-center text-unknown">' . $frmextenabled . '</td>';
 					   echo '<td class="small text-truncate">' . $show['name'] . '</td>';
 					   echo '<td class="small text-center">' . $show['version'] . '</td>';
 					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';
@@ -3342,7 +3355,7 @@ $disabled = '';
         					$frmextenabled = _FPA_U_ICON;
 					}
 					   echo '<tr class="">';
-					   echo '<td class="small text-center text-success">' . $frmextenabled . '</td>';
+					   echo '<td class="lead text-center text-unknown">' . $frmextenabled . '</td>';
 					   echo '<td class="small text-truncate">' . $show['name'] . '</td>';
 					   echo '<td class="small text-center">' . $show['version'] . '</td>';
 					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';
@@ -3418,7 +3431,7 @@ $disabled = '';
         					$frmextenabled = _FPA_U_ICON;
 					}
 					   echo '<tr class="">';
-					   echo '<td class="small text-center text-success">' . $frmextenabled . '</td>';
+					   echo '<td class="lead text-center text-unknown">' . $frmextenabled . '</td>';
 					   echo '<td class="small text-truncate">' . $show['name'] . '</td>';
 					   echo '<td class="small text-center">' . $show['version'] . '</td>';
 					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';
@@ -3530,7 +3543,7 @@ $disabled = '';
         					$frmextenabled = _FPA_U_ICON;
 					}
 					   echo '<tr class="">';
-					   echo '<td class="small text-center text-success">' . $frmextenabled . '</td>';
+					   echo '<td class="lead text-center text-unknown">' . $frmextenabled . '</td>';
 					   echo '<td class="small text-truncate">' . $show['name'] . '</td>';
 					   echo '<td class="small text-center">' . $show['version'] . '</td>';
 					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';
@@ -3606,7 +3619,7 @@ $disabled = '';
         					$frmextenabled = _FPA_U_ICON;
 					}
 					   echo '<tr class="">';
-					   echo '<td class="small text-center text-success">' . $frmextenabled . '</td>';
+					   echo '<td class="lead text-center text-unknown">' . $frmextenabled . '</td>';
 					   echo '<td class="small text-truncate">' . $show['name'] . '</td>';
 					   echo '<td class="small text-center">' . $show['version'] . '</td>';
 					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';
@@ -3716,7 +3729,7 @@ $disabled = '';
         					$frmextenabled = _FPA_U_ICON;
 					}
 					   echo '<tr class="">';
-					   echo '<td class="small text-center text-success">' . $frmextenabled . '</td>';
+					   echo '<td class="lead text-center text-unknown">' . $frmextenabled . '</td>';
 					   echo '<td class="small text-truncate">' . $show['name'] . '</td>';
 					   echo '<td class="small text-center">' . $show['version'] . '</td>';
 					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';
@@ -3792,7 +3805,7 @@ $disabled = '';
         					$frmextenabled = _FPA_U_ICON;
 					}
 					   echo '<tr class="">';
-					   echo '<td class="small text-center text-success">' . $frmextenabled . '</td>';
+					   echo '<td class="lead text-center text-unknown">' . $frmextenabled . '</td>';
 					   echo '<td class="small text-truncate">' . $show['name'] . '</td>';
 					   echo '<td class="small text-center">' . $show['version'] . '</td>';
 					   echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';
@@ -3916,7 +3929,7 @@ $disabled = '';
 				}           
 
 				echo '<tr class="' . $frmclass . '">';
-				echo '<td class="small text-center ">' . $frmextenabled . '</td>';
+				echo '<td class="lead text-center text-unknown">' . $frmextenabled . '</td>';
 				echo '<td class="small text-truncate">' . $show['name'] . '</td>';
 				echo '<td class="small text-center">' . $show['version'] . '</td>';
 				echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';
@@ -4003,7 +4016,7 @@ $disabled = '';
                      $frmclass = '';
 				}           
 				echo '<tr class="' . $frmclass . '">';
-				echo '<td class="small text-center ">' . $frmextenabled . '</td>';
+				echo '<td class="lead text-center text-unknown">' . $frmextenabled . '</td>';
 				echo '<td class="small text-truncate">' . $show['name'] . '</td>';
 				echo '<td class="small text-center">' . $show['version'] . '</td>';
 				echo '<td class="small text-center text-truncate hidden-xs">' . $show['author'] . '</td>';

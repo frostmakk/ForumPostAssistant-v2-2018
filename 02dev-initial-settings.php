@@ -13,7 +13,12 @@
 	$system['sysSHORTWEB']      = strtoupper( substr( $_SERVER['SERVER_SOFTWARE'], 0, 3 ) ); // APA = Apache, MIC = MS IIS, LIT = LiteSpeed etc
 
 
-
+    
+	// if the user see's Out Of Memory or Execution Timer pops, double the current memory_limit and max_execution_time
+	if ( @$_POST['increasePOPS'] == 1 ) {
+		ini_set ( 'memory_limit', (rtrim($fpa['ORIGphpMEMLIMIT'],"M")*2)."M" );
+		ini_set ( 'max_execution_time', ($fpa['ORIGphpMAXEXECTIME']*2) );
+	}
 
 
 
