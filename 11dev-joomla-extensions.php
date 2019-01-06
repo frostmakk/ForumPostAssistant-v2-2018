@@ -65,7 +65,7 @@
 
 
 								if ( preg_match( '#<name>(.*)</name>#', $content, $name ) ) {
-									$arrname[$loc][$cDir]['name']   = strip_tags( substr( $name[1], 0, 30 ) );
+									$arrname[$loc][$cDir]['name']   = strip_tags( substr( $name[1], 0, 35 ) );
 
 								} else {
 									$arrname[$loc][$cDir]['name']   = _FPA_U .' ('. $cDir . ') ';
