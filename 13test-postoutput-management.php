@@ -448,10 +448,12 @@
 									foreach ( $component['SITE'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
+                                        if ($extarrkey  !== False) {
 										$extenabled = $exset[$extarrkey]['enabled'];
-										} else { $extenabled = '' ;}
+										} else { $extenabled = '?' ;}
+										} else { $extenabled = '?' ;}
 										if ($extenabled <> 0 AND $extenabled <> 1 ){
-										$extenabled = '';
+										$extenabled = '?';
 										}
 										if ( $show['type'] == _FPA_JCORE)
 										{                      
@@ -467,10 +469,12 @@
 									foreach ( $component['SITE'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
+                                        if ($extarrkey  !== False) {
 										$extenabled = $exset[$extarrkey]['enabled'];
-										} else { $extenabled = '' ;}
+										} else { $extenabled = '?' ;}
+										} else { $extenabled = '?' ;}
 										if ($extenabled <> 0 AND $extenabled <> 1 ){
-										$extenabled = '';
+										$extenabled = '?';
 										}
 										if ( $show['type'] == _FPA_3PD)
 										{                      
@@ -489,10 +493,12 @@
 									foreach ( $component['ADMIN'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
+                                        if ($extarrkey  !== False) {
 										$extenabled = $exset[$extarrkey]['enabled'];
-										} else { $extenabled = '' ;}
+										} else { $extenabled = '?' ;}
+										} else { $extenabled = '?' ;}
 										if ($extenabled <> 0 AND $extenabled <> 1 ){
-										$extenabled = '';
+										$extenabled = '?';
 										}
 										if ( $show['type'] == _FPA_JCORE)
 										{                      
@@ -508,10 +514,12 @@
 									foreach ( $component['ADMIN'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
+                                        if ($extarrkey  !== False) {
 										$extenabled = $exset[$extarrkey]['enabled'];
-										} else { $extenabled = '' ;}
+										} else { $extenabled = '?' ;}
+										} else { $extenabled = '?' ;}
 										if ($extenabled <> 0 AND $extenabled <> 1 ){
-										$extenabled = '';
+										$extenabled = '?';
 										}
 										if ( $show['type'] == _FPA_3PD)
 										{                      
@@ -532,10 +540,12 @@
 									foreach ( $module['SITE'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
+                                        if ($extarrkey  !== False) {
 										$extenabled = $exset[$extarrkey]['enabled'];
-										} else { $extenabled = '' ;}
+										} else { $extenabled = '?' ;}
+										} else { $extenabled = '?' ;}
 										if ($extenabled <> 0 AND $extenabled <> 1 ){
-										$extenabled = '';
+										$extenabled = '?';
 										}
 										if ( $show['type'] == _FPA_JCORE)
 										{                      
@@ -551,10 +561,12 @@
 									foreach ( $module['SITE'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
+                                        if ($extarrkey  !== False) {
 										$extenabled = $exset[$extarrkey]['enabled'];
-										} else { $extenabled = '' ;}
+										} else { $extenabled = '?' ;}
+										} else { $extenabled = '?' ;}
 										if ($extenabled <> 0 AND $extenabled <> 1 ){
-										$extenabled = '';
+										$extenabled = '?';
 										}
 										if ( $show['type'] == _FPA_3PD)
 										{                      
@@ -573,10 +585,12 @@
 									foreach ( $module['ADMIN'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
+                                        if ($extarrkey  !== False) {
 										$extenabled = $exset[$extarrkey]['enabled'];
-										} else { $extenabled = '' ;}
+										} else { $extenabled = '?' ;}
+										} else { $extenabled = '?' ;}
 										if ($extenabled <> 0 AND $extenabled <> 1 ){
-										$extenabled = '';
+										$extenabled = '?';
 										}
 										if ( $show['type'] == _FPA_JCORE)
 										{                      
@@ -592,10 +606,12 @@
 									foreach ( $module['ADMIN'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
+                                        if ($extarrkey  !== False) {
 										$extenabled = $exset[$extarrkey]['enabled'];
-										} else { $extenabled = '' ;}
+										} else { $extenabled = '?' ;}
+										} else { $extenabled = '?' ;}
 										if ($extenabled <> 0 AND $extenabled <> 1 ){
-										$extenabled = '';
+										$extenabled = '?';
 										}
 										if ( $show['type'] == _FPA_3PD)
 										{                      
@@ -615,10 +631,12 @@
 									foreach ( $library['SITE'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
+                                        if ($extarrkey  !== False) {
 										$extenabled = $exset[$extarrkey]['enabled'];
-										} else { $extenabled = '' ;}
+										} else { $extenabled = '?' ;}
+										} else { $extenabled = '?' ;}
 										if ($extenabled <> 0 AND $extenabled <> 1 ){
-										$extenabled = '';
+										$extenabled = '?';
 										}
 										if ( $show['type'] == _FPA_JCORE)
 										{                      
@@ -634,10 +652,12 @@
 									foreach ( $library['SITE'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
+                                        if ($extarrkey  !== False) {
 										$extenabled = $exset[$extarrkey]['enabled'];
-										} else { $extenabled = '' ;}
+										} else { $extenabled = '?' ;}
+										} else { $extenabled = '?' ;}
 										if ($extenabled <> 0 AND $extenabled <> 1 ){
-										$extenabled = '';
+										$extenabled = '?';
 										}
 										if ( $show['type'] == _FPA_3PD)
 										{                      
@@ -657,10 +677,12 @@
 									foreach ( $plugin['SITE'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
+                                        if ($extarrkey  !== False) {
 										$extenabled = $exset[$extarrkey]['enabled'];
-										} else { $extenabled = '' ;}
+										} else { $extenabled = '?' ;}
+										} else { $extenabled = '?' ;}
 										if ($extenabled <> 0 AND $extenabled <> 1 ){
-										$extenabled = '';
+										$extenabled = '?';
 										}
 										if ( $show['type'] == _FPA_JCORE)
 										{                      
@@ -676,10 +698,12 @@
 									foreach ( $plugin['SITE'] as $key => $show ) {
 										if (isset($exset[0]['name'])) { 
 										$extarrkey = recursive_array_search($show['name'], $exset);
+                                        if ($extarrkey  !== False) {
 										$extenabled = $exset[$extarrkey]['enabled'];
-										} else { $extenabled = '' ;}
+										} else { $extenabled = '?' ;}
+										} else { $extenabled = '?' ;}
 										if ($extenabled <> 0 AND $extenabled <> 1 ){
-										$extenabled = '';
+										$extenabled = '?';
 										}
 										if ( $show['type'] == _FPA_3PD)
 										{                      
@@ -709,14 +733,18 @@
 										if (substr($instance['cmsRELEASE'],0,1) <> 1 AND @$database['dbHOSTINFO'] <> _FPA_U OR $postgresql = _FPA_Y) { 
 										if (isset($exset[0]['name'])) { 
 										  $extarrkey = recursive_array_search($show['name'], $exset);
-										  $extenabled = $exset[$extarrkey]['enabled'];
-										  } else { $extenabled = '' ;}
+                                        if ($extarrkey  !== False) {
+										$extenabled = $exset[$extarrkey]['enabled'];
+										} else { $extenabled = '?' ;}
+										  } else { $extenabled = '?' ;}
 										if ($extenabled <> 0 AND $extenabled <> 1 ){
-										  $extenabled = '';
+										  $extenabled = '?';
 										}
 										if (isset($tmpldef[0]['template'])) { 
 										$extarrkey = recursive_array_search($show['name'], $tmpldef);
+                                        if ($extarrkey  !== False) {
 										$deftempl = $tmpldef[$extarrkey]['home'];    
+                                        } else { $deftempl = '' ;} 
 										} else { $deftempl = '' ;}
 										if ($deftempl == 1 ){                    
 										  $bldop = '[b][u]';
@@ -749,16 +777,20 @@
 										if (substr($instance['cmsRELEASE'],0,1) <> 1 AND @$database['dbHOSTINFO'] <> _FPA_U OR $postgresql = _FPA_Y ) { 
 										  if (isset($exset[0]['name'])) { 
 										    $extarrkey = recursive_array_search($show['name'], $exset);
-										    $extenabled = $exset[$extarrkey]['enabled'];
+                                        if ($extarrkey  !== False) {
+										$extenabled = $exset[$extarrkey]['enabled'];
+										} else { $extenabled = '?' ;}
 										  } else { 
-										    $extenabled = '' ;
+										    $extenabled = '?' ;
 										}
 										if ($extenabled <> 0 AND $extenabled <> 1 ){
-										  $extenabled = '';
+										  $extenabled = '?';
 										}
 										if (isset($tmpldef[0]['template'])) { 
 										$extarrkey = recursive_array_search($show['name'], $tmpldef);
+                                        if ($extarrkey  !== False) {
 										$deftempl = $tmpldef[$extarrkey]['home'];    
+                                        } else { $deftempl = '' ;}    
 										} else { $deftempl = '' ;}
 										if ($deftempl == 1 ){                    
 										  $bldop = '[b][u]';

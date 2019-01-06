@@ -3152,7 +3152,9 @@ $disabled = '';
 			foreach ( $component['SITE'] as $key => $show ) {
 				if (isset($exset[0]['name'])) { 
 					$extarrkey = recursive_array_search($show['name'], $exset);
+                    if ($extarrkey  !== False) {
 					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
 				} else { $extenabled = '' ;}
 
 					switch ($extenabled) {
@@ -3228,7 +3230,9 @@ $disabled = '';
 			foreach ( $component['ADMIN'] as $key => $show ) {
 				if (isset($exset[0]['name'])) { 
 					$extarrkey = recursive_array_search($show['name'], $exset);
+                    if ($extarrkey  !== False) {
 					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
 				} else { $extenabled = '' ;}
 
 					switch ($extenabled) {
@@ -3341,7 +3345,9 @@ $disabled = '';
 			foreach ( $module['SITE'] as $key => $show ) {
 				if (isset($exset[0]['name'])) { 
 					$extarrkey = recursive_array_search($show['name'], $exset);
+                    if ($extarrkey  !== False) {
 					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
 				} else { $extenabled = '' ;}
 
 					switch ($extenabled) {
@@ -3417,7 +3423,9 @@ $disabled = '';
 			foreach ( $module['ADMIN'] as $key => $show ) {
 				if (isset($exset[0]['name'])) { 
 					$extarrkey = recursive_array_search($show['name'], $exset);
+                    if ($extarrkey  !== False) {
 					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
 				} else { $extenabled = '' ;}
 
 					switch ($extenabled) {
@@ -3529,7 +3537,9 @@ $disabled = '';
 			foreach ( $plugin['SITE'] as $key => $show ) {
 				if (isset($exset[0]['name'])) { 
 					$extarrkey = recursive_array_search($show['name'], $exset);
+                    if ($extarrkey  !== False) {
 					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
 				} else { $extenabled = '' ;}
 
 					switch ($extenabled) {
@@ -3605,7 +3615,9 @@ $disabled = '';
 			foreach ( $plugin['ADMIN'] as $key => $show ) {
 				if (isset($exset[0]['name'])) { 
 					$extarrkey = recursive_array_search($show['name'], $exset);
+                    if ($extarrkey  !== False) {
 					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
 				} else { $extenabled = '' ;}
 
 					switch ($extenabled) {
@@ -3715,7 +3727,9 @@ $disabled = '';
 			foreach ( $library['SITE'] as $key => $show ) {
 				if (isset($exset[0]['name'])) { 
 					$extarrkey = recursive_array_search($show['name'], $exset);
+                    if ($extarrkey  !== False) {
 					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
 				} else { $extenabled = '' ;}
 
 					switch ($extenabled) {
@@ -3791,7 +3805,9 @@ $disabled = '';
 			foreach ( $library['ADMIN'] as $key => $show ) {
 				if (isset($exset[0]['name'])) { 
 					$extarrkey = recursive_array_search($show['name'], $exset);
+                    if ($extarrkey  !== False) {
 					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
 				} else { $extenabled = '' ;}
 
 					switch ($extenabled) {
@@ -3903,7 +3919,9 @@ $disabled = '';
 			foreach ( $template['SITE'] as $key => $show ) {
 				if (isset($exset[0]['name'])) { 
 					$extarrkey = recursive_array_search($show['name'], $exset);
+                    if ($extarrkey  !== False) {
 					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
 				} else { $extenabled = '' ;}
 				switch ($extenabled) {
 					case '1':
@@ -3918,9 +3936,10 @@ $disabled = '';
 
 				if (isset($tmpldef[0]['template'])) { 
 				    $extarrkey = recursive_array_search($show['name'], $tmpldef);
+                    if ($extarrkey  !== False) {
 				    $deftempl = $tmpldef[$extarrkey]['home'];    
 				} else { $deftempl = '' ;}
-
+				} else { $deftempl = '' ;}
 				if ($deftempl == 1 ){                    
                     $frmextenabled = _FPA_A_ICON;
                     $frmclass = 'bg-success';
@@ -3991,7 +4010,9 @@ $disabled = '';
 			foreach ( $template['ADMIN'] as $key => $show ) {
 				if (isset($exset[0]['name'])) { 
 					$extarrkey = recursive_array_search($show['name'], $exset);
+                    if ($extarrkey  !== False) {
 					$extenabled = $exset[$extarrkey]['enabled'];
+				} else { $extenabled = '' ;}
 				} else { $extenabled = '' ;}
 				switch ($extenabled) {
 					case '1':
@@ -4006,7 +4027,9 @@ $disabled = '';
 
 				if (isset($tmpldef[0]['template'])) { 
 				    $extarrkey = recursive_array_search($show['name'], $tmpldef);
+                    if ($extarrkey  !== False) {
 				    $deftempl = $tmpldef[$extarrkey]['home'];    
+				} else { $deftempl = '' ;}   
 				} else { $deftempl = '' ;}
 
 				if ($deftempl == 1 ){                    
